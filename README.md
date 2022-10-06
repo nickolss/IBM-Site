@@ -20,3 +20,9 @@
 • Pedro Fernandes Araújo </br>
 • Tiago Bryan Ramos de Oliveira </br>
 • Vinicius Valero Chabariberi
+<hr>
+
+<h2>Redes Sociais</h2>
+  <a href="https://www.instagram.com/turn_motors/" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
+  
+<a href="https://www.linkedin.com/in/turn-motors-285988252/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
