@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		function apagar(){
+		    var txtresp = document.querySelector('input#mensagem')
+		    var mensagem = txtresp.value
+		    mensagem = ""
+		    mensagem.innerHTML = ""
+		}
+	</script>
+	<style type="text/css">
+
+		h4.tite{
+			color: #DF7369;
+		    text-shadow: 2px 1px 1px white;
+		    font-weight: bold;
+		    font-size: 30px;
+		    margin-bottom: 10px;
+		}
+		h4{
+			font-family: 'Arial', sans-serif;
+			 font-size: 22px;
+		    color: white;
+		    margin-bottom: 20px;
+		    font-weight: 500;
+		    position: relative;
+		    text-transform: uppercase;
+		}
+		footer{
+			background-color: hsla(195, 98%, 19%, 0.600);
+		}
+		.borda{
+			border: 1px solid red;
+		}
+		p#slogan{
+			color: white;
+		    font-size: 19px;
+		    text-shadow: 2px 0px 1px rgba(0, 0, 0, 0.300);
+		    margin-bottom: 10px;
+		}
+		p#copy{
+			color: rgba(255, 255, 255, 0.479);
+		}
+		.alinhar{
+			text-align: center;
+
+		}
+		input#mensagem{
+			padding-right: 85px;
+			padding-bottom: 3px;
+			margin-left: 43px;
+		    background-color: transparent;
+		    border: 0;
+		    border-bottom: 2px solid white;
+		    outline: 0;
+		    color: white;
+		    
+		}
+		input#mensagem:focus{
+		    border-bottom: 2px solid #c5c5c5;
+
+		}
+		
+		input#mensagem::placeholder{
+			color: white;
+			font-size: 16px;
+
+
+		}
+		button.botao3{
+			border: 0;
+		    background-color: transparent;
+		    
+		}
+		.botaoalinhar{
+			Display: flex;
+		    flex-direction: row;
+		    flex-wrap: nowrap;
+		    Justify-content: end;
+		    margin-top: -30px;
+		    margin-right: 70px;
+		    
+		}
+		ul.separar li{
+			margin: 30px 0px;
+			list-style: none;
+
+		}
+		ul.separar li a{
+			font-size: 20px;
+		    text-transform: capitalize;
+		    color: #f8f8f8;
+		    text-decoration: none;
+		    font-weight: 300;
+
+		}
+		ul li a:hover{
+		    color: #e7e7e7;
+		    transform: scale(1.03);
+		    transition: all 0.3s ease;
+		    cursor: pointer;
+		    padding-left: 10px;
+		}
+		.midias-sociais a{
+			margin: 30px 80px;
+			display: block;
+			
+		}
+		.midias-sociais a:hover{
+			transform: scale(1.1);
+		    transition: all 0.3s ease;
+		    cursor: pointer;
+		}
+		img.rede-social{
+		    width: 35px;
+		    height: 35px;
+		}
+		#correcao{
+			margin-right: 0.0px;
+		}
+		.block{
+			display: none;
+		}
+
+		/* RESPONSIVIDADE */
+		@media screen and (max-width: 320px){
+			.block{
+				display: block;
+			}
+			.none{
+				display: none;
+			}
+			.midias-sociais1{
+				
+				display: flex;
+				flex-direction: row;
+				flex-wrap: nowrap;
+				justify-content: center;
+				align-items: center;
+				margin: auto;
+
+			}
+			.midia{
+				margin: 0px 40px 0px 0px;
+
+			}
+			.midia1{
+				margin-left: 55px;
+			}
+			.botaoalinhar{
+			Display: flex;
+		    flex-direction: row;
+		    flex-wrap: nowrap;
+		    Justify-content: end;
+		    margin-top: -30px;
+		    margin-right: 20px;
+		    
+		    }
+		    
+		}
+		@media (max-width: 768px) and (min-width: 456px){
+			.botaoalinhar{
+			Display: flex;
+		    flex-direction: row;
+		    flex-wrap: nowrap;
+		    Justify-content: end;
+		    margin-top: -30px;
+		    margin-right: 10px;
+		    }
+		}
+		@media (max-width: 1500px) and (min-width: 769px){
+			.botaoalinhar{
+			Display: flex;
+		    flex-direction: row;
+		    flex-wrap: nowrap;
+		    Justify-content: end;
+		    margin-top: -30px;
+		    margin-right: 15px;
+		    }
+		}
+		@media (max-width: 360px) and (min-width: 321px){
+			.botaoalinhar{
+			Display: flex;
+		    flex-direction: row;
+		    flex-wrap: nowrap;
+		    Justify-content: end;
+		    margin-top: -30px;
+		    margin-right: 5px;
+		    }
+		}
+
+		</style>
+</head>
+<body>
+	<footer>
+		<div class="row" id="correcao">
+			<div class="col alinhar">
+				<div> <img width="100px" src="img/logo-luz.png"> </div>
+				<h4 class="tite ">TURN MOTORS</h4>
+				<p id="slogan">Vem conosco. Olha o ronco!</p>
+                <p id="copy">&copy;Turn Motors, 2022</p>
+
+			</div>
+			<div class="col">
+				<div class="alinhar" style="margin-top: 50px;">
+				   <h4>Vamos conversar</h4>
+                        <!--form sub-->
+                        
+                            <form>
+                                <div >
+                                    <input type="text" id="mensagem"  placeholder="Nos envie uma mensagem">
+                                    <div class="botaoalinhar">
+                                     <button class="botao3" onclick="apagar()"><img width="24px" src="img/enviar-sombra.png" alt="Foto enviar"></button>
+                                	</div>
+                                </div>
+                                <!--<button>Enviar</button>-->
+                            </form>
+                </div>  
+			</div>
+
+			<div class="col">
+
+				<div class="row">
+
+					<div class="col">
+
+						
+							<ul class="separar">
+								<li> <a href="">Home</a> </li>
+								<li> <a href="">Produtos</a> </li>
+								<li> <a href="">Mercado</a> </li>
+							</ul>
+						
+					</div>
+					<div class="col">
+						<ul class="separar">
+							<li> <a href="">Sobre Nós</a> </li>
+							<li> <a href="">Vagas</a> </li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col none">
+				<div>
+					<div class="midias-sociais">
+	                            <a href="#"><img class="rede-social" src="img/instagram2.png" alt="Logo instagram"></a>
+	                </div>
+	                <div class="midias-sociais">
+	                            <a href="#"><img class="rede-social" src="img/twitter2.png" alt="Logo Twitter"></a>
+	                </div>
+	                <div class="midias-sociais">
+	                            <a href="#"><img class="rede-social" src="img/linkedin3.png" alt="Logo Linkedin"></a>
+	                </div>
+                </div>
+			</div>
+			<div class="col block" >
+				<div class="midias-sociais1">
+					<div class="midia midia1" >
+	                            <a href="#"><img class="rede-social" src="img/instagram2.png" alt="Logo instagram"></a>
+	                </div>
+	                <div class="midia" >
+	                            <a href="#"><img class="rede-social" src="img/twitter2.png" alt="Logo Twitter"></a>
+	                </div>
+	                <div class="midia" >
+	                            <a href="#"><img class="rede-social" src="img/linkedin3.png" alt="Logo Linkedin"></a>
+	                </div>
+                </div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
