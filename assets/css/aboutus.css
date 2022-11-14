@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-@font-face{
-    font-family: 'Fast-hand';
-    src: url('../fonte/fast-hand.otf');
-}
-
 body{
     font-family: Inter, sans-serif;
 }
@@ -44,7 +39,7 @@ h3{
 
 .about__titulo{
     font-size: 2rem;
-    margin: 12px;
+    margin: 50px;
 }
 
 @media screen and (max-width: 480px){
@@ -52,10 +47,6 @@ h3{
         text-align: center;
 
     }
-}
-
-.about__titulo--center{
-    padding: 20px;
 }
 
 .about__historia{
@@ -163,7 +154,7 @@ h3{
     margin: 5% 0;
     background-color: #D9D9D9;
     margin: 0 10px;
-    height: 30vh;
+    height: 150px;
 }
 
 @media screen and (max-width:480px) {
