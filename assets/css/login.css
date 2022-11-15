@@ -111,5 +111,11 @@
 }
 
 .conteudo-login__imagem > img{
-    
+    margin: 0 0 0 20%;
+}
+
+@media screen and (max-width: 480px) {
+    .conteudo-login__imagem, .conteudo-login__imagem > img{
+        display: none;
+    }
 }
