@@ -105,7 +105,11 @@
 
 /* Coluna Imagem*/
 
-
 .conteudo-login__imagem{
+    height: 50%;
+    width: 50%;
+}
 
+.conteudo-login__imagem > img{
+    
 }
