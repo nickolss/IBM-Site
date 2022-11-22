@@ -27,12 +27,58 @@ body{
     grid-template-columns: auto 1fr 1fr 1fr;
 }
 
+.garantia-principal-mobile{
+    display: none;
+}
+
+@media screen and (max-width:480px) {
+    .garantia__principal, .divisao-vantagens{
+        display: none;
+    }
+
+    .garantia-principal-mobile{
+        display: block;
+    }
+
+    .garantia-principal-mobile__titulo{
+        color: var(--laranja);
+        font-size: 2rem;
+        margin: 5rem auto 1rem auto;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .opcao-garantia-mobile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .opcao-garantia-mobile__titulo{
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: var(--azul-escuro);
+    }
+
+    .sem-vantagem, .com-vantagem{
+        margin: 1rem 0.5rem;
+    }
+
+    .sem-vantagem{
+        color: #ff0000;
+    }
+
+    .com-vantagem{
+        color: #00BFFF;
+    }
+}
+
 .garantia__titulo{
     color: var(--laranja);
     font-weight: 600;
     text-shadow: 1px 1px 1px var(--azul-escuro);
     font-size: 2rem;
-    margin: 1rem 2rem;
+    margin: 4.5rem 0;
     grid-column: span 4;
 }
 
@@ -91,6 +137,12 @@ body{
     align-items: center;
 }
 
+@media screen and (max-width: 480px) {
+    .pagamento__opcao{
+        flex-wrap: wrap;
+    }
+}
+
 .pagamento__titulo, .envio__titulo{
     color: var(--azul-escuro);
     text-align: center;
@@ -118,6 +170,13 @@ body{
 .envio__container{
     display: flex;
     justify-content: space-around;
+}
+
+@media screen and (max-width:480px) {
+    .envio__container{
+        flex-direction: column;
+        margin: 1rem 0.5rem;
+    }
 }
 
 .agenda__titulo , .correios__titulo{
