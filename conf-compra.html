@@ -282,37 +282,51 @@
 
       <div class="divisao"></div>
 
-      <section class="pagamento">
-        <h2 class="pagamento__titulo">Método de Pagamento</h2>
-        <div class="pagamento__opcoes-disponiveis">
-          <div class="pagamento__opcao">
-              <div>
-                <input type="radio" name="opcao-pagamento" id="cartao">
-                <label class="opcao__texto" for="cartao">Cartão</label>
-              </div>
-              <div class="opcao__cartoes">
-                <img src="assets/img/visa.png" alt="Cartão da Visa">
-                <img src="assets/img/master-card.png" alt="Cartão da Master-Card">
-                <img src="assets/img/elo.png" alt="Cartão da ELo">
-              </div>
-          </div>
-          <div class="pagamento__opcao">
-              <div>
-                <input type="radio" name="opcao-pagamento" id="boleto">
-                <label class="opcao__texto" for="boleto">Boleto</label>
-              </div>
-              <img src="assets/img/boleto.png" alt="Opção de Pagamento Boleto">
-          </div>
-          <div class="pagamento__opcao">
-              <div>
-                <input type="radio" name="opcao-pagamento" id="pix">
-                <label class="opcao__texto" for="pix">Pix</label>
-              </div>
-              <img src="assets/img/pix.png" alt="Opção de Pagamento Pix">
+      <nav>
+        <div class="row " id="correcao">
+          <div class="col">
+            <h1 class="vg-titulo1 pagamento__titulo">Metódos de Pagamentos</h1>
           </div>
         </div>
-
-      </section>
+        <br>
+        <br>
+        <div class="row vg-sumiu1" id="correcao">
+          <div class="col">
+            <div style="text-align: center;">
+              <div style="font-size: 2em">Cartão</div>
+              <div style="font-size: 1.3em; margin-right: 230px;">Débito</div>
+              <div>
+                <img width="100px" src="assets/img/visa.png">
+                <img width="80px" src="assets/img/master.png">
+                <img width="100px" src="assets/img/elo.png">
+              </div>
+              <br>
+              <div style="font-size: 1.3em; margin-right: 230px;">Crédito</div>
+              <div>
+                <img width="100px" src="assets/img/visa.png">
+                <img width="80px" src="assets/img/master.png">
+                <img width="100px" src="assets/img/elo.png">
+              </div>
+              <div style="margin-top: 10px"> <p>Até 12x sem juros. </p></div>
+            </div>
+          </div>
+          <div class="col">
+            <div style="text-align: center;">
+              <div style="font-size: 2em">Boleto</div>
+              <img width="150px" src="assets/img/boleto.png">
+              <p>O boleto será gerado após a finalização de sua compra. Imprima e pague no banco ou pague pela internet utilizando o código de barras do boleto.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div style="text-align: center;">
+              <div style="font-size: 2em; margin-bottom: 13px;">Pix</div>
+              <img style="margin-bottom: 10px;" width="130px" src="assets/img/pix.png">
+              <p>O pagamento é instantâneo e só pode ser à vista. 10% off.</p>
+            </div>
+          </div>
+        </div>
+        <hr class="vg-linha">
+      </nav>
 
       <section class="envio">
         <h2 class="envio__titulo">Método de Envio</h2>
