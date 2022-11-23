@@ -91,7 +91,7 @@ body{
 	header{
 		display: none;
 	}
-
+	
 	.menu{
 
 		display: block;
@@ -285,6 +285,26 @@ h4.tite{
 /*FIM FOOTER*/
 
 /*INICIO NAV_PRODUTOS*/
+.forte a{
+	display: block;
+	font-size: 1em;
+}
+.forte a:hover{
+	transform: scale(1.1);
+		    transition: all 0.3s ease;
+		    cursor: pointer;
+		    color: black;
+}
+.forte1 a{
+	display: block;
+	
+}
+.forte1 a:hover{
+	transform: scale(1.1);
+		    transition: all 0.3s ease;
+		    cursor: pointer;
+		    color: black;
+}
 .pro-card1{
 	
 	width: 300px;
@@ -376,6 +396,7 @@ h1.pro-produtos{
 		    font-size: 90px;
 		    margin-bottom: 10px;
 		    
+		    
 }
 h1.pro-promo{
 	
@@ -424,6 +445,14 @@ hr.pro-pro{
 
 
 }
+.pro-cima1{
+	display: flex;
+	justify-content: center;
+	margin-bottom: -10px;
+	margin-top: 10px;
+
+
+}
 .pro-baixo-c{
 
 	margin-top: 10px;
@@ -455,9 +484,18 @@ a.pro-a{
 	background-color: transparent;
 	color: rgb(116, 116, 137);
 	font-size:20px;
-	margin-top: 10px;
-}
+	margin-top: 20px;
 
+}
+.pro-aumentar {
+	display: block;
+}
+.pro-aumentar:hover{
+	transform: scale(1.1);
+		    transition: all 0.3s ease;
+		    cursor: pointer;
+		    color: black;
+}
 .pro-bnt-pro{
 	border-radius: 100px;
 	
@@ -514,7 +552,27 @@ hr.pro-linn{
 .respon-limpar{
 	display: none;
 }
+#sumiu{
+	transition: 2s;
+	display: none;
+}
+.pro-some-pro{
+			display: none;
+		}
 /* RESPONSIVIDADE*/
+	@media (max-width: 770px) and (min-width: 459px){
+		h1.pro-produtos{
+			text-align: center;
+			margin: 50px 0px;
+			color: #DF7369;
+		    text-shadow: 2px 1px 1px black;
+		    font-weight: bold;
+		    font-size: 50px;
+		    margin-bottom: 10px;	
+		   
+		
+		}
+	}
 	@media (max-width: 458px) and (min-width: 320px){
 		
 		.respon-limpar{
@@ -528,6 +586,7 @@ hr.pro-linn{
 		    font-weight: bold;
 		    font-size: 35px;
 		    margin-bottom: 10px;	
+		   
 		
 		}
 		h1.pro-promo{
@@ -549,10 +608,21 @@ hr.pro-linn{
 			margin: auto;
 			
 		}
+		.pro-some-pro{
+			display: block;
+		}
+
 	}
 	@media (max-width: 1199px){
 		.legal{
 			margin-bottom: 50px;
 		}
 	}
+	@media (max-width: 1224px){
+		.somedaqui{
+			display: none;
+		}
+	}
+
+
 /* FIM NAV_PRODUTOS*/
