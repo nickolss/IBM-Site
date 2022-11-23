@@ -24,5 +24,9 @@ Turn Motors é um projeto para a feira tecnológica e IBM, executado pelos aluno
 https://nickolss.github.io/IBM-Site
 ou
 https://ibm-site-blond.vercel.app/
+
+## Wireframes
+https://www.figma.com/file/FXDHyWOdhXAOsQnZqPngAq/alta-fidelidade?node-id=0%3A1
+
 ## Agradecimentos
 Obrigado por acessarem nosso repositório e site. Esperamos que tenham gostado.
