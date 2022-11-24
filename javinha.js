@@ -1,4 +1,3 @@
-
 var button = document.getElementById("action");
 var button1 = document.getElementById("action1");
 
