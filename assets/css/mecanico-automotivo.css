@@ -1,0 +1,77 @@
+h1.title-vaga-mecanico{
+    color: #DF7369;
+    font-weight: bold;
+    font-size: 3.3em;
+    text-shadow: 2px 1px 1px #00253283;
+}
+
+h2.subtitle-vaga-mecanico{
+    color: #014961;
+    font-weight: 500;
+    font-size: 2.3em;
+    text-shadow: 2px 1px 1px #00253236;
+}
+
+.subtitle-vaga-mec-v2{
+    margin-top: 3%;
+}
+
+.p-vaga-mecanico{
+    font-size: 1.5em;
+    text-align: left;
+}
+
+.beneficios-vaga{
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.li-vaga-mec{
+    font-size: 1.35em;
+    text-align: left;
+    margin-bottom: 2%;
+
+}
+
+
+@media (max-width: 991px){    
+    p#botao-concurso{
+        width: 25%;
+    }
+    
+    .beneficio-am{
+        margin-bottom: 19%;
+    }
+}
+
+@media screen and (max-width: 770px){
+    p#botao-concurso{
+        width: 30%;
+    }
+
+    .title-vaga-mecanico{
+        margin-top: 25%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .beneficio-am{
+        margin-bottom: 4%;
+    }
+}
+
+@media (max-width: 510px){
+    p#botao-concurso{
+        width: 37%;
+    }
+}
+
+@media (max-width: 467px){
+    p#botao-concurso{
+        width: 47%;
+    }
+
+    .beneficios-vaga{
+        margin-bottom: 15%;
+    }
+}

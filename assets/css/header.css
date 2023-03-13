@@ -3,7 +3,9 @@
 	box-shadow: 0px 5px 5px 0px #888;
 	text-align: center;
 	margin-right: 0px;
-	
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 
@@ -23,7 +25,8 @@
 	
 	
 }
-.menu{
+
+nav.menu{
 	display: none;
 	background-color: hsla(195, 98%, 19%, 0.600);
 
@@ -37,12 +40,14 @@
 .alinhar{
 	text-align: center;
 }
-a{
+
+a.red{
 	text-decoration: none;
 	color: white;
 	font-size: 1.1em;
 }
-a:hover.red{
+
+a.red:hover{
 			font-size: 1.3em;
 			color: white;
 			
@@ -82,13 +87,13 @@ body{
 		display: none;
 	}
 
-	.menu{
+	nav.menu{
 
 		display: block;
 	}
+
 	li.l{
         text-align: center;
     }
 
 }
-/*Fim header*/

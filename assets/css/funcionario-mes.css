@@ -1,0 +1,30 @@
+.h3-main-func{
+    margin-top: 5%;
+    text-align: left;
+    font-weight: 700;
+    font-size: 2.2em;
+    margin-bottom: -2%;
+    color: rgb(1, 72, 96);
+}
+
+.img-concurso-func{
+    margin-top: 4%;
+}
+
+
+@media (max-width: 991px){
+    .coluna-imagem-concurso{
+        display: none;
+    }
+
+    .col-image-concurso{
+        display: flex;
+    }
+    
+}
+
+@media screen and (max-width: 770px){
+    .h1-main-concurso{
+        margin-top: 15%;
+    }
+}

@@ -1,103 +1,3 @@
-/*Global Config*/
-*{
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-/*Fim Global Config*/
-
-#body{
-	font-size: 1em;
-	font-family: "Helvetica", sans-serif;
-	background: #e6e6e6;
-    margin:auto;
-}
-
-/*Header*/
-#cabecalho{
-	background-color: hsla(195, 98%, 19%, 0.600);
-	box-shadow: 0px 5px 5px 0px #888;
-	text-align: center;
-	margin-right: 0px;	
-    margin-bottom: 1%;
-}
-
-
-.redes_header{
-	margin-top: 24px;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-}
-
-.nav_header{
-	margin-top: 27px;
-}
-
-.login_header{
-	margin-top: 14px;
-	
-	
-}
-#menu{
-	display: none;
-	background-color: hsla(195, 98%, 19%, 0.600);
-
-}
-.menuheader{
-	text-align: center;
-	margin: 0px 20px 0px 0px;
-}
-
-.alinhar{
-	text-align: center;
-}
-
-a.red{
-	text-decoration: none;
-	color: white;
-	font-size: 1.3em;
-}
-
-a:hover.red{
-			font-size: 1.5em;
-			color: white;
-		    transition: all 0.3s ease;
-		    cursor: pointer;
-		}
-
-.redes_header a{
-			display: block;
-}
-
-.redes_header a:hover{
-    transform: scale(1.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.login_header a{
-	display: block;
-}
-
-.login_header a:hover{
-    transform: scale(1.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.logo a{
-    display: block;
-}
-
-.logo a:hover{
-    transform: scale(1.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-/*Fim Header*/
-
 /*Vagas*/
 h1.main-title{
     color: #DF7369;
@@ -235,133 +135,6 @@ img.posts:hover{
 }
 /*Fim Vagas*/
 
-/*Concurso*/
-.concurso-body{
-    margin-top: 2%;
-}
-
-h1.h1-main-concurso{
-    color: #DF7369;
-    font-weight: bold;
-    font-size: 3.3em;
-    text-shadow: 2px 1px 1px #00253283;
-}
-
-h2.h2-main-concurso{
-    margin-bottom: 2%;
-}
-
-h3.h3-main-concurso{
-    margin-top: 5%;
-    text-align: left;
-    font-weight: 700;
-    font-size: 2.2em;
-    color: rgb(1, 72, 96);
-}
-
-.concurso-p{
-    text-align: left;
-    font-size: 1.55em;
-    margin-top: 3%;
-}
-
-.col-image-concurso{
-    display: none;
-}
-
-p.info-concurso{
-    font-size: 1.3em;
-    text-align: left;
-    margin-top: 5%;
-}
-
-strong.concurso-requitios{
-    font-size: 1.3em;
-    color: rgb(1, 72, 96);
-}
-
-p#botao-concurso{
-    color: white;
-    text-decoration: none;
-    font-size: 1.5em;
-    text-align: center;
-    background-color: hsla(195, 98%, 19%, 0.600);
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 2%;
-    width: 13%;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.342);
-    margin: 1rem auto;
-}
-
-#botao-concurso:hover{
-    background-color: rgba(1, 72, 96, 0.781);
-    cursor: pointer;
-    transform: scale(1.05);
-    transition: all 0.2s ease;
-}
-/*Fim Concurso*/
-
-/*Funcionaria do Mes*/
-.h3-main-func{
-    margin-top: 5%;
-    text-align: left;
-    font-weight: 700;
-    font-size: 2.2em;
-    margin-bottom: -2%;
-    color: rgb(1, 72, 96);
-}
-
-.img-concurso-func{
-    margin-top: 4%;
-}
-/*Fim Funcionaria do Mes*/
-
-/*Equipe 2023*/
-h1.equipe2023-title{
-    color: #DF7369;
-    font-weight: bold;
-    font-size: 3.3em;
-    text-shadow: 2px 1px 1px #00253283;
-    margin-top: 2%;
-}
-
-.info-equipe{
-    margin-left: -26%;
-    text-align: left;
-}
-
-.info-equipe-big{
-    margin-left: -5%;
-
-}
-
-.p-info-equipe{
-    font-size: 1.3em;
-}
-
-p.subtitle-equipe2023{
-    margin-bottom: 3%;
-    font-size: 1.4em;
-}
-
-.imagem-colaborador-equipe{
-    margin-bottom: 4%;
-}
-
-.cargo-equipe{
-    color: #DF7369;
-}
-
-.nome-equipe{
-    color: rgba(1, 72, 96, 0.781);
-}
-
-.equipe-small{
-    display: none;
-}
-/*Fim Equipe 2023*/
-
 /*Vaga Mecanico Automotivo*/
 h1.title-vaga-mecanico{
     color: #DF7369;
@@ -399,121 +172,6 @@ h2.subtitle-vaga-mecanico{
 }
 /*Fim Vaga Mecanico Automotivo*/
 
-/*Footer*/
-h4.tite{
-    color: #DF7369;
-    text-shadow: 2px 1px 1px white;
-    font-weight: bold;
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-h4{
-    font-family: 'Arial', sans-serif;
-     font-size: 22px;
-    color: white;
-    margin-bottom: 20px;
-    font-weight: 500;
-    position: relative;
-    text-transform: uppercase;
-}
-footer{
-    background-color: hsla(195, 98%, 19%, 0.600);
-    margin-top: 3%;
-}
-.borda{
-    border: 1px solid red;
-}
-p#slogan{
-    color: white;
-    font-size: 19px;
-    text-shadow: 2px 0px 1px rgba(0, 0, 0, 0.300);
-    margin-bottom: 10px;
-}
-p#copy{
-    color: rgba(255, 255, 255, 0.479);
-}
-.alinhar{
-    text-align: center;
-
-}
-input#mensagem{
-    padding-right: 85px;
-    padding-bottom: 3px;
-    margin-left: 43px;
-    background-color: transparent;
-    border: 0;
-    border-bottom: 2px solid white;
-    outline: 0;
-    color: white;
-    
-}
-input#mensagem:focus{
-    border-bottom: 2px solid #c5c5c5;
-
-}
-
-input#mensagem::placeholder{
-    color: white;
-    font-size: 16px;
-
-
-}
-button.botao3{
-    border: 0;
-    background-color: transparent;
-    
-}
-.botaoalinhar{
-    Display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    Justify-content: end;
-    margin-top: -30px;
-    margin-right: 70px;
-    
-}
-ul.separar li{
-    margin: 30px 0px;
-    list-style: none;
-
-}
-ul.separar li a{
-    font-size: 20px;
-    text-transform: capitalize;
-    color: #f8f8f8;
-    text-decoration: none;
-    font-weight: 300;
-
-}
-ul li a:hover{
-    color: #e7e7e7;
-    transform: scale(1.03);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    padding-left: 10px;
-}
-.midias-sociais a{
-    margin: 30px 80px;
-    display: block;
-    
-}
-.midias-sociais a:hover{
-    transform: scale(1.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-img.rede-social{
-    width: 35px;
-    height: 35px;
-}
-#correcao{
-    margin-right: 0.0px;
-}
-.block{
-    display: none;
-}
-/*Fim Footer*/
-
 /* responsividade */
 @media(max-width:1399px){
     img.post-big{
@@ -526,6 +184,7 @@ img.rede-social{
         height: 241px;
     }
 }
+
 
 @media(max-width:1199px){
     img.post-big{
@@ -591,18 +250,6 @@ img.rede-social{
     .outra-vaga2{
         height: 370px;
     }
-
-    /*Concurso*/
-    p#botao-concurso{
-        width: 16%;
-    }
-    /*Fim Concurso*/
-
-    /*Equipe 2023*/
-    .info-equipe-big{
-        margin-left: -7%;
-    }
-    /*Fim Equipe 2023*/
 }
 
 @media (max-width: 1180px){
@@ -623,6 +270,7 @@ img.rede-social{
         height: 146px;
     }
 }
+
 
 @media (max-width: 991px){
     .card{

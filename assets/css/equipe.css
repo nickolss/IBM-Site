@@ -1,0 +1,88 @@
+h1.equipe2023-title{
+    color: #DF7369;
+    font-weight: bold;
+    font-size: 3.3em;
+    text-shadow: 2px 1px 1px #00253283;
+    margin-top: 2%;
+}
+
+.info-equipe{
+    margin-left: -26%;
+    text-align: left;
+}
+
+.info-equipe-big{
+    margin-left: -5%;
+
+}
+
+.p-info-equipe{
+    font-size: 1.3em;
+}
+
+p.subtitle-equipe2023{
+    margin-bottom: 3%;
+    font-size: 1.4em;
+}
+
+.imagem-colaborador-equipe{
+    margin-bottom: 4%;
+}
+
+.cargo-equipe{
+    color: #DF7369;
+}
+
+.nome-equipe{
+    color: rgba(1, 72, 96, 0.781);
+}
+
+.equipe-small{
+    display: none;
+}
+
+
+
+@media (max-width: 991px){
+    .info-equipe{
+        margin-left: -10%;
+    }
+
+    .equipe-big{
+        display: none;
+    }
+
+    .equipe-small{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 770px){
+    .info-equipe{
+        margin-left: -5%;
+    }
+
+    #concurso-title{
+        margin-top: 12%;
+    }
+}
+
+@media (max-width: 750px){
+    #concurso-title{
+        margin-top: 16%;
+    }
+}
+
+
+@media (max-width: 510px){
+    p#botao-concurso{
+        width: 37%;
+    }
+}
+
+
+@media (max-width: 467px){
+    p#botao-concurso{
+        width: 47%;
+    }
+}

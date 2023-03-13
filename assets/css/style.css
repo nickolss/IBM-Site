@@ -1,0 +1,13 @@
+/*CSSs Padrão*/
+@import url(reset.css);
+@import url(header.css);
+@import url(footer.css);
+
+/*CSS página Concurso*/
+@import url(concurso.css);
+@import url(equipe.css);
+@import url(funcionario-mes.css);
+@import url(funileiro.css);
+@import url(instalador-alarme.css);
+@import url(mecanico-automotivo.css);
+@import url(mecanico-hibrido.css);
