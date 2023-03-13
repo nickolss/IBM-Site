@@ -1,0 +1,111 @@
+body{
+	font-size: 1em;
+	font-family: "Helvetica", sans-serif;
+	background: #e6e6e6;
+	
+	margin: auto;
+}
+
+
+
+/*Inicio Nav*/
+#correcao{
+	margin-right: 0.0px;
+}
+
+.texto{
+	text-align: center;
+	font-size: 1.7em;
+
+}
+
+.botao{
+	border-radius: 150px;
+	background-color: #014961;
+	color: white;
+	padding: 10px 80px;
+	margin-bottom: 30px;
+	font-size: 1.5em;
+	
+}
+.alinhar{
+		text-align: center;
+}
+
+.texto1{
+	
+	font-size: 1.7em;
+		margin: 0px 75px 0px 85px;
+}
+
+.botao1{
+	border-radius: 150px;
+	background-color: #014961;
+	color: white;
+	padding: 10px 80px;
+	margin-left: 85px;
+	font-size: 1.5em;
+}
+
+.none{
+	display: none;
+}
+.nonone{
+
+}
+@media screen and (max-width: 1401px){
+		.none{
+			display: block;
+		}
+		.nonone{
+			display: none;
+		}
+		.footer-col{ 
+        width: 40%;
+        margin-bottom: 30px;
+        }
+   
+
+}
+
+.icone{
+	text-align: center;
+	font-size: 1.7em;
+	color: #014961;
+}
+
+hr.linha{
+	width: auto;
+	
+	border: 2px solid black; 
+	
+}
+strong{
+	font-size: 2.5em;
+	color: #014961;
+}
+.paragrafo{
+	font-size: 1.2em;
+	color: black;
+}
+.redondo{
+	border-radius: 200px;
+	margin-bottom: 9px;
+}
+.texto9{
+		text-align: center;
+		
+		margin: 0px 100px;
+
+}
+p.config{
+	margin-right: 90px;
+}
+
+span.final{
+	font-size: 1.7em;
+	color: #014961;
+}
+/*Fim Nav*/
+
+
