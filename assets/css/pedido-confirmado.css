@@ -38,7 +38,7 @@ body{
 .principal__titulo{
     color: var(--laranja);
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 5rem;
 }
 
 .principal__informacoes{
@@ -47,6 +47,8 @@ body{
     margin: 2rem 0;
     padding: 1.5rem;
     box-shadow: 1px 1px 1px #000;
+    
+    
 }
 
 .informacoes__titulo{
@@ -63,8 +65,13 @@ body{
     color: var(--azul-escuro);
 }
 
-.outros-itens__titulo, .formulario__titulo{
-    margin: 1rem 2rem ;
+.outros-itens__titulo{
+    margin: 1rem 0px 1rem 0px ;
+    color: var(--azul-escuro);
+    font-weight: 700;
+}
+.formulario__titulo{
+    margin: 1rem 0px 1rem 0px ;
     color: var(--azul-escuro);
     font-weight: 700;
 }
@@ -89,7 +96,7 @@ body{
 
 .conteudo-form{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 @media screen and (max-width: 480px) {

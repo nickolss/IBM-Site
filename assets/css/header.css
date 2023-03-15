@@ -1,10 +1,19 @@
+/*Inicio header*/
+body{
+	font-size: 1em;
+	font-family: "Helvetica", sans-serif;
+	background: #e6e6e6;
+	
+	margin: auto;
+}
+
 #cabecalho{
 	background-color: hsla(195, 98%, 19%, 0.600);
 	box-shadow: 0px 5px 5px 0px #888;
 	text-align: center;
-	margin-right: 0px;
-	
+	margin-right: 0.0px;
 }
+
 
 
 .redes_header{
@@ -21,9 +30,8 @@
 .login_header{
 	margin-top: 14px;
 	
-	
 }
-.menu{
+#menu{
 	display: none;
 	background-color: hsla(195, 98%, 19%, 0.600);
 
@@ -33,10 +41,15 @@
 	
 	margin: 0px 20px 0px 0px;
 	}
+.logo a{
+			display: block;
+	}
 
-.alinhar{
-	text-align: center;
-}
+.logo a:hover{
+			transform: scale(1.1);
+		    transition: all 0.3s ease;
+		    cursor: pointer;
+		}
 a{
 	text-decoration: none;
 	color: white;
@@ -68,25 +81,21 @@ a:hover.red{
 		    cursor: pointer;
 		}
 
-body{
-	font-size: 1em;
-	font-family: "Helvetica", sans-serif;
-	background: #e6e6e6;
-	
-	margin: auto;
 
-}
-
-@media screen and (max-width: 770px){
+@media screen and (max-width: 700px){
 	header{
 		display: none;
 	}
 
-	.menu{
+	#menu{
 
 		display: block;
 	}
-	li.l{
+	.footer-col{
+        width: 100%;
+    }
+
+    li.l{
         text-align: center;
     }
 

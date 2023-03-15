@@ -2,6 +2,7 @@
 
 body{
     font-family: Inter, sans-serif;
+   
 }
 
 main{
@@ -195,6 +196,15 @@ h3{
     .about__comofazemos-img{
         display: flex;
         flex-direction: column;
+    }
+}
+.about__espaco{
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .about__espaco{
+        display: block;
     }
 }
 

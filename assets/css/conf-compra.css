@@ -11,7 +11,7 @@
 
 body{
     background-color: #fefefe;
-    font-family: var(--fonte-padrao);
+   
 }
 
 .divisao{
@@ -73,7 +73,14 @@ body{
     }
 }
 
+.especificacoes__texto{
+    
+    padding: 0;
+    margin-top: 10px;
+}
+
 .garantia__titulo{
+    text-align: center;
     color: var(--laranja);
     font-weight: 600;
     text-shadow: 1px 1px 1px var(--azul-escuro);
@@ -166,6 +173,44 @@ body{
 }
 
 /* FIM PAGAMENTO */
+.agenda{
+    text-align: center;
+    
+}
+
+.correios{
+    text-align: center;
+    
+    display: inline;
+    
+}
+
+.bordinha_nao_conflita{
+    border-left: 1px solid black;
+}
+
+.space_maluko{
+    
+}
+@media screen and (max-width:433px) {
+    .bordinha_nao_conflita{
+        border: none;
+    }
+    .space_maluko{
+        margin-top: 40px;
+    }
+}
+
+.space_maluko2{
+    display: none;
+}
+
+@media screen and (max-width:700px) {
+    .space_maluko2{
+        display: block;
+    }
+}
+
 
 .envio__container{
     display: flex;
@@ -183,12 +228,16 @@ body{
     color: var(--azul-escuro);
     font-size: 1.5;
     font-weight: 500;
+    
+    
 }
 
 .envio__input{
     border-radius: 15px;
     padding: 0.5rem;
     margin: 1rem 0;
+    
+    
 }
 
 .correios__container{
@@ -198,6 +247,7 @@ body{
 
 .opcao-entrega{
     display: block;
+    
 }
 
 .enviar{
