@@ -137,30 +137,34 @@
 
             <div class="conteudo-login__formulario" style="text-align: center;">
                 <form action="">
-                    <div class="conteudo-login__email">
-                        <label for="email">Endereço de Email:</label>
-                        <input type="email" name="email" id="email" required>
+                    <div class="informacoes-pessoa">
+                      <div class="conteudo-login__email">
+                          <input type="text" name="email" id="email" required>
+                          <label for="email" class="conteudo-login__campo">Endereço de Email:</label>
+                      </div>
+                      <div class="conteudo-login__email">
+                          <input type="password" name="passowrd" id="password" required>
+                          <label for="password" class="conteudo-login__campo">Senha:</label>
+                      </div>
                     </div>
 
-                    <div class="conteudo-login__email">
-                        <label for="password">Senha:</label> 
-                        <input type="password" name="passowrd" id="password" required>
+                    <div class="informacoes-senha">
+                      <div class="lembra-senha">
+                        
+                          <input type="radio" name="lembre" id="lembre">
+                          <label for="lembre">Lembrar minha senha</label>
+                        
+                      </div>
+                      <a href="">Esqueceu a senha?</a>
                     </div>
-
-                    <div class="conteudo-login__email">
-                        <label for="lembre">Lembrar minha senha</label>
-                            <input type="radio" name="lembre" id="lembre"> 
-                            
-                    </div>
-                    <a style="color: blue;" href=""><p>Esqueceu a senha?</p></a>
                 </form>
             </div>
 
-            <div style="text-align: center;" class="conteudo-login__botao-princ">
+            <div class="conteudo-login__botao-princ">
                 <button class="conteudo-login__botao-login">Login to Your Account</button>
             </div>
 
-            <div style="text-align: center;" class="conteudo-login__cadastrar">
+            <div" class="conteudo-login__cadastrar">
                 <p>Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
             </div>
 
