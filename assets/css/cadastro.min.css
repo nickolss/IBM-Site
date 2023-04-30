@@ -1,1 +1,210 @@
-@import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap);body{background:#1b2029;color:#fff;font-weight:500;display:flex;min-height:100vh;min-width:100vw}main{width:50vw;display:flex;flex-direction:column;align-items:center;justify-content:center}main h1{color:#fff;font-size:3rem;margin-bottom:3rem;text-align:center}main.social-media{display:flex;align-content:center}main .social-media a{text-decoration:none}main .social-media img{width:36px;margin-left:3rem}main .social-media a:first-child img{margin-left:0}main .linha{margin-top:1rem}main .linha span{font-size:1.1rem;font-weight:400;color:rgba(255,255,255,.3);position:relative}main .linha span::after,main .linha span::before{position:absolute;content:'';height:1px;width:100px;bottom:50%;right:50px;background:rgba(255,255,255,.3)}main .linha span::after{left:50px}main form{display:flex;flex-direction:column;align-items:center}main form label{display:flex;flex-direction:column}main form label span{font-size:1.1rem;margin-top:2rem}main form input{background:#161923;width:300px;height:50px;padding:0 .5rem;margin-top:1rem;outline:0;color:rgba(166,166,166);font-size:1rem;border:1px solid #040b18;border-radius:8px}main form input[type=submit]{cursor:pointer;width:50%;margin-top:4rem;border:none;border-radius:32px;background:#014961;color:#fff;font-size:1.1rem;transition:all .3s ease-in-out}main form input[type=submit]:hover{background:#012d3b}section.images{width:50vw;display:flex;align-items:flex-end;justify-content:flex-end;padding:4rem}section.images img{width:100%}section.images .circle{position:absolute;height:100%;width:100%;top:0;left:0;background:linear-gradient(45deg,#673f3c,#fc7469);clip-path:circle(40% at right 80%);z-index:-1}@media only screen and (min-width:900px) and (max-width:1200px){section.images img{width:110%}section.images .circle{clip-path:circle(35% at right 80%)}}@media only screen and (max-width:900px){section.images{display:none;visibility:hidden}main{width:100vw}}@media only screen and (max-width:450px){main h1{font-size:2rem}main .linha span{font-size:.8rem}main form input[type=submit],main form label span{font-size:1rem}}
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap);
+
+body{
+    background-color: #f8f2f2;
+    font-family: Inter;
+}
+
+.separacao{
+    display: none;
+}
+
+.principal{
+    width: 90%;
+    margin: auto;
+}
+
+.introducao{
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.introducao__titulo{
+    font-size: 1.8rem;
+    color: #DF7369;
+    padding: 1rem 0;
+}
+
+.introducao__texto{
+    font-weight:300;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.formulario__inputs{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario__campo{
+    
+    padding: 0.5rem 0;
+    border: 0;
+    outline: 0;
+    border-radius: 20px;
+}
+
+.formulario__campo-menor{
+    width: 40%;
+    
+}
+
+.formulario__calendario{
+    font-weight: 700;
+    color: #014961;
+    font-size: 1rem;
+}
+
+.formulario__campo:focus + .formulario__nome-campo{
+    font-size: 1rem;
+    transform: translateY(-30px);
+    transition: .3s;
+    font-weight: 700;
+    color: #014961;
+}
+
+.formulario__nome-campo{
+    position: absolute;
+    top: 10px;
+    left: 12px;
+}
+
+.formulario__termos{
+    display: flex;
+    gap: 5px;
+}
+
+.planos{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 2rem 0;
+}
+
+.plano-comum, .plano-turbinado{
+    background-color: #fff;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plano__cabecalho{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0.5rem 0;
+}
+
+.plano-comum__titulo{
+    font-family: Inter;
+    font-size: 1.4rem;
+    color: #01496199;
+    font-weight: 600;
+}
+
+.plano-turbinado__titulo{
+    font-family: Inter;
+    font-size: 1.4rem;
+    color: #DF7369;
+    font-weight: 600;
+}
+
+.plano-comum__lista{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.plano-turbinado__lista{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lista__itens-comum{
+    display: flex;
+    gap: 5px;
+}
+
+.lista__itens-comum::before{
+    content: url('../img/check\ azul.svg');
+}
+
+.lista__itens-turbinado{
+    display: flex;
+    gap: 5px;
+}
+
+.lista__itens-turbinado::before{
+    content: url('../img/check\ rosa.svg');
+}
+
+.formulario__botao{
+    border: 0;
+    outline: 0;
+    padding: 1rem 2.5rem;
+    border-radius: 40px;
+    color: #fff;
+
+}
+
+.formulario__botao--comum{
+    background-color: #01496199;
+}
+
+.formulario__botao--turbinado{
+    background-color: #DF7369;
+}
+
+.plano-turbinado__preco{
+    margin: 2rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+    color: #DF7369;
+}
+
+.plano-turbinado__preco .preco{
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.plano__background-azul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    padding: 2rem 0;
+    background-color: #01496199;
+    border-radius: 15px;
+}
+
+.plano__background-rosa{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    background-color: #DF7369;
+    padding: 2rem 0;
+    border-radius: 15px;
+}
+
+@media screen and (max-width: 720px) {
+    .separacao{
+        display: block;
+    }
+    
+    .planos{
+        flex-direction: column;   
+        gap: 10px;    
+    }
+}

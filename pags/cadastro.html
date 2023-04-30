@@ -1,55 +1,287 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../assets/css/reset.min.css" />
-    <link rel="stylesheet" href="../assets/css/cadastro.min.css" />
-    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
-    <title>Turn Motors | Sign Up</title>
-  </head>
-  <body>
-    <main>
-      <h1>Create Account</h1>
-      <div class="social-media">
-        <a href="#">
-          <img src="../assets/img/google.png" alt="Logo da Google" />
-        </a>
-        <a href="#">
-          <img src="../assets/img/facebook.png" alt="Logo do Facebook" />
-        </a>
-        <a href="#">
-          <img src="../assets/img/linkedin3.png" alt="Logo do Linkedin" />
-        </a>
-      </div>
+<html lang="pt-BR">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Turn Motors | Cadastro</title>
+    
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="../assets/css/reset.min.css">
+      <link rel="stylesheet" href="../assets/css/cadastro.min.css">
+      <link rel="stylesheet" href="../assets/css/estilos-importantes.css">
+    
+      <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+      <script type="text/javascript" src="../assets/js/java.js"></script>
+    
+    </head>
+    <body id="body">
+      <header>
+        <div class="row" id="cabecalho">
+              
+            <div class="col redes_header">
+              <div style="margin-right: 5px">
+                <a class="link" href="https://www.linkedin.com/in/turn-motors-285988252/" aria-label="Acesse nosso Linkedin"><img width="35px" src="../assets/img/linkedin3.png"></a>
+              </div>
+              <div style="margin-right: 5px">
+                <a class="link" href="https://twitter.com/MotorsTurn" aria-label="Acesse nosso Twitter"><img  width="35px" src="../assets/img/twitter2.png"></a>
+              </div>
+              <div>
+                <a class="link" href="https://www.instagram.com/turn_motors/" aria-label="Acesso nosso Instagram"><img  width="35px" src="../assets/img/instagram2.png"></a>
+              </div>
+            </div>
+    
+            <div class="col nav_header" >
+              
+              <a class="red" href="produtos.html">Produtos</a>
+            </div>
+            <div class="col nav_header">
+              <a class="red" href="mercado.html">Mercado</a>
+            </div>
+            <div class="col logo">
+              <a  href="../index.html"><img width="90px" src="../assets/img/logo-final-finalmesmo.png"></a>
+            </div>
+            <div class="col nav_header ">
+              <a class="red" href="aboutus.html">Sobre Nós</a>
+            </div>
+            <div class="col nav_header ">
+              <a class="red" href="vagas.html">Vagas</a>
+    
+            </div>
+            <div class="col login_header">
+              <a class="link" href="login.html"><img width="60px" src="../assets/img/conta5.png"></a>
+            </div>
+        </div>
+      </header>
+    
+        <nav style="box-shadow: 0px 5px 5px 0px #888;"  class="navbar  fixed-top" id="menu">
+          <div  class="container-fluid">
+            
+              <a class="navbar-brand" href="#"><img style="margin-right: 10px;" width="50px" src="../assets/img/logo-final-finalmesmo.png"><img width="150px" src="../assets/img/titulo.png"></a>
+    
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Menu">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <div style="box-shadow: 0px 2px 5px 0px #888; background-color: hsla(195, 98%, 19%, 0.600);" class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img style="margin-right: 10px;" width="50px" src="../assets/img/logo-final-finalmesmo.png"><img width="150px" src="../assets/img/titulo.png"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+             
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                  </li>
+                  <hr>
+                  <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                  </li>
+                  <hr>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Opções
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="mercado.html">Mercado</a></li>
+                      <li><a class="dropdown-item" href="produtos.html">Produtos</a></li>
+                      <li><a class="dropdown-item" href="vagas.html">Vagas</a></li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="aboutus.html">Sobre Nós</a></li>
+    
+                    </ul>
+                  </li>
+                  <br>
+                  <br>
+    
+                  <div class="row alinhar">
+                    <div class="col">
+                      <a class="link" href="https://www.linkedin.com/in/turn-motors-285988252/" aria-label="Acesse nosso Linkedin"><img  width="35px" src="../assets/img/linkedin3.png"></a>
+              
+              
+                    </div>
+                    <div class="col">
+                      <a class="link" href="https://twitter.com/MotorsTurn" aria-label="Acesse nosso Twitter"><img  width="35px" src="../assets/img/twitter2.png"></a>
+                    </div>
+                    <div class="col">
+                      <a class="link" href="https://www.instagram.com/turn_motors/" aria-label="Acesso nosso Instagram"><img  width="35px" src="../assets/img/instagram2.png"></a>
+                    </div>
+                  </div>
+                </ul>
+                
+              </div>
+            </div>
+          </div>
+        </nav>
 
-      <div class="linha">
-        <span>OR</span>
-      </div>
+        <main class="principal">
+          <br class="separacao"><br class="separacao"><br class="separacao">
+          <section class="introducao">
+            <h1 class="introducao__titulo">Criar seu cadastro</h1>
+            <p class="introducao__texto">Veja seus pedidos de forma fácil, compre mais rápido e <br> tenha uma experiência personalizada</p>
+          </section>
+          <form action="" class="formulario">
+            <div class="formulario__inputs">
+              <input type="text" name="nome" id="nome" required class="formulario__campo" autocomplete="off">
+              <label for="nome" class="formulario__nome-campo">Nome Completo</label>
+            </div>
 
-      <form action="">
-        <label for="name">
-          <span>Name</span>
-          <input type="text" id="name" name="name" required/>
-        </label>
+            <div class="formulario__inputs">
+              <input type="email" name="email" id="email" class="formulario__campo" autocomplete="off">
+              <label for="email" class="formulario__nome-campo">Email</label>
+            </div>
 
-        <label for="email">
-          <span>E-mail</span>
-          <input type="email" id="email" name="email" required/>
-        </label>
+            <div class="formulario__inputs">
+              <input type="password" name="senha" id="senha" class="formulario__campo" autocomplete="off">
+              <label for="senha" class="formulario__nome-campo">Senha</label>
+            </div>
 
-        <label for="password">
-          <span>Password</span>
-          <input type="password" id="password" name="password" required/>
-        </label>
+            <div class="formulario__inputs">
+              <input type="tel" name="telefone" id="telefone" pattern="(?\d{2}?\)? ?\d{5}\-?\d{4}" class="formulario__campo formulario__campo-menor" autocomplete="off">
+              <label for="telefone" class="formulario__nome-campo">Telefone</label>
+            </div>
 
-        <input type="submit" value="Sign Up" id="button" />
-      </form>
-    </main>
-    <section class="images">
-      <img src="../assets/img/mobile.png" alt="Mobile" />
-      <div class="circle"></div>
-    </section>
-  </body>
-</html>
+            <div class="formulario__inputs" class="formulario__campo">
+              <input type="text" name="dataNasc" id="dataNasc" class="formulario__campo formulario__campo-menor" pattern="\d{2}\/?\d{2}\/?\d{4}">
+              <label for="dataNasc" class="formulario__nome-campo">Data de Nascimento</label>
+            </div>
+
+            <div class="formulario__inputs" class="formulario__campo">
+              <input type="text" name="cpf" id="cpf" pattern="d{3}\.\d{3}\.\d{3}-\d{2}$" class="formulario__campo formulario__campo-menor" autocomplete="off">
+              <label for="cpf" class="formulario__nome-campo">CPF</label>
+            </div>
+
+
+            <div class="formulario__termos">
+              <input type="checkbox" name="termos" id="termos">
+              <label for="termos">Confirmar termos de condições</label>
+            </div>
+
+            <section class="planos">
+              <div class="plano__background-azul">
+                <div class="plano-comum">
+                  <div class="plano__cabecalho">
+                    <img src="../assets/img/velocimetroDevagar.svg">
+                    <h2 class="plano-comum__titulo">Plano Comum</h2>
+                  </div>
+                  <ul class="plano-comum__lista">
+                    <li class="lista__itens-comum">Entrega segura e em todo país</li>
+                    <li class="lista__itens-comum">Melhores preços entre as lojas</li>
+                    <li class="lista__itens-comum">Fornecedores confiáveis</li>
+                    <li class="lista__itens-comum">Pontos para utilizar em descontos</li>
+                  </ul>
+                  <input type="submit" value="Inscrever-se" class="formulario__botao formulario__botao--comum">
+                </div>
+              </div>
+
+              <div class="plano__background-rosa">
+                <div class="plano-turbinado">
+                  <div class="plano__cabecalho">
+                    <img src="../assets/img/velocimetro.svg">
+                    <h2 class="plano-turbinado__titulo">Plano Turbinado</h2>
+                  </div>
+                  <ul class="plano-turbinado__lista">
+                    <li class="lista__itens-turbinado">Frete grátis e entregas mais rápidas</li>
+                    <li class="lista__itens-turbinado">Acesso ao programa de pontos em dobro</li>
+                    <li class="lista__itens-turbinado">Atendimento personalizado para esclarecer suas dúvidas</li>
+                    <li class="lista__itens-turbinado">Brindes mensais para personalizar seu carro</li>
+                    <li class="lista__itens-turbinado">Ofertas exclusivas</li>
+                    <li class="lista__itens-turbinado">Cashback em algumas compras</li>
+                    <li class="lista__itens-turbinado">Entrega segura e em todo país </li>
+                    <li class="lista__itens-turbinado">Melhores preços entre as lojas</li>
+                    <li class="lista__itens-turbinado">Fornecedores confiáveis</li>
+                    <li class="lista__itens-turbinado">Pontos para utilizar em descontos</li>
+                  </ul>
+                  <p class="plano-turbinado__preco">apenas <span class="preco">29,90</span></p>
+                  <input type="submit" value="Inscrever-se" class="formulario__botao formulario__botao--turbinado">
+                </div>
+              </div>
+            </section>  
+          </form>
+          
+        </main>
+
+        <footer>
+          <div class="row" id="correcao">
+            <div class="col alinhar">
+              <div> <img width="100px" src="../assets/img/logo-luz.png" loading="lazy"> </div>
+              <h4 class="tite ">TURN MOTORS</h4>
+              <p id="slogan">Vem conosco. Olha o ronco!</p>
+                      <p id="copy">&copy;Turn Motors, 2022</p>
+    
+            </div>
+            <div class="col">
+              <div class="alinhar" style="margin-top: 50px;">
+                 <h4>Vamos conversar</h4>
+                              <!--form sub-->
+                              
+                                  <form>
+                                      <div >
+                                          <input type="text" id="mensagem"  placeholder="Nos envie uma mensagem">
+                                          <div class="botaoalinhar">
+                                           <button class="botao3" onclick="apagar()"><img width="24px" src="../assets/img/enviar-sombra.png" alt="Foto enviar"></button>
+                                        </div>
+                                      </div>
+                                      <!--<button>Enviar</button>-->
+                                  </form>
+                      </div>  
+            </div>
+    
+            <div class="col">
+    
+              <div class="row">
+    
+                <div class="col">
+    
+                  
+                    <ul class="separar">
+                      <li> <a href="../index.html">Home</a> </li>
+                      <li> <a href="produtos.html">Produtos</a> </li>
+                      <li> <a href="mercado.html">Mercado</a> </li>
+                    </ul>
+                  
+                </div>
+                <div class="col">
+                  <ul class="separar">
+                    <li> <a href="aboutus.html">Sobre Nós</a> </li>
+                    <li> <a href="vagas.html">Vagas</a> </li>
+                    
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col none1">
+              <div>
+                <div class="midias-sociais">
+                                    <a href="https://www.instagram.com/turn_motors/"><img class="rede-social" src="../assets/img/instagram2.png" alt="Logo instagram"></a>
+                        </div>
+                        <div class="midias-sociais">
+                                    <a href="https://twitter.com/MotorsTurn"><img class="rede-social" src="../assets/img/twitter2.png" alt="Logo Twitter"></a>
+                        </div>
+                        <div class="midias-sociais">
+                                    <a href="https://www.linkedin.com/in/turn-motors-285988252/"><img class="rede-social" src="../assets/img/linkedin3.png" alt="Logo Linkedin"></a>
+                        </div>
+                      </div>
+            </div>
+            <div class="col block" >
+              <div class="midias-sociais1">
+                <div class="midia midia1" >
+                                    <a href="https://www.instagram.com/turn_motors/"><img class="rede-social" src="../assets/img/instagram2.png" alt="Logo instagram"></a>
+                        </div>
+                        <div class="midia" >
+                                    <a href="https://twitter.com/MotorsTurn"><img class="rede-social" src="../assets/img/twitter2.png" alt="Logo Twitter"></a>
+                        </div>
+                        <div class="midia" >
+                                    <a href="https://www.linkedin.com/in/turn-motors-285988252/"><img class="rede-social" src="../assets/img/linkedin3.png" alt="Logo Linkedin"></a>
+                        </div>
+                      </div>
+            </div>
+          </div>
+          </footer>
+
+        
+    </body>
+</html
