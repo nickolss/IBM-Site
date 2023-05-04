@@ -60,13 +60,16 @@ body{
     font-size: 1rem;
 }
 
-.formulario__campo:focus + .formulario__nome-campo{
+.formulario__campo:focus + .formulario__nome-campo,
+.formulario__campo:valid + .formulario__nome-campo{
     font-size: 1rem;
     transform: translateY(-30px);
     transition: .3s;
     font-weight: 700;
     color: #014961;
 }
+
+
 
 .formulario__nome-campo{
     position: absolute;
@@ -206,5 +209,9 @@ body{
     .planos{
         flex-direction: column;   
         gap: 10px;    
+    }
+
+    .formulario__campo-menor{
+        width: 60vw;
     }
 }
