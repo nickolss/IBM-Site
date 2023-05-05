@@ -41,6 +41,13 @@ body{
     flex-direction: column;
 }
 
+.formulario__nome-campo{
+    font-size: 1rem;
+    font-weight: 700;
+    color: #014961;
+    margin: 0.5rem 0;
+}
+
 .formulario__campo{
     
     padding: 0.5rem 0;
@@ -58,23 +65,6 @@ body{
     font-weight: 700;
     color: #014961;
     font-size: 1rem;
-}
-
-.formulario__campo:focus + .formulario__nome-campo,
-.formulario__campo:valid + .formulario__nome-campo{
-    font-size: 1rem;
-    transform: translateY(-30px);
-    transition: .3s;
-    font-weight: 700;
-    color: #014961;
-}
-
-
-
-.formulario__nome-campo{
-    position: absolute;
-    top: 10px;
-    left: 12px;
 }
 
 .formulario__termos{
