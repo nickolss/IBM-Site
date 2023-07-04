@@ -30,7 +30,7 @@ USE `db_master`;
 
 CREATE TABLE `Cliente` (
   `id` int(11) NOT NULL,
-  `cpf` int(11) NOT NULL,
+  `cpf` varchar(12) NOT NULL,
   `nome` varchar(150) NOT NULL,
   `dataNascimento` date NOT NULL,
   `telefone` varchar(14) NOT NULL,
