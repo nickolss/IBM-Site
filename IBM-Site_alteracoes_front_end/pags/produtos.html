@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Produtos</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+	
+	<link rel="stylesheet" href="../assets/css/estilos-importantes.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/estilo-produtos.min.css">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+	<script type="text/javascript" src="../assets/js/java.js"></script>
+</head>
+<body>
+	<header >
+        <div class="row " id="cabecalho">
+            <div class="col ">
+                <div class="cabecalho_redes_header ">
+                    <div style="margin-right: 5px">
+                        <a class="cabeca" href="https://www.linkedin.com/in/turn-motors-285988252/" aria-label="Acesse nosso Linkedin"><img width="35px" src="../assets/img/linkedin3.png"></a>
+                    </div>
+                    <div style="margin-right: 5px">
+                        <a class="cabeca" href="https://twitter.com/MotorsTurn" aria-label="Acesse nosso Twitter"><img  width="35px" src="../assets/img/twitter2.png" aria-label="Acesse nosso Twitter"></a>
+                    </div>
+                    <div>
+                        <a class="cabeca" href="https://www.instagram.com/turn_motors/" aria-label="Acesso nosso Instagram"><img  width="35px" src="../assets/img/instagram2.png"></a>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="col-8">
+                <ul >
+                    <li > <a class="cabeca" href="../pags/produtos.html"> Produtos</a> </li>
+                    <li> <a class="cabeca" href="../pags/mercado.html"> Mercado</a> </li>
+                    <li> <a class="cabeca" href="../index.html"><img width="90px" src="../assets/img/logo-final-finalmesmo.png"></a> </li>
+                    <li> <a class="cabeca" href="../pags/aboutus.html">Sobre Nós</a> </li>
+                    <li> <a class="cabeca" href="../pags/vagas.html"> Vagas</a> </li>
+                </ul>
+            </div>
+            
+            <div class="col ">
+                <div class="cabecalho_login_header">
+                    <div >
+                        <img class="lupa" width="40px"  src="../assets/img/lupa.png" alt="Ícone de busca">
+                        
+                    </div>
+                    <div >
+                        <a class="cabeca" href="../pags/login.html"><img width="60px" src="../assets/img/conta5.png"></a>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+        
+    </header>
+	<nav id="header_search_aparecer2">
+		<nav  class="header_search_aparecer ">
+		
+		
+			<div class="container  text-center" >
+				<div  class="row align-items-center" style="height: 150px;">
+					<div class="col " style="padding: 0px 20px;">
+						<div class="header_search">
+							<div style="display: flex; justify-content: center; align-items: center;"><img width="30px" src="../assets/img/lupa.png" alt=""></div>
+							<input class="form-control input_header_search" type="text" placeholder="Pesquisar...">
+							<div style="display: flex; justify-content: center; align-items: center;"> <button type="button" class="btn-close lupa" aria-label="Close"></button></div>
+						</div>
+					</div>
+				</div>
+			
+			</div>    
+		
+	</nav>
+	</nav>
+		<nav style="box-shadow: 0px 5px 5px 0px #888;"  class="navbar  fixed-top" id="menu">
+		  <div  class="container-fluid">
+				<button style="border: none; "  class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" 
+				aria-label="Menu">
+				<span  class="navbar-toggler-icon"></span>
+				</button>
+			    <a class="navbar-brand" href="#"><img class="img-fluid" width="50px" src="../assets/img/logo-final-finalmesmo.png"></a>
+				<img class="lupa img-fluid" width="30px" src="../assets/img/lupa.png" alt="Ícone de busca">
+
+			    
+			
+		    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+		      <div style="box-shadow: 0px 2px 5px 0px #888; background-color: hsla(195, 98%, 19%, 0.600);" class="offcanvas-header">
+		        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img style="margin-right: 10px;" width="50px" src="../assets/img/logo-final-finalmesmo.png"><img width="150px" src="../assets/img/titulo.png"></h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		      </div>
+		     
+		      <div class="offcanvas-body">
+		        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+		          <li class="nav-item">
+		            <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+		          </li>
+		          <hr>
+		          <li class="nav-item">
+		            <a class="nav-link" href="../pags/login.html">Login</a>
+		          </li>
+		          <hr>
+		          <li class="nav-item dropdown">
+		            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+		              Opções
+		            </a>
+		            <ul class="dropdown-menu">
+		              <li><a class="dropdown-item" href="../pags/mercado.html">Mercado</a></li>
+		              <li><a class="dropdown-item" href="../pags/produtos.html">Produtos</a></li>
+		              <li><a class="dropdown-item" href="../pags/vagas.html">Vagas</a></li>
+		              <li>
+		                <hr class="dropdown-divider">
+		              </li>
+		              <li><a class="dropdown-item" href="../pags/aboutus.html">Sobre Nós</a></li>
+
+		            </ul>
+		          </li>
+				  <br>
+		          <br>
+		          <div class="row alinhar">
+		          	<div class="col">
+		          		<a class="link" href="https://www.linkedin.com/in/turn-motors-285988252/" aria-label="Acesse nosso Linkedin"><img  width="35px" src="../assets/img/linkedin3.png"></a>
+					
+					
+		          	</div>
+		          	<div class="col">
+		          		<a class="link" href="https://twitter.com/MotorsTurn" aria-label="Acesse nosso Twitter"><img  width="35px" src="../assets/img/twitter2.png" aria-label="Acesse nosso Twitter"></a>
+		          	</div>
+		          	<div class="col">
+		          		<a class="link" href="https://www.instagram.com/turn_motors/" aria-label="Acesso nosso Instagram"><img  width="35px" src="../assets/img/instagram2.png"></a>
+		          	</div>
+		          </div>
+		        </ul>
+		        
+		      </div>
+		    </div>
+		  </div>
+		  <nav class="header_search_aparecer ">
+		
+		
+            <div class="container  text-center" >
+                <div  class="row align-items-center" style="height: 150px;">
+                    <div class="col " style="padding: 0px 20px;">
+                        <div class="header_search">
+                            <div style="display: flex; justify-content: center; align-items: center;"><img width="30px" src="../assets/img/lupa.png" alt=""></div>
+                            <input class="form-control input_header_search" type="text" placeholder="Pesquisar...">
+                            <div style="display: flex; justify-content: center; align-items: center;"> <button type="button" class="btn-close lupa" aria-label="Close"></button></div>
+                        </div>
+                    </div>
+                </div>
+			
+            </div>    
+        
+    </nav>
+		</nav>
+	
+<nav>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<br class="espaco_diferente">
+				<br class="espaco_diferente">
+				<br class="espaco_diferente">
+				
+			 	<h1 class="pro-produtos">Personalizações</h1>
+			 	<hr>
+			</div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<div class="row">
+			<div class="col">
+				
+					<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+						<div class="carousel-inner">
+						  <div class="carousel-item active">
+							<div id="card__carroussel__produtos">
+							<div id="alturaMaxima__card__carroussel__produtos" class="card mb-3" style="max-width: 1000px; background-color: #D9D9D9; border: none; border-radius: 20px;">
+								<div class="row g-0">
+								  <div class="col-md-4" style="height: 300px; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+									<img src="../assets/img/motorCarrossel.png" class="img-fluid rounded-start" alt="...">
+								  </div>
+								  <div class="col-md-8">
+									<div class="card-body">
+									  <h5 class="card-title text-center titulo__card__carroussel_produtos">Motor</h5>
+									  <p class="card-text">Reformulado: Feito com base no original – que é removido, desmontado, limpo, inspecionado – além de, quando preciso, reparado e testado, sempre de acordo com os procedimentos descritos em seu manual de fábrica.</p>
+									  <p class="card-text">Remanufaturado: Os motores recebem uma completa mudança se comparado aos originais. O termo remanufatura se refere ao fato dessa ‘reconstrução do motor’ respeitar especificações limitadas conforme o modelo do veículo e não para descrever um motor que possui peças usadas.</p>
+									</div>
+								  </div>
+								</div>
+							  </div>
+						  </div>
+						</div>
+						  <div class="carousel-item">
+							<div id="card__carroussel__produtos">
+							<div id="alturaMaxima__card__carroussel__produtos" class="card mb-3" style="max-width: 1000px; background-color: #D9D9D9; border: none; border-radius: 20px;">
+								<div class="row g-0">
+								  <div class="col-md-4" style="height: 300px; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+									<img src="../assets/img/pneu-carrossel.png" class="img-fluid rounded-start" alt="...">
+								  </div>
+								  <div class="col-md-8">
+									<div class="card-body">
+									  <h5 class="card-title text-center titulo__card__carroussel_produtos">Pneu</h5>
+									  <p class="card-text">Pinturas lisas: Vão do branco ao preto, passando por tons de cinza e azul, vermelho ou até o laranja.</p>
+									  <p class="card-text">Pinturas personalizadas: Efeito de pigmentação, há vários pigmentos que são misturados à cor ou ao verniz que trazem total exclusividade à personalização. Rodas cromadas podem ser personalizadas também.</p>
+									  <p class="card-text">Pinturas 2 cores: Rodas com bordas de 2 cores.</p>
+									</div>
+								  </div>
+								</div>
+							  </div>
+							</div>
+						  </div>
+						  <div class="carousel-item">
+							<div id="card__carroussel__produtos">
+							<div id="alturaMaxima__card__carroussel__produtos" class="card mb-3" style="max-width: 1000px; background-color: #D9D9D9; border: none; border-radius: 20px;">
+								<div class="row g-0">
+								  <div class="col-md-4" style="height: 300px; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+									<img src="../assets/img/carroRebaixado-carrossel.png" class="img-fluid rounded-start" alt="...">
+								  </div>
+								  <div class="col-md-8">
+									<div class="card-body">
+									  <h5 class="card-title text-center titulo__card__carroussel_produtos">Rebaixamento</h5>
+									  <p class="card-text">Estilo Dropped: Estilo mais comum. Instalação de molas esportivas para o rebaixamento.</p>
+									  <p class="card-text">Slammed: As rodas são alinhadas de forma que entrem realmente para dentro dos para-lamas do veículo e isso independe de qual suspensão será usada.</p>
+									  <p class="card-text">HellaFlush: Os carros são extremamente baixos e usam rodas bem largas, normalmente com talas que vão de 9.5″ até 13″. Offset baixo, ou até mesmo negativo que dá a visibilidade da roda estar fora dos pára-lamas.</p>
+									</div>
+								  </div>
+								</div>
+							  </div>
+						  </div>
+						</div>
+						<div class="carousel-item">
+							<div id="card__carroussel__produtos">
+							<div id="alturaMaxima__card__carroussel__produtos" class="card mb-3" style="max-width: 1000px; background-color: #D9D9D9; border: none; border-radius: 20px;">
+								<div class="row g-0">
+								  <div class="col-md-4" style="height: 300px; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+									<img src="../assets/img/pinturaCarrossel.png" class="img-fluid rounded-start" alt="...">
+								  </div>
+								  <div class="col-md-8">
+									<div class="card-body">
+									  <h5 class="card-title text-center titulo__card__carroussel_produtos">Pintura</h5>
+									  <p class="card-text">Pintura sólida: Tipo mais básico, contém pigmentos de cor, geralmente nas opções branco, vermelho e preto.</p>
+									  <p class="card-text">Pintura metálica: Diante da incidência de luz, a pintura apresenta um reflexo mais intenso, aparentemente dando mais vida à cor. Efeito vibrante da tinta utilizada cria a impressão de um veículo mais limpo e brilhante.</p>
+									  <p class="card-text">Pintura perolizada: Sua base composta por pó de pérola e mica dão a sensação de haver cores diferentes no veículo, dependendo da luz e do ambiente onde se encontra..</p>
+									</div>
+								  </div>
+								</div>
+							  </div>
+						  </div>
+						</div>
+						<div class="carousel-item">
+							<div id="card__carroussel__produtos">
+							<div id="alturaMaxima__card__carroussel__produtos" class="card mb-3" style="max-width: 1000px; background-color: #D9D9D9; border: none; border-radius: 20px;">
+								<div class="row g-0">
+								  <div class="col-md-4" style="height: 300px; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+									<img src="../assets/img/modificacoesCarrossel.png" class="img-fluid rounded-start" alt="...">
+								  </div>
+								  <div class="col-md-8">
+									<div class="card-body">
+									  <h5 class="card-title text-center titulo__card__carroussel_produtos">Modificações externas e internas</h5>
+									  <p  class="card-text">Você, cliente TurnMotors, escolhe as modificações externas e internas que deseja fazer em seu veículo.</p>
+										Exemplos:
+										<ul>
+											
+											<li>Aerofólio</li>
+											<li>Personalizações nos Bancos</li>
+											<li>Caixa de Música</li>
+											<li>Vidros</li>
+											<li>Combustível</li>
+										</ul>
+									</div>
+								  </div>
+								</div>
+							  </div>
+						  </div>
+						</div>
+						<div class="carousel-item">
+							<div id="card__carroussel__produtos">
+							<div id="alturaMaxima__card__carroussel__produtos" class="card mb-3" style="max-width: 1000px; background-color: #D9D9D9; border: none; border-radius: 20px;">
+								<div class="row g-0">
+								  <div class="col-md-4" style="height: 300px; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+									<img src="../assets/img/carroAdesivoCarrossel.png" class="img-fluid rounded-start" alt="...">
+								  </div>
+								  <div class="col-md-8">
+									<div class="card-body">
+									  <h5 class="card-title text-center titulo__card__carroussel_produtos">Adesivos</h5>
+									  <p class="card-text">Se você busca inovar no estilo do seu veículo, mas sem alterar muito, adquira já adesivo. Você, cliente Turn Motors, pode escolher como será o adesivo, com a garantia que o adesivo não poderá estragar a lataria de seu automóvel.</p>
+									  
+									</div>
+								  </div>
+								</div>
+							  </div>
+						  </div>
+						</div>
+						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+						  <span  aria-hidden="true"> <img width="30px" src="../assets/img/setaEsquerdaCarrossel.png" alt=""></span>
+						  <span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+						  <span aria-hidden="true"> <img width="30px" src="../assets/img/setaDireitaCarrossel.png" alt=""></span>
+						  <span class="visually-hidden">Next</span>
+						</button>
+					  </div>
+
+
+					
+				
+				
+			</div>
+			
+			
+		</div>
+		
+	
+		<br>
+		<br>
+
+		
+		<br>
+		<div class="row">
+			<div class="col">
+				<h1 class="pro-promo">Promoção</h1>
+				<hr class="pro-pro">
+			</div>
+		</div>
+		<br>
+		<br>
+		<div class="row forte1">
+			<div class="col">
+				<div class="legal" style="display: flex; justify-content: center;">
+					<a class="pro-a" href="merc-cambio.html"><div class="pro-card-pro">
+									<div class="pro-card1-pro">
+										<div class="pro-cima">
+										 <img style="margin-top: 10px;" width="100px" src="../assets/img/cambio2.png">
+										</div>
+										<div class="pro-baixo-c">
+											<div class="pro-tite">Câmbio Automático</div>
+											<div><span class="material-symbols-outlined pro-star">star</span><span class="material-symbols-outlined pro-star">star</span><span class="material-symbols-outlined pro-star">star</span><span class="material-symbols-outlined pro-star">star</span><span class="material-symbols-outlined">star</span></div>
+											<div style="display: flex; flex-direction: row;">
+												<div style="text-decoration: line-through; color: #6E6E6E;">R$150</div> 
+												 <div style="margin-left: 15px;"><button class="pro-bnt-pro">-14%</button></div>
+											</div>
+											<div>R$130</div>
+										</div style="margin-bottom: 30px;">
+									</div>
+								</div>
+					</a>
+				</div>
+				
+			</div>
+			<div class="col">
+				<div class="legal" style="display: flex; justify-content: center;">
+					<a class="pro-a" href="merc-palheta.html"><div class="pro-card-pro">
+									<div class="pro-card1-pro">
+										<div class="pro-cima">
+										 <img style="margin-top: 20px;" width="200px" src="../assets/img/palheta2.png">
+										</div>
+										<div class="pro-baixo-p">
+											<div class="pro-tite">Palheta</div>
+											<div><span class="material-symbols-outlined pro-star">star</span><span class="material-symbols-outlined pro-star">star</span><span class="material-symbols-outlined pro-star">star</span><span class="material-symbols-outlined pro-star">star</span><span class="material-symbols-outlined">star</span></div>
+											<div style="display: flex; flex-direction: row;">
+												<div style="text-decoration: line-through; color: #6E6E6E;">R$35</div> 
+												 <div style="margin-left: 15px;"><button class="pro-bnt-pro">-29%</button></div>
+											</div>
+											<div>R$25</div>
+										</div>
+									</div>
+								</div>
+					</a>
+				</div>
+			</div>
+			<div class="col">
+				<div class="legal" style="display: flex; justify-content: center;">
+					<a class="pro-a" href="merc-volante.html"><div class="pro-card-pro">
+									<div class="pro-card1-pro">
+										<div class="pro-cima">
+										 <img style="margin-top: 20px;" width="140px" src="../assets/img/volante.png">
+										</div>
+										<div class="pro-baixo">
+											<div class="pro-tite">Volante Personalizado</div>
+											<div><span class="material-symbols-outlined pro-star">star</span><span class="material-symbols-outlined pro-star">star</span><span class="material-symbols-outlined pro-star">star</span><span class="material-symbols-outlined pro-star">star</span><span class="material-symbols-outlined">star</span></div>
+											<div style="display: flex; flex-direction: row;">
+												<div style="text-decoration: line-through; color: #6E6E6E;">R$350</div> 
+												 <div style="margin-left: 15px;"><button class="pro-bnt-pro">-15%</button></div>
+											</div>
+											<div>R$300</div>
+										</div>
+									</div>
+								</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<br>
+		
+	</div>
+	<hr class="pro-linn">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1 class="pro-produtos">Mais vendidos</h1>
+			</div>
+		</div>
+		<hr>
+	</div>
+	
+		<br>
+		<div class="row somedaqui" id="correcao">
+			<div class="col"></div>
+			<div class="col-6 "  >
+				<div style=" margin-left: 11.5px;">
+					<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+					  <div class="carousel-indicators">
+					    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+					  </div>
+					  <div class="carousel-inner">
+					    <div class="carousel-item active" data-bs-interval="10000">
+					      <a href="merc-pneu-carrossel.html"><img src="../assets/img/pneu-carrossel.png" class="d-block w-100" alt="..."></a>
+					      
+					      <div class="carousel-caption d-none d-md-block">
+					        <h5>Pneus 300R$</h5>
+					        <p>Pneus de altissíma qualidade, com material de primeira linha.</p>
+					      </div>
+					    </div>
+					    <div class="carousel-item" data-bs-interval="2000">
+					      <a href="merc-cambio.html"><img src="../assets/img/cambio-carrossel.png" class="d-block w-100" alt="..."></a>
+					      <div class="carousel-caption d-none d-md-block">
+					        <h5>Cambio de 150R$ por 130R$</h5>
+					        <p>Cambios flexíveis e de facil manuseio.</p>
+					      </div>
+					    </div>
+					    <div class="carousel-item">
+					      <a href="merc-calota.html"><img src="../assets/img/calota-carrossel.png" class="d-block w-100" alt="..."></a>
+					      <div class="carousel-caption d-none d-md-block">
+					        <h5>Calotas personalizaveís 120R$</h5>
+					        <p>Calotas brilhosas e relusentes, com personalização disponível.</p>
+					      </div>
+					    </div>
+					  </div>
+					  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+					    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					    <span class="visually-hidden">Previous</span>
+					  </button>
+					  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+					    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					    <span class="visually-hidden">Next</span>
+					  </button>
+					</div>
+				</div>
+
+			</div>
+			<div class="col"></div>
+		</div>
+		<div class="row somedaqui222" id="correcao">
+			
+			<div class="col "  >
+				<div style=" margin-left: 11.5px;">
+					<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+					  <div class="carousel-indicators">
+					    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+					  </div>
+					  <div class="carousel-inner">
+					    <div class="carousel-item active" data-bs-interval="10000">
+					      <a href="merc-pneu-carrossel.html"><img src="../assets/img/pneu-carrossel.png" class="d-block w-100" alt="..."></a>
+					      
+					      <div class="carousel-caption d-none d-md-block">
+					        <h5>Pneus 300R$</h5>
+					        <p>Pneus de altissíma qualidade, com material de primeira linha.</p>
+					      </div>
+					    </div>
+					    <div class="carousel-item" data-bs-interval="2000">
+					      <a href="merc-cambio.html"><img src="../assets/img/cambio-carrossel.png" class="d-block w-100" alt="..."></a>
+					      <div class="carousel-caption d-none d-md-block">
+					        <h5>Cambio de 150R$ por 130R$</h5>
+					        <p>Cambios flexíveis e de facil manuseio.</p>
+					      </div>
+					    </div>
+					    <div class="carousel-item">
+					      <a href="merc-calota.html"><img src="../assets/img/calota-carrossel.png" class="d-block w-100" alt="..."></a>
+					      <div class="carousel-caption d-none d-md-block">
+					        <h5>Calotas personalizaveís 120R$</h5>
+					        <p>Calotas brilhosas e relusentes, com personalização disponível.</p>
+					      </div>
+					    </div>
+					  </div>
+					  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+					    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					    <span class="visually-hidden">Previous</span>
+					  </button>
+					  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+					    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					    <span class="visually-hidden">Next</span>
+					  </button>
+					</div>
+				</div>
+
+			</div>
+			
+		</div>
+		<div class="container pro-some-pro" >
+			<div class="row">
+				<div class="col">
+					<div style="text-align: center; margin-top: 30px;">
+						<h3>Pneu 300R$</h3>
+						<p>Pneus de altissíma qualidade, com material de primeira linha.</p>
+						<button type="button" class="btn btn-danger">Comprar</button>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col">
+					<div style="text-align: center; margin: 10px 0px;">
+						<h3>Cambio de 150R$ por 130R$</h3>
+						<p>Cambios flexíveis e de facil manuseio.</p>
+						<button type="button" class="btn btn-danger">Comprar</button>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col">
+					<div style="text-align: center;">
+						<h3>Calotas personalizaveís 120R$</h3>
+						<p>Calotas brilhosas e relusentes, com personalização disponível.</p>
+						<button type="button" class="btn btn-danger">Comprar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	<br>
+	<br>
+	<br>
+	<hr class="pro-linn">
+	<br>
+	<div class="container">
+		<div class="row forte">
+			<div class="col ">
+				<div class="legal" style="display: flex; justify-content: center;">
+					<a class="pro-a" href="merc-capasol.html"><div class="pro-pro-card1">
+						<div class="pro-pro-card2">
+							<div class="pro-cima"> <img width="220px" src="../assets/img/capa-sol.png"> </div>
+							<div style="margin-left: 10px"><h5>Capa de sol</h5>
+							<h5>R$100</h5></div>
+							
+						</div>
+					</div></a>
+				</div>
+				
+			</div>
+			<div class="col">
+				<div class="legal" style="display: flex; justify-content: center;">
+					<a class="pro-a" href="merc-oleo.html"><div class="pro-pro-card1">
+						<div class="pro-pro-card2">
+							<div class="pro-cima1"> <img width="120px" src="../assets/img/oleo.jpg"> </div>
+							<div style="margin-left: 10px; margin-top: 20px;"><h5>Óleo de motor</h5>
+							<h5>R$40</h5></div>
+							
+						</div>
+					</div></a>
+				</div>
+				
+			</div>
+			<div class="col">
+				<div class="legal" style="display: flex; justify-content: center;">
+					<a class="pro-a" href="merc-tapete.html"><div class="pro-pro-card1">
+						<div class="pro-pro-card2">
+							<div class="pro-cima" style="margin-top: 10px"> <img width="170px" src="../assets/img/tapete.png"> </div>
+							<div style="margin-left: 10px; margin-top:10px;"><h5>Tapete</h5>
+							<h5>R$40,00 (unidade)</h5></div>
+							
+						</div>
+					</div></a>
+				</div>
+				
+			</div>
+		</div>
+		<br>
+		<br>
+		<div class="row forte">
+			<div class="col">
+				<div class="legal" style="display: flex; justify-content: center;">
+					<a class="pro-a" href="merc-farol.html"><div class="pro-pro-card1">
+						<div class="pro-pro-card2">
+							<div class="pro-cima" style="margin-top: 10px;"> <img width="200px" src="../assets/img/farol.png"> </div>
+							<div style="margin-left: 10px; margin-top: 20px;"><h5>Farol</h5>
+							<h5>R$300</h5></div>
+							
+						</div>
+					</div></a>
+				</div>
+				
+			</div>
+			<div class="col">
+				<div class="legal" style="display: flex; justify-content: center;">
+					<a class="pro-a" href="merc-vela.html"><div class="pro-pro-card1">
+						<div class="pro-pro-card2">
+							<div class="pro-cima"> <img width="230px" src="../assets/img/vela-motor.png"> </div>
+							<div style="margin-left: 10px"><h5>Vela de ignição</h5>
+							<h5>R$25</h5></div>
+							
+						</div>
+					</div></a>
+				</div>
+				
+			</div>
+			<div class="col">
+				<div style="display: flex; justify-content: center;">
+					<a class="pro-a" href="merc-calota.html"><div class="pro-pro-card1">
+						<div class="pro-pro-card2">
+							<div class="pro-cima"> <img width="230px" src="../assets/img/calota2.png"> </div>
+							<div style="margin-left: 10px"><h5>Calota</h5>
+							<h5>R$120</h5></div>
+							
+						</div>
+					</div></a>
+				</div>
+				<div id="action" style="text-align: end;">
+				 <input class="pro-bnt-ver" type="button" value="Ver Mais">
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<br>
+	<br>
+	<div class="container" id="sumiu" >
+		<div class="row forte">
+			<div class="col ">
+				<div class="legal" style="display: flex; justify-content: center;">
+					<a class="pro-a" href="merc-remoleo.html"><div class="pro-pro-card1">
+						<div class="pro-pro-card2">
+							<div  style="margin-bottom: -20px; margin-top: -25px; transform: rotate(60deg); "> <img  width="60px" src="../assets/img/removedor-oleo.png"> </div>
+							<div style="margin-left: 10px"><h5>Removedor de Óleo</h5>
+							<h5>R$40,00</h5></div>
+							
+						</div>
+					</div></a>
+				</div>
+				
+			</div>
+			<div class="col">
+				<div class="legal" style="display: flex; justify-content: center;">
+					<a class="pro-a" href="merc-remgraxa.html"><div class="pro-pro-card1">
+						<div class="pro-pro-card2">
+							<div style="margin-bottom: -40px; margin-top: -30px; transform: rotate(60deg);"> <img width="100px" src="../assets/img/removedor-graxa.png"> </div>
+							<div style="margin-left: 10px; margin-top: 20px;"><h5>Removedor de Graxa</h5>
+							<h5>R$35,00</h5></div>
+							
+						</div>
+					</div></a>
+				</div>
+				
+			</div>
+			<div class="col">
+				<div class="legal" style="display: flex; justify-content: center;">
+					<a class="pro-a" href="merc-pastilha.html"><div class="pro-pro-card1">
+						<div class="pro-pro-card2">
+							<div class="pro-cima" style="margin-top: 10px;"> <img width="230px" src="../assets/img/pastilha-freio.png"> </div>
+							<div style="margin-left: 10px; margin-top:10px;"><h5>Pastilha de Freio</h5>
+							<h5>R$40,00</h5></div>
+							
+						</div>
+					</div></a>
+				</div>
+				
+			</div>
+		</div>
+		<br>
+		<br>
+		<div class="row forte">
+			<div class="col">
+				<div class="legal" style="display: flex; justify-content: center;">
+					<a class="pro-a" href="merc-fusível.html"><div class="pro-pro-card1">
+						<div class="pro-pro-card2">
+							<div class="pro-cima" style="margin-top: 10px;"> <img width="160px" src="../assets/img/fusivel.png"> </div>
+							<div style="margin-left: 10px; margin-top: 20px;"><h5>Fusível Automotivo</h5>
+							<h5>R$1,00 (a unidade)</h5></div>
+							
+						</div>
+					</div></a>
+				</div>
+				
+			</div>
+			<div class="col">
+				<div class="legal" style="display: flex; justify-content: center;">
+					<a class="pro-a" href="merc-extintor.html"><div class="pro-pro-card1">
+						<div class="pro-pro-card2">
+							<div class="pro-cima" style="margin-bottom: 10px"> <img width="60px" src="../assets/img/extintor.png"> </div>
+							<div style="margin-left: 10px"><h5>Extintor de Incêndio Automotivo</h5>
+							<h5>R$90,00</h5></div>
+							
+						</div>
+					</div></a>
+				</div>
+				
+			</div>
+			<div class="col">
+				<div style="display: flex; justify-content: center;">
+					<a class="pro-a" href="merc-filtro.html"><div class="pro-pro-card1">
+						<div class="pro-pro-card2">
+							<div class="pro-cima" style="margin-bottom:5px"> <img width="120px" src="../assets/img/filtro-oleo2.png"> </div>
+							<div style="margin-left: 10px"><h5>Filtro de óleo</h5>
+							<h5>R$30,00</h5></div>
+							
+						</div>
+					</div></a>
+				</div>
+				<div style="text-align: end;">
+				 <input class="pro-bnt-ver" type="button" value="Ver Menos" id="action1">
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+	<hr class="pro-linn">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1 class="pro-promo">Sobre nosso produtos</h1>
+				<p class="pro-formatar">Nossa oficina preza por produtos de altíssima qualidade,
+					buscando sempre o que está em ascêndencia no mercado, tudo licenciado e atestado, com qualidade assegurado pela Anvisa. Produtos fornecidos e distribuídos pela Giancar Distribuidora Auto Peças.</p>
+			</div>
+		</div>
+		<br>
+		<br>
+		<div class="row forte">
+			<div class="col">
+				<div class="legal" style="display: flex; justify-content: center;">
+					<div class="pro-aumentar">
+						<div class="pro-pro-pro-card1">
+							<div class="pro-pro-pro-card2">
+								<div style="text-align: center;">
+									<div style="font-size: 1.2em; color: #014961; margin-top: 15px; margin-bottom: 30px;">Embalagem e Envio</div>
+									<div style="margin-top: 60px;"> <img width="150px" src="../assets/img/entrega.png"> </div>
+									<div style="font-size: 1.1em; color: #014961; margin-top: 50px;">Envio seguro e rápido</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="legal" style="display: flex; justify-content: center;">
+					<div class="pro-aumentar">
+						<div class="pro-pro-pro-card1">
+							<div class="pro-pro-pro-card2">
+								<div style="text-align: center;">
+									<div style="font-size: 1.2em; color: #014961; margin-top: 15px; margin-bottom: 30px;">Qualidade das peças</div>
+									<div style="margin-bottom: 30px;"> <img width="150px" src="../assets/img/qualidade.png"> </div>
+									<div style="font-size: 1.1em; color: #014961" >Peças de primeira linha</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="legal" style="display: flex; justify-content: center;">
+					<div class="pro-aumentar">
+						<div class="pro-pro-pro-card1">
+							<div class="pro-pro-pro-card2">
+								<div style="text-align: center;">
+									<div style="font-size: 1.2em; color: #014961; margin-top: 15px; margin-bottom: 30px;">Teste e Certificação</div>
+									<div style="margin-bottom: 30px;"> <img width="150px" src="../assets/img/produto.png"> </div>
+									<div style="font-size: 1.1em; color: #014961">Selo de aprovação</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="legal" style="display: flex; justify-content: center;">
+					<div class="pro-aumentar">
+						<div class="pro-pro-pro-card1">
+							<div class="pro-pro-pro-card2">
+								<div style="text-align: center;">
+									<div style="font-size: 1.2em; color: #014961; margin-top: 15px; margin-bottom: 30px;">Garantia</div>
+									<div style="margin-bottom: 30px;"> <img width="150px" src="../assets/img/garantia.png"> </div>
+									<div style="font-size: 1.1em; color: #014961">Garantia estendida</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div style="display: flex; justify-content: center;">
+					<div class="pro-aumentar">
+						<div class="pro-pro-pro-card1">
+							<div class="pro-pro-pro-card2">
+								<div style="text-align: center;">
+									<div style="font-size: 1.2em; color: #014961; margin-top: 15px; margin-bottom: 30px;">Atendimento especial</div>
+									<div style="margin-bottom: 30px;"> <img width="150px" src="../assets/img/atendimento.png"> </div>
+									<div style="font-size: 1.1em; color: #014961">Você se sentirá em casa</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+</nav>
+
+
+<br>
+<br>
+
+<footer>
+	<div class="row" id="correcao">
+	  <div class="col alinhar">
+		<div> <img width="100px" src="../assets/img/logo-luz.png" loading="lazy"> </div>
+		<h4 class="tite ">TURN MOTORS</h4>
+		<p id="slogan">Venha conosco. Olha o ronco!</p>
+				<p id="copy">&copy;Turn Motors, 2022</p>
+
+	  </div>
+	  <div class="col">
+		<div class="alinhar" style="margin-top: 50px;">
+		   <h4>Contate-nos aqui!!!</h4>
+						<!--form sub-->
+						
+							<form>
+								<div >
+									<input type="text" id="mensagem"  placeholder="Nos envie uma mensagem">
+									<div class="botaoalinhar">
+									 <button class="botao3" onclick="apagar()"><img width="24px" src="../assets/img/enviar-sombra.png" alt="Foto enviar"></button>
+								  </div>
+								</div>
+								<!--<button>Enviar</button>-->
+							</form>
+				</div>  
+	  </div>
+
+	  <div class="col">
+
+		<div class="row">
+
+		  <div class="col">
+
+			
+			  <ul class="separar">
+				<li> <a href="../index.html">Home</a> </li>
+				<li> <a href="produtos.html">Produtos</a> </li>
+				<li> <a href="mercado.html">Mercado</a> </li>
+			  </ul>
+			
+		  </div>
+		  <div class="col">
+			<ul class="separar">
+			  <li> <a href="aboutus.html">Sobre Nós</a> </li>
+			  <li> <a href="vagas.html">Vagas</a> </li>
+			  <li> <a href="desenvolvedores.html">Desenvolvedores</a> </li>
+			  
+			</ul>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col none1">
+		<div>
+		  <div class="midias-sociais">
+							  <a href="https://www.instagram.com/turn_motors/"><img class="rede-social" src="../assets/img/instagram2.png" alt="Logo instagram"></a>
+				  </div>
+				  <div class="midias-sociais">
+							  <a href="https://twitter.com/MotorsTurn"><img class="rede-social" src="../assets/img/twitter2.png" alt="Logo Twitter"></a>
+				  </div>
+				  <div class="midias-sociais">
+							  <a href="https://www.linkedin.com/in/turn-motors-285988252/"><img class="rede-social" src="../assets/img/linkedin3.png" alt="Logo Linkedin"></a>
+				  </div>
+				</div>
+	  </div>
+	  <div class="col block" >
+		<div class="midias-sociais1">
+		  <div class="midia midia1" >
+							  <a href="https://www.instagram.com/turn_motors/"><img class="rede-social" src="../assets/img/instagram2.png" alt="Logo instagram"></a>
+				  </div>
+				  <div class="midia" >
+							  <a href="https://twitter.com/MotorsTurn"><img class="rede-social" src="../assets/img/twitter2.png" alt="Logo Twitter"></a>
+				  </div>
+				  <div class="midia" >
+							  <a href="https://www.linkedin.com/in/turn-motors-285988252/"><img class="rede-social" src="../assets/img/linkedin3.png" alt="Logo Linkedin"></a>
+				  </div>
+				</div>
+	  </div>
+	</div>
+	</footer>
+
+	<script src="../assets/js/carroussel.js"></script>
+	<script src="../assets/js/java1.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Turn Motors | Mercado</title>
+	  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+      
+      <link rel="stylesheet" href="../assets/css/mercado.min.css">
+      <link rel="stylesheet" href="../assets/css/estilos-importantes.css">
+	  <script type="text/javascript" src="../assets/js/java2.js" defer></script>
+    
+      <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+      <script type="text/javascript" src="../assets/js/java.js"></script>
+</head>
+<body>
+	<header >
+        <div class="row " id="cabecalho">
+            <div class="col ">
+                <div class="cabecalho_redes_header ">
+                    <div style="margin-right: 5px">
+                        <a class="cabeca" href="https://www.linkedin.com/in/turn-motors-285988252/" aria-label="Acesse nosso Linkedin"><img width="35px" src="../assets/img/linkedin3.png"></a>
+                    </div>
+                    <div style="margin-right: 5px">
+                        <a class="cabeca" href="https://twitter.com/MotorsTurn" aria-label="Acesse nosso Twitter"><img  width="35px" src="../assets/img/twitter2.png" aria-label="Acesse nosso Twitter"></a>
+                    </div>
+                    <div>
+                        <a class="cabeca" href="https://www.instagram.com/turn_motors/" aria-label="Acesso nosso Instagram"><img  width="35px" src="../assets/img/instagram2.png"></a>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="col-8">
+                <ul >
+                    <li > <a class="cabeca" href="../pags/produtos.html"> Produtos</a> </li>
+                    <li> <a class="cabeca" href="../pags/mercado.html"> Mercado</a> </li>
+                    <li> <a class="cabeca" href="../index.html"><img width="90px" src="../assets/img/logo-final-finalmesmo.png"></a> </li>
+                    <li> <a class="cabeca" href="../pags/aboutus.html">Sobre Nós</a> </li>
+                    <li> <a class="cabeca" href="../pags/vagas.html"> Vagas</a> </li>
+                </ul>
+            </div>
+            
+            <div class="col ">
+                <div class="cabecalho_login_header">
+                    <div >
+                        <img class="lupa" width="40px"  src="../assets/img/lupa.png" alt="Ícone de busca">
+                        
+                    </div>
+                    <div >
+                        <a class="cabeca" href="../pags/login.html"><img width="60px" src="../assets/img/conta5.png"></a>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+        
+    </header>
+  <nav id="header_search_aparecer2">
+    <nav  class="header_search_aparecer ">
+    
+    
+      <div class="container  text-center" >
+        <div  class="row align-items-center" style="height: 150px;">
+          <div class="col " style="padding: 0px 20px;">
+            <div class="header_search">
+              <div style="display: flex; justify-content: center; align-items: center;"><img width="30px" src="../assets/img/lupa.png" alt=""></div>
+              <input class="form-control input_header_search" type="text" placeholder="Pesquisar...">
+              <div style="display: flex; justify-content: center; align-items: center;"> <button type="button" class="btn-close lupa" aria-label="Close"></button></div>
+            </div>
+          </div>
+        </div>
+      
+      </div>    
+    
+  </nav>
+  </nav>
+    <nav style="box-shadow: 0px 5px 5px 0px #888;"  class="navbar  fixed-top" id="menu">
+      <div  class="container-fluid">
+        <button style="border: none; "  class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" 
+        aria-label="Menu">
+        <span  class="navbar-toggler-icon"></span>
+        </button>
+          <a class="navbar-brand" href="#"><img class="img-fluid" width="50px" src="../assets/img/logo-final-finalmesmo.png"></a>
+        <img class="lupa img-fluid" width="30px" src="../assets/img/lupa.png" alt="Ícone de busca">
+  
+          
+      
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div style="box-shadow: 0px 2px 5px 0px #888; background-color: hsla(195, 98%, 19%, 0.600);" class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img style="margin-right: 10px;" width="50px" src="../assets/img/logo-final-finalmesmo.png"><img width="150px" src="../assets/img/titulo.png"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+         
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+              </li>
+              <hr>
+              <li class="nav-item">
+                <a class="nav-link" href="../pags/login.html">Login</a>
+              </li>
+              <hr>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Opções
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="../pags/mercado.html">Mercado</a></li>
+                  <li><a class="dropdown-item" href="../pags/produtos.html">Produtos</a></li>
+                  <li><a class="dropdown-item" href="../pags/vagas.html">Vagas</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="../pags/aboutus.html">Sobre Nós</a></li>
+  
+                </ul>
+              </li>
+          <br>
+              <br>
+              <div class="row alinhar">
+                <div class="col">
+                  <a class="link" href="https://www.linkedin.com/in/turn-motors-285988252/" aria-label="Acesse nosso Linkedin"><img  width="35px" src="../assets/img/linkedin3.png"></a>
+          
+          
+                </div>
+                <div class="col">
+                  <a class="link" href="https://twitter.com/MotorsTurn" aria-label="Acesse nosso Twitter"><img  width="35px" src="../assets/img/twitter2.png" aria-label="Acesse nosso Twitter"></a>
+                </div>
+                <div class="col">
+                  <a class="link" href="https://www.instagram.com/turn_motors/" aria-label="Acesso nosso Instagram"><img  width="35px" src="../assets/img/instagram2.png"></a>
+                </div>
+              </div>
+            </ul>
+            
+          </div>
+        </div>
+      </div>
+      <nav class="header_search_aparecer ">
+    
+    
+            <div class="container  text-center" >
+                <div  class="row align-items-center" style="height: 150px;">
+                    <div class="col " style="padding: 0px 20px;">
+                        <div class="header_search">
+                            <div style="display: flex; justify-content: center; align-items: center;"><img width="30px" src="../assets/img/lupa.png" alt=""></div>
+                            <input class="form-control input_header_search" type="text" placeholder="Pesquisar...">
+                            <div style="display: flex; justify-content: center; align-items: center;"> <button type="button" class="btn-close lupa" aria-label="Close"></button></div>
+                        </div>
+                    </div>
+                </div>
+      
+            </div>    
+        
+    </nav>
+    </nav>
+
+<nav>
+	<br class="espaco369">
+	<br class="espaco369">
+	<div class="container vg-sumir ">
+		<div class="row" id="correcao">
+			<div class="col-7">
+				<div id="box" style="text-align: end; margin: 70px 0px; margin-left: 95px;">
+					<img class="vg-img" id="img-adesivo" width="650px" src="../assets/img/farol.png">
+					<label for="img-adesivo"></label>
+				</div>
+				
+			</div>
+			<div class="col">
+				<div style="margin-top: 75px; margin-right: 170px;">
+					<h1 class="vg-tite">Farol</h1>
+					<img  width="30px" src="../assets/img/estrela.png"><img style="margin: 0px 10px"  width="30px" src="../assets/img/estrela.png"><img  width="30px" src="../assets/img/estrela.png"><img style="margin: 0px 10px" width="30px" src="../assets/img/estrela.png"><img  width="30px" src="../assets/img/estrela.png">
+					<h2 style="margin-top: 10px; font-weight: bold;">R$300,00</h2>
+					<h3 style="font-weight: bold;">Sobre este item:</h3>
+					<p style="font-size: 1.1em;"> O Kit de Lâmpadas Turn Motors é a opção perfeita para personalizar o veículo com qualidade e praticidade. Sem a necessidade de grandes adaptações, esse acessório proporciona iluminação e estilo similares ao Xenon de 6000K, com a mesma tonalidade branca levemente azulada.</p>
+					<a class="vg-b" href="conf-compra.html"><button class="vg-btn">Comprar</button></a> 
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container vg-aparece " >
+		<div class="row" >
+			<div class="col alinhar">
+				<div class="" id="box1" style="margin-top: 50px;">
+					<img class="vg-img1 img-fluid "  src="../assets/img/farol.png">
+				</div>
+				<br>
+				<br>
+				<div>
+					<h1 class="vg-tite">Adesivo</h1>
+					<img  width="30px" src="../assets/img/estrela.png"><img style="margin: 0px 10px"  width="30px" src="../assets/img/estrela.png"><img  width="30px" src="../assets/img/estrela.png"><img style="margin: 0px 10px" width="30px" src="../assets/img/estrela.png"><img class=""  width="30px" src="../assets/img/estrela.png">
+					<h2 style="margin-top: 10px; margin-bottom: 50px; font-weight: bold;">R$200,00</h2>
+					<h3 style="font-weight: bold;">Sobre este item:</h3>
+					<p class="" style="font-size: 1.1em;">Se você busca inovar no estilo do seu veículo, mas sem alterar muito, adquira já adesivo. Você, cliente Turn Motors, pode escolher como será o adesivo, com a garantia que o adesivo não poderá estragar a lataria de seu automóvel</p>
+					<a class="vg-b" href="conf-compra.html"><button class="vg-btn">Comprar</button></a> 
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<hr class="vg-linha">
+	<div class="row " id="correcao">
+		<div class="col">
+			<h1 class="vg-titulo1 ">Metódos de Pagamentos</h1>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div class="row vg-sumiu1" id="correcao">
+		<div class="col">
+			<div style="text-align: center;">
+				<div style="font-size: 2em">Cartão</div>
+				<div style="font-size: 1.3em; margin-right: 230px;">Débito</div>
+				<div>
+					<img width="100px" src="../assets/img/visa.png">
+					<img width="80px" src="../assets/img/master.png">
+					<img width="100px" src="../assets/img/elo.png">
+				</div>
+				<br>
+				<div style="font-size: 1.3em; margin-right: 230px;">Crédito</div>
+				<div>
+					<img width="100px" src="../assets/img/visa.png">
+					<img width="80px" src="../assets/img/master.png">
+					<img width="100px" src="../assets/img/elo.png">
+				</div>
+				<div style="margin-top: 10px"> <p>Até 12x sem juros. </p></div>
+			</div>
+		</div>
+		<div class="col">
+			<div style="text-align: center;">
+				<div style="font-size: 2em">Boleto</div>
+				<img width="150px" src="../assets/img/boleto.png">
+				<p>O boleto será gerado após a finalização de sua compra. Imprima e pague no banco ou pague pela internet utilizando o código de barras do boleto.</p>
+			</div>
+		</div>
+		<div class="col">
+			<div style="text-align: center;">
+				<div style="font-size: 2em; margin-bottom: 13px;">Pix</div>
+				<img style="margin-bottom: 10px;" width="130px" src="../assets/img/pix.png">
+				<p>O pagamento é instantâneo e só pode ser à vista. 10% off.</p>
+			</div>
+		</div>
+	</div>
+	<div class="row vg-aparece1" id="correcao">
+		<div class="col alinhar">
+			<div>
+				<div style="font-size: 2em">Cartão</div>
+				<div style="font-size: 1.3em; margin-right: 230px;">Débito</div>
+				<div>
+					<img width="100px" src="../assets/img/visa.png">
+					<img width="80px" src="../assets/img/master.png">
+					<img width="100px" src="../assets/img/elo.png">
+				</div>
+				<br>
+				<div style="font-size: 1.3em; margin-right: 230px;">Crédito</div>
+				<div>
+					<img width="100px" src="../assets/img/visa.png">
+					<img width="80px" src="../assets/img/master.png">
+					<img width="100px" src="../assets/img/elo.png">
+				</div>
+				<div style="margin-top: 10px"> <p>Até 12x sem juros. </p></div>
+			</div>
+			<br>
+			<hr>
+			<br>
+			<div>
+				<div style="font-size: 2em">Boleto</div>
+				<img width="150px" src="../assets/img/boleto.png">
+				<p>O boleto será gerado após a finalização de sua compra. Imprima e pague no banco ou pague pela internet utilizando o código de barras do boleto.</p>
+			</div>
+			<br>
+			<hr>
+			<br>
+			<div>
+				<div style="font-size: 2em; margin-bottom: 13px;">Pix</div>
+				<img style="margin-bottom: 10px;" width="130px" src="../assets/img/pix.png">
+				<p>O pagamento é instantâneo e só pode ser à vista. 10% off.</p>
+			</div>
+		</div>
+	</div>
+	<hr class="vg-linha">
+	
+	<div class="container" id="vg-somee">
+		<div class="row " id="correcao">
+			<div class="col"></div>
+			<div class="col-7 alinhar">
+				<div>
+					<h1 class="vg-titulo1">Métodos de Envio</h1>
+					<p>Nós, da Turn Motors, oferecemos métodos de envio personalizavéis do pedido, para a sua residência. Para fazer isso basta clicar em comprar e escolher as opções disponíveis. Ou opte por buscar seu veículo em nossa oficina. </p>
+				</div>
+				<br>
+				<div>
+					<h2 style="color: #014961;">Teve algum problema?</h2>
+					<p>Entre em contato conosco pelo botão abaixo.</p>
+
+					<a href=""><button id="vg-cor-btn" type="button" class="btn btn-primary">Precisa de Ajuda?</button></a> 
+				</div>
+			</div>
+			<div class="col "></div>
+		</div>
+
+	</div>
+	<div class="container" id="vg-aparecee">
+		<div class="row" id="correcao">
+			
+			<div class="col alinhar">
+				<div>
+					<h1 class="vg-titulo1">Métodos de Envio</h1>
+					<p>Nós, da Turn Motors, oferecemos métodos de envio personalizavéis do pedido, para a sua residência. Para fazer isso basta clicar em comprar e escolher as opções disponíveis. Ou opte por buscar seu veículo em nossa oficina. </p>
+				</div>
+				<br>
+				<div>
+					<h2 style="color: #014961;">Teve algum problema?</h2>
+					<p>Entre em contato conosco pelo botão abaixo.</p>
+
+					<a href=""><button id="vg-cor-btn" type="button" class="btn btn-primary">Precisa de Ajuda?</button></a> 
+				</div>
+			</div>
+			
+		</div>
+
+	</div>
+	<br>
+	<br>
+	<br>
+
+</nav>
+
+
+<footer>
+	<div class="row" id="correcao">
+	  <div class="col alinhar">
+		<div> <img width="100px" src="../assets/img/logo-luz.png" loading="lazy"> </div>
+		<h4 class="tite ">TURN MOTORS</h4>
+		<p id="slogan">Venha conosco. Olha o ronco!</p>
+				<p id="copy">&copy;Turn Motors, 2022</p>
+
+	  </div>
+	  <div class="col">
+		<div class="alinhar" style="margin-top: 50px;">
+		   <h4>Contate-nos aqui!!!</h4>
+						<!--form sub-->
+						
+							<form>
+								<div >
+									<input type="text" id="mensagem"  placeholder="Nos envie uma mensagem">
+									<div class="botaoalinhar">
+									 <button class="botao3" onclick="apagar()"><img width="24px" src="../assets/img/enviar-sombra.png" alt="Foto enviar"></button>
+								  </div>
+								</div>
+								<!--<button>Enviar</button>-->
+							</form>
+				</div>  
+	  </div>
+
+	  <div class="col">
+
+		<div class="row">
+
+		  <div class="col">
+
+			
+			  <ul class="separar">
+				<li> <a href="../index.html">Home</a> </li>
+				<li> <a href="produtos.html">Produtos</a> </li>
+				<li> <a href="mercado.html">Mercado</a> </li>
+			  </ul>
+			
+		  </div>
+		  <div class="col">
+			<ul class="separar">
+			  <li> <a href="aboutus.html">Sobre Nós</a> </li>
+			  <li> <a href="vagas.html">Vagas</a> </li>
+			  <li> <a href="desenvolvedores.html">Desenvolvedores</a> </li>
+			  
+			</ul>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col none1">
+		<div>
+		  <div class="midias-sociais">
+							  <a href="https://www.instagram.com/turn_motors/"><img class="rede-social" src="../assets/img/instagram2.png" alt="Logo instagram"></a>
+				  </div>
+				  <div class="midias-sociais">
+							  <a href="https://twitter.com/MotorsTurn"><img class="rede-social" src="../assets/img/twitter2.png" alt="Logo Twitter"></a>
+				  </div>
+				  <div class="midias-sociais">
+							  <a href="https://www.linkedin.com/in/turn-motors-285988252/"><img class="rede-social" src="../assets/img/linkedin3.png" alt="Logo Linkedin"></a>
+				  </div>
+				</div>
+	  </div>
+	  <div class="col block" >
+		<div class="midias-sociais1">
+		  <div class="midia midia1" >
+							  <a href="https://www.instagram.com/turn_motors/"><img class="rede-social" src="../assets/img/instagram2.png" alt="Logo instagram"></a>
+				  </div>
+				  <div class="midia" >
+							  <a href="https://twitter.com/MotorsTurn"><img class="rede-social" src="../assets/img/twitter2.png" alt="Logo Twitter"></a>
+				  </div>
+				  <div class="midia" >
+							  <a href="https://www.linkedin.com/in/turn-motors-285988252/"><img class="rede-social" src="../assets/img/linkedin3.png" alt="Logo Linkedin"></a>
+				  </div>
+				</div>
+	  </div>
+	</div>
+	</footer>
+
+
+
+
+</body>
+</html>
