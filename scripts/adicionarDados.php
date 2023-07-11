@@ -15,7 +15,7 @@ $dataCriacaoConta = date('Y-m-d');
 
 $telefone = str_replace(["(", ")", "-"], "", $telefone); //Retirado os parênteses e - do telefone
 
-
+    
 
 $sqlInsert = "INSERT INTO `Cliente`(`cpf`, `nome`, `dataNascimento`, `telefone`, `email`, `senha`, `plano`, `dataCriacaoConta`) VALUES ('$cpf','$nomeCompleto','$dataNasc','$telefone','$email','$senha','$plano','$dataCriacaoConta')";
 $cadastrarCliente = $pdo->prepare($sqlInsert);
