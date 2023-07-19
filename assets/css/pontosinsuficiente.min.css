@@ -1,0 +1,108 @@
+.div-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 7vw;
+    color: #FF7769;
+}
+
+h2{
+    font-size: 4vw;
+    margin-bottom: 5%;
+    font-weight: medium;
+    color: #004164;
+}
+
+#botaoVoltar{
+    border-radius: 20px;
+    padding: 10px 100px;
+    background-color: #FF7769;
+    cursor: pointer;
+}
+
+#botaoVoltar:hover {
+    background-color: #eb6d5f;
+    color: white;
+    text-decoration: none;
+}
+
+#img{
+    margin-top: 1%;
+    width: 35vw;
+}
+
+@media only screen and (max-width: 1455px){
+    h1{
+        font-size: 6em;
+    }
+
+    h2{
+        font-size: 3em;
+    }
+
+    #img{
+        margin-top: 1%;
+        width: 40vw;
+    }
+}
+
+@media only screen and (max-width: 1340px){
+    #botaoVoltar{
+        padding: 10px 80px;
+    }
+}
+
+@media only screen and (max-width: 992px){
+    h1{
+        font-size: 5em;
+    }
+
+    h2{
+        font-size: 2em;
+    }
+
+    #img{
+        margin-top: 1%;
+        width: 50vw;
+    }
+}
+
+@media only screen and (max-width: 850px){
+    .div-main{
+        flex-direction: column-reverse;
+    }
+
+    h1{
+        text-align: center;
+        font-size: 3em;
+    }
+
+    h2{
+        text-align: center;
+        margin-bottom: 9%;
+        font-size: 2em;
+    }
+
+    #botaoVoltar{
+        text-align: center;
+        padding: 10px 125px;
+    }
+
+    #img{
+        margin-top: 1%;
+        width: 60vw;
+    }
+}
+
+@media only screen and (max-width: 750px){
+    #img{
+        margin-top: 25%;
+    }
+}
+
+
+
