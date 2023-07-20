@@ -1,0 +1,59 @@
+*{
+    font-family: "Inter" , sans-serif;
+}
+
+.principal{
+    margin: 1.5rem 0.5rem;
+}
+
+.banner{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #01496199;
+    font-weight: 700;
+    border-radius: 20px;    
+}
+
+.banner__titulo{
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.banner__imagem{
+    width: min(250px, 500px);
+}
+
+.banner__link{
+    color: #004762;
+    text-decoration: underline;
+}
+
+.item__imagem , .beneficios__imagem , .como-ganhar__imagem, .como-trocar__imagem{
+    max-width: 50px;
+}
+
+.informacoes-beneficios{
+    max-width: 85vw;
+    margin: 1rem auto;
+}
+
+.beneficios__header{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.beneficios__titulo , .como-ganhar__titulo , .como-trocar__titulo{
+    color: #FC7469;
+    font-weight: 600;
+}
+
+.lista__item{
+    list-style: none;
+}
+
+.item__titulo{
+    color: #014961;
+    font-weight: bold;
+}
