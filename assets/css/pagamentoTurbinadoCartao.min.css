@@ -114,6 +114,12 @@ input[type=radio]{
     transition-duration: 0.3s;
 }
 
+.botao__link{
+    border: none;
+    background-color: #FF7769;
+    color: #fff;
+}
+
 #botaoInscrever:hover{
     text-decoration: none;
     color: white;
