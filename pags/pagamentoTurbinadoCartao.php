@@ -1,3 +1,8 @@
+<?php 
+  date_default_timezone_set("America/Sao_Paulo");
+  $dataAtual = date("Y-m-d");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -120,7 +125,7 @@
                 <form action="" method="">
                     <div id="div__inputCartao">
                         <input class="inputCartao" type="number" name="numeroCartao" id="numeroCartao" placeholder="Número do Cartão" required>
-                        <input class="inputCartao" type="date" name="validadeCartao" id="validadeCartao" placeholder="Data de Validade" required>
+                        <input class="inputCartao" type="date" name="validadeCartao" id="validadeCartao" placeholder="Data de Validade" min="<?= $dataAtual ?>" required>
                         <input class="inputCartao" type="text" name="cvvCartao" id="cvvCartao" placeholder="CVV" required maxlength="3" pattern="^\d{3,4}$" title="O CVV deve ter 3 digitos numéricos.">
                         <input class="inputCartao" type="text" name="nomeCartao" id="nomeCartao" placeholder="Nome Completo" required>
                     </div>
