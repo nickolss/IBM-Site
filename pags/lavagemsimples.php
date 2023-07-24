@@ -127,6 +127,8 @@
                     <h2>Pontos: x</h2>
                     <h3>Sobre esse item:</h3>
                     <p class="troca__info"> O processo de lavagem mais rápida, onde prioriza a lataria do carro. O interior é aspirado e os pneus ganham atenção também, porém o motor fica de fora. </p>
+
+                    <!--ESSE BOTAO TAMBEM TERÁ QUE RETIRAR OS PONTOS DO PERFIL DE ACORDO COM OS PONTOS DO PRODUTO-->
                     <form action="trocaFeita.php" method="POST">
                         <button class="botao__troca" type="submit">Trocar com meus Pontos</button>
                     </form>

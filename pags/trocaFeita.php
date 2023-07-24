@@ -161,7 +161,7 @@
             <div class="comentario">
               <textarea name="coment" id="coment" class="campoComentario" cols="30" rows="10" placeholder="Digite como foi sua experiência com a Turn Motors"></textarea>
             </div>
-            <form action="efetuarTroca.php" method="POST">
+            <form action="efetuarComentario.php" method="POST">
               <button class="botao__troca" type="submit">Enviar</button>
             </form>
           </div>

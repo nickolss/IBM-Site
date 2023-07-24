@@ -129,6 +129,8 @@
                     <p class="troca__info">
                         Lavagem da lataria, motor e parte de baixo do beículo. O interior é aspirado, pneus ganham atenção também. <br> É feito um polimento na lataria do veículo, criando maior brilho e protegendo a pintura.
                     </p>
+
+                    <!--ESSE BOTAO TAMBEM TERÁ QUE RETIRAR OS PONTOS DO PERFIL DE ACORDO COM OS PONTOS DO PRODUTO-->
                     <form action="trocaFeita.php" method="POST">
                         <button class="botao__troca" type="submit">Trocar com meus Pontos</button>
                     </form>
