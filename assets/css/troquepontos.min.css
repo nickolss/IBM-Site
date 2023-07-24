@@ -144,6 +144,16 @@ main{
     padding: 20px;
 }
 
+.link__produtos{
+    text-decoration: none;
+    color: black;
+}
+
+.link__produtos:hover{
+    text-decoration: none;
+    color: black;
+}
+
 @media only screen and (max-width: 1199px){
     .mainTitle{
         margin-top: 2%;
