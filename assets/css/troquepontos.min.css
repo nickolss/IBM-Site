@@ -132,12 +132,18 @@ main{
     flex-direction: row;
 }
 
+.produto__tapete{
+    padding-bottom: 33px;
+}
+
 #produto__chaveiro{
     padding: 17px;
+    padding-bottom: 40px;
 }
 
 #Mediaproduto__chaveiro{
-    padding: 1px;
+    padding: 13px;
+    padding-bottom: 50px;
 }
 
 #Mediaproduto__tapaSol{
@@ -154,7 +160,7 @@ main{
     color: black;
 }
 
-@media only screen and (max-width: 1199px){
+@media only screen and (max-width: 1399px){
     .mainTitle{
         margin-top: 2%;
     }
@@ -175,6 +181,10 @@ main{
         margin-top: 2%;
     }
 
+    .produto__tapete{
+        padding-bottom: 10px;
+    }
+
 }
 
 @media only screen and (max-width: 991px){
@@ -189,17 +199,6 @@ main{
 
     #Mediaproduto__chaveiro{
         padding: 6px;
-    }
-}
-
-@media only screen and (max-width: 767px){
-    .mainTitle{
-        margin-top: 4%;
-    }
-
-    .divTitle__lavagem{
-        margin-left: 1%;
-        margin-top: 4.5%;
     }
 
     .main__produtos{
@@ -217,6 +216,10 @@ main{
         margin-bottom: 4%;
     }
 
+    .subMobile__produtos{
+        margin-bottom: 4%;
+    }
+
     .main__lavagens{
         display: none;
     }
@@ -226,9 +229,16 @@ main{
         flex-direction: column;
         align-items: center;
     }
+}
 
-    .subMobile__produtos{
-        margin-bottom: 4%;
+@media only screen and (max-width: 767px){
+    .mainTitle{
+        margin-top: 4%;
+    }
+
+    .divTitle__lavagem{
+        margin-left: 1%;
+        margin-top: 4.5%;
     }
 
     .texto__produto{
