@@ -1,0 +1,242 @@
+#container__body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    flex: 1;
+}
+
+.mainTitle{
+    color: #FF7769;
+    font-weight: 600;
+    margin-top: 1.4%;
+    font-size: 3.5em;
+    text-align: center;
+}
+
+.historia{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.hist__text{
+    max-width: 700px;
+    text-align: justify;
+    margin-right: 2%;
+}
+
+#hist__title{
+    color: #014961;
+    font-weight: 600;
+    margin-top: 1.4%;
+    font-size: 2.5em;
+}
+
+.paragrafo__hist{
+    font-size: 1.1em;
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 3px #014961;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .cardMargem{
+    margin-right: 2%;
+  }
+  
+  .card img {
+    width: 48px;
+    fill: #014961;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 3px #FF7769;
+  }
+  
+  .card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card:hover .card__content {
+    transform: rotateX(0deg);
+  }
+  
+  .card__title {
+    margin: 0;
+    font-size: 24px;
+    color: #FF7769;
+    font-weight: 700;
+  }
+  
+  .card:hover svg {
+    scale: 0;
+  }
+  
+  .card__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #313131;
+    line-height: 1.4;
+  }
+
+  .card__link{
+    color: #014961;
+    text-decoration: underline;
+  }
+  
+.aspectos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.aspecto__title{
+    color: #014961;
+    font-weight: 600;
+    margin-top: 1.4%;
+    font-size: 1.5em;
+}
+
+.aspecto__paragrafo{
+    font-size: 1.1em;
+    max-width: 350px;
+}
+
+.cards__aspectos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.aspectosMargem{
+    margin-right: 3%;
+}
+
+.cards__paragrafo{
+    max-width: 300px;
+}
+
+@media only screen and (max-width: 1061px){
+    .historia{
+        margin-bottom: 2%;
+    }
+}
+
+@media only screen and (max-width: 991px){
+    .historia{
+    display: flex;
+    flex-direction: column;
+    }
+
+    .Divhist__img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #hist__img{
+        width: 300px;
+        height: 277px;
+    }
+
+    .cards{
+        margin-top: 4%;
+        margin-bottom: 4%;
+    }
+
+    .cards__aspectos{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cards__paragrafo{
+        font-size: 1.2em;
+        max-width: 400px;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .cards{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cardMargem{
+        margin-bottom: 4%;
+    }
+
+    #card__associar{
+        margin-left: -2%;
+    }
+
+    .aspectos{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cards__paragrafo{
+        font-size: 1.1em;
+        max-width: 350px;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .mainTitle{
+        margin-top: 20%;
+    }
+}
+
+@media only screen and (max-width: 345px){
+    .card {
+        width: 250px;
+        height: 150px;
+    }
+
+    #img__valores{
+        width: 290px;
+        height: 267px;
+    }
+}
