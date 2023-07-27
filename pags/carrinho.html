@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-    <head>
-      <meta charset="utf-8">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Turn Motors | Vagas</title>
-
-      <!--ARQUIVOS BOOTSTRAP-->
-      <link rel="stylesheet" href="../assets/css/css-bootstrap/bootstrap.min.css">
-      <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
+      <title>Turn Motors | Concurso</title>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      
       
       <link rel="stylesheet" href="../assets/css/estilos-importantes.css">
-      <link rel="stylesheet" href="../assets/css/pontosinsuficiente.min.css">
+      <link rel="stylesheet" href="../assets/css/vagas.min.css">
+      <link rel="stylesheet" href="../assets/css/carrinho.min.css">
       
-
-      <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">  
-      <script type="text/javascript" src="../assets/js/java.js" defer></script>
-    </head>
-    <body >
     
-      <header>
+      <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+      <script type="text/javascript" src="assets/js/java.js" defer></script>
+      <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header>
         <div id="header">
             <div class="conj_header_redes">
                 <ul id="form_header_redes">
@@ -62,9 +61,9 @@
 							
 							<div class="table_itens__header__carrinho__config">
 								<div class="table__itens_header_carrinho_botoes">
-									<button id="botaoSubtrair_carrinho_header">-</button>
-									<span id="contador_carrinho_header">1</span>
-									<button id="botaoAcrescentar_carrinho_header">+</button>
+									<button>-</button>
+									<span>1</span>
+									<button>+</button>
 								</div>
 								
 								<div style="color: #003445;">Excluir</div>
@@ -81,7 +80,7 @@
 					<h1>Total: R$x</h1>
 					<div class="text-center">
 						<button><a href="../pags/carrinho.html"> Ver Carrinho</a> </button>
-						 <a style="text-decoration: none; color: #003445" href="">Frete grátis com o Plano Turbinado</a> 
+						 <a href="">Frete grátis com o Plano Turbinado</a> 
 					</div>
 					
 					
@@ -139,7 +138,7 @@
 		  
 		  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 			<div style="box-shadow: 0px 2px 5px 0px #888; background-color: hsla(195, 98%, 19%, 0.600);" class="offcanvas-header">
-			  <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img style="margin-right: 10px;" width="50px" height="auto" src="../assets/img/logo-final-finalmesmo.png" alt="logo"><img width="150px" height="auto" src="../assets/img/titulo.png" alt="titulo"></h5>
+			  <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img style="margin-right: 10px;" width="50px" height="auto" src="../assets/img/logo-final-finalmesmo.png" alt="logo"><img width="150px" height="auto" src="assets/img/titulo.png" alt="titulo"></h5>
 			  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 			</div>
 		   
@@ -206,105 +205,152 @@
 	  
   </nav>
 	  </nav>
-       
 
-        <main>
-            <div class="container" >
-                <div class="div-main">
-                    <div class="esquerda-texto">
-                        <h1 id="titulo">Oops!</h1>
-                        <h2>Pontos insuficientes</h2>
-                        <a style="text-decoration: none; color: white;" id="botaoVoltar" href="#">Voltar</a>
-                    </div>
-                    <div class="direita-img">
-                        <img id="img" src="../assets/img/pontoInsuficiente.png" alt="Homem triste ao computador">
-                    </div>
+
+      <nav id="carrinho_pag">
+        <div class="area_carrinho_pag">
+            <div class="row">
+                <div class="col">
+                    <h1>Carrinho de Compras</h1>
+                    <h4>Desmarcar todos os itens</h4>
                 </div>
             </div>
-            <br>
-        </main>
+            <hr>
+            <div>
+                <table class="table table-responsive" >
+                    <tbody>
+                        <tr>
+                            <td>
+                                
+                                        <div class="d-flex carrinho_pag_itens">
+                                            <div class="carrinho_pag__img">
+                                                <img class="img-fluid" src="../assets/img/tapete.png" alt="">
+                                            </div>
+                                            <div class="carrinho_pag__info">
+                                                <h1>Tapete</h1>
+                                                <h2>R$100</h2>
+                                                <div class="d-flex ">
+                                                    <div class="carrinho_pag_botoes_mais_menos d-flex justify-content-between">
+                                                        <button>-</button>
+                                                        <span>1</span>
+                                                        <button>+</button>
+                                                    </div>
+                                                   
+                                                    <div>Excluir</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            
+            <hr>
+           
+            <div class="row">
+                <div class="col">
+                    <div class="d-flex justify-content-end carrinho_pag_preco">
+                        <p>Subtotal (x itens): <strong>R$x</strong></p>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+        <br>
+        <div class="text-center carrinho_pag_finalizar">
+            <button>Finalizar Compra</button>
+        </div>
+      </nav>
+
+
+
+
+
+
+
+
 
       <footer>
         <div class="row" id="correcao">
-          <div class="col alinhar">
-            <div> <img width="100px" src="../assets/img/logo-luz.png" loading="lazy"> </div>
-            <h4 class="tite ">TURN MOTORS</h4>
-            <p id="slogan">Vem conosco. Olha o ronco!</p>
-                    <p id="copy">&copy;Turn Motors, 2022</p>
-  
-          </div>
-          <div class="col">
-            <div class="alinhar" style="margin-top: 50px;">
-               <h4>Vamos conversar</h4>
-                            <!--form sub-->
-                            
-                                <form>
-                                    <div >
-                                        <input type="text" id="mensagem"  placeholder="Nos envie uma mensagem">
-                                        <div class="botaoalinhar">
-                                         <button class="botao3" onclick="apagar()"><img width="24px" src="../assets/img/enviar-sombra.png" alt="Foto enviar"></button>
-                                      </div>
-                                    </div>
-                                    <!--<button>Enviar</button>-->
-                                </form>
-                    </div>  
-          </div>
-  
-          <div class="col">
-  
-            <div class="row">
-  
-              <div class="col">
-  
-                
-                  <ul class="separar">
-                    <li> <a href="../index.html">Home</a> </li>
-                    <li> <a href="produtos.html">Produtos</a> </li>
-                    <li> <a href="mercado.html">Mercado</a> </li>
-                  </ul>
-                
-              </div>
-              <div class="col">
-                <ul class="separar">
-                  <li> <a href="aboutus.html">Sobre Nós</a> </li>
-                  <li> <a href="vagas.html">Vagas</a> </li>
-                  
-                </ul>
-              </div>
+            <div class="col alinhar">
+                <div> <img width="100px" height="auto" src="../assets/img/logo-luz.png" loading="lazy" alt="logo"> </div>
+                <h4 class="tite ">TURN MOTORS</h4>
+                <p id="slogan">Venha conosco. Olha o ronco!</p>
+                <p id="copy">&copy;Turn Motors, 2022</p>
+
             </div>
-          </div>
-          <div class="col none1">
-            <div>
-              <div class="midias-sociais">
-                                  <a href="https://www.instagram.com/turn_motors/"><img class="rede-social" src="../assets/img/instagram2.png" alt="Logo instagram"></a>
-                      </div>
-                      <div class="midias-sociais">
-                                  <a href="https://twitter.com/MotorsTurn"><img class="rede-social" src="../assets/img/twitter2.png" alt="Logo Twitter"></a>
-                      </div>
-                      <div class="midias-sociais">
-                                  <a href="https://www.linkedin.com/in/turn-motors-285988252/"><img class="rede-social" src="../assets/img/linkedin3.png" alt="Logo Linkedin"></a>
-                      </div>
+            <div class="col">
+                <div class="alinhar" style="margin-top: 50px;">
+                   <h4>Contate-nos aqui!!!</h4>
+                        <!--form sub-->
+                        
+                            <form>
+                                <div >
+                                    <input type="text" id="mensagem"  placeholder="Nos envie uma mensagem">
+                                    <div class="botaoalinhar">
+                                     <button class="botao3" onclick="apagar()"><img width="24px" height="auto" src="../assets/img/enviar-sombra.png" alt="Foto enviar"></button>
+                                    </div>
+                                </div>
+                                <!--<button>Enviar</button>-->
+                            </form>
+                </div>  
+            </div>
+
+            <div class="col">
+
+                <div class="row">
+
+                    <div class="col">
+
+                        
+                            <ul class="separar">
+                                <li> <a href="../index.html">Home</a> </li>
+                                <li> <a href="../pags/produtos.html">Produtos</a> </li>
+                                <li> <a href="../pags/mercado.html">Mercado</a> </li>
+                            </ul>
+                        
                     </div>
-          </div>
-          <div class="col block" >
-            <div class="midias-sociais1">
-              <div class="midia midia1" >
-                                  <a href="https://www.instagram.com/turn_motors/"><img class="rede-social" src="../assets/img/instagram2.png" alt="Logo instagram"></a>
-                      </div>
-                      <div class="midia" >
-                                  <a href="https://twitter.com/MotorsTurn"><img class="rede-social" src="../assets/img/twitter2.png" alt="Logo Twitter"></a>
-                      </div>
-                      <div class="midia" >
-                                  <a href="https://www.linkedin.com/in/turn-motors-285988252/"><img class="rede-social" src="../assets/img/linkedin3.png" alt="Logo Linkedin"></a>
-                      </div>
+                    <div class="col">
+                        <ul class="separar">
+                            <li> <a href="../pags/aboutus.html">Sobre Nós</a> </li>
+                            <li> <a href="../pags/vagas.html">Vagas</a> </li>
+                            <li> <a href="../pags/desenvolvedores.html">Desenvolvedores</a> </li>
+                        </ul>
                     </div>
-          </div>
+                </div>
+            </div>
+            <div class="col none1">
+                <div>
+                    <div class="midias-sociais">
+                                <a href="https://www.instagram.com/turn_motors/"><img class="rede-social" width="auto" height="auto" src="../assets/img/instagram2.png" alt="Logo instagram"></a>
+                    </div>
+                    <div class="midias-sociais">
+                                <a href="https://twitter.com/MotorsTurn"><img class="rede-social" width="auto" height="auto" src="../assets/img/twitter2.png" alt="Logo Twitter"></a>
+                    </div>
+                    <div class="midias-sociais">
+                                <a href="https://www.linkedin.com/in/turn-motors-285988252/"><img class="rede-social" width="auto" height="auto" src="../assets/img/linkedin3.png" alt="Logo Linkedin"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col block" >
+                <div class="midias-sociais1">
+                    <div class="midia midia1" >
+                                <a href="https://www.instagram.com/turn_motors/"><img class="rede-social" width="auto" height="auto" src="../assets/img/instagram2.png" alt="Logo instagram"></a>
+                    </div>
+                    <div class="midia" >
+                                <a href="https://twitter.com/MotorsTurn"><img class="rede-social" width="auto" height="auto" src="../assets/img/twitter2.png" alt="Logo Twitter"></a>
+                    </div>
+                    <div class="midia" >
+                                <a href="https://www.linkedin.com/in/turn-motors-285988252/"><img class="rede-social" width="auto" height="auto" src="../assets/img/linkedin3.png" alt="Logo Linkedin"></a>
+                    </div>
+                </div>
+            </div>
         </div>
-        </footer>
-
-
-        
-
-        
-    </body>
-</html
+    </footer>
+    
+</body>
+</html>

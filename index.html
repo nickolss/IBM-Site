@@ -5,131 +5,223 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Oficina de personalização de carros e venda de peças de alta qualidade. Transformamos veículos em obras de arte com peças exclusivas e instalação meticulosa. Conte conosco para realizar seus sonhos de personalização.">
 	<title>Turn Motors | Home</title>
-
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	
 	
 	<link rel="stylesheet" type="text/css" href="assets/css/home.min.css">
 	<link rel="stylesheet" href="assets/css/estilos-importantes.css">
 
 	<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
-	<script type="text/javascript" src="assets/js/java.js"></script>
+	
+	<script type="text/javascript" src="assets/js/java.js" defer></script>
+	<script src="assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
+	
+	
 
   </head>
 </head>
-<body>
+<body >
+	
  
 	<header>
-		<div class="row" id="cabecalho">
-			    
-				<div class="col redes_header">
-					<div style="margin-right: 5px">
-						<a class="link" href="https://www.linkedin.com/in/turn-motors-285988252/" aria-label="Acesse nosso Linkedin"><img width="35px" src="assets/img/linkedin3.png"></a>
-					</div>
-					<div style="margin-right: 5px">
-						<a class="link" href="https://twitter.com/MotorsTurn" aria-label="Acesse nosso Twitter"><img  width="35px" src="assets/img/twitter2.png" aria-label="Acesse nosso Twitter"></a>
-					</div>
-					<div>
-						<a class="link" href="https://www.instagram.com/turn_motors/" aria-label="Acesso nosso Instagram"><img  width="35px" src="assets/img/instagram2.png"></a>
-					</div>
-				</div>
-
-				<div class="col nav_header" >
+        <div id="header">
+            <div class="conj_header_redes">
+                <ul id="form_header_redes">
+                    <li> <a class="cabeca" href="https://www.linkedin.com/in/turn-motors-285988252/"> <img width="35px" height="auto" src="assets/img/linkedin.png" alt="linkedin"> </a> </li>
+                    <li> <a class="cabeca" href="https://twitter.com/MotorsTurn"> <img width="35px" height="auto" src="assets/img/twitter2.png" alt="twitter"> </a> </li>
+                    <li> <a class="cabeca" href="https://www.instagram.com/turn_motors/"> <img width="35px" height="auto" src="assets/img/instagram2.png" alt="instagram"> </a> </li>
+                </ul>
+            </div>
+            <div class="conj_header_menu">
+                <ul id="form_header_menu">
+                    <li> <a class="cabeca" href="pags/produtos.html">Produtos</a> </li>
+                    <li> <a class="cabeca" href="pags/mercado.html">Mercado</a> </li>
+                    <li> <a class="cabeca" href="index.html"> <img width="90px" src="assets/img/logo-final-finalmesmo.png" alt="home"> </a> </li>
+                    <li> <a class="cabeca" href="pags/aboutus.html">Sobre Nós</a> </li>
+                    <li> <a class="cabeca" href="pags/vagas.html">Vagas</a> </li>
+                </ul>
+            </div>
+            <div class="conj_header_ferramentas">
+                <ul id="form_header_ferramentas">
+                    <li>  <img class="lupa" width="40px" height="auto" src="assets/img/lupa.png" alt="Pesquisar"> </li>
+                    <li> <img id="carrinho" width="40px" src="assets/img/iconeCarrinhoQuantidade.png" alt="Carrinho"> </li>
+                    <li> <a class="cabeca" href=""> <img  width="60px" src="assets/img/conta5.png" alt="Login"> </a> </li>
+                </ul>
+            </div>
+        </div>
+		<div id="fade"></div>
+		<nav id="carrinho__header">
+			<img class="seta__header__carrinho"   src="assets/img/seta-modal.png" alt="">
+			<div id="carrinho__header_vazio">
+				<img width="100px" src="assets/img/iconeSacolaCompras.png" alt="">
+				<p>Não há produtos ainda</p>
+			</div>
+			<div id="itens__header__modal_carrinho">
+				<div class="table__itens_header_carrinho">
+					<table>
+						<tbody>
+							<td class="img__table__header_carrinho" style="width: 40%;"> <img src="assets/img/tapete.png" alt=""> </td>
+							<td class="info__table__header_carrinho"> 
+							<div> <h2>Tapete</h2> </div>
+							<div> <h3>R$100</h3> </div>
+							
+							<div class="table_itens__header__carrinho__config">
+								<div class="table__itens_header_carrinho_botoes">
+									<button id="botaoSubtrair_carrinho_header">-</button>
+									<span id="contador_carrinho_header">1</span>
+									<button id="botaoAcrescentar_carrinho_header">+</button>
+								</div>
+								<button style="border: none; color: #003445; background-color: #fff;">Excluir</button>
+								
+							</div>
+							</td>
+						</tbody>
+					</table>
 					
-					<a class="red" href="pags/produtos.html">Produtos</a>
+					
 				</div>
-				<div class="col nav_header">
-					<a class="red" href="pags/mercado.html">Mercado</a>
+				<br>
+				<br>
+				<div class="carrinho__header__finalizacao">
+					<h1>Total: R$x</h1>
+					<div class="text-center">
+						<button><a href="pags/carrinho.html"> Ver Carrinho</a> </button>
+						 <a class="plano_header" href="">Frete grátis com o Plano Turbinado</a> 
+					</div>
+					
+					
 				</div>
-				<div class="col logo">
-					<a href="index.html"><img width="90px" src="assets/img/logo-final-finalmesmo.png"></a>
-				</div>
-				<div class="col nav_header ">
-					<a class="red" href="pags/aboutus.html">Sobre Nós</a>
-				</div>
-				<div class="col nav_header ">
-					<a class="red" href="pags/vagas.html">Vagas</a>
-
-				</div>
-				<div class="col login_header">
-					<a class="link" href="pags/login.html"><img width="60px" src="assets/img/conta5.png"></a>
-				</div>
-		</div>
-	</header>
-
-		<nav style="box-shadow: 0px 5px 5px 0px #888;"  class="navbar  fixed-top" id="menu">
-		  <div  class="container-fluid">
-		  	
-			    <a class="navbar-brand" href="#"><img style="margin-right: 10px;" width="50px" src="assets/img/logo-final-finalmesmo.png"><img width="150px" src="assets/img/titulo.png"></a>
-
-			    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" 
-				aria-label="Menu">
-			      <span class="navbar-toggler-icon"></span>
-			    </button>
+			</div>
 			
-		    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-		      <div style="box-shadow: 0px 2px 5px 0px #888; background-color: hsla(195, 98%, 19%, 0.600);" class="offcanvas-header">
-		        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img style="margin-right: 10px;" width="50px" src="assets/img/logo-final-finalmesmo.png"><img width="150px" src="assets/img/titulo.png"></h5>
-		        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-		      </div>
-		     
-		      <div class="offcanvas-body">
-		        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-		          <li class="nav-item">
-		            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-		          </li>
-		          <hr>
-		          <li class="nav-item">
-		            <a class="nav-link" href="pags/login.html">Login</a>
-		          </li>
-		          <hr>
-		          <li class="nav-item dropdown">
-		            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-		              Opções
-		            </a>
-		            <ul class="dropdown-menu">
-		              <li><a class="dropdown-item" href="pags/mercado.html">Mercado</a></li>
-		              <li><a class="dropdown-item" href="pags/produtos.html">Produtos</a></li>
-		              <li><a class="dropdown-item" href="pags/vagas.html">Vagas</a></li>
-		              <li>
-		                <hr class="dropdown-divider">
-		              </li>
-		              <li><a class="dropdown-item" href="pags/aboutus.html">Sobre Nós</a></li>
-
-		            </ul>
-		          </li>
-		          <br>
-		          <br>
-
-		          <div class="row alinhar">
-		          	<div class="col">
-		          		<a class="link" href="https://www.linkedin.com/in/turn-motors-285988252/" aria-label="Acesse nosso Linkedin"><img  width="35px" src="assets/img/linkedin3.png"></a>
-					
-					
-		          	</div>
-		          	<div class="col">
-		          		<a class="link" href="https://twitter.com/MotorsTurn" aria-label="Acesse nosso Twitter"><img  width="35px" src="assets/img/twitter2.png" aria-label="Acesse nosso Twitter"></a>
-		          	</div>
-		          	<div class="col">
-		          		<a class="link" href="https://www.instagram.com/turn_motors/" aria-label="Acesso nosso Instagram"><img  width="35px" src="assets/img/instagram2.png"></a>
-		          	</div>
-		          </div>
-		        </ul>
-		        
-		      </div>
-		    </div>
-		  </div>
 		</nav>
-		<br>
-		<br>
-		<br>
-		<br>
+    </header>
+
+	<nav id="header_search_aparecer2">
+		<nav  class="header_search_aparecer ">
+		
+		
+			<div class="container  text-center" >
+				<div  class="row align-items-center" style="height: 150px;">
+					<div class="col " style="padding: 0px 20px;">
+						<div class="header_search">
+							<div style="display: flex; justify-content: center; align-items: center;"><img width="30px" height="auto" src="assets/img/lupa.png" alt="Pesquisar"></div>
+							<input class="form-control input_header_search" type="text" placeholder="Pesquisar...">
+							<div style="display: flex; justify-content: center; align-items: center;"> <button type="button" class="btn-close lupa" aria-label="Close"></button></div>
+						</div>
+					</div>
+				</div>
+			
+			</div>    
+		
+	</nav>
+	</nav>
+	
+	<nav style="box-shadow: 0px 5px 5px 0px #888;"  class="navbar  fixed-top" id="menu">
+		<div  class="d-flex justify-content-between " style="height: 100%;">
+			<div style=" width: 33%;" class="d-flex ">
+				<button  style="border: none; margin-left: 10px;"  class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" 
+				aria-label="Menu">
+				<span  class="navbar-toggler-icon"></span>
+				</button>
+			</div>
+			<div style=" width: 33%;" class="d-flex justify-content-center">
+				<a  href="index.html"><img  class="img-fluid" width="50px" height="auto" src="assets/img/logo-final-finalmesmo.png" alt="home"></a>
+			</div>
+
+			  <div style=" width: 33%;" class="d-flex justify-content-end align-items-center">
+				<div style="margin-right: 30px;">
+					<img class="lupa img-fluid" width="30px" height="auto" src="assets/img/lupa.png" alt="Ícone de busca">
+				</div>
+				<div style="margin-right: 10px;">
+					<img class="img-fluid" width="30px" height="auto" src="assets/img/iconeCarrinhoQuantidade.png" alt="Carrinho">
+				</div>
+				
+			  	
+			  </div>
+			  
+
+			  
+		  
+		  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+			<div style="box-shadow: 0px 2px 5px 0px #888; background-color: hsla(195, 98%, 19%, 0.600);" class="offcanvas-header">
+			  <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img style="margin-right: 10px;" width="50px" height="auto" src="assets/img/logo-final-finalmesmo.png" alt="logo"><img width="150px" height="auto" src="assets/img/titulo.png" alt="titulo"></h5>
+			  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			</div>
+		   
+			<div class="offcanvas-body">
+			  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+				<li class="nav-item">
+				  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+				</li>
+				<hr>
+				<li class="nav-item">
+				  <a class="nav-link" href="pags/login.html">Login</a>
+				</li>
+				<hr>
+				<li class="nav-item dropdown">
+				  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					Opções
+				  </a>
+				  <ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="pags/mercado.html">Mercado</a></li>
+					<li><a class="dropdown-item" href="pags/produtos.html">Produtos</a></li>
+					<li><a class="dropdown-item" href="pags/vagas.html">Vagas</a></li>
+					<li>
+					  <hr class="dropdown-divider">
+					</li>
+					<li><a class="dropdown-item" href="pags/aboutus.html">Sobre Nós</a></li>
+
+				  </ul>
+				</li>
+				<br>
+				<br>
+				<div class="row alinhar">
+					<div class="col">
+						<a class="link" href="https://www.linkedin.com/in/turn-motors-285988252/" aria-label="Acesse nosso Linkedin"><img  width="35px" height="auto" src="assets/img/linkedin3.png" alt="linkedin"></a>
+				  
+				  
+					</div>
+					<div class="col">
+						<a class="link" href="https://twitter.com/MotorsTurn" aria-label="Acesse nosso Twitter"><img  width="35px" height="auto" src="assets/img/twitter2.png" aria-label="Acesse nosso Twitter" alt="twitter"></a>
+					</div>
+					<div class="col">
+						<a class="link" href="https://www.instagram.com/turn_motors/" aria-label="Acesso nosso Instagram"><img  width="35px" height="auto" src="assets/img/instagram2.png" alt="instagram"></a>
+					</div>
+				</div>
+			  </ul>
+			  
+			</div>
+		  </div>
+		</div>
+		<nav class="header_search_aparecer ">
+	  
+	  
+		  <div class="container  text-center" >
+			  <div  class="row align-items-center" style="height: 150px;">
+				  <div class="col " style="padding: 0px 20px;">
+					  <div class="header_search">
+						  <div style="display: flex; justify-content: center; align-items: center;"><img width="30px" height="auto" src="assets/img/lupa.png" alt="Pesquisar"></div>
+						  <input class="form-control input_header_search" type="text" placeholder="Pesquisar...">
+						  <div style="display: flex; justify-content: center; align-items: center;"> <button type="button" class="btn-close lupa" aria-label="Close"></button></div>
+					  </div>
+				  </div>
+			  </div>
+		  
+		  </div>    
+	  
+  </nav>
+	  </nav>
+		
+		<br >
+		<br >
+		<br >
+		<br >
 		<nav class="none">
 			<div class="container">
 				<div class="row">
 					<div class="col">
 						<div class="texto" >
-						 <img  class="img-fluid" src="assets/img/titulo.png">
+						 <img width="auto" height="auto" class="img-fluid" src="assets/img/titulo.png " alt="titulo">
 						</div>
 						<div class="texto">
 						 <p align="justify" >A Turn Motors é uma marca de customização, conserto, e venda de peças para automóveis, focamos na personalização e na criação de uma identidade visual única para o seu veículo.</p>
@@ -146,7 +238,7 @@
 				</div>
 				<div class="row">
 					<div class="col">
-						<img class="img-fluid" src="assets/img/carro.png">
+						<img width="auto" height="auto" class="img-fluid" src="assets/img/carro.png" alt="carro">
 					</div>
 				</div>
 				<br>
@@ -155,31 +247,31 @@
 				<br>
 					<div class="row alinhar">
 						<div style="margin-top: 12px" class="col">
-							<img width="120px" src="assets/img/pneu.png">
+							<img width="120px" height="auto" src="assets/img/pneu.png" alt="pneu">
 							<div class="icone">
 								Customização
 							</div>
 						</div>
 						<div class="col">
-							<img width="100px" src="assets/img/pintura-icon.png">
+							<img width="100px" height="auto" src="assets/img/pintura-icon.png" alt="pintura">
 							<div class="icone">
 								Pintura
 							</div>
 						</div>
 						<div class="col">
-							<img width="100px" src="assets/img/motor-preenchido--icon.png">
+							<img width="100px" height="auto" src="assets/img/motor-preenchido--icon.png" alt="motor">
 							<div class="icone">
 								Tunagem
 							</div>
 						</div>
 						<div style="margin-top: 58px;" class="col">
-							<img width="130px" src="assets/img/rebaixado-icon.png">
+							<img width="130px" height="auto" src="assets/img/rebaixado-icon.png" alt="rebaixado">
 							<div class="icone">
 								Suspensão
 							</div>
 						</div>
 						<div class="col">
-							<img width="100px" src="assets/img/conserto.png">
+							<img width="100px" height="auto" src="assets/img/conserto.png" alt="conserto">
 							<div class="icone">
 								Conserto
 							</div>
@@ -192,7 +284,7 @@
 				<div class="row ">
 					<div class="col ">
 						<div style="text-align: center;" >
-						 <img  width="500px" src="assets/img/titulo.png">
+						 <img  width="500px" height="auto" src="assets/img/titulo.png" alt="titulo">
 						</div>
 						<div class="texto1">
 						 <p align="justify" >A Turn Motors é uma marca de customização, conserto, e venda de peças para automóveis, focamos na personalização e na criação de uma identidade visual única para o seu veículo.</p>
@@ -205,7 +297,7 @@
 					<br>
 					<div class="col ">
 						
-			             <img width="600px" src="assets/img/carro.png" alt="...">
+			             <img width="600px" height="auto" src="assets/img/carro.png" alt="carro">
 			            
 					</div>
 				</div>
@@ -215,31 +307,31 @@
 				<br>
 				<div class="row alinhar">
 					<div style="margin-top: 12px" class="col">
-						<img width="120px" src="assets/img/pneu.png">
+						<img width="120px" height="auto" src="assets/img/pneu.png" alt="pneu">
 						<div class="icone">
 							Customização
 						</div>
 					</div>
 					<div class="col">
-						<img width="100px" src="assets/img/pintura-icon.png">
+						<img width="100px" height="auto" src="assets/img/pintura-icon.png" alt="pintura">
 						<div class="icone">
 							Pintura
 						</div>
 					</div>
 					<div class="col">
-						<img width="100px" src="assets/img/motor-preenchido--icon.png">
+						<img width="100px" height="auto" src="assets/img/motor-preenchido--icon.png" alt="motor">
 						<div class="icone">
 							Tunagem
 						</div>
 					</div>
 					<div style="margin-top: 58px;" class="col">
-						<img width="130px" src="assets/img/rebaixado-icon.png">
+						<img width="130px" height="auto" src="assets/img/rebaixado-icon.png" alt="rebaixado">
 						<div class="icone">
 							Suspensão
 						</div>
 					</div>
 					<div class="col">
-						<img width="100px" src="assets/img/conserto--icon.png">
+						<img width="100px" height="auto" src="assets/img/conserto--icon.png" alt="conserto">
 						<div class="icone">
 							Conserto
 						</div>
@@ -264,7 +356,7 @@
 				<br>
 				<div class="row" id="correcao">
 					<div class="col alinhar" style="margin-bottom: 50px;">
-						<img width="130px" src="assets/img/1.png">
+						<img width="130px" height="auto" src="assets/img/1.png" alt="numero1">
 						<div class="texto9"><h2>Tunnagem</h2>
 							<p >Definas as customizações disponíveis para o seu veículo.</p>
 						</div>
@@ -272,14 +364,14 @@
 					</div>
 
 					<div class="col alinhar"  style="margin-bottom: 50px;">
-						<img width="130px" src="assets/img/2.png">
+						<img width="130px" height="auto" src="assets/img/2.png" alt="numero2">
 						<div class="texto9"><h2>Leve até nós</h2>
 							<p >Levar o seu automóvel até a oficina Turn Motors.</p>
 						</div>
 					</div>
 					<div class="col alinhar">
 						<div >
-						<img  width="130px" src="assets/img/3.png">
+						<img  width="130px" height="auto" src="assets/img/3.png" alt="numero3">
 						</div>
 						<div class="texto9"><h2>Busque seu novo veículo</h2>
 							<p>Retornar até a oficina Turn Motors e pegar o seu veículo único, customizado e lavado.</p>
@@ -303,7 +395,7 @@
 				<br>
 				<div class="row alinhar" id="correcao">
 					<div class="col"  style="margin-bottom: 50px;">
-						<img width="130px" src="assets/img/produtividade.png">
+						<img width="130px" height="auto" src="assets/img/produtividade.png" alt="produtividade">
 						<div><h2>Produtividade</h2>
 							<p class="texto9">A Turn Motors se preocupa em entregar o seu veículo o mais rápido para você.</p>
 						</div>
@@ -311,13 +403,13 @@
 					</div>
 
 					<div class="col"  style="margin-bottom: 50px;">
-						<img width="130px" src="assets/img/chave-inglesa.png">
+						<img width="130px" height="auto" src="assets/img/chave-inglesa.png" alt="chave-inglesa">
 						<div><h2>Alta customização</h2>
 							<p class="texto9">Nós presonalizamos o seu veículo da forma que você escolher em nosso site.</p>
 						</div>
 					</div>
 					<div class="col ">
-						<img width="130px" src="assets/img/pilha-de-moedas.png">
+						<img width="130px" height="auto" src="assets/img/pilha-de-moedas.png" alt="pilha-de-moedas">
 						<div><h2>Baixos Custos</h2>
 							<p class="texto9">Customize totalmente o seu carro, por um preço que cabe no seu bolso.</p>
 						</div>
@@ -340,14 +432,14 @@
 				<br>
 				<div class="row alinhar" id="correcao">
 					<div class="col"  style="margin-bottom: 50px;">
-						<img width="130px" src="assets/img/garagem.png">
+						<img width="130px" height="auto" src="assets/img/garagem.png" alt="garagem">
 						<div><h2>Recebemos o automóvel</h2>
 							<p class="texto9">Recebemos seu veículo e seu pedido.</p>
 						</div>
 
 					</div>
 					<div class="col"  style="margin-bottom: 50px;">
-						<img width="130px" src="assets/img/manutencao.png">
+						<img width="130px" height="auto" src="assets/img/manutencao.png" alt="manutencao">
 						<div><h2>Verificamos o veículo</h2>
 							<p class="texto9">Cuidamos da parte burocrática e analisamos possíveis irregularidades no veículo.</p>
 						</div>
@@ -355,13 +447,13 @@
 					</div>
 
 					<div class="col"  style="margin-bottom: 50px;">
-						<img width="130px" src="assets/img/chave-inglesa.png">
+						<img width="130px" height="auto" src="assets/img/chave-inglesa.png" alt="chave-inglesa">
 						<div><h2>Customização</h2>
 							<p class="texto9">Personalizamos o seu veiculo conforme foi pedido e seguindo as restrições impostas por lei.</p>
 						</div>
 					</div>
 					<div class="col ">
-						<img width="130px" src="assets/img/calava.png">
+						<img width="130px" height="auto" src="assets/img/calava.png" alt="Lavagem">
 						<div><h2>Lavagem</h2>
 							<p class="texto9">Após a customização, lavamos o veículo. Havendo o resultado final que o cliente espera.</p>
 						</div>
@@ -390,7 +482,7 @@
 						<div class="col ">
 							<div >
 								<div>
-									<img width="25px" height="25px" class="redondo" src="assets/img/red.png">
+									<img width="25px" height="25px" class="redondo" src="assets/img/red.png" alt="ponto">
 									<span class="final" class="">Pneu</span>
 								</div>
 							 <p align="justify" >Aumento ou diminuição do diãmetro externo do conjunto pneu/roda.</p>
@@ -398,7 +490,7 @@
 							<br>
 							<div >
 								<div >
-									<img width="25px" height="25px" class="redondo" src="assets/img/red.png">
+									<img width="25px" height="25px" class="redondo" src="assets/img/red.png" alt="ponto">
 									<span class="final" >Envelopamento ou Pintura</span>
 								</div>
 							 <p align="justify" >Proibido alterar área superior a 50% do veículo.
@@ -407,7 +499,7 @@
 							<br>
 							<div >
 								<div >
-									<img width="25px" height="25px" class="redondo" src="assets/img/red.png">
+									<img width="25px" height="25px" class="redondo" src="assets/img/red.png" alt="ponto">
 									<span class="final" class="">Insulfilme</span>
 								</div>
 							 <p align="justify" >A transmissão luminosa por meio do vidro dianteiro não deve ser inferior a 75% e deve ser incolor, já vidros laterais 70%.</p>
@@ -415,7 +507,7 @@
 							<br>
 							<div >
 								<div >
-									<img width="25px" height="25px" class="redondo" src="assets/img/red.png">
+									<img width="25px" height="25px" class="redondo" src="assets/img/red.png" alt="ponto">
 									<span class="final" >Sons e DVD</span>
 								</div>
 							 <p align="justify" >É proibido veículos com som acima de 80 decibéis (medidos a 7 metros).</p>
@@ -423,7 +515,7 @@
 							<br>
 							<div >
 								<div >
-									<img width="25px" height="25px" class="redondo" src="assets/img/red.png">
+									<img width="25px" height="25px" class="redondo" src="assets/img/red.png" alt="ponto">
 									<span class="final" >Chassis e Monobloco</span>
 								</div>
 							 <p align="justify" >Proibida a substituição.</p>
@@ -431,7 +523,7 @@
 							<br>
 							<div >
 								<div >
-									<img width="25px" height="25px" class="redondo" src="assets/img/red.png">
+									<img width="25px" height="25px" class="redondo" src="assets/img/red.png" alt="ponto">
 									<span class="final" >Freio</span>
 								</div>
 							 <p align="justify" >O sistema de freios não pode ser modificado.</p>
@@ -440,7 +532,7 @@
 						<div class="col ">
 							<div>
 								<div >	
-									<img width="25px" height="25px" class="redondo" src="assets/img/red.png">
+									<img width="25px" height="25px" class="redondo" src="assets/img/red.png" alt="ponto">
 									<span class="final" >Suspensão</span>
 								</div>
 							 <p align="justify" >A altura mínima permitida para a circulação deve ser maior ou igual a 10cm.</p>
@@ -448,7 +540,7 @@
 							<br>
 							<div >
 								<div >
-									<img width="25px" height="25px" class="redondo" src="assets/img/red.png">
+									<img width="25px" height="25px" class="redondo" src="assets/img/red.png" alt="ponto">
 									<span class="final" >Faróis Led</span>
 								</div>
 							 <p align="justify" >É proibida a substituição de lâmpadas dos sistemas de iluminação ou sinalização de veículos por outras que não seja original do fabricante. </p>
@@ -456,7 +548,7 @@
 							<br>
 							<div >
 								<div >
-									<img width="25px" height="25px" class="redondo" src="assets/img/red.png">
+									<img width="25px" height="25px" class="redondo" src="assets/img/red.png" alt="ponto">
 									<span class="final" >Faróis de Xenon</span>
 								</div>
 							 <p align="justify" >De acordo com o Artigo 8 da Resolução n° 292 do Contran, fica proibido a implantação de faróis de xénon.</p>
@@ -464,7 +556,7 @@
 							<br>
 							<div >
 								<div >
-									<img width="25px" height="25px" class="redondo" src="assets/img/red.png">
+									<img width="25px" height="25px" class="redondo" src="assets/img/red.png" alt="ponto">
 									<span class="final" >Motor</span>
 								</div>
 							 <p align="justify" >A potência original do motor apenas pode ser aumentada em 10%.</p>
@@ -472,7 +564,7 @@
 							<br>
 							<div>
 								<div>
-									<img width="25px" height="25px" class="redondo" src="assets/img/red.png">
+									<img width="25px" height="25px" class="redondo" src="assets/img/red.png" alt="ponto">
 									<span class="final" >Combustível</span>
 								</div>
 							 <p align="justify">É concedido trocar o sistema (gasolina etanol ou bicombustível) por gás natural veicular (GNV), mas o kit deve seguir as regulamentações do Inmetro.</p>
@@ -490,22 +582,22 @@
 		<footer>
 			<div class="row" id="correcao">
 				<div class="col alinhar">
-					<div> <img width="100px" src="assets/img/logo-luz.png" loading="lazy"> </div>
+					<div> <img width="100px" height="auto" src="assets/img/logo-luz.png" loading="lazy" alt="logo"> </div>
 					<h4 class="tite ">TURN MOTORS</h4>
-					<p id="slogan">Vem conosco. Olha o ronco!</p>
+					<p id="slogan">Venha conosco. Olha o ronco!</p>
 	                <p id="copy">&copy;Turn Motors, 2022</p>
 
 				</div>
 				<div class="col">
 					<div class="alinhar" style="margin-top: 50px;">
-					   <h4>Vamos conversar</h4>
+					   <h4>Contate-nos aqui!!!</h4>
 	                        <!--form sub-->
 	                        
 	                            <form>
 	                                <div >
 	                                    <input type="text" id="mensagem"  placeholder="Nos envie uma mensagem">
 	                                    <div class="botaoalinhar">
-	                                     <button class="botao3" onclick="apagar()"><img width="24px" src="assets/img/enviar-sombra.png" alt="Foto enviar"></button>
+	                                     <button class="botao3" onclick="apagar()"><img width="24px" height="auto" src="assets/img/enviar-sombra.png" alt="Foto enviar"></button>
 	                                	</div>
 	                                </div>
 	                                <!--<button>Enviar</button>-->
@@ -531,7 +623,7 @@
 							<ul class="separar">
 								<li> <a href="pags/aboutus.html">Sobre Nós</a> </li>
 								<li> <a href="pags/vagas.html">Vagas</a> </li>
-								
+								<li> <a href="pags/desenvolvedores.html">Desenvolvedores</a> </li>
 							</ul>
 						</div>
 					</div>
@@ -539,32 +631,32 @@
 				<div class="col none1">
 					<div>
 						<div class="midias-sociais">
-		                            <a href="https://www.instagram.com/turn_motors/"><img class="rede-social" src="assets/img/instagram2.png" alt="Logo instagram"></a>
+		                            <a href="https://www.instagram.com/turn_motors/"><img class="rede-social" width="auto" height="auto" src="assets/img/instagram2.png" alt="Logo instagram"></a>
 		                </div>
 		                <div class="midias-sociais">
-		                            <a href="https://twitter.com/MotorsTurn"><img class="rede-social" src="assets/img/twitter2.png" alt="Logo Twitter"></a>
+		                            <a href="https://twitter.com/MotorsTurn"><img class="rede-social" width="auto" height="auto" src="assets/img/twitter2.png" alt="Logo Twitter"></a>
 		                </div>
 		                <div class="midias-sociais">
-		                            <a href="https://www.linkedin.com/in/turn-motors-285988252/"><img class="rede-social" src="assets/img/linkedin3.png" alt="Logo Linkedin"></a>
+		                            <a href="https://www.linkedin.com/in/turn-motors-285988252/"><img class="rede-social" width="auto" height="auto" src="assets/img/linkedin3.png" alt="Logo Linkedin"></a>
 		                </div>
 	                </div>
 				</div>
 				<div class="col block" >
 					<div class="midias-sociais1">
 						<div class="midia midia1" >
-		                            <a href="https://www.instagram.com/turn_motors/"><img class="rede-social" src="assets/img/instagram2.png" alt="Logo instagram"></a>
+		                            <a href="https://www.instagram.com/turn_motors/"><img class="rede-social" width="auto" height="auto" src="assets/img/instagram2.png" alt="Logo instagram"></a>
 		                </div>
 		                <div class="midia" >
-		                            <a href="https://twitter.com/MotorsTurn"><img class="rede-social" src="assets/img/twitter2.png" alt="Logo Twitter"></a>
+		                            <a href="https://twitter.com/MotorsTurn"><img class="rede-social" width="auto" height="auto" src="assets/img/twitter2.png" alt="Logo Twitter"></a>
 		                </div>
 		                <div class="midia" >
-		                            <a href="https://www.linkedin.com/in/turn-motors-285988252/"><img class="rede-social" src="assets/img/linkedin3.png" alt="Logo Linkedin"></a>
+		                            <a href="https://www.linkedin.com/in/turn-motors-285988252/"><img class="rede-social" width="auto" height="auto" src="assets/img/linkedin3.png" alt="Logo Linkedin"></a>
 		                </div>
 	                </div>
 				</div>
 			</div>
 	    </footer>
  
-	
+		
 </body>
 </html>
