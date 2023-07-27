@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container__body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    flex: 1;
+}
+
+.mobile{
+    display: none;
+}
+
+.tela__grande{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8%;
+}
+
+.texto{
+    width: 420px;
+    background-color: hsla(195, 98%, 19%, 0.6);
+    color: white;
+    border-radius: 20px;
+    padding: 30px 40px;
+    margin-right: 3%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
+
+    .texto h1{
+        font-weight: 600;
+        margin-top: 1.4%;
+        font-size: 3.5em;
+        text-align: center;
+    }
+
+    .texto .caixa__input{
+        position: relative;
+        width: 100%;
+        height: 50px;
+        margin: 30px 0;
+    }
+
+    .texto .caixa__input input{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, .8);
+        border: none;
+        outline: none;
+        border: 2px solid #014961;
+        border-radius: 40px;
+        font-size: 18px;
+        color: #014961;
+        padding: 20px 45px 20px 20px;
+    }
+
+    .texto .caixa__input input::placeholder{
+        color: #014961; 
+    }
+
+    .texto .caixa__input i{
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 25px;
+        color: #FF7769;
+    }
+
+    .texto .lembrar__esquecer{
+        display: flex;
+        justify-content: space-between;
+        font-size: 14.5px;
+        margin: -15px 0 15px;
+    }
+
+    .texto .lembrar__esquecer label input{
+        accent-color: #014961;
+        margin-right: 3px;
+    }
+
+    .texto .lembrar__esquecer a{
+        color: white;
+    }
+
+    .texto .lembrar__esquecer a:hover{
+        color: white;
+        text-decoration: underline;
+    }
+
+    .texto .botao__login{
+        width: 100%;
+        height: 45px;
+        background-color: white;
+        border: none;
+        outline: none;
+        border-radius: 50px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+        cursor: pointer;
+        font-size: 16px;
+        color: #014961;
+        font-weight: 600;
+    }
+
+    .texto .botao__login:hover{
+        background-color: rgba(255, 255, 255, .9);
+        transition-duration: 0.5s;
+    }
+
+    .texto .link__registrar{
+        font-size: 14.5px;
+        text-align: center;
+        margin: 20px 0 15px;
+    }
+
+    .texto .link__registrar p a{
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .texto .link__registrar p a:hover{
+        text-decoration: underline;
+    }
+
+@media only screen and (max-width: 1059px){
+    .container{
+        margin-bottom: 3%;
+    }
+}
+
+@media only screen and (max-width: 991px){
+    .mobile{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 4%;
+    }
+
+    .tela__grande{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .mobile{
+        margin-top: 20%;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .mobile{
+        margin-top: 30%;
+    }
+}
+
+
+

@@ -1,0 +1,270 @@
+#container__body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    flex: 1;
+}
+
+.banner{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #01496199;
+    font-weight: 700;
+    border-radius: 20px;
+    margin-top: 2%;    
+}
+
+.banner__titulo{
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.banner__imagem{
+    width: min(250px, 500px);
+}
+
+.pontos__Perfil{
+    color: #004762;
+    font-size: 1.3em;
+}
+
+.title__produtos{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+}
+
+.mainTitle{
+    color: #FF7769;
+    font-weight: 600;
+    margin-left: 1%;
+    margin-top: 1.4%;
+}
+
+.Bigmain__produtos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__produtos{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainMobile__produtos{
+    display: none;
+}
+
+.Bigsub__produtos{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2%;
+}
+
+.sub__produtos{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2%;
+}
+
+.produto{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.300);
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    cursor: pointer;
+}
+
+.produtoDireita{
+    margin-left: 5%;
+}
+
+.texto__produto{
+    margin-left: 3%;
+    margin-top: 10%;
+}
+
+.titulo__produto{
+    font-size: 2em;
+}
+
+.ponto__produto{
+    font-size: 1.2em;
+}
+
+.title__lavagens{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+}
+
+.divTitle__lavagem{
+    margin-left: 0.3%;
+    margin-top: 1.4%;
+}
+
+.title__lavagem{
+    color: #FF7769;
+    font-weight: 600;
+}
+
+.main__lavagens{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainMobile__lavagens{
+    display: none;
+}
+
+.sub__lavagens{
+    display: flex;
+    flex-direction: row;
+}
+
+.produto__tapete{
+    padding-bottom: 33px;
+}
+
+#produto__chaveiro{
+    padding: 17px;
+    padding-bottom: 40px;
+}
+
+#Mediaproduto__chaveiro{
+    padding: 13px;
+    padding-bottom: 50px;
+}
+
+#Mediaproduto__tapaSol{
+    padding: 20px;
+}
+
+.link__produtos{
+    text-decoration: none;
+    color: black;
+}
+
+.link__produtos:hover{
+    text-decoration: none;
+    color: black;
+}
+
+@media only screen and (max-width: 1399px){
+    .mainTitle{
+        margin-top: 2%;
+    }
+
+    .Bigmain__produtos{
+        display: none;
+    }
+
+    .main__produtos{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .divTitle__lavagem{
+        margin-left: 0.3%;
+        margin-top: 2%;
+    }
+
+    .produto__tapete{
+        padding-bottom: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 991px){
+    .mainTitle{
+        margin-top: 3%;
+    }
+
+    .divTitle__lavagem{
+        margin-left: 0.7%;
+        margin-top: 3%;
+    }
+
+    #Mediaproduto__chaveiro{
+        padding: 6px;
+    }
+
+    .main__produtos{
+        display: none;
+    }
+
+    .mainMobile__produtos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 3%;
+    }
+
+    .Mobilesub__produtos{
+        margin-bottom: 4%;
+    }
+
+    .subMobile__produtos{
+        margin-bottom: 4%;
+    }
+
+    .main__lavagens{
+        display: none;
+    }
+
+    .mainMobile__lavagens{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .mainTitle{
+        margin-top: 4%;
+    }
+
+    .divTitle__lavagem{
+        margin-left: 1%;
+        margin-top: 4.5%;
+    }
+
+    .texto__produto{
+        margin-left: 1%;
+        margin-top: 10%;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .banner{
+        margin-top: 20%;    
+    }
+}
+
+@media only screen and (max-width: 545px){
+    .banner__textos{
+        padding: 10px;
+    }
+} 
+
+@media only screen and (max-width: 455px){
+    .banner{
+        margin-top: 25%;    
+    }
+
+    .banner__textos{
+        padding: 20px;
+    }
+}

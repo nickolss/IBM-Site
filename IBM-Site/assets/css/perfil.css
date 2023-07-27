@@ -1,0 +1,82 @@
+*{
+    font-family: "Inter", sans-serif;
+}
+
+.principal{
+    margin: 5.2rem 0.5rem;
+}
+
+.banner{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #01496199;
+    font-weight: 700;
+    border-radius: 20px;    
+}
+
+.banner__titulo{
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.banner__imagem{
+    width: min(250px, 500px);
+}
+
+.imagem-perfil__imagem{
+    margin: 1rem 0;
+    max-width: 100px;
+}
+
+.informacoes-cadastro, .informacoes__formulario{
+    margin: 1rem 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.informacoes-cadastro{
+    background-color: #01496199;
+    max-width: 25vw;
+    margin: 1rem auto;
+}
+
+.informacoes__formulario{
+    margin: 1rem;
+    gap: 10px;
+}
+
+.formulario__campo{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.formulario__campo:disabled{
+    color: #000;
+    font-weight: 400;
+}
+
+.formulario__botao{
+    width: 100%;
+    border: none;
+    background-color: #DF7369;
+    color:#fff;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 0.5rem 1.2rem;
+    box-shadow: 1px 1px 1px 1px #00000050;
+}
+
+@media screen and (max-width: 720px){
+    .banner{
+        display: none;
+    }
+
+    .informacoes-cadastro{
+        max-width: 80vw;
+    }
+}
