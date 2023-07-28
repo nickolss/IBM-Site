@@ -1,80 +1,104 @@
 @import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap);
 
-body{
-    background-color: #f8f2f2;
-    font-family: Inter;
+#container__body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.separacao{
-    display: none;
+main{
+    flex: 1;
 }
 
-.principal{
-    width: 90%;
-    margin: auto;
-}
-
-.introducao{
+.titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 2rem 0;
 }
 
-.introducao__titulo{
-    font-size: 1.8rem;
-    color: #DF7369;
-    padding: 1rem 0;
+.mainTitle{
+    color: #FF7769;
+    font-weight: 600;
+    margin-top: 1.4%;
+    font-size: 3em;
+    text-align: center;
 }
 
-.introducao__texto{
-    font-weight:300;
+.subTitle{
+    color: #014961;
+    font-weight: 600;
+    margin-top: 0.2%;
+    font-size: 1.3em;
+    max-width: 700px;
 }
 
-.formulario{
+.cadastro{
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    align-items: center;
+    justify-content: center;
 }
 
-.formulario__inputs{
+.caixa__input {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 1em 0 1em 0;
+    width: 650px;
     position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-.formulario__nome-campo{
-    font-size: 1rem;
-    font-weight: 700;
-    color: #014961;
-    margin: 0.5rem 0;
-}
-
-.formulario__campo{
-    
-    padding: 0.5rem 0;
-    border: 0;
-    outline: 0;
+  }
+  
+  .caixa__input input {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid #014961;
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 20px;
-}
-
-.formulario__campo-menor{
-    width: 40%;
-    
-}
-
-.formulario__calendario{
-    font-weight: 700;
+    width: 100%;
+    margin-bottom: 3%;
+  }
+  
+  .caixa__input label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0.8em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: rgb(100, 100, 100);
+  }
+  
+  .caixa__input :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: #e8e8e8;
+    height: 30px;
     color: #014961;
-    font-size: 1rem;
+  }
+  
+  .caixa__input :is(input:focus, input:valid) {
+    border-color: #014961;
+  }
+
+#data{
+    height: 80px;
 }
 
-.formulario__termos{
+.div__termos{
     display: flex;
-    gap: 5px;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    margin-right: 26rem;
 }
 
 .planos{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: flex-start;
     padding: 2rem 0;
 }
@@ -82,11 +106,14 @@ body{
 .plano-comum, .plano-turbinado{
     background-color: #fff;
     padding: 2rem;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+.plano__background-rosa{
+    margin-left: 5%;
 }
 
 .plano__cabecalho{
@@ -154,8 +181,20 @@ body{
     background-color: #01496199;
 }
 
+.formulario__botao--comum:hover{
+    transform: scale(1.01);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
+    background-color: rgba(1, 73, 97, 0.705);
+}
+
 .formulario__botao--turbinado{
     background-color: #DF7369;
+}
+
+.formulario__botao--turbinado:hover{
+    transform: scale(1.01);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
+    background-color: #cc6c64;
 }
 
 .plano-turbinado__preco{
@@ -191,17 +230,87 @@ body{
     border-radius: 15px;
 }
 
-@media screen and (max-width: 720px) {
+@media only screen and (max-width:1000px) {
     .separacao{
         display: block;
     }
     
     .planos{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 0;
         flex-direction: column;   
         gap: 10px;    
     }
 
     .formulario__campo-menor{
         width: 60vw;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    .mainTitle{
+        margin-top: 15%;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    .mainTitle{
+        font-size: 2.5em;
+        text-align: center;
+    }
+    
+    .subTitle{
+        color: #014961;
+        font-weight: 600;
+        margin-top: 0.2%;
+        font-size: 1.1em;
+        max-width: 400px;
+    }
+
+    .caixa__input {
+        width: 400px;
+    }
+
+    .div__termos{
+        margin-right: 11rem;
+    }
+}
+
+@media only screen and (max-width:580px) {
+    .plano__background-rosa{
+        margin-right: 5%;
+    }
+}
+
+@media only screen and (max-width:510px) {
+    .mainTitle{
+        margin-top: 20%;
+    }
+
+    .caixa__input {
+        width: 300px;
+    }
+
+    .div__termos{
+        margin-right: 5rem;
+    }
+}
+
+@media only screen and (max-width:395px) {
+    .plano__background-azul{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+@media only screen and (max-width:310px) {
+    .caixa__input {
+        width: 250px;
+    }
+
+    .div__termos{
+        margin-right: 1rem;
     }
 }

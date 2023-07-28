@@ -18,7 +18,7 @@
       <!-- O atributo DEFER espera a página carregar para executar o Script -->
     
     </head>
-    <body id="body">
+    <body id="container__body">
       <header>
         <div id="header">
           <div class="conj_header_redes">
@@ -209,92 +209,88 @@
         </nav>
 
         <main class="principal">
-          <br class="separacao"><br class="separacao"><br class="separacao">
-          <section class="introducao">
-            <h1 class="introducao__titulo">Criar seu cadastro</h1>
-            <p class="introducao__texto">Veja seus pedidos de forma fácil, compre mais rápido e <br> tenha uma experiência personalizada</p>
-          </section>
-          <form action="../scripts/adicionarDados.php" class="formulario" method="POST">
-            <div class="formulario__inputs">
-              <label for="nome" class="formulario__nome-campo">Nome Completo</label>
-              <input type="text" name="nome" id="nome" required class="formulario__campo" autocomplete="off">
-            </div>
-
-            <div class="formulario__inputs">
-              <label for="email" class="formulario__nome-campo">Email</label>
-              <input type="email" name="email" id="email" required class="formulario__campo" autocomplete="off">
-            </div>
-
-            <div class="formulario__inputs">
-              <label for="senha" class="formulario__nome-campo">Senha</label>
-              <input type="password" name="senha" id="senha" required class="formulario__campo" autocomplete="off">
-            </div>
-
-            <div class="formulario__inputs">
-              <label for="telefone" class="formulario__nome-campo">Telefone</label>
-              <input type="tel" name="telefone" id="telefone" required pattern="(?\d{2}?\)? ?\d{5}\-?\d{4}" class="formulario__campo formulario__campo-menor" autocomplete="off" maxlength="14">
-            </div>
-
-            <div class="formulario__inputs" class="formulario__campo">
-              <label for="dataNasc" class="formulario__nome-campo">Data de Nascimento</label>
-              <input type="date" name="dataNasc" id="dataNasc" required class="formulario__campo formulario__campo-menor" pattern="\d{2}\/?\d{2}\/?\d{4}">
-            </div>
-
-            <div class="formulario__inputs" class="formulario__campo">
-              <label for="cpf" class="formulario__nome-campo" >CPF</label>
-              <input type="text" name="cpf" id="cpf" pattern="^[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}" class="formulario__campo formulario__campo-menor" autocomplete="off" required maxlength="14">
-            </div>
-
-
-            <div class="formulario__termos">
-              <input type="checkbox" name="termos" id="termos" required title="Você precisa aceitar os termos para criar uma conta">
-              <label for="termos">Confirmar termos de condições</label>
-            </div>
-
-            <section class="planos">
-              <div class="plano__background-azul">
-                <div class="plano-comum">
-                  <div class="plano__cabecalho">
-                    <img src="../assets/img/velocimetroDevagar.svg">
-                    <h2 class="plano-comum__titulo">Plano Comum</h2>
-                  </div>
-                  <ul class="plano-comum__lista">
-                    <li class="lista__itens-comum">Entrega segura e em todo país</li>
-                    <li class="lista__itens-comum">Melhores preços entre as lojas</li>
-                    <li class="lista__itens-comum">Fornecedores confiáveis</li>
-                    <li class="lista__itens-comum">Pontos para utilizar em descontos</li>
-                  </ul>
-
-                  <button type="submit" value="comum" class="formulario__botao formulario__botao--comum" name="plano">Inscrever-se</button>
-                  
+            <form action="#" method="POST">
+              <div class="titulo">
+                <h1 class="mainTitle">Cadastrar-se</h1>
+                <h2 class="subTitle">Veja seus pedidos de forma fácil, compre mais rápido e
+                  tenha uma experiência personalizada</h2>
+              </div>
+              <div class="cadastro">
+                <div class="caixa__input">
+                  <input type="text" required name="nome" id="nome" autocomplete="off">
+                  <label for="nome">Nome</label>
+                </div>
+                <div class="caixa__input">
+                  <input type="email" required name="email" id="email" autocomplete="off">
+                  <label for="email">Email</label>
+                </div>
+                <div class="caixa__input">
+                  <input type="password" required name="senha" id="senha" autocomplete="off">
+                  <label for="senha">Senha</label>
+                </div>
+                <div class="caixa__input">
+                  <input type="tel" required name="tel" id="tel" autocomplete="off">
+                  <label for="tel">Telefone</label>
+                </div>
+                <div class="caixa__input">
+                  <input type="date" required name="data" id="data" autocomplete="off">
+                  <label for="data">Data de Nascimento</label>
+                </div>
+                <div class="caixa__input">
+                  <input type="number" required name="cpf" id="cpf" autocomplete="off">
+                  <label for="cpf">CPF</label>
+                </div>
+                <div class="div__termos">
+                  <div class="filho__termos"><label for="termos"><input type="checkbox" name="termos" id="termos">Aceitar Termos de condições</label></div>
                 </div>
               </div>
 
-              <div class="plano__background-rosa">
-                <div class="plano-turbinado">
-                  <div class="plano__cabecalho">
-                    <img src="../assets/img/velocimetro.svg">
-                    <h2 class="plano-turbinado__titulo">Plano Turbinado</h2>
+              
+
+              <section class="planos">
+                <div class="plano__background-azul">
+                  <div class="plano-comum">
+                    <div class="plano__cabecalho">
+                      <img src="../assets/img/velocimetroDevagar.svg">
+                      <h2 class="plano-comum__titulo">Plano Comum</h2>
+                    </div>
+                    <ul class="plano-comum__lista">
+                      <li class="lista__itens-comum">Entrega segura e em todo país</li>
+                      <li class="lista__itens-comum">Melhores preços entre as lojas</li>
+                      <li class="lista__itens-comum">Fornecedores confiáveis</li>
+                      <li class="lista__itens-comum">Pontos para utilizar em descontos</li>
+                    </ul>
+  
+                    <button type="submit" value="comum" class="formulario__botao formulario__botao--comum" name="plano">Cadastrar-se</button>
+                    
                   </div>
-                  <ul class="plano-turbinado__lista">
-                    <li class="lista__itens-turbinado">Frete grátis e entregas mais rápidas</li>
-                    <li class="lista__itens-turbinado">Acesso ao programa de pontos em dobro</li>
-                    <li class="lista__itens-turbinado">Atendimento personalizado para esclarecer suas dúvidas</li>
-                    <li class="lista__itens-turbinado">Brindes mensais para personalizar seu carro</li>
-                    <li class="lista__itens-turbinado">Ofertas exclusivas</li>
-                    <li class="lista__itens-turbinado">Cashback em algumas compras</li>
-                    <li class="lista__itens-turbinado">Entrega segura e em todo país </li>
-                    <li class="lista__itens-turbinado">Melhores preços entre as lojas</li>
-                    <li class="lista__itens-turbinado">Fornecedores confiáveis</li>
-                    <li class="lista__itens-turbinado">Pontos para utilizar em descontos</li>
-                  </ul>
-                  <p class="plano-turbinado__preco">apenas <span class="preco">29,90</span></p>
-                  <a href="pagamentoTurbinado.html"><button type="submit" value="turbinado" class="formulario__botao formulario__botao--turbinado" name="plano">Inscrever-se</button></a>
                 </div>
-              </div>
-            </section>  
-          </form>
-          
+  
+                <div class="plano__background-rosa">
+                  <div class="plano-turbinado">
+                    <div class="plano__cabecalho">
+                      <img src="../assets/img/velocimetro.svg">
+                      <h2 class="plano-turbinado__titulo">Plano Turbinado</h2>
+                    </div>
+                    <ul class="plano-turbinado__lista">
+                      <li class="lista__itens-turbinado">Frete grátis e entregas mais rápidas</li>
+                      <li class="lista__itens-turbinado">Acesso ao programa de pontos em dobro</li>
+                      <li class="lista__itens-turbinado">Atendimento personalizado para esclarecer suas dúvidas</li>
+                      <li class="lista__itens-turbinado">Brindes mensais para personalizar seu carro</li>
+                      <li class="lista__itens-turbinado">Ofertas exclusivas</li>
+                      <li class="lista__itens-turbinado">Cashback em algumas compras</li>
+                      <li class="lista__itens-turbinado">Entrega segura e em todo país </li>
+                      <li class="lista__itens-turbinado">Melhores preços entre as lojas</li>
+                      <li class="lista__itens-turbinado">Fornecedores confiáveis</li>
+                      <li class="lista__itens-turbinado">Pontos para utilizar em descontos</li>
+                    </ul>
+                    <p class="plano-turbinado__preco">apenas <span class="preco">R$29,90</span></p>
+                    <a href="pagamentoTurbinado.html"><button type="submit" value="turbinado" class="formulario__botao formulario__botao--turbinado" name="plano">Cadastrar-se</button></a>
+                  </div>
+                </div>
+              </section>
+
+            </form>   
         </main>
 
         <footer>
@@ -373,7 +369,7 @@
                       </div>
             </div>
           </div>
-          </footer>
+        </footer>
 
         
     </body>
