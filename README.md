@@ -17,6 +17,7 @@ Turn Motors é um projeto para a feira tecnológica e IBM, executado pelos aluno
     <li>HTML (Linguagem de Marcação de HiperTexto)</li>
     <li>CSS (Folha de Estilo em Cascatas)</li>
     <li>JS (JavaScript)</li>
+    <li>PHP</li>
     <li>Bootstrap</li>
 </ul>
 
