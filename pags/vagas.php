@@ -39,16 +39,16 @@
       <div class="row sumir3-vagas" id="img-vagas-animacao">
         <div class="col">
 
-          <a href="../pags/concurso.html"><img class="post-big" src="../assets/img/concurso.jpg" alt="..."></a>
+          <a href="../pags/concurso.php"><img class="post-big" src="../assets/img/concurso.jpg" alt="..."></a>
 
         </div>
         <div class="col" id="alinhamemto-main-vagas">
           <div style="margin-bottom: 7px;">
-            <a href="../pags/funcionariames.html"> <img class="posts-pq" src="../assets/img/funcionaria.jpg" alt=""></a>
+            <a href="../pags/funcionariames.php"> <img class="posts-pq" src="../assets/img/funcionaria.jpg" alt=""></a>
           </div>
 
           <div>
-            <a href="../pags/equipe.html"><img class="posts-pq" src="../assets/img/equipe.jpg" alt=""></a>
+            <a href="../pags/equipe.php"><img class="posts-pq" src="../assets/img/equipe.jpg" alt=""></a>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@
       <br>
       <div class="row sumir-vagas">
         <div class="col">
-          <a id="sem-formatar" href="../pags/mecanicoautomotivo.html">
+          <a id="sem-formatar" href="../pags/mecanicoautomotivo.php">
             <div id="card-vagas-animacao">
               <div class="card mb-3" style="max-width: 100%; background-color: #D9D9D9; box-shadow: 2px 5px 5px 0px rgba(136, 136, 136, 0.459);">
                 <div class="row g-0">
@@ -98,7 +98,7 @@
       </div>
       <div class="row sumir-vagas">
         <div class="col">
-          <a id="sem-formatar" href="../pags/funileiro.html">
+          <a id="sem-formatar" href="../pags/funileiro.php">
             <div id="card-vagas-animacao">
               <div class="card mb-3" style="max-width: 100%; background-color: #D9D9D9; box-shadow: 2px 5px 5px 0px rgba(136, 136, 136, 0.459);">
                 <div class="row g-0">
@@ -121,7 +121,7 @@
       </div>
       <div class="row sumir-vagas">
         <div class="col">
-          <a id="sem-formatar" href="../pags/operadorinjecao.html">
+          <a id="sem-formatar" href="../pags/operadorinjecao.php">
             <div id="card-vagas-animacao">
               <div class="card mb-3" style="max-width: 100%; background-color: #D9D9D9; box-shadow: 2px 5px 5px 0px rgba(136, 136, 136, 0.459);">
                 <div class="row g-0">
@@ -151,7 +151,7 @@
                 <h5 class="card-title">Mecânico automotivo</h5>
                 <p class="card-text">Profissional para diagnosticar, de forma precisa e rápida, problemas em automóveis, além de realizar reparos e manutenção em carros e motocicletas. Precisa ser capaz de desmontar o automóvel, reparar e substituir qualquer peça, ajustar e lubrificar o motor de um veículo.</p>
                 <br>
-                <a href="../pags/mecanicoautomotivo.html" class="btn btn-primary btn-vagas">Verificar</a>
+                <a href="../pags/mecanicoautomotivo.php" class="btn btn-primary btn-vagas">Verificar</a>
               </div>
             </div>
           </div>
@@ -199,7 +199,7 @@
                 <p class="card-text">Atua com instalação e manutenção de alarmes monitorados e CFTV digital. Faz passagem de cabeamento, reparos e faz elaboração de laudos técnicos.</p>
                 <br>
                 <br>
-                <a href="../pags/instaladoralarme.html" class="btn btn-primary btn-vagas">Verificar</a>
+                <a href="../pags/instaladoralarme.php" class="btn btn-primary btn-vagas">Verificar</a>
               </div>
             </div>
           </div>
@@ -211,7 +211,7 @@
             <div class="card-body">
               <h5 class="card-title">Mecânico de Carros Híbridos</h5>
               <p class="card-text">São engenheiros mecanicos com seu conhecimento voltado para carros de técnologia híbrida e na manutenção de carros com esse padrão.</p>
-              <a href="../pags/mecanicohibrido.html" class="btn btn-primary btn-vagas">Verificar</a>
+              <a href="../pags/mecanicohibrido.php" class="btn btn-primary btn-vagas">Verificar</a>
             </div>
           </div>
         </div>
@@ -223,7 +223,7 @@
 
               <p class="card-text">Responsável pela reparação, manutenção e possível troca de câmbios automáticos.</p>
 
-              <a href="../pags/reparadorcambio.html" style="margin-top: 95px;" class="btn btn-primary btn-vagas">Verificar</a>
+              <a href="../pags/reparadorcambio.php" style="margin-top: 95px;" class="btn btn-primary btn-vagas">Verificar</a>
             </div>
           </div>
         </div>
