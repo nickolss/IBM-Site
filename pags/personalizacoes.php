@@ -86,7 +86,7 @@
                                 <h3>Sólida</h3>
                             </div>
                             <div class="card__descricao">
-                                <p>Tipo mais básico, contém pigmentos de cor, geralmente nas opções branco, vermelho e preto.</p>
+                                <p>Tipo mais básico, contém pigmentos de cor, sendo mais opaco.</p>
                             </div>
                         </div>
                         <div class="card card__maior">
