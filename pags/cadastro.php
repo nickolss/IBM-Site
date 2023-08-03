@@ -46,6 +46,10 @@
           <label for="senha">Senha</label>
         </div>
         <div class="caixa__input">
+          <input type="password" required name="confirmarSenha" id="confirmarSenha" autocomplete="off">
+          <label for="senha">Confirmar Senha</label>
+        </div>
+        <div class="caixa__input">
           <input type="tel" required name="tel" id="tel" autocomplete="off">
           <label for="tel">Telefone</label>
         </div>

@@ -18,9 +18,9 @@
         </div>
         <div class="conj_header_ferramentas">
             <ul id="form_header_ferramentas">
-                <li> <img class="lupa" width="40px" height="auto" src="../assets/img/lupa.svg" alt="Pesquisar"> </li>
+                <li> <img class="lupa" width="40px" height="auto" src="../assets/img/lupa.png" alt="Pesquisar"> </li>
                 <li> <img id="carrinho" width="40px" src="../assets/img/iconeCarrinhoQuantidade.svg" alt="Carrinho"> </li>
-                <li> <a class="cabeca" href="../pags/login.php"> <img width="60px" src="../assets/img/conta5.svg" alt="Login"> </a> </li>
+                <li> <a class="cabeca" href="../pags/login.php"> <img width="60px" src="../assets/img/conta5.png" alt="Login"> </a> </li>
             </ul>
         </div>
     </div>
@@ -83,7 +83,7 @@
             <div class="row align-items-center" style="height: 150px;">
                 <div class="col " style="padding: 0px 20px;">
                     <div class="header_search">
-                        <div style="display: flex; justify-content: center; align-items: center;"><img width="30px" height="auto" src="../assets/img/lupa.svg" alt="Pesquisar"></div>
+                        <div style="display: flex; justify-content: center; align-items: center;"><img width="30px" height="auto" src="../assets/img/lupa.png" alt="Pesquisar"></div>
                         <input class="form-control input_header_search" type="text" placeholder="Pesquisar...">
                         <div style="display: flex; justify-content: center; align-items: center;"> <button type="button" class="btn-close lupa" aria-label="Close"></button></div>
                     </div>
