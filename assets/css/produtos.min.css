@@ -1,0 +1,110 @@
+#container__body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    flex: 1;
+}
+
+.titles{
+    text-align: center;
+}
+
+.titles .main__title{
+    color: #FF7769;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-top: 2%;
+}
+
+.titles .sub__title{
+    color: #004762;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 1.5%;
+}
+
+.linha{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5%;
+}
+
+.coluna{
+    margin: 0.5%;
+}
+
+.card{
+    border-radius: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+
+.card:hover{
+    transform: scale(1.03);
+    transition-duration: 0.5s;
+}
+
+.categoria__img{
+    border-radius: 20px;
+}
+
+.container__medio__categorias, .container__pequeno__categorias, .container__mobile__categorias{
+    display: none;
+}
+
+@media only screen and (max-width: 1500px){
+    .container__grande__categorias, .container__pequeno__categorias, .container__mobile__categorias{
+        display: none;
+    }
+
+    .container__medio__categorias{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .container__grande__categorias, .container__medio__categorias, .container__mobile__categorias{
+        display: none;
+    }
+
+    .container__pequeno__categorias{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .titles{
+        margin-top: 10%;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .titles{
+        margin-top: 15%;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .container__grande__categorias, .container__medio__categorias, .container__pequeno__categorias{
+        display: none;
+    }
+
+    .container__mobile__categorias{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .titles{
+        margin-top: 20%;
+    }
+}
