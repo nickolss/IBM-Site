@@ -35,7 +35,7 @@
                         </p>
                     </div>
                     <div class="Divhist__img">
-                        <img id="hist__img" src="../assets/img/about-hist.svg" alt="Homem com carros">
+                        <img id="hist__img" src="../assets/img/about-hist.png" alt="Homem com carros">
                     </div>
                 </div>
                 <div class="cards">
@@ -54,7 +54,7 @@
                         </div>
                     </div>
                     <div class="card" id="card__associar">
-                        <img class="card__img" src="../assets/img/about-associar.svg" alt="Icone Aperto de Mao">
+                        <img class="card__img" src="../assets/img/about-associar.png" alt="Icone Aperto de Mao">
                         <div class="card__content">
                             <p class="card__title">Como se Associar?</p>
                             <p class="card__description">Acesse a área de <a class="card__link" href="vagas.html">vagas</a> para se tornar um de nossos associados.</p>
