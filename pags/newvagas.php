@@ -76,7 +76,7 @@
                     <div class="horizontal__card">
                         <div class="coluna">
                             <div class="card__img">
-                                <img id="card__imagem" src="../assets/img/funilaria-carro.jpg" alt="Funileiro">
+                                <img id="card__imagem" src="../assets/img/funileiro.jpg" alt="Funileiro">
                             </div>
                         </div>
                         <div class="coluna horizontal__card__text">
