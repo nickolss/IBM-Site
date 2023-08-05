@@ -1,3 +1,7 @@
+<?php 
+  require_once('../assets/scripts/consultaFuncionario.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 

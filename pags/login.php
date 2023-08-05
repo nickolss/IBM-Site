@@ -32,7 +32,7 @@
     <div class="container">
       <div class="tela__grande">
         <div class="texto">
-          <form action="#" method="POST">
+          <form action="../assets/scripts/verificarRegistro.php" method="POST">
             <h1>Login</h1>
             <div class="caixa__input">
               <input type="email" name="email" id="email" placeholder="email" required>
@@ -58,7 +58,7 @@
       </div>
       <div class="mobile">
         <div class="texto">
-          <form action="#" method="POST">
+          <form action="../assets/scripts/verificarRegistro.php" method="POST">
             <h1>Login</h1>
             <div class="caixa__input">
               <input type="email" name="email" id="email" placeholder="email" required>
