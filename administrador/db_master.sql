@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Tempo de geração: 11/07/2023 às 18:52
+-- Host: 127.0.0.1
+-- Tempo de geração: 05-Ago-2023 às 05:22
 -- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
+-- versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,13 +27,13 @@ USE `db_master`;
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `Avaliacao`
+-- Estrutura da tabela `avaliacao`
 --
 
-CREATE TABLE `Avaliacao` (
-  `id` int NOT NULL,
+CREATE TABLE `avaliacao` (
+  `id` int(11) NOT NULL,
   `escritor` varchar(200) NOT NULL,
-  `estrelas` int NOT NULL,
+  `estrelas` int(11) NOT NULL,
   `produtoAvaliado` varchar(120) NOT NULL,
   `texto` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -41,28 +41,50 @@ CREATE TABLE `Avaliacao` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `Cliente`
+-- Estrutura da tabela `cliente`
 --
 
-CREATE TABLE `Cliente` (
-  `cpf` int(12) NOT NULL,
+CREATE TABLE `cliente` (
+  `id` int(11) NOT NULL,
+  `cpf` int(13) NOT NULL,
   `nomeCompleto` varchar(200) NOT NULL,
   `dataNasc` date NOT NULL,
   `telefone` int(12) NOT NULL,
   `email` varchar(150) NOT NULL,
   `senha` varchar(20) NOT NULL,
   `plano` enum('comum','turbinado') NOT NULL,
-  `quantidadePontos` int DEFAULT NULL,
+  `quantidadePontos` int(11) DEFAULT NULL,
   `fotoPerfil` blob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `Produto`
+-- Estrutura da tabela `funcionario`
 --
 
-CREATE TABLE `Produto` (
+CREATE TABLE `funcionario` (
+  `id` int(11) NOT NULL,
+  `rf` int(10) NOT NULL,
+  `nome` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `senha` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `funcionario`
+--
+
+INSERT INTO `funcionario` (`id`, `rf`, `nome`, `email`, `senha`) VALUES
+(1, 1, 'Nickolas Maia de Araujo', 'nickolasmaraujo@gmail.com', 'Senha123');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `produto`
+--
+
+CREATE TABLE `produto` (
   `codigoProduto` int(11) NOT NULL,
   `nome` varchar(120) NOT NULL,
   `preco` float NOT NULL,
@@ -75,31 +97,43 @@ CREATE TABLE `Produto` (
 --
 
 --
--- Índices de tabela `Cliente`
+-- Índices para tabela `cliente`
 --
-ALTER TABLE `Cliente`
-  ADD PRIMARY KEY (`cpf`);
+ALTER TABLE `cliente`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `Produto`
+-- Índices para tabela `funcionario`
 --
-ALTER TABLE `Produto`
+ALTER TABLE `funcionario`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `produto`
+--
+ALTER TABLE `produto`
   ADD PRIMARY KEY (`codigoProduto`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT de tabela `Cliente`
+-- AUTO_INCREMENT de tabela `cliente`
 --
-ALTER TABLE `Cliente`
-  MODIFY `cpf` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `cliente`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `Produto`
+-- AUTO_INCREMENT de tabela `funcionario`
 --
-ALTER TABLE `Produto`
+ALTER TABLE `funcionario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `produto`
+--
+ALTER TABLE `produto`
   MODIFY `codigoProduto` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
