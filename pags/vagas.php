@@ -9,7 +9,7 @@
   <!--LINK ICONES-->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-  <link rel="stylesheet" href="../assets/css/vagas.min.css">
+  <link rel="stylesheet" href="../assets/css/mainvagas.min.css">
   <link rel="stylesheet" href="../assets/css/carrossel.min.css">
   <link rel="stylesheet" href="../assets/css/estilos-importantes.css">
 
@@ -42,13 +42,13 @@
 
                 <!--SLIDE IMAGENS-->
                 <div class="slide primeiro">
-                    <img src="../assets/img/concurso.jpg" alt="Concurso">
+                    <a href="concurso.php"><img src="../assets/img/concurso.jpg" alt="Concurso"></a>
                 </div>
                 <div class="slide">
-                    <img src="../assets/img/funcionaria.jpg" alt="Funcionária do Mês">
+                    <a href="funcionariames.php"><img src="../assets/img/funcionaria.jpg" alt="Funcionária do Mês"></a>
                 </div>
                 <div class="slide">
-                    <img src="../assets/img/equipe.jpg" alt="Equipe 2023">
+                    <a href="equipe.php"><img src="../assets/img/equipe.jpg" alt="Equipe 2023"></a>
                 </div>
                 <!--FIM SLIDE IMAGENS-->
 

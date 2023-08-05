@@ -1,223 +1,628 @@
-#container__body{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+* {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
 }
 
-main{
-    flex: 1;
+h1.main-title {
+    color: #df7369;
+    font-weight: 700;
+    font-size: 3.3em;
+    text-shadow: 2px 1px 1px #00253283;
+    margin-top: 2%
 }
 
-.titles{
-    text-align: center;
+h2.main-subtitle {
+    margin-bottom: 3%
 }
 
-.titles .main__title{
-    color: #FF7769;
-    font-weight: 600;
-    margin-top: 1.4%;
-    font-size: 2.5rem;
-    text-align: center;
+img.posts {
+    margin-bottom: 2%
 }
 
-.titles .sub__title{
-    color: #004762;
-    font-weight: 600;
-    font-size: 1.5rem;
-    max-width: 700px;
+img.post-big {
+    margin-bottom: 5%
+}
+
+img.posts:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all .5s ease
+}
+
+.sub {
+    margin-bottom: 2.5%;
+    text-shadow: 2px 1px 1px #0025325e
+}
+
+.card {
     margin: auto;
+    box-shadow: 2px 5px 5px 0 rgba(136, 136, 136, .459);
+    height: 100%
 }
 
-.imagens{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all .5s ease
 }
 
-    .imagens .coluna{
-        display: flex;
-        flex-direction: column;
-        margin: 1%;
-        cursor: pointer;
-    }
+.card-body {
+    background-color: #d9d9d9;
+    height: 100%
+}
 
-    .imagens .coluna img:hover{
-        transform: scale(1.02);
-        transition-duration: 0.5s;
-    }
+.card-title {
+    font-size: 1.5em;
+    color: #002532
+}
 
-    .imagens .coluna #top__img{
-        margin-bottom: 5px;
-    }
+.card-text {
+    text-align: left;
+    font-size: 1.3em
+}
 
-.titles h3{
-    color: #FF7769;
-    font-weight: 600;
-    margin-top: 1.4%;
-    font-size: 1.7rem;
+.last-card {
+    margin-bottom: 3%
+}
+
+.sub-vagas-preenchidas {
+    display: none
+}
+
+.outras-vagas {
+    height: 393px
+}
+
+.outra-vaga2 {
+    height: 370px
+}
+
+#outro-botao1 {
+    margin-top: 20%;
+    background-color: hsla(195, 98%, 19%, .6);
+    border: 1px solid hsla(195, 98%, 19%, .6);
+    box-shadow: 2px 3px 3px rgba(136, 136, 136, .692)
+}
+
+#outro-botao2 {
+    background-color: hsla(195, 98%, 19%, .6);
+    border: 1px solid hsla(195, 98%, 19%, .6);
+    box-shadow: 2px 3px 3px rgba(136, 136, 136, .692)
+}
+
+#outro-botao3 {
+    margin-top: 56%;
+    background-color: hsla(195, 98%, 19%, .6);
+    border: 1px solid hsla(195, 98%, 19%, .6);
+    box-shadow: 2px 3px 3px rgba(136, 136, 136, .692)
+}
+
+.botao-verificar-vaga:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: all .5s ease;
+    box-shadow: 2px 3px 3px rgba(136, 136, 136, .692)
+}
+
+.card-title-big {
+    text-align: left;
+    font-size: 2em
+}
+
+.card-title-2 {
+    font-size: 1.4em;
+    font-weight: 500
+}
+
+.img-card {
+    flex-shrink: 0
+}
+
+.a-card {
+    text-decoration: none;
+    color: #242424
+}
+
+.a-card {
+    text-decoration: none;
+    color: #242424
+}
+
+.a-card:hover {
+    text-decoration: none;
+    color: #353535
+}
+
+.card-botao {
+    background-color: hsla(195, 98%, 19%, .6)
+}
+
+.concurso-body {
+    margin-top: 2%
+}
+
+h1.h1-main-concurso {
+    color: #df7369;
+    font-weight: 700;
+    font-size: 3.3em;
+    text-shadow: 2px 1px 1px #00253283
+}
+
+h2.h2-main-concurso {
+    margin-bottom: 2%
+}
+
+h3.h3-main-concurso {
+    margin-top: 5%;
+    text-align: left;
+    font-weight: 700;
+    font-size: 2.2em;
+    color: #014860
+}
+
+.concurso-p {
+    text-align: left;
+    font-size: 1.55em;
+    margin-top: 3%
+}
+
+.col-image-concurso {
+    display: none
+}
+
+p.info-concurso {
+    font-size: 1.3em;
+    text-align: left;
+    margin-top: 5%
+}
+
+strong.concurso-requitios {
+    font-size: 1.3em;
+    color: #014860
+}
+
+p#botao-concurso {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
     text-align: center;
-    margin: 50px 0px 10px 0px;
+    background-color: hsla(195, 98%, 19%, .6);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 2%;
+    width: 13%;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .342);
+    margin: 1rem auto
 }
 
-.container__horizontal__cards{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#botao-concurso:hover {
+    background-color: rgba(1, 72, 96, .781);
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all .2s ease
 }
-    .a__card{
-        text-decoration: none;    
-    }
 
-    .container__horizontal__cards .horizontal__card{
-        display: flex;
-        flex-direction: row;
-        background-color: rgba(255, 255, 255, 0.7);
-        max-width: 900px;
-        height: 200px;
-        border-radius: 20px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-        cursor: pointer;
-        margin-top: 1%;
-    }
+.h3-main-func {
+    margin-top: 5%;
+    text-align: left;
+    font-weight: 700;
+    font-size: 2.2em;
+    margin-bottom: -2%;
+    color: #014860
+}
 
-    .container__horizontal__cards .horizontal__card:hover{
-        transform: scale(1.01);
-        transition-duration: 0.5s;
-    }
+.img-concurso-func {
+    margin-top: 4%
+}
 
-            .horizontal__card__text{
-                padding: 10px;
-            }
-                #card__imagem{
-                    border-top-left-radius: 20px;
-                    border-bottom-left-radius: 20px;
-                }
+h1.equipe2023-title {
+    color: #df7369;
+    font-weight: 700;
+    font-size: 3.3em;
+    text-shadow: 2px 1px 1px #00253283;
+    margin-top: 2%
+}
 
-                .container__horizontal__cards .horizontal__card .horizontal__card__text h4{
-                    color: #004762;
-                    font-weight: 600;
-                    font-size: 1.4rem;
-                    text-transform: none;
-                }
+.info-equipe {
+    margin-left: -26%;
+    text-align: left
+}
 
-                .container__horizontal__cards .horizontal__card .horizontal__card__text p{
-                    margin-top: -17px;
-                    text-align: justify;
-                    padding-right: 15px;
-                    color: black;
-                }
+.info-equipe-big {
+    margin-left: -5%
+}
 
-.container__vertical__card{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+.p-info-equipe {
+    font-size: 1.3em
+}
+
+p.subtitle-equipe2023 {
     margin-bottom: 3%;
+    font-size: 1.4em
 }
 
-    .vertical__card{
-        border-radius: 20px;
-        width: 248px;
-        margin: 0.5%;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-        background-color: rgba(255, 255, 255, 0.7);
+.imagem-colaborador-equipe {
+    margin-bottom: 4%
+}
+
+.cargo-equipe {
+    color: #df7369
+}
+
+.nome-equipe {
+    color: rgba(1, 72, 96, .781)
+}
+
+.equipe-small {
+    display: none
+}
+
+h1.title-vaga-mecanico {
+    color: #df7369;
+    font-weight: 700;
+    font-size: 3.3em;
+    text-shadow: 2px 1px 1px #00253283
+}
+
+h2.subtitle-vaga-mecanico {
+    color: #014961;
+    font-weight: 500;
+    font-size: 2.3em;
+    text-shadow: 2px 1px 1px #00253236
+}
+
+.subtitle-vaga-mec-v2 {
+    margin-top: 3%
+}
+
+.p-vaga-mecanico {
+    font-size: 1.5em;
+    text-align: left
+}
+
+.beneficios-vaga {
+    text-align: center;
+    margin-bottom: 3%
+}
+
+.li-vaga-mec {
+    font-size: 1.35em;
+    text-align: left;
+    margin-bottom: 2%
+}
+
+@media(max-width:1399px) {
+    img.post-big {
+        width: 730px;
+        height: 487px
+    }
+
+    img.posts-pq {
+        width: 362px;
+        height: 241px
+    }
+}
+
+@media(max-width:1199px) {
+    img.post-big {
+        width: 560px;
+        height: 373px
+    }
+
+    img.posts-pq {
+        width: 277px;
+        height: 185px
+    }
+
+    .card-body {
+        height: 300px
+    }
+
+    .card-pontas {
+        height: 325px
+    }
+
+    .sub-vagas-preenchidas {
+        display: flex;
+        margin-bottom: 5%
+    }
+
+    .sub-vagas-body {
+        height: 520px
+    }
+
+    #sub-botao1 {
+        margin-top: 11%;
+        background-color: hsla(195, 98%, 19%, .6);
+        border: 1px solid hsla(195, 98%, 19%, .6)
+    }
+
+    #sub-botao2 {
+        background-color: hsla(195, 98%, 19%, .6);
+        border: 1px solid hsla(195, 98%, 19%, .6)
+    }
+
+    #sub-botao3 {
+        margin-top: 53%;
+        background-color: hsla(195, 98%, 19%, .6);
+        border: 1px solid hsla(195, 98%, 19%, .6)
+    }
+
+    #sub-vagas-body1 {
+        height: 547px
+    }
+
+    #sub-vagas-body3 {
+        height: 532px
+    }
+
+    .vagas-preenchidas {
+        display: none
+    }
+
+    .outras-vagas {
+        height: 393px
+    }
+
+    .outra-vaga2 {
+        height: 370px
+    }
+
+    p#botao-concurso {
+        width: 16%
+    }
+
+    .info-equipe-big {
+        margin-left: -7%
+    }
+}
+
+@media (max-width:1180px) {
+    .footer-col {
+        width: 40%;
+        margin-bottom: 30px
+    }
+}
+
+@media(max-width:995px) {
+    img.post-big {
+        width: 445px;
+        height: 297px
+    }
+
+    img.posts-pq {
+        width: 219px;
+        height: 146px
+    }
+}
+
+@media (max-width:991px) {
+    .card {
+        margin-bottom: 7%
+    }
+
+    .coluna-imagem-concurso {
+        display: none
+    }
+
+    .col-image-concurso {
+        display: flex
+    }
+
+    p#botao-concurso {
+        width: 25%
+    }
+
+    .info-equipe {
+        margin-left: -10%
+    }
+
+    .equipe-big {
+        display: none
+    }
+
+    .equipe-small {
+        display: block
+    }
+
+    .beneficio-am {
+        margin-bottom: 19%
+    }
+}
+
+@media (max-width:800px) {
+    header {
+        margin-bottom: 5%
+    }
+
+    h1.main-title {
+        font-size: 2.5em
+    }
+
+    img.posts {
+        width: 440px;
+        height: 293px
+    }
+}
+
+@media screen and (max-width:770px) {
+    header {
+        display: none
+    }
+
+    #menu {
+        display: block
+    }
+
+    li.l {
+        text-align: center
+    }
+
+    h1.main-title {
+        margin-top: 90px
+    }
+
+    .sub-vagas-preenchidas {
+        display: flex
+    }
+
+    .vagas-preenchidas {
+        display: none
+    }
+
+    .h1-main-concurso {
+        margin-top: 15%
+    }
+
+    p#botao-concurso {
+        width: 30%
+    }
+
+    .info-equipe {
+        margin-left: -5%
+    }
+
+    #concurso-title {
+        margin-top: 12%
+    }
+
+    .title-vaga-mecanico {
+        margin-top: 25%
+    }
+}
+
+@media screen and (max-width:767px) {
+    .beneficio-am {
+        margin-bottom: 4%
+    }
+}
+
+@media (max-width:750px) {
+    header {
+        margin-bottom: 5%
+    }
+
+    h1.main-title {
+        font-size: 2em
+    }
+
+    h2.main-subtitle {
+        font-size: 1.5em
+    }
+
+    img.posts {
+        width: 400px;
+        height: 267px
+    }
+
+    #concurso-title {
+        margin-top: 16%
+    }
+}
+
+@media (max-width:700px) {
+    .footer-col {
+        width: 100%
+    }
+
+    li {
+        
+    }
+}
+
+@media (max-width:625px) {
+    .card:hover {
         cursor: pointer;
-    }
-
-    .vertical__card__margem{
-        margin-right: 1%;
-    }
-
-    .vertical__card:hover{
-        transform: scale(1.02);
-        transition-duration: 0.5s;
-    }
-
-        .vertical__card img{
-            border-top-left-radius: 7px;
-            border-top-right-radius: 7px;
-        }
-    
-    .card__titulo{
-        padding: 10px 5px;
-        text-align: center;
-        color: #00384e;
-    }
-
-    .card__descricao{
-        font-size: 1.1rem;
-        text-align: justify;
-        padding: 0px 20px 10px 20px;
-        color: black;
-    }
-
-.mobile, .img__mobile{
-    display: none;
-}
-
-@media only screen and (max-width: 991px){
-    .container__cards .horizontal__card{
-        width: 800px;
-    }
-
-    .imagens{
-        display: none;
+        transform: scale(1.01);
+        transition: all .5s ease
     }
 }
 
-@media only screen and (max-width: 800px){
-    .titles{
-        margin-top: 90px;
+@media (max-width:510px) {
+    h1.main-title {
+        font-size: 1.9em
     }
 
-    .container__vertical__card{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    h2.main-subtitle {
+        font-size: 1.3em
     }
 
-    .vertical__card__margem{
-        margin-bottom: 2%;
-    }
-
-    .imagens{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .alinhar__img, .coluna__img{
-        display: flex;
-        flex-direction: row;
-    }
-
-    .coluna__img{
-        display: none;
-    }
-
-    .img__mobile{
-        display: flex;
-    }
-
-    .tela__media{
-        display: none;
-    }
-
-    .mobile{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: auto;
+    p#botao-concurso {
+        width: 37%
     }
 }
 
-@media only screen and (max-width: 700px){
-    .titles .main__title{
-        font-size: 2rem;
+@media (max-width:480px) {
+    img.posts {
+        width: 300px;
+        height: 200px
     }
-    
-    .titles .sub__title{
-        font-size: 1rem;
+}
+
+.vagas__espaco {
+    display: none
+}
+
+@media screen and (max-width:460px) {
+    .vagas__espaco {
+        display: block
+    }
+}
+
+@media (max-width:467px) {
+    .card-body-big {
+        height: 320px
+    }
+
+    p#botao-concurso {
+        width: 47%
+    }
+
+    .beneficios-vaga {
+        margin-bottom: 15%
+    }
+}
+
+@media (max-width:381px) {
+    .card-body-big {
+        height: 410px
+    }
+}
+
+@media (max-width:350px) {
+    .card-body-big1 {
+        height: 480px
+    }
+}
+
+@media (max-width:316px) {
+    .card-body-big {
+        height: 450px
+    }
+
+    .card-body-big1 {
+        height: 520px
+    }
+}
+
+@media (max-width:284px) {
+    .sub-vagas-preenchidas {
+        height: 900px
+    }
+
+    #sub-botao1 {
+        margin-top: -10%
+    }
+}
+
+@media (max-width:281px) {
+    .card-body-big {
+        height: 500px
+    }
+
+    .card-body-big1 {
+        height: 570px
     }
 }

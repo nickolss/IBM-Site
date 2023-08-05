@@ -102,12 +102,12 @@
       <br>
       <div class="row">
         <div class="col">
-          <img src="../assets/img/mecanica.svg" class="img-fluid img-vaga" alt="Funilaria">
+          <img style="width: 650px;" src="../assets/img/mecanica.png" class="img-fluid img-vaga" alt="Funilaria">
         </div>
       </div>
     </div>
     <div class="col">
-      <a href="../login.html" style="text-decoration: none; margin: 1rem auto;">
+      <a href="login.php" style="text-decoration: none; margin: 1rem auto;">
         <p id="botao-concurso">Inscreva-se</p>
       </a>
 
