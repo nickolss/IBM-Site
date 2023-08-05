@@ -9,7 +9,8 @@
   <!--LINK ICONES-->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-  <link rel="stylesheet" href="../assets/css/newvagas.min.css">
+  <link rel="stylesheet" href="../assets/css/vagas.min.css">
+  <link rel="stylesheet" href="../assets/css/carrossel.min.css">
   <link rel="stylesheet" href="../assets/css/estilos-importantes.css">
 
 
@@ -26,23 +27,50 @@
 
   <main>
     <div class="container">
-
         <div class="titles">
             <h1 class="main__title">Seja parte do time Turn Motors</h1>
             <h2 class="sub__title">Veja as vagas de emprego disponível para você fazer parte da equipe Turn Motors</h2>
         </div>
 
-        <div class="imagens">
-            <div class="coluna">
-                <a href="concurso.php" class="a__card"><img id="concurso" src="../assets/img/concurso.jpg" alt="Concurso para mecânico"></a>
+        <div class="slider">
+            <div class="slides">
+                <!--RADIO BUTTONS-->
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <!--FIM RADIO BUTTONS-->
+
+                <!--SLIDE IMAGENS-->
+                <div class="slide primeiro">
+                    <img src="../assets/img/concurso.jpg" alt="Concurso">
+                </div>
+                <div class="slide">
+                    <img src="../assets/img/funcionaria.jpg" alt="Funcionária do Mês">
+                </div>
+                <div class="slide">
+                    <img src="../assets/img/equipe.jpg" alt="Equipe 2023">
+                </div>
+                <!--FIM SLIDE IMAGENS-->
+
+                <!--AUTO NAVEGAÇÃO-->
+                <div class="auto-navegacao">
+                    <div class="auto-btn1">
+
+                    </div>
+                    <div class="auto-btn2">
+                        
+                    </div>
+                    <div class="auto-btn3">
+                        
+                    </div>
+                </div>
+
             </div>
-            <div class="coluna img__tela__grande">
-                <div class="coluna__img"><a href="funcionariames.php" class="a__card"><img id="top__img" src="../assets/img/funcionaria.jpg" alt="Funcionaria do Mes"></a></div>
-                <div class="coluna__img"><a href="equipe.php" class="a__card"><img id="equipe" src="../assets/img/equipe.jpg" alt="Equipe 2023"></a></div>
-            </div>
-            <div class="img__mobile">
-                <a href="funcionariames.php" class="a__card"><img id="top__img" src="../assets/img/funcionaria.jpg" alt="Funcionaria do Mes"></a>
-                <a href="equipe.php" class="a__card"><img id="equipe" src="../assets/img/equipe.jpg" alt="Equipe 2023">
+
+            <div class="navegacao-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
             </div>
         </div>
 
@@ -279,6 +307,8 @@
   require_once('../assets/components/footer.php');
   ?>
 
+
+  <script src="../assets/js/carrossel.js"></script>
 </body>
 
 </html

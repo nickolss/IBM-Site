@@ -161,18 +161,14 @@ main{
         width: 800px;
     }
 
-    #concurso{
-        height: 300px;
-    }
-
-    #top__img, #equipe{
-        height: 145px;
+    .imagens{
+        display: none;
     }
 }
 
 @media only screen and (max-width: 800px){
-    .main__title{
-        margin-top: 10%;
+    .titles{
+        margin-top: 90px;
     }
 
     .container__vertical__card{
@@ -200,7 +196,7 @@ main{
     }
 
     .img__mobile{
-        display: block;
+        display: flex;
     }
 
     .tela__media{
@@ -209,31 +205,19 @@ main{
 
     .mobile{
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         margin: auto;
     }
-
-    .linha{
-        display: flex;
-        flex-direction: row;
-    }
-
-    .coluna{
-        flex-direction: column;
-        margin: 1%;
-    }
-
 }
 
-@media only screen and (max-width:620px){
-    .main__title{
-        margin-top: 15%;
+@media only screen and (max-width: 700px){
+    .titles .main__title{
+        font-size: 2rem;
     }
-}
-
-@media only screen and (max-width:405px){
-    .main__title{
-        margin-top: 20%;
+    
+    .titles .sub__title{
+        font-size: 1rem;
     }
 }
