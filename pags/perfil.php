@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Turn Motors || Meu perfil</title>
+	<title>Turn Motors | Meu perfil</title>
 
 	<!-- Arquivos do Bootstrap -->
 	<link rel="stylesheet" href="../assets/css/css-bootstrap/bootstrap.min.css">

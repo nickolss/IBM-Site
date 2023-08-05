@@ -13,8 +13,9 @@
   <link rel="stylesheet" href="../assets/css/estilos-importantes.css">
 
   <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
-  <script type="text/javascript" src="../assets/js/java.js" defer></script>
+  
   <script src="../assets/js/mascaras.js" defer></script>
+  <script src="../assets/js/validacaoForm.js" defer></script>
   <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
   <!-- O atributo DEFER espera a página carregar para executar o Script -->
 
@@ -26,7 +27,7 @@
   ?>
 
   <main class="principal">
-    <form action="#" method="POST">
+    <form action="../assets/scripts/cadastrarCliente.php" method="POST">
       <div class="titulo">
         <h1 class="mainTitle">Cadastrar-se</h1>
         <h2 class="subTitle">Veja seus pedidos de forma fácil, compre mais rápido e
@@ -42,23 +43,25 @@
           <label for="email">Email</label>
         </div>
         <div class="caixa__input">
-          <input type="password" required name="senha" id="senha" autocomplete="off">
+          <input type="password" required name="senha" id="senha" autocomplete="off" onchange="conferirSenhas()">
           <label for="senha">Senha</label>
         </div>
         <div class="caixa__input">
-          <input type="password" required name="confirmarSenha" id="confirmarSenha" autocomplete="off">
+          <input type="password" required name="confirmarSenha" id="confirmarSenha" autocomplete="off" onchange="conferirSenhas()">
           <label for="senha">Confirmar Senha</label>
         </div>
+        <!-- VALIDAÇÃO EM DESENVOLVIMENTO -->
         <div class="caixa__input">
-          <input type="tel" required name="tel" id="tel" autocomplete="off">
+          <input type="text" required name="tel" id="tel" autocomplete="off" maxlength="14">
           <label for="tel">Telefone</label>
         </div>
+
         <div class="caixa__input">
           <input type="date" required name="data" id="data" autocomplete="off">
           <label for="data">Data de Nascimento</label>
         </div>
         <div class="caixa__input">
-          <input type="number" required name="cpf" id="cpf" autocomplete="off">
+          <input type="text" required name="cpf" id="cpf" autocomplete="off" maxlength="14" pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$" title="O CPF digitado não atende o padrão esperado.">
           <label for="cpf">CPF</label>
         </div>
         <div class="div__termos">
