@@ -141,7 +141,7 @@
                             Opções
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../pags/mercado.php">Mercado</a></li>
+                            <li><a class="dropdown-item" href="../pags/personalizacoes.php">Personalizações</a></li>
                             <li><a class="dropdown-item" href="../pags/produtos.php">Produtos</a></li>
                             <li><a class="dropdown-item" href="../pags/vagas.php">Vagas</a></li>
                             <li>

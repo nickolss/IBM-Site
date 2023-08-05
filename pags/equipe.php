@@ -39,7 +39,7 @@
       <br>
       <div class="row">
         <div class="col equipe-big">
-          <img src="../assets/img/presida.svg" class="img-fluid imagem-colaborador-equipe" alt="Presidente Turn Motors">
+          <img src="../assets/img/presida.png" class="img-fluid imagem-colaborador-equipe" alt="Presidente Turn Motors">
         </div>
         <div class="col equipe-big">
           <h3 class="info-equipe info-equipe-big cargo-equipe">Presidente</h3>
@@ -47,7 +47,7 @@
           <p class="info-equipe info-equipe-big p-info-equipe">Especializada em administração, economia e contabilidade, inteligência de negócios e soluções estratégicas para pequenas, médias e grandes corporações.</p>
         </div>
         <div class="col equipe-big">
-          <img src="../assets/img/vice-presida.svg" class="img-fluid imagem-colaborador-equipe" alt="Vice-Presidente Turn Motors">
+          <img src="../assets/img/vice-presida.png" class="img-fluid imagem-colaborador-equipe" alt="Vice-Presidente Turn Motors">
         </div>
         <div class="col equipe-big">
           <h3 class="info-equipe info-equipe-big cargo-equipe">Vice Presidente</h3>
@@ -57,7 +57,7 @@
       </div>
       <div class="row">
         <div class="col equipe-big">
-          <img src="../assets/img/financeiro.svg" class="img-fluid imagem-colaborador-equipe" alt="Diretora Financeira">
+          <img src="../assets/img/financeiro.png" class="img-fluid imagem-colaborador-equipe" alt="Diretora Financeira">
         </div>
         <div class="col equipe-big">
           <h3 class="info-equipe info-equipe-big cargo-equipe">Diretora Financeira</h3>
@@ -65,7 +65,7 @@
           <p class="info-equipe info-equipe-big p-info-equipe">Banqueira nacional. Formada e pós-graduada em administração financeira, economia e administração de empresas. Vasta experiência em gestão de pequenos, médios e grandes projetos.</p>
         </div>
         <div class="col equipe-big">
-          <img src="../assets/img/negocios.svg" class="img-fluid imagem-colaborador-equipe" alt="Desenvolvimento de Negócios Turn Motors">
+          <img src="../assets/img/negocios.png" class="img-fluid imagem-colaborador-equipe" alt="Desenvolvimento de Negócios Turn Motors">
         </div>
         <div class="col equipe-big">
           <h3 class="info-equipe info-equipe-big cargo-equipe">Desenvolvimento de Negócios</h3>
@@ -75,7 +75,7 @@
       </div>
       <div class="row">
         <div class="col equipe-big">
-          <img src="../assets/img/designer.svg" class="img-fluid imagem-colaborador-equipe" alt="Especialista em Design">
+          <img src="../assets/img/designer.png" class="img-fluid imagem-colaborador-equipe" alt="Especialista em Design">
         </div>
         <div class="col equipe-big">
           <h3 class="info-equipe info-equipe-big cargo-equipe">Especialista em Design</h3>
@@ -83,7 +83,7 @@
           <p class="info-equipe info-equipe-big p-info-equipe">Especializado em arte, design, design digital, marketing, psicologia, comunicação visual e publicidade.</p>
         </div>
         <div class="col equipe-big">
-          <img src="../assets/img/marketing.svg" class="img-fluid imagem-colaborador-equipe" alt="Especialista em Marketing Turn Motors">
+          <img src="../assets/img/marketing.png" class="img-fluid imagem-colaborador-equipe" alt="Especialista em Marketing Turn Motors">
         </div>
         <div class="col equipe-big">
           <h3 class="info-equipe info-equipe-big cargo-equipe">Especialista em Marketing</h3>
@@ -93,7 +93,7 @@
       </div>
       <div class="row">
         <div class="col equipe-small">
-          <img src="../assets/img/presida.svg" class="img-fluid imagem-colaborador-equipe" alt="Presidente Turn Motors">
+          <img src="../assets/img/presida.png" class="img-fluid imagem-colaborador-equipe" alt="Presidente Turn Motors">
         </div>
         <div class="col equipe-small">
           <h3 class="info-equipe cargo-equipe">Presidente</h3>
@@ -103,7 +103,7 @@
       </div>
       <div class="row">
         <div class="col equipe-small">
-          <img src="../assets/img/vice-presida.svg" class="img-fluid imagem-colaborador-equipe" alt="Vice-Presidente Turn Motors">
+          <img src="../assets/img/vice-presida.png" class="img-fluid imagem-colaborador-equipe" alt="Vice-Presidente Turn Motors">
         </div>
         <div class="col equipe-small">
           <h3 class="info-equipe cargo-equipe">Vice Presidente</h3>
@@ -113,7 +113,7 @@
       </div>
       <div class="row">
         <div class="col equipe-small">
-          <img src="../assets/img/financeiro.svg" class="img-fluid imagem-colaborador-equipe" alt="Diretora Financeira">
+          <img src="../assets/img/financeiro.png" class="img-fluid imagem-colaborador-equipe" alt="Diretora Financeira">
         </div>
         <div class="col equipe-small">
           <h3 class="info-equipe cargo-equipe">Diretora Financeira</h3>
@@ -123,7 +123,7 @@
       </div>
       <div class="row">
         <div class="col equipe-small">
-          <img src="../assets/img/negocios.svg" class="img-fluid imagem-colaborador-equipe" alt="Desenvolvimento de Negócios">
+          <img src="../assets/img/negocios.png" class="img-fluid imagem-colaborador-equipe" alt="Desenvolvimento de Negócios">
         </div>
         <div class="col equipe-small">
           <h3 class="info-equipe cargo-equipe">Desenvolvimento de Negócios</h3>
@@ -133,7 +133,7 @@
       </div>
       <div class="row">
         <div class="col equipe-small">
-          <img src="../assets/img/designer.svg" class="img-fluid imagem-colaborador-equipe" alt="Especialista em Designer">
+          <img src="../assets/img/designer.png" class="img-fluid imagem-colaborador-equipe" alt="Especialista em Designer">
         </div>
         <div class="col equipe-small">
           <h3 class="info-equipe cargo-equipe">Especialista em Designer</h3>
@@ -143,7 +143,7 @@
       </div>
       <div class="row">
         <div class="col equipe-small">
-          <img src="../assets/img/marketing.svg" class="img-fluid imagem-colaborador-equipe" alt="Especialista em Marketing">
+          <img src="../assets/img/marketing.png" class="img-fluid imagem-colaborador-equipe" alt="Especialista em Marketing">
         </div>
         <div class="col equipe-small">
           <h3 class="info-equipe cargo-equipe">Especialista em Marketing</h3>
