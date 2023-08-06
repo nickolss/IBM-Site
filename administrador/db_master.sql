@@ -99,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `pedido` (
   `statusDaCompra` enum('aprovado','esperando-resposta','reprovado') NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_cliente` (`id_cliente`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
