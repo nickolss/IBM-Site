@@ -43,7 +43,7 @@
           <label for="email">Email</label>
         </div>
         <div class="caixa__input">
-          <input type="password" required name="senha" id="senha" autocomplete="off" onchange="conferirSenhas()">
+          <input type="password" required name="senha" id="senha" autocomplete="off" onchange="conferirSenhas()" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!])(?!.*\s).{8,}$" title="A senha precisa conter pelo menos 8 caractéres, uma letra maiúscula e uma minúscula e um símbolo.">
           <label for="senha">Senha</label>
         </div>
         <div class="caixa__input">
@@ -61,7 +61,7 @@
           <label for="data">Data de Nascimento</label>
         </div>
         <div class="caixa__input">
-          <input type="text" required name="cpf" id="cpf" autocomplete="off" maxlength="14" pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$" title="O CPF digitado não atende o padrão esperado.">
+          <input type="text" required name="cpf" id="cpf" autocomplete="off" maxlength="14">
           <label for="cpf">CPF</label>
         </div>
         <div class="div__termos">

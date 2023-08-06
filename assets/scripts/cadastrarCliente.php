@@ -2,7 +2,6 @@
 require_once('./conexao.php');
 require_once('./iniciarSessao.php');
 
-
 $nomeForm = $_POST['nome'];
 $emailForm = $_POST['email'];
 $senhaForm = $_POST['senha'];
@@ -14,6 +13,7 @@ $planoForm = $_POST['plano'];
 
 $senhaSegura = password_hash($senhaForm, PASSWORD_DEFAULT);
 $cpfSeguro = password_hash($cpfForm, PASSWORD_DEFAULT);
+$telefoneFormatado = str_replace(['(' , ')' , '-'] , '' , $telefoneForm);
 
 $sqlInsert = "INSERT INTO `cliente`(`cpf`, `nomeCompleto`, `dataNasc`, `telefone`, `email`, `senha`, `plano`, `quantidadePontos`) VALUES ('$cpfSeguro','$nomeForm','$dataNascForm','$telefoneForm','$emailForm','$senhaSegura','$planoForm','0')";
 
