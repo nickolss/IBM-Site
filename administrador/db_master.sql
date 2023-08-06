@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 06-Ago-2023 às 20:14
+-- Tempo de geração: 06-Ago-2023 às 20:17
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -20,6 +20,86 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `db_master`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `avaliacao`
+--
+
+DROP TABLE IF EXISTS `avaliacao`;
+CREATE TABLE IF NOT EXISTS `avaliacao` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_escritor` int NOT NULL,
+  `id_produto` int NOT NULL,
+  `estrelas` int NOT NULL,
+  `texto` varchar(300) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_escritor` (`id_escritor`),
+  KEY `id_produto` (`id_produto`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `cliente`
+--
+
+DROP TABLE IF EXISTS `cliente`;
+CREATE TABLE IF NOT EXISTS `cliente` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cpf` int NOT NULL,
+  `nomeCompleto` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `dataNasc` date NOT NULL,
+  `telefone` int NOT NULL,
+  `email` varchar(150) COLLATE utf8mb4_general_ci NOT NULL,
+  `senha` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `plano` enum('comum','turbinado') COLLATE utf8mb4_general_ci NOT NULL,
+  `quantidadePontos` int DEFAULT NULL,
+  `fotoPerfil` blob,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `funcionario`
+--
+
+DROP TABLE IF EXISTS `funcionario`;
+CREATE TABLE IF NOT EXISTS `funcionario` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `rf` int NOT NULL,
+  `nome` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `senha` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `funcionario`
+--
+
+INSERT INTO `funcionario` (`id`, `rf`, `nome`, `email`, `senha`) VALUES
+(1, 1, 'Nickolas Maia de Araujo', 'nickolasmaraujo@gmail.com', 'Senha123');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pedido`
+--
+
+DROP TABLE IF EXISTS `pedido`;
+CREATE TABLE IF NOT EXISTS `pedido` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_cliente` int NOT NULL,
+  `tipo-pagamento` enum('pix','boleto','cartao') NOT NULL,
+  `valorTotal` double NOT NULL,
+  `dataCompra` date NOT NULL,
+  `statusDaCompra` enum('aprovado','esperando-resposta','reprovado') NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_cliente` (`id_cliente`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
