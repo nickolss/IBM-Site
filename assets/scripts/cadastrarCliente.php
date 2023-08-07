@@ -15,7 +15,7 @@ $senhaSegura = password_hash($senhaForm, PASSWORD_DEFAULT);
 $cpfSeguro = password_hash($cpfForm, PASSWORD_DEFAULT);
 $telefoneFormatado = str_replace(['(' , ')' , '-'] , '' , $telefoneForm);
 
-$sqlInsert = "INSERT INTO `cliente`(`cpf`, `nomeCompleto`, `dataNasc`, `telefone`, `email`, `senha`, `plano`, `quantidadePontos`) VALUES ('$cpfSeguro','$nomeForm','$dataNascForm','$telefoneForm','$emailForm','$senhaSegura','$planoForm','0')";
+$sqlInsert = "INSERT INTO `cliente`(`cpf`, `nomeCompleto`, `dataNasc`, `telefone`, `email`, `senha`, `plano`, `quantidadePontos`) VALUES ('$cpfSeguro','$nomeForm','$dataNascForm','$telefoneFormatado','$emailForm','$senhaSegura','$planoForm','0')";
 
 $cadastrarCliente = $pdo->prepare($sqlInsert);
 

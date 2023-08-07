@@ -1,10 +1,12 @@
-<?php 
-    require_once('./conexao.php');
-    $emailForm = $_POST['email'];
-    $senhaForm = $_POST['senha'];
+<?php
+require_once('./conexao.php');
+$emailForm = $_POST['email'];
+$senhaForm = $_POST['senha'];
 
-    $consulta = "SELECT * FROM `funcionario` , `cliente`";
-    $registros = $pdo->query($consulta);
+$consultaFunc = $pdo->query("SELECT * FROM `funcionario`");
+$consultaClie = $pdo->query("SELECT * FROM `cliente`");
 
-    var_dump($registros);
-?>
+$registroFunc = $consultaFunc->fetchAll();
+$registroClie = $consultaClie->fetchAll();
+
+var_dump($registroFunc);

@@ -48,10 +48,10 @@ CREATE TABLE IF NOT EXISTS `avaliacao` (
 DROP TABLE IF EXISTS `cliente`;
 CREATE TABLE IF NOT EXISTS `cliente` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `cpf` int NOT NULL,
+  `cpf` varchar(255) NOT NULL,
   `nomeCompleto` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
   `dataNasc` date NOT NULL,
-  `telefone` int NOT NULL,
+  `telefone` varchar(12) NOT NULL,
   `email` varchar(150) COLLATE utf8mb4_general_ci NOT NULL,
   `senha` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
   `plano` enum('comum','turbinado') COLLATE utf8mb4_general_ci NOT NULL,
