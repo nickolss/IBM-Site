@@ -43,7 +43,7 @@
           <label for="email">Email</label>
         </div>
         <div class="caixa__input">
-          <input type="password" required name="senha" id="senha" autocomplete="off" onchange="conferirSenhas()" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!])(?!.*\s).{8,}$" title="A senha precisa conter pelo menos 8 caractéres, uma letra maiúscula e uma minúscula e um símbolo.">
+          <input type="password" required name="senha" id="senha" autocomplete="off" onchange="conferirSenhas()" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#*$%^&+=!])(?!.*\s).{8,}$" title="A senha precisa conter pelo menos 8 caractéres, uma letra maiúscula e uma minúscula e um símbolo.">
           <label for="senha">Senha</label>
         </div>
         <div class="caixa__input">
@@ -52,7 +52,7 @@
         </div>
         <!-- VALIDAÇÃO EM DESENVOLVIMENTO -->
         <div class="caixa__input">
-          <input type="text" required name="tel" id="tel" autocomplete="off" maxlength="14">
+          <input type="text" required name="tel" id="tel" autocomplete="off" maxlength="14" pattern="^\(\d{2}\)\d{5}-\d{4}$">
           <label for="tel">Telefone</label>
         </div>
 
