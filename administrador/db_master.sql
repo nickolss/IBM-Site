@@ -70,6 +70,9 @@ DROP TABLE IF EXISTS `funcionario`;
 CREATE TABLE IF NOT EXISTS `funcionario` (
   `id` int NOT NULL AUTO_INCREMENT,
   `rf` int NOT NULL,
+  `cpf` varchar(255) NOT NULL,
+  `dataNasc` date NOT NULL,
+  `telefone` varchar(12) NOT NULL,
   `nome` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
   `email` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
   `senha` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
@@ -79,9 +82,6 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
 --
 -- Extraindo dados da tabela `funcionario`
 --
-
-INSERT INTO `funcionario` (`id`, `rf`, `nome`, `email`, `senha`) VALUES
-(1, 1, 'Nickolas Maia de Araujo', 'nickolasmaraujo@gmail.com', 'Senha123');
 
 -- --------------------------------------------------------
 
