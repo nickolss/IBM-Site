@@ -1,0 +1,15 @@
+@import url(cadastro.min.css);
+@import url(dropdown.min.css);
+@import url(dashboard.css);
+
+
+.subTitle, .paragrafo__agendamento{
+    margin: auto;
+}
+
+.select-menu .select-btn{
+    border: 2px solid #014961;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333333;
+    font-size: 1rem;
+}
