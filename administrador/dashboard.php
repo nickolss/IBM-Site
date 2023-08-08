@@ -8,7 +8,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Turn Motors | Cadastrar Produto</title>
+  <title>Turn Motors | Cadastrar Dashboard</title>
 
   <!--LINK ICONES-->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
