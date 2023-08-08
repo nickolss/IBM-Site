@@ -1,0 +1,78 @@
+.select-menu{
+    width: 290px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.select-menu .select-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    height: 55px;
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid #014961;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.select-btn i{
+    font-size: 25px;
+    transition: 0.6s;
+}
+
+.select-menu.active #icone__seta{
+    transform: rotate(-180deg);
+}
+
+.select-menu .options{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #014961;
+    display: none;
+    transition: 0.5s;
+}
+
+.select-menu.active .options{
+    display: flex;
+}
+
+
+.options .option{
+    cursor: pointer;
+    padding: 5px;
+}
+
+.options .option:hover{
+    cursor: pointer;
+    transform: scale(1.04);
+    transition-duration: 0.3s;
+}
+
+i.option{
+    font-size: 25px;
+}
+
+.option .option-text{
+    font-size: 18px;
+    color: #333333;
+}
+
+@media only screen and (max-width: 350px){
+    .select-menu{
+        width: 250px;
+    }
+}
+
+@media only screen and (max-width:270px) {
+    .select-menu{
+        width: 220px;
+    }
+}
