@@ -1,5 +1,5 @@
 <?php 
-  require_once('../assets/scripts/consultaFuncionario.php');
+  //require_once('../assets/scripts/consultaFuncionario.php');
 ?>
 
 <!DOCTYPE html>
