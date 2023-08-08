@@ -58,7 +58,7 @@ main{
     width: 100%;
     margin-bottom: 3%;
   }
-  
+
   .caixa__input label {
     font-size: 100%;
     position: absolute;
@@ -306,8 +306,18 @@ main{
 }
 
 @media only screen and (max-width:310px) {
-    .caixa__input {
+    .caixa__input{
         width: 250px;
+    }
+
+    .div__termos{
+        margin-right: 1rem;
+    }
+}
+
+@media only screen and (max-width:270px) {
+    .caixa__input{
+        width: 220px;
     }
 
     .div__termos{
