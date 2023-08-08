@@ -95,4 +95,9 @@
         align-items: center;
     }
 
+    .botoes .linha{
+        display: flex;
+        flex-direction: column;
+    }
+
 }
