@@ -1,37 +1,30 @@
-<?php
-require_once('./conexao.php');
-$emailForm = $_POST['email'];
-$senhaForm = $_POST['senha'];
+    <?php
+    require_once('./conexao.php');
 
-$sqlCliente = $pdo->query("SELECT cliente.senha as clienteSenha FROM `cliente` WHERE cliente.email='$emailForm'");
-$quantidadeRegistrosCliente = $sqlCliente->rowCount();
-$registro = $sqlCliente->fetchAll();
-$senhaCliente = $registro[0]['clienteSenha'];
+    $emailForm = $_POST['email'];
+    $senhaForm = $_POST['senha'];
+    $senhaFormatada = md5($senhaForm);
 
-if($quantidadeRegistrosCliente >=1){
-    $dadosCliente = $pdo->query("SELECT * FROM `cliente` WHERE cliente.senha='$senhaCliente'");
-    var_dump($dadosCliente->fetchAll());
-}
+    $sqlCliente = $pdo->query("SELECT * FROM `cliente` WHERE cliente.email='$emailForm' && cliente.senha='$senhaFormatada'");
+    $quantidadeRegistrosCliente = $sqlCliente->rowCount();
+    $registroCliente = $sqlCliente->fetchAll();
+
+    $sqlFuncionario = $pdo->query("SELECT * FROM `funcionario` WHERE funcionario.email='$emailForm' && funcionario.senha='$senhaFormatada'");
+    $quantidadeRegistrosFuncionario = $sqlFuncionario->rowCount();
+    $registroFuncionario = $sqlFuncionario->fetchAll();
 
 
+    if ($quantidadeRegistrosCliente == 1) {
+        require_once('./iniciarSessao.php');
 
-/*
-$sql = $pdo->query("SELECT cliente.senha as clienteSenha , funcionario.senha as funcionarioSenha FROM `cliente` , `funcionario` WHERE cliente.senha='$emailForm' || funcionario.senha='$emailForm'");
+        $_SESSION['nomeCliente'] = $registroCliente[0]['nomeCompleto'];
+        $_SESSION['plano'] = $registroCliente[0]['plano'];
+        $_SESSION['quantidadePontos'] = $registroCliente[0]['quantidadePontos'];
+        $_SESSION['fotoPerfil'] = $registroCliente[0]['fotoPerfil'];
+    }
 
-$registro = $sql->fetchAll();
-var_dump($registro);
-
-// foreach ($registro as $key) {
-//     $hashCliente = $key['clienteSenha'] . "\n";
-//     $hashFuncionario = $key['funcionarioSenha'] . "\n";
-//     if (password_verify($senhaForm, $hashCliente)) {
-//         $sqlCliente = $pdo->query("SELECT * FROM `cliente` WHERE cliente.email='$emailForm'");
-//         $dadosCliente = $sqlCliente->fetchAll();
-//         var_dump($dadosCliente);
-//     } else if (password_verify($senhaForm, $hashFuncionario)) {
-//         $sqlFuncionario = $pdo->query("SELECT * FROM `funcionario` WHERE funcionario.email='$emailForm'");
-//         $dadosFuncionario = $sqlFuncionario->fetchAll();
-//         var_dump($dadosFuncionario);
-//     }
-// }
-*/
+    if($quantidadeRegistrosFuncionario == 1){
+        require_once('./iniciarSessao.php');
+        $_SESSION['rf'] = $registroFuncionario[0]['rf'];
+        $_SESSION['nomeFuncionario'] = $registroFuncionario[0]['nome'];
+    }
