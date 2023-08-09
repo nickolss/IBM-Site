@@ -11,8 +11,8 @@ $dataNascForm = $_POST['data'];
 $cpfForm = $_POST['cpf'];
 $planoForm = $_POST['plano'];
 
-$senhaSegura = password_hash($senhaForm, PASSWORD_DEFAULT);
-$cpfSeguro = password_hash($cpfForm, PASSWORD_DEFAULT);
+$senhaSegura = md5($senhaForm);
+$cpfSeguro = md5($cpfForm);
 $telefoneFormatado = str_replace(['(' , ')' , '-'] , '' , $telefoneForm);
 
 $sqlInsert = "INSERT INTO `cliente`(`cpf`, `nomeCompleto`, `dataNasc`, `telefone`, `email`, `senha`, `plano`, `quantidadePontos`) VALUES ('$cpfSeguro','$nomeForm','$dataNascForm','$telefoneFormatado','$emailForm','$senhaSegura','$planoForm','0')";
