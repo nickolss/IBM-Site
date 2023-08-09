@@ -39,7 +39,7 @@
               <i class='bx bxs-user'></i>
             </div>
             <div class="caixa__input">
-              <input type="password" name="senha" id="senha" placeholder="senha" required>
+              <input type="password" name="senha" id="senha" placeholder="senha" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#*$%^&+=!])(?!.*\s).{8,}$" title="A senha precisa conter pelo menos 8 caractéres, uma letra maiúscula e uma minúscula e um símbolo.">
               <i class='bx bxs-lock-alt'></i>
             </div>
             <div class="lembrar__esquecer">
