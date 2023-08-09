@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Cadastro de Produtos</title>
+  </head>
+  <body>
+      <main class="principal">
+      <div class="titulo">
+        <h1 class="mainTitle">Cadastrar Produtos</h1>
+      </div>
+
+      <form action="../assets/scripts/cadastrarProduto.php" method="post" class="formulario">
+        <div class="cadastro">
+
+          <div class="caixa__input">
+            <input type="text" required name="nomeProd" id="nomeProd" autocomplete="off">
+            <label for="nomeProd">Nome</label>
+          </div>
+
+          <div class="caixa__input">
+            <input type="number" required name="precoProd" id="precoProd" autocomplete="off">
+            <label for="precoProd">Preço</label>
+          </div>
+
+          <div class="caixa__input">
+            <textarea required name="descricaoProd" id="descricaoProd" cols="30" rows="3" class="formulario__campo"></textarea>
+            <label for="descricaoProd">Descrição</label>
+          </div>
+          
+          <div class="caixa__input">
+            <label for="categoria">Categoria:</label>
+          <select id="categoria" name="categoria">
+              <option value="Rebaixamento">Rebaixamento</option>
+              <option value="Tunagem">Tunagem</option>
+              <option value="Pintura">Pintura</option>
+          </select><br>
+          </div>
+
+        </div>
+
+        <div class="div__formulario__botao"><button type="submit" value="turbinado" class="formulario__botao formulario__botao--turbinado" name="plano">Cadastrar</button></div>
+      </form>
+    </main>
+
+  </body>
+</html>
