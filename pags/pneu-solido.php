@@ -16,10 +16,6 @@
     <script type="text/javascript" src="../assets/js/java.js" defer></script>
     <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
 
-    <style>
-        
-    </style>
-
     <title>Turn Motors | Pneu Sólido</title>
 </head>
 <body id="container__body">
@@ -47,7 +43,7 @@
                         $descricao = $rows[$i]['descricao'];
                         //EXIBE O CARD DOS PRODUTOS NA TELA
                         echo '<div class="card">';
-                        echo    '<div class="card-img"><img id="produto__img" src="../assets/img/personalizacao-roda-solida-dourado.png" alt="Img Pneu Sólido"></div>';
+                        echo    '<div class="card-img"><img id="produto__img" src="../assets/img/#" alt="Img Pneu Sólido"></div>';
                         echo        '<div class="card-info">';
                         echo            '<p class="text-title">' . $nome . '</p>';
                         echo            '<p class="text-body">' . $descricao . '</p>';
