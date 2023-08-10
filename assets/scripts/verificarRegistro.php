@@ -19,6 +19,11 @@
         require_once('./iniciarSessao.php');
         
         $_SESSION['nomeCliente'] = $registroCliente[0]['nomeCompleto'];
+        $_SESSION['email'] = $registroCliente[0]['email'];
+        $_SESSION['telefone'] = $registroCliente[0]['telefone'];
+        $_SESSION['dataNasc'] = $registroCliente[0]['dataNasc'];
+        $_SESSION['cpf'] = $registroCliente[0]['cpf'];
+        
         $_SESSION['plano'] = $registroCliente[0]['plano'];
         $_SESSION['quantidadePontos'] = $registroCliente[0]['quantidadePontos'];
         $_SESSION['fotoPerfil'] = $registroCliente[0]['fotoPerfil'];
