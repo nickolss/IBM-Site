@@ -3,10 +3,11 @@
 
     $nome = $_POST['nomeProd'];
     $preco = $_POST['precoProd'];
+    $marca = $_POST['marcaProd'];
     $descricao = $_POST['descricaoProd'];
     $categoria = $_POST['categoria'];
 
-    $sqlInsert = "INSERT INTO produtos (nome, preco, descricao, categoria) VALUES ('$nome', $preco, '$descricao', '$categoria')";
+    $sqlInsert = "INSERT INTO produto (nome, preco, marca, descricao, customizações) VALUES ('$nome', $preco, '$marca', '$descricao', '$categoria')";
 
     $inserirProduto = $pdo->prepare($sqlInsert);
 
