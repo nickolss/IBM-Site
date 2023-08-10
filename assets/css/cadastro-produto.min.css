@@ -27,7 +27,54 @@
     background-color: #e8e8e8;
     height: 30px;
     color: #014961;
+}
+
+.caixa__input :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: #e8e8e8;
+    height: 30px;
+    color: #014961;
   }
+
+  .caixa__input :is(input[type=number]:focus, input[type=number]:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: #e8e8e8;
+    height: 30px;
+    color: #014961;
+  }
+
+.caixa__input #categoria {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid #014961;
+    background-color: rgba(255, 255, 255, 0.8);
+    max-width: 300px;
+    border-radius: 20px;
+    width: 100%;
+    margin-bottom: 3%;
+    outline: none;
+}
+
+.caixa__input #categoria:hover{
+    outline: none;
+}
+
+.caixa__input #label__dropdown__categoria{
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: #e8e8e8;
+    height: 30px;
+    color: #014961;
+}
 
 .picture{
     width: 250px;
