@@ -16,7 +16,7 @@
     <script type="text/javascript" src="../assets/js/java.js" defer></script>
     <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
 
-    <title>Turn Motors | Banco</title>
+    <title>Turn Motors | Baterias e Acessórios</title>
 </head>
 <body id="container__body">
 
@@ -26,11 +26,11 @@
 
     <main>
         <div class="main__title">
-            <h1>Banco</h1>
+            <h1>Baterias e Acessórios</h1>
         </div>
         <div class="card-container">
             <?php
-                $categoria = 'banco';
+                $categoria = 'baterias-acessorios';
                 $sql = "SELECT * FROM produto WHERE customizações = '$categoria'";
                 $ConsultarProduto = $pdo->query($sql);
                 $rows = $ConsultarProduto->fetchAll();
@@ -43,7 +43,7 @@
                         $descricao = $rows[$i]['descricao'];
                         //EXIBE O CARD DOS PRODUTOS NA TELA
                         echo '<div class="card">';
-                        echo    '<div class="card-img"><img id="produto__img" src="../assets/img/#" alt="Img Banco"></div>';
+                        echo    '<div class="card-img"><img id="produto__img" src="../assets/img/#" alt="Img Bateria e Acessorios"></div>';
                         echo        '<div class="card-info">';
                         echo            '<p class="text-title">' . $nome . '</p>';
                         echo            '<p class="text-body">' . $descricao . '</p>';
