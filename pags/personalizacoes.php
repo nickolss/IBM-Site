@@ -52,7 +52,7 @@
                                 <img class="card__img__rebaixamento" src="../assets/img/personalizacao-rebaixamento-slammed.png" alt="Estilização Sólida">
                             </div>
                             <div class="card__titulo">
-                                <h3>Estilo Dropped</h3>
+                                <h3>Estilo Slammed</h3>
                             </div>
                             <div class="card__descricao">
                                 <p> As rodas são alinhadas de forma que entrem realmente para dentro dos para-lamas do veículo e isso independe de qual suspensão será usada.</p>
