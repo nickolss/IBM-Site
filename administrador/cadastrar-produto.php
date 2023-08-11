@@ -34,7 +34,7 @@
     <div class="titulo">
       <h1 class="mainTitle">Cadastrar Produtos</h1>
     </div>
-    <form action="" method="post" class="formulario">
+    <form action="../assets/scripts/cadastrarProduto.php" method="post" class="formulario">
       <div class="cadastro">
 
         <div class="caixa__input">
@@ -48,108 +48,43 @@
         </div>
 
         <div class="caixa__input">
+          <input type="text" required name="marcaProd" id="marcaProd" autocomplete="off">
+          <label for="marcaProd">Marca</label>
+        </div>
+
+        <div class="caixa__input">
           <textarea required name="descricaoProd" id="descricaoProd" cols="30" rows="3" class="formulario__campo"></textarea>
           <label for="descricaoProd">Descrição</label>
         </div>
         
         <div class="caixa__input">
-          <div class="select-menu">
-            <div class="select-btn">
-              <span class="sBtn-text">Selecione a Categoria</span>
-              <i id="icone__seta" class="bx bx-chevron-down"></i> <!--ICONE BOXICONS SETINHA PARA BAIXO-->
-            </div>
-
-            <ui class="options">
-              <i class="option">
-                <span class="option-text">Rebaixamento Dropped</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Rebaixamento Slammed</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Rebaixamento HellaFlush</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Pintura Sólida</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Pintura Metálica</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Pintura Perolizada</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Pneu Sólido</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Pneu Personalizado</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Pneu Duas Cores</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Adesivos Pequenos</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Adesivos Médios</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Adesivos Grandes</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Aerofólio</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Vidro</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Bancos</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Tunagem Reformulada</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Tunagem Remanufaturada</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Pneu de Carro</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Som, multimídia e eletrônicos</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Acessórios para Automóveis</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Cuidados Automotivos</span>
-              </i>
-              <i class="option">
-                <span class="option-text">óleos e fluidos</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Baterias e acessórios</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Reboque e Transporte</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Peças para automóveis</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Equipamentos de Proteção</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Pneus de Moto</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Acessórios e peças para motos</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Ferramentas e Equipamentos</span>
-              </i>
-            </ui>
-
+          <div class="dropdown-categorias">
+            <label id="label__dropdown__categoria" for="categoria">Categoria:</label>
+            <select required id="categoria" name="categoria">
+              <option class="opcao__categoria" value="pneu-solido">Pneu Sólido</option>
+              <option class="opcao__categoria" value="pneu-personalizado">Pneu Personalizado</option>
+              <option class="opcao__categoria" value="pneu-duasCores">Pneu Duas Cores</option>
+              <option class="opcao__categoria" value="adesivo-pequeno">Adesivos Pequenos</option>
+              <option class="opcao__categoria" value="adesivo-medio">Adesivos Médios</option>
+              <option class="opcao__categoria" value="adesivo-grande">Adesivos Grandes</option>
+              <option class="opcao__categoria" value="aerofolio">Aerofólio</option>
+              <option class="opcao__categoria" value="caixaDeSom">Caixa de Som</option>
+              <option class="opcao__categoria" value="Banco">Banco</option>
+              <option class="opcao__categoria" value="pneu-carro">Pneu de Carro</option>
+              <option class="opcao__categoria" value="som-multimidia-eletronicos">Som, multimídia e eletrônicos</option>
+              <option class="opcao__categoria" value="acessorios-automoveis">Acessórios para Automóveis</option>
+              <option class="opcao__categoria" value="cuidados-automotivos">Cuidados Automotivos</option>
+              <option class="opcao__categoria" value="oleo-fluidos">Óleos e fluidos</option>
+              <option class="opcao__categoria" value="baterias-acessorios">Baterias e acessórios</option>
+              <option class="opcao__categoria" value="reboque-transporte">Reboque e Transporte</option>
+              <option class="opcao__categoria" value="pecas-automoveis">Peças para automóveis</option>
+              <option class="opcao__categoria" value="equipamentos-protecao">Equipamentos de Proteção</option>
+              <option class="opcao__categoria" value="pneu-moto">Pneus de Moto</option>
+              <option class="opcao__categoria" value="acessorios-pecas-moto">Acessórios e peças para motos</option>
+              <option class="opcao__categoria" value="ferramentas-equipamentos">Ferramentas e Equipamentos</option>
+            </select>
           </div>
+          <br>
         </div>
 
         <label class="picture" tabIndex="0">
