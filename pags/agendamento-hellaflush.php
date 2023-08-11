@@ -45,18 +45,9 @@
                     </div>
 
                     <div class="subTitulo">
-                      <h2 class="subTitle">Cor Desejada:</h2>
-                  </div>
-
-                  <div class="caixa__input">
-                    <input type="text" required name="cor" id="cor" autocomplete="off">
-                    <label for="cor">Cor</label>
-                </div>
-
-                    <div class="subTitulo">
                         <h2 class="subTitle">Agende sua Data e Horário</h2>
                         <p>Venha em nossa oficina para realizar a inspeção e orçamento de sua personalização.</p>
-                        <p>Rua Fictícia Nº1</p>
+                        <p>Avenida Turbo Nº1</p>
                     </div>
 
                     <div class="caixa__input">
@@ -64,36 +55,20 @@
                         <label for="data">Data</label>
                     </div>
 
-                    <div class="caixa_input">
-                        <div class="select-menu">
-                            <div class="select-btn">
-                              <span class="sBtn-text">Horário</span>
-                              <i id="icone__seta" class="bx bx-chevron-down"></i> <!--ICONE BOXICONS SETINHA PARA BAIXO-->
-                            </div>
-                
-                            <ui class="options">
-                              <i class="option">
-                                <span class="option-text">8h</span>
-                              </i>
-                              <i class="option">
-                                <span class="option-text">10h</span>
-                              </i>
-                              <i class="option">
-                                <span class="option-text">12h</span>
-                              </i>
-                              <i class="option">
-                                <span class="option-text">14h</span>
-                              </i>
-                              <i class="option">
-                                <span class="option-text">16h</span>
-                              </i>
-                              <i class="option">
-                                <span class="option-text">18h</span>
-                              </i>
-                            </ui>
-                
-                        </div>
-                    </div>
+                    <div class="caixa__input">
+                      <div class="dropdown-categorias">
+                        <label id="label__dropdown__categoria" for="horario">Horário:</label>
+                        <select required id="horario" name="horario">
+                          <option class="opcao__categoria" value="8h">8h</option>
+                          <option class="opcao__categoria" value="10h">10h</option>
+                          <option class="opcao__categoria" value="12h">12h</option>
+                          <option class="opcao__categoria" value="14h">14h</option>
+                          <option class="opcao__categoria" value="16h">16h</option>
+                          <option class="opcao__categoria" value="18h">16h</option>
+                        </select>
+                      </div>
+                      <br>
+                  </div>
 
                     <div class="botoes">
                         <div class="linha">
