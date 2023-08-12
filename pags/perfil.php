@@ -51,7 +51,7 @@
 					<a href="#"  class="formulario__botao" value="troca">
 						Trocar o Plano
 					</a>
-					<a href="#" class="formulario__botao" value="editar">
+					<a href="perfil-editar.php" class="formulario__botao" value="editar">
 						Editar Perfil
 					</a>
 					<a href="../assets/scripts/logout.php" class="formulario__botao" value="editar">
@@ -66,5 +66,3 @@
 	require_once('../assets/components/footer.php');
 	?>
 </body>
-
-</html>
