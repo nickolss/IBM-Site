@@ -46,9 +46,9 @@
 					<button type="submit" class="formulario__botao" value="troca">
 						Trocar o Plano
 					</button>
-					<button type="submit" class="formulario__botao" value="editar">
+					<a href="perfil-editar.php"><button type="submit" class="formulario__botao" value="editar">
 						Editar Perfil
-					</button>
+					</button></a>
 				</form>
 			</div>
 		</section>
