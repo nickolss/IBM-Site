@@ -117,7 +117,34 @@ CREATE TABLE IF NOT EXISTS `produto` (
   `customizações` enum('rebaixamento-dropped','rebaixamento-hellaFlush','pintura-solida','pintura-metalica','pintura-perolizada','pneu-solido','pneu-personalizado','pneu-duasCores','adesivo-pequeno','adesivo-medio','adesivo-grande','aerofolio','insulfilm','caixaDeSom','banco','tunagem-reformulada','tunagem-remanufaturada') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`codigoProduto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-COMMIT;
+
+--
+-- Estrutura da Tabela `agendamento`
+--
+DROP TABLE IF EXISTS `agendamento`;
+CREATE TABLE IF NOT EXISTS `agendamento`(
+  `data_agendamento` TIMESTAMP NOT NULL,
+  `id_cliente` INT NOT NULL,
+  `placa_carro` varchar(7),
+
+  PRIMARY KEY(`data_agendamento`),
+  FOREIGN KEY(`id_cliente`) REFERENCES `cliente`(`id`),
+  FOREIGN KEY(`placa_carro`) REFERENCES `carro`(`placa`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Estrutura da Tabela `carro`
+--
+DROP TABLE IF EXISTS `carro`;
+CREATE TABLE IF NOT EXISTS `carro`(
+  `placa` varchar(7) NOT NULL,
+  `id_dono` INT NOT NULL,
+  `modelo` varchar(150) NOT NULL,
+  `cor` varchar(100) NOT NULL,
+
+  PRIMARY KEY(`placa`),
+  FOREIGN KEY (`id_dono`) REFERENCES `cliente`(`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
