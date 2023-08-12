@@ -66,3 +66,4 @@
 	require_once('../assets/components/footer.php');
 	?>
 </body>
+</html>
