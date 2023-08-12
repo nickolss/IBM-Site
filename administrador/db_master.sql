@@ -35,9 +35,9 @@ CREATE TABLE IF NOT EXISTS `avaliacao` (
   `estrelas` int NOT NULL,
   `texto` varchar(300) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `id_escritor` (`id_escritor`),
-  KEY `id_produto` (`id_produto`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  FOREIGN KEY (`id_escritor`) REFERENCES `cliente`(`id`),
+  FOREIGN KEY (`id_produto`) REFERENCES `produto`(`codigoProduto`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -98,8 +98,8 @@ CREATE TABLE IF NOT EXISTS `pedido` (
   `dataCompra` date NOT NULL,
   `statusDaCompra` enum('aprovado','esperando-resposta','reprovado') NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `id_cliente` (`id_cliente`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  FOREIGN KEY (`id_cliente`) REFERENCES `cliente`(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
