@@ -42,7 +42,6 @@
 					<input type="email" name="email" id="email" value="<?= $_SESSION['email'] ?>" disabled class="formulario__campo" />
 					<input type="tel" name="telefone" id="telefone" value="<?= $_SESSION['telefone'] ?>" disabled class="formulario__campo" />
 					<input type="date" name="dataNasc" id="dataNasc" disabled class="formulario__campo" value="<?= $_SESSION['dataNasc'] ?>"/>
-					<input type="text" name="cpf" id="cpf" value="<?= $_SESSION['cpf'] ?>" disabled class="formulario__campo" />
 					<input type="text" name="plano" id="plano" value="Plano: <?= $_SESSION['plano'] ?>" disabled class="formulario__campo" />
 					<input type="password" name="senha" id="senha" disabled class="formulario__campo" value="******"/>
 					<a href="../pags/beneficios.php" class="formulario__botao" value="beneficio">

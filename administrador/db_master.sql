@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `dataNasc` date NOT NULL,
   `telefone` varchar(12) NOT NULL,
   `email` varchar(150) COLLATE utf8mb4_general_ci NOT NULL,
-  `senha` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `senha` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `plano` enum('comum','turbinado') COLLATE utf8mb4_general_ci NOT NULL,
   `quantidadePontos` int DEFAULT NULL,
   `fotoPerfil` blob,
