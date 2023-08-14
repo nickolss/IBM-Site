@@ -64,7 +64,7 @@
                           <option class="opcao__categoria" value="12h">12h</option>
                           <option class="opcao__categoria" value="14h">14h</option>
                           <option class="opcao__categoria" value="16h">16h</option>
-                          <option class="opcao__categoria" value="18h">16h</option>
+                          <option class="opcao__categoria" value="18h">18h</option>
                         </select>
                       </div>
                       <br>
