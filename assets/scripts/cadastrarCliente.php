@@ -20,7 +20,7 @@ $sqlInsert = "INSERT INTO `cliente`(`cpf`, `nomeCompleto`, `dataNasc`, `telefone
 $cadastrarCliente = $pdo->prepare($sqlInsert);
 
 if ($cadastrarCliente->execute()) {
-    $sqlCliente = $pdo->query("SELECT * FROM `cliente` WHERE cliente.email='$emailForm' && cliente.senha='$senhaFormatada'");
+    $sqlCliente = $pdo->query("SELECT * FROM `cliente` WHERE cliente.email='$emailForm' && cliente.senha='$senhaSegura'");
     $quantidadeRegistrosCliente = $sqlCliente->rowCount();
     $registroCliente = $sqlCliente->fetchAll();
 
