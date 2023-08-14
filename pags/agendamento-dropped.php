@@ -23,7 +23,7 @@
             </div>
 
             <div class="cadastro">
-                <form action="../assets/scripts/cadastrarAgendamentoDropped.php" method="POST">
+                <form action="../assets/scripts/cadastrarAgendamento.php" method="POST">
 
                     <div class="subTitulo">
                         <h2 class="subTitle">Informações Atuais do Veículo</h2>
