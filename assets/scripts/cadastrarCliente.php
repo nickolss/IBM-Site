@@ -20,14 +20,25 @@ $sqlInsert = "INSERT INTO `cliente`(`cpf`, `nomeCompleto`, `dataNasc`, `telefone
 $cadastrarCliente = $pdo->prepare($sqlInsert);
 
 if ($cadastrarCliente->execute()) {
-    $_SESSION['nomeCliente'] = $nomeForm;
-    $_SESSION['email'] = $emailForm;
-    $_SESSION['telefone'] = $telefoneForm;
-    $_SESSION['dataNasc'] = $dataNascForm;
-    $_SESSION['cpf'] = $cpfForm;
-    $_SESSION['senha'] = $senhaForm;
-    $_SESSION['plano'] = $planoForm;
-    $_SESSION['quantidadePontos'] = 0;
-    $_SESSION['fotoPerfil'] = null;
-    header("Location: ../../pags/perfil.php");
+    $sqlCliente = $pdo->query("SELECT * FROM `cliente` WHERE cliente.email='$emailForm' && cliente.senha='$senhaFormatada'");
+    $quantidadeRegistrosCliente = $sqlCliente->rowCount();
+    $registroCliente = $sqlCliente->fetchAll();
+
+    if ($quantidadeRegistrosCliente == 1) {
+        $_SESSION['id'] = $registroCliente[0]['id'];
+        $_SESSION['nomeCliente'] = $nomeForm;
+        $_SESSION['email'] = $emailForm;
+        $_SESSION['telefone'] = $telefoneForm;
+        $_SESSION['dataNasc'] = $dataNascForm;
+        $_SESSION['cpf'] = $cpfForm;
+        $_SESSION['senha'] = $senhaForm;
+        $_SESSION['plano'] = $planoForm;
+        $_SESSION['quantidadePontos'] = 0;
+        $_SESSION['fotoPerfil'] = null;
+
+        header("Location: ../../pags/perfil.php");
+    }
+
+
+    
 }
