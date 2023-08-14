@@ -26,7 +26,6 @@
 				<h2 class="banner__titulo">Olá, &lt;nome do perfil&gt;!</h2>
 				<img src="../assets/img/perfilPic.svg" class="banner__imagem">
 			</div>
-
 			<div class="informacoes-cadastro">
 
 				<div class="informacoes__imagem-perfil">
@@ -43,9 +42,9 @@
 					<button type="submit" class="formulario__botao" value="beneficio">
 						Ver Benefícios
 					</button>
-					<button type="submit" class="formulario__botao" value="troca">
+					<a href="troca-plano.php"><button type="submit" class="formulario__botao" value="troca">
 						Trocar o Plano
-					</button>
+					</button></a>
 					<a href="perfil-editar.php"><button type="submit" class="formulario__botao" value="editar">
 						Editar Perfil
 					</button></a>
