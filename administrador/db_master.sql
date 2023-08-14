@@ -23,23 +23,6 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
---
--- Estrutura da tabela `avaliacao`
---
-
-DROP TABLE IF EXISTS `avaliacao`;
-CREATE TABLE IF NOT EXISTS `avaliacao` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `id_escritor` int NOT NULL,
-  `id_produto` int NOT NULL,
-  `estrelas` int NOT NULL,
-  `texto` varchar(300) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `id_escritor` (`id_escritor`),
-  KEY `id_produto` (`id_produto`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `cliente`
@@ -53,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `dataNasc` date NOT NULL,
   `telefone` varchar(12) NOT NULL,
   `email` varchar(150) COLLATE utf8mb4_general_ci NOT NULL,
-  `senha` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `senha` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `plano` enum('comum','turbinado') COLLATE utf8mb4_general_ci NOT NULL,
   `quantidadePontos` int DEFAULT NULL,
   `fotoPerfil` blob,
@@ -61,6 +44,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
+
 
 --
 -- Estrutura da tabela `funcionario`
@@ -79,29 +63,6 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Extraindo dados da tabela `funcionario`
---
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `pedido`
---
-
-DROP TABLE IF EXISTS `pedido`;
-CREATE TABLE IF NOT EXISTS `pedido` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `id_cliente` int NOT NULL,
-  `tipo-pagamento` enum('pix','boleto','cartao') NOT NULL,
-  `valorTotal` double NOT NULL,
-  `dataCompra` date NOT NULL,
-  `statusDaCompra` enum('aprovado','esperando-resposta','reprovado') NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `id_cliente` (`id_cliente`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `produto`
@@ -117,8 +78,70 @@ CREATE TABLE IF NOT EXISTS `produto` (
   `customizações` enum('rebaixamento-dropped','rebaixamento-hellaFlush','pintura-solida','pintura-metalica','pintura-perolizada','pneu-solido','pneu-personalizado','pneu-duasCores','adesivo-pequeno','adesivo-medio','adesivo-grande','aerofolio','insulfilm','caixaDeSom','banco','tunagem-reformulada','tunagem-remanufaturada') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`codigoProduto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-COMMIT;
 
+
+--
+-- Estrutura da tabela `avaliacao`
+--
+
+DROP TABLE IF EXISTS `avaliacao`;
+CREATE TABLE IF NOT EXISTS `avaliacao` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_escritor` int NOT NULL,
+  `id_produto` int NOT NULL,
+  `estrelas` int NOT NULL,
+  `texto` varchar(300) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`id_escritor`) REFERENCES `cliente`(`id`),
+  FOREIGN KEY (`id_produto`) REFERENCES `produto`(`codigoProduto`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+--
+-- Estrutura da tabela `pedido`
+--
+
+DROP TABLE IF EXISTS `pedido`;
+CREATE TABLE IF NOT EXISTS `pedido` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_cliente` int NOT NULL,
+  `tipo-pagamento` enum('pix','boleto','cartao') NOT NULL,
+  `valorTotal` double NOT NULL,
+  `dataCompra` date NOT NULL,
+  `statusDaCompra` enum('aprovado','esperando-resposta','reprovado') NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`id_cliente`) REFERENCES `cliente`(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+--
+-- Estrutura da Tabela `carro`
+--
+DROP TABLE IF EXISTS `carro`;
+CREATE TABLE IF NOT EXISTS `carro`(
+  `placa` varchar(7) NOT NULL,
+  `id_dono` INT NOT NULL,
+  `modelo` varchar(150) NOT NULL,
+  `cor` varchar(100) NOT NULL,
+
+  PRIMARY KEY(`placa`),
+  FOREIGN KEY (`id_dono`) REFERENCES `cliente`(`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+--
+-- Estrutura da Tabela `agendamento`
+--
+DROP TABLE IF EXISTS `agendamento`;
+CREATE TABLE IF NOT EXISTS `agendamento`(
+  `data_agendamento` TIMESTAMP NOT NULL,
+  `id_cliente` INT NOT NULL,
+  `placa_carro` varchar(7),
+
+  PRIMARY KEY(`data_agendamento`),
+  FOREIGN KEY(`id_cliente`) REFERENCES `cliente`(`id`),
+  FOREIGN KEY(`placa_carro`) REFERENCES `carro`(`placa`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

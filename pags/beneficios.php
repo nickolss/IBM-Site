@@ -1,3 +1,16 @@
+<?php
+require_once('../assets/scripts/iniciarSessao.php');
+if ($_SESSION['plano'] != 'turbinado') {
+  echo "
+  <script>
+    alert('Você precisa assinar o plano turbinado.');
+    setInterval( function() {
+      window.location.href = 'http://localhost/IBM-Site/pags/perfil.php'
+    }, 1000)
+  </script>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -26,7 +39,7 @@
   <main class="principal">
     <section class="banner">
       <div class="banner__textos">
-        <h2 class="banner__titulo">Olá, &lt;nome do perfil&gt;!</h2>
+        <h2 class="banner__titulo">Olá, <?= $_SESSION['nomeCliente'] ?>!</h2>
         <a href="troquepontos.html" class="banner__link">Troque seus pontos</a>
       </div>
       <img src="../assets/img/perfilPic.svg" class="banner__imagem">

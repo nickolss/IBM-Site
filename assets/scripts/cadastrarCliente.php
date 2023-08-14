@@ -13,12 +13,21 @@ $planoForm = $_POST['plano'];
 
 $senhaSegura = md5($senhaForm);
 $cpfSeguro = md5($cpfForm);
-$telefoneFormatado = str_replace(['(' , ')' , '-'] , '' , $telefoneForm);
+$telefoneFormatado = str_replace(['(', ')', '-'], '', $telefoneForm);
 
 $sqlInsert = "INSERT INTO `cliente`(`cpf`, `nomeCompleto`, `dataNasc`, `telefone`, `email`, `senha`, `plano`, `quantidadePontos`) VALUES ('$cpfSeguro','$nomeForm','$dataNascForm','$telefoneFormatado','$emailForm','$senhaSegura','$planoForm','0')";
 
 $cadastrarCliente = $pdo->prepare($sqlInsert);
 
 if ($cadastrarCliente->execute()) {
+    $_SESSION['nomeCliente'] = $nomeForm;
+    $_SESSION['email'] = $emailForm;
+    $_SESSION['telefone'] = $telefoneForm;
+    $_SESSION['dataNasc'] = $dataNascForm;
+    $_SESSION['cpf'] = $cpfForm;
+    $_SESSION['senha'] = $senhaForm;
+    $_SESSION['plano'] = $planoForm;
+    $_SESSION['quantidadePontos'] = 0;
+    $_SESSION['fotoPerfil'] = null;
     header("Location: ../../pags/perfil.php");
 }

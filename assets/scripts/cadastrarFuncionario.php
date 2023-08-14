@@ -17,3 +17,9 @@ $telefoneFormatado = str_replace(['(' , ')' , '-'] , '' , $telefoneForm);
 $sqlInsert = "INSERT INTO `funcionario`(`cpf`, `nomeCompleto`, `dataNasc`, `telefone`, `email`, `senha`) VALUES ('$cpfSeguro','$nomeForm','$dataNascForm','$telefoneFormatado','$emailForm','$senhaSegura')";
 
 $cadastrarFuncionario = $pdo->prepare($sqlInsert);
+
+if($cadastrarFuncionario->execute()){
+    $_SESSION['rf'] = $nomeForm;
+    $_SESSION['nomeFuncionario'] = $emailForm;
+    header("Location: ../../pags/perfil.php");
+}

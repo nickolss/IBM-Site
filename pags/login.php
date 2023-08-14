@@ -1,3 +1,10 @@
+<?php 
+  require_once('../assets/scripts/iniciarSessao.php');
+  if(isset($_SESSION['nomeCliente']) || isset($_SESSION['nomeFuncionario'])){
+    header("Location: ./perfil.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 

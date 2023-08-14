@@ -1,3 +1,7 @@
+<?php 
+  require_once('../assets/scripts/iniciarSessao.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -29,8 +33,8 @@
 
       <section class="banner">
         <div class="banner__textos">
-          <h2 class="banner__titulo">Olá, &lt;nome do perfil&gt;!</h2>
-          <p class="pontos__Perfil">Seus pontos: x</p>
+          <h2 class="banner__titulo">Olá, <?= $_SESSION['nomeCliente'] ?>!</h2>
+          <p class="pontos__Perfil">Seus pontos: <?= $_SESSION['quantidadePontos'] ?></p>
         </div>
         <img src="../assets/img/perfilPic.svg" class="banner__imagem">
       </section>
