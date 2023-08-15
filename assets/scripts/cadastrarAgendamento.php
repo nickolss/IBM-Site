@@ -12,14 +12,12 @@
     $id = (int)$_SESSION['id']; 
 
     //comando sql para inserção de dados do veículo no banco
-    //AINDA FALTA O CAMPO ID_CLIENTE
     $sqlInsertCarro = "INSERT INTO `carro` (`placa`, `id_dono`,`modelo`, `cor`) VALUES (`$placa`,`$id`,`$modelo`, `$cor`)";
 
     //preparando o bd para a inserção dos dados
     $inserirDadosCarro = $pdo->prepare($sqlInsertCarro);
 
     //comando sql para inserção de dados do agendamento no banco
-    //AINDA FALTA O CAMPO ID_CLIENTE
     $sqlInsertAgendamento = "INSERT INTO `agendamento` (`data_agendamento`,`id_cliente`,`placa_carro`) VALUES (`$data`,`$id`,`$placa`)";
 
     //preparando o bd para a inserção dos dados 
