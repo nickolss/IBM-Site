@@ -42,7 +42,7 @@ require_once('../assets/scripts/consultaCliente.php');
                     <div class="col">
                         <div class="informacoes-cadastro">
                             <div class="informacoes__imagem-perfil">
-                                <img src="../assets/img/iconePerfil.svg" class="imagem-perfil__imagem">
+                                <img src="../assets/img/img-perfil.png" class="imagem-perfil__imagem">
                             </div>
                             <form action="" method="post" class="informacoes__formulario">
                                 <input type="text" name="nome" id="nome" value="<?= $_SESSION['nomeCliente'] ?>" disabled class="formulario__campo" />
@@ -65,12 +65,10 @@ require_once('../assets/scripts/consultaCliente.php');
                         </div>
                     </div>
 
-                    <div class="col">
+                    <div id="div__edicao" class="col">
                         <form action="../assets/scripts/editarCliente.php" method="POST">
                             <div class="titulo">
-                                <h1 class="mainTitle">Cadastrar-se</h1>
-                                <h2 class="subTitle">Veja seus pedidos de forma fácil, compre mais rápido e
-                                    tenha uma experiência personalizada</h2>
+                                <h1 class="mainTitle">Editar Perfil</h1>
                             </div>
                             <div class="cadastro">
                                 <div class="caixa__input">

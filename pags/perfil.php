@@ -35,7 +35,7 @@
 			<div class="informacoes-cadastro">
 
 				<div class="informacoes__imagem-perfil">
-					<img src="../assets/img/iconePerfil.svg" class="imagem-perfil__imagem">
+					<img src="../assets/img/img-perfil.png" class="imagem-perfil__imagem">
 				</div>
 				<form action="" method="post" class="informacoes__formulario">
 					<input type="text" name="nome" id="nome" value="<?= $_SESSION['nomeCliente'] ?>" disabled class="formulario__campo" />

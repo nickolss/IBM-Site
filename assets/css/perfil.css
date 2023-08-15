@@ -26,12 +26,12 @@
 
 .imagem-perfil__imagem{
     margin: 1rem 0;
-    max-width: 100px;
+    max-width: 150px;
+    cursor: pointer;
 }
 
 .informacoes-cadastro, .informacoes__formulario{
     margin: 1rem 0;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -42,6 +42,9 @@
     background-color: #01496199;
     max-width: 25vw;
     margin: 1rem auto;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
 }
 
 .informacoes__formulario{
@@ -50,9 +53,15 @@
 }
 
 .formulario__campo{
-    width: 100%;
-    background-color: #fff;
-    border-radius: 20px;
+    font-size: 1.1rem;
+    padding: 5px 15px;
+    outline: none;
+    border: 2px solid #014961;
+    background-color: rgba(255, 255, 255, 0.97);
+    box-shadow: 1px 2px 2px rgba(0,0,0,0.2);
+    border-radius: 13px;
+    width: 150%;
+    margin-bottom: 3%;
 }
 
 .formulario__campo:disabled{
@@ -61,22 +70,62 @@
 }
 
 .formulario__botao{
-    width: 100%;
+    padding: 10px 35px;
+    margin-top: 25px;
+    font-size: 1.2rem;
     border: none;
-    background-color: #DF7369;
-    color:#fff;
-    font-weight: 600;
+    color: white;
     border-radius: 20px;
-    padding: 0.5rem 1.2rem;
-    box-shadow: 1px 1px 1px 1px #00000050;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+    background-color: #FF7769;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
 }
 
-@media screen and (max-width: 720px){
+.formulario__botao:hover{
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+    color: white;
+    box-shadow: 3px 3px 4px rgba(0,0,0,0.25);
+}
+
+#div__edicao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 1650px){
+    .formulario__campo{
+        width: 130%;
+    }
+}
+
+@media only screen and (max-width: 1450px){
+    .formulario__campo{
+        width: 120%;
+    }
+}
+
+@media only screen and (max-width: 1250px){
+    .formulario__campo{
+        width: 110%;
+    }
+}
+
+@media only screen and (max-width: 1050px){
+    .formulario__campo{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 850px){
     .banner{
         display: none;
     }
 
     .informacoes-cadastro{
-        max-width: 80vw;
+        max-width: 70vw;
     }
 }
