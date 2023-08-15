@@ -1,5 +1,5 @@
 <?php 
-  //require_once('../assets/scripts/consultaFuncionario.php');
+  require_once('../assets/scripts/consultaFuncionario.php');
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +34,7 @@
     <div class="titulo">
       <h1 class="mainTitle">Cadastrar Produtos</h1>
     </div>
-    <form action="../assets/scripts/cadProduto.php" method="POST" class="formulario" enctype="multipart/form-data">
+    <form action="../assets/scripts/cadastrarProduto.php" method="post" class="formulario">
       <div class="cadastro">
 
         <div class="caixa__input">
@@ -87,8 +87,8 @@
           <br>
         </div>
 
-        <label class="picture">
-            <input type="file" class="picture__input" name="imgProd" id="imgProd" required>
+        <label class="picture" tabIndex="0">
+            <input type="file" accept="image/*" class="picture__input" name="imgProd" id="imgProd">
             <span class="picture__image"></span>
         </label>
 

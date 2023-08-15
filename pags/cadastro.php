@@ -14,7 +14,8 @@
 
   <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
   
-  <script src="../assets/js/mascaras.js" defer></script>
+  <script src="../assets/js/mascaraCpf.js" defer></script>
+  <script src="../assets/js/mascaraTelefone.js" defer></script>
   <script src="../assets/js/validacaoForm.js" defer></script>
   <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
   <!-- O atributo DEFER espera a página carregar para executar o Script -->
@@ -65,7 +66,7 @@
           <label for="cpf">CPF</label>
         </div>
         <div class="div__termos">
-          <div class="filho__termos"><label for="termos"><input type="checkbox" name="termos" id="termos">Aceitar Termos de condições</label></div>
+          <div class="filho__termos"><label for="termos"><input type="checkbox" name="termos" id="termos" required>Aceitar Termos de condições</label></div>
         </div>
       </div>
 

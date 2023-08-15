@@ -67,7 +67,8 @@ main{
     align-items: center;
 }
     .a__card{
-        text-decoration: none;    
+        text-decoration: none;
+        height: 100%;    
     }
 
     .container__horizontal__cards .horizontal__card{
