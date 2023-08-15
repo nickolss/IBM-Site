@@ -23,7 +23,7 @@
     //preparando o bd para a inserção dos dados 
     $inserirDadosAgendamento = $pdo->prepare($sqlInsertAgendamento);
 
-    if($sqlInsertCarro->execute()  && $inserirDadosAgendamento->execute()){
+    if($inserirDadosCarro->execute()  && $inserirDadosAgendamento->execute()){
         header("Location: ../../index.html");
     }
 ?>
