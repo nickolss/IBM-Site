@@ -9,7 +9,7 @@
     $descricao = $_POST['descricaoProd'];
     $categoria = $_POST['categoria'];
 
-    $pasta = '../img/produtos/';
+    $pasta = '../assets/img/produtos/';
     $extensaoArquivo = strtolower(pathinfo($imagemProd['name'] , PATHINFO_EXTENSION));
     $caminho = $pasta . $nomeImagem;
     $moverImagem = move_uploaded_file($imagemProd['tmp_name'] , $caminho);
