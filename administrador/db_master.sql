@@ -120,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `pedido` (
 --
 DROP TABLE IF EXISTS `carro`;
 CREATE TABLE IF NOT EXISTS `carro`(
-  `placa` varchar(7) NOT NULL,
+  `placa` varchar(8) NOT NULL,
   `id_dono` INT NOT NULL,
   `modelo` varchar(150) NOT NULL,
   `cor` varchar(100) NOT NULL,
@@ -135,7 +135,8 @@ CREATE TABLE IF NOT EXISTS `carro`(
 --
 DROP TABLE IF EXISTS `agendamento`;
 CREATE TABLE IF NOT EXISTS `agendamento`(
-  `data_agendamento` TIMESTAMP NOT NULL,
+  `data_agendamento` date NOT NULL,
+  `horario` int NOT NULL,
   `id_cliente` INT NOT NULL,
   `placa_carro` varchar(7),
 
