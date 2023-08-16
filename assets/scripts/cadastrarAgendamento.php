@@ -3,28 +3,28 @@
     require_once('./iniciarSessao.php'); //verifica se o arquivo 'iniciarSessao.php' está incluindo, executando-o
 
     //passa as informações do forms para variaveis
-    $cor = $_POST['corAtual'];
-    $modelo = $_POST['modelo'];
-    $placa = $_POST['placa'];
-    $data = $_POST['data'];
-    $horario = $_POST['horario'];
+    $corForm = $_POST['corAtual'];
+    $modeloForm = $_POST['modelo'];
+    $placaForm = $_POST['placa'];
+    $dataForm = $_POST['data'];
+    $horarioForm = $_POST['horario'];
 
     $id = (int)$_SESSION['id']; 
 
     //comando sql para inserção de dados do veículo no banco
-    $sqlInsertCarro = "INSERT INTO `carro` (`placa`, `id_dono`,`modelo`, `cor`) VALUES (`$placa`,`$id`,`$modelo`, `$cor`)";
+    $sqlInsertCarro = "INSERT INTO `carro` (`placa`, `id_dono`,`modelo`, `cor`) VALUES ('$placaForm','$id','$modeloForm', '$corForm')";
 
     //preparando o bd para a inserção dos dados
     $inserirDadosCarro = $pdo->prepare($sqlInsertCarro);
 
     //comando sql para inserção de dados do agendamento no banco
-    $sqlInsertAgendamento = "INSERT INTO `agendamento` (`data_agendamento`,`id_cliente`,`placa_carro`) VALUES (`$data`,`$id`,`$placa`)";
+    $sqlInsertAgendamento = "INSERT INTO `agendamento` (`data_agendamento`,`id_cliente`,`placa_carro`) VALUES ('$dataForm','$id','$placaForm')";
 
     //preparando o bd para a inserção dos dados 
     $inserirDadosAgendamento = $pdo->prepare($sqlInsertAgendamento);
 
-    if($sqlInsertCarro->execute()  && $inserirDadosAgendamento->execute()){
-        header("Location: ../../index.html");
+    if($inserirDadosCarro->execute()  && $inserirDadosAgendamento->execute()){
+        echo "Cadastrado com sucesso!";
     }
 ?>
 
