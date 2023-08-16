@@ -24,7 +24,7 @@
     $inserirDadosAgendamento = $pdo->prepare($sqlInsertAgendamento);
 
     if($inserirDadosCarro->execute()  && $inserirDadosAgendamento->execute()){
-        echo "Cadastrado com sucesso!";
+        echo 'Cadastrado com sucesso!';
     }
 ?>
 
