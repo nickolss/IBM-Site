@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `produto` (
   `preco` float NOT NULL,
   `marca` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `descricao` text COLLATE utf8mb4_general_ci NOT NULL,
-  `customizações` enum('rebaixamento-dropped','rebaixamento-slammed','rebaixamento-hellaFlush','pintura-solida','pintura-metalica','pintura-perolizada','pneu-solido','pneu-personalizado','pneu-duasCores','adesivo-pequeno','adesivo-medio','adesivo-grande','aerofolio','insulfilm','caixaDeSom','banco','tunagem-reformulada','tunagem-remanufaturada') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `customizações` enum('rebaixamento-dropped','rebaixamento-slammed','rebaixamento-hellaFlush','pintura-solida','pintura-metalica','pintura-perolizada','pneu-solido','pneu-personalizado','pneu-duasCores','adesivo-pequeno','adesivo-medio','adesivo-grande','aerofolio','insulfilm','caixaDeSom','banco','tunagem-reformulada','tunagem-remanufaturada', 'pneu-carro', 'som-multimidia-eletronicos', 'acessorios-automoveis', 'cuidados-automotivos', 'oleo-fluidos', 'baterias-acessorios', 'reboque-transporte', 'pecas-automoveis', 'equipamentos-protecao', 'pneu-moto', 'acessorios-pecas-moto', 'ferramentas-equipamentos') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `caminho_imagem` varchar(100) NOT NULL,
   PRIMARY KEY (`codigoProduto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -120,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `pedido` (
 --
 DROP TABLE IF EXISTS `carro`;
 CREATE TABLE IF NOT EXISTS `carro`(
-  `placa` varchar(7) NOT NULL,
+  `placa` varchar(8) NOT NULL,
   `id_dono` INT NOT NULL,
   `modelo` varchar(150) NOT NULL,
   `cor` varchar(100) NOT NULL,
@@ -135,7 +135,8 @@ CREATE TABLE IF NOT EXISTS `carro`(
 --
 DROP TABLE IF EXISTS `agendamento`;
 CREATE TABLE IF NOT EXISTS `agendamento`(
-  `data_agendamento` TIMESTAMP NOT NULL,
+  `data_agendamento` date NOT NULL,
+  `horario` int NOT NULL,
   `id_cliente` INT NOT NULL,
   `placa_carro` varchar(7),
 
