@@ -9,7 +9,7 @@
     $dataForm = $_POST['data'];
     $horarioForm = (int)$_POST['horario'];
     $id = (int)$_SESSION['id']; 
-    $placaFormatada = str_replace(['(', ')', '-','/'], '', $placaFormatada);
+    $placaFormatada = str_replace(['(', ')', '-','/'], '', $placaForm);
 
      //comando sql para inserção de dados do veículo no banco
      $sqlInsertCarro = "INSERT INTO `carro` (`placa`, `id_dono`,`modelo`, `cor`) VALUES ('$placaFormatada','$id','$modeloForm', '$corForm')";
