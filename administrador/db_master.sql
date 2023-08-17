@@ -136,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `carro`(
 DROP TABLE IF EXISTS `agendamento`;
 CREATE TABLE IF NOT EXISTS `agendamento`(
   `data_agendamento` date NOT NULL,
-  `horario` int NOT NULL,
+  `horario` enum('8h','10h','12h','14h','16h','18h') NOT NULL,
   `id_cliente` INT NOT NULL,
   `placa_carro` varchar(7),
 
