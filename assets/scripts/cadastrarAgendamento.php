@@ -24,5 +24,5 @@
      $inserirDadosAgendamento = $pdo->prepare($sqlInsertAgendamento);
  
      if($inserirDadosCarro->execute() && $inserirDadosAgendamento->execute()){
-         echo 'Agendamento registrado com sucesso!';
+         header("Location: ../../pags/agendamento-sucesso.php");
      }
