@@ -1,3 +1,8 @@
+<?php 
+    require_once('../assets/scripts/iniciarSessao.php');
+    require_once('../assets/scripts/consultaCliente.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
