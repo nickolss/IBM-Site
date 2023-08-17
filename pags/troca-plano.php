@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="../assets/css/perfil.css">
     <link rel="stylesheet" href="../assets/css/cadastro.min.css">
 	<link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>

@@ -16,6 +16,7 @@
       <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
       <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">  
       <script type="text/javascript" src="../assets/js/java.js" defer></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
 
       <!--LINK ICONES-->

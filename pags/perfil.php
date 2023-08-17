@@ -14,6 +14,7 @@
 	<!-- Arquivos do Bootstrap -->
 	<link rel="stylesheet" href="../assets/css/css-bootstrap/bootstrap.min.css">
 	<script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 	<link rel="stylesheet" href="../assets/css/estilos-importantes.css" />
 	<link rel="stylesheet" href="../assets/css/perfil.css">

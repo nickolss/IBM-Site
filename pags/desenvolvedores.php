@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../assets/css/desenvolvedores.css">
 	<link rel="stylesheet" href="../assets/css/estilos-importantes.css" />
 	<link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>

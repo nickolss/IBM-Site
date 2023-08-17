@@ -27,6 +27,7 @@ if ($_SESSION['plano'] != 'turbinado') {
   <link rel="stylesheet" href="../assets/css/estilos-importantes.css">
 
   <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="../assets/js/java.js" defer></script>
   <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
 </head>
