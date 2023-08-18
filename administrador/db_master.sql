@@ -139,6 +139,7 @@ CREATE TABLE IF NOT EXISTS `agendamento`(
   `horario` enum('8h','10h','12h','14h','16h','18h') NOT NULL,
   `id_cliente` INT NOT NULL,
   `placa_carro` varchar(7),
+  `agendamento` enum('rebaixamento-dropped','rebaixamento-slammed','rebaixamento-hellaFlush','pintura-solida','pintura-metalica','pintura-perolizada','pneu-solido','pneu-personalizado','pneu-duasCores','adesivo-pequeno','adesivo-medio','adesivo-grande','aerofolio','insulfilm','caixaDeSom','banco','tunagem-reformulada','tunagem-remanufaturada', 'pneu-carro', 'som-multimidia-eletronicos', 'acessorios-automoveis', 'cuidados-automotivos', 'oleo-fluidos', 'baterias-acessorios', 'reboque-transporte', 'pecas-automoveis', 'equipamentos-protecao', 'pneu-moto', 'acessorios-pecas-moto', 'ferramentas-equipamentos') NOT NULL,
 
   PRIMARY KEY(`data_agendamento`),
   FOREIGN KEY(`id_cliente`) REFERENCES `cliente`(`id`),
