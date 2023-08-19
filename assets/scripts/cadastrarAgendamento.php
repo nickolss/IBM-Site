@@ -8,6 +8,8 @@
     $placaForm = $_POST['placa'];
     $dataForm = $_POST['data'];
     $horarioForm = $_POST['horario'];
+    $categoriaForm = $_POST['categoria'];
+
     $id = (int)$_SESSION['id']; 
     $placaFormatada = str_replace(['(', ')', '-','/'], '', $placaForm);
 
@@ -18,7 +20,7 @@
      $inserirDadosCarro = $pdo->prepare($sqlInsertCarro);
  
      //comando sql para inserção de dados do agendamento no banco
-     $sqlInsertAgendamento = "INSERT INTO `agendamento` (`data_agendamento`,`horario`,`id_cliente`,`placa_carro`) VALUES ('$dataForm','$horarioForm','$id','$placaFormatada')";
+     $sqlInsertAgendamento = "INSERT INTO `agendamento` (`data_agendamento`,`horario`,`id_cliente`,`placa_carro`, `agendamento`) VALUES ('$dataForm','$horarioForm','$id','$placaFormatada', '$categoriaForm')";
  
      //preparando o bd para a inserção dos dados 
      $inserirDadosAgendamento = $pdo->prepare($sqlInsertAgendamento);

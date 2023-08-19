@@ -93,6 +93,15 @@
                         </div>
                     </div>
 
+                    <div style="display:none;" class="caixa__input">
+                      <div class="dropdown-categorias">
+                        <select required id="categoria" name="categoria">
+                          <option class="opcao__categoria" value="pintura-perolizada">Pintura Perolizada</option>
+                        </select>
+                      </div>
+                      <br>
+                  </div>
+
                 </form>
             </div>
 
