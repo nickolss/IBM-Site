@@ -51,7 +51,6 @@
               <i class='bx bxs-lock-alt'></i>
             </div>
             <div class="lembrar__esquecer">
-              <label for="lembrarConta"><input type="checkbox" name="lembrarConta" id="lembrarConta">Lembrar Conta</label>
               <a href="#">Esqueceu a Senha?</a>
             </div>
             <button type="submit" class="botao__login">Entrar</button>
