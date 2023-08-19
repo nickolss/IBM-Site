@@ -82,6 +82,24 @@ CREATE TABLE IF NOT EXISTS `produto` (
 
 
 --
+-- Estrutura da tabela `endereco`
+--
+DROP TABLE IF EXISTS `endereco`;
+CREATE TABLE IF NOT EXISTS `endereco`(
+  `rua` varchar(255) NOT NULL,
+  `numero` int(10) NOT NULL,
+  `complemento` varchar(255) DEFAULT NULL,
+  `bairro` varchar(255) NOT NULL,
+  `cidade` varchar(255) NOT NULL,
+  `estado` varchar(255) NOT NULL,
+  `cep` int(8) NOT NULL,
+  `id_morador` int NOT NULL,
+
+  FOREIGN KEY (`id_morador`) REFERENCES `cliente`(`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+--
 -- Estrutura da tabela `avaliacao`
 --
 
