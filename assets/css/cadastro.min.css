@@ -10,6 +10,66 @@ main{
     flex: 1;
 }
 
+#passos{
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.passo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.passo i.ativado{
+    background-color: #014961;
+    box-shadow: 0px 3px 3px #01496149;
+}
+
+.passo i.desativado{
+    background-color: #FC7469;
+    opacity: 0.5;
+}
+
+.passo i{
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.7em;
+    margin-bottom: 0.3em;
+    z-index: 1;
+    color: white;
+}
+
+.passo p.legenda__icone{
+    color: #014961;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.passo p.ativado{
+    color: #014961;
+}
+
+.passo p.desativado{
+    color: #FC7469;
+    opacity: 0.7;
+}
+
+.linha{
+    border-bottom: 1px solid black;
+    position: absolute;
+    top: 22.5px;
+    width: 71%;
+    left: 17%;
+    z-index: 0;
+}
+
 .titulo{
     display: flex;
     flex-direction: column;
@@ -230,6 +290,31 @@ main{
     border-radius: 15px;
 }
 
+#div__botao__continuar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+#btn__cadastro__continuar{
+    background-color: #FC7469;
+    padding: 5px 20px;
+    width: 250px;
+    height: 40px;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+#btn__cadastro__continuar:hover{
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+}
+
 @media only screen and (max-width:1000px) {
     .separacao{
         display: block;
@@ -279,10 +364,26 @@ main{
 }
 
 @media only screen and (max-width:580px) {
+    #passos{
+        margin-top: 20px;
+        max-width: 300px;
+    }
+
+    .linha{
+        width: 64%;
+        left: 18%;
+    }
+    
     .plano__background-rosa{
         margin-right: 5%;
     }
+
+    .passo p.legenda__icone{
+        display: none;
+    }
+
 }
+
 
 @media only screen and (max-width:510px) {
     .mainTitle{
@@ -303,6 +404,16 @@ main{
         margin-left: 5%;
         margin-right: 5%;
     }
+
+    #passos{
+        max-width: 200px;
+    }
+
+    .linha{
+        width: 46%;
+        left: 27%;
+    }
+
 }
 
 @media only screen and (max-width:310px) {
