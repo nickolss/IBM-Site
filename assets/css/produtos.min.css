@@ -58,6 +58,10 @@ main{
     display: none;
 }
 
+.container__produtos {
+    vertical-align:top;
+}
+
 @media only screen and (max-width: 1500px){
     .container__grande__categorias, .container__pequeno__categorias, .container__mobile__categorias{
         display: none;

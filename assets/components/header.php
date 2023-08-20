@@ -11,7 +11,7 @@
             <ul id="form_header_menu">
                 <li> <a class="cabeca" href="../pags/personalizacoes.php">Personalizações</a> </li>
                 <li> <a class="cabeca" href="../pags/produtos.php">Produtos</a> </li>
-                <li> <a class="cabeca" href="../index.html"> <img width="90px" src="../assets/img/logo-final-finalmesmo.svg" alt="home"> </a> </li>
+                <li> <a class="cabeca" href="../index.php"> <img width="90px" src="../assets/img/logo-final-finalmesmo.svg" alt="home"> </a> </li>
                 <li> <a class="cabeca" href="../pags/aboutus.php">Sobre Nós</a> </li>
                 <li> <a class="cabeca" href="../pags/vagas.php">Vagas</a> </li>
             </ul>
@@ -103,7 +103,7 @@
             </button>
         </div>
         <div style=" width: 33%;" class="d-flex justify-content-center">
-            <a href="../index.html"><img class="img-fluid" width="50px" height="auto" src="../assets/img/logo-final-finalmesmo.svg" alt="home"></a>
+            <a href="../index.php"><img class="img-fluid" width="50px" height="auto" src="../assets/img/logo-final-finalmesmo.svg" alt="home"></a>
         </div>
 
         <div style=" width: 33%;" class="d-flex justify-content-end align-items-center">
@@ -129,7 +129,7 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
                     </li>
                     <hr>
                     <li class="nav-item">
