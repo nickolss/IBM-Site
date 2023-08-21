@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Turn Motors | Concurso</title>
+    <title>Turn Motors | Carrinho</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
@@ -37,93 +37,86 @@
                 </div>
             </div>
             <hr>
-
-
-            <hr>
 			<!--TELA GRANDE-->
 			<div class="container__grande__categorias">
 				<div class="container__produtos">
-							<div class="linha">
-				<?php foreach ($_SESSION['carrinho'] as $item) { ?>
-					<br>
-									<div class="coluna">
-										<div class="card">    
-											<img class="categoria__img" src="<?php echo $item['imagem'] ?>" alt="">
-											<div class="botões">
-												<div class="produtos">
-													<p>Preço: R$<?php echo $item['preco'] ?></p>
-													<a href="?adicionar=<?php echo $item['id'] ?>">Adicionar ao carrinho</a>
-													<?php if (isset($_SESSION['carrinho'][$item['id']])) { ?>
-														<a href="?remover=<?php echo $item['id'] ?>">Remover do carrinho</a>
-													<?php } else { ?>
-														<span href="produtos.php"></span>
-													<?php } ?>
-												</div>    
-											</div>    
-										</div>
-									</div>
-							<?php } ?> 
+					<div class="linha">
+                        <?php foreach ($_SESSION['carrinho'] as $item) { ?>
+                        <br>
+						<div class="coluna">
+							<div class="card">    
+								<img class="categoria__img" src="<?php echo $item['imagem'] ?>" alt="">
+								<div class="botões">
+									<div class="produtos">
+										<p>Preço: R$<?php echo $item['preco'] ?></p>
+										<a href="?adicionar=<?php echo $item['id'] ?>">Adicionar ao carrinho</a>
+										<?php if (isset($_SESSION['carrinho'][$item['id']])) { ?>
+										<a href="?remover=<?php echo $item['id'] ?>">Remover do carrinho</a>
+										<?php } else { ?>
+										<span href="produtos.php"></span>
+										<?php } ?>
+									</div>    
+								</div>    
 							</div>
+						</div>
+						<?php } ?> 
+					</div>
 				</div> 
-							<hr>
-                            <div class="col">
-                                <p class="fs-2">Total: R$ <?php echo getTotalPurchaseAmount($_SESSION['carrinho']); ?> </p>
-                            </div>
-                            <div class="col">
-
-                            </div>
+				<hr>
+                <div class="col">
+                    <p class="fs-2">Total: R$ <?php echo getTotalPurchaseAmount($_SESSION['carrinho']); ?></p>
+                </div>
 				<?php
 
-					if(isset($_GET['adicionar'])){
-						//Adicionando ao carrinho
-						$id = (int) $_GET['adicionar'];
-						
-						$session = $_SESSION['carrinho']; 
-						// print_r ($session);
-						// print_r ($items);
+                    if(isset($_GET['adicionar'])){
+                        //Adicionando ao carrinho
+                        $id = (int) $_GET['adicionar'];
+                        
+                        $session = $_SESSION['carrinho']; 
+                        // print_r ($session);
+                        // print_r ($items);
 
-						$index = array_search($id, array_column($items, 'id'));
-						
-							if(array_key_exists($id, $_SESSION['carrinho'])){
-								$_SESSION['carrinho'][$id]['quantidade']++;
-								echo '<script>window.location.href = "carrinho.php";</script>';
-								exit();
-							} else {
-								$_SESSION['carrinho'][$id] = array('index' => $index, 'quantidade'=>1, 'id'=> $id,'nome'=>$items[$index]['nome'], 'preco'=>$items[$index]['preco']);
-								//header("Location: index.php"); // Redireciona de volta ao carrinho após a remoção
-								echo '<script>window.location.href = "carrinho.php";</script>';
-								exit();
-							}
-							//Adicionado ao carrinho
-					}
-					if(isset($_GET['remover'])){
-						$id = (int) $_GET['remover'];
-						if(isset($_SESSION['carrinho'][$id])){
-							unset($_SESSION['carrinho'][$id]);
-							//header("Location: index.php"); // Redireciona de volta ao carrinho após a remoção
-							echo '<script>window.location.href = "carrinho.php";</script>';
-							exit();
-						}
-					}
+                        $index = array_search($id, array_column($item, 'id'));
+                        
+                        if(array_key_exists($id, $_SESSION['carrinho'])){
+                            $_SESSION['carrinho'][$id]['quantidade']++;
+                            echo '<script>window.location.href = "carrinho.php";</script>';
+                            exit();
+                        } else {
+                            $_SESSION['carrinho'][$id] = array('index' => $index, 'imagem' => $items[$index]['imagem'], 'quantidade'=>1, 'id'=> $id,'nome'=>$items[$index]['nome'], 'preco'=>$items[$index]['preco']);
+                            //header("Location: index.php"); // Redireciona de volta ao carrinho após a remoção
+                            echo '<script>window.location.href = "carrinho.php";</script>';
+                            exit();
+                        }
+                        //Adicionado ao carrinho
+                    }
+                    if(isset($_GET['remover'])){
+                        $id = (int) $_GET['remover'];
+                        if(isset($_SESSION['carrinho'][$id])){
+                            unset($_SESSION['carrinho'][$id]);
+                            //header("Location: index.php"); // Redireciona de volta ao carrinho após a remoção
+                            echo '<script>window.location.href = "carrinho.php";</script>';
+                            exit();
+                        }
+                    }
 
-					function getIndexById($array, $id) {
-						foreach ($array as $index => $object) {
-							if ($object['id'] === $id) {
-								return $index; // Return the index if ID matches
-							}
-						}
-						return 0; // Return -1 if ID is not found in the array
-					}
+                    function getIndexById($array, $id) {
+                        foreach ($array as $index => $object) {
+                            if ($object['id'] === $id) {
+                                return $index; // Return the index if ID matches
+                            }
+                        }
+                        return 0; // Return -1 if ID is not found in the array
+                    }
                     function getTotalPurchaseAmount($array) {
                         $totalAmount = 0.0;
-						foreach ($array as $items => $item) {
+                        foreach ($array as $items => $item) {
                             $totalAmount = $totalAmount + $item['preco'];
-						}
-						return $totalAmount;
-					}
-                    
-				?>
-
+                        }
+                        return $totalAmount;
+                    }
+                            
+                ?>
 			</div>
         </div>
         <br>    

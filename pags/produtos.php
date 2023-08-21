@@ -57,7 +57,7 @@
 					$items = array_merge($items1, $items2);
 				?>
 
-				<div class=container__produtos">
+				<div class="container__produtos">
 							<!--PRIMEIRA LINHA-->
 							<div class="linha">
 				<?php foreach ($items1 as $item) { ?>
