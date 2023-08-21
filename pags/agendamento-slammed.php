@@ -76,11 +76,9 @@
                       <br>
                   </div>
 
-                    <div class="botoes">
-                        <div class="linha">
-                            <div class="botao">
-                                <button class="botao__laranja" type="submit">Agendar</button>
-                            </div>
+                  <div class="botoes">
+                          <div class="botao">
+                            <button class="botao__laranja" type="submit">Agendar</button>
                         </div>
                     </div>
                     
