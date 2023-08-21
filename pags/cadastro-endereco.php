@@ -20,6 +20,7 @@
   <script src="../assets/js/mascaraTelefone.js" defer></script>
   <script src="../assets/js/validacaoForm.js" defer></script>
   <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/cadastro-endereco.js" defer></script>
   <!-- O atributo DEFER espera a página carregar para executar o Script -->
 
 </head>
@@ -30,7 +31,7 @@
   ?>
 
   <main class="principal">
-    <form action="../assets/scripts/cadastrarCliente.php" method="POST">
+    <form action="../assets/scripts/cadastrarCliente.php" method="POST" id="adress-form">
       <div class="titulo">
         <h1 class="mainTitle">Cadastrar-se</h1>
         <h2 class="subTitle">Veja seus pedidos de forma fácil, compre mais rápido e
@@ -46,9 +47,89 @@
             <i class='bx bx-map ativado'></i>
             <p class="legenda__icone ativado">Endereço</p>
         </div>
-    </div>
+      </div>
 
-      <!--INPUTS CADASTRO ENDEREÇO-->
+      <div class="cadastro">
+
+        <div class="caixa__input">
+          <input type="text" required name="cep" id="cep" autocomplete="off" minlength="8" maxlength="8">
+          <label for="cep">CEP</label>
+        </div>
+        
+        <div class="input__endereco">
+
+          <div class="caixa__input">
+            <input type="text" required name="address" id="address" autocomplete="off" disabled data-input>
+            <label for="address">Rua</label>
+          </div>
+
+          <div class="caixa__input caixa__input__margin">
+            <input type="number" required name="numero" id="numero" autocomplete="off" minlength="1" maxlength="5" disabled data-input>
+            <label for="numero">Número</label>
+          </div>
+
+        </div>
+
+        <div class="input__endereco">
+
+          <div class="caixa__input">
+            <input type="text" name="complemento" id="complemento" autocomplete="off" disabled data-input>
+            <label for="complemento">Complemento</label>
+          </div>
+
+          <div class="caixa__input caixa__input__margin">
+            <input type="text" required name="neighborhood" id="neighborhood" autocomplete="off" disabled data-input>
+            <label for="neighborhood">Bairro</label>
+          </div>
+
+        </div>
+
+        <div class="input__endereco input__endereco__last">
+
+          <div class="caixa__input">
+            <input type="text" required name="city" id="city" autocomplete="off" disabled data-input>
+            <label for="city">Cidade</label>
+          </div>
+
+          <div class="caixa__input caixa__input__select">
+            <div class="dropdown-categorias">
+              <label id="label__dropdown__categoria" for="region">Estado:</label>
+              <select id="region" name="region" required disabled data-input>
+                <option class="opcao__categoria" selected>Estado</option>
+                <option class="opcao__categoria" value="AC">Acre</option>
+                <option class="opcao__categoria" value="AL">Alagoas</option>
+                <option class="opcao__categoria" value="AP">Amapá</option>
+                <option class="opcao__categoria" value="AM">Amazonas</option>
+                <option class="opcao__categoria" value="BA">Bahia</option>
+                <option class="opcao__categoria" value="CE">Ceará</option>
+                <option class="opcao__categoria" value="ES">Espírito Santo</option>
+                <option class="opcao__categoria" value="GO">Goiás</option>
+                <option class="opcao__categoria" value="MA">Maranhão</option>
+                <option class="opcao__categoria" value="MT">Mato Grosso</option>
+                <option class="opcao__categoria" value="MS">Mato Grosso do Sul</option>
+                <option class="opcao__categoria" value="MG">Minas Gerais</option>
+                <option class="opcao__categoria" value="PA">Pará</option>
+                <option class="opcao__categoria" value="PB">Paraíba</option>
+                <option class="opcao__categoria" value="PR">Paraná</option>
+                <option class="opcao__categoria" value="PE">Pernambuco</option>
+                <option class="opcao__categoria" value="PI">Piauí</option>
+                <option class="opcao__categoria" value="RJ">Rio de Janeiro</option>
+                <option class="opcao__categoria" value="RN">Rio Grande do Norte</option>
+                <option class="opcao__categoria" value="RS">Rio Grande do Sul</option>
+                <option class="opcao__categoria" value="RO">Rondônia</option>
+                <option class="opcao__categoria" value="RR">Roraima</option>
+                <option class="opcao__categoria" value="SC">Santa Catarina</option>
+                <option class="opcao__categoria" value="SP">São Paulo</option>
+                <option class="opcao__categoria" value="SE">Sergipe</option>
+                <option class="opcao__categoria" value="TO">Tocantins</option>
+              </select>
+            </div>
+            <br>
+          </div>
+
+        </div>
+
+      </div>
 
       <section class="planos">
         <div class="plano__background-azul">
@@ -92,8 +173,8 @@
           </div>
         </div>
       </section>
-
     </form>
+
   </main>
 
   <?php
