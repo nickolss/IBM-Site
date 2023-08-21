@@ -1,3 +1,7 @@
+@import url(agendamento.min.css);
+@import url(dropdown.min.css);
+@import url(dashboard.css);
+@import url(cadastro-produto.min.css);
 @import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap);
 
 #container__body{
@@ -101,7 +105,19 @@ main{
     justify-content: center;
 }
 
-.caixa__input {
+.input__endereco{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: 650px;
+}
+
+.input__endereco__last{
+    margin-top: -30px;
+}
+
+.caixa__input{
     font-family: 'Segoe UI', sans-serif;
     margin: 1em 0 1em 0;
     width: 650px;
@@ -117,6 +133,21 @@ main{
     border-radius: 20px;
     width: 100%;
     margin-bottom: 3%;
+  }
+
+  .input__endereco .caixa_input{
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid #014961;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    width: 50%;
+    margin-bottom: 3%;
+  }
+  
+  .input__endereco .caixa__input__margin{
+    margin-left: 20px;
   }
 
   .caixa__input label {
@@ -143,6 +174,38 @@ main{
   .caixa__input :is(input:focus, input:valid) {
     border-color: #014961;
   }
+
+  .caixa__input__select{
+    margin-top: 40px;
+  }
+
+  .caixa__input #region {
+    margin-left: 10px;
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid #014961;
+    background-color: rgba(255, 255, 255, 0.8);
+    max-width: 315px;
+    border-radius: 20px;
+    width: 100%;
+    margin-bottom: 3%;
+    outline: none;
+}
+
+.caixa__input #region:hover{
+    outline: none;
+}
+
+.caixa__input #label__dropdown__categoria{
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: #e8e8e8;
+    height: 30px;
+    color: #014961;
+}
 
 #data{
     height: 80px;
@@ -315,6 +378,10 @@ main{
     transition-duration: 0.5s;
 }
 
+.formulario__botao{
+    padding: 5px;
+}
+
 @media only screen and (max-width:1000px) {
     .separacao{
         display: block;
@@ -336,7 +403,7 @@ main{
 
 @media only screen and (max-width:800px) {
     .mainTitle{
-        margin-top: 15%;
+        margin-top: 100px;
     }
 }
 
@@ -358,12 +425,65 @@ main{
         width: 400px;
     }
 
+    .input__endereco{
+        width: 400px;
+    }
+
+    .input__endereco .caixa__input{
+        width: 200px;
+    }
+
+    .input__endereco .caixa__input__margin{
+        margin-left: 10px;
+    }
+
     .div__termos{
         margin-right: 11rem;
     }
 }
 
 @media only screen and (max-width:580px) {
+    .input__endereco__last{
+        margin-top: 0px;
+    }
+
+    .caixa__input__select{
+        margin-top: 10px;
+    }
+    
+    .dropdown-categorias{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    select#region{
+        width: 400px;
+    }
+
+    .caixa__input #region{
+        margin-left: -5px;
+    }
+
+    #label__dropdown__categoria{
+        display: none;
+    }
+
+    .input__endereco{
+        flex-direction: column;
+        width: 400px;
+    }
+    
+    .input__endereco .caixa__input{
+        width: 400px;
+    }
+
+    .input__endereco .caixa__input__margin{
+        margin-left: 0px;
+    }
+
+    
     #passos{
         margin-top: 20px;
         max-width: 300px;
@@ -394,6 +514,10 @@ main{
         width: 300px;
     }
 
+    .input__endereco .caixa__input{
+        width: 300px;
+    }
+
     .div__termos{
         margin-right: 5rem;
     }
@@ -421,6 +545,10 @@ main{
         width: 250px;
     }
 
+    .input__endereco .caixa__input{
+        width: 250px;
+    }
+
     .div__termos{
         margin-right: 1rem;
     }
@@ -428,6 +556,10 @@ main{
 
 @media only screen and (max-width:270px) {
     .caixa__input{
+        width: 220px;
+    }
+
+    .input__endereco .caixa__input{
         width: 220px;
     }
 
