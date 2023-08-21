@@ -92,7 +92,7 @@
 								<img class="categoria__img" src="<?php echo $item['imagem'] ?>" alt="">
 								<div class="botoes">
 									<div class="produtos">
-										<p>Preço: R$<?php echo $item['preco'] ?></p>
+										<p class="preco-produto">Preço: R$<?php echo $item['preco'] ?></p>
 										<p><a href="?adicionar=<?php echo $item['id'] ?>">Adicionar ao carrinho</a>
 										<?php if (isset($_SESSION['carrinho'][$item['id']])) { ?>
 										<a href="?remover=<?php echo $item['id'] ?>">Remover do carrinho</a></p>
@@ -109,7 +109,7 @@
 				<?php
                     foreach ($_SESSION['carrinho'] as $item) {
                         echo '<div class="carrinho-item">';
-                        echo '<p>Id: '. $item['id'] . ' Index: '. $item['index'] . 'Nome: ' . $item['nome'] . ' | Quantidade:  ' . $item['quantidade'] . ' | Preço: R$' . ($item['quantidade']*$item['preco']) . ',00</p>';
+                        echo '<p>Id: '. $item['id'] . ' Index: '. $item['index'] . ' Nome: ' . $item['nome'] . ' | Quantidade:  ' . $item['quantidade'] . ' | Preço: R$' . ($item['quantidade']*$item['preco']) . ',00</p>';
                         echo '</div>';
                         echo '<br>'; // Adicionar uma linha em branco após cada item
 
