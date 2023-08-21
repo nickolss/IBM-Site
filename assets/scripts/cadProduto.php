@@ -10,7 +10,7 @@
     $categoria = $_POST['categoria'];
 
     $pastaBD = '../assets/img/produtos/';
-    $pastaSalvar = "../../assets/img/produtos";
+    $pastaSalvar = "../../assets/img/produtos/";
     $extensaoArquivo = strtolower(pathinfo($imagemProd['name'] , PATHINFO_EXTENSION));
     $caminhoBD = $pastaBD . $nomeImagem;
     $caminhoSalvar = $pastaSalvar . $nomeImagem;
@@ -24,4 +24,3 @@
         header("Location: ../../pags/$categoria.php");
     }
 
-// 
