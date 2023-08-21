@@ -27,7 +27,7 @@
 
 <body>
     <?php
-    require_once('../assets/components/header.php');
+        require_once('../assets/components/header.php');
     ?>
     <main id="carrinho_pag">
         <div class="area_carrinho_pag justify-content-center">
@@ -48,10 +48,10 @@
 								<img class="categoria__img" src="<?php echo $item['imagem'] ?>" alt="">
 								<div class="botoes">
 									<div class="produtos">
-										<p>Preço: R$<?php echo $item['preco'] ?></p>
-										<a href="?adicionar=<?php echo $item['id'] ?>">Adicionar ao carrinho</a>
+										<p class="preco-produto">Preço: R$<?php echo $item['preco'] ?></p>
+										<p><a href="?adicionar=<?php echo $item['id'] ?>">Adicionar ao carrinho</a>
 										<?php if (isset($_SESSION['carrinho'][$item['id']])) { ?>
-										<a href="?remover=<?php echo $item['id'] ?>">Remover do carrinho</a>
+										<a href="?remover=<?php echo $item['id'] ?>">Remover do carrinho</a></p>
 										<?php } else { ?>
 										<span href="produtos.php"></span>
 										<?php } ?>
@@ -67,18 +67,11 @@
                     <p class="fs-2">Total: R$<?php echo getTotalPurchaseAmount($_SESSION['carrinho']); ?></p>
                 </div>
 				<?php
-                                    foreach ($_SESSION['carrinho'] as $item) {
-                                        echo '<div class="carrinho-item">';
-                                        echo '<p>Id: '. $item['id'] . ' Index: '. $item['index'] . ' Nome: ' . $item['nome'] . ' | Quantidade:  ' . $item['quantidade'] . ' | Preço: R$' . ($item['quantidade']*$item['preco']) . ',00</p>';
-                                        echo '</div>';
-                                        echo '<br>'; // Adicionar uma linha em branco após cada item
-                
-                                    }
                     if(isset($_GET['adicionar'])){
                         //Adicionando ao carrinho
                         $id = (int) $_GET['adicionar'];
                         
-                        $session = $_SESSION['carrinho']; 
+                        //$session = $_SESSION['carrinho']; 
                         // print_r ($session);
                         // print_r ($items);
 
@@ -113,13 +106,6 @@
                             }
                         }
                         return 0; // Return -1 if ID is not found in the array
-                    }
-                    function getTotalPurchaseAmount($array) {
-                        $totalAmount = 0.0;
-                        foreach ($array as $item) {
-                            $totalAmount += $item['quantidade'] * $item['preco'];
-                        }
-                        return $totalAmount;
                     }
                             
                 ?>

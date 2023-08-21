@@ -35,25 +35,34 @@
             <div class="table__itens_header_carrinho">
                 <table>
                     <tbody>
-                        <td class="img__table__header_carrinho" style="width: 40%;"> <img src="../assets/img/tapete.svg" alt=""> </td>
-                        <td class="info__table__header_carrinho">
-                            <div>
-                                <h2>Tapete</h2>
+                        <?php foreach ($_SESSION['carrinho'] as $item) { ?>
+                        <tr class="img__table__header_carrinho" style="width: 40%;"> <img src="<?php echo $item['imagem']; ?>" alt=""> </tr>
+                        <tr class="info__table__header_carrinho">
+                            <?php echo '<h2> '. $item['nome'] . '</h2>';?>
+                            <?php echo '<h3> Preço: R$'. $item['preco'] . '</h3>';?>
                             </div>
-                            <div>
-                                <h3>R$100</h3>
-                            </div>
-
+                            
                             <div class="table_itens__header__carrinho__config">
                                 <div class="table__itens_header_carrinho_botoes">
                                     <button id="botaoSubtrair_carrinho_header">-</button>
                                     <span id="contador_carrinho_header">1</span>
-                                    <button id="botaoAcrescentar_carrinho_header">+</button>
+                                    <button id="botaoAcrescentar_carrinho_header"><a href="?adicionar=<?php echo $item['id'] ?>">+</a></button>
                                 </div>
-
-                                <div style="color: #003445;">Excluir</div>
+                                <?php if (isset($_SESSION['carrinho'][$item['id']])) { ?>
+								<a href="?remover=<?php echo $item['id'] ?>">Excluir</a>
+								<?php } else { ?>
+								<span href="produtos.php"></span>
+								<?php } ?>
                             </div>
-                        </td>
+                        </tr>
+                        <?php }                     
+                        function getTotalPurchaseAmount($array) {
+                        $totalAmount = 0.0;
+                        foreach ($array as $item) {
+                            $totalAmount += $item['quantidade'] * $item['preco'];
+                        }
+                        return $totalAmount;
+                        }?>
                     </tbody>
                 </table>
 
@@ -62,7 +71,7 @@
             <br>
             <br>
             <div class="carrinho__header__finalizacao">
-                <h1>Total: R$x</h1>
+            <p class="fs-2">Total: R$<?php echo getTotalPurchaseAmount($_SESSION['carrinho']); ?></p>
                 <div class="text-center">
                     <button><a href="../pags/carrinho.php"> Ver Carrinho</a> </button>
                     <a style="text-decoration: none; color: #003445" href="">Frete grátis com o Plano Turbinado</a>

@@ -107,18 +107,11 @@
 					</div>
 				</div> 
 				<?php
-                    foreach ($_SESSION['carrinho'] as $item) {
-                        echo '<div class="carrinho-item">';
-                        echo '<p>Id: '. $item['id'] . ' Index: '. $item['index'] . ' Nome: ' . $item['nome'] . ' | Quantidade:  ' . $item['quantidade'] . ' | Preço: R$' . ($item['quantidade']*$item['preco']) . ',00</p>';
-                        echo '</div>';
-                        echo '<br>'; // Adicionar uma linha em branco após cada item
-
-                    }
 					if(isset($_GET['adicionar'])){
 						//Adicionando ao carrinho
 						$id = (int) $_GET['adicionar'];
 						
-						$session = $_SESSION['carrinho']; 
+						//$session = $_SESSION['carrinho']; 
 						// print_r ($session);
 						// print_r ($items);
 
