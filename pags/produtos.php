@@ -58,65 +58,62 @@
 				?>
 
 				<div class="container__produtos">
-							<!--PRIMEIRA LINHA-->
-							<div class="linha">
-				<?php foreach ($items1 as $item) { ?>
-					<br>
-
-									<div class="coluna">
-										<div class="card">    
-											<img class="categoria__img" src="<?php echo $item['imagem'] ?>" alt="">
-											<div class="botões">
-												<div class="produtos">
-													<p>Preço: R$<?php echo $item['preco'] ?></p>
-													<a href="?adicionar=<?php echo $item['id'] ?>">Adicionar ao carrinho</a>
-													<?php if (isset($_SESSION['carrinho'][$item['id']])) { ?>
-														<a href="?remover=<?php echo $item['id'] ?>">Remover do carrinho</a>
-													<?php } else { ?>
-														<span href="produtos.php"></span>
-													<?php } ?>
-												</div>    
-											</div>    
-										</div>
-									</div>
-							<?php } ?> 
+					<!--PRIMEIRA LINHA-->
+					<div class="linha">
+						<?php foreach ($items1 as $item) { ?>
+						<br>
+						<div class="coluna">
+							<div class="card">    
+								<img class="categoria__img" src="<?php echo $item['imagem'] ?>" alt="">
+								<div class="botoes">
+									<div class="produtos">
+										<p class="preco-produto">Preço: R$<?php echo $item['preco'] ?></p>
+										<p><a href="?adicionar=<?php echo $item['id'] ?>">Adicionar ao carrinho</a>
+										<?php if (isset($_SESSION['carrinho'][$item['id']])) { ?>
+										<a href="?remover=<?php echo $item['id'] ?>">Remover do carrinho</a></p>
+										<?php } else { ?>
+										<span href="produtos.php"></span>
+										<?php } ?>
+									</div>    
+								</div>    
 							</div>
+						</div>
+						<?php } ?> 
+					</div>
 				</div> 
-							<hr>
-				<div class="row">
-				<!--SEGUNDA LINHA-->
-				<div class="linha">
-				<?php foreach ($items2 as $item) { ?>
-					<br>
-
-									<div class="coluna">
-										<div class="card">    
-											<img class="categoria__img" src="<?php echo $item['imagem'] ?>" alt="">
-											<div class="botões">
-												<div class="produtos">
-													<p>Preço: R$<?php echo $item['preco'] ?></p>
-													<p><a href="?adicionar=<?php echo $item['id'] ?>">Adicionar ao carrinho</a></p>
-													<?php if (isset($_SESSION['carrinho'][$item['id']])) { ?>
-														<p><a href="?remover=<?php echo $item['id'] ?>">Remover do carrinho</a></p>
-													<?php } else { ?>
-														<span href="produtos.php"></span>
-													<?php } ?>
-												</div>    
-											</div>    
-										</div>
-									</div>
-							<?php } ?> 
+				<hr>
+				<div class="container-produtos">
+					<!--SEGUNDA LINHA-->
+					<div class="linha">
+						<?php foreach ($items2 as $item) { ?>
+						<br>
+						<div class="coluna">
+							<div class="card">    
+								<img class="categoria__img" src="<?php echo $item['imagem'] ?>" alt="">
+								<div class="botoes">
+									<div class="produtos">
+										<p>Preço: R$<?php echo $item['preco'] ?></p>
+										<p><a href="?adicionar=<?php echo $item['id'] ?>">Adicionar ao carrinho</a>
+										<?php if (isset($_SESSION['carrinho'][$item['id']])) { ?>
+										<a href="?remover=<?php echo $item['id'] ?>">Remover do carrinho</a></p>
+										<?php } else { ?>
+										<span href="produtos.php"></span>
+										<?php } ?>
+									</div>    
+								</div>    
 							</div>
+						</div>
+						<?php } ?> 
+					</div>
 				</div> 
 				<?php
-                            foreach ($_SESSION['carrinho'] as $item) {
-                                echo '<div class="carrinho-item">';
-                                echo '<p>Id: '. $item['id'] . ' Index: '. $item['index'] . 'Nome: ' . $item['nome'] . ' | Quantidade:  ' . $item['quantidade'] . ' | Preço: R$' . ($item['quantidade']*$item['preco']) . ',00</p>';
-                                echo '</div>';
-                                echo '<br>'; // Adicionar uma linha em branco após cada item
+                    foreach ($_SESSION['carrinho'] as $item) {
+                        echo '<div class="carrinho-item">';
+                        echo '<p>Id: '. $item['id'] . ' Index: '. $item['index'] . 'Nome: ' . $item['nome'] . ' | Quantidade:  ' . $item['quantidade'] . ' | Preço: R$' . ($item['quantidade']*$item['preco']) . ',00</p>';
+                        echo '</div>';
+                        echo '<br>'; // Adicionar uma linha em branco após cada item
 
-                            }
-
+                    }
 					if(isset($_GET['adicionar'])){
 						//Adicionando ao carrinho
 						$id = (int) $_GET['adicionar'];
