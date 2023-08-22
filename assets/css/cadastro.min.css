@@ -14,6 +14,10 @@ main{
     flex: 1;
 }
 
+.segunda__parte{
+    display: none;
+}
+
 #passos{
     max-width: 500px;
     margin: auto;
@@ -361,7 +365,7 @@ main{
     margin-bottom: 50px;
 }
 
-#btn__cadastro__continuar{
+#mostrar-esconder{
     background-color: #FC7469;
     padding: 5px 20px;
     width: 250px;
@@ -373,7 +377,7 @@ main{
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
-#btn__cadastro__continuar:hover{
+#mostrar-esconder:hover{
     transform: scale(1.02);
     transition-duration: 0.5s;
 }
