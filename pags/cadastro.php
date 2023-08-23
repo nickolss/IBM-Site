@@ -21,7 +21,6 @@
   <script src="../assets/js/validacaoForm.js" defer></script>
   <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
   <script src="../assets/js/cadastro-endereco.js" defer></script>
-  <script src="../assets/js/mostrar-aparecer.js" defer></script>
   <!-- O atributo DEFER espera a página carregar para executar o Script -->
 
 </head>
@@ -38,18 +37,6 @@
         <h2 class="subTitle">Veja seus pedidos de forma fácil, compre mais rápido e
           tenha uma experiência personalizada</h2>
       </div>
-      <div class="primeira__parte">
-        <div id="passos">
-          <div class="linha"></div>
-          <div class="passo">
-              <i class='bx bx-user ativado'></i>
-              <p class="legenda__icone ativado">Dados Pessoais</p>
-          </div>
-          <div class="passo">
-              <i class='bx bx-map desativado'></i>
-              <p class="legenda__icone desativado">Endereço</p>
-          </div>
-        </div>
         <div class="cadastro">
           <div class="caixa__input">
             <input type="text" required name="nome" id="nome" autocomplete="off">
@@ -80,23 +67,9 @@
             <input type="text" required name="cpf" id="cpf" autocomplete="off" maxlength="14">
             <label for="cpf">CPF</label>
           </div>
-          <div class="div__termos">
+          <!--<div class="div__termos">
             <div class="filho__termos"><label for="termos"><input type="checkbox" name="termos" id="termos" required>Aceitar Termos de condições</label></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="segunda__parte">
-        <div id="passos">
-          <div class="linha"></div>
-          <div class="passo">
-              <i class='bx bx-user desativado'></i>
-              <p class="legenda__icone desativado">Dados Pessoais</p>
-          </div>
-          <div class="passo">
-              <i class='bx bx-map ativado'></i>
-              <p class="legenda__icone ativado">Endereço</p>
-          </div>
+          </div>-->
         </div>
 
         <div class="cadastro">
@@ -223,13 +196,8 @@
             </div>
           </div>
         </section>
-      </div>
 
     </form>
-
-    <div id="div__botao__continuar">
-        <button id="mostrar-esconder">Continuar</button>
-    </div>
 
   </main>
 
