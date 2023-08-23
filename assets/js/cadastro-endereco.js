@@ -47,10 +47,14 @@ const getAdress = async (cep) => {
         if (!addressInput.hasAttribute("disabled")) {
             toggleDisabled();
         }
-        addressForm.reset();
+        cepInput.value = "";
+        addressInput.value = ""; 
+        cityInput.value = ""; 
+        neighborhoodInput.value = "";
+        regionInput.value = "";
     }
 
-    if(addressInput.value === ""){
+    if(addressInput.value == ""){
         toggleDisabled();
     }
     
@@ -74,3 +78,8 @@ const toggleDisabled = () => {
     }
 
 };
+
+addressInput.value = ""; 
+        cityInput.value = ""; 
+        neighborhoodInput.value = "";
+        regionInput.value = "";
