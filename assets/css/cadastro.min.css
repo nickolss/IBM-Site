@@ -69,14 +69,14 @@ main{
     opacity: 0.7;
 }
 
-.linha{
+/*.linha{
     border-bottom: 1px solid black;
     position: absolute;
     top: 22.5px;
     width: 71%;
     left: 17%;
     z-index: 0;
-}
+}*/
 
 .titulo{
     display: flex;
