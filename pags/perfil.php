@@ -1,6 +1,6 @@
 <?php 
 	require_once('../assets/scripts/iniciarSessao.php');
-	require_once('../assets/scripts/consultaCliente.php')
+	require_once('../assets/scripts/consultaCliente.php');
 ?>
 
 <!DOCTYPE html>

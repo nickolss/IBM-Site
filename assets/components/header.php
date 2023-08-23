@@ -11,7 +11,7 @@
             <ul id="form_header_menu">
                 <li> <a class="cabeca" href="../pags/personalizacoes.php">Personalizações</a> </li>
                 <li> <a class="cabeca" href="../pags/produtos.php">Produtos</a> </li>
-                <li> <a class="cabeca" href="../index.html"> <img width="90px" src="../assets/img/logo-final-finalmesmo.svg" alt="home"> </a> </li>
+                <li> <a class="cabeca" href="../index.php"> <img width="90px" src="../assets/img/logo-final-finalmesmo.svg" alt="home"> </a> </li>
                 <li> <a class="cabeca" href="../pags/aboutus.php">Sobre Nós</a> </li>
                 <li> <a class="cabeca" href="../pags/vagas.php">Vagas</a> </li>
             </ul>
@@ -33,27 +33,45 @@
         </div>
         <div id="itens__header__modal_carrinho">
             <div class="table__itens_header_carrinho">
-                <table>
+                <table style="border-collapse: separate;border-spacing: 0 10px ; ">
                     <tbody>
-                        <td class="img__table__header_carrinho" style="width: 40%;"> <img src="../assets/img/tapete.svg" alt=""> </td>
+                        
+                        <?php foreach ($_SESSION['carrinho'] as $item) { ?>
+                           
+                        <tr >    
+                        
+                        <td class="img__table__header_carrinho" style="width: 40%;"> <img src="<?php echo $item['imagem']; ?>" alt=""> </td>
+                      
                         <td class="info__table__header_carrinho">
-                            <div>
-                                <h2>Tapete</h2>
-                            </div>
-                            <div>
-                                <h3>R$100</h3>
-                            </div>
-
+                              
+                            <?php echo '<h2> '. $item['nome'] . '</h2>';?>
+                            <?php echo '<h3>R$'. $item['preco'] . '</h3>';?>
+                            
+                            
                             <div class="table_itens__header__carrinho__config">
                                 <div class="table__itens_header_carrinho_botoes">
                                     <button id="botaoSubtrair_carrinho_header">-</button>
                                     <span id="contador_carrinho_header">1</span>
-                                    <button id="botaoAcrescentar_carrinho_header">+</button>
+                                    <button id="botaoAcrescentar_carrinho_header" href="?adicionar=<?php echo $item['id'] ?>">+</button>
                                 </div>
-
-                                <div style="color: #003445;">Excluir</div>
+                                <?php if (isset($_SESSION['carrinho'][$item['id']])) { ?>
+								<a style="border: none; color: #003445; background-color: #fff; text-decoration: none" href="?remover=<?php echo $item['id'] ?>">Excluir</a>
+								<?php } else { ?>
+								<span href="produtos.php"></span>
+								<?php } ?>
                             </div>
                         </td>
+                        
+                        </tr>
+                       
+                        <?php }                     
+                        function getTotalPurchaseAmount($array) {
+                        $totalAmount = 0.0;
+                        foreach ($array as $item) {
+                            $totalAmount += $item['quantidade'] * $item['preco'];
+                        }
+                        return $totalAmount;
+                        }?>
                     </tbody>
                 </table>
 
@@ -62,7 +80,7 @@
             <br>
             <br>
             <div class="carrinho__header__finalizacao">
-                <h1>Total: R$x</h1>
+            <p class="fs-2">Total: R$<?php echo getTotalPurchaseAmount($_SESSION['carrinho']); ?></p>
                 <div class="text-center">
                     <button><a href="../pags/carrinho.php"> Ver Carrinho</a> </button>
                     <a style="text-decoration: none; color: #003445" href="">Frete grátis com o Plano Turbinado</a>
@@ -103,7 +121,7 @@
             </button>
         </div>
         <div style=" width: 33%;" class="d-flex justify-content-center">
-            <a href="../index.html"><img class="img-fluid" width="50px" height="auto" src="../assets/img/logo-final-finalmesmo.svg" alt="home"></a>
+            <a href="../index.php"><img class="img-fluid" width="50px" height="auto" src="../assets/img/logo-final-finalmesmo.svg" alt="home"></a>
         </div>
 
         <div style=" width: 33%;" class="d-flex justify-content-end align-items-center">
@@ -129,7 +147,7 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
                     </li>
                     <hr>
                     <li class="nav-item">

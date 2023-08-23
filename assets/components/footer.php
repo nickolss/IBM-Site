@@ -27,7 +27,7 @@
                 <div class="col">
 
                     <ul class="separar">
-                        <li> <a href="../index.html">Home</a> </li>
+                        <li> <a href="../index.php">Home</a> </li>
                         <li> <a href="produtos.php">Produtos</a> </li>
                         <li> <a href="personalizacoes.php">Personalizações</a> </li>
                     </ul>
