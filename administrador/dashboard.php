@@ -1,5 +1,5 @@
 <?php 
-  //require_once('../assets/scripts/consultaFuncionario.php');
+  require_once('../assets/scripts/consultaFuncionario.php');
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +65,7 @@
       <form action="cadastrar-produto.php">
           <button class="botao__laranja" type="submit">Adicionar Produto</button>
       </form>
-      <form action="cadastrar-funcionario.html">
+      <form action="cadastrar-funcionario.php">
           <button class="botao__laranja" type="submit">Adicionar Funcionário</button>
       </form>
     </div>
