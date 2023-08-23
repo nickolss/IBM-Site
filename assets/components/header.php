@@ -33,28 +33,37 @@
         </div>
         <div id="itens__header__modal_carrinho">
             <div class="table__itens_header_carrinho">
-                <table>
+                <table style="border-collapse: separate;border-spacing: 0 10px ; ">
                     <tbody>
+                        
                         <?php foreach ($_SESSION['carrinho'] as $item) { ?>
-                        <tr class="img__table__header_carrinho" style="width: 40%;"> <img src="<?php echo $item['imagem']; ?>" alt=""> </tr>
-                        <tr class="info__table__header_carrinho">
+                           
+                        <tr >    
+                        
+                        <td class="img__table__header_carrinho" style="width: 40%;"> <img src="<?php echo $item['imagem']; ?>" alt=""> </td>
+                      
+                        <td class="info__table__header_carrinho">
+                              
                             <?php echo '<h2> '. $item['nome'] . '</h2>';?>
-                            <?php echo '<h3> Preço: R$'. $item['preco'] . '</h3>';?>
-                            </div>
+                            <?php echo '<h3>R$'. $item['preco'] . '</h3>';?>
+                            
                             
                             <div class="table_itens__header__carrinho__config">
                                 <div class="table__itens_header_carrinho_botoes">
                                     <button id="botaoSubtrair_carrinho_header">-</button>
                                     <span id="contador_carrinho_header">1</span>
-                                    <button id="botaoAcrescentar_carrinho_header"><a href="?adicionar=<?php echo $item['id'] ?>">+</a></button>
+                                    <button id="botaoAcrescentar_carrinho_header" href="?adicionar=<?php echo $item['id'] ?>">+</button>
                                 </div>
                                 <?php if (isset($_SESSION['carrinho'][$item['id']])) { ?>
-								<a href="?remover=<?php echo $item['id'] ?>">Excluir</a>
+								<a style="border: none; color: #003445; background-color: #fff; text-decoration: none" href="?remover=<?php echo $item['id'] ?>">Excluir</a>
 								<?php } else { ?>
 								<span href="produtos.php"></span>
 								<?php } ?>
                             </div>
+                        </td>
+                        
                         </tr>
+                       
                         <?php }                     
                         function getTotalPurchaseAmount($array) {
                         $totalAmount = 0.0;
