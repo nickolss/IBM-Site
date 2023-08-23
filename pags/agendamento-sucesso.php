@@ -35,7 +35,7 @@
                 <h1 class="mainTitle">Agendamento registrado com sucesso!</h1>
                 <p>Email enviado no endereço <strong><?= $_SESSION['email'] ?></strong> com os detalhes do agendamento.</p>
                 <p>Verifique sua pasta de spam se o email não chegar em alguns minutos.</p>
-                <?php'<a class="formulario__botao" href="../index.php">Continuar Explorando</a>'?>
+                <a class="formulario__botao" href="../index.html">Continuar Explorando</a>
             </div>
         </main>
 

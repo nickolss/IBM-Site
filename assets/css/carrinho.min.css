@@ -84,17 +84,3 @@
 #carrinho_pag table{
     table-layout: auto;
 }
-
-.botoes a{
-    padding:5px;
-    color:white;
-    background-color:#5fb382;
-    text-align: center;
-    text-decoration: none;
-    font-size: 13px;
-}
-
-.preco-produto{
-    text-align: center;
-}
-
