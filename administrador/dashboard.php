@@ -1,5 +1,5 @@
 <?php 
-  require_once('../assets/scripts/consultaFuncionario.php');
+  //require_once('../assets/scripts/consultaFuncionario.php');
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +23,7 @@
   <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
 </head>
 
-<body id="body">
+<body id="container__body">
   <?php
   require_once('../assets/components/header.php');
   ?>
@@ -61,25 +61,19 @@
         </div>
     </div>
     
-    <div class="botoes">
-        <div class="linha">
-            <div class="botao">
-                <form action="cadastrar-produto.php">
-                    <button class="botao__laranja" type="submit">Adicionar Produto</button>
-                </form>
-            </div>
-            <div class="botao">
-                <form action="cadastrar-funcionario.html">
-                    <button class="botao__laranja" type="submit">Adicionar Funcionário</button>
-                </form>
-            </div>
-        </div>
+    <div class="div__botoes">
+      <form action="cadastrar-produto.php">
+          <button class="botao__laranja" type="submit">Adicionar Produto</button>
+      </form>
+      <form action="cadastrar-funcionario.html">
+          <button class="botao__laranja" type="submit">Adicionar Funcionário</button>
+      </form>
     </div>
 
     <div class="dropdown">
         <div class="select-menu">
             <div class="select-btn">
-              <span class="sBtn-text">Selecione a Categoria</span>
+              <span class="sBtn-text">Funcionários Logados</span>
               <i id="icone__seta" class="bx bx-chevron-down"></i> <!--ICONE BOXICONS SETINHA PARA BAIXO-->
             </div>
 
