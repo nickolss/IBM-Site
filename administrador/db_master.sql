@@ -37,6 +37,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `telefone` varchar(12) NOT NULL,
   `email` varchar(150) COLLATE utf8mb4_general_ci NOT NULL,
   `senha` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `recuperar_senha` VARCHAR(220) NULL;
   `plano` enum('comum','turbinado') COLLATE utf8mb4_general_ci NOT NULL,
   `quantidadePontos` int DEFAULT NULL,
   `fotoPerfil` blob,
