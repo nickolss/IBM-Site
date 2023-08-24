@@ -69,12 +69,8 @@
             <div class="filho__termos"><label for="termos"><input type="checkbox" name="termos" id="termos">Aceitar Termos de condições</label></div>
           </div>
         </div>
-        <div class="botoes">
-            <div class="linha">
-                <div class="botao">
-                    <button class="botao__laranja" type="submit">Cadastrar</button>
-                </div>
-            </div>
+        <div class="div__botoes">
+          <button class="botao__laranja" type="submit">Cadastrar</button>
         </div>
     </form>
 

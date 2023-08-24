@@ -117,7 +117,12 @@ main{
 @media only screen and (max-width: 800px){
     .div__botoes{
         flex-direction: column;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
     }
+
+    
 }
 
 @media only screen and (max-width: 500px){
