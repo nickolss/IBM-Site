@@ -38,7 +38,7 @@
         echo "<script>
             alert('Email ou Senha incorretos.');
             setInterval( function() {
-                window.location.href = 'http://localhost/IBM-Site/pags/login.php'
+                window.location.href = 'https://turnmotors.000webhostapp.com/pags/login.php'
             }, 1000)
         </script>";
     }
@@ -57,7 +57,7 @@
         echo "<script>
             alert('Email ou Senha incorretos.');
             setInterval( function() {
-                window.location.href = 'http://localhost/IBM-Site/pags/login.php'
+                window.location.href = 'https://turnmotors.000webhostapp.com/pags/login.php'
             }, 1000)
         </script>";
     }

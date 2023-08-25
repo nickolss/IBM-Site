@@ -21,5 +21,5 @@ $cadastrarFuncionario = $pdo->prepare($sqlInsert);
 if($cadastrarFuncionario->execute()){
     $_SESSION['rf'] = $nomeForm;
     $_SESSION['nomeFuncionario'] = $emailForm;
-    header("Location: ../../pags/perfil.php");
+    header("Location: https://turnmotors.000webhostapp.com/pags/perfil.php");
 }

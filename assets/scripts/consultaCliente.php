@@ -5,7 +5,7 @@
       <script>
         alert('Você precisa estar logado.');
         setInterval( function() {
-          window.location.href = 'http://localhost/IBM-Site/pags/login.php'
+          window.location.href = 'https://turnmotors.000webhostapp.com/pags/login.php'
         }, 500)
       </script>";
     }
