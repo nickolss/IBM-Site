@@ -10,16 +10,15 @@ $telefoneForm = $_POST['tel'];
 $dataNascForm = $_POST['data'];
 $cpfForm = $_POST['cpf'];
 
-$senhaSegura = password_hash($senhaForm, PASSWORD_DEFAULT);
-$cpfSeguro = password_hash($cpfForm, PASSWORD_DEFAULT);
-$telefoneFormatado = str_replace(['(' , ')' , '-'] , '' , $telefoneForm);
+$senhaSegura = md5($senhaForm);
+$cpfSeguro = md5($cpfForm);
+$telefoneFormatado = str_replace(['(', ')', '-'], '', $telefoneForm);
 
-$sqlInsert = "INSERT INTO `funcionario`(`cpf`, `nomeCompleto`, `dataNasc`, `telefone`, `email`, `senha`) VALUES ('$cpfSeguro','$nomeForm','$dataNascForm','$telefoneFormatado','$emailForm','$senhaSegura')";
+$sqlInsert = "INSERT INTO `funcionario` (`cpf`, `dataNasc`, `telefone`, `nome`, `email`, `senha`) VALUES ('$cpfSeguro','$dataNascForm','$telefoneFormatado','$nomeForm','$emailForm','$senhaSegura')";
 
 $cadastrarFuncionario = $pdo->prepare($sqlInsert);
 
-if($cadastrarFuncionario->execute()){
-    $_SESSION['rf'] = $nomeForm;
-    $_SESSION['nomeFuncionario'] = $emailForm;
-    header("Location: https://turnmotors.000webhostapp.com/pags/perfil.php");
+if ($cadastrarFuncionario->execute()) {
+    header("Location: http://127.0.0.1/IBM-Site/administrador/dashboard.php");
 }
+    

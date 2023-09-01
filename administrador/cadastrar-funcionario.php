@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="../assets/css/estilos-importantes.css">
 
   <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+  <script src="../assets/js/mascaraCpf.js" defer></script>
+  <script src="../assets/js/mascaraTelefone.js" defer></script>
   <script type="text/javascript" src="../assets/js/java.js" defer></script>
   <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
 </head>

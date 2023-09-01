@@ -21,6 +21,6 @@
     $inserirProduto = $pdo->prepare($sqlInsert);
 
     if ($inserirProduto->execute()) {
-        header("Location: turnmotors.000webhostapp.com/pags/$categoria.php");
+        header("Location: http://127.0.0.1/pags/$categoria.php");
     }
 

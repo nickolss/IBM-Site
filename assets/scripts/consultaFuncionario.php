@@ -5,7 +5,7 @@
         session_start();
     }
 
-    if(!isset($_SESSION['idFuncionario'])){
+    if(!isset($_SESSION['rf'])){
         die("<script>alert('Faça login como funcionário')</script>");
     }
 ?>

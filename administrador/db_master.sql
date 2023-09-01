@@ -32,15 +32,15 @@ DROP TABLE IF EXISTS `cliente`;
 CREATE TABLE IF NOT EXISTS `cliente` (
   `id` int NOT NULL AUTO_INCREMENT,
   `cpf` varchar(255) NOT NULL,
-  `nomeCompleto` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `nomeCompleto` varchar(200) NOT NULL,
   `dataNasc` date NOT NULL,
   `telefone` varchar(12) NOT NULL,
-  `email` varchar(150) COLLATE utf8mb4_general_ci NOT NULL,
-  `senha` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `recuperar_senha` VARCHAR(220) NULL;
-  `plano` enum('comum','turbinado') COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `recuperar_senha` VARCHAR(220) DEFAULT NULL,
+  `plano` enum('comum','turbinado') NOT NULL,
   `quantidadePontos` int DEFAULT NULL,
-  `fotoPerfil` blob,
+  `fotoPerfil` blob DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -53,15 +53,14 @@ CREATE TABLE IF NOT EXISTS `cliente` (
 
 DROP TABLE IF EXISTS `funcionario`;
 CREATE TABLE IF NOT EXISTS `funcionario` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `rf` int NOT NULL,
+  `rf` int NOT NULL AUTO_INCREMENT,
   `cpf` varchar(255) NOT NULL,
   `dataNasc` date NOT NULL,
   `telefone` varchar(12) NOT NULL,
   `nome` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
   `email` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
   `senha` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`rf`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 

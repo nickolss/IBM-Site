@@ -1,5 +1,6 @@
-<?php 
-  require_once('../assets/scripts/consultaFuncionario.php');
+<?php
+require_once('../assets/scripts/iniciarSessao.php');
+require_once('../assets/scripts/consultaFuncionario.php');
 ?>
 
 <!DOCTYPE html>
@@ -30,65 +31,47 @@
 
   <main class="principal">
     <div class="titulo">
-      <h1 class="mainTitle">Olá, {nome funcionário}!</h1>
+      <h1 class="mainTitle">Olá, <?= $_SESSION['nomeFuncionario'] ?>!</h1>
     </div>
 
     <div class="div__grande__graficos">
-        <div class="div__grafico">
-            <img class="img__grafico" id="grafico1" src="#" alt="Gráfico 1">
-        </div>
-        <div class="div__grafico">
-            <img class="img__grafico" id="grafico2" src="#" alt="Gráfico 2">
-        </div>
-        <div class="div__grafico">
-            <img class="img__grafico" id="grafico3" src="#" alt="Gráfico 3">
-        </div>
+      <div class="div__grafico">
+        <img class="img__grafico" id="grafico1" src="#" alt="Gráfico 1">
+      </div>
+      <div class="div__grafico">
+        <img class="img__grafico" id="grafico2" src="#" alt="Gráfico 2">
+      </div>
+      <div class="div__grafico">
+        <img class="img__grafico" id="grafico3" src="#" alt="Gráfico 3">
+      </div>
     </div>
 
     <div class="div__medio__graficos">
-        <div class="linha">
-            <div class="div__grafico">
-                <img class="img__grafico" id="grafico1" src="#" alt="Gráfico 1">
-            </div>
-            <div class="div__grafico">
-                <img class="img__grafico" id="grafico2" src="#" alt="Gráfico 2">
-            </div>
+      <div class="linha">
+        <div class="div__grafico">
+          <img class="img__grafico" id="grafico1" src="#" alt="Gráfico 1">
         </div>
-        <div class="linha">
-            <div class="div__grafico">
-                <img class="img__grafico" id="grafico3" src="#" alt="Gráfico 3">
-            </div>
+        <div class="div__grafico">
+          <img class="img__grafico" id="grafico2" src="#" alt="Gráfico 2">
         </div>
+      </div>
+      <div class="linha">
+        <div class="div__grafico">
+          <img class="img__grafico" id="grafico3" src="#" alt="Gráfico 3">
+        </div>
+      </div>
     </div>
-    
+
     <div class="div__botoes">
       <form action="cadastrar-produto.php">
-          <button class="botao__laranja" type="submit">Adicionar Produto</button>
+        <button class="botao__laranja" type="submit">Adicionar Produto</button>
       </form>
       <form action="cadastrar-funcionario.php">
-          <button class="botao__laranja" type="submit">Adicionar Funcionário</button>
+        <button class="botao__laranja" type="submit">Adicionar Funcionário</button>
       </form>
-    </div>
-
-    <div class="dropdown">
-        <div class="select-menu">
-            <div class="select-btn">
-              <span class="sBtn-text">Funcionários Logados</span>
-              <i id="icone__seta" class="bx bx-chevron-down"></i> <!--ICONE BOXICONS SETINHA PARA BAIXO-->
-            </div>
-
-            <ui class="options">
-              <i class="option">
-                <span class="option-text">Funcionário 1</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Funcionário 2</span>
-              </i>
-              <i class="option">
-                <span class="option-text">Funcionário 3</span>
-              </i>
-            </ui>
-        </div>
+      <form action="../assets/scripts/logout.php">
+        <button class="botao__laranja" type="submit">Sair da Conta</button>
+      </form>
     </div>
 
   </main>

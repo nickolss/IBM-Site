@@ -1,7 +1,9 @@
 <?php 
   require_once('../assets/scripts/iniciarSessao.php');
-  if(isset($_SESSION['nomeCliente']) || isset($_SESSION['nomeFuncionario'])){
+  if(isset($_SESSION['nomeCliente'])){
     header("Location: ./perfil.php");
+  }else if(isset($_SESSION['rf'])){
+    header("Location: ../administrador/dashboard.php");
   }
 ?>
 

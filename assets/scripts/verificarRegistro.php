@@ -5,23 +5,23 @@
     $senhaForm = $_POST['senha'];
     $senhaFormatada = md5($senhaForm);
 
-    $sqlCliente = $pdo->query("SELECT * FROM `cliente` WHERE cliente.email='$emailForm' && cliente.senha='$senhaFormatada'");
+    $sqlCliente = $pdo->query("SELECT * FROM `cliente` WHERE email='$emailForm' && senha='$senhaFormatada'");
     $quantidadeRegistrosCliente = $sqlCliente->rowCount();
     $registroCliente = $sqlCliente->fetchAll();
 
-    $sqlFuncionario = $pdo->query("SELECT * FROM `funcionario` WHERE funcionario.email='$emailForm' && funcionario.senha='$senhaFormatada'");
+    $sqlFuncionario = $pdo->query("SELECT * FROM `funcionario` WHERE email='$emailForm' && senha='$senhaFormatada'");
     $quantidadeRegistrosFuncionario = $sqlFuncionario->rowCount();
     $registroFuncionario = $sqlFuncionario->fetchAll();
 
 
     if ($quantidadeRegistrosCliente == 1) {
-        if(isset($_SESSION)){
-            require_once('./logout.php');       
+        if (isset($_SESSION)) {
+            require_once('./logout.php');
         }
 
         require_once('./iniciarSessao.php');
-        
-        
+
+
         $_SESSION['id'] = $registroCliente[0]['id'];
         $_SESSION['nomeCliente'] = $registroCliente[0]['nomeCompleto'];
         $_SESSION['email'] = $registroCliente[0]['email'];
@@ -38,26 +38,26 @@
         echo "<script>
             alert('Email ou Senha incorretos.');
             setInterval( function() {
-                window.location.href = 'https://turnmotors.000webhostapp.com/pags/login.php'
-            }, 1000)
+                window.location.href = 'http://127.0.0.1/IBM-Site/pags/login.php'
+            }, 500)
         </script>";
     }
 
     if ($quantidadeRegistrosFuncionario == 1) {
-        if(isset($_SESSION)){
-            require_once('./logout.php');       
+        if (isset($_SESSION)) {
+            require_once('./logout.php');
         }
         require_once('./iniciarSessao.php');
 
         $_SESSION['rf'] = $registroFuncionario[0]['rf'];
         $_SESSION['nomeFuncionario'] = $registroFuncionario[0]['nome'];
 
-        header("Location: ../../pags/perfil.php");
+        header("Location: ../../administrador/dashboard.php");
     } else {
         echo "<script>
             alert('Email ou Senha incorretos.');
             setInterval( function() {
-                window.location.href = 'https://turnmotors.000webhostapp.com/pags/login.php'
-            }, 1000)
+                window.location.href = 'http://127.0.0.1/IBM-Site/pags/login.php'
+            }, 500)
         </script>";
     }
