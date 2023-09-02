@@ -1,5 +1,7 @@
     <?php
     require_once('./conexao.php');
+    $root = $_SERVER['HTTP_HOST'];
+      
 
     $emailForm = $_POST['email'];
     $senhaForm = $_POST['senha'];
@@ -35,10 +37,11 @@
 
         header('Location: ../../pags/perfil.php');
     } else {
+        $caminho = "http://$root/IBM-site/pags/login.php";
         echo "<script>
             alert('Email ou Senha incorretos.');
             setInterval( function() {
-                window.location.href = 'http://127.0.0.1/IBM-Site/pags/login.php'
+                window.location.href = '$caminho'
             }, 500)
         </script>";
     }
@@ -54,10 +57,11 @@
 
         header("Location: ../../administrador/dashboard.php");
     } else {
+        $caminho = "http://$root/IBM-site/pags/login.php";
         echo "<script>
             alert('Email ou Senha incorretos.');
             setInterval( function() {
-                window.location.href = 'http://127.0.0.1/IBM-Site/pags/login.php'
+                window.location.href = '$caminho'
             }, 500)
         </script>";
     }
