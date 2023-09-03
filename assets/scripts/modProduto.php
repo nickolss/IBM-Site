@@ -8,6 +8,7 @@
     $marca = $_POST['marcaProd'];
     $descricao = $_POST['descricaoProd'];
     $categoria = $_POST['categoria'];
+    $id = $_POST['id'];
 
     $pastaBD = '../assets/img/produtos/';
     $pastaSalvar = "../../assets/img/produtos/";
@@ -16,11 +17,11 @@
     $caminhoSalvar = $pastaSalvar . $nomeImagem;
     $moverImagem = move_uploaded_file($imagemProd['tmp_name'] , $caminhoSalvar);
 
-    $sqlInsert = "INSERT INTO produto (nome, preco, marca, descricao, customizações , caminho_imagem) VALUES ('$nome', $preco, '$marca', '$descricao', '$categoria' , '$caminhoBD')";
+    $sqlUpdate = $pdo->prepare("UPDATE `produto` SET `nome`='$nome',`preco`='$preco',`marca`='$marca',`descricao`='$descricao',`customizações`='$categoria',`caminho_imagem`='$caminhoBD' WHERE codigoProduto=$id");
 
-    $inserirProduto = $pdo->prepare($sqlInsert);
 
-    if ($inserirProduto->execute()) {
-        header("Location: ../../pags/$categoria.php");
+
+    if ($sqlUpdate->execute()) {
+        header("Location: ../../administrador/catalogo.php");
     }
 

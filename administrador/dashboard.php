@@ -9,7 +9,7 @@ require_once('../assets/scripts/consultaFuncionario.php');
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Turn Motors | Cadastrar Produto</title>
+  <title>Turn Motors | Dashboard</title>
 
   <!--LINK ICONES-->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -66,8 +66,16 @@ require_once('../assets/scripts/consultaFuncionario.php');
       <form action="cadastrar-produto.php">
         <button class="botao__laranja" type="submit">Adicionar Produto</button>
       </form>
-      <form action="cadastrar-funcionario.php">
-        <button class="botao__laranja" type="submit">Adicionar Funcionário</button>
+      <form action="catalogo.php">
+        <button class="botao__laranja" type="submit">Modificar Produto</button>
+      </form>
+    </div>
+    <div class="div__botoes">
+      <form action="cadastrar-user-adm.php">
+        <button class="botao__laranja" type="submit">Adicionar Administrador</button>
+      </form>
+      <form action="cadastrar-mecanico.php">
+        <button class="botao__laranja" type="submit">Adicionar Mecânico</button>
       </form>
       <form action="../assets/scripts/logout.php">
         <button class="botao__laranja" type="submit">Sair da Conta</button>

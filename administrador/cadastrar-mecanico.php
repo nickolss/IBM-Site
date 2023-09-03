@@ -8,7 +8,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Turn Motors | Cadastrar Produto</title>
+  <title>Turn Motors | Cadastrar Mecânico</title>
 
   <!--LINK ICONES-->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -32,10 +32,10 @@
 
   <main class="principal">
     <div class="titulo">
-      <h1 class="mainTitle">Cadastrar Funcionário</h1>
+      <h1 class="mainTitle">Cadastrar Mecânico</h1>
     </div>
 
-    <form action="../assets/scripts/cadastrarFuncionario.php" method="POST">
+    <form action="../assets/scripts/cadastrarMecanico.php" method="POST">
         <div class="cadastro">
           <div class="caixa__input">
             <input type="text" required name="nome" id="nome" autocomplete="off">
@@ -68,7 +68,7 @@
             <label for="cpf">CPF</label>
           </div>
           <div class="div__termos">
-            <div class="filho__termos"><label for="termos"><input type="checkbox" name="termos" id="termos">Aceitar Termos de condições</label></div>
+            <div class="filho__termos"><label for="termos"><input type="checkbox" name="termos" id="termos" required>Aceitar Termos de condições</label></div>
           </div>
         </div>
         <div class="div__botoes">

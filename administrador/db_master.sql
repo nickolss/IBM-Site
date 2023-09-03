@@ -63,6 +63,40 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
   PRIMARY KEY (`rf`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `funcionario`
+--
+
+INSERT INTO `funcionario` (`rf`, `cpf`, `dataNasc`, `telefone`, `nome`, `email`, `senha`) VALUES
+(1, '40144cb62e2b174ad50971b5e02d5fbc', '2000-01-01', '11911111111', 'Nickolas', 'nickolas@turn.com', '3d7388adba473f7a81f360d5cf38bf7a'),
+(2, '3d0e7719ae8997bca163fb342bfd1ec8', '2000-01-01', '11922222222', 'Pedro', 'pedro@turn.com', '4bd8464f5f26f84deec45adcf12b0df8'),
+(3, '3241c1ec411f9da5bf9a68c88ce16d81', '2000-01-01', '11933333333', 'Tiago', 'tiagoAdm369@turn.com', 'fec732a02e93c288cd82b59625946d04'),
+(4, 'dccd57ebd372b8017913648067f72be1', '2000-01-01', '11944444444', 'Vinicius', 'vinicius@turn.com', '5dafc75f39ba4799e82ea71cdf69ff86');
+-- --------------------------------------------------------
+
+
+--
+-- Estrutura da tabela `mecanico`
+--
+DROP TABLE IF EXISTS `mecanico`;
+CREATE TABLE IF NOT EXISTS `mecanico` (
+  `rf` int NOT NULL AUTO_INCREMENT,
+  `cpf` varchar(255) NOT NULL,
+  `dataNasc` date NOT NULL,
+  `telefone` varchar(12) NOT NULL,
+  `nome` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `senha` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`rf`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `mecanico`
+--
+
+INSERT INTO `mecanico` (`rf`, `cpf`, `dataNasc`, `telefone`, `nome`, `email`, `senha`) VALUES
+(1, '8db28bc810a2b7e308f220fc80233521', '1999-01-01', '11988888888', 'Jorge', 'jorge@turn.com', 'ecbd25ff1ba43a1987f11a7a797f9bdf');
+-- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `produto`

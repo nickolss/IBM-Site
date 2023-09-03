@@ -19,5 +19,5 @@ $sqlInsert = "INSERT INTO `funcionario` (`cpf`, `dataNasc`, `telefone`, `nome`, 
 $cadastrarFuncionario = $pdo->prepare($sqlInsert);
 
 if ($cadastrarFuncionario->execute()) {
-    header("Location: /IBM-Site/administrador/dashboard.php");
+    header("Location: ../../administrador/dashboard.php");
 }
