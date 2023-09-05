@@ -46,6 +46,19 @@ CREATE TABLE IF NOT EXISTS `cliente` (
 
 -- --------------------------------------------------------
 
+--
+-- Estrutura da tabela `cliente`
+--
+DROP TABLE IF EXISTS `cartao`;
+CREATE TABLE IF NOT EXISTS `cartao`(
+  `numero_cartao` int NOT NULL,
+  `cvv` int(3) NOT NULL,
+  `validade` date NOT NULL,
+  `id_titular` int NOT NULL,
+
+  PRIMARY KEY (`numero_cartao`),
+  FOREIGN KEY (`id_titular`) REFERENCES `cliente`(`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Estrutura da tabela `funcionario`
@@ -61,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
   `email` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
   `senha` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`rf`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `funcionario`
@@ -88,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `mecanico` (
   `email` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
   `senha` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`rf`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `mecanico`
