@@ -45,6 +45,12 @@
 					<input type="date" name="dataNasc" id="dataNasc" disabled class="formulario__campo" value="<?= $_SESSION['dataNasc'] ?>"/>
 					<input type="text" name="plano" id="plano" value="Plano: <?= $_SESSION['plano'] ?>" disabled class="formulario__campo" />
 					<input type="password" name="senha" id="senha" disabled class="formulario__campo" value="******"/>
+					<a href="../pags/orcamentosCliente.php" class="formulario__botao" value="beneficio">
+						Orçamentos
+					</a>
+					<a href="../pags/agendamentosConfirmados.php" class="formulario__botao" value="beneficio">
+						Agendamentos
+					</a>
 					<a href="../pags/beneficios.php" class="formulario__botao" value="beneficio">
 						Ver Benefícios
 					</a>
