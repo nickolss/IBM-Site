@@ -36,7 +36,7 @@ if ($cadastrarCliente->execute()) {
         $_SESSION['quantidadePontos'] = 0;
         $_SESSION['fotoPerfil'] = null;
 
-        header("Location: https://turnmotors.000webhostapp.com/pags/perfil.php");
+        header("Location: ../../pags/perfil.php");
     }
 
 
