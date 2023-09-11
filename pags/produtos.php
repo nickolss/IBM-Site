@@ -1,8 +1,8 @@
 <?php
-    session_start();//cookie
-    if (!isset($_SESSION['carrinho'])) {
-        $_SESSION['carrinho'] = array(); // Inicializar o carrinho como um array vazio
-    }
+session_start(); //cookie
+if (!isset($_SESSION['carrinho'])) {
+	$_SESSION['carrinho'] = array(); // Inicializar o carrinho como um array vazio
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -37,116 +37,123 @@
 				<h1 class="main__title">Produtos</h1>
 				<h2 class="sub__title">Navegue por categorias</h2>
 			</div>
-			
+
 			<!--TELA GRANDE-->
 			<div class="container__grande__categorias">
 				<?php
-                    $items1 = array(['id'=>'1','nome'=>'Pneu','imagem'=>'../assets/img/categoria-pneu.jpg', 'preco'=>'200'],
-                    ['id'=>'2', 'nome'=>'Som','imagem'=>'../assets/img/categoria-som-midia-eletronicos.jpg', 'preco'=>'100'],
-                    ['id'=>'3', 'nome'=>'Acessório','imagem'=>'../assets/img/categoria-acessorio-automoveis.jpg', 'preco'=>'400'],
-                    ['id'=>'4','nome'=>'Cuidados','imagem'=>'../assets/img/categoria-cuidado-automotivo.jpg', 'preco'=>'100'],
-                    ['id'=>'5','nome'=>'Óleos','imagem'=>'../assets/img/categoria-oleo-fluido.jpg', 'preco'=>'100'],
-                	['id'=>'6','nome'=>'Baterias','imagem'=>'../assets/img/categoria-bateria.jpg', 'preco'=>'100']);
+				$items1 = array(
+					['id' => '1', 'nome' => 'Pneu', 'imagem' => '../assets/img/categoria-pneu.jpg', 'preco' => '200'],
+					['id' => '2', 'nome' => 'Som', 'imagem' => '../assets/img/categoria-som-midia-eletronicos.jpg', 'preco' => '100'],
+					['id' => '3', 'nome' => 'Acessório', 'imagem' => '../assets/img/categoria-acessorio-automoveis.jpg', 'preco' => '400'],
+					['id' => '4', 'nome' => 'Cuidados', 'imagem' => '../assets/img/categoria-cuidado-automotivo.jpg', 'preco' => '100'],
+					['id' => '5', 'nome' => 'Óleos', 'imagem' => '../assets/img/categoria-oleo-fluido.jpg', 'preco' => '100'],
+					['id' => '6', 'nome' => 'Baterias', 'imagem' => '../assets/img/categoria-bateria.jpg', 'preco' => '100']
+				);
 
-					$items2 = array(['id'=>'7','nome'=>'reboque','imagem'=>'../assets/img/categoria-reboque-transporte.jpg', 'preco'=>'100'],
-					['id'=>'8','nome'=>'peça','imagem'=>'../assets/img/categoria-pecas-automoveis.jpg', 'preco'=>'100'],
-					['id'=>'9','nome'=>'proteção','imagem'=>'../assets/img/categoria-equipamentos-protecao.jpg', 'preco'=>'100'],
-					['id'=>'10','nome'=>'pneu','imagem'=>'../assets/img/categoria-pneu-moto.jpg', 'preco'=>'100'],
-					['id'=>'11','nome'=>'acessório','imagem'=>'../assets/img/categoria-acessorios-motos.jpg', 'preco'=>'100'],
-					['id'=>'12','nome'=>'ferramentas','imagem'=>'../assets/img/categoria-ferramentas.jpg', 'preco'=>'100']);
-					$items = array_merge($items1, $items2);
+				$items2 = array(
+					['id' => '7', 'nome' => 'reboque', 'imagem' => '../assets/img/categoria-reboque-transporte.jpg', 'preco' => '100'],
+					['id' => '8', 'nome' => 'peça', 'imagem' => '../assets/img/categoria-pecas-automoveis.jpg', 'preco' => '100'],
+					['id' => '9', 'nome' => 'proteção', 'imagem' => '../assets/img/categoria-equipamentos-protecao.jpg', 'preco' => '100'],
+					['id' => '10', 'nome' => 'pneu', 'imagem' => '../assets/img/categoria-pneu-moto.jpg', 'preco' => '100'],
+					['id' => '11', 'nome' => 'acessório', 'imagem' => '../assets/img/categoria-acessorios-motos.jpg', 'preco' => '100'],
+					['id' => '12', 'nome' => 'ferramentas', 'imagem' => '../assets/img/categoria-ferramentas.jpg', 'preco' => '100']
+				);
+				$items = array_merge($items1, $items2);
 				?>
 
 				<div class="container__produtos">
 					<!--PRIMEIRA LINHA-->
 					<div class="linha">
 						<?php foreach ($items1 as $item) { ?>
-						<br>
-						<div class="coluna">
-							<div class="card">    
-								<img class="categoria__img" src="<?php echo $item['imagem'] ?>" alt="">
-								<div class="botoes">
-									<div class="produtos">
-										<p class="preco-produto">Preço: R$<?php echo $item['preco'] ?></p>
-										<p><a href="?adicionar=<?php echo $item['id'] ?>">Adicionar ao carrinho</a>
-										<?php if (isset($_SESSION['carrinho'][$item['id']])) { ?>
-										<a href="?remover=<?php echo $item['id'] ?>">Remover do carrinho</a></p>
+							<br>
+							<div class="coluna">
+								<div class="card">
+									<img class="categoria__img" src="<?php echo $item['imagem'] ?>" alt="">
+									<div class="botoes">
+										<div class="produtos">
+											<p class="preco-produto">Preço: R$<?php echo $item['preco'] ?></p>
+											<p><a href="?adicionar=<?php echo $item['id'] ?>">Adicionar ao carrinho</a>
+												<?php if (isset($_SESSION['carrinho'][$item['id']])) { ?>
+													<a href="?remover=<?php echo $item['id'] ?>">Remover do carrinho</a>
+											</p>
 										<?php } else { ?>
-										<span href="produtos.php"></span>
+											<span href="produtos.php"></span>
 										<?php } ?>
-									</div>    
-								</div>    
+										</div>
+									</div>
+								</div>
 							</div>
-						</div>
-						<?php } ?> 
+						<?php } ?>
 					</div>
-				</div> 
+				</div>
 				<hr>
 				<div class="container-produtos">
 					<!--SEGUNDA LINHA-->
 					<div class="linha">
 						<?php foreach ($items2 as $item) { ?>
-						<br>
-						<div class="coluna">
-							<div class="card">    
-								<img class="categoria__img" src="<?php echo $item['imagem'] ?>" alt="">
-								<div class="botoes">
-									<div class="produtos">
-										<p class="preco-produto">Preço: R$<?php echo $item['preco'] ?></p>
-										<p><a href="?adicionar=<?php echo $item['id'] ?>">Adicionar ao carrinho</a>
-										<?php if (isset($_SESSION['carrinho'][$item['id']])) { ?>
-										<a href="?remover=<?php echo $item['id'] ?>">Remover do carrinho</a></p>
+							<br>
+							<div class="coluna">
+								<div class="card">
+									<img class="categoria__img" src="<?php echo $item['imagem'] ?>" alt="">
+									<div class="botoes">
+										<div class="produtos">
+											<p class="preco-produto">Preço: R$<?php echo $item['preco'] ?></p>
+											<p><a href="?adicionar=<?php echo $item['id'] ?>">Adicionar ao carrinho</a>
+												<?php if (isset($_SESSION['carrinho'][$item['id']])) { ?>
+													<a href="?remover=<?php echo $item['id'] ?>">Remover do carrinho</a>
+											</p>
 										<?php } else { ?>
-										<span href="produtos.php"></span>
+											<span href="produtos.php"></span>
 										<?php } ?>
-									</div>    
-								</div>    
+										</div>
+									</div>
+								</div>
 							</div>
-						</div>
-						<?php } ?> 
+						<?php } ?>
 					</div>
-				</div> 
+				</div>
 				<?php
-					if(isset($_GET['adicionar'])){
-						//Adicionando ao carrinho
-						$id = (int) $_GET['adicionar'];
-						
-						//$session = $_SESSION['carrinho']; 
-						// print_r ($session);
-						// print_r ($items);
+				if (isset($_GET['adicionar'])) {
+					//Adicionando ao carrinho
+					$id = (int) $_GET['adicionar'];
 
-						$index = array_search($id, array_column($items, 'id'));
-						
-							if(array_key_exists($id, $_SESSION['carrinho'])){
-								$_SESSION['carrinho'][$id]['quantidade']++;
-								echo '<script>window.location.href = "produtos.php";</script>';
-								exit();
-							} else {
-								$_SESSION['carrinho'][$id] = array('index' => $index, 'imagem' => $items[$index]['imagem'], 'quantidade'=>1, 'id'=> $id,'nome'=>$items[$index]['nome'], 'preco'=>$items[$index]['preco']);
-								//header("Location: index.php"); // Redireciona de volta ao carrinho após a remoção
-								echo '<script>window.location.href = "produtos.php";</script>';
-								exit();
-							}
-							//Adicionado ao carrinho
+					//$session = $_SESSION['carrinho']; 
+					// print_r ($session);
+					// print_r ($items);
+
+					$index = array_search($id, array_column($items, 'id'));
+
+					if (array_key_exists($id, $_SESSION['carrinho'])) {
+						$_SESSION['carrinho'][$id]['quantidade']++;
+						echo '<script>window.location.href = "produtos.php";</script>';
+						exit();
+					} else {
+						$_SESSION['carrinho'][$id] = array('index' => $index, 'imagem' => $items[$index]['imagem'], 'quantidade' => 1, 'id' => $id, 'nome' => $items[$index]['nome'], 'preco' => $items[$index]['preco']);
+						//header("Location: index.php"); // Redireciona de volta ao carrinho após a remoção
+						echo '<script>window.location.href = "produtos.php";</script>';
+						exit();
 					}
-					if(isset($_GET['remover'])){
-						$id = (int) $_GET['remover'];
-						if(isset($_SESSION['carrinho'][$id])){
-							unset($_SESSION['carrinho'][$id]);
-							//header("Location: index.php"); // Redireciona de volta ao carrinho após a remoção
-							echo '<script>window.location.href = "produtos.php";</script>';
-							exit();
+					//Adicionado ao carrinho
+				}
+				if (isset($_GET['remover'])) {
+					$id = (int) $_GET['remover'];
+					if (isset($_SESSION['carrinho'][$id])) {
+						unset($_SESSION['carrinho'][$id]);
+						//header("Location: index.php"); // Redireciona de volta ao carrinho após a remoção
+						echo '<script>window.location.href = "produtos.php";</script>';
+						exit();
+					}
+				}
+
+				function getIndexById($array, $id)
+				{
+					foreach ($array as $index => $object) {
+						if ($object['id'] === $id) {
+							return $index; // Return the index if ID matches
 						}
 					}
-
-					function getIndexById($array, $id) {
-						foreach ($array as $index => $object) {
-							if ($object['id'] === $id) {
-								return $index; // Return the index if ID matches
-							}
-						}
-						return 0; // Return -1 if ID is not found in the array
-					}
+					return 0; // Return -1 if ID is not found in the array
+				}
 				?>
 
 			</div>
@@ -157,17 +164,17 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-pneu.jpg" alt="Pneus de Carro">
+							<a href="pneu-carro.php"><img class="categoria__img" src="../assets/img/categoria-pneu.jpg" alt="Pneus de Carro"></a>
 						</div>
 					</div>
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-som-midia-eletronicos.jpg" alt="Som, Multimídia e Eletrônicos">
+							<a href="som-multimidia-eletronicos.php"><img class="categoria__img" src="../assets/img/categoria-som-midia-eletronicos.jpg" alt="Som, Multimídia e Eletrônicos"></a>
 						</div>
 					</div>
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-acessorio-automoveis.jpg" alt="Acessórios para Automóveis">
+							<a href="acessorios-automoveis.php"><img class="categoria__img" src="../assets/img/categoria-acessorio-automoveis.jpg" alt="Acessórios para Automóveis"></a>
 						</div>
 					</div>
 				</div>
@@ -176,17 +183,17 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-cuidado-automotivo.jpg" alt="Cuidados Automotivos">
+							<a href="cuidados-automotivos.php"><img class="categoria__img" src="../assets/img/categoria-cuidado-automotivo.jpg" alt="Cuidados Automotivos"></a>
 						</div>
 					</div>
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-oleo-fluido.jpg" alt="Óleos e Fluidos">
+							<a href="oleo-fluidos.php"><img class="categoria__img" src="../assets/img/categoria-oleo-fluido.jpg" alt="Óleos e Fluidos"></a>
 						</div>
 					</div>
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-bateria.jpg" alt="Baterias e Acessórios">
+							<a href="baterias-acessorios.php"><img class="categoria__img" src="../assets/img/categoria-bateria.jpg" alt="Baterias e Acessórios"></a>
 						</div>
 					</div>
 				</div>
@@ -195,17 +202,17 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-reboque-transporte.jpg" alt="Reboque e Transporte">
+							<a href="reboque-transporte.php"><img class="categoria__img" src="../assets/img/categoria-reboque-transporte.jpg" alt="Reboque e Transporte"></a>
 						</div>
 					</div>
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-pecas-automoveis.jpg" alt="Peças para Automóveis">
+							<a href="pecas-automoveis.php"><img class="categoria__img" src="../assets/img/categoria-pecas-automoveis.jpg" alt="Peças para Automóveis"></a>
 						</div>
 					</div>
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-equipamentos-protecao.jpg" alt="Equipamentos de Proteção">
+							<a href="equipamentos-protecao.php"><img class="categoria__img" src="../assets/img/categoria-equipamentos-protecao.jpg" alt="Equipamentos de Proteção"></a>
 						</div>
 					</div>
 				</div>
@@ -214,17 +221,17 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-pneu-moto.jpg" alt="Pneus de Moto">
+							<a href="pneu-moto.php"><img class="categoria__img" src="../assets/img/categoria-pneu-moto.jpg" alt="Pneus de Moto"></a>
 						</div>
 					</div>
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-acessorios-motos.jpg" alt="Acessórios e Peças para Motos">
+							<a href="acessorios-pecas-moto.php"><img class="categoria__img" src="../assets/img/categoria-acessorios-motos.jpg" alt="Acessórios e Peças para Motos"></a>
 						</div>
 					</div>
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-ferramentas.jpg" alt="Ferramentas e Equipamentos">
+							<a href="ferramentas-equipamentos.php"><img class="categoria__img" src="../assets/img/categoria-ferramentas.jpg" alt="Ferramentas e Equipamentos"></a>
 						</div>
 					</div>
 				</div>
@@ -236,12 +243,12 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-pneu.jpg" alt="Pneus de Carro">
+							<a href="pneu-carro.php"><img class="categoria__img" src="../assets/img/categoria-pneu.jpg" alt="Pneus de Carro"></a>
 						</div>
 					</div>
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-som-midia-eletronicos.jpg" alt="Som, Multimídia e Eletrônicos">
+							<a href="som-multimidia-eletronicos.php"><img class="categoria__img" src="../assets/img/categoria-som-midia-eletronicos.jpg" alt="Som, Multimídia e Eletrônicos"></a>
 						</div>
 					</div>
 				</div>
@@ -250,12 +257,12 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-acessorio-automoveis.jpg" alt="Acessórios para Automóveis">
+							<a href="acessorios-automoveis.php"><img class="categoria__img" src="../assets/img/categoria-acessorio-automoveis.jpg" alt="Acessórios para Automóveis"></a>
 						</div>
 					</div>
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-cuidado-automotivo.jpg" alt="Cuidados Automotivos">
+							<a href="cuidados-automotivos.php"><img class="categoria__img" src="../assets/img/categoria-cuidado-automotivo.jpg" alt="Cuidados Automotivos"></a>
 						</div>
 					</div>
 				</div>
@@ -264,12 +271,12 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-oleo-fluido.jpg" alt="Óleos e Fluidos">
+							<a href="oleo-fluidos.php"><img class="categoria__img" src="../assets/img/categoria-oleo-fluido.jpg" alt="Óleos e Fluidos"></a>
 						</div>
 					</div>
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-bateria.jpg" alt="Baterias e Acessórios">
+							<a href="baterias-acessorios.php"><img class="categoria__img" src="../assets/img/categoria-bateria.jpg" alt="Baterias e Acessórios"></a>
 						</div>
 					</div>
 				</div>
@@ -278,12 +285,12 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-reboque-transporte.jpg" alt="Reboque e Transporte">
+							<a href="reboque-transporte.php"><img class="categoria__img" src="../assets/img/categoria-reboque-transporte.jpg" alt="Reboque e Transporte"></a>
 						</div>
 					</div>
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-pecas-automoveis.jpg" alt="Peças para Automóveis">
+							<a href="pecas-automoveis.php"><img class="categoria__img" src="../assets/img/categoria-pecas-automoveis.jpg" alt="Peças para Automóveis"></a>
 						</div>
 					</div>
 				</div>
@@ -292,12 +299,12 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-equipamentos-protecao.jpg" alt="Equipamentos de Proteção">
+							<a href="equipamentos-protecao.php"><img class="categoria__img" src="../assets/img/categoria-equipamentos-protecao.jpg" alt="Equipamentos de Proteção"></a>
 						</div>
 					</div>
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-pneu-moto.jpg" alt="Pneus de Moto">
+							<a href="pneu-moto.php"><img class="categoria__img" src="../assets/img/categoria-pneu-moto.jpg" alt="Pneus de Moto"></a>
 						</div>
 					</div>
 				</div>
@@ -306,12 +313,12 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-acessorios-motos.jpg" alt="Acessórios e Peças para Motos">
+							<a href="acessorios-pecas-moto.php"><img class="categoria__img" src="../assets/img/categoria-acessorios-motos.jpg" alt="Acessórios e Peças para Motos"></a>
 						</div>
 					</div>
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-ferramentas.jpg" alt="Ferramentas e Equipamentos">
+							<a href="ferramentas-equipamentos.php"><img class="categoria__img" src="../assets/img/categoria-ferramentas.jpg" alt="Ferramentas e Equipamentos"></a>
 						</div>
 					</div>
 				</div>
@@ -323,7 +330,7 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-pneu.jpg" alt="Pneus de Carro">
+							<a href="pneu-carro.php"><img class="categoria__img" src="../assets/img/categoria-pneu.jpg" alt="Pneus de Carro"></a>
 						</div>
 					</div>
 				</div>
@@ -332,7 +339,7 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-som-midia-eletronicos.jpg" alt="Som, Multimídia e Eletrônicos">
+							<a href="som-multimidia-eletronicos.php"><img class="categoria__img" src="../assets/img/categoria-som-midia-eletronicos.jpg" alt="Som, Multimídia e Eletrônicos"></a>
 						</div>
 					</div>
 				</div>
@@ -341,7 +348,7 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-acessorio-automoveis.jpg" alt="Acessórios para Automóveis">
+							<a href="acessorios-automoveis.php"><img class="categoria__img" src="../assets/img/categoria-acessorio-automoveis.jpg" alt="Acessórios para Automóveis"></a>
 						</div>
 					</div>
 				</div>
@@ -350,7 +357,7 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-cuidado-automotivo.jpg" alt="Cuidados Automotivos">
+							<a href="cuidados-automotivos.php"><img class="categoria__img" src="../assets/img/categoria-cuidado-automotivo.jpg" alt="Cuidados Automotivos"></a>
 						</div>
 					</div>
 				</div>
@@ -359,7 +366,7 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-oleo-fluido.jpg" alt="Óleos e Fluidos">
+							<a href="oleo-fluidos.php"><img class="categoria__img" src="../assets/img/categoria-oleo-fluido.jpg" alt="Óleos e Fluidos"></a>
 						</div>
 					</div>
 				</div>
@@ -368,7 +375,7 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-bateria.jpg" alt="Baterias e Acessórios">
+							<a href="baterias-acessorios.php"><img class="categoria__img" src="../assets/img/categoria-bateria.jpg" alt="Baterias e Acessórios"></a>
 						</div>
 					</div>
 				</div>
@@ -377,7 +384,7 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-reboque-transporte.jpg" alt="Reboque e Transporte">
+							<a href="reboque-transporte.php"><img class="categoria__img" src="../assets/img/categoria-reboque-transporte.jpg" alt="Reboque e Transporte"></a>
 						</div>
 					</div>
 				</div>
@@ -386,7 +393,7 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-pecas-automoveis.jpg" alt="Peças para Automóveis">
+							<a href="pecas-automoveis.php"><img class="categoria__img" src="../assets/img/categoria-pecas-automoveis.jpg" alt="Peças para Automóveis"></a>
 						</div>
 					</div>
 				</div>
@@ -395,7 +402,7 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-equipamentos-protecao.jpg" alt="Equipamentos de Proteção">
+							<a href="equipamentos-protecao.php"><img class="categoria__img" src="../assets/img/categoria-equipamentos-protecao.jpg" alt="Equipamentos de Proteção"></a>
 						</div>
 					</div>
 				</div>
@@ -404,7 +411,7 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-pneu-moto.jpg" alt="Pneus de Moto">
+							<a href="pneu-moto.php"><img class="categoria__img" src="../assets/img/categoria-pneu-moto.jpg" alt="Pneus de Moto"></a>
 						</div>
 					</div>
 				</div>
@@ -413,7 +420,7 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-acessorios-motos.jpg" alt="Acessórios e Peças para Motos">
+							<a href="acessorios-pecas-moto.php"><img class="categoria__img" src="../assets/img/categoria-acessorios-motos.jpg" alt="Acessórios e Peças para Motos"></a>
 						</div>
 					</div>
 				</div>
@@ -422,7 +429,7 @@
 				<div class="linha">
 					<div class="coluna">
 						<div class="card">
-							<img class="categoria__img" src="../assets/img/categoria-ferramentas.jpg" alt="Ferramentas e Equipamentos">
+							<a href="ferramentas-equipamentos.php"><img class="categoria__img" src="../assets/img/categoria-ferramentas.jpg" alt="Ferramentas e Equipamentos"></a>
 						</div>
 					</div>
 				</div>
