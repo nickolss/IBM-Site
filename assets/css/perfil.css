@@ -97,6 +97,10 @@
 }
 
 @media only screen and (max-width: 1650px){
+    .informacoes-cadastro{
+        max-width: 40vw;
+    }
+    
     .formulario__campo{
         width: 130%;
     }

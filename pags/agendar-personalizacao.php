@@ -27,38 +27,16 @@
         
         <main>
             <div class="titulo">
-                <h1 class="mainTitle">Agendar Orçamento</h1>
+                <h1 class="mainTitle">Agendar Personalização</h1>
             </div>
 
             <div class="cadastro">
-              <?php $categoria = 'rebaixamento-hellaFlush' ?> <!--atribuindo o valor a variável $categoria para passá-la pela url no action do form-->
-                <form action="../assets/scripts/cadastrarPedidoOrçamento.php?categoria=<?php echo $categoria; ?>" method="POST">
-
-                  <!--PARTE DAS INFORMAÇÕES DO VEÍCULO DO AGENDAMENTO-->
-                    <div class="subTitulo">
-                        <h2 class="subTitle">Informações Atuais do Veículo</h2>
-                    </div>
-
-                    <div class="caixa__input">
-                        <input type="text" required name="corAtual" id="corAtual" autocomplete="off">
-                        <label for="corAtual">Cor</label>
-                    </div>
-
-                    <div class="caixa__input">
-                        <input type="text" required name="modelo" id="modelo" autocomplete="off">
-                        <label for="modelo">Modelo</label>
-                    </div>
-
-                    <div class="caixa__input">
-                        <input type="text" required name="placa" id="placa" autocomplete="off">
-                        <label for="placa">Placa</label>
-                    </div>
+              <?php $categoria = 'rebaixamento-dropped' ?> <!--atribuindo o valor a variável $categoria para passá-la pela url no action do form-->
+                <form action="../assets/scripts/cadastrarPedidoOrçamento.php" method="POST">
 
                     <!--PARTE DA DATA E HORÁRIO DO AGENDAMENTO-->
                     <div class="subTitulo">
-                        <h2 class="subTitle">Agende sua data e horário para realizarmos o orçamento</h2>
-                        <p class="paragrafo__subTitle">Venha em nossa oficina para realizar a inspeção e orçamento de sua personalização.</p>
-                        <p class="paragrafo__subTitle">No dia indicado, nossos mecânicos irão analisar seu veículo e efetuar o orçamento da personalização.</p>
+                        <h2 class="subTitle">Agende sua data e horário para realizarmos a personalização</h2>
                         <p class="paragrafo__subTitle">Avenida Turbo Nº1</p>
                     </div>
 
@@ -85,7 +63,7 @@
                   <!--PARTE DE PAGAMENTO DO AGENDAMENTO-->
                     <div style="margin-top: 50px;" class="subTitulo">
                           <h2 class="subTitle">Informe os dados do seu cartão</h2>
-                          <p class="paragrafo__subTitle">Pagamento apenas para o orçamento da personalização desejada.</p>
+                          <p class="paragrafo__subTitle">Pagamento para a personalização desejada.</p>
                           <p class="paragrafo__subTitle">Após pagar a taxa de orçamento e aprová-lo com nossos mecânicos, entre na sessão de perfil e clique na área "Orçamentos" para agendar uma data a fim de levar seu veículo a nossa oficina e possamos iniciar a sua personalização. </p>
                     </div>
 

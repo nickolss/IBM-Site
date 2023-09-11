@@ -35,7 +35,7 @@ $dataAtual = date("Y-m-d");
 			<div class="main__div">
 				<h1 id="mainTitle">Informe os dados do seu cartão de crédito ou débito</h1>
 			</div>
-			<form action="" method="">
+			<form action="../assets/scripts/pagamentoAgendamento.php" method="POST">
 				<div id="div__inputCartao">
 
 					<div class="input__endereco">

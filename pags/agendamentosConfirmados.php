@@ -1,4 +1,5 @@
-<?php 
+<?php
+    require_once('../assets/scripts/conexao.php');
     require_once('../assets/scripts/iniciarSessao.php');
     require_once('../assets/scripts/consultaCliente.php');
 ?>
@@ -9,11 +10,18 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Turn Motors | Agendamento</title>
-        <link rel="stylesheet" href="../assets/css/agendamento.min.css">
-        <link rel="stylesheet" href="../assets/css/pagamento-cartao.min.css">
+
+      <!--CSS-->
+      <link rel="stylesheet" href="../assets/css/agendamento.min.css">
+      <link rel="stylesheet" href="../assets/css/pagamento-cartao.min.css">
       <link rel="stylesheet" href="../assets/css/estilos-importantes.css">
+
+      <!--LINK ICONES-->
       <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+      <!--FAVICON-->
       <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">  
+
       <script type="text/javascript" src="../assets/js/java.js" defer></script>
       <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -23,42 +31,34 @@
         <!--HEADER-->
         <?php 
           require_once('../assets/components/header.php');
+          $id = (int)$_SESSION['id']; //atribuindo o 'id' da sessão atual para a variável $id
+          $sql = "SELECT * FROM pedido_orcamento WHERE `id_cliente`=$id AND `status`='mecânico confirmado'";
+          $stmt = $pdo->prepare($sql);
+          $stmt->execute();
+          $quantidadeTupla = $stmt->rowCount();
+          $pedidos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+          
+          if ($quantidadeTupla > 0) {
+              foreach ($pedidos as $pedido) {
+                if($pedido['status'] == 'mecânico confirmado'){
+
+                  $placa = $pedido['placaCarro'];
+                  $personalizacao = $pedido['personalizacao'];
+                  $preco = (string)$pedido['preco'];
         ?>
         
         <main>
             <div class="titulo">
-                <h1 class="mainTitle">Agendar Orçamento</h1>
+                <?php echo "<h1 class='mainTitle'>Agendar $personalizacao</h1>";?>
             </div>
 
             <div class="cadastro">
-              <?php $categoria = 'rebaixamento-hellaFlush' ?> <!--atribuindo o valor a variável $categoria para passá-la pela url no action do form-->
-                <form action="../assets/scripts/cadastrarPedidoOrçamento.php?categoria=<?php echo $categoria; ?>" method="POST">
 
-                  <!--PARTE DAS INFORMAÇÕES DO VEÍCULO DO AGENDAMENTO-->
-                    <div class="subTitulo">
-                        <h2 class="subTitle">Informações Atuais do Veículo</h2>
-                    </div>
-
-                    <div class="caixa__input">
-                        <input type="text" required name="corAtual" id="corAtual" autocomplete="off">
-                        <label for="corAtual">Cor</label>
-                    </div>
-
-                    <div class="caixa__input">
-                        <input type="text" required name="modelo" id="modelo" autocomplete="off">
-                        <label for="modelo">Modelo</label>
-                    </div>
-
-                    <div class="caixa__input">
-                        <input type="text" required name="placa" id="placa" autocomplete="off">
-                        <label for="placa">Placa</label>
-                    </div>
+                <form action="../assets/scripts/cadastrarOrcamentoCliente.php?placa='.$placa.'" method="POST">
 
                     <!--PARTE DA DATA E HORÁRIO DO AGENDAMENTO-->
                     <div class="subTitulo">
-                        <h2 class="subTitle">Agende sua data e horário para realizarmos o orçamento</h2>
-                        <p class="paragrafo__subTitle">Venha em nossa oficina para realizar a inspeção e orçamento de sua personalização.</p>
-                        <p class="paragrafo__subTitle">No dia indicado, nossos mecânicos irão analisar seu veículo e efetuar o orçamento da personalização.</p>
+                        <h2 class="subTitle">Agende sua data e horário para realizarmos a personalização</h2>
                         <p class="paragrafo__subTitle">Avenida Turbo Nº1</p>
                     </div>
 
@@ -81,12 +81,25 @@
                       </div>
                       <br>
                   </div>
+                  
+                    <?php
+                      echo  '<div class="caixa__input-info">';
+                      echo      '<select class="input__placa-personalizacao" name="placaCarro" id="placaCarro">';
+                      echo          '<option value="'.$pedido['placaCarro'].'" selected>'.$pedido['placaCarro'].'</option>';
+                      echo      '</select>';
+      
+                      echo      '<select class="input__placa-personalizacao" name="personalizacao" id="personalizacao">';
+                      echo          '<option value="'.$pedido['personalizacao'].'" selected>'.$pedido['personalizacao'].'</option>';
+                      echo      '</select>';
+                      echo '</div>';
+                    ?>
+
 
                   <!--PARTE DE PAGAMENTO DO AGENDAMENTO-->
                     <div style="margin-top: 50px;" class="subTitulo">
                           <h2 class="subTitle">Informe os dados do seu cartão</h2>
-                          <p class="paragrafo__subTitle">Pagamento apenas para o orçamento da personalização desejada.</p>
-                          <p class="paragrafo__subTitle">Após pagar a taxa de orçamento e aprová-lo com nossos mecânicos, entre na sessão de perfil e clique na área "Orçamentos" para agendar uma data a fim de levar seu veículo a nossa oficina e possamos iniciar a sua personalização. </p>
+                          <p class="paragrafo__subTitle">Pagamento para a personalização desejada.</p>
+                          <p class="paragrafo__subTitle">Após pagar a personalização, no dia indicado por você, cliente Turn Motors, venha para nossa oficina para realizarmos a personalização em seu veículo.</p>
                     </div>
 
                     <div id="div__inputCartao">
@@ -116,6 +129,7 @@
                           <label for="numero">Nome Completo</label>
                         </div>
                       </div>
+                    
 
 
                     <div id="div__forma__pagamento__title">
@@ -136,19 +150,37 @@
 
                     </div>
                     <div class="div__preco">
-                      <p id="preco">R$29,90</p>
-                      <p id="plano">Orçamento</p>
+                      <?php echo "<p id='preco'>R$$preco</p>";?>
+                      <?php echo "<p id='preco'>$personalizacao</p>";?>
                     </div>
                     
                     <div class="botoes">
                         <div class="botao">
-                        <button class="botao__laranja" type="submit">Agendar orçamento</button>
+                        <button class="botao__laranja" type="submit" name="btn-pedido-orcamento" id="btn-pedido-orcamento"  value="confirmado">Agendar agendamento</button>
+                      </div>
+                      <div class="botao">
+                        <button class="botao__laranja" type="submit" name="btn-pedido-orcamento" id="btn-pedido-orcamento"  value="cancelado">Cancelar agendamento</button>
                       </div>
                     </div>
 
                 </form>
+                <hr>
             </div>
         </main>
+        
+        <?php
+          //fechamento das chaves do começo do arquivo
+              //if($pedido['status'] == 'mecânico confirmado')
+              }
+            //foreach ($pedidos as $pedido)
+            } 
+          //if ($quantidadeTupla > 0)
+          } else{ //caso a quantidade de registros seja 0, exibirá a mensagem
+              echo '<main>';
+                echo "<h1 class='mainTitle'>Nenhum agendamento registrado.</h1>";
+              echo '</main>';
+          } 
+        ?>
 
         <!--FOOTER-->
         <?php 
@@ -158,3 +190,5 @@
     </body>
 </html
     
+
+
