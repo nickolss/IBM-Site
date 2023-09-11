@@ -3,26 +3,8 @@
 @import url(dashboard.css);
 @import url(cadastro-produto.min.css);
 
-#container__body{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main{
-    flex: 1;
-}
-
-main#main__agendamentos{
-    margin-bottom: 50px;
-}
-
 .subTitle, .paragrafo__agendamento{
     margin: auto;
-}
-
-.caixa__input-info{
-    display: none;
 }
 
 .select-menu .select-btn{
@@ -56,32 +38,13 @@ div.botao{
 }
 
 .botao__laranja{
-    padding: 10px 35px;
-    margin: 0px 10px 25px 10px;
-    font-size: 1.2rem;
-    border: none;
-    color: white;
-    border-radius: 50px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    background-color: #FF7769;
-    width: 300px;
-}
-
-.botao .botao__laranja:hover{
-    transform: scale(1.02);
-    transition-duration: 0.5s;
-    box-shadow: 0 3px 4px rgba(0,0,0,0.12), 0 3px 3px rgba(0,0,0,0.24);
+    margin-bottom: 25px;
+    width: 250px;
 }
 
 .linha{
     border: none;
 }
-
-.paragrafo__subTitle{
-    max-width: 650px;
-}
-
-
 
 @media only screen and (max-width: 700px){
     .cadastro{
@@ -91,10 +54,6 @@ div.botao{
         align-items: center;
         margin: auto;
         max-width: 450px;
-    }
-
-    .subTitle, .paragrafo__subTitle{
-        text-align: center;
     }
 }
 

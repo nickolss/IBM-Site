@@ -5,49 +5,39 @@
     $id = (int)$_SESSION['id']; 
     
     // Consulta para obter informações de data e horário do banco de dados
-    $stmtOrcamento = $pdo->query("SELECT `data`, `horario` FROM `pedido_orcamento` WHERE `id_cliente`='$id'");
-    $orcamentos = $stmtOrcamento->fetchAll();
-    $quantidadeTupla = $stmtOrcamento->rowCount();
+    $stmtAgendamento = $pdo->query("SELECT data_agendamento, horario FROM agendamento WHERE id_cliente='$id'");
+    $agendamentos = $stmtAgendamento->fetchAll();
+    $quantidadeTupla = $stmtAgendamento->rowCount();
 
     if($quantidadeTupla > 0){
         //atributos para enviar o email
         $para = $_SESSION['email']; //destinatario
         $titulo = 'Agendamento Turn Motors'; //assunto
 
-        foreach($orcamentos as $orcamento){
-            $data = $orcamento['data'];
-            $horario = $orcamento['horario'];
-            $categoria = $orcamento['personalizacao'];
+        foreach($agendamentos as $agendamento){
+            $data = $agendamento['data_agendamento'];
+            $horario = $agendamento['horario'];
 
             $mensagem = "Olá, " . $_SESSION['nomeCliente'] . "!     
-                        Seu agendamento para realizar o orçamento da personalização foi realizado com sucesso em nossa oficina.
+                        Seu agendamento foi realizado com sucesso em nossa oficina.
                         Seguem as informações:
-                        Procedimento Agendado: " . $categoria . "
+                        Procedimento Agendado: [Agendamento.Procedimento]
                         Data: " . $data . "
                         Hora: " . $horario . "
                         Até la!
                         Oficina Turn Motors agradece a preferência.
                         Avenida Turbo Nº1";
-            
-            //se a função mail for executada irá redirecionar para a pag agendamento-sucesso, caso contrario ira exibir mensagem de erro
+
+            //$mensagem = "Oficina Turn Motors agradece a preferência! \nData do Agendamento: " . $data . "\nHorário do Agendamento: " . $horario; //mensagem do email
+
             if(mail($para, $titulo, $mensagem)){ //função para enviar email    
                 header("Location: ../../pags/agendamento-sucesso.php");
             }else{
-                echo "<script>
-                    alert('Erro ao enviar email. Tente novamente.');
-                    setInterval( function() {
-                        window.location.href = '../../pags/login.php'
-                    }, 0)
-                </script>";
+                echo 'Erro ao enviar email :(';
             }
         }
     } else{
-        echo "<script>
-                    alert('Nenhum registro encontrado em nosso banco de dados.');
-                    setInterval( function() {
-                        window.location.href = '../../pags/login.php'
-                    }, 0)
-                </script>";
+        echo 'Nenhum resultado encontrado no banco de dados :(';
     }
 
 ?>    

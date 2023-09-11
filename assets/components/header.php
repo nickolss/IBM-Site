@@ -1,3 +1,51 @@
+<?php 
+   require_once('../assets/scripts/conexao2.php');
+   // Inicia a sessão
+   if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+
+// Verifica se o formulário foi enviado
+if (isset($_GET['busca'])) {
+    // Consulta SQL para buscar os IDs dos produtos que correspondem à pesquisa
+    $pesquisa = ($_GET['busca']);
+    $sql = "SELECT codigoProduto FROM produto WHERE nome LIKE '%$pesquisa%' OR preco LIKE '%$pesquisa%' OR marca LIKE '%$pesquisa%' OR descricao LIKE '%$pesquisa%' OR customizações LIKE '%$pesquisa%' ";
+    
+    
+    $resultado = mysqli_query($conexao, $sql);
+
+    // Array para armazenar os IDs dos produtos encontrados
+   
+    $idsProdutos = [];
+    
+
+    // Verificar se a consulta retornou resultados
+    if ($resultado) {
+        while ($linha = mysqli_fetch_assoc($resultado)) {
+            $idsProdutos[] = $linha['codigoProduto'];
+        }
+       
+    }
+    if(!empty($idsProdutos)){
+        print_r ($idsProdutos);
+    // Armazenar os IDs dos produtos na sessão
+    $_SESSION['idsProdutos'] = $idsProdutos;
+    $_SESSION['buscaFeita'] = $pesquisa;
+   
+
+    // Redirecionar para a página de resultados
+    if (!empty($idsProdutos)) {
+        header("Location: produtos.php");
+        exit();
+    }  }else{
+        $idsProdutos = 0;
+        $_SESSION['buscaFeita'] = $pesquisa;
+        $_SESSION['idsProdutos'] = $idsProdutos;
+        header("Location: produtos.php");
+    }        
+}
+?>
 <header>
     <div id="header">
         <div class="conj_header_redes">
@@ -35,17 +83,12 @@
             <div class="table__itens_header_carrinho">
                 <table style="border-collapse: separate;border-spacing: 0 10px ; ">
                     <tbody>
-                        
-                        <?php foreach ($_SESSION['carrinho'] as $item) { ?>
-                           
                         <tr >    
-                        
-                        <td class="img__table__header_carrinho" style="width: 40%;"> <img src="<?php echo $item['imagem']; ?>" alt=""> </td>
+                        <td class="img__table__header_carrinho" style="width: 40%;"> <img src="" alt=""> </td>
                       
                         <td class="info__table__header_carrinho">
                               
-                            <?php echo '<h2> '. $item['nome'] . '</h2>';?>
-                            <?php echo '<h3>R$'. $item['preco'] . '</h3>';?>
+                           
                             
                             
                             <div class="table_itens__header__carrinho__config">
@@ -100,10 +143,15 @@
         <div class="container  text-center">
             <div class="row align-items-center" style="height: 150px;">
                 <div class="col " style="padding: 0px 20px;">
-                    <div class="header_search">
-                        <div style="display: flex; justify-content: center; align-items: center;"><img width="30px" height="auto" src="../assets/img/lupa.png" alt="Pesquisar"></div>
-                        <input class="form-control input_header_search" type="text" placeholder="Pesquisar...">
-                        <div style="display: flex; justify-content: center; align-items: center;"> <button type="button" class="btn-close lupa" aria-label="Close"></button></div>
+              
+                    <div class="header_search" >
+                    <form style="width: 100%; " action="" method="GET" class="d-flex" role="search">
+                        <button  type="submit"><img width="30px" height="auto" src="../assets/img/lupa.png" alt="Pesquisar"></button>
+                       
+                        <input name="busca" class="form-control input_header_search" type="search" placeholder="Pesquisar...">
+                        </form>
+                        <div style="display: flex; justify-content: center; align-items: center; "> <button type="button" class="btn-close lupa" aria-label="Close"></button></div>
+                     
                     </div>
                 </div>
             </div>
@@ -196,8 +244,10 @@
             <div class="row align-items-center" style="height: 150px;">
                 <div class="col " style="padding: 0px 20px;">
                     <div class="header_search">
-                        <div style="display: flex; justify-content: center; align-items: center;"><img width="30px" height="auto" src="../assets/img/lupa.svg" alt="Pesquisar"></div>
-                        <input class="form-control input_header_search" type="text" placeholder="Pesquisar...">
+                    <form style="width: 100%; " action="" method="GET" class="d-flex" role="search">
+                    <button  type="submit"><img width="30px" height="auto" src="../assets/img/lupa.svg" alt="Pesquisar"></button>
+                        <input name="busca" class="form-control input_header_search" type="search" placeholder="Pesquisar...">
+                    </form>
                         <div style="display: flex; justify-content: center; align-items: center;"> <button type="button" class="btn-close lupa" aria-label="Close"></button></div>
                     </div>
                 </div>
