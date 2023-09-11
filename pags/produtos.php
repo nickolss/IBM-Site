@@ -1,5 +1,5 @@
 <?php
-require_once('../assets/scripts/conexao2.php');
+require_once('../assets/scripts/conexao.php');
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -157,7 +157,7 @@ foreach ($chunksProdutos as $chunk) { ?>
 						<hr class="card-produto-dinamico-linha">
 						<div  class="card-produto-dinamico-preco-button">
 							<div class="card-produto-dinamico-preco-button-texto" >R$:<?php echo $precoProduto ?>,00</div>
-							<button ><img width="30%"  src="../assets/img/iconeadd.png" alt=""></button>
+							<button > <a href="?adicionar=<?php echo $idsProdutos ?>"> <img width="30%"  src="../assets/img/iconeadd.png" alt=""> </a></button>
 						</div>
 						
 					</div>

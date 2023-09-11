@@ -1,5 +1,5 @@
 <?php 
-   require_once('../assets/scripts/conexao2.php');
+   require_once('../assets/scripts/conexao.php');
    // Inicia a sessão
    if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -72,6 +72,43 @@ if (isset($_GET['busca'])) {
             </ul>
         </div>
     </div>
+   <?php
+            if (isset($_GET['adicionar'])) {
+                $idProd = (int)$_GET['adicionar'];
+                
+                // Verifique se o ID do produto existe no array de IDs de produtos
+                if (isset($idsProdutos[$idProd])) {
+                    $codigoProduto = $idsProdutos[$idProd];
+                    
+                    // Consulta ao banco de dados para obter as informações do produto
+                    $sqlProduto = "SELECT nome, preco FROM produto WHERE codigoProduto = $codigoProduto";
+                    $resultProduto = mysqli_query($conexao, $sqlProduto);
+                    
+                    if ($resultProduto && mysqli_num_rows($resultProduto) > 0) {
+                        $rowProduto = mysqli_fetch_assoc($resultProduto);
+                        $nomeProduto = $rowProduto['nome'];
+                        $precoProduto = $rowProduto['preco'];
+                        
+                        // Verifique se o produto já está no carrinho
+                        if (isset($_SESSION['carrinho'][$idProd])) {
+                            $_SESSION['carrinho'][$idProd]['quantidade']++;
+                        } else {
+                            $_SESSION['carrinho'][$idProd] = array(
+                                'quantidade' => 1,
+                                'nome' => $nomeProduto,
+                                'preco' => $precoProduto
+                            );
+                        }
+                        
+                        echo '<script>alert("O item foi adicionado ao carrinho");</script>';
+                    } else {
+                        die('Produto não encontrado no banco de dados.');
+                    }
+                } else {
+                    die('ID do produto inválido.');
+                }
+            }
+   ?>
     <div id="fade"></div>
     <nav id="carrinho__header">
         <img class="seta__header__carrinho" src="../assets/img/seta-modal.svg" alt="">
@@ -83,38 +120,42 @@ if (isset($_GET['busca'])) {
             <div class="table__itens_header_carrinho">
                 <table style="border-collapse: separate;border-spacing: 0 10px ; ">
                     <tbody>
+                        
+                    <?php 
+                        if(empty($idsProdutos)){
+                            echo 'true';
+                        }else{
+                            echo 'falswe';
+                        }
+                            if(!empty($idsProdutos)){
+                            foreach($_SESSION['carrinho'] as $idsProdutos => $value){ 
+                               ?>
+                            
                         <tr >    
                         <td class="img__table__header_carrinho" style="width: 40%;"> <img src="" alt=""> </td>
                       
                         <td class="info__table__header_carrinho">
-                              
-                           
-                            
-                            
+                              <div>
+                                <h2><?php echo $value['nome'] ?></h2>
+                              </div>
+                              <div><h3>R$:<?php echo $value['preco'] ?></h3></div>
                             <div class="table_itens__header__carrinho__config">
                                 <div class="table__itens_header_carrinho_botoes">
                                     <button id="botaoSubtrair_carrinho_header">-</button>
-                                    <span id="contador_carrinho_header">1</span>
-                                    <button id="botaoAcrescentar_carrinho_header" href="?adicionar=<?php echo $item['id'] ?>">+</button>
+                                    <span id="contador_carrinho_header"></span>
+                                    <button id="botaoAcrescentar_carrinho_header">+</button>
                                 </div>
-                                <?php if (isset($_SESSION['carrinho'][$item['id']])) { ?>
-								<a style="border: none; color: #003445; background-color: #fff; text-decoration: none" href="?remover=<?php echo $item['id'] ?>">Excluir</a>
-								<?php } else { ?>
+                                
+								<a style="border: none; color: #003445; background-color: #fff; text-decoration: none" href="">Excluir</a>
+								
 								<span href="produtos.php"></span>
-								<?php } ?>
+							
                             </div>
                         </td>
-                        
                         </tr>
-                       
-                        <?php }                     
-                        function getTotalPurchaseAmount($array) {
-                        $totalAmount = 0.0;
-                        foreach ($array as $item) {
-                            $totalAmount += $item['quantidade'] * $item['preco'];
-                        }
-                        return $totalAmount;
-                        }?>
+                        <?php }}else{
+                            echo "teste";
+                        } ?>
                     </tbody>
                 </table>
 
@@ -123,7 +164,7 @@ if (isset($_GET['busca'])) {
             <br>
             <br>
             <div class="carrinho__header__finalizacao">
-            <p class="fs-2">Total: R$<?php echo getTotalPurchaseAmount($_SESSION['carrinho']); ?></p>
+            <p class="fs-2">Total: R$</p>
                 <div class="text-center">
                     <button><a href="../pags/carrinho.php"> Ver Carrinho</a> </button>
                     <a style="text-decoration: none; color: #003445" href="">Frete grátis com o Plano Turbinado</a>
@@ -148,7 +189,7 @@ if (isset($_GET['busca'])) {
                     <form style="width: 100%; " action="" method="GET" class="d-flex" role="search">
                         <button  type="submit"><img width="30px" height="auto" src="../assets/img/lupa.png" alt="Pesquisar"></button>
                        
-                        <input name="busca" class="form-control input_header_search" type="search" placeholder="Pesquisar...">
+                        <input name="busca" class="form-control input_header_search" type="text" placeholder="Pesquisar...">
                         </form>
                         <div style="display: flex; justify-content: center; align-items: center; "> <button type="button" class="btn-close lupa" aria-label="Close"></button></div>
                      
@@ -246,7 +287,7 @@ if (isset($_GET['busca'])) {
                     <div class="header_search">
                     <form style="width: 100%; " action="" method="GET" class="d-flex" role="search">
                     <button  type="submit"><img width="30px" height="auto" src="../assets/img/lupa.svg" alt="Pesquisar"></button>
-                        <input name="busca" class="form-control input_header_search" type="search" placeholder="Pesquisar...">
+                        <input name="busca" class="form-control input_header_search" type="text" placeholder="Pesquisar...">
                     </form>
                         <div style="display: flex; justify-content: center; align-items: center;"> <button type="button" class="btn-close lupa" aria-label="Close"></button></div>
                     </div>
