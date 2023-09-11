@@ -1,5 +1,5 @@
 <?php 
-    require_once('../assets/scripts/iniciarSessao.php');
+    require_once('iniciarSessao.php');
     if (!isset($_SESSION['nomeCliente'])) {
       $root = $_SERVER['HTTP_HOST'];
       $caminho = "http://$root/IBM-site/pags/login.php";
