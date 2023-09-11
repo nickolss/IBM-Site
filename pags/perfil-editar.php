@@ -1,6 +1,8 @@
 <?php
-require_once('../assets/scripts/iniciarSessao.php');
-require_once('../assets/scripts/consultaCliente.php');
+    // Importaça dos arquivos
+    require_once('../assets/scripts/conexao.php');
+    require_once('../assets/scripts/iniciarSessao.php');
+    require_once('../assets/scripts/consultaCliente.php');
 ?>
 
 <!DOCTYPE html>
@@ -11,22 +13,33 @@ require_once('../assets/scripts/consultaCliente.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Turn Motors | Editar perfil</title>
 
+    <!-- icones -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Arquivos do Bootstrap -->
     <link rel="stylesheet" href="../assets/css/css-bootstrap/bootstrap.min.css">
     <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script src="../assets/js/validacaoForm.js" defer></script>
     <script src="../assets/js/mascaraTelefone.js" defer></script>
+    <script src="../assets/js/trocarFoto.js" defer></script>
 
     <link rel="stylesheet" href="../assets/css/estilos-importantes.css" />
     <link rel="stylesheet" href="../assets/css/perfil.css">
     <link rel="stylesheet" href="../assets/css/cadastro.min.css">
+    <link rel="stylesheet" href="../assets/css/trocarFoto.min.css">
+
     <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
     <?php
-    require_once('../assets/components/header.php');
+        //require_once('../assets/components/header.php');
+		$id = (int)$_SESSION['id'];
+		$queryCliente = "SELECT * FROM cliente WHERE id=$id";
+		$stmt = $pdo->query($queryCliente);
+		$user = $stmt->fetch(PDO::FETCH_ASSOC);
     ?>
 
     <main class="principal">
@@ -42,9 +55,26 @@ require_once('../assets/scripts/consultaCliente.php');
                 <div class="row">
                     <div class="col">
                         <div class="informacoes-cadastro">
-                            <div class="informacoes__imagem-perfil">
-                                <img src="../assets/img/img-perfil.png" class="imagem-perfil__imagem">
-                            </div>
+                            <form action="../assets/scripts/trocarFoto.php" enctype="multipart/form-data"  method="post" class="informacoes__formulario"> <!-- Formulário que utiliza o atributo enctype para enviar arquivos multipart/form-data -->
+                                <div class="informacoes__imagem-perfil">
+                                    <div class="upload">
+                                        <img src="../assets/img/img-perfil/<?php echo $user['fotoPerfil']; ?>" id="image" id="image"> <!-- Exibe a imagem atual do usuário -->
+
+                                        <div class="rightRound" id="upload">
+                                            <input type="file" name="fileImg" id ="fileImg" accept=".jpg, .jpeg, .png"> <!-- Input de seleção de arquivo -->
+                                            <i class="fa fa-camera"></i> <!-- Ícone de câmera -->
+                                        </div>
+
+                                        <div class="leftRound" id ="cancel" style="display: none;">
+                                        <i class = "fa fa-times"></i> <!-- Ícone de cancelar-->
+                                        </div>
+                                        <div class="rightRound" id ="confirm" style="display: none;">
+                                        <input type="submit"> <!-- Botão de envio do formulário -->
+                                        <i class = "fa fa-check"></i> <!-- Ícone de confirmar -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                             <form action="" method="post" class="informacoes__formulario">
                                 <input type="text" name="nome" id="nome" value="<?= $_SESSION['nomeCliente'] ?>" disabled class="formulario__campo" />
                                 <input type="email" name="email" id="email" value="<?= $_SESSION['email'] ?>" disabled class="formulario__campo" />
