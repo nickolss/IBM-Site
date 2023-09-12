@@ -35,7 +35,7 @@
 
 <body>
     <?php
-        //require_once('../assets/components/header.php');
+        require_once('../assets/components/header.php');
 		$id = (int)$_SESSION['id'];
 		$queryCliente = "SELECT * FROM cliente WHERE id=$id";
 		$stmt = $pdo->query($queryCliente);
