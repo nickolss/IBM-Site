@@ -1,0 +1,94 @@
+.card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+ }
+
+.card{
+    height: 410px;
+}
+
+.text-title{
+    height: 60px;
+}
+
+.text-body{
+    font-size: 1.1em;
+    margin-bottom: -70px;
+}
+
+.card-footer{
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.caixa__input{
+    width: 185px;
+}
+
+.card__linha__botoes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.card-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-button-first{
+    margin-right: 30px;
+}
+
+.botao_orcamento{
+    border: none;
+    background-color: transparent;
+}
+
+.botao_orcamento i{
+    font-size: 24px;
+}
+
+/*Hover botao*/   
+.card-button:hover i{
+    color: white;
+}
+
+/*Hover botao cancelar*/   
+.card-button-first:hover{
+    border: 1px solid #FF7769;
+    background-color: #FF7769;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transform: scale(1.1);
+    transition-duration: 0.7s;
+}
+
+/*Hover botao cadastrar*/   
+.card-button-second:hover {
+    border: 1px solid #014961;
+    background-color: #014961;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transform: scale(1.1);
+    transition-duration: 0.7s;
+}
+
+/*Label do input*/
+.caixa__input label {
+    font-size: 1.2em;
+    margin: -5px 0px;
+  }
+  
+  .caixa__input :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin-top: -5.5px !important;
+    background-color: #f8f4f4 !important;
+  }
+
+  .input__data-horario, .input__placa-personalizacao{
+    display: none;
+  }

@@ -1,0 +1,50 @@
+.titles{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.agendamento{
+    margin-top: -30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+
+
+#svg__agendamento{
+    width: 30vw;
+}
+
+@media only screen and (max-width: 1950px) {
+    #svg__agendamento{
+        width: 40vw;
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .agendamento{
+        flex-direction: column-reverse;
+    }
+
+    #svg__agendamento{
+        width: 45vw;
+    }
+}
+
+
+@media only screen and (max-width: 950px) {
+    #svg__agendamento{
+        width: 65vw;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    #svg__agendamento{
+        width: 75vw;
+    }
+}
