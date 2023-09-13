@@ -1,67 +1,18 @@
-
-/*tudo aqui*/
-
-hr.pro-linn {
-    background-color: #000;
-    height: 5px
-}
-
-h1.pro-promo {
-    text-align: center;
-    margin: 50px 0;
-    color: #df7369;
-    text-shadow: 2px 1px 1px #000;
-    font-weight: 700;
-    font-size: 60px;
-    margin-bottom: 10px
-}
-p.pro-formatar {
-    font-size: 1.1em;
-    text-align: center;
-    margin: 0 200px
-}
-
-.forte a {
-    display: block;
-    font-size: 1em
-}
-
-.forte a:hover {
-    transform: scale(1.1);
-    transition: all .3s ease;
-    cursor: pointer;
-    color: #000
-}
-
-.pro-aumentar {
-    display: block
-}
-
-.pro-aumentar:hover {
-    transform: scale(1.1);
-    transition: all .3s ease;
-    cursor: pointer;
-    color: #000
-}
-
-.pro-pro-pro-card1 {
-    width: 200px;
-    height: 280px;
+#container__body{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.pro-pro-pro-card2 {
-    width: 200px;
-    height: 280px;
-    position: relative;
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 5px 5px 1px #a9a9a9
+main{
+    flex: 1;
 }
-.main__title{
+
+.titles{
+    text-align: center;
+}
+
+.titles .main__title{
     color: #FF7769;
     text-align: center;
     font-weight: bold;
@@ -69,84 +20,91 @@ p.pro-formatar {
     margin-top: 2%;
 }
 
-.card-produto-dinamico{
-    height: 400px;
-    padding: 10px;
-   
+.titles .sub__title{
+    color: #004762;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 1.5%;
 }
 
-
-
-.card-produto-dinamico img.imagens-prod{
-    background-color: #a9a9a9;
-    width: 150px; 
-    height: 150px; 
-    object-fit: cover;
-}
-.card-produto-dinamico-titulo{
-    text-align: center;
-    
-}
-
-hr.card-produto-dinamico-linha{
-    background-color: #000000;
-    height: 2px;
-}
-.card-produto-dinamico-preco-button{
+.linha{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    
-}
-.card-produto-dinamico-preco-button button{
-   border: none;
-   background-color: white;
-   text-align: end;
-   padding: 0;
+    margin-bottom: 0.5%;
 }
 
-.card-produto-dinamico-preco-button-texto{
-    font-size: 1.3em;
-    font-weight: bold;
+.coluna{
+    margin: 0.5%;
 }
 
-@media (max-width:1199px) {
-    .legal {
-        margin-bottom: 50px
-    }
+.card{
+    border-radius: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.15);
+    cursor: pointer;
 }
 
-@media (max-width:458px) and (min-width:320px) {
-   
-    h1.pro-promo {
-        text-align: center;
-        margin: 50px 0;
-        color: #df7369;
-        text-shadow: 2px 1px 1px #000;
-        font-weight: 700;
-        font-size: auto;
-        margin-bottom: 10px
-    }
+.card:hover{
+    transform: scale(1.03);
+    transition-duration: 0.5s;
 }
-@media (max-width:767px) {
-    p.pro-formatar {
-        font-size: 1.1em;
-        text-align: center;
-        margin: auto
-    }
 
-   
+.categoria__img{
+    border-radius: 20px;
 }
-.espaco_invisivel{
+
+.container__medio__categorias, .container__pequeno__categorias, .container__mobile__categorias{
     display: none;
 }
 
-@media (max-width:800px) {
-   .espaco_invisivel{
-        display: block;
-   }
+@media only screen and (max-width: 1500px){
+    .container__grande__categorias, .container__pequeno__categorias, .container__mobile__categorias{
+        display: none;
+    }
 
-   
+    .container__medio__categorias{
+        display: flex;
+        flex-direction: column;
+    }
 }
-/*fim aqui*/
+
+@media only screen and (max-width: 1000px){
+    .container__grande__categorias, .container__medio__categorias, .container__mobile__categorias{
+        display: none;
+    }
+
+    .container__pequeno__categorias{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .titles{
+        margin-top: 10%;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .titles{
+        margin-top: 15%;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .container__grande__categorias, .container__medio__categorias, .container__pequeno__categorias{
+        display: none;
+    }
+
+    .container__mobile__categorias{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .titles{
+        margin-top: 20%;
+    }
+}

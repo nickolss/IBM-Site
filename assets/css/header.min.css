@@ -111,7 +111,7 @@ position: relative;
 }
 
 #carrinho__header{
-  display: none;
+  display: block;
   position: absolute;
   width: 340px;
   min-height: 170px;
