@@ -1,6 +1,7 @@
 <?php
 
 require_once('../assets/scripts/conexao.php');
+require_once('../assets/scripts/conexao2.php');
 
 if (session_status() == PHP_SESSION_NONE) {
 
