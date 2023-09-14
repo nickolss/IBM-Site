@@ -74,12 +74,10 @@ if (isset($_GET['busca'])) {
     <?php
     if (isset($_GET['adicionar'])) {
         $idProd = (int)$_GET['adicionar'];
-        echo $idProd--;
         // Verifique se o ID do produto existe no array de IDs de produtos
         if (isset($idsProdutos[$idProd])) {
             $codigoProduto = $idsProdutos[$idProd];
 
-            echo $codigoProduto;
             // Consulta ao banco de dados para obter as informações do produto
             $sqlProduto = "SELECT nome, preco FROM produto WHERE codigoProduto = $codigoProduto";
             $resultProduto = mysqli_query($conexao, $sqlProduto);
@@ -176,7 +174,6 @@ if (isset($_GET['busca'])) {
                         <tbody>
 
                             <?php
-
                             foreach ($_SESSION['carrinho'] as $idsProdutos => $value) {
                             ?>
 
@@ -213,7 +210,7 @@ if (isset($_GET['busca'])) {
                 <br>
                 <br>
                 <div class="carrinho__header__finalizacao">
-                    <p class="fs-2">Total: <?php number_format($total, 2);  ?>R$</p>
+                    <p class="fs-2">Total: R$ <?php echo number_format($total, 2); ?></p>
                     <div class="text-center">
                         <button><a href="../pags/carrinho.php"> Ver Carrinho</a> </button>
                         <a style="text-decoration: none; color: #003445" href="">Frete grátis com o Plano Turbinado</a>
