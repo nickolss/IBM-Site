@@ -9,6 +9,9 @@
     $dataForm = $_POST['data'];
     $horarioForm = $_POST['horario'];
     $categoriaForm = $_GET['categoria'];
+    $numeroCartao = $_POST['numeroCartao'];
+    $cvvCartao = $_POST['cvvCartao'];
+    $validadeCartao = $_POST['dataValidade'];
 
     $id = (int)$_SESSION['id']; //atribuindo o 'id' da sessão atual para a variável $id
     $placaFormatada = str_replace(['(', ')', '-','/'], '', $placaForm); //substituindo os caracteres informados por nulo
@@ -19,13 +22,21 @@
      //preparando o bd para a inserção dos dados
      $inserirDadosCarro = $pdo->prepare($sqlInsertCarro);
  
+
      //comando sql para inserção de dados do agendamento no banco
      $sqlInsertAgendamento = "INSERT INTO `pedido_orcamento` (`data`,`horario`,`corCarro`,`placaCarro`, `personalizacao`, `id_cliente`, `status`) VALUES ('$dataForm','$horarioForm','$corForm','$placaFormatada', '$categoriaForm', '$id', 'em avaliação')";
  
      //preparando o bd para a inserção dos dados 
      $inserirDadosAgendamento = $pdo->prepare($sqlInsertAgendamento);
  
-     if($inserirDadosCarro->execute() && $inserirDadosAgendamento->execute()){
+
+     //comando sql para inserção de dados do agendamento no banco
+     $sqlInsertCartao = "INSERT INTO `cartao` (`numero_cartao`,`cvv`,`validade`,`id_titular`) VALUES ($numeroCartao,$cvvCartao,$validadeCartao,$id)";
+ 
+     //preparando o bd para a inserção dos dados 
+     $inserirDadosCartao = $pdo->prepare($sqlInsertCartao);
+
+     if($inserirDadosCarro->execute() && $inserirDadosAgendamento->execute() && $inserirDadosCartao->execute()){
       //se as duas query sql executarem irá redirecionar para o arquivo 'enviarEmail.php'
         header("Location: ./enviarEmail.php");
      }

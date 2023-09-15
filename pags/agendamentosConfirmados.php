@@ -32,7 +32,7 @@
         <?php 
           require_once('../assets/components/header.php');
           $id = (int)$_SESSION['id']; //atribuindo o 'id' da sessão atual para a variável $id
-          $sql = "SELECT * FROM pedido_orcamento WHERE `id_cliente`=$id AND `status`='mecânico confirmado'";
+          $sql = "SELECT * FROM pedido_orcamento WHERE `id_cliente`=$id AND `status`='cliente confirmado'";
           $stmt = $pdo->prepare($sql);
           $stmt->execute();
           $quantidadeTupla = $stmt->rowCount();
@@ -40,7 +40,7 @@
           
           if ($quantidadeTupla > 0) {
               foreach ($pedidos as $pedido) {
-                if($pedido['status'] == 'mecânico confirmado'){
+                if($pedido['status'] == 'cliente confirmado'){
 
                   $placa = $pedido['placaCarro'];
                   $personalizacao = $pedido['personalizacao'];
@@ -54,7 +54,7 @@
 
             <div class="cadastro">
 
-                <form action="../assets/scripts/cadastrarOrcamentoCliente.php?placa='.$placa.'" method="POST">
+                <form action="../assets/scripts/cadastrarAgendamentoPersonalizacao.php" method="POST">
 
                     <!--PARTE DA DATA E HORÁRIO DO AGENDAMENTO-->
                     <div class="subTitulo">
