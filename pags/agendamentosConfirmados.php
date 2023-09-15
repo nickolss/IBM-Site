@@ -156,10 +156,10 @@
                     
                     <div class="botoes">
                         <div class="botao">
-                        <button class="botao__laranja" type="submit" name="btn-pedido-orcamento" id="btn-pedido-orcamento"  value="confirmado">Agendar agendamento</button>
+                        <button class="botao__laranja" type="submit" name="btn-pedido-orcamento" id="btn-pedido-orcamento"  value="confirmado">Agendar</button>
                       </div>
                       <div class="botao">
-                        <button class="botao__laranja" type="submit" name="btn-pedido-orcamento" id="btn-pedido-orcamento"  value="cancelado">Cancelar agendamento</button>
+                        <button class="botao__laranja" type="submit" name="btn-pedido-orcamento" id="btn-pedido-orcamento"  value="cancelado">Cancelar</button>
                       </div>
                     </div>
 
