@@ -1,0 +1,152 @@
+
+/*tudo aqui*/
+
+hr.pro-linn {
+    background-color: #000;
+    height: 5px
+}
+
+h1.pro-promo {
+    text-align: center;
+    margin: 50px 0;
+    color: #df7369;
+    text-shadow: 2px 1px 1px #000;
+    font-weight: 700;
+    font-size: 60px;
+    margin-bottom: 10px
+}
+p.pro-formatar {
+    font-size: 1.1em;
+    text-align: center;
+    margin: 0 200px
+}
+
+.forte a {
+    display: block;
+    font-size: 1em
+}
+
+.forte a:hover {
+    transform: scale(1.1);
+    transition: all .3s ease;
+    cursor: pointer;
+    color: #000
+}
+
+.pro-aumentar {
+    display: block
+}
+
+.pro-aumentar:hover {
+    transform: scale(1.1);
+    transition: all .3s ease;
+    cursor: pointer;
+    color: #000
+}
+
+.pro-pro-pro-card1 {
+    width: 200px;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0
+}
+
+.pro-pro-pro-card2 {
+    width: 200px;
+    height: 280px;
+    position: relative;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 5px 5px 1px #a9a9a9
+}
+.main__title{
+    color: #FF7769;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-top: 2%;
+}
+
+.card-produto-dinamico{
+    height: 400px;
+    padding: 10px;
+   
+}
+
+
+
+.card-produto-dinamico img.imagens-prod{
+    background-color: #a9a9a9;
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover;
+}
+.card-produto-dinamico-titulo{
+    text-align: center;
+    
+}
+
+hr.card-produto-dinamico-linha{
+    background-color: #000000;
+    height: 2px;
+}
+.card-produto-dinamico-preco-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.card-produto-dinamico-preco-button button{
+   border: none;
+   background-color: white;
+   text-align: end;
+   padding: 0;
+}
+
+.card-produto-dinamico-preco-button-texto{
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+@media (max-width:1199px) {
+    .legal {
+        margin-bottom: 50px
+    }
+}
+
+@media (max-width:458px) and (min-width:320px) {
+   
+    h1.pro-promo {
+        text-align: center;
+        margin: 50px 0;
+        color: #df7369;
+        text-shadow: 2px 1px 1px #000;
+        font-weight: 700;
+        font-size: auto;
+        margin-bottom: 10px
+    }
+}
+@media (max-width:767px) {
+    p.pro-formatar {
+        font-size: 1.1em;
+        text-align: center;
+        margin: auto
+    }
+
+   
+}
+.espaco_invisivel{
+    display: none;
+}
+
+@media (max-width:800px) {
+   .espaco_invisivel{
+        display: block;
+   }
+
+   
+}
+/*fim aqui*/

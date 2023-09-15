@@ -84,29 +84,36 @@ $(document).ready(function() {
 
   //Aumentar ou subtrair itens no carrinho
 
-  const spanContador = document.getElementById('contador_carrinho_header');
-  const botaoAcrescentar = document.getElementById('botaoAcrescentar_carrinho_header');
-  const botaoSubtrair = document.getElementById('botaoSubtrair_carrinho_header');
+ // Quando o botão de acrescentar for clicado
+$('.botaoAcrescentar_carrinho_header').click(function () {
+  var idProduto = $(this).data('id');
   
-  
-  let contador = 1;
-  
-  
-  const atualizarContador = () => {
-    spanContador.textContent = contador;
-  };
-  
-  botaoAcrescentar.addEventListener('click', () => {
-    contador++; 
-    atualizarContador(); 
+  // Faça uma solicitação AJAX para o servidor para acrescentar um item
+  $.ajax({
+      url: 'header.php',
+      method: 'POST',
+      data: { idProduto: idProduto, acao: 'acrescentar' },
+      success: function (response) {
+          // Atualize a quantidade na interface do usuário com base na resposta
+          $('.contador_carrinho_header[data-id="' + idProduto + '"]').text(response.quantidade);
+      }
   });
+});
+
+// Quando o botão de diminuir for clicado
+$('.botaoSubtrair_carrinho_header').click(function () {
+  var idProduto = $(this).data('id');
   
- 
-  botaoSubtrair.addEventListener('click', () => {
-    
-    if (contador > 1) {
-      contador--; 
-      atualizarContador(); 
-    }
+  // Faça uma solicitação AJAX para o servidor para diminuir um item
+  $.ajax({
+      url: 'header.php',
+      method: 'POST',
+      data: { idProduto: idProduto, acao: 'diminuir' },
+      success: function (response) {
+          // Atualize a quantidade na interface do usuário com base na resposta
+          $('.contador_carrinho_header[data-id="' + idProduto + '"]').text(response.quantidade);
+      }
   });
+});
+
   

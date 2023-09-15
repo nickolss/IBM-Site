@@ -40,6 +40,7 @@
 	?>
 
 	<main class="principal">
+		
 		<section class="informacoes">
 			<div class="banner">
 				<h2 class="banner__titulo">Olá, <?= $_SESSION['nomeCliente'] ?>!</h2>

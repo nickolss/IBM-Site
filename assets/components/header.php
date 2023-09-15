@@ -1,49 +1,48 @@
-<?php 
-   require_once('../assets/scripts/conexao.php');
-   // Inicia a sessão
-   if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
+<?php
+require_once('../assets/scripts/conexao.php');
+require_once('../assets/scripts/conexao2.php');
+require_once('../assets/scripts/iniciarSessao.php');
+
 
 
 // Verifica se o formulário foi enviado
 if (isset($_GET['busca'])) {
     // Consulta SQL para buscar os IDs dos produtos que correspondem à pesquisa
     $pesquisa = ($_GET['busca']);
-    $sql = "SELECT codigoProduto FROM produto WHERE nome LIKE '%$pesquisa%' OR preco LIKE '%$pesquisa%' OR marca LIKE '%$pesquisa%' OR descricao LIKE '%$pesquisa%' OR customizações LIKE '%$pesquisa%' ";
-    
-    
+    $sql = "SELECT codigoProduto FROM produto WHERE nome LIKE '%$pesquisa%' OR preco LIKE '%$pesquisa%' OR marca LIKE '%$pesquisa%' OR descricao LIKE '%$pesquisa%' OR customizações LIKE '%$pesquisa%'";
+
+
     $resultado = mysqli_query($conexao, $sql);
 
     // Array para armazenar os IDs dos produtos encontrados
-   
+
     $idsProdutos = [];
-    
+
 
     // Verificar se a consulta retornou resultados
     if ($resultado) {
         while ($linha = mysqli_fetch_assoc($resultado)) {
             $idsProdutos[] = $linha['codigoProduto'];
         }
-       
     }
-    if(!empty($idsProdutos)){
-        print_r ($idsProdutos);
-    // Armazenar os IDs dos produtos na sessão
-    $_SESSION['idsProdutos'] = $idsProdutos;
-    $_SESSION['buscaFeita'] = $pesquisa;
-   
-
-    // Redirecionar para a página de resultados
     if (!empty($idsProdutos)) {
-        header("Location: produtos.php");
-        exit();
-    }  }else{
+        print_r($idsProdutos);
+        // Armazenar os IDs dos produtos na sessão
+        $_SESSION['idsProdutos'] = $idsProdutos;
+        $_SESSION['buscaFeita'] = $pesquisa;
+
+
+        // Redirecionar para a página de resultados
+        if (!empty($idsProdutos)) {
+            header("Location: produtos-categoria.php");
+            exit();
+        }
+    } else {
         $idsProdutos = 0;
         $_SESSION['buscaFeita'] = $pesquisa;
         $_SESSION['idsProdutos'] = $idsProdutos;
-        header("Location: produtos.php");
-    }        
+        header("Location: produtos-categoria.php");
+    }
 }
 ?>
 <header>
@@ -72,107 +71,160 @@ if (isset($_GET['busca'])) {
             </ul>
         </div>
     </div>
-   <?php
-            if (isset($_GET['adicionar'])) {
-                $idProd = (int)$_GET['adicionar'];
-                
-                // Verifique se o ID do produto existe no array de IDs de produtos
-                if (isset($idsProdutos[$idProd])) {
-                    $codigoProduto = $idsProdutos[$idProd];
-                    
-                    // Consulta ao banco de dados para obter as informações do produto
-                    $sqlProduto = "SELECT nome, preco FROM produto WHERE codigoProduto = $codigoProduto";
-                    $resultProduto = mysqli_query($conexao, $sqlProduto);
-                    
-                    if ($resultProduto && mysqli_num_rows($resultProduto) > 0) {
-                        $rowProduto = mysqli_fetch_assoc($resultProduto);
-                        $nomeProduto = $rowProduto['nome'];
-                        $precoProduto = $rowProduto['preco'];
-                        
-                        // Verifique se o produto já está no carrinho
-                        if (isset($_SESSION['carrinho'][$idProd])) {
-                            $_SESSION['carrinho'][$idProd]['quantidade']++;
-                        } else {
-                            $_SESSION['carrinho'][$idProd] = array(
-                                'quantidade' => 1,
-                                'nome' => $nomeProduto,
-                                'preco' => $precoProduto
-                            );
-                        }
-                        
-                        echo '<script>alert("O item foi adicionado ao carrinho");</script>';
-                    } else {
-                        die('Produto não encontrado no banco de dados.');
-                    }
+    <?php
+    if (isset($_GET['adicionar'])) {
+        $idProd = (int)$_GET['adicionar'];
+        // Verifique se o ID do produto existe no array de IDs de produtos
+        if (isset($idsProdutos[$idProd])) {
+            $codigoProduto = $idsProdutos[$idProd];
+
+            // Consulta ao banco de dados para obter as informações do produto
+            $sqlProduto = "SELECT nome, preco FROM produto WHERE codigoProduto = $codigoProduto";
+            $resultProduto = mysqli_query($conexao, $sqlProduto);
+
+            if ($resultProduto && mysqli_num_rows($resultProduto) > 0) {
+                $rowProduto = mysqli_fetch_assoc($resultProduto);
+                $nomeProduto = $rowProduto['nome'];
+                $precoProduto = $rowProduto['preco'];
+
+
+                // Verifique se o produto já está no carrinho
+                if (isset($_SESSION['carrinho'][$idProd])) {
+                    $_SESSION['carrinho'][$idProd]['quantidade']++;
                 } else {
-                    die('ID do produto inválido.');
+                    $_SESSION['carrinho'][$idProd] = array(
+                        'quantidade' => 1,
+                        'nome' => $nomeProduto,
+                        'preco' => $precoProduto,
+
+                    );
+                }
+            } else {
+                die('Produto não encontrado no banco de dados.');
+            }
+        } else {
+            die('ID do produto inválido.');
+        }
+    }
+
+
+
+    if (isset($_POST['idProduto']) && isset($_POST['acao'])) {
+        $idProduto = (int)$_POST['idProduto'];
+        $acao = $_POST['acao'];
+
+        // Lógica para atualizar o carrinho com base na ação (acrescentar ou diminuir)
+        if ($acao === 'acrescentar') {
+            if (isset($_SESSION['carrinho'][$idProduto])) {
+                $_SESSION['carrinho'][$idProduto]['quantidade']++;
+            }
+        } elseif ($acao === 'diminuir') {
+            if (isset($_SESSION['carrinho'][$idProduto])) {
+                $_SESSION['carrinho'][$idProduto]['quantidade']--;
+                if ($_SESSION['carrinho'][$idProduto]['quantidade'] <= 0) {
+                    unset($_SESSION['carrinho'][$idProduto]);
                 }
             }
-   ?>
+        }
+
+        // Retorne a nova quantidade como resposta
+        $quantidade = isset($_SESSION['carrinho'][$idProduto]) ? $_SESSION['carrinho'][$idProduto]['quantidade'] : 0;
+        echo json_encode(['quantidade' => $quantidade]);
+    }
+
+    $carrinho = isset($_SESSION['carrinho']) ? $_SESSION['carrinho'] : array();
+
+    // Inicialize uma variável para armazenar o total
+    $total = 0;
+
+    // Percorra os itens do carrinho e some os valores
+    foreach ($carrinho as $item) {
+        $preco = floatval($item['preco']);
+        $quantidade = intval($item['quantidade']);
+        $subtotal = $preco * $quantidade;
+        $total += $subtotal;
+    }
+
+    if (isset($_GET['remover'])) {
+
+        $idProdutoRemover = (int)$_GET['remover'];
+
+        // Verifique se o produto está no carrinho antes de removê-lo
+
+        if (isset($_SESSION['carrinho'][$idProdutoRemover])) {
+
+            // Remova o produto do carrinho
+
+            unset($_SESSION['carrinho'][$idProdutoRemover]);
+        } else {
+
+            echo '<script>alert("O item não está no carrinho");</script>';
+        }
+    }
+    ?>
     <div id="fade"></div>
     <nav id="carrinho__header">
         <img class="seta__header__carrinho" src="../assets/img/seta-modal.svg" alt="">
-        <div id="carrinho__header_vazio">
-            <img width="100px" src="../assets/img/iconeSacolaCompras.svg" alt="">
-            <p>Não há produtos ainda</p>
-        </div>
-        <div id="itens__header__modal_carrinho">
-            <div class="table__itens_header_carrinho">
-                <table style="border-collapse: separate;border-spacing: 0 10px ; ">
-                    <tbody>
-                        
-                    <?php 
-                        if(empty($idsProdutos)){
-                            echo 'true';
-                        }else{
-                            echo 'falswe';
-                        }
-                            if(!empty($idsProdutos)){
-                            foreach($_SESSION['carrinho'] as $idsProdutos => $value){ 
-                               ?>
-                            
-                        <tr >    
-                        <td class="img__table__header_carrinho" style="width: 40%;"> <img src="" alt=""> </td>
-                      
-                        <td class="info__table__header_carrinho">
-                              <div>
-                                <h2><?php echo $value['nome'] ?></h2>
-                              </div>
-                              <div><h3>R$:<?php echo $value['preco'] ?></h3></div>
-                            <div class="table_itens__header__carrinho__config">
-                                <div class="table__itens_header_carrinho_botoes">
-                                    <button id="botaoSubtrair_carrinho_header">-</button>
-                                    <span id="contador_carrinho_header"></span>
-                                    <button id="botaoAcrescentar_carrinho_header">+</button>
-                                </div>
-                                
-								<a style="border: none; color: #003445; background-color: #fff; text-decoration: none" href="">Excluir</a>
-								
-								<span href="produtos.php"></span>
-							
-                            </div>
-                        </td>
-                        </tr>
-                        <?php }}else{
-                            echo "teste";
-                        } ?>
-                    </tbody>
-                </table>
+
+        <?php if (!empty($idsProdutos)) { ?>
+
+            <div id="itens__header__modal_carrinho">
+                <div class="table__itens_header_carrinho">
+                    <table style="border-collapse: separate;border-spacing: 0 10px ; ">
+                        <tbody>
+
+                            <?php
+                            foreach ($_SESSION['carrinho'] as $idsProdutos => $value) {
+                            ?>
+
+                                <tr>
+                                    <td class="img__table__header_carrinho" style="width: 40%;"> <img src="" alt="..."> </td>
+
+                                    <td class="info__table__header_carrinho">
+                                        <div>
+                                            <h2><?php echo $value['nome'] ?></h2>
+                                        </div>
+                                        <div>
+                                            <h3>R$:<?php echo $value['preco'] ?></h3>
+                                        </div>
+                                        <div class="table_itens__header__carrinho__config">
+                                            <div class="table__itens_header_carrinho_botoes">
+                                                <button id="botaoSubtrair_carrinho_header" data-id="<?php echo $idsProdutos ?>">-</button>
+                                                <span id="contador_carrinho_header"><?php echo $value['quantidade'] ?></span>
+                                                <button id="botaoAcrescentar_carrinho_header" data-id="<?php echo $idsProdutos ?>">+</button>
+                                            </div>
+
+                                            <a style="border: none; color: #003445; background-color: #fff; text-decoration: none" href="?remover=<?php echo $idsProdutos ?>">Excluir</a>
+
+                                            <span href="produtos.php"></span>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
 
 
-            </div>
-            <br>
-            <br>
-            <div class="carrinho__header__finalizacao">
-            <p class="fs-2">Total: R$</p>
-                <div class="text-center">
-                    <button><a href="../pags/carrinho.php"> Ver Carrinho</a> </button>
-                    <a style="text-decoration: none; color: #003445" href="">Frete grátis com o Plano Turbinado</a>
                 </div>
+                <br>
+                <br>
+                <div class="carrinho__header__finalizacao">
+                    <p class="fs-2">Total: R$ <?php echo number_format($total, 2); ?></p>
+                    <div class="text-center">
+                        <button><a href="../pags/carrinho.php"> Ver Carrinho</a> </button>
+                        <a style="text-decoration: none; color: #003445" href="">Frete grátis com o Plano Turbinado</a>
+                    </div>
 
 
+                </div>
             </div>
-        </div>
+        <?php } else { ?>
+            <div id="carrinho__header_vazio">
+                <img width="100px" src="../assets/img/iconeSacolaCompras.svg" alt="">
+                <p>Não há produtos ainda</p>
+            </div>
+        <?php }  ?>
 
     </nav>
 </header>
@@ -184,15 +236,15 @@ if (isset($_GET['busca'])) {
         <div class="container  text-center">
             <div class="row align-items-center" style="height: 150px;">
                 <div class="col " style="padding: 0px 20px;">
-              
-                    <div class="header_search" >
-                    <form style="width: 100%; " action="" method="GET" class="d-flex" role="search">
-                        <button  type="submit"><img width="30px" height="auto" src="../assets/img/lupa.png" alt="Pesquisar"></button>
-                       
-                        <input name="busca" class="form-control input_header_search" type="text" placeholder="Pesquisar...">
+
+                    <div class="header_search">
+                        <form style="width: 100%; " action="" method="GET" class="d-flex" role="search">
+                            <button type="submit"><img width="30px" height="auto" src="../assets/img/lupa.png" alt="Pesquisar"></button>
+
+                            <input name="busca" class="form-control input_header_search" type="text" placeholder="Pesquisar...">
                         </form>
                         <div style="display: flex; justify-content: center; align-items: center; "> <button type="button" class="btn-close lupa" aria-label="Close"></button></div>
-                     
+
                     </div>
                 </div>
             </div>
@@ -285,10 +337,10 @@ if (isset($_GET['busca'])) {
             <div class="row align-items-center" style="height: 150px;">
                 <div class="col " style="padding: 0px 20px;">
                     <div class="header_search">
-                    <form style="width: 100%; " action="" method="GET" class="d-flex" role="search">
-                    <button  type="submit"><img width="30px" height="auto" src="../assets/img/lupa.svg" alt="Pesquisar"></button>
-                        <input name="busca" class="form-control input_header_search" type="text" placeholder="Pesquisar...">
-                    </form>
+                        <form style="width: 100%; " action="" method="GET" class="d-flex" role="search">
+                            <button type="submit"><img width="30px" height="auto" src="../assets/img/lupa.svg" alt="Pesquisar"></button>
+                            <input name="busca" class="form-control input_header_search" type="text" placeholder="Pesquisar...">
+                        </form>
                         <div style="display: flex; justify-content: center; align-items: center;"> <button type="button" class="btn-close lupa" aria-label="Close"></button></div>
                     </div>
                 </div>
