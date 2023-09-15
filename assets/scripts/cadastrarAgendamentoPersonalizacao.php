@@ -25,7 +25,7 @@
 
             if($stmtOrcamento->execute()){
                 echo "<script>
-                        alert('Agendamento cancelado.');
+                        alert('Agendamento confirmado.');
                         setInterval( function() {
                             window.location.href = '../../pags/perfil.php'
                         }, 0)
