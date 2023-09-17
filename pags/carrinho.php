@@ -67,10 +67,12 @@
                     <p class="fs-2">Total: R$<?php echo getTotalPurchaseAmount($_SESSION['carrinho']); ?></p>
                 </div>
 				<?php
+                    $root = $_SERVER['HTTP_HOST'];
+                    $caminho = "http://$root/IBM-site/pags/carrinho.php";
                     if(isset($_GET['adicionar'])){
                         //Adicionando ao carrinho
                         $id = (int) $_GET['adicionar'];
-                        
+        
                         //$session = $_SESSION['carrinho']; 
                         // print_r ($session);
                         // print_r ($items);
@@ -79,12 +81,12 @@
                         
                             if(array_key_exists($id, $_SESSION['carrinho'])){
                                 $_SESSION['carrinho'][$id]['quantidade']++;
-                                echo '<script>window.location.href = "carrinho.php";</script>';
+                                echo '<script>window.location.href = "$caminho";</script>';
                                 exit();
                             } else {
                                 $_SESSION['carrinho'][$id] = array('index' => $index, 'imagem' => $items[$index]['imagem'], 'quantidade'=>1, 'id'=> $id,'nome'=>$items[$index]['nome'], 'preco'=>$items[$index]['preco']);
                                 //header("Location: index.php"); // Redireciona de volta ao carrinho após a remoção
-                                echo '<script>window.location.href = "carrinho.php";</script>';
+                                echo '<script>window.location.href = "$caminho";</script>';
                                 exit();
                             }
                             //Adicionado ao carrinho
@@ -94,7 +96,7 @@
                         if(isset($_SESSION['carrinho'][$id])){
                             unset($_SESSION['carrinho'][$id]);
                             //header("Location: index.php"); // Redireciona de volta ao carrinho após a remoção
-                            echo '<script>window.location.href = "carrinho.php";</script>';
+                            echo '<script>window.location.href = "$caminho";</script>';
                             exit();
                         }
                     }
@@ -126,6 +128,8 @@
 </html>
 
 <?php
+    $root = $_SERVER['HTTP_HOST'];
+    $caminho = "http://$root/IBM-site/pags/carrinho.php";
     if(isset($_GET['adicionar'])){
         //Adicionando ao carrinho
         $idProduto = (int) $_GET['adicionar'];
@@ -135,7 +139,7 @@
             } else {
                 $_SESSION['carrinho'][$idProduto] = array('quantidade'=>1, 'nome'=>$items[$idProduto]['nome'], 'preco'=>$items[$idProduto]['preco']);
                 //header("Location: index.php"); // Redireciona de volta ao carrinho após a remoção
-                echo '<script>window.location.href = "carrinho.php";</script>';
+                echo '<script>window.location.href = "$caminho";</script>';
                 exit();
             }
             //Adicionado ao carrinho
@@ -148,7 +152,7 @@
         if(isset($_SESSION['carrinho'][$idProdutoRemover])){
             unset($_SESSION['carrinho'][$idProdutoRemover]);
             //header("Location: index.php"); // Redireciona de volta ao carrinho após a remoção
-            echo '<script>window.location.href = "carrinho.php";</script>';
+            echo '<script>window.location.href = "$caminho";</script>';
             exit();
         }
     }
