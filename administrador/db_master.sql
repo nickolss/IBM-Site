@@ -456,16 +456,13 @@ CREATE TABLE IF NOT EXISTS `favoritos` (
 --
 -- Estrutura da tabela `comentarios`
 --
-DROP TABLE IF EXISTS `comentarios`
-
+DROP TABLE IF EXISTS `comentarios`;
 CREATE TABLE IF NOT EXISTS `comentarios` (
-    `id` INT NOT NULL AUTO_INCREMENT,
-    `nome_cliente` varchar(255) NOT NULL,
-    `comentario` TEXT NOT NULL,
-    `data_publicacao` DATETIME DEFAULT CURRENT_TIMESTAMP
-    PRIMARY KEY (`id`),
-    FOREIGN KEY (`id_cliente`) REFERENCES `cliente`(`nome`)
-)ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+  `id` int NOT NULL,
+  `nome_cliente` varchar(200) NOT NULL,
+  `comentario` text NOT NULL,
+  `data_publicacao` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
 ;
 

@@ -32,7 +32,7 @@
         <div class="card-container">
             <?php
                 $categoria = 'som-multimidia-eletronicos';
-                @require_once('../assets/components/cards-produto.php');
+                require_once('../assets/components/cards-produto.php');
             ?>
         </div>
     </main>
