@@ -52,10 +52,12 @@
                 $client_row = $stmt->fetch(PDO::FETCH_ASSOC); //vetor da tupla onde o campo email é igual ao email vindo do formulario
 
                 if($quantidadeRegistro < 1){
+                    $root = $_SERVER['HTTP_HOST'];
+                    $caminho = "http://$root/IBM-site/pags/recuperar-senha.php";
                     echo "<script>
                         alert('ERRO: Link inválido. Tente novamente.');
                         setInterval( function() {
-                            window.location.href = 'recuperar-senha.php'
+                            window.location.href = '$caminho'
                         }, 0)
                         </script>";
                 }else{
@@ -97,10 +99,12 @@
                 }
 
             }else{
+                $root = $_SERVER['HTTP_HOST'];
+                $caminho = "http://$root/IBM-site/pags/recuperar-senha.php";
                 echo "<script>
                     alert('ERRO: Link inválido. Tente novamente.');
                     setInterval( function() {
-                        window.location.href = 'recuperar-senha.php'
+                        window.location.href = '$caminho'
                     }, 0)
                     </script>";
             }

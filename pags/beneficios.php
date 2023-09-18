@@ -1,11 +1,13 @@
 <?php
 require_once('../assets/scripts/iniciarSessao.php');
 if ($_SESSION['plano'] != 'turbinado') {
+  $root = $_SERVER['HTTP_HOST'];
+  $caminho = "http://$root/IBM-site/pags/perfil.php";
   echo "
   <script>
     alert('Você precisa assinar o plano turbinado.');
     setInterval( function() {
-      window.location.href = 'http://localhost/IBM-Site/pags/perfil.php'
+      window.location.href = '$caminho'
     }, 1000)
   </script>";
 }
