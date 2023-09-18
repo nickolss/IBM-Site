@@ -340,20 +340,24 @@ foreach ($chunksProdutos as $chunk) { ?>
                             <div class="card-produto-dinamico-preco-button-texto" >R$:<?php echo $precoProduto ?>,00</div>
                             <form action="../assets/scripts/cadastrarFavorito.php" method="POST">
                                 <input type="hidden" name="idProduto" id="idProduto" value="<?php echo $idsProdutos ; ?>">
-                                <button ><img width="30%"  src="../assets/img/heart.png" alt=""></button>
+                                <button ><img width="40%"  src="../assets/img/heart.png" alt=""></button>
                             </form>
-                            <button > <a href="?adicriona=<?php echo $idsProdutos ?>"> <img width="70%"  src="../assets/img/iconeadd.png" alt=""> </a></button>
+                            <button > <a href="?adicriona=<?php echo $idsProdutos ?>"> <img width="80%"  src="../assets/img/iconeadd.png" alt=""> </a></button>
 
                         </div>
-
-                       
-
                     </div>
-
+                    
                     </div>
 
                 </div>
-
+                <div class="comentarios">
+                    <p>Deixe um comentário:</p>
+                    <form method="POST" action="../assets/scripts/adicionarComentario.php">
+                        <label for="comentario">Comentário:</label>
+                        <textarea name="comentario" rows="2" cols="20" required></textarea><br>
+                        <input type="submit" value="Enviar Comentário">
+                    </form>
+                </div>
             </div>
 
             <?php }?>
