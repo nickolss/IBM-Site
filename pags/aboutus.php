@@ -50,14 +50,14 @@
                         <img class="card__img" src="../assets/img/about-oque.svg" alt="Icone O que Somos">
                         <div class="card__content">
                             <p class="card__title">O que fazemos?</p>
-                            <p class="card__description">Somos uma oficina responsável pela <a class="card__link" href="produtos.html">personalização</a> de carros e <a class="card__link" href="produtos.html">venda</a> de peças.</p>
+                            <p class="card__description">Somos uma oficina responsável pela <a class="card__link" href="produtos.php">personalização</a> de carros e <a class="card__link" href="produtos.php">venda</a> de peças.</p>
                         </div>
                     </div>
                     <div class="card" id="card__associar">
                         <img class="card__img" src="../assets/img/about-associar.png" alt="Icone Aperto de Mao">
                         <div class="card__content">
                             <p class="card__title">Como se Associar?</p>
-                            <p class="card__description">Acesse a área de <a class="card__link" href="vagas.html">vagas</a> para se tornar um de nossos associados.</p>
+                            <p class="card__description">Acesse a área de <a class="card__link" href="vagas.php">vagas</a> para se tornar um de nossos associados.</p>
                         </div>
                     </div>
                 </div>

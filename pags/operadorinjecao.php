@@ -109,7 +109,7 @@
       </div>
     </div>
     <div class="col">
-      <a href="../login.html" style="text-decoration: none; margin: 1rem auto;">
+      <a href="../pags/login.php" style="text-decoration: none; margin: 1rem auto;">
         <p id="botao-concurso">Inscreva-se</p>
       </a>
 

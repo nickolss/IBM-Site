@@ -70,7 +70,7 @@
       <hr>
       <div class="row">
         <div class="col">
-          <a style="text-decoration: none;" href="../login.html">
+          <a style="text-decoration: none;" href="../pags/login.php">
             <p id="botao-concurso">Inscreva-se</p>
           </a>
 
