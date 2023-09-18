@@ -143,14 +143,11 @@ VALUES
     '5dafc75f39ba4799e82ea71cdf69ff86'
   );
 
-<<<<<<< HEAD
-=======
 INSERT INTO `funcionario` (`rf`, `cpf`, `dataNasc`, `telefone`, `nome`, `email`, `senha`) VALUES
 (1, '40144cb62e2b174ad50971b5e02d5fbc', '2000-01-01', '11911111111', 'Nickolas', 'nickolas@turn.com', 'fe98774e68b811326a09e96d32f1ec1f'),
 (2, '3d0e7719ae8997bca163fb342bfd1ec8', '2000-01-01', '11922222222', 'Pedro', 'pedro@turn.com', '4bd8464f5f26f84deec45adcf12b0df8'),
 (3, '3241c1ec411f9da5bf9a68c88ce16d81', '2000-01-01', '11933333333', 'Tiago', 'tiagoAdm369@turn.com', 'fec732a02e93c288cd82b59625946d04'),
 (4, 'dccd57ebd372b8017913648067f72be1', '2000-01-01', '11944444444', 'Vinicius', 'vinicius@turn.com', '5dafc75f39ba4799e82ea71cdf69ff86');
->>>>>>> 44f3ed095ad9328358b76504bc7bb7e1ff13aa57
 -- --------------------------------------------------------
 --
 -- Estrutura da tabela `mecanico`
@@ -237,25 +234,8 @@ CREATE TABLE IF NOT EXISTS `produto` (
     'ferramentas-equipamentos'
   ) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `caminho_imagem` varchar(100) NOT NULL,
-<<<<<<< HEAD
-  `TG_categoria` enum(
-    'PC',
-    'SME',
-    'AA',
-    'CA',
-    'OF',
-    'BA',
-    'RT',
-    'PA',
-    'EP',
-    'PM',
-    'APM',
-    'FE'
-  ) DEFAULT NULL,
-=======
   `TG_categoria` enum('PC','SME','AA','CA','OF','BA','RT','PA','EP','PM','APM','FE') DEFAULT NULL,
 
->>>>>>> 44f3ed095ad9328358b76504bc7bb7e1ff13aa57
   PRIMARY KEY (`codigoProduto`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
