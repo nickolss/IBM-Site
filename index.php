@@ -226,7 +226,7 @@
                 <div class="col " style="padding: 0px 20px;">
               
                     <div class="header_search" >
-                    <form style="width: 100%; " action="produtos-categoria.php" method="GET" class="d-flex" role="search">
+                    <form style="width: 100%; " action="pags/produtos-categoria.php" method="GET" class="d-flex" role="search">
                         <button  type="submit"><img width="30px" height="auto" src="assets/img/lupa.png" alt="Pesquisar"></button>
                        
                         <input name="busca" class="form-control input_header_search" type="text" placeholder="Pesquisar...">
@@ -325,7 +325,7 @@
             <div class="row align-items-center" style="height: 150px;">
                 <div class="col " style="padding: 0px 20px;">
                     <div class="header_search">
-                    <form style="width: 100%; " action="produtos-categoria.php" method="GET" class="d-flex" role="search">
+                    <form style="width: 100%; " action="pags/produtos-categoria.php" method="GET" class="d-flex" role="search">
                     <button  type="submit"><img width="30px" height="auto" src="assets/img/lupa.svg" alt="Pesquisar"></button>
                         <input name="busca" class="form-control input_header_search" type="text" placeholder="Pesquisar...">
                     </form>
