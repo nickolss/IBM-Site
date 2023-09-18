@@ -338,8 +338,11 @@ foreach ($chunksProdutos as $chunk) { ?>
                         <div  class="card-produto-dinamico-preco-button">
 
                             <div class="card-produto-dinamico-preco-button-texto" >R$:<?php echo $precoProduto ?>,00</div>
-
-                            <button > <a href="?adicionar=<?php echo $idsProdutos ?>"> <img width="30%"  src="../assets/img/iconeadd.png" alt=""> </a></button>
+                            <form action="../assets/scripts/cadastrarFavorito.php" method="POST">
+                                <input type="hidden" name="idProduto" id="idProduto" value="<?php echo $idsProdutos ; ?>">
+                                <button ><img width="30%"  src="../assets/img/heart.png" alt=""></button>
+                            </form>
+                            <button > <a href="?adicriona=<?php echo $idsProdutos ?>"> <img width="70%"  src="../assets/img/iconeadd.png" alt=""> </a></button>
 
                         </div>
 
