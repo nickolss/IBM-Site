@@ -1,6 +1,6 @@
 <?php 
     require_once('../assets/scripts/conexao.php');
-    session_start();
+    require_once('../assets/scripts/iniciarSessao.php');
 ?>
 <header>
     <div id="header">
