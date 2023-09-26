@@ -111,6 +111,15 @@ hr.card-produto-dinamico-linha{
     font-weight: bold;
 }
 
+.fav__heart__icon{
+    width: 40%;
+}
+
+.fav__heart__icon:hover{
+    transform: scale(1.15);
+    transition-duration: 0.7s;
+}
+
 @media (max-width:1199px) {
     .legal {
         margin-bottom: 50px

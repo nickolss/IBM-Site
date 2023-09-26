@@ -279,10 +279,26 @@ if (isset($_GET['busca'])) {
                             <div  class="card-produto-dinamico-preco-button">
     
                                 <div class="card-produto-dinamico-preco-button-texto" >R$:<?php echo $precoProduto ?>,00</div>
-    
+                                <form action="../assets/scripts/cadastrarFavorito.php" method="POST">
+                                    <input type="hidden" name="idProduto" id="idProduto" value="<?php echo $idsProdutos ; ?>">
+                                    <?php
+                                        $sqlFav = "SELECT * FROM `favoritos` WHERE `id_produto`='$idsProdutos'";
+                                        $stmt = $pdo->query($sqlFav);
+                                        $stmt->execute();
+                                        $favoritos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                        $quantidadeTupla = $stmt->rowCount();
+
+                                        if($quantidadeTupla > 0){
+                                            echo '<button ><img class="fav__heart__icon" src="../assets/img/heart-filled.png" alt=""></button>';
+                                        }else{
+                                            echo '<button ><img class="fav__heart__icon" src="../assets/img/heart.png" alt=""></button>';
+                                        }
+                                        
+                                    ?>
+                                </form>
                                 <form method="POST" action="?adicionar=<?php echo $idsProdutos ?>">
                                     <button type="submit" name="adicionar" value="<?php echo $idsProdutos ?>">
-                                        <img width="30%" src="../assets/img/iconeadd.png" alt="">
+                                        <img width="70%" src="../assets/img/iconeadd.png" alt="">
                                     </button>
                                 </form>
     

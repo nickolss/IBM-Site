@@ -439,6 +439,20 @@ CREATE TABLE `pedido_orcamento`(
   FOREIGN KEY (`id_cliente`) REFERENCES `cliente`(`id`)
 );
 
+--
+-- Estrutura da tabela `favoritos`
+--
+DROP TABLE IF EXISTS `favoritos`;
+
+CREATE TABLE IF NOT EXISTS `favoritos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_cliente` int NOT NULL,
+  `id_produto` int NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`id_cliente`) REFERENCES `cliente`(`id`),
+  FOREIGN KEY (`id_produto`) REFERENCES `produto`(`codigoProduto`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
 ;
 
