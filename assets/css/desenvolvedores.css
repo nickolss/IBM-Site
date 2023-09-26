@@ -1,17 +1,38 @@
+@import url(variaveis-cores-fonte.min.css);
+
+.div__titulos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .equipe2023-title{
-    color: #DF7369;
-    font-weight: bold;
-    font-size: 3.3em;
-    text-shadow: 2px 1px 1px #00253283;
-    margin-top: 2%;
+    color: var(--vermelho);
+    text-align: center;
+    font-weight: bolder;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    font-size: 3rem;
+    margin-top: 20px;
 }
 
 .subtitle-equipe2023{
     margin-bottom: 3%;
     font-size: 1.4em;
+    text-align: justify;
+    max-width: 1200px;
+}
+
+.img__desenvolvedores{
+    border-radius: 40px;
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.2);
 }
 
 .informacoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
     text-shadow: 0.5px 0.5px 0.5px #00253283;
     margin-top: 2%;
@@ -19,23 +40,25 @@
 }
 
 .informacoes__cargo {
-    color: #DF7369;
+    color: var(--vermelho);
     font-size: 1.9rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
 
 .informacoes__carreira {
     font-size: 1.0rem;
-    color: rgba(1, 72, 96, 0.781);
+    color: var(--preto);
+    max-width: 350px;
 }
 
 .informacoes__nome {
     font-size: 2.0rem;
-    color: rgba(1, 72, 96, 0.781);
+    color: var(--preto);
 
 }
 
 .equipe{
-    transition: 1.5s;
+    transition: 1s;
     transform: translateY(0)
 }
 

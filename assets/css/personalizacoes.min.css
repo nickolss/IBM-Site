@@ -1,3 +1,4 @@
+@import url(variaveis-cores-fonte.min.css);
 
 #container__body{
     display: flex;
@@ -9,211 +10,215 @@ main{
     flex: 1;
 }
 
-.a__card{
-    text-decoration: none;
-    height: 100%;
-    color: black;
-}
-
-.a__card:hover{
-    text-decoration: none;
-    color: black;
-}
-
-.conteudo__body{
-    margin: 0 auto;
-    max-width: 800px;
-}
-
-.container__card{
+.main__title h1{
     display: flex;
-    flex-direction: row;
-    margin-bottom: 3%;
+    align-items: center;
+    justify-content: center;
+    color: var(--vermelho);
+    text-align: center;
+    font-weight: bolder;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    font-size: 3rem;
+    margin-top: 3rem;
+}
+
+.linha__cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-evenly;
+    width: 850px;
+}
+
+/*linha de cards que só possuem dois cards*/
+.cards2{
+    display: flex;
+    justify-content: center;
+}
+
+/*ards que só possuem dois cards*/
+.cards2 .card{
+    margin: 0rem 0.25rem 2rem 0.25rem;
 }
 
 .card{
-    border-radius: 20px;
+    background-color: var(--branco);
     width: 250px;
-    margin: 0.5%;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    cursor: pointer;
-}
-
-.card__maior{
-    width: 256px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 .card:hover{
     transform: scale(1.03);
     transition-duration: 0.5s;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
-.card .div__card__img__pneu{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px 0px 5px 0px;
-}
-
-.card .div__card__img__pneu .card__img__pneu{
-    mix-blend-mode: multiply;
-    height: 150px;
-}
-
-.card__img__rebaixamento{
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
-}
-
-.main__title h1{
-    color: #FF7769;
+.card__subtitle h2{
+    color: var(--vermelho);
     text-align: center;
-    font-weight: bold;
-    font-size: 2.5rem;
-    margin-top: 2%;
-}
-
-.sub__title h2{
-    color: #004762;
-    font-weight: 600;
+    font-weight: bolder;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.15);
     font-size: 2rem;
-    margin-top: 3%;
-}
-
-.card__titulo h3{
-    text-align: center;
-    color: #00384e;
-}
-
-.card__descricao{
-    font-size: 1.1rem;
-    text-align: justify;
-    padding: 0px 10px 0px 10px;
-}
-
-.cards__centralizados{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: -2%;
-}
-
-.card__pagrafo__adesivos{
+    margin-top: 2rem;
     text-align: center;
 }
 
-.linha{
+.a__card{
+    background-color: var(--branco);
+    text-decoration: none;
+    color: var(--preto);
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.a__card:hover{
+    text-decoration: none;
+    color: var(--preto);
+}
+
+.card__img, .card__title, .card__descricao{
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
-.coluna{
-    margin: 0.5%;
+.card__title{
+    padding-top: 0.4rem;
+    color: var(--preto);
 }
 
-.card__descricao__some{
-    display: none;
+.card__descricao p{
+    padding: 0.35rem;
+    color: var(--preto);
 }
 
-@media only screen and (max-width: 1700px){
-    .linha{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .coluna{
-        margin-bottom: 3%;
-    }
-
-    .modificacao__grande{
-        display: none;
-    }
+.imagem__card{
+    border-radius: 10px 10px 0px 0px;
 }
 
-@media only screen and (min-width: 1701px){
-    .segunda__coluna{
-        margin-left: 5%;
+.div__card__img__pneu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card__img__pneu, .imagem__card__modificacoes-in{
+    mix-blend-mode: multiply;
+    width: 150px;
+}
+
+/*card da tunagem remanufaturada*/
+#a__card__tunagem2{
+    height: 100%;
+}
+
+/*imagem do card da tunagem remanufaturada*/
+#imagem__card__tunagem2{
+    mix-blend-mode: multiply;
+    margin-top: 1.4rem;
+    width: 175px;
+}
+
+/*imagem do card caixa de som*/
+#imagem__card__caixa-som{
+    margin-top: 0.8rem;
+}
+
+.imagem__card__adesivo, .imagem__card__tunagem{
+    mix-blend-mode: multiply;
+    width: 200px;
+}
+
+.imagem__card__modificacoes-ex{
+    mix-blend-mode: multiply;
+    width: 248px;
+}
+
+
+
+@media only screen and (max-width: 1000px){
+    .cards{
+        width: 800px;
+    }
+    
+    .card{
+        width: 200px;
     }
 
-    .sub__title{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .imagem__card{
+        width: 200px;
     }
 
-    .card__modificacoes{
-        display: flex;
-        flex-direction: row;
+    .card__img__pneu, .imagem__card__modificacoes-in{
+        width: 100px;
     }
 
-    .card__modificacao{
-        margin: 1%;
-        width: 256px;
-    }
-
-    .modificacoes__mediapequena{
-        display: none;
-    }
-
-    .card__img__caixasom{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-    }
-
-    #img__caixasom{
+    .imagem__card__adesivo, .imagem__card__tunagem{
         width: 150px;
     }
 
-    .segunda__coluna__modificacoes{
-        margin-left: 0;
+    #imagem__card__banco{
+        width: 170px;
+    }
+
+    #imagem__card__tunagem2{
+        mix-blend-mode: multiply;
+        margin-top: 1.4rem;
+        width: 125px;
+    }
+
+    #titulo__card__remanufaturado{
+        font-size: 1.55rem;
     }
 }
 
-@media only screen and (max-width: 825px){
-    .container__card{
+@media only screen and (max-width: 800px){
+    .cards{
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
-        margin-bottom: 3%;
-    }
-    
-    h2{
-        text-align: center;
+        align-items: center;
+        width: auto;
     }
 
     .card{
-        margin-bottom: 4%;
         width: 250px;
     }
 
-    .card__descricao__some{
-        display: block;
+    .imagem__card{
+        width: 250px;
     }
 
-    .card__descricao__aparece{
-        display: none;
+    .card__img__pneu, .imagem__card__modificacoes-in{
+        width: 150px;
     }
-}
 
-@media only screen and (max-width:800px){
-    .main__title{
-        margin-top: 10%;
+    .imagem__card__adesivo, .imagem__card__tunagem{
+        width: 200px;
     }
-}
 
-@media only screen and (max-width:620px){
-    .main__title{
-        margin-top: 15%;
+    #imagem__card__banco{
+        width: 200px;
     }
-}
 
-@media only screen and (max-width:405px){
-    .main__title{
-        margin-top: 20%;
+    #imagem__card__tunagem2{
+        width: 175px;
+    }
+
+    #titulo__card__remanufaturado{
+        font-size: 1.8rem;
     }
 }

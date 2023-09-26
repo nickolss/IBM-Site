@@ -4,10 +4,17 @@
     --preto: #1C1C1C;
     --amarelo: #FFC857;
     --vermelho: #DB162F;
-
+    --background: #e6e6e6;
+    
 }
 
 @font-face {
     font-family: fast-hand;
     src: local(fast-hand), url(../fonte/fast-hand.otf);
  }
+
+@media only screen and (max-width: 900px){
+    main{
+        margin-top: 140px;
+    }
+} 

@@ -1,3 +1,5 @@
+@import url(variaveis-cores-fonte.min.css);
+
 .upload{
     width: 140px;
     position: relative;
@@ -7,16 +9,15 @@
 
   .upload img{
     border-radius: 50%;
-    border: 5px solid #014961;
+    border: 5px solid var(--vermelho);
     width: 150px;
     height: 150px;
   }
 
-  .upload .rightRound{
+  .upload .rightRound, .rightRoundConfirm{
     position: absolute;
     bottom: 0;
     right: 0;
-    background: #014961;
     width: 32px;
     height: 32px;
     line-height: 33px;
@@ -26,11 +27,19 @@
     cursor: pointer;
   }
 
+  .upload .rightRound{
+    background-color: var(--preto);
+  }
+
+  .rightRoundConfirm{
+    background-color: var(--preto);
+  }
+
   .upload .leftRound{
     position: absolute;
     bottom: 0;
     left: 0;
-    background: #DF7369;
+    background: var(--preto);
     width: 32px;
     height: 32px;
     line-height: 33px;
@@ -52,4 +61,26 @@
 
   .upload input::-webkit-file-upload-button, .upload input[type=submit]{
     cursor: pointer;
+  }
+
+  @media only screen and (max-width: 1200px){
+    .upload img{
+      border-radius: 50%;
+      border: 5px solid var(--vermelho);
+      width: 100px;
+      height: 100px;
+    }
+
+    .upload .rightRound, .rightRoundConfirm{
+      position: absolute;
+      bottom: 0;
+      right: 10%;
+      width: 32px;
+      height: 32px;
+      line-height: 33px;
+      text-align: center;
+      border-radius: 50%;
+      overflow: hidden;
+      cursor: pointer;
+    }
   }

@@ -1,7 +1,9 @@
+@import url(variaveis-cores-fonte.min.css);
+
 .card{
     height: 250px;
 }
 
 .botao_orcamento:hover{
-    color: white;
+    color: var(--branco);
 }

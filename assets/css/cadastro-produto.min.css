@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap);
 @import url(cadastro.min.css);
+@import url(variaveis-cores-fonte.min.css);
 
 .principal{
     margin: 5.4rem 1rem;
@@ -12,7 +13,7 @@
     font-size: 100%;
     padding: 0.8em;
     outline: none;
-    border: 2px solid #014961;
+    border: 2px solid var(--preto);
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 20px;
     width: 100%;
@@ -26,7 +27,7 @@
     padding: 0.4em;
     background-color: #e8e8e8;
     height: 30px;
-    color: #014961;
+    color: var(--vermelho);
 }
 
 .caixa__input :is(input:focus, input:valid)~label {
@@ -36,7 +37,7 @@
     padding: 0.4em;
     background-color: #e8e8e8;
     height: 30px;
-    color: #014961;
+    color: var(--vermelho);
   }
 
   .caixa__input :is(input[type=number]:focus, input[type=number]:valid)~label {
@@ -46,14 +47,14 @@
     padding: 0.4em;
     background-color: #e8e8e8;
     height: 30px;
-    color: #014961;
+    color: var(--vermelho);
   }
 
 .caixa__input #categoria {
     font-size: 100%;
     padding: 0.8em;
     outline: none;
-    border: 2px solid #014961;
+    border: 2px solid var(--preto);
     background-color: rgba(255, 255, 255, 0.8);
     max-width: 300px;
     border-radius: 20px;
@@ -73,7 +74,7 @@
     padding: 0.4em;
     background-color: #e8e8e8;
     height: 30px;
-    color: #014961;
+    color: var(--preto);
 }
 
 .picture{
@@ -83,7 +84,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #014961;
+    color: var(--preto);
     border: 2px dashed currentColor;
     cursor: pointer;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
@@ -102,7 +103,7 @@
 }
 
 .picture:focus{
-    outline: 2px solid #014961;
+    outline: 2px solid var(--vermelho);
     transition-duration: 1s;
 }
 
@@ -124,17 +125,19 @@
     padding: 10px;
     margin-top: 25px;
     font-size: 1.2rem;
-    width: 200px;
+    width: 250px;
     height: 45px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    background-color: #FF7769;
+    background-color: var(--preto);
+    color: var(--amarelo);
 }
 
 .formulario__botao:hover{
     transform: scale(1.02);
     transition-duration: 0.5s;
-    background-color: #FF7769;
-    box-shadow: 0 3px 4px rgba(0,0,0,0.12), 0 3px 3px rgba(0,0,0,0.24);
+    box-shadow: 1px 3px 4px rgba(0,0,0,0.12), 0 3px 3px rgba(0,0,0,0.24);
+    background-color: var(--preto);
+    color: var(--amarelo);
 }
 
 

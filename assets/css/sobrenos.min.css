@@ -1,3 +1,5 @@
+@import url(variaveis-cores-fonte.min.css);
+
 #container__body{
     display: flex;
     flex-direction: column;
@@ -9,11 +11,12 @@ main{
 }
 
 .mainTitle{
-    color: #FF7769;
-    font-weight: 600;
-    margin-top: 1.4%;
-    font-size: 3.5em;
+    color: var(--vermelho);
     text-align: center;
+    font-weight: bolder;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    font-size: 3rem;
+    margin-top: 20px;
 }
 
 .historia{
@@ -30,10 +33,10 @@ main{
 }
 
 #hist__title{
-    color: #014961;
+    color: var(--vermelho);
     font-weight: 600;
-    margin-top: 1.4%;
-    font-size: 2.5em;
+    margin-top: 20px;
+    font-size: 2.3em;
 }
 
 .paragrafo__hist{
@@ -52,14 +55,14 @@ main{
     position: relative;
     width: 300px;
     height: 200px;
-    background-color: #f2f2f2;
+    background-color: var(--preto);
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     perspective: 1000px;
-    box-shadow: 0 0 0 3px #014961;
+    box-shadow: 0 0 0 3px var(--amarelo);
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
@@ -69,13 +72,13 @@ main{
   
   .card img {
     width: 48px;
-    fill: #014961;
+    fill: var(--amarelo);
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   
   .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 0 3px #FF7769;
+    box-shadow: 0 0 0 3px var(--vermelho);
   }
   
   .card__content {
@@ -86,7 +89,7 @@ main{
     height: 100%;
     padding: 20px;
     box-sizing: border-box;
-    background-color: #f2f2f2;
+    background-color: var(--branco);
     transform: rotateX(-90deg);
     transform-origin: bottom;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -99,7 +102,7 @@ main{
   .card__title {
     margin: 0;
     font-size: 24px;
-    color: #FF7769;
+    color: var(--vermelho);
     font-weight: 700;
   }
   
@@ -110,15 +113,25 @@ main{
   .card__description {
     margin: 10px 0 0;
     font-size: 14px;
-    color: #313131;
+    color: var(--preto);
     line-height: 1.4;
   }
 
   .card__link{
-    color: #014961;
+    color: var(--vermelho);
     text-decoration: underline;
   }
+
+  .card__link:hover{
+    color: var(--preto);
+    transition-duration: 1s;
+  }
   
+.img__map-bar{
+    width: 70px;
+    height: 70px;
+}
+
 .aspectos{
     display: flex;
     flex-direction: row;
@@ -130,10 +143,11 @@ main{
 }
 
 .aspecto__title{
-    color: #014961;
+    color: var(--vermelho);
     font-weight: 600;
     margin-top: 1.4%;
     font-size: 1.5em;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
 
 .aspecto__paragrafo{

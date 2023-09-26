@@ -40,40 +40,40 @@
                 </div>
                 <div class="cards">
                     <div class="card cardMargem">
-                        <img class="card__img" src="../assets/img/about-quem.svg" alt="Icone grupo de pessoas">
+                        <img class="card__img" src="../assets/img/icone-grupo.svg" alt="Icone grupo de pessoas">
                         <div class="card__content">
                             <p class="card__title">Quem Somos?</p>
                             <p class="card__description">Uma oficina dedicada que busca tornar os carros simples em únicos e especiais, sempre prezando pela satisfação do cliente</p>
                         </div>
                     </div>
                     <div class="card cardMargem">
-                        <img class="card__img" src="../assets/img/about-oque.svg" alt="Icone O que Somos">
+                        <img class="card__img" src="../assets/img/icone-ferramentas.svg" alt="Icone O que Somos">
                         <div class="card__content">
                             <p class="card__title">O que fazemos?</p>
                             <p class="card__description">Somos uma oficina responsável pela <a class="card__link" href="produtos.php">personalização</a> de carros e <a class="card__link" href="produtos.php">venda</a> de peças.</p>
                         </div>
                     </div>
                     <div class="card" id="card__associar">
-                        <img class="card__img" src="../assets/img/about-associar.png" alt="Icone Aperto de Mao">
+                        <img class="card__img" src="../assets/img/icone-redesocial.svg" alt="Icone Rede Social">
                         <div class="card__content">
-                            <p class="card__title">Como se Associar?</p>
-                            <p class="card__description">Acesse a área de <a class="card__link" href="vagas.php">vagas</a> para se tornar um de nossos associados.</p>
+                            <p class="card__title">Como se comunicar?</p>
+                            <p class="card__description">Entre nas nossas redes sociais <a target="_blank" class="card__link" href="https://www.instagram.com/turn_motors/">Instagram</a> ou <a target="_blank" class="card__link" href="https://twitter.com/MotorsTurn">Twitter</a>.</p>
                         </div>
                     </div>
                 </div>
                 <div class="aspectos">
                     <div class="influ-local">
-                        <img src="../assets/img/mapa2-75px.svg" alt="Mapa">
+                        <img class="img__map-bar" src="../assets/img/icone-mapa.svg" alt="Mapa">
                         <h3 class="aspecto__title">Influência Local</h3>
                         <p class="aspecto__paragrafo">Com a Turn Motors perto da sua rua, seu carro sempre teria uma cara mais sua.</p>
                     </div>
                     <div class="representatividade">
-                        <img src="../assets/img/grafico75px.svg" alt="Grafico">
+                        <img class="img__map-bar" src="../assets/img/icone-barra.svg" alt="Grafico">
                         <h3 class="aspecto__title">Representatividade</h3>
                         <p class="aspecto__paragrafo">Todos podem ter um carro com o estilo único, independente da condição financeira.</p>
                     </div>
                     <div class="influ-regional">
-                        <img src="../assets/img/mapa75px.svg" alt="Mapa">
+                        <img class="img__map-bar" src="../assets/img/icone-mapa.svg" alt="Mapa">
                         <h3 class="aspecto__title">Influência Regional</h3>
                         <p class="aspecto__paragrafo">Nossa influência exerce o papel de diminuir os custos com automóveis, sem trocá-los.</p>
                     </div>

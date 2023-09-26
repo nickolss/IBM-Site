@@ -2,130 +2,521 @@
     font-family: "Inter", sans-serif;
 }
 
-.principal{
-    margin: 5.2rem 0.5rem;
-}
-
-.banner{
+#container__body{
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    flex: 1;
+}
+
+.div__title{
+    display: flex;
     align-items: center;
-    background-color: #01496199;
-    font-weight: 700;
-    border-radius: 20px;    
+    justify-content: center;
+    color: var(--vermelho);
+    text-align: center;
+    font-weight: bolder;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    font-size: 3rem;
 }
 
-.banner__titulo{
-    color: #fff;
-    font-size: 1.6rem;
+.campos__perfil{
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.banner__imagem{
-    width: min(250px, 500px);
+.perfil__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.imagem-perfil__imagem{
-    margin: 1rem 0;
-    max-width: 150px;
+.opcoes__icones{
+    background-color: var(--preto);
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.2);
+    width: 80px;
+    margin-right: 6rem;
+}
+
+.meio-circulo__branco-top, .meio-circulo__branco-bottom{
+    background-color: var(--branco);
+}
+
+.meio-circulo__branco-top{
+    border-radius: 0px 0px 60px 60px;
+}
+
+.meio-circulo__branco-bottom{
+    border-radius: 60px 60px 0px 0px;
+}
+
+.icones__esquerda{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.icone__esquerda{
+    padding: 20px;
+}
+
+.img__icon__esquerda{
+    width: 36px;
+    height: 36px;
+}
+
+.img__icon__esquerda:hover{
+    transform: scale(1.1);
+    transition-duration: 0.5s;
     cursor: pointer;
 }
 
-.informacoes-cadastro, .informacoes__formulario{
-    margin: 1rem 0;
+.perfil__main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--preto);
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.espaco__branco{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--branco);
+    width: 100%;
+    box-shadow: 4px -4px 4px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border-radius: 20px 20px 100px 100px;
+}
+
+.perfil__info{
+    width: 100%;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.informacoes-cadastro{
-    background-color: #01496199;
-    max-width: 25vw;
-    margin: 1rem auto;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
-}
-
-.informacoes__formulario{
-    margin: 1rem;
-    gap: 10px;
-}
-
-.formulario__campo{
-    font-size: 1.1rem;
-    padding: 5px 15px;
-    outline: none;
-    border: 2px solid #014961;
-    background-color: rgba(255, 255, 255, 0.97);
-    box-shadow: 1px 2px 2px rgba(0,0,0,0.2);
-    border-radius: 13px;
-    width: 150%;
-    margin-bottom: 3%;
-}
-
-.formulario__campo:disabled{
-    color: #000;
-    font-weight: 400;
-}
-
-.formulario__botao{
-    padding: 10px 35px;
-    margin-top: 25px;
+.input__perfil__info{
+    background-color: var(--branco);
+    padding: 10px;
     font-size: 1.2rem;
-    border: none;
-    color: white;
-    border-radius: 20px;
-    box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
-    background-color: #FF7769;
-    width: 100%;
+    color: var(--vermelho);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
     text-align: center;
-    text-decoration: none;
+    border: none;
+    border-radius: 20px;
 }
 
-.formulario__botao:hover{
-    transform: scale(1.02);
-    transition-duration: 0.5s;
-    color: white;
-    box-shadow: 3px 3px 4px rgba(0,0,0,0.25);
+.caixa__info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--branco);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    width: 350px;
+    height: 45px;
+    margin-bottom: 25px;
 }
 
-#div__edicao{
+.caixa__info i.icone{
+    color: var(--vermelho);
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+    margin-left: 10px;
+}
+
+.icone__turnmotors__perfil{
+    margin-left: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+.caixa__info i.span{
+    color: var(--branco);
+    text-shadow: none;
+}
+
+.perfil__texto{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#perfil__texto__email{
+    font-size: 1.2rem;
+}
+
+.caixa__info p{
+    color: var(--vermelho);
+    font-size: 1.3rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+    margin-top: 15px;
+}
+
+.btn__perfil{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--amarelo);
+    color: var(--preto);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    width: 350px;
+    height: 45px;
+    margin-bottom: 25px;
+    box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.3);
+    font-size: 1.25rem;
+    text-decoration: none;
 }
 
-@media only screen and (max-width: 1650px){
-    .formulario__campo{
-        width: 130%;
+.btn__perfil:hover{
+    box-shadow: 4px 4px 4px rgba(255, 255, 255, 0.3);
+    transform: scale(1.03);
+    transition-duration: 0.5s;
+    color: var(--preto);
+}
+
+.perfil__cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 6rem;
+}
+
+.perfil__veiculos, .perfil__compras{
+    border-radius: 20px;
+    background-color: var(--preto);
+    height: 200px;
+    width: 400px;
+    margin-bottom: 2rem;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+}
+
+.perfil__veiculos-compra__branco{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--branco);
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 3px -3px 4px rgba(0, 0, 0, 0.2);
+}
+
+.perfil__veiculos-compra__branco h3{
+    color: var(--vermelho);
+    text-align: center;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    font-size: 1.5rem;
+    padding: 0.3rem;
+}
+
+.perfil__veiculos-compra__branco i{
+    margin-top: -5px;
+    color: var(--vermelho);
+    text-align: center;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    font-size: 2rem;
+}
+
+.perfil__veiculo__conteudo{
+    margin: 10px 0px 0px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.perfil__veiculo__img img{
+    border: 2px solid var(--amarelo);
+    border-radius: 50%;
+    padding: 5px;
+    width: 65px;
+}
+
+.perfil__veiculo__texto{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.perfil__veiculo__texto h4{
+    text-align: center;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    font-size: 1.5rem;
+    color: var(--branco);
+}
+
+.perfil__veiculo__texto h5{
+    text-align: center;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    font-size: 1.3rem;
+    color: var(--branco);
+}
+
+.perfil__veiculo__botoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.perfil__veiculo__botao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--amarelo);
+    color: var(--preto);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    width: 150px;
+    height: 35px;
+    margin: 0px 10px 0px 10px;
+    box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.3);
+    font-size: 1.25rem;
+    text-decoration: none;
+}
+
+.perfil__veiculo__botao:hover{
+    box-shadow: 4px 4px 4px rgba(255, 255, 255, 0.3);
+    transform: scale(1.03);
+    transition-duration: 0.5s;
+    color: var(--preto);
+}
+
+.campos__perfil__mobile{
+    display: none;
+}
+
+.margin{
+    margin-top: 200px;
+}
+
+.icones__esquerda .icone__esquerda{
+  margin: 0rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.icones__esquerda .icone__esquerda .legenda__icone__pc{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background: var(--branco);
+    color: var(--branco);
+    padding: 10px 18px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 25px;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+/*HOVER ÍCONES LEFT NAV*/
+.icones__esquerda .icone__esquerda:hover .legenda__icone__pc{
+  top: -2.5rem;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.icone__esquerda .legenda__icone__pc:before{
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background: var(--branco);
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%) rotate(45deg);
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+.icones__esquerda .icone__esquerda:hover .legenda__icone__pc,
+.icones__esquerda .icone__esquerda:hover .legenda__icone__pc:before{
+  background: var(--branco);
+  color: var(--vermelho);
+}
+
+.perfil__menu-hamburguer{
+    display: none;
+}
+
+@media only screen and (max-width: 1150px){
+
+    main{
+        margin-top: 1.5em;
     }
-}
 
-@media only screen and (max-width: 1450px){
-    .formulario__campo{
-        width: 120%;
-    }
-}
-
-@media only screen and (max-width: 1250px){
-    .formulario__campo{
-        width: 110%;
-    }
-}
-
-@media only screen and (max-width: 1050px){
-    .formulario__campo{
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 850px){
-    .banner{
+    .campos__perfil__pc{
         display: none;
     }
 
-    .informacoes-cadastro{
-        max-width: 70vw;
+    .campos__perfil__mobile{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
+
+    .opcoes__icones__mobile{
+        background-color: var(--preto);
+        box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.2);
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .icones__esquerda{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .meio-circulo__branco-top{
+        height: 130px;
+        width: 20px;
+        border-radius: 0px 20px 20px 0px;
+    }
+
+    .meio-circulo__branco-bottom{
+        height: 130px;
+        width: 20px;
+        border-radius: 20px 0px 0px 20px;
+    }
+
+    .perfil__main__mobile .espaco__branco{
+        height: 160px;
+        border-radius: 20px 20px 50px 50px;
+    }
+
+
+    .perfil__main__mobile{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--preto);
+        width: 400px;
+        border-radius: 20px;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .div__title h1{
+        font-size: 2rem;
+    }
+
+    .caixa__info{
+        width: 300px;
+    }
+
+    #perfil__texto__email{
+        font-size: 1.05rem;
+    }
+    
+    .caixa__info p{
+        font-size: 1.2rem;
+    }
+
+    .btn__perfil{
+        width: 300px;
+        margin-top: -20px;
+    }
+
+    .perfil__cards__mobile{
+        margin-top: 20px;
+    }
+
+    .opcoes__icones__mobile-pequeno{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1100px){
+    .opcoes__icones__mobile{
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 505px){
+    .perfil__main__mobile .espaco__branco{
+        height: 160px;
+        border-radius: 20px 20px 70px 70px;
+    }
+
+
+    .perfil__main__mobile{
+        margin-top: 3rem;
+        width: 300px;
+    }
+
+    .div__title h1{
+        font-size: 2rem;
+    }
+
+    .caixa__info{
+        width: 225px;
+    }
+
+    #perfil__texto__email{
+        font-size: 0.8rem;
+    }
+    
+    .caixa__info p{
+        font-size: 1rem;
+    }
+
+    .btn__perfil{
+        width: 225px;
+    }
+
+    .perfil__cards__mobile{
+        margin-top: 20px;
+    }
+
+    .opcoes__icones__mobile-pequeno{
+        display: none;
+    }
+
+    .perfil__veiculos, .perfil__compras{
+        width: 300px;
+    }
+
+    .perfil__veiculo__botao{
+        width: 100px;
+        font-size: 1rem;
+    }
+
 }

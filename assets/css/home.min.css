@@ -1,101 +1,361 @@
+@import url(variaveis-cores-fonte.min.css);
+
 body {
-    font-size: 1em;
-    font-family: Helvetica, sans-serif;
-    background: #e6e6e6;
-    margin: auto
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-#correcao {
-    margin-right: 0
+main{
+    flex: 1;
 }
 
-.texto {
-    text-align: center;
-    font-size: 1.7em
+.pai__descricao__img{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
 }
 
-.botao {
-    border-radius: 150px;
-    background-color: #014961;
-    color: #fff;
-    padding: 10px 80px;
+.div__descricao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+#home__main__title{
+    font-family: "fast-hand", Arial, Helvetica, sans-serif;
+    color: var(--vermelho);
+    font-size: 4rem;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+#descricao__turnmotors{
+    font-size: 1.35rem;
+    width: 550px;
+    text-align: justify;
+}
+
+.btn__explorar {
+    text-decoration: none;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--vermelho);
+    color: var(--branco);
+    width: 250px;
+    padding: 10px;
     margin-bottom: 30px;
-    font-size: 1.5em
-}
-
-.alinhar {
-    text-align: center
-}
-
-.texto1 {
-    font-size: 1.7em;
-    margin: 0 75px 0 85px
-}
-
-.botao1 {
-    border-radius: 150px;
-    background-color: #014961;
-    color: #fff;
-    padding: 10px 80px;
-    margin-left: 85px;
-    font-size: 1.5em
-}
-
-.none {
-    display: none
-}
-
-@media screen and (max-width:1401px) {
-    .none {
-        display: block
-    }
-
-    .nonone {
-        display: none
-    }
-
-    .footer-col {
-        width: 40%;
-        margin-bottom: 30px
-    }
-}
-
-.icone {
+    font-size: 1.5rem;
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.2);
     text-align: center;
-    font-size: 1.7em;
-    color: #014961
 }
 
-hr.linha {
-    width: auto;
-    border: 2px solid #000
+.btn__explorar:hover{
+    color: var(--branco);
+    transform: scale(1.05);
+    transition-duration: 0.5s;
+    box-shadow: 2px 4px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
-strong {
-    font-size: 2.5em;
-    color: #014961
+#carro__home{
+    border-radius: 20px;
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.2);
 }
 
-.paragrafo {
-    font-size: 1.2em;
-    color: #000
+.atividades__mobile, .trabalhamos__mobile{
+    display: none;
 }
 
-.redondo {
-    border-radius: 200px;
-    margin-bottom: 9px
+.atividades, .passos, .trabalhamos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--preto);
+    border-radius: 20px;
+    padding: 50px 30px;
+    width: 1070px;
+    height: 150px;
+    margin: auto;
+    margin-top: 40px;
 }
 
-.texto9 {
+.figure-container {
+    text-align: center; 
+}
+
+.figure-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.legenda__icones__atividade{
+    color: var(--branco);
+    font-size: 1.35rem;
     text-align: center;
-    margin: 0 100px
 }
 
-p.config {
-    margin-right: 90px
+.passo-passo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
 }
 
-span.final {
-    font-size: 1.7em;
-    color: #014961
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -30px;
+}
+
+.title h2{
+    color: var(--vermelho);
+    text-align: center;
+    font-weight: bolder;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    font-size: 2.5rem;
+    margin-top: 2em;
+}
+
+.desc__subtitle{
+    font-size: 1.3rem;
+    max-width: 700px;
+    text-align: center;
+}
+
+.img__passo{
+    border: 3px solid var(--amarelo);
+    border-radius: 50%;
+    width: 64px;
+    margin-bottom: 10px;
+}
+
+.legenda__icones__passos{
+    color: var(--branco);
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 300px;
+}
+
+.legenda__icones__trabalhamos{
+    color: var(--branco);
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 300px;
+}
+
+.pai__restricao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.linha__restricao{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.restricao{
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo__restricao{
+    display: flex;
+    flex-direction: row;
+}
+
+.restricao__direita{
+    margin-left: 2em;
+}
+
+.img__topico__restricao{
+    width: 20px;
+}
+
+.h3__restricao{
+    margin-top: 10px;
+    color: var(--preto);
+    font-size: 1.5em;
+    text-align: justify;
+}
+
+.desc__restricao{
+    font-size: 1.3em;
+    max-width: 450px;
+}
+
+footer{
+    margin-top: 50px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .btn__explorar{
+        width: 200px;
+    }
+    
+    #carro__home{
+        width: 400px;
+        height: 267px;
+    }
+
+    .atividades{
+        width: 970px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .btn__explorar{
+        width: 200px;
+    }
+    
+    #carro__home{
+        width: 400px;
+        height: 267px;
+    }
+
+    .atividades{
+        width: 870px;
+    }
+
+    .trabalhamos{
+        display: none;
+    }
+
+    .trabalhamos__mobile{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--preto);
+        border-radius: 20px;
+        padding: 30px;
+        max-width: 700px;
+        height: auto;
+        margin: auto;
+        margin-top: 40px;
+    }
+
+    .coluna__direita{
+        margin-top: 27px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .pai__descricao__img{
+        flex-direction: column;
+    }
+    
+    .btn__explorar{
+        width: 250px;
+    }
+
+    #carro__home{
+        height: 401px;
+        width: 600px;
+    }
+
+    .atividades{
+        width: 600px;
+    }
+
+    .linha__restricao{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .restricao__direita{
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .trabalhamos__mobile{
+        max-width: 500px;
+    }
+
+    .desc__subtitle{
+        max-width: 450px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #descricao__turnmotors{
+        width: 400px;
+    }
+    
+    #carro__home{
+        height: 267px;
+        width: 400px;
+    }
+
+    .atividades{
+        display: none;
+    }
+
+    .atividades__mobile{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--preto);
+        border-radius: 20px;
+        padding: 30px;
+        width: 400px;
+        height: auto;
+        margin: auto;
+        margin-top: 40px;
+    }
+
+    .linha__atividade .atividade .figure-container .legenda__icones__trabalhamos{
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #home__main__title{
+        font-size: 3rem;
+    }
+
+    #descricao__turnmotors{
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .trabalhamos__mobile{
+        display: flex;
+        flex-direction: column;
+        max-width: 350px;
+    }
+
+    .linha__atividade{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .coluna__direita{
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .atividades__mobile{
+        display: flex;
+        flex-direction: column;
+        max-width: 250px;
+    }
+
+    .trabalhamos__mobile{
+        max-width: 250px;
+    }
 }

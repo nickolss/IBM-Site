@@ -53,7 +53,7 @@
               <i class='bx bxs-lock-alt'></i>
             </div>
             <div class="lembrar__esquecer">
-              <a href="recuperar-senha.php">Esqueceu a Senha?</a>
+              <!--<a href="recuperar-senha.php">Esqueceu a Senha?</a>-->
             </div>
             <button type="submit" class="botao__login">Entrar</button>
             <div class="link__registrar">
@@ -62,7 +62,7 @@
           </form>
         </div>
         <div class="img">
-          <img src="../assets/img/loginImg.svg" alt="Homem ao Computador">
+          <img src="../assets/img/loginImg.png" alt="Homem ao Computador">
         </div>
       </div>
       <div class="mobile">
@@ -78,8 +78,8 @@
               <i class='bx bxs-lock-alt'></i>
             </div>
             <div class="lembrar__esquecer">
-              <label for="lembrarConta"><input type="checkbox" name="lembrarConta" id="lembrarConta">Lembrar Conta</label>
-              <a href="recuperar-senha.php">Esqueceu a Senha?</a>
+              <!--<label for="lembrarConta"><input type="checkbox" name="lembrarConta" id="lembrarConta">Lembrar Conta</label>
+              <a href="recuperar-senha.php">Esqueceu a Senha?</a>-->
             </div>
             <button type="submit" class="botao__login">Entrar</button>
             <div class="link__registrar">

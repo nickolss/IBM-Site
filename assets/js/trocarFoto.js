@@ -1,5 +1,4 @@
 
-
 // Atribuindo os elementos HTML para variáveis
 const inputArquivo = document.getElementById("fileImg");
 const imagem = document.getElementById("image");

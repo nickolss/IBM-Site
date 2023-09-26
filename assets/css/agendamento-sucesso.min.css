@@ -1,4 +1,5 @@
 @import url(perfil.css);
+@import url(variaveis-cores-fonte.min.css);
 
 main{
     display: flex;
@@ -19,12 +20,12 @@ main{
     flex-direction: column;
     height: 600px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: var(--branco);
 }
 
 #icon-check{
     font-size: 8rem;
-    color: #FC7469;
+    color: var(--vermelho);
 }
 
 h1.mainTitle{
@@ -39,7 +40,7 @@ p{
 }
 
 p > strong{
-    color: #014961;
+    color: var(--vermelho);
 }
 
 .formulario__botao{

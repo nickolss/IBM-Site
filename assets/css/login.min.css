@@ -1,3 +1,5 @@
+@import url(variaveis-cores-fonte.min.css);
+
 *{
     margin: 0;
     padding: 0;
@@ -28,7 +30,7 @@ main{
 
 .texto{
     width: 420px;
-    background-color: hsla(195, 98%, 19%, 0.6);
+    background-color: var(--preto);
     color: white;
     border-radius: 20px;
     padding: 30px 40px;
@@ -41,6 +43,7 @@ main{
         margin-top: 1.4%;
         font-size: 3.5em;
         text-align: center;
+        color: var(--amarelo);
     }
 
     .texto .caixa__input{
@@ -53,18 +56,18 @@ main{
     .texto .caixa__input input{
         width: 100%;
         height: 100%;
-        background-color: rgba(255, 255, 255, .8);
+        background-color: var(--branco);
         border: none;
         outline: none;
-        border: 2px solid #014961;
+        border: 2px solid var(--amarelo);
         border-radius: 40px;
         font-size: 18px;
-        color: #014961;
+        color: var(--vermelho);
         padding: 20px 45px 20px 20px;
     }
 
     .texto .caixa__input input::placeholder{
-        color: #014961; 
+        color: var(--vermelho); 
     }
 
     .texto .caixa__input i{
@@ -73,7 +76,7 @@ main{
         top: 50%;
         transform: translateY(-50%);
         font-size: 25px;
-        color: #FF7769;
+        color: var(--vermelho);
     }
 
     .texto .lembrar__esquecer{
@@ -100,14 +103,14 @@ main{
     .texto .botao__login{
         width: 100%;
         height: 45px;
-        background-color: white;
+        background-color: var(--branco);
         border: none;
         outline: none;
         border-radius: 50px;
         box-shadow: 0 0 10px rgba(0, 0, 0, .2);
         cursor: pointer;
         font-size: 16px;
-        color: #014961;
+        color: var(--vermelho);
         font-weight: 600;
     }
 
@@ -123,7 +126,7 @@ main{
     }
 
     .texto .link__registrar p a{
-        color: white;
+        color: var(--amarelo);
         text-decoration: none;
         font-weight: 600;
     }
@@ -132,11 +135,11 @@ main{
         text-decoration: underline;
     }
 
-@media only screen and (max-width: 1059px){
-    .container{
-        margin-bottom: 3%;
+@media only screen and (max-width: 2350px){
+    main{
+        margin-bottom: 4rem;
     }
-}
+}   
 
 @media only screen and (max-width: 991px){
     .mobile{

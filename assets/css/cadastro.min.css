@@ -2,6 +2,7 @@
 @import url(dropdown.min.css);
 @import url(dashboard.css);
 @import url(cadastro-produto.min.css);
+@import url(variaveis-cores-fonte.min.css);
 @import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap);
 
 #container__body{
@@ -87,18 +88,18 @@ main{
 }
 
 .mainTitle{
-    color: #FF7769;
-    font-weight: 600;
-    margin-top: 1.4%;
-    font-size: 3em;
+    color: var(--vermelho);
     text-align: center;
+    font-weight: bolder;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    font-size: 3rem;
 }
 
 .subTitle{
-    color: #014961;
+    color: var(--preto);
     font-weight: 600;
-    margin-top: 0.2%;
-    font-size: 1.3em;
+    margin-top: 0.1rem;
+    font-size: 1.2em;
     max-width: 700px;
 }
 
@@ -132,8 +133,8 @@ main{
     font-size: 100%;
     padding: 0.8em;
     outline: none;
-    border: 2px solid #014961;
-    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid var(--preto);
+    background-color: var(--branco);
     border-radius: 20px;
     width: 100%;
     margin-bottom: 3%;
@@ -143,8 +144,8 @@ main{
     font-size: 100%;
     padding: 0.8em;
     outline: none;
-    border: 2px solid #014961;
-    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid var(--preto);
+    background-color: var(--branco);
     border-radius: 20px;
     width: 50%;
     margin-bottom: 3%;
@@ -170,13 +171,13 @@ main{
     margin: 0em;
     margin-left: 1.3em;
     padding: 0.4em;
-    background-color: #e8e8e8;
+    background-color: var(--background);
     height: 30px;
-    color: #014961;
+    color: var(--vermelho);
   }
   
   .caixa__input :is(input:focus, input:valid) {
-    border-color: #014961;
+    border-color: var(--vermelho);
   }
 
   .caixa__input__select{
@@ -188,8 +189,8 @@ main{
     font-size: 100%;
     padding: 0.8em;
     outline: none;
-    border: 2px solid #014961;
-    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid var(--preto);
+    background-color: var(--branco);
     max-width: 315px;
     border-radius: 20px;
     width: 100%;
@@ -206,9 +207,9 @@ main{
     margin: 0em;
     margin-left: 1.3em;
     padding: 0.4em;
-    background-color: #e8e8e8;
+    background-color: var(--background);
     height: 30px;
-    color: #014961;
+    color: var(--preto);
 }
 
 #data{
@@ -231,7 +232,7 @@ main{
 }
 
 .plano-comum, .plano-turbinado{
-    background-color: #fff;
+    background-color: var(--preto);
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -251,17 +252,24 @@ main{
     margin: 0 0 0.5rem 0;
 }
 
+.plano__img-velocimetro{
+    background-color: #f4f7f554;
+    padding: 10px;
+    border-radius: 50%;
+    width: 100px;
+}
+
 .plano-comum__titulo{
     font-family: Inter;
     font-size: 1.4rem;
-    color: #01496199;
+    color: var(--amarelo);
     font-weight: 600;
 }
 
 .plano-turbinado__titulo{
     font-family: Inter;
     font-size: 1.4rem;
-    color: #DF7369;
+    color: var(--amarelo);
     font-weight: 600;
 }
 
@@ -278,21 +286,23 @@ main{
 }
 
 .lista__itens-comum{
+    color: var(--branco);
     display: flex;
     gap: 5px;
 }
 
 .lista__itens-comum::before{
-    content: url('../img/check\ azul.svg');
+    content: url('../img/check.svg');
 }
 
 .lista__itens-turbinado{
+    color: var(--branco);
     display: flex;
     gap: 5px;
 }
 
 .lista__itens-turbinado::before{
-    content: url('../img/check\ rosa.svg');
+    content: url('../img/check.svg');
 }
 
 .formulario__botao{
@@ -305,23 +315,25 @@ main{
 }
 
 .formulario__botao--comum{
-    background-color: #01496199;
+    background-color: var(--amarelo);
+    color: var(--preto);
 }
 
 .formulario__botao--comum:hover{
-    transform: scale(1.01);
+    transform: scale(1.03);
     box-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
-    background-color: rgba(1, 73, 97, 0.705);
+    background-color: var(--amarelo);
 }
 
 .formulario__botao--turbinado{
-    background-color: #DF7369;
+    background-color: var(--amarelo);
+    color: var(--preto);
 }
 
 .formulario__botao--turbinado:hover{
-    transform: scale(1.01);
+    transform: scale(1.03);
     box-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
-    background-color: #cc6c64;
+    background-color: var(--amarelo);
 }
 
 .plano-turbinado__preco{
@@ -329,7 +341,7 @@ main{
     display: flex;
     flex-direction: column;
     font-weight: 300;
-    color: #DF7369;
+    color: var(--branco);
 }
 
 .plano-turbinado__preco .preco{
@@ -343,7 +355,7 @@ main{
     align-items: center;
     height: auto;
     padding: 2rem 0;
-    background-color: #01496199;
+    background-color: var(--amarelo);
     border-radius: 15px;
 }
 
@@ -352,7 +364,7 @@ main{
     justify-content: space-between;
     align-items: center;
     height: auto;
-    background-color: #DF7369;
+    background-color: var(--amarelo);
     padding: 2rem 0;
     border-radius: 15px;
 }

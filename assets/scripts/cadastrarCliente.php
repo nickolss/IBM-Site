@@ -15,7 +15,7 @@ $senhaSegura = md5($senhaForm);
 $cpfSeguro = md5($cpfForm);
 $telefoneFormatado = str_replace(['(', ')', '-'], '', $telefoneForm);
 
-$sqlInsert = "INSERT INTO `cliente`(`cpf`, `nomeCompleto`, `dataNasc`, `telefone`, `email`, `senha`, `plano`, `quantidadePontos`, `fotoPerfil`) VALUES ('$cpfSeguro','$nomeForm','$dataNascForm','$telefoneFormatado','$emailForm','$senhaSegura','$planoForm','0', 'default-img-profile.png')";
+$sqlInsert = "INSERT INTO `cliente`(`cpf`, `nomeCompleto`, `dataNasc`, `telefone`, `email`, `senha`, `plano`, `quantidadePontos`, `fotoPerfil`) VALUES ('$cpfSeguro','$nomeForm','$dataNascForm','$telefoneFormatado','$emailForm','$senhaSegura','$planoForm','0', 'default-img-profile.svg')";
 
 $cadastrarCliente = $pdo->prepare($sqlInsert);
 
