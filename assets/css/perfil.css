@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow: hidden;
 }
 
 main{
@@ -41,6 +42,10 @@ main{
     box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.2);
     width: 80px;
     margin-right: 6rem;
+    height: 680px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .meio-circulo__branco-top, .meio-circulo__branco-bottom{
@@ -59,7 +64,8 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .icone__esquerda{
@@ -203,9 +209,9 @@ main{
 .perfil__veiculos, .perfil__compras{
     border-radius: 20px;
     background-color: var(--preto);
-    height: 200px;
+    height: 50%;
     width: 400px;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -370,6 +376,10 @@ main{
 
 @media only screen and (max-width: 1150px){
 
+    #container__body{
+        overflow: visible;
+    }
+
     main{
         margin-top: 1.5em;
     }
@@ -380,7 +390,7 @@ main{
 
     .campos__perfil__mobile{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
     }
@@ -388,17 +398,18 @@ main{
     .opcoes__icones__mobile{
         background-color: var(--preto);
         box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.2);
-        width: 100vw;
+        width: 160px;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
+        margin-right: 1rem;
     }
 
     .icones__esquerda{
         width: 100%;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-around;
         align-items: center;
     }
@@ -458,9 +469,20 @@ main{
         margin-top: 20px;
     }
 
+    .perfil__veiculos, .perfil__compras{
+        height: 200px;
+    }
+
     .opcoes__icones__mobile-pequeno{
         display: none;
     }
+}
+
+@media only screen and (max-width: 1200px){
+    .opcoes__icones{
+        height: 630px;
+    }
+
 }
 
 @media only screen and (max-width: 1100px){
