@@ -55,12 +55,14 @@
 						</div>
 						<img class="img__icon__esquerda" src="../assets/img/icone-perfil.svg" alt="Perfil">
 					</div>
-					<div class="icone__esquerda">
-						<div class="legenda__icone__pc">
-							Veículos
+					<a href="./veiculos.php">
+						<div class="icone__esquerda">
+							<div class="legenda__icone__pc">
+								Veículos
+							</div>
+							<img class="img__icon__esquerda" src="../assets/img/icone-carro.svg" alt="Veículos">
 						</div>
-						<img class="img__icon__esquerda" src="../assets/img/icone-carro.svg" alt="Veículos">
-					</div>
+					</a>
 					<div class="icone__esquerda">
 						<div class="legenda__icone__pc">
 							Compras
