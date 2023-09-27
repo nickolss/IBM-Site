@@ -1,8 +1,11 @@
-<?php 
-	// Importaça dos arquivos
-	require_once('../assets/scripts/conexao.php');
-	require_once('../assets/scripts/iniciarSessao.php');
-	require_once('../assets/scripts/consultaCliente.php');
+<?php
+// Importação dos arquivos
+require_once('../assets/scripts/conexao.php');
+require_once('../assets/scripts/iniciarSessao.php');
+require_once('../assets/scripts/consultaCliente.php');
+$idDono = $_SESSION['id'];
+$sqlCarro = $pdo->query("SELECT * FROM `carro` WHERE id_dono = $idDono");
+$carros = $sqlCarro->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -33,16 +36,16 @@
 
 <body id="container__body">
 	<?php
-		require_once('../assets/components/header.php');
-		$id = (int)$_SESSION['id'];
-		$queryCliente = "SELECT * FROM cliente WHERE id=$id";
-		$stmt = $pdo->query($queryCliente);
-		$user = $stmt->fetch(PDO::FETCH_ASSOC);
+	require_once('../assets/components/header.php');
+	$id = (int)$_SESSION['id'];
+	$queryCliente = "SELECT * FROM cliente WHERE id=$id";
+	$stmt = $pdo->query($queryCliente);
+	$user = $stmt->fetch(PDO::FETCH_ASSOC);
 	?>
 
 	<main>
-		
-		
+
+
 		<!--DESKTOP-->
 		<div class="campos__perfil__pc  campos__perfil">
 
@@ -104,21 +107,21 @@
 						<div class="div__title">
 							<h1>Olá, <?= $_SESSION['nomeCliente'] ?>!</h1>
 						</div>
-						<form action="../assets/scripts/trocarFoto.php" enctype="multipart/form-data"  method="post" class="informacoes__formulario"> <!-- Formulário que utiliza o atributo enctype para enviar arquivos multipart/form-data -->
+						<form action="../assets/scripts/trocarFoto.php" enctype="multipart/form-data" method="post" class="informacoes__formulario"> <!-- Formulário que utiliza o atributo enctype para enviar arquivos multipart/form-data -->
 							<div class="upload">
 								<img src="../assets/img/img-perfil/<?php echo $user['fotoPerfil']; ?>" id="image" id="image"> <!-- Exibe a imagem atual do usuário -->
 
 								<div class="rightRound" id="upload">
-								<input type="file" name="fileImg" id ="fileImg" accept=".jpg, .jpeg, .png"> <!-- Input de seleção de arquivo -->
-								<i class="fa fa-camera"></i> <!-- Ícone de câmera -->
+									<input type="file" name="fileImg" id="fileImg" accept=".jpg, .jpeg, .png"> <!-- Input de seleção de arquivo -->
+									<i class="fa fa-camera"></i> <!-- Ícone de câmera -->
 								</div>
 
-								<div class="leftRound" id ="cancel" style="display: none;">
-								<i class = "fa fa-times"></i> <!-- Ícone de cancelar-->
+								<div class="leftRound" id="cancel" style="display: none;">
+									<i class="fa fa-times"></i> <!-- Ícone de cancelar-->
 								</div>
-								<div class="rightRound" id ="confirm" style="display: none;">
-								<input type="submit"> <!-- Botão de envio do formulário -->
-								<i class = "fa fa-check"></i> <!-- Ícone de confirmar -->
+								<div class="rightRound" id="confirm" style="display: none;">
+									<input type="submit"> <!-- Botão de envio do formulário -->
+									<i class="fa fa-check"></i> <!-- Ícone de confirmar -->
 								</div>
 							</div>
 						</form>
@@ -127,21 +130,21 @@
 						<div class="caixa__info">
 							<i class='bx bx-user icone'></i>
 							<div class="perfil__texto">
-								<p><?=$_SESSION['nomeCliente']?></p>
+								<p><?= $_SESSION['nomeCliente'] ?></p>
 							</div>
 							<i class='bx bxs-user span'></i>
 						</div>
 						<div class="caixa__info">
 							<i class='bx bx-envelope icone'></i>
 							<div class="perfil__texto">
-								<p id="perfil__texto__email"><?=$_SESSION['email']?></p>
+								<p id="perfil__texto__email"><?= $_SESSION['email'] ?></p>
 							</div>
 							<i class='bx bxs-user span'></i>
 						</div>
 						<div class="caixa__info">
 							<img class="icone__turnmotors__perfil" src="../assets/img/logo-turnmotors-vermelha.svg" alt="Logo Turn Motors">
 							<div class="perfil__texto">
-								<p>Plano: <?=$_SESSION['plano']?></p>
+								<p>Plano: <?= $_SESSION['plano'] ?></p>
 							</div>
 							<i class='bx bxs-user span'></i>
 						</div>
@@ -161,7 +164,7 @@
 
 						<div class="perfil__veiculos-compra__branco">
 							<h3>Veículo Principal</h3>
-							<i class='bx bx-edit' ></i>
+							<i class='bx bx-edit'></i>
 						</div>
 
 						<div class="perfil__veiculo__conteudo">
@@ -169,9 +172,9 @@
 								<img src="../assets/img/icone-carro-novo.svg" alt="Veículo">
 							</div>
 							<div class="perfil__veiculo__texto">
-								<h4><?php //VEÍCULO PRINCIPAL ?></h4>
-								<h5><?php //PLACA DO VEÍCULO PRINCIPAL ?></h5>
-							</div>	
+								<h4><?= $carros[0]['apelido'] ?> </h4>
+								<h5>Placa: <?= $carros[0]['placa'] ?> </h5>
+							</div>
 						</div>
 
 						<div class="perfil__veiculo__botoes">
@@ -246,98 +249,101 @@
 				</div>
 			</div>
 
-			
+
 			<div class="cards__perfil-direita">
 				<div class="perfil__main__mobile">
-						<div class="espaco__branco">
-							<div class="div__title">
-								<h1>Olá, <?= $_SESSION['nomeCliente'] ?>!</h1>
-							</div>
-							<form action="../assets/scripts/trocarFoto.php" enctype="multipart/form-data"  method="post" class="informacoes__formulario"> <!-- Formulário que utiliza o atributo enctype para enviar arquivos multipart/form-data -->
-								<div class="upload">
-									<img src="../assets/img/img-perfil/<?php echo $user['fotoPerfil']; ?>" id="image" id="image"> <!-- Exibe a imagem atual do usuário -->
+					<div class="espaco__branco">
+						<div class="div__title">
+							<h1>Olá, <?= $_SESSION['nomeCliente'] ?>!</h1>
+						</div>
+						<form action="../assets/scripts/trocarFoto.php" enctype="multipart/form-data" method="post" class="informacoes__formulario"> <!-- Formulário que utiliza o atributo enctype para enviar arquivos multipart/form-data -->
+							<div class="upload">
+								<img src="../assets/img/img-perfil/<?php echo $user['fotoPerfil']; ?>" id="image" id="image"> <!-- Exibe a imagem atual do usuário -->
 
-									<div class="rightRound" id="upload">
-									<input type="file" name="fileImg" id ="fileImg" accept=".jpg, .jpeg, .png"> <!-- Input de seleção de arquivo -->
+								<div class="rightRound" id="upload">
+									<input type="file" name="fileImg" id="fileImg" accept=".jpg, .jpeg, .png"> <!-- Input de seleção de arquivo -->
 									<i class="fa fa-camera"></i> <!-- Ícone de câmera -->
-									</div>
+								</div>
 
-									<div class="leftRound" id ="cancel" style="display: none;">
-									<i class = "fa fa-times"></i> <!-- Ícone de cancelar-->
-									</div>
-									<div class="rightRound" id ="confirm" style="display: none;">
+								<div class="leftRound" id="cancel" style="display: none;">
+									<i class="fa fa-times"></i> <!-- Ícone de cancelar-->
+								</div>
+								<div class="rightRound" id="confirm" style="display: none;">
 									<input type="submit"> <!-- Botão de envio do formulário -->
-									<i class = "fa fa-check"></i> <!-- Ícone de confirmar -->
-									</div>
+									<i class="fa fa-check"></i> <!-- Ícone de confirmar -->
 								</div>
-							</form>
+							</div>
+						</form>
+					</div>
+					<div class="perfil__info">
+						<div class="caixa__info">
+							<i class='bx bx-user icone'></i>
+							<div class="perfil__texto">
+								<p><?= $_SESSION['nomeCliente'] ?></p>
+							</div>
+							<i class='bx bxs-user span'></i>
 						</div>
-						<div class="perfil__info">
-							<div class="caixa__info">
-								<i class='bx bx-user icone'></i>
-								<div class="perfil__texto">
-									<p><?=$_SESSION['nomeCliente']?></p>
-								</div>
-								<i class='bx bxs-user span'></i>
+						<div class="caixa__info">
+							<i class='bx bx-envelope icone'></i>
+							<div class="perfil__texto">
+								<p id="perfil__texto__email"><?= $_SESSION['email'] ?></p>
 							</div>
-							<div class="caixa__info">
-								<i class='bx bx-envelope icone'></i>
-								<div class="perfil__texto">
-									<p id="perfil__texto__email"><?=$_SESSION['email']?></p>
-								</div>
-								<i class='bx bxs-user span'></i>
-							</div>
-							<div class="caixa__info">
-								<img class="icone__turnmotors__perfil" src="../assets/img/logo-turnmotors-vermelha.svg" alt="Logo Turn Motors">
-								<div class="perfil__texto">
-									<p>Plano: <?=$_SESSION['plano']?></p>
-								</div>
-								<i class='bx bxs-user span'></i>
-							</div>
+							<i class='bx bxs-user span'></i>
 						</div>
-
-						<div class="perfil__veiculo__botoes">
-							<div class="div-perfil__veiculo__btn">
-								<a href="" class="perfil__veiculo__botao">Ver Mais</a>
+						<div class="caixa__info">
+							<img class="icone__turnmotors__perfil" src="../assets/img/logo-turnmotors-vermelha.svg" alt="Logo Turn Motors">
+							<div class="perfil__texto">
+								<p>Plano: <?= $_SESSION['plano'] ?></p>
 							</div>
-							<div class="div-perfil__veiculo__btn">
-								<a href="" class="perfil__veiculo__botao">Personalizar</a>
-							</div>
+							<i class='bx bxs-user span'></i>
 						</div>
 					</div>
+
+					<div class="perfil__veiculo__botoes">
+						<div class="div-perfil__veiculo__btn">
+							<a href="" class="perfil__veiculo__botao">Ver Mais</a>
+						</div>
+						<div class="div-perfil__veiculo__btn">
+							<a href="" class="perfil__veiculo__botao">Personalizar</a>
+						</div>
+					</div>
+				</div>
 				<div class="perfil__cards__mobile">
 					<div class="perfil__veiculos">
 						<div class="perfil__veiculos-compra__branco">
 							<h3>Veículo Principal</h3>
-							<i class='bx bx-edit' ></i>
+							<i class='bx bx-edit'></i>
 						</div>
 						<div class="perfil__veiculo__conteudo">
 							<div class="perfil__veiculo__img">
 								<img src="../assets/img/icone-carro-novo.svg" alt="Veículo">
 							</div>
 							<div class="perfil__veiculo__texto">
-								<h4><?php //VEÍCULO PRINCIPAL ?></h4>
-								<h5><?php //PLACA DO VEÍCULO PRINCIPAL ?></h5>
+								<h4><?php //VEÍCULO PRINCIPAL 
+									?></h4>
+								<h5><?php //PLACA DO VEÍCULO PRINCIPAL 
+									?></h5>
 							</div>
 						</div>
 						<div class="perfil__veiculo__botoes">
 							<a href="" class="perfil__veiculo__botao">Ver Mais</a>
 							<a href="" class="perfil__veiculo__botao">Personalizar</a>
 						</div>
-				</div>
-				<div class="perfil__compras">
-					<div class="perfil__veiculos-compra__branco">
-						<h3>Compras</h3>
-						<i class='bx bx-cart'></i>
 					</div>
-				</div>
-				
+					<div class="perfil__compras">
+						<div class="perfil__veiculos-compra__branco">
+							<h3>Compras</h3>
+							<i class='bx bx-cart'></i>
 						</div>
+					</div>
+
+				</div>
 			</div>
 
 		</div>
-		
+
 	</main>
 
 </body>
+
 </html>
