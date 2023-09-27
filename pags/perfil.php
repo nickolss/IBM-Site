@@ -6,6 +6,7 @@ require_once('../assets/scripts/consultaCliente.php');
 $idDono = $_SESSION['id'];
 $sqlCarro = $pdo->query("SELECT * FROM `carro` WHERE id_dono = $idDono");
 $carros = $sqlCarro->fetchAll();
+$placa = $carros[0]['placa'] ?? "";
 ?>
 
 <!DOCTYPE html>
@@ -172,8 +173,10 @@ $carros = $sqlCarro->fetchAll();
 								<img src="../assets/img/icone-carro-novo.svg" alt="Veículo">
 							</div>
 							<div class="perfil__veiculo__texto">
-								<h4><?= $carros[0]['apelido'] ?> </h4>
-								<h5>Placa: <?= $carros[0]['placa'] ?> </h5>
+								<h4><?= $carros[0]['apelido'] ?? "Nenhum Veículo Encontrado" ?> </h4>
+								<h5><?php if($placa != ""){
+									echo "Placa: $placa";
+								} ?> </h5>
 							</div>
 						</div>
 
