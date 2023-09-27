@@ -260,7 +260,7 @@ if (isset($_GET['busca'])) {
     
                             <div class="card-produto-dinamico-titulo">
     
-                            <h5 style="color: #014961; font-weight: bold" class="card-title"><?php echo $nomeProduto ?></h5>
+                            <h5 class="card-title"><?php echo $nomeProduto ?></h5>
     
                             </div>
     
@@ -289,16 +289,16 @@ if (isset($_GET['busca'])) {
                                         $quantidadeTupla = $stmt->rowCount();
 
                                         if($quantidadeTupla > 0){
-                                            echo '<button ><img class="fav__heart__icon" src="../assets/img/heart-filled.png" alt=""></button>';
+                                            echo '<button ><img class="fav__heart__icon" src="../assets/img/icone-favorito-preenchido.svg" alt=""></button>';
                                         }else{
-                                            echo '<button ><img class="fav__heart__icon" src="../assets/img/heart.png" alt=""></button>';
+                                            echo '<button ><img class="fav__heart__icon" src="../assets/img/icone-favorito.svg" alt=""></button>';
                                         }
                                         
                                     ?>
                                 </form>
                                 <form method="POST" action="?adicionar=<?php echo $idsProdutos ?>">
                                     <button type="submit" name="adicionar" value="<?php echo $idsProdutos ?>">
-                                        <img width="70%" src="../assets/img/iconeadd.png" alt="">
+                                        <img class="carrinho__icone" src="../assets/img/icone-carrinho-vermelho.svg" alt="">
                                     </button>
                                 </form>
     
@@ -399,7 +399,7 @@ if (isset($_GET['busca'])) {
     
                             <div class="card-produto-dinamico-titulo">
     
-                            <h5 style="color: #014961; font-weight: bold" class="card-title"><?php echo $nomeProduto2 ?></h5>
+                            <h5 class="card-title"><?php echo $nomeProduto2 ?></h5>
     
                             </div>
     
@@ -419,7 +419,7 @@ if (isset($_GET['busca'])) {
     
                                 <div class="card-produto-dinamico-preco-button-texto" >R$:<?php echo $precoProduto2 ?>,00</div>
     
-                                <button > <a href="?adicionar=<?php echo $naoEncontrados ?>"> <img width="30%"  src="../assets/img/iconeadd.png" alt=""> </a></button>
+                                <button > <a href="?adicionar=<?php echo $naoEncontrados ?>"> <img class="carrinho__icone" src="../assets/img/icone-carrinho-vermelho.svg" alt=""> </a></button>
     
                             </div>
     
@@ -466,9 +466,7 @@ if (isset($_GET['busca'])) {
 
                 <h1 class="pro-promo">Sobre nosso produtos</h1>
 
-                <p class="pro-formatar">Nossa oficina preza por produtos de altíssima qualidade,
-
-                    buscando sempre o que está em ascêndencia no mercado, tudo licenciado e atestado, com qualidade assegurado pela Anvisa. Produtos fornecidos e distribuídos pela Giancar Distribuidora Auto Peças.</p>
+                <p class="pro-formatar">Nossa oficina preza por produtos de altíssima qualidade, buscando sempre o que está em ascêndencia no mercado, tudo licenciado e atestado, com qualidade assegurado pela Anvisa. Produtos fornecidos e distribuídos pela Giancar Distribuidora Auto Peças.</p>
 
             </div>
 
@@ -582,7 +580,7 @@ if (isset($_GET['busca'])) {
 
                                 <div style="text-align: center;">
 
-                                    <div style="font-size: 1.2em; color: #014961; margin-top: 15px; margin-bottom: 30px;">Garantia</div>
+                                    <div style="font-size: 1.2em; margin-top: 15px; margin-bottom: 30px;">Garantia</div>
 
                                     <div style="margin-bottom: 30px;"> <img width="150px" src="../assets/img/garantia.png"> </div>
 
@@ -612,11 +610,11 @@ if (isset($_GET['busca'])) {
 
                                 <div style="text-align: center;">
 
-                                    <div style="font-size: 1.2em; color: #014961; margin-top: 15px; margin-bottom: 30px;">Atendimento especial</div>
+                                    <div style="font-size: 1.2em; margin-top: 15px; margin-bottom: 30px;">Atendimento especial</div>
 
                                     <div style="margin-bottom: 30px;"> <img width="150px" src="../assets/img/atendimento.png"> </div>
 
-                                    <div style="font-size: 1.1em; color: #014961">Você se sentirá em casa</div>
+                                    <div style="font-size: 1.1em;">Você se sentirá em casa</div>
 
                                 </div>
 
