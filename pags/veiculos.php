@@ -55,7 +55,7 @@ require_once('../assets/scripts/iniciarSessao.php');
 
                         <div class='acoes-card'>
                             <a href='../assets/scripts/excluirVeiculo.php?idVeiculo=$idVeiculoPrinc' class='acoes-card__link'>Excluir Veículo</a>
-                            <a href='#' class='acoes-card__link'>Personalizar Veículo</a>
+                            <a href='./personalizacoes.php' class='acoes-card__link'>Personalizar Veículo</a>
                         </div>
                     </div>
                 </div>
@@ -84,7 +84,7 @@ require_once('../assets/scripts/iniciarSessao.php');
 
                                 <div class='acoes-card'>
                                     <a href='../assets/scripts/excluirVeiculo.php?idVeiculo=$idVeiculo' class='acoes-card__link'>Excluir Veículo</a>
-                                    <a href='#' class='acoes-card__link'>Personalizar Veículo</a>
+                                    <a href='./personalizacoes.php' class='acoes-card__link'>Personalizar Veículo</a>
                                 </div>
                             </div>
                             ";
