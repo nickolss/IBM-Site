@@ -33,7 +33,7 @@
             </div>
             <div class="cards">
                 <div class="card">
-                    <a href="agendamento-dropped.php" class="a__card">
+                    <a href="agendamentos.php?categoria=rebaixamento-dropped" class="a__card">
                         <div class="card__img">
                             <img class="imagem__card" src="../assets/img/personalizacao-rebaixamento-dropped.png" alt="Estilização Sólida">
                         </div>
@@ -46,7 +46,7 @@
                     </a>
                 </div>
                 <div class="card">
-                    <a href="agendamento-slammed.php" class="a__card">
+                    <a href="agendamentos.php?categoria=rebaixamento-slammed" class="a__card">
                         <div class="card__img">
                             <img class="imagem__card" src="../assets/img/personalizacao-rebaixamento-slammed.png" alt="Estilização Sólida">
                         </div>
@@ -59,7 +59,7 @@
                     </a>
                 </div>
                 <div class="card">
-                    <a href="agendamento-hellaflush.php" class="a__card">
+                    <a href="agendamentos.php?categoria=rebaixamento-hellaflush" class="a__card">
                         <div class="card__img">
                             <img class="imagem__card" src="../assets/img/personalizacao-rebaixamento-hellaflush.png" alt="Estilização Duas Cores">
                         </div>
@@ -81,7 +81,7 @@
             </div>
             <div class="cards">
                 <div class="card">
-                    <a href="agendamento-pintura-solida.php" class="a__card">
+                    <a href="agendamentos.php?categoria=pintura-solida" class="a__card">
                         <div class="card__img">
                             <img class="imagem__card" src="../assets/img/personalizacao-pintura-solida.png" alt="Estilização Sólida">
                         </div>
@@ -94,7 +94,7 @@
                     </a>
                 </div>
                 <div class="card">
-                    <a href="agendamento-pintura-metalica.php" class="a__card">
+                    <a href="agendamentos.php?categoria=pintura-metalica" class="a__card">
                         <div class="card__img">
                             <img class="imagem__card" src="../assets/img/personalizacao-pintura-metalica.png" alt="Estilização Sólida">
                         </div>
@@ -107,7 +107,7 @@
                     </a>
                 </div>
                 <div class="card">
-                    <a href="agendamento-pintura-perolizada.php" class="a__card">
+                    <a href="agendamentos.php?categoria=pintura-perolizada" class="a__card">
                         <div class="card__img">
                             <img class="imagem__card" src="../assets/img/personalizacao-pintura-perolizada.png" alt="Estilização Sólida">
                         </div>
