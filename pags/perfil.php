@@ -173,8 +173,12 @@
 						</div>
 
 						<div class="perfil__veiculo__botoes">
-							<a href="" class="perfil__veiculo__botao">Ver Mais</a>
-							<a href="" class="perfil__veiculo__botao">Personalizar</a>
+							<div class="div-perfil__veiculo__btn">
+								<a href="" class="perfil__veiculo__botao">Ver Mais</a>
+							</div>
+							<div class="div-perfil__veiculo__btn">
+								<a href="" class="perfil__veiculo__botao">Personalizar</a>
+							</div>
 						</div>
 					</div>
 
@@ -243,54 +247,62 @@
 			
 			<div class="cards__perfil-direita">
 				<div class="perfil__main__mobile">
-					<div class="espaco__branco">
-						<div class="div__title">
-							<h1>Olá, <?= $_SESSION['nomeCliente'] ?>!</h1>
-						</div>
-						<form action="../assets/scripts/trocarFoto.php" enctype="multipart/form-data"  method="post" class="informacoes__formulario"> <!-- Formulário que utiliza o atributo enctype para enviar arquivos multipart/form-data -->
-							<div class="upload">
-								<img src="../assets/img/img-perfil/<?php echo $user['fotoPerfil']; ?>" id="image" id="image"> <!-- Exibe a imagem atual do usuário -->
-								<div class="rightRound" id="upload">
-								<input type="file" name="fileImg" id ="fileImg" accept=".jpg, .jpeg, .png"> <!-- Input de seleção de arquivo -->
-								<i class="fa fa-camera"></i> <!-- Ícone de câmera -->
+						<div class="espaco__branco">
+							<div class="div__title">
+								<h1>Olá, <?= $_SESSION['nomeCliente'] ?>!</h1>
+							</div>
+							<form action="../assets/scripts/trocarFoto.php" enctype="multipart/form-data"  method="post" class="informacoes__formulario"> <!-- Formulário que utiliza o atributo enctype para enviar arquivos multipart/form-data -->
+								<div class="upload">
+									<img src="../assets/img/img-perfil/<?php echo $user['fotoPerfil']; ?>" id="image" id="image"> <!-- Exibe a imagem atual do usuário -->
+
+									<div class="rightRound" id="upload">
+									<input type="file" name="fileImg" id ="fileImg" accept=".jpg, .jpeg, .png"> <!-- Input de seleção de arquivo -->
+									<i class="fa fa-camera"></i> <!-- Ícone de câmera -->
+									</div>
+
+									<div class="leftRound" id ="cancel" style="display: none;">
+									<i class = "fa fa-times"></i> <!-- Ícone de cancelar-->
+									</div>
+									<div class="rightRound" id ="confirm" style="display: none;">
+									<input type="submit"> <!-- Botão de envio do formulário -->
+									<i class = "fa fa-check"></i> <!-- Ícone de confirmar -->
+									</div>
 								</div>
-								<div class="leftRound" id ="cancel" style="display: none;">
-								<i class = "fa fa-times"></i> <!-- Ícone de cancelar-->
+							</form>
+						</div>
+						<div class="perfil__info">
+							<div class="caixa__info">
+								<i class='bx bx-user icone'></i>
+								<div class="perfil__texto">
+									<p><?=$_SESSION['nomeCliente']?></p>
 								</div>
-								<div class="rightRound" id ="confirm" style="display: none;">
-								<input type="submit"> <!-- Botão de envio do formulário -->
-								<i class = "fa fa-check"></i> <!-- Ícone de confirmar -->
+								<i class='bx bxs-user span'></i>
+							</div>
+							<div class="caixa__info">
+								<i class='bx bx-envelope icone'></i>
+								<div class="perfil__texto">
+									<p id="perfil__texto__email"><?=$_SESSION['email']?></p>
 								</div>
+								<i class='bx bxs-user span'></i>
 							</div>
-						</form>
-					</div>
-					<div class="perfil__info">
-						<div class="caixa__info">
-							<i class='bx bx-user icone'></i>
-							<div class="perfil__texto">
-								<p><?=$_SESSION['nomeCliente']?></p>
+							<div class="caixa__info">
+								<img class="icone__turnmotors__perfil" src="../assets/img/logo-turnmotors-vermelha.svg" alt="Logo Turn Motors">
+								<div class="perfil__texto">
+									<p>Plano: <?=$_SESSION['plano']?></p>
+								</div>
+								<i class='bx bxs-user span'></i>
 							</div>
-							<i class='bx bxs-user span'></i>
 						</div>
-						<div class="caixa__info">
-							<i class='bx bx-envelope icone'></i>
-							<div class="perfil__texto">
-								<p id="perfil__texto__email"><?=$_SESSION['email']?></p>
+
+						<div class="perfil__veiculo__botoes">
+							<div class="div-perfil__veiculo__btn">
+								<a href="" class="perfil__veiculo__botao">Ver Mais</a>
 							</div>
-							<i class='bx bxs-user span'></i>
-						</div>
-						<div class="caixa__info">
-							<img class="icone__turnmotors__perfil" src="../assets/img/logo-turnmotors-vermelha.svg" alt="Logo Turn Motors">
-							<div class="perfil__texto">
-								<p>Plano: <?=$_SESSION['plano']?></p>
+							<div class="div-perfil__veiculo__btn">
+								<a href="" class="perfil__veiculo__botao">Personalizar</a>
 							</div>
-							<i class='bx bxs-user span'></i>
 						</div>
 					</div>
-					<div class="botao">
-						<a class="btn__perfil" href="#">Ver Mais</a>
-					</div>
-				</div>
 				<div class="perfil__cards__mobile">
 					<div class="perfil__veiculos">
 						<div class="perfil__veiculos-compra__branco">

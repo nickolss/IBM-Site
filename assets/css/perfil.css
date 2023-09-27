@@ -185,7 +185,7 @@ main{
     border-radius: 20px;
     width: 350px;
     height: 45px;
-    margin-bottom: 25px;
+    margin-bottom: 1.5rem;
     box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.3);
     font-size: 1.25rem;
     text-decoration: none;
@@ -253,7 +253,8 @@ main{
     border: 2px solid var(--amarelo);
     border-radius: 50%;
     padding: 5px;
-    width: 65px;
+    width: 70px;
+    margin: 1.5rem 0rem 0rem 1.5rem;
 }
 
 .perfil__veiculo__texto{
@@ -280,9 +281,14 @@ main{
 
 .perfil__veiculo__botoes{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 2.5rem;
+}
+
+.div-perfil__veiculo__btn{
+    margin-bottom: 1.5rem;
 }
 
 .perfil__veiculo__botao{
@@ -293,7 +299,7 @@ main{
     color: var(--preto);
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
-    width: 150px;
+    width: 20rem;
     height: 35px;
     margin: 0px 10px 0px 10px;
     box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.3);
@@ -362,16 +368,22 @@ main{
     bottom: -6px;
     transform: translateX(-50%) rotate(45deg);
     transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
+}
 
 .icones__esquerda .icone__esquerda:hover .legenda__icone__pc,
 .icones__esquerda .icone__esquerda:hover .legenda__icone__pc:before{
-  background: var(--branco);
-  color: var(--vermelho);
+    background: var(--branco);
+    color: var(--vermelho);
 }
 
 .perfil__menu-hamburguer{
     display: none;
+}
+
+@media only screen and (max-width: 1200px){
+    .opcoes__icones{
+        height: 630px;
+    }
 }
 
 @media only screen and (max-width: 1150px){
@@ -398,12 +410,14 @@ main{
     .opcoes__icones__mobile{
         background-color: var(--preto);
         box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.2);
-        width: 160px;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
         margin-right: 1rem;
+        width: 160px;
+        height: 1125px;
+        border-radius: 20px;
     }
 
     .icones__esquerda{
@@ -412,6 +426,7 @@ main{
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        
     }
 
     .meio-circulo__branco-top{
@@ -448,6 +463,10 @@ main{
         font-size: 2rem;
     }
 
+    .perfil__main__mobile .btn__perfil{
+        margin-bottom: 2rem;
+    }
+
     .caixa__info{
         width: 300px;
     }
@@ -470,27 +489,33 @@ main{
     }
 
     .perfil__veiculos, .perfil__compras{
-        height: 200px;
+        height: 250px;
     }
 
     .opcoes__icones__mobile-pequeno{
         display: none;
     }
-}
 
-@media only screen and (max-width: 1200px){
-    .opcoes__icones{
-        height: 630px;
+    .perfil__veiculo__img img{
+        margin-top: 0.5rem;
+        width: 65px;
     }
 
+    .perfil__veiculo__botoes{
+        margin-top: 1rem;
+    }
+
+    .perfil__veiculo__botao{
+        margin-bottom: 1rem;
+    }
 }
 
-@media only screen and (max-width: 1100px){
+@media only screen and (max-width: 800px){
     .opcoes__icones__mobile{
         display: none;
     }
-
 }
+
 
 @media only screen and (max-width: 505px){
     .perfil__main__mobile .espaco__branco{
@@ -521,7 +546,7 @@ main{
     }
 
     .btn__perfil{
-        width: 225px;
+        width: 300px;
     }
 
     .perfil__cards__mobile{
@@ -537,8 +562,12 @@ main{
     }
 
     .perfil__veiculo__botao{
-        width: 100px;
+        width: 250px;
         font-size: 1rem;
+    }
+
+    .perfil__veiculo__img img{
+        margin-left: 1rem;
     }
 
 }
