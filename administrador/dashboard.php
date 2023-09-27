@@ -21,11 +21,11 @@ require_once('../assets/scripts/consultaFuncionario.php');
   <link rel="stylesheet" href="../assets/css/estilos-importantes.css">
 
   <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
-  <script type="text/javascript" src="../assets/js/java.js" defer></script>
+  <!-- <script type="text/javascript" src="../assets/js/java.js" defer></script> -->
   <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
 
   <!-- Gráficos -->
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
     google.charts.load('current', {
       'packages': ['corechart']
@@ -76,9 +76,6 @@ require_once('../assets/scripts/consultaFuncionario.php');
     }
 
     function graficoClientes() {
-      <?php
-      $sqlClienteComum = $pdo->query("SELECT * FROM ");
-      ?>
       var data = google.visualization.arrayToDataTable([
         ['Clientes', 'Turninados e Comuns'],
         ['Comum', 11],
@@ -153,11 +150,11 @@ require_once('../assets/scripts/consultaFuncionario.php');
 
       chart.draw(data, options);
     }
-  </script>
+  </script> -->
 
 </head>
 
-<body id="container__body">
+<body>
   <?php
   require_once('../assets/components/header.php');
   ?>
@@ -173,7 +170,7 @@ require_once('../assets/scripts/consultaFuncionario.php');
       </div>
     </div>
 
-    <div class="div__grande__graficos row">
+    <!-- <div class="div__grande__graficos row">
       <div class="div__grafico col">
         <div id="graficoEstoque"></div>
       </div>
@@ -184,7 +181,7 @@ require_once('../assets/scripts/consultaFuncionario.php');
         <div id="graficoVendas"></div>
       </div>
 
-    </div>
+    </div> -->
 
     <div class="row">
       <div class="col">
