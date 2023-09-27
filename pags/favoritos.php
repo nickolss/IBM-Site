@@ -6,17 +6,15 @@
 $id = (int)$_SESSION['id'];
 
 // Consulta SQL para obter os itens favoritados pelo usuário.
-$sqlFavoritos = "SELECT p.nome AS nome_produto
+$sqlFavoritos = "SELECT p.codigoProduto, p.nome AS nome_produto, p.preco, p.marca, p.descricao, p.customizações, p.caminho_imagem
                 FROM favoritos AS f
                 INNER JOIN produto AS p ON f.id_produto = p.codigoProduto
-                WHERE f.id_cliente = :idCliente
-                LIMIT 1";
+                WHERE f.id_cliente = :idCliente";
 
 $stmtFavoritos = $pdo->prepare($sqlFavoritos);
 $stmtFavoritos->bindParam(':idCliente', $id, PDO::PARAM_INT);
 $stmtFavoritos->execute();
 $resultadoFavoritos = $stmtFavoritos->fetchAll(PDO::FETCH_ASSOC);
-
 
 //variaveis de controle de paginção
 $pagina = 1;
@@ -229,103 +227,64 @@ if (isset($_GET['busca'])) {
     }else{
       
         echo '<div class="container">';
-        echo "<div class='main__title'>Navegue pelos produtos $msgNav</div>";
+        echo "<div class='main__title'>Navegue pelos produtos favoritados! $msgNav</div>";
         echo '<br>';
         echo '</div>';
     } ?>
 
-<?php if(!empty($chunksProdutos)){
-    foreach ($chunksProdutos as $chunk) { ?>
-
+<?php if(!empty($chunksProdutos)){ ?>
         <div class="container"> 
             <div class="row ">
-    
-                <?php foreach ($chunk as $idsProdutos) {
-                ?>
                 
-                <?php if (!empty($resultadoFavoritos)): ?>
-                        <?php foreach ($resultadoFavoritos as $item):
+                <?php if (!empty($resultadoFavoritos)){ ?>
+                        <?php foreach ($resultadoFavoritos as $produtoFavoritado){
                             
-                    $sql = "SELECT nome, preco, marca, descricao, customizações, caminho_imagem FROM produto WHERE codigoProduto = :idsProdutos";
+                            $sql = "SELECT nome, preco, marca, descricao, customizações, caminho_imagem FROM produto WHERE codigoProduto = :idsProdutos";
 
-                    $stmt = $pdo->prepare($sql);
-                    $stmt->bindParam(':idsProdutos', $idsProdutos, PDO::PARAM_INT);
-                    $stmt->execute();
+                            $stmt = $pdo->prepare($sql);
+                            $idsProdutosImploded = implode(",", $idsProdutos);
+                            $stmt->bindParam(':idsProdutos', $idsProdutosImploded, PDO::PARAM_INT);                    
+                            $stmt->execute();
 
-                    if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                        $nomeProduto = $row['nome'];
-                        $precoProduto = $row['preco'];
-                        $marcaProduto = $row['marca'];
-                        $descricaoProduto = $row['descricao'];
-                        $customizacaoProduto = $row['customizações'];
-                        $imagemProduto = $row['caminho_imagem'];
+                            $nomeProduto = $produtoFavoritado['nome_produto'];
+                            $precoProduto = $produtoFavoritado['preco'];
+                            $marcaProduto = $produtoFavoritado['marca'];
+                            $descricaoProduto = $produtoFavoritado['descricao'];
+                            $customizacaoProduto = $produtoFavoritado['customizações'];
+                            $imagemProduto = $produtoFavoritado['caminho_imagem'];
+                    
+                            echo '<div class="col-lg-3 col-md-4 col-sm-6 col-12" style="padding: 10px;">';
+                            echo '<div class="d-flex justify-content-center">';
+                            echo '<div class="card card-produto-dinamico" style="width: 18rem;">';
+                            echo '<div class="text-center">';
+                            echo '<img class="card-img-top imagens-prod" src="' . $imagemProduto . '" alt="...">';
+                            echo '</div>';
+                            echo '<div class="card-body" style="display: flex; flex-direction: column;">';
+                            echo '<div class="card-produto-dinamico-titulo">';
+                            echo '<h5 style="color: #014961; font-weight: bold" class="card-title">' . $nomeProduto . '</h5>';
+                            echo '</div>';
+                            echo '<div>';
+                            echo '<div class="card-text">' . $marcaProduto . '</div>';
+                            echo '<div class="card-text">' . $descricaoProduto . '</div>';
+                            echo '<div class="card-text">' . $customizacaoProduto . '</div>';
+                            echo '</div>';
+                            echo '<hr class="card-produto-dinamico-linha">';
+                            echo '<div class="card-produto-dinamico-preco-button">';
+                            echo '<div class="card-produto-dinamico-preco-button-texto">R$:' . $precoProduto . ',00</div>';
+                            echo '<button ><img class="fav__heart__icon" src="../assets/img/heart-filled.png" alt=""></button>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                    } else {
+                        echo '<p>Nenhum item favoritado encontrado.</p>';
                     }
+                }
                     ?>
-                    <div class="col-lg-3 col-md-4 col-sm-6  col-12" style="padding: 10px; ">
-    
-                    <div class="d-flex justify-content-center">
-
-                    <div class="card card-produto-dinamico" style="width: 18rem;">
-
-                        <div class="text-center">
-
-                        <img  class="card-img-top imagens-prod" src="<?php echo $imagemProduto ?>"  alt="...">
-
-                        </div>
-
-                        <div class="card-body " style="display: flex; flex-direction: column; ">
-
-                            <div class="card-produto-dinamico-titulo">
-
-                            <h5 style="color: #014961; font-weight: bold" class="card-title"><?php echo $nomeProduto ?></h5>
-
-                            </div>
-
-                            <div >
-
-                            <div class="card-text"><?php echo $marcaProduto ?></div>
-
-                            <div class="card-text"><?php echo $descricaoProduto ?></div>
-
-                            <div class="card-text"><?php echo $customizacaoProduto ?></div>
-
-                            </div>
-
-                            <hr class="card-produto-dinamico-linha">
-
-                            <div  class="card-produto-dinamico-preco-button">
-
-                                <div class="card-produto-dinamico-preco-button-texto" >R$:<?php echo $precoProduto ?>,00</div>
-                                <form action="../assets/scripts/cadastrarFavorito.php" method="POST">
-                                    <input type="hidden" name="idProduto" id="idProduto" value="<?php echo $idsProdutos ; ?>">
-                                    <?php
-                                        $sqlFav = "SELECT * FROM `favoritos` WHERE `id_produto`='$idsProdutos'";
-                                        $stmt = $pdo->query($sqlFav);
-                                        $stmt->execute();
-                                        $favoritos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                                        $quantidadeTupla = $stmt->rowCount();
-
-                                        if($quantidadeTupla > 0){
-                                            echo '<button ><img class="fav__heart__icon" src="../assets/img/heart-filled.png" alt=""></button>';
-                                        }      
-                                    ?>
-                                </form>
-                            </div>
-                        </div>
-
-                        </div>
-
                     </div>
-                <?php endforeach; ?>
-                <?php else: ?>
-                    <p>Nenhum item favoritado encontrado.</p>
-                <?php endif; ?>
-    
-                
                 </div>
-    
-                <?php }} }?>
-
             </div>
         </div>
 
@@ -340,84 +299,52 @@ if (isset($_GET['busca'])) {
     echo '</div>';
 }else{ ?>
 
-<?php if(!empty($chunksProdutos2)){
-    foreach ($chunksProdutos2 as $chunk2) { ?>
+<?php if(!empty($chunksProdutos2)){ ?>
 
         <div class="container"> 
             <div class="row ">
-    
-                <?php foreach ($chunk2 as $naoEncontrados) {
-                ?>
-                <?php if (!empty($resultadoFavoritos)): ?>
-                        <?php foreach ($resultadoFavoritos as $item):
+            <?php if (!empty($resultadoFavoritos)){ ?>
+                        <?php foreach ($resultadoFavoritos as $produtoFavoritado){
                             
-                            $sql2 = "SELECT nome, preco, marca, descricao, customizações, caminho_imagem FROM produto WHERE codigoProduto = :naoEncontrados";
+                            $sql2 = "SELECT nome, preco, marca, descricao, customizações, caminho_imagem FROM produto WHERE codigoProduto = :idsProdutos";
 
                             $stmt2 = $pdo->prepare($sql2);
-                            $stmt2->bindParam(':naoEncontrados', $naoEncontrados, PDO::PARAM_INT);
+                            $idsProdutosImploded2 = implode(",", $idsProdutos);
+                            $stmt2->bindParam(':idsProdutos', $idsProdutosImploded, PDO::PARAM_INT);                    
                             $stmt2->execute();
-                            
-                            if ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)) {
-                                $nomeProduto2 = $row2['nome'];
-                                $precoProduto2 = $row2['preco'];
-                                $marcaProduto2 = $row2['marca'];
-                                $descricaoProduto2 = $row2['descricao'];
-                                $customizacaoProduto2 = $row2['customizações'];
-                                $imagemProduto2 = $row2['caminho_imagem'];
-                            } 
+
+                            $nomeProduto2 = $produtoFavoritado['nome_produto'];
+                            $precoProduto2 = $produtoFavoritado['preco'];
+                            $marcaProduto2 = $produtoFavoritado['marca'];
+                            $descricaoProduto2 = $produtoFavoritado['descricao'];
+                            $customizacaoProduto2 = $produtoFavoritado['customizações'];
+                            $imagemProduto2 = $produtoFavoritado['caminho_imagem'];
+                            echo '<div class="col-lg-3 col-md-4 col-sm-6 col-12" style="padding: 10px;">';
+                            echo '<div class="d-flex justify-content-center">';
+                            echo '<div class="card card-produto-dinamico" style="width: 18rem;">';
+                            echo '<div class="text-center">';
+                            echo '<img class="card-img-top imagens-prod" src="' . $imagemProduto . '" alt="...">';
+                            echo '</div>';
+                            echo '<div class="card-body" style="display: flex; flex-direction: column;">';
+                            echo '<div class="card-produto-dinamico-titulo">';
+                            echo '<h5 style="color: #014961; font-weight: bold" class="card-title">' . $nomeProduto . '</h5>';
+                            echo '</div>';
+                            echo '<div>';
+                            echo '<div class="card-text">' . $marcaProduto . '</div>';
+                            echo '<div class="card-text">' . $descricaoProduto . '</div>';
+                            echo '<div class="card-text">' . $customizacaoProduto . '</div>';
+                            echo '</div>';
+                            echo '<hr class="card-produto-dinamico-linha">';
+                            echo '<div class="card-produto-dinamico-preco-button">';
+                            echo '<div class="card-produto-dinamico-preco-button-texto">R$:' . $precoProduto . ',00</div>';
+                            echo '<button ><img class="fav__heart__icon" src="../assets/img/heart-filled.png" alt=""></button>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
                 ?>
-    
-                <div class="col-lg-3 col-md-4 col-sm-6  col-12" style="padding: 10px; ">
-    
-                <div class="d-flex justify-content-center">
-    
-                    <div class="card card-produto-dinamico" style="width: 18rem;">
-    
-                        <div class="text-center">
-    
-                        <img  class="card-img-top imagens-prod" src="<?php echo $imagemProduto2 ?>"  alt="...">
-    
-                        </div>
-    
-                        <div class="card-body " style="display: flex; flex-direction: column; ">
-    
-                            <div class="card-produto-dinamico-titulo">
-    
-                            <h5 style="color: #014961; font-weight: bold" class="card-title"><?php echo $nomeProduto2 ?></h5>
-    
-                            </div>
-    
-                            <div >
-    
-                            <div class="card-text"><?php echo $marcaProduto2 ?></div>
-    
-                            <div class="card-text"><?php echo $descricaoProduto2 ?></div>
-    
-                            <div class="card-text"><?php echo $customizacaoProduto2 ?></div>
-    
-                            </div>
-    
-                            <hr class="card-produto-dinamico-linha">
-    
-                            <div  class="card-produto-dinamico-preco-button">
-    
-                                <div class="card-produto-dinamico-preco-button-texto" >R$:<?php echo $precoProduto2 ?>,00</div>
-                            </div>
-    
-                           
-    
-                        </div>
-    
-                        </div>
-    
-                    </div>
-    
-                </div>
-                <?php endforeach; ?>
-                <?php else: ?>
-                    <p>Nenhum item favoritado encontrado.</p>
-                <?php endif; ?>
-                <?php } }}}?>
+                <?php  }}}}?>
 
             </div>
         </div>
