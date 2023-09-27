@@ -154,61 +154,69 @@ require_once('../assets/scripts/consultaFuncionario.php');
 
 </head>
 
-<body>
+<body id="container__body">
   <?php
   require_once('../assets/components/header.php');
   ?>
 
-  <div class="container text-center principal">
-
-
-    <div class="row">
-      <div class="col">
-        <div class="titulo">
-          <h1 class="mainTitle">Olá, <?= $_SESSION['nomeFuncionario'] ?>!</h1>
+  <main>
+    <div class="container text-center principal">
+      <div class="row">
+        <div class="col">
+          <div class="titulo">
+            <h1 class="mainTitle">Olá, <?= $_SESSION['nomeFuncionario'] ?>!</h1>
+          </div>
         </div>
       </div>
+      <!-- <div class="div__grande__graficos row">
+        <div class="div__grafico col">
+          <div id="graficoEstoque"></div>
+        </div>
+        <div class="div__grafico col">
+          <div id="graficoClientes"></div>
+        </div>
+        <div class="div__grafico col">
+          <div id="graficoVendas"></div>
+        </div>
+      </div> -->
+
+      <div class="row">
+        <div class="col">
+          <img class="img__administrador" src="../assets/img/img-administrador.svg" alt="Imagem Administrador">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="div__botoes">
+            <form action="cadastrar-produto.php">
+              <button class="botao__laranja" type="submit">Adicionar Produto</button>
+            </form>
+            <form action="catalogo.php">
+              <button class="botao__laranja" type="submit">Modificar Produto</button>
+            </form>
+          </div>
+          <div class="div__botoes">
+            <form action="cadastrar-user-adm.php">
+              <button class="botao__laranja" type="submit">Adicionar Administrador</button>
+            </form>
+            <form action="cadastrar-mecanico.php">
+              <button class="botao__laranja" type="submit">Adicionar Mecânico</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+            <form action="../assets/scripts/logout.php">
+              <button class="botao__sair__dashboard" type="submit">Sair da Conta</button>
+            </form>
+        </div>
+      </div>
+
     </div>
-
-    <!-- <div class="div__grande__graficos row">
-      <div class="div__grafico col">
-        <div id="graficoEstoque"></div>
-      </div>
-      <div class="div__grafico col">
-        <div id="graficoClientes"></div>
-      </div>
-      <div class="div__grafico col">
-        <div id="graficoVendas"></div>
-      </div>
-
-    </div> -->
-
-    <div class="row">
-      <div class="col">
-        <div class="div__botoes">
-          <form action="cadastrar-produto.php">
-            <button class="botao__laranja" type="submit">Adicionar Produto</button>
-          </form>
-          <form action="catalogo.php">
-            <button class="botao__laranja" type="submit">Modificar Produto</button>
-          </form>
-        </div>
-        <div class="div__botoes">
-          <form action="cadastrar-user-adm.php">
-            <button class="botao__laranja" type="submit">Adicionar Administrador</button>
-          </form>
-          <form action="cadastrar-mecanico.php">
-            <button class="botao__laranja" type="submit">Adicionar Mecânico</button>
-          </form>
-          <form action="../assets/scripts/logout.php">
-            <button class="botao__laranja" type="submit">Sair da Conta</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-
-  </div>
+  </main>
 
   <script src="../assets/js/drowdown.js"></script>
 

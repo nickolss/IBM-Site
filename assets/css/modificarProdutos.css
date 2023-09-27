@@ -1,3 +1,5 @@
+@import url(variaveis-cores-fonte.min.css);
+
 .card__footer{
 	display: flex;
 }
@@ -5,4 +7,24 @@
 .footer__botoes{
 	display: flex;
 	gap: 0.5rem;
+}
+
+.botao__funcao{
+	border: none;
+	background-color: transparent;
+}
+
+.icones__modificar-produto{
+	border: 2px solid var(--vermelho);
+	border-radius: 50%;
+	padding: 0.3rem;
+	color: var(--vermelho);
+	font-size: 1.8rem;
+}
+
+.icones__modificar-produto:hover{
+	border: 2px solid var(--vermelho);
+	color: var(--branco);
+	background-color: var(--vermelho);
+	transition-duration: 0.5s;
 }

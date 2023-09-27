@@ -33,7 +33,7 @@ require_once('../assets/scripts/conexao.php');
 
     <main class="principal">
         <div class="titulo">
-            <h1 class="mainTitle">Cadastrar Produtos</h1>
+            <h1 class="mainTitle">Modificar Produtos</h1>
         </div>
         <?php
         $id = (int) $_POST['btn-pedido-orcamento'];
