@@ -1,22 +1,23 @@
-
-/*tudo aqui*/
+@import url(variaveis-cores-fonte.min.css);
 
 hr.pro-linn {
-    background-color: #000;
+    background-color: var(--preto);
     height: 5px
 }
 
 h1.pro-promo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--vermelho);
     text-align: center;
-    margin: 50px 0;
-    color: #df7369;
-    text-shadow: 2px 1px 1px #000;
-    font-weight: 700;
-    font-size: 60px;
-    margin-bottom: 10px
+    font-weight: bolder;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    font-size: 2.2rem;
 }
+
 p.pro-formatar {
-    font-size: 1.1em;
+    font-size: 1.1rem;
     text-align: center;
     margin: 0 200px
 }
@@ -30,7 +31,7 @@ p.pro-formatar {
     transform: scale(1.1);
     transition: all .3s ease;
     cursor: pointer;
-    color: #000
+    color: var(--preto)
 }
 
 .pro-aumentar {
@@ -41,7 +42,7 @@ p.pro-formatar {
     transform: scale(1.1);
     transition: all .3s ease;
     cursor: pointer;
-    color: #000
+    color: var(--preto)
 }
 
 .pro-pro-pro-card1 {
@@ -57,51 +58,62 @@ p.pro-formatar {
     width: 200px;
     height: 280px;
     position: relative;
-    background: #fff;
+    background: var(--branco);
     border-radius: 15px;
     box-shadow: 5px 5px 1px #a9a9a9
 }
+
 .main__title{
-    color: #FF7769;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--vermelho);
     text-align: center;
-    font-weight: bold;
-    font-size: 2.5rem;
-    margin-top: 2%;
+    font-weight: bolder;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    font-size: 2.6rem;
 }
 
 .card-produto-dinamico{
     height: 400px;
     padding: 10px;
-   
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
-
-
 .card-produto-dinamico img.imagens-prod{
-    background-color: #a9a9a9;
     width: 150px; 
     height: 150px; 
     object-fit: cover;
+    border: none;
 }
+
 .card-produto-dinamico-titulo{
     text-align: center;
-    
+}
+
+h5.card-title{
+    color: var(--vermelho);
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
 
 hr.card-produto-dinamico-linha{
-    background-color: #000000;
+    background-color: var(--preto);
     height: 2px;
 }
+
 .card-produto-dinamico-preco-button{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    
 }
+
 .card-produto-dinamico-preco-button button{
    border: none;
-   background-color: white;
+   background-color: var(--branco);
    text-align: end;
    padding: 0;
 }
@@ -111,11 +123,12 @@ hr.card-produto-dinamico-linha{
     font-weight: bold;
 }
 
-.fav__heart__icon{
-    width: 40%;
+.fav__heart__icon, .carrinho__icone{
+    width: 2rem;
+    background-color: white;
 }
 
-.fav__heart__icon:hover{
+.fav__heart__icon:hover, .carrinho__icone:hover{
     transform: scale(1.15);
     transition-duration: 0.7s;
 }
@@ -126,12 +139,22 @@ hr.card-produto-dinamico-linha{
     }
 }
 
+@media only screen and (max-width: 900px){
+    .container{
+        margin-top: 10rem;
+    }
+
+    .main__title{
+        margin-bottom: -10rem;
+    }
+}
+
 @media (max-width:458px) and (min-width:320px) {
    
     h1.pro-promo {
         text-align: center;
         margin: 50px 0;
-        color: #df7369;
+        color: var(--vermelho);
         text-shadow: 2px 1px 1px #000;
         font-weight: 700;
         font-size: auto;

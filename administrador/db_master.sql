@@ -284,7 +284,7 @@ VALUES
     'Roda Cinza',
     55,
     'Marca 1',
-    'Roda cinza sólida de qualidade.',
+    'Roda cinza sólida.',
     'pneu-solido',
     '../assets/img/personalizacao-roda-solida-cinza.png',
     'PC'
@@ -311,12 +311,12 @@ VALUES
   ),
   (
     7,
-    'Produto 1',
+    'Pneu Preto',
     1000,
     'Marca A',
-    'Descrição do Produto 1',
-    'rebaixamento-dropped',
-    '../assets/img/personalizacao-motor2.png',
+    'Descrição do Produto ',
+    'pneu-solido',
+    '../assets/img/personalizacao-roda-solida-preto.png',
     'PC'
   ),
   (
@@ -411,12 +411,12 @@ VALUES
   ),
   (
     17,
-    'Produto 11',
+    'Roda Amarela',
     950,
     'Marca D',
-    'Descrição do Produto 11',
-    'rebaixamento-dropped',
-    '../assets/img/personalizacao-motor2.png',
+    'Descrição do Produto',
+    'pneu-solido',
+    '../assets/img/personalizacao-roda-perso-amareloroxo.png',
     'PC'
   ),
   (
@@ -531,12 +531,12 @@ VALUES
   ),
   (
     29,
-    'Produto 23',
+    'Roda Branca',
     850,
     'Marca E',
-    'Descrição do Produto 23',
-    'caixaDeSom',
-    '../assets/img/personalizacao-motor2.png',
+    'Descrição do Produto',
+    'pneu-solido',
+    '../assets/img/personalizacao-roda-duas-pretobranco.png',
     'PC'
   ),
   (

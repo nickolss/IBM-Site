@@ -486,6 +486,15 @@ cursor: pointer
   font-size: 2rem;
 }
 
+.dropdown-menu:hover{
+  background-color: var(--branco);
+}
+
+.dropdown-menu li a.dropdown-item:hover{
+  background-color: var(--branco);
+  transform: scale(1);
+}
+
 @media only screen and (max-width: 1000px){
   .img__logo{
     width: 60px;

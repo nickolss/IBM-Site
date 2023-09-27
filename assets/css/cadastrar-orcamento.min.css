@@ -1,3 +1,5 @@
+@import url(variaveis-cores-fonte.min.css);
+
 .card-container{
     display: flex;
     justify-content: center;
@@ -61,8 +63,9 @@
 
 /*Hover botao cancelar*/   
 .card-button-first:hover{
-    border: 1px solid #FF7769;
-    background-color: #FF7769;
+    border: 1px solid var(--vermelho);
+    background-color: var(--vermelho);
+    color: var(--branco);
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transform: scale(1.1);
     transition-duration: 0.7s;
@@ -70,8 +73,9 @@
 
 /*Hover botao cadastrar*/   
 .card-button-second:hover {
-    border: 1px solid #014961;
-    background-color: #014961;
+    border: 1px solid var(--amarelo);
+    background-color: var(--amarelo);
+    color: var(--preto);
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transform: scale(1.1);
     transition-duration: 0.7s;
