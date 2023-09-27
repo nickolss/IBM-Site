@@ -89,7 +89,7 @@
 						<div class="legenda__icone__pc">
 							Favoritos
 						</div>
-						<img class="img__icon__esquerda" src="../assets/img/icone-favorito.svg" alt="Favorito">
+						<img class="img__icon__esquerda" src="../assets/img/icone-favorito-amarelo.svg" alt="Favorito">
 					</div>
 				</div>
 				<div class="meio-circulo__branco-bottom">⠀</div>
@@ -237,7 +237,7 @@
 					</div>
 					<div class="icone__esquerda">
 						<figure class="figure-container">
-							<img class="img__icon__esquerda" src="../assets/img/icone-favorito.svg" alt="Plano">
+							<img class="img__icon__esquerda" src="../assets/img/icone-favorito-amarelo.svg" alt="Plano">
 							<figcaption class="legenda__icones__atividade">Favoritos</figcaption>
 						</figure>
 					</div>
