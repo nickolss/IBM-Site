@@ -33,7 +33,7 @@ main#main__agendamentos{
     font-size: 1rem;
 }
 
-.caixa__input #horario {
+.caixa__input #horario,  .caixa__input #idCarro{
     font-size: 100%;
     padding: 0.8em;
     outline: none;
@@ -46,7 +46,7 @@ main#main__agendamentos{
     margin-bottom: -50px;
 }
 
-.caixa__input #horario:hover{
+.caixa__input #horario:hover, .caixa__input #idCarro:hover{
     outline: none;
 }
 
