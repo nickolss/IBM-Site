@@ -57,7 +57,7 @@
             </div>
             <button type="submit" class="botao__login">Entrar</button>
             <div class="link__registrar">
-              <p>Não tem uma conta?<a href="cadastro.php">Cadastre-se</a></p>
+              <p>Não tem uma conta?<a href="cadastro.php"> Cadastre-se</a></p>
             </div>
           </form>
         </div>

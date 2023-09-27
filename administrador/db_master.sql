@@ -47,19 +47,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `plano` enum('comum', 'turbinado') NOT NULL,
   `quantidadePontos` int DEFAULT NULL,
   `fotoPerfil` varchar(150) DEFAULT NULL,
-
   PRIMARY KEY (`id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
-
---
--- Estrutura da tabela `curriculo`
---
-DROP TABLE IF EXISTS `curriculo`;
-
-CREATE TABLE IF NOT EXISTS `curriculo`(
-  id_cliente INT NOT NULL,
-  caminho_documento VARCHAR(100) NOT NULL,
-  FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
 --
@@ -142,6 +130,7 @@ VALUES
     'vinicius@turn.com',
     '5dafc75f39ba4799e82ea71cdf69ff86'
   );
+
 -- --------------------------------------------------------
 --
 -- Estrutura da tabela `mecanico`
@@ -228,52 +217,398 @@ CREATE TABLE IF NOT EXISTS `produto` (
     'ferramentas-equipamentos'
   ) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `caminho_imagem` varchar(100) NOT NULL,
-  `TG_categoria` enum('PC','SME','AA','CA','OF','BA','RT','PA','EP','PM','APM','FE') DEFAULT NULL,
-
+  `TG_categoria` enum(
+    'PC',
+    'SME',
+    'AA',
+    'CA',
+    'OF',
+    'BA',
+    'RT',
+    'PA',
+    'EP',
+    'PM',
+    'APM',
+    'FE'
+  ) DEFAULT NULL,
   PRIMARY KEY (`codigoProduto`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `produto`
 --
-
-INSERT INTO `produto` (`codigoProduto`, `nome`, `preco`, `marca`, `descricao`, `customizações`, `caminho_imagem`, `TG_categoria`) VALUES
-(1, 'Roda Vermelha Sólida', 89, 'Marca 1', 'Pneu Vermelho', 'pneu-solido', '../assets/img/personalizacao-roda-solida-vermelho.png', 'PC'),
-(2, 'Adesivo de Garras', 15, 'Adesivo', 'Adesivo de garras na cor preta.', 'adesivo-medio', '../assets/img/personalizacao-adesivo-medio.png', 'AA'),
-(3, 'Motor', 899, 'motor', 'Motor de Carro', 'pecas-automoveis', '../assets/img/personalizacao-motor2.png', 'PA'),
-(4, 'Roda Cinza', 55, 'Marca 1', 'Roda cinza sólida de qualidade.', 'pneu-solido', '../assets/img/personalizacao-roda-solida-cinza.png', 'PC'),
-(5, 'Roda preta e vermelha', 169, 'Marca 2', 'Roda de duas cores preta e vermelha.', 'pneu-duasCores', '../assets/img/personalizacao-roda-duas-pretored.png', 'PM'),
-(6, 'Caixa de Som', 899, 'Marca 2', 'Caixa de som para carros', 'caixaDeSom', '../assets/img/personalizacao-modificacao-caixasom.png', 'SME'),
-(7, 'Produto 1', 1000, 'Marca A', 'Descrição do Produto 1', 'rebaixamento-dropped', '../assets/img/personalizacao-motor2.png', 'PC'),
-(8, 'Produto 2', 1500, 'Marca B', 'Descrição do Produto 2', 'rebaixamento-slammed', '../assets/img/personalizacao-motor2.png', 'SME'),
-(9, 'Produto 3', 800, 'Marca A', 'Descrição do Produto 3', 'pintura-solida', '../assets/img/personalizacao-motor2.png', 'AA'),
-(10, 'Produto 4', 1200, 'Marca C', 'Descrição do Produto 4', 'pintura-metalica', '../assets/img/personalizacao-motor2.png', 'CA'),
-(11, 'Produto 5', 900, 'Marca D', 'Descrição do Produto 5', 'pneu-solido', '../assets/img/personalizacao-motor2.png', 'OF'),
-(12, 'Produto 6', 1100, 'Marca B', 'Descrição do Produto 6', 'pneu-personalizado', '../assets/img/personalizacao-motor2.png', 'BA'),
-(13, 'Produto 7', 750, 'Marca E', 'Descrição do Produto 7', 'adesivo-pequeno', '../assets/img/personalizacao-motor2.png', 'RT'),
-(14, 'Produto 8', 1300, 'Marca F', 'Descrição do Produto 8', 'adesivo-medio', '../assets/img/personalizacao-motor2.png', 'PA'),
-(15, 'Produto 9', 950, 'Marca A', 'Descrição do Produto 9', 'adesivo-grande', '../assets/img/personalizacao-motor2.png', 'EP'),
-(16, 'Produto 10', 1400, 'Marca G', 'Descrição do Produto 10', 'aerofolio', '../assets/img/personalizacao-motor2.png', 'PM'),
-(17, 'Produto 11', 950, 'Marca D', 'Descrição do Produto 11', 'rebaixamento-dropped', '../assets/img/personalizacao-motor2.png', 'PC'),
-(18, 'Produto 12', 1200, 'Marca E', 'Descrição do Produto 12', 'rebaixamento-slammed', '../assets/img/personalizacao-motor2.png', 'SME'),
-(19, 'Produto 13', 850, 'Marca F', 'Descrição do Produto 13', 'pintura-perolizada', '../assets/img/personalizacao-motor2.png', 'AA'),
-(20, 'Produto 14', 1100, 'Marca B', 'Descrição do Produto 14', 'pintura-solida', '../assets/img/personalizacao-motor2.png', 'CA'),
-(21, 'Produto 15', 1050, 'Marca G', 'Descrição do Produto 15', 'pneu-duasCores', '../assets/img/personalizacao-motor2.png', 'OF'),
-(22, 'Produto 16', 1250, 'Marca H', 'Descrição do Produto 16', 'adesivo-medio', '../assets/img/personalizacao-motor2.png', 'BA'),
-(23, 'Produto 17', 900, 'Marca D', 'Descrição do Produto 17', 'pneu-solido', '../assets/img/personalizacao-motor2.png', 'RT'),
-(24, 'Produto 18', 1350, 'Marca I', 'Descrição do Produto 18', 'pneu-personalizado', '../assets/img/personalizacao-motor2.png', 'PA'),
-(25, 'Produto 19', 950, 'Marca E', 'Descrição do Produto 19', 'adesivo-pequeno', '../assets/img/personalizacao-motor2.png', 'EP'),
-(26, 'Produto 20', 1400, 'Marca J', 'Descrição do Produto 20', 'adesivo-grande', '../assets/img/personalizacao-motor2.png', 'PM'),
-(27, 'Produto 21', 950, 'Marca C', 'Descrição do Produto 21', 'aerofolio', '../assets/img/personalizacao-motor2.png', 'APM'),
-(28, 'Produto 22', 1200, 'Marca D', 'Descrição do Produto 22', 'insulfilm', '../assets/img/personalizacao-motor2.png', 'FE'),
-(29, 'Produto 23', 850, 'Marca E', 'Descrição do Produto 23', 'caixaDeSom', '../assets/img/personalizacao-motor2.png', 'PC'),
-(30, 'Produto 24', 1100, 'Marca F', 'Descrição do Produto 24', 'banco', '../assets/img/personalizacao-motor2.png', 'SME'),
-(31, 'Produto 25', 1050, 'Marca G', 'Descrição do Produto 25', 'tunagem-reformulada', '../assets/img/personalizacao-motor2.png', 'AA'),
-(32, 'Produto 26', 1250, 'Marca H', 'Descrição do Produto 26', 'tunagem-remanufaturada', '../assets/img/personalizacao-motor2.png', 'CA'),
-(33, 'Produto 27', 900, 'Marca I', 'Descrição do Produto 27', 'pneu-carro', '../assets/img/personalizacao-motor2.png', 'OF'),
-(34, 'Produto 28', 1350, 'Marca J', 'Descrição do Produto 28', 'som-multimidia-eletronicos', '../assets/img/personalizacao-motor2.png', 'BA'),
-(35, 'Produto 29', 950, 'Marca A', 'Descrição do Produto 29', 'acessorios-automoveis', '../assets/img/personalizacao-motor2.png', 'RT'),
-(36, 'Produto 30', 1400, 'Marca B', 'Descrição do Produto 30', 'cuidados-automotivos', '../assets/img/personalizacao-motor2.png', 'PA');
+INSERT INTO
+  `produto` (
+    `codigoProduto`,
+    `nome`,
+    `preco`,
+    `marca`,
+    `descricao`,
+    `customizações`,
+    `caminho_imagem`,
+    `TG_categoria`
+  )
+VALUES
+  (
+    1,
+    'Roda Vermelha Sólida',
+    89,
+    'Marca 1',
+    'Pneu Vermelho',
+    'pneu-solido',
+    '../assets/img/personalizacao-roda-solida-vermelho.png',
+    'PC'
+  ),
+  (
+    2,
+    'Adesivo de Garras',
+    15,
+    'Adesivo',
+    'Adesivo de garras na cor preta.',
+    'adesivo-medio',
+    '../assets/img/personalizacao-adesivo-medio.png',
+    'AA'
+  ),
+  (
+    3,
+    'Motor',
+    899,
+    'motor',
+    'Motor de Carro',
+    'pecas-automoveis',
+    '../assets/img/personalizacao-motor2.png',
+    'PA'
+  ),
+  (
+    4,
+    'Roda Cinza',
+    55,
+    'Marca 1',
+    'Roda cinza sólida de qualidade.',
+    'pneu-solido',
+    '../assets/img/personalizacao-roda-solida-cinza.png',
+    'PC'
+  ),
+  (
+    5,
+    'Roda preta e vermelha',
+    169,
+    'Marca 2',
+    'Roda de duas cores preta e vermelha.',
+    'pneu-duasCores',
+    '../assets/img/personalizacao-roda-duas-pretored.png',
+    'PM'
+  ),
+  (
+    6,
+    'Caixa de Som',
+    899,
+    'Marca 2',
+    'Caixa de som para carros',
+    'caixaDeSom',
+    '../assets/img/personalizacao-modificacao-caixasom.png',
+    'SME'
+  ),
+  (
+    7,
+    'Produto 1',
+    1000,
+    'Marca A',
+    'Descrição do Produto 1',
+    'rebaixamento-dropped',
+    '../assets/img/personalizacao-motor2.png',
+    'PC'
+  ),
+  (
+    8,
+    'Produto 2',
+    1500,
+    'Marca B',
+    'Descrição do Produto 2',
+    'rebaixamento-slammed',
+    '../assets/img/personalizacao-motor2.png',
+    'SME'
+  ),
+  (
+    9,
+    'Produto 3',
+    800,
+    'Marca A',
+    'Descrição do Produto 3',
+    'pintura-solida',
+    '../assets/img/personalizacao-motor2.png',
+    'AA'
+  ),
+  (
+    10,
+    'Produto 4',
+    1200,
+    'Marca C',
+    'Descrição do Produto 4',
+    'pintura-metalica',
+    '../assets/img/personalizacao-motor2.png',
+    'CA'
+  ),
+  (
+    11,
+    'Produto 5',
+    900,
+    'Marca D',
+    'Descrição do Produto 5',
+    'pneu-solido',
+    '../assets/img/personalizacao-motor2.png',
+    'OF'
+  ),
+  (
+    12,
+    'Produto 6',
+    1100,
+    'Marca B',
+    'Descrição do Produto 6',
+    'pneu-personalizado',
+    '../assets/img/personalizacao-motor2.png',
+    'BA'
+  ),
+  (
+    13,
+    'Produto 7',
+    750,
+    'Marca E',
+    'Descrição do Produto 7',
+    'adesivo-pequeno',
+    '../assets/img/personalizacao-motor2.png',
+    'RT'
+  ),
+  (
+    14,
+    'Produto 8',
+    1300,
+    'Marca F',
+    'Descrição do Produto 8',
+    'adesivo-medio',
+    '../assets/img/personalizacao-motor2.png',
+    'PA'
+  ),
+  (
+    15,
+    'Produto 9',
+    950,
+    'Marca A',
+    'Descrição do Produto 9',
+    'adesivo-grande',
+    '../assets/img/personalizacao-motor2.png',
+    'EP'
+  ),
+  (
+    16,
+    'Produto 10',
+    1400,
+    'Marca G',
+    'Descrição do Produto 10',
+    'aerofolio',
+    '../assets/img/personalizacao-motor2.png',
+    'PM'
+  ),
+  (
+    17,
+    'Produto 11',
+    950,
+    'Marca D',
+    'Descrição do Produto 11',
+    'rebaixamento-dropped',
+    '../assets/img/personalizacao-motor2.png',
+    'PC'
+  ),
+  (
+    18,
+    'Produto 12',
+    1200,
+    'Marca E',
+    'Descrição do Produto 12',
+    'rebaixamento-slammed',
+    '../assets/img/personalizacao-motor2.png',
+    'SME'
+  ),
+  (
+    19,
+    'Produto 13',
+    850,
+    'Marca F',
+    'Descrição do Produto 13',
+    'pintura-perolizada',
+    '../assets/img/personalizacao-motor2.png',
+    'AA'
+  ),
+  (
+    20,
+    'Produto 14',
+    1100,
+    'Marca B',
+    'Descrição do Produto 14',
+    'pintura-solida',
+    '../assets/img/personalizacao-motor2.png',
+    'CA'
+  ),
+  (
+    21,
+    'Produto 15',
+    1050,
+    'Marca G',
+    'Descrição do Produto 15',
+    'pneu-duasCores',
+    '../assets/img/personalizacao-motor2.png',
+    'OF'
+  ),
+  (
+    22,
+    'Produto 16',
+    1250,
+    'Marca H',
+    'Descrição do Produto 16',
+    'adesivo-medio',
+    '../assets/img/personalizacao-motor2.png',
+    'BA'
+  ),
+  (
+    23,
+    'Produto 17',
+    900,
+    'Marca D',
+    'Descrição do Produto 17',
+    'pneu-solido',
+    '../assets/img/personalizacao-motor2.png',
+    'RT'
+  ),
+  (
+    24,
+    'Produto 18',
+    1350,
+    'Marca I',
+    'Descrição do Produto 18',
+    'pneu-personalizado',
+    '../assets/img/personalizacao-motor2.png',
+    'PA'
+  ),
+  (
+    25,
+    'Produto 19',
+    950,
+    'Marca E',
+    'Descrição do Produto 19',
+    'adesivo-pequeno',
+    '../assets/img/personalizacao-motor2.png',
+    'EP'
+  ),
+  (
+    26,
+    'Produto 20',
+    1400,
+    'Marca J',
+    'Descrição do Produto 20',
+    'adesivo-grande',
+    '../assets/img/personalizacao-motor2.png',
+    'PM'
+  ),
+  (
+    27,
+    'Produto 21',
+    950,
+    'Marca C',
+    'Descrição do Produto 21',
+    'aerofolio',
+    '../assets/img/personalizacao-motor2.png',
+    'APM'
+  ),
+  (
+    28,
+    'Produto 22',
+    1200,
+    'Marca D',
+    'Descrição do Produto 22',
+    'insulfilm',
+    '../assets/img/personalizacao-motor2.png',
+    'FE'
+  ),
+  (
+    29,
+    'Produto 23',
+    850,
+    'Marca E',
+    'Descrição do Produto 23',
+    'caixaDeSom',
+    '../assets/img/personalizacao-motor2.png',
+    'PC'
+  ),
+  (
+    30,
+    'Produto 24',
+    1100,
+    'Marca F',
+    'Descrição do Produto 24',
+    'banco',
+    '../assets/img/personalizacao-motor2.png',
+    'SME'
+  ),
+  (
+    31,
+    'Produto 25',
+    1050,
+    'Marca G',
+    'Descrição do Produto 25',
+    'tunagem-reformulada',
+    '../assets/img/personalizacao-motor2.png',
+    'AA'
+  ),
+  (
+    32,
+    'Produto 26',
+    1250,
+    'Marca H',
+    'Descrição do Produto 26',
+    'tunagem-remanufaturada',
+    '../assets/img/personalizacao-motor2.png',
+    'CA'
+  ),
+  (
+    33,
+    'Produto 27',
+    900,
+    'Marca I',
+    'Descrição do Produto 27',
+    'pneu-carro',
+    '../assets/img/personalizacao-motor2.png',
+    'OF'
+  ),
+  (
+    34,
+    'Produto 28',
+    1350,
+    'Marca J',
+    'Descrição do Produto 28',
+    'som-multimidia-eletronicos',
+    '../assets/img/personalizacao-motor2.png',
+    'BA'
+  ),
+  (
+    35,
+    'Produto 29',
+    950,
+    'Marca A',
+    'Descrição do Produto 29',
+    'acessorios-automoveis',
+    '../assets/img/personalizacao-motor2.png',
+    'RT'
+  ),
+  (
+    36,
+    'Produto 30',
+    1400,
+    'Marca B',
+    'Descrição do Produto 30',
+    'cuidados-automotivos',
+    '../assets/img/personalizacao-motor2.png',
+    'PA'
+  );
 
 --
 -- Estrutura da tabela `endereco`
@@ -330,11 +665,14 @@ CREATE TABLE IF NOT EXISTS `pedido` (
 DROP TABLE IF EXISTS `carro`;
 
 CREATE TABLE IF NOT EXISTS `carro`(
-  `placa` varchar(8) NOT NULL,
+  `idVeiculo` INT NOT NULL AUTO_INCREMENT,
+  `placa` varchar(8) NOT NULL UNIQUE,
   `id_dono` INT NOT NULL,
+  `apelido` varchar(60) NOT NULL,
   `modelo` varchar(150) NOT NULL,
   `cor` varchar(100) NOT NULL,
-  PRIMARY KEY(`placa`),
+  
+  PRIMARY KEY(`idVeiculo`),
   FOREIGN KEY (`id_dono`) REFERENCES `cliente`(`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
@@ -435,7 +773,6 @@ CREATE TABLE `pedido_orcamento`(
     'cliente cancelado',
     'agendamento confirmado'
   ) NOT NULL,
-
   FOREIGN KEY (`id_cliente`) REFERENCES `cliente`(`id`)
 );
 

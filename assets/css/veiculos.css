@@ -1,0 +1,81 @@
+@import url('./variaveis-cores-fonte.min.css');
+
+* {
+	color: var(--preto);
+}
+
+.veiculos {
+	margin: 1rem;
+}
+.veiculo__titulo {
+	margin: 0.5rem;
+	font-family: fast-hand;
+}
+
+.principal {
+	border: 2.5px solid var(--amarelo);
+}
+
+.outro {
+	border: 2.5px solid var(--vermelho);
+}
+
+.principal,
+.outro {
+	border-radius: 10px;
+}
+
+.veiculo-principal,
+.outros-veiculos {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.card-veiculo {
+	background-color: var(--preto);
+
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.acoes-card__link,
+.informacoes-veiculo__conteudo,
+.card-veiculo__apelido {
+	color: var(--branco);
+}
+
+.sem-veiculos {
+	display: grid;
+	place-items: center;
+	margin: 0.5rem 0;
+}
+
+.sem-veiculos__texto,
+.sem-outros-veiculos__texto {
+	font-size: 1.4rem;
+}
+
+.sem-veiculos__image,
+.sem-veiculos__conteudo {
+	max-width: 500px;
+	text-align: center;
+}
+
+.sem-veiculos__link,
+.sem-outros-veiculos__link {
+	color: var(--vermelho);
+	text-decoration: none;
+	transition: all 0.5s;
+}
+
+.sem-veiculos__link:hover,
+.sem-outros-veiculos__link:hover {
+	color: var(--vermelho);
+	text-decoration: underline;
+}
+
+.adicione-veiculos {
+	margin-left: 0.5rem;
+}
