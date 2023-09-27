@@ -42,8 +42,8 @@ $dataAtual = date('Y-m-d');
                 <!--PARTE DAS INFORMAÇÕES DO VEÍCULO DO AGENDAMENTO-->
                 <div class="caixa__input">
                     <div class="dropdown-categorias">
-                        <label id="label__dropdown__categoria" for="horario">Carros Disponíveis:</label>
-                        <select required id="horario" name="horario">
+                        <label id="label__dropdown__categoria" for="idCarro">Carros Disponíveis:</label>
+                        <select required id="idCarro" name="idCarro">
                             <?php
                             $idDono = $_SESSION['id'];
                             $sql = $pdo->query("SELECT * FROM `carro` WHERE id_dono = $idDono");
