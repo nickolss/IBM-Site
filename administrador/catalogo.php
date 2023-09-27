@@ -34,7 +34,7 @@ require_once('../assets/scripts/conexao.php');
 
     <main class="principal">
         <div class="titulo">
-            <h1 class="mainTitle">Cadastrar Orçamento</h1>
+            <h1 class="mainTitle">Modificar Orçamento</h1>
         </div>
 
         <div class="card-container">
@@ -60,8 +60,8 @@ require_once('../assets/scripts/conexao.php');
                     echo        '<div class="card-footer">';
                     echo            '<label for="preco">R$'. $produto["preco"] . '</label>';
                     echo            '<div class="footer__botoes">';
-                    echo                '<button class="botao__funcao" value='. $produto['codigoProduto'] .' formaction="../assets/scripts/excluirProduto.php" name="btn-pedido-orcamento" id="btn-pedido-orcamento" type="submit"><i class="bx bx-trash"></i></button>';
-                    echo                '<button class="botao__funcao" value='. $produto['codigoProduto'] .' formaction="./modificar-produto.php" name="btn-pedido-orcamento" id="btn-pedido-orcamento"  type="submit" ><i class="bx bx-edit-alt"></i></button>';
+                    echo                '<button class="botao__funcao" value='. $produto['codigoProduto'] .' formaction="../assets/scripts/excluirProduto.php" name="btn-pedido-orcamento" id="btn-pedido-orcamento" type="submit"><i class="icones__modificar-produto bx bx-trash"></i></button>';
+                    echo                '<button class="botao__funcao" value='. $produto['codigoProduto'] .' formaction="./modificar-produto.php" name="btn-pedido-orcamento" id="btn-pedido-orcamento"  type="submit" ><i class="icones__modificar-produto bx bx-edit-alt"></i></button>';
                     echo            '</div>';
                     echo    '</div>';
                     echo '</div>';
