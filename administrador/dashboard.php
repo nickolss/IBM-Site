@@ -156,7 +156,7 @@ require_once('../assets/scripts/consultaFuncionario.php');
 
 <body id="container__body">
   <?php
-  require_once('../assets/components/header.php');
+  require_once('../assets/components/header-adm.php');
   ?>
 
   <main>

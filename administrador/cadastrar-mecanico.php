@@ -27,7 +27,7 @@
 
 <body id="body">
   <?php
-  require_once('../assets/components/header.php');
+  require_once('../assets/components/header-adm.php');
   ?>
 
   <main class="principal">
