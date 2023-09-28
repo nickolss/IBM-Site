@@ -338,17 +338,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 									Opções
 								</a>
 								<ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="personalizacoes.php"><span class="opcao__navbar__mobile">Personalizações</span></a></li>
-                                <li><a class="dropdown-item" href="produtos.php"><span class="opcao__navbar__mobile">Produtos</span></a></li>
+                                <li><a class="dropdown-item" href="pags/personalizacoes.php"><span class="opcao__navbar__mobile">Personalizações</span></a></li>
+                                <li><a class="dropdown-item" href="pags/produtos.php"><span class="opcao__navbar__mobile">Produtos</span></a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="aboutus.php"><span class="opcao__navbar__mobile">Sobre Nós</span></a></li>
+                                <li><a class="dropdown-item" href="pags/aboutus.php"><span class="opcao__navbar__mobile">Sobre Nós</span></a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Perfil</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Veículos</span></a></li>
+                                <li><a class="dropdown-item" href="pags/perfil.php"><span class="opcao__navbar__mobile">Perfil</span></a></li>
+                                <li><a class="dropdown-item" href="pags/veículos.php"><span class="opcao__navbar__mobile">Veículos</span></a></li>
                                 <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Compras</span></a></li>
                                 <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Orçamentos</span></a></li>
                                 <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Agendamentos</span></a></li>
