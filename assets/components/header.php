@@ -15,6 +15,96 @@ require_once('../assets/scripts/iniciarSessao.php');
 </head>
 
 <body>
+<?php 
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['adicionar'])) {
+        $idProd = (int)$_POST['adicionar'];
+        
+        $idProd--;
+    
+    // Verifique se o ID do produto existe no array de IDs de produtos
+    if (isset($idsProdutos[$idProd])) {
+        $idProd++;
+        $codigoProdutoAdd = $idProd;
+       
+
+        // Consulta ao banco de dados para obter as informações do produto
+        $sqlProduto = "SELECT nome, preco, caminho_imagem FROM produto WHERE codigoProduto = :codigoProdutoAdd";
+        $stmtProduto = $pdo->prepare($sqlProduto);
+        $stmtProduto->bindParam(':codigoProdutoAdd', $codigoProdutoAdd, PDO::PARAM_INT);
+
+        if ($stmtProduto->execute()) {
+            $rowProduto = $stmtProduto->fetch(PDO::FETCH_ASSOC);
+
+            if ($rowProduto) {
+                $nomeProduto = $rowProduto['nome'];
+                $precoProduto = $rowProduto['preco'];
+                $imagemProdutoCart = $rowProduto['caminho_imagem'];
+              
+
+                // Verifique se o produto já está no carrinho
+                if (isset($_SESSION['carrinho'][$idProd])) {
+                    $_SESSION['carrinho'][$idProd]['quantidade']++;
+                  
+                } else {
+                    $_SESSION['carrinho'][$idProd] = array(
+                        'quantidade' => 1,
+                        'nome' => $nomeProduto,
+                        'preco' => $precoProduto,
+                        'caminho_imagem' => $imagemProdutoCart,
+                       
+                    );
+                }
+            } else {
+                die('Produto não encontrado no banco de dados.');
+            }
+        } else {
+            die('Erro ao executar a consulta.');
+        }
+    } else {
+        echo 'ID do produto inválido.';
+        
+        $totalCarrinho -= $subtotal;
+    }
+
+
+    } elseif (isset($_POST['subtrair'])) {
+        $idProdutoRemover = (int)$_POST['subtrair'];
+        
+            // Verifique se o produto está no carrinho antes de removê-lo
+        if (isset($_SESSION['carrinho'][$idProdutoRemover])) {
+            // Verifique se a quantidade é maior do que 1 antes de subtrair
+            if ($_SESSION['carrinho'][$idProdutoRemover]['quantidade'] > 1) {
+                $_SESSION['carrinho'][$idProdutoRemover]['quantidade']--;
+            } else {
+                // Se a quantidade for 1, remova o produto do carrinho
+                unset($_SESSION['carrinho'][$idProdutoRemover]);
+            }
+        }
+
+
+    } elseif (isset($_POST['remover'])) {
+        $idProdutoRemover = (int)$_POST['remover'];
+       
+        // Verifique se o produto está no carrinho antes de removê-lo
+
+            if (isset($_SESSION['carrinho'][$idProdutoRemover])) {
+    
+                // Remova o produto do carrinho
+    
+                unset($_SESSION['carrinho'][$idProdutoRemover]);
+            } else {
+    
+                echo '<script>alert("O item não está no carrinho");</script>';
+            }
+            }
+}
+
+
+
+
+?>
 
     <header>
 
@@ -96,7 +186,10 @@ require_once('../assets/scripts/iniciarSessao.php');
                                         <div class="carrinho__header__finalizacao">
                                             <p class="fs-2">Total: <?php echo $totalCarrinho ?>R$</p>
                                             <div class="text-center">
-                                                <button><a href="../pags/carrinho.php"> Ver Carrinho</a> </button>
+                                            <form method="POST" action="../pags/carrinho.php">
+                                                <input type="hidden" name="carrinho" value="<?php echo http_build_query($_SESSION['carrinho']); ?>">
+                                                <button type="submit"> Ver Carrinho</button>
+                                            </form>
                                                 <a style="text-decoration: none; color: #003445" href="">Frete grátis com o Plano Turbinado</a>
                                             </div>
 
@@ -165,90 +258,6 @@ require_once('../assets/scripts/iniciarSessao.php');
                 </ul>
             </div>
         </div>-->
-
-        <?php
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (isset($_POST['adicionar'])) {
-                $idProd = (int)$_POST['adicionar'];
-
-                $idProd--;
-
-                // Verifique se o ID do produto existe no array de IDs de produtos
-                if (isset($idsProdutos[$idProd])) {
-                    $idProd++;
-                    $codigoProdutoAdd = $idProd;
-
-
-                    // Consulta ao banco de dados para obter as informações do produto
-                    $sqlProduto = "SELECT nome, preco, caminho_imagem FROM produto WHERE codigoProduto = :codigoProdutoAdd";
-                    $stmtProduto = $pdo->prepare($sqlProduto);
-                    $stmtProduto->bindParam(':codigoProdutoAdd', $codigoProdutoAdd, PDO::PARAM_INT);
-
-                    if ($stmtProduto->execute()) {
-                        $rowProduto = $stmtProduto->fetch(PDO::FETCH_ASSOC);
-
-                        if ($rowProduto) {
-                            $nomeProduto = $rowProduto['nome'];
-                            $precoProduto = $rowProduto['preco'];
-                            $imagemProdutoCart = $rowProduto['caminho_imagem'];
-
-                            // Verifique se o produto já está no carrinho
-                            if (isset($_SESSION['carrinho'][$idProd])) {
-                                $_SESSION['carrinho'][$idProd]['quantidade']++;
-                            } else {
-                                $_SESSION['carrinho'][$idProd] = array(
-                                    'quantidade' => 1,
-                                    'nome' => $nomeProduto,
-                                    'preco' => $precoProduto,
-                                    'caminho_imagem' => $imagemProdutoCart
-                                );
-                            }
-                        } else {
-                            die('Produto não encontrado no banco de dados.');
-                        }
-                    } else {
-                        die('Erro ao executar a consulta.');
-                    }
-                } else {
-                    echo 'ID do produto inválido.';
-
-                    $totalCarrinho -= $subtotal;
-                }
-            } elseif (isset($_POST['subtrair'])) {
-                $idProdutoRemover = (int)$_POST['subtrair'];
-
-                // Verifique se o produto está no carrinho antes de removê-lo
-                if (isset($_SESSION['carrinho'][$idProdutoRemover])) {
-                    // Verifique se a quantidade é maior do que 1 antes de subtrair
-                    if ($_SESSION['carrinho'][$idProdutoRemover]['quantidade'] > 1) {
-                        $_SESSION['carrinho'][$idProdutoRemover]['quantidade']--;
-                    } else {
-                        // Se a quantidade for 1, remova o produto do carrinho
-                        unset($_SESSION['carrinho'][$idProdutoRemover]);
-                    }
-                }
-            } elseif (isset($_POST['remover'])) {
-                $idProdutoRemover = (int)$_POST['remover'];
-
-                // Verifique se o produto está no carrinho antes de removê-lo
-
-                if (isset($_SESSION['carrinho'][$idProdutoRemover])) {
-
-                    // Remova o produto do carrinho
-
-                    unset($_SESSION['carrinho'][$idProdutoRemover]);
-                } else {
-
-                    echo '<script>alert("O item não está no carrinho");</script>';
-                }
-            }
-        }
-
-
-
-
-        ?>
 
         <div id="fade"></div>
     </header>

@@ -1,100 +1,44 @@
-#carrinho_pag{
-    padding: 40px;
+#area__carrinho_pag_produtos{
+    background-color: white;
+    border-radius: 10px;
 }
 
-.area_carrinho_pag{
-    width: 100%;
-    background-color: #fff;
-    border-radius: 20px;
-    min-height: 100px;
-    padding: 20px;
-}
+.carrinho__organizar__produtos{
+    display: flex;
 
-#carrinho_pag h1{
-    color: #DF7369;
 }
-#carrinho_pag h4{
-    font-size: 0.9em;
-    color: #003445;
-}
+.carrinho__img__produtos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 20%;
 
-#carrinho_pag hr{
-    border: 1px solid #000000;
 }
-
-#carrinho_pag .carrinho_pag__img{
-   
-    width: 200px;
-    box-shadow: 3px 3px 0px 0px #aaa;
-    border: 1px solid red;
-}
-
-#carrinho_pag .carrinho_pag__img img{
+.carrinho__img__produtos img{
     max-width: 100%;
-    height: auto;
+    box-shadow: 0 5px 5px 0 #888;
 }
 
-#carrinho_pag .carrinho_pag__info{
-    padding-left: 20px;
-    border: 1px solid red;
+.carrinho__info__produtos{
+    margin-left: 10px;
 }
-
-#carrinho_pag .carrinho_pag__info h1{
-    font-size: 1.6em;
-    font-weight: bold;
-    color: #000000;
-}
-#carrinho_pag .carrinho_pag__info h2{
-    font-size: 1.3em;
-    font-weight: 24;
-    color: #000000;
-}
-.carrinho_pag_botoes_mais_menos{
-    width: 100px;
-    border: 1px solid #000000;
-    padding: 0px 10px 0px 10px;
+.grupo__botoes__carrinho_pag_ubfo_produtos{
+    border: 1px solid black;
     border-radius: 5px;
-    margin-right: 10px;
-    
+    padding: 2px;
+    display: flex;
 }
-.carrinho_pag_botoes_mais_menos button{
-     border: none;
-     background-color: #fff;
-}
-
-.carrinho_pag_itens{
-    padding: 20px;
-    max-width: 100%;
-}
-.carrinho_pag_preco{
-    font-size: 1.4em;
-}
-
-.carrinho_pag_finalizar button{
-    width: 20%;
-    background-color: #DF7369;
-    color: #fff;
-    border-radius: 20px;
-    font-size: 1.5em;
-    padding: 10px;
+.botao__subtrair__carrinho__pag__info__produtos, .botao__somar__carrinho__pag__info__produtos{
     border: none;
-    box-shadow: 3px 3px 0px 0px #aaa;
+    background-color: white;
+    border-radius: 50px;
 }
 
-#carrinho_pag table{
-    table-layout: auto;
-}
-
-.botoes a{
-    padding:5px;
-    color:white;
-    background-color:#5fb382;
-    text-align: center;
-    text-decoration: none;
-    font-size: 13px;
-}
-
-.preco-produto{
-    text-align: center;
-}
-
+@media only screen and (max-width: 900px){
+    .carrinho__img__produtos{
+        max-width: 50%;
+    }
+    #area__carrinho_pag_produtos{
+        margin-top: 170px;
+    }
+  }

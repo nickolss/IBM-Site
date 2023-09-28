@@ -311,12 +311,11 @@ border: none;
 border-radius: 15px;
 box-shadow: 1px 2px 0px 0px #888;
 margin-bottom: 10px;
-}
-.carrinho__header__finalizacao button a{
 font-size: 1.5em;
 color: white;
 text-decoration: none;
 }
+
 .carrinho__header__finalizacao a.plano_header{
 color: #003445;
 text-decoration: none;
