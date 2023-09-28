@@ -60,64 +60,66 @@ if ($stmt->execute()) {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
-<body>
+<body id="container__body">
 <?php
   require_once('../assets/components/header.php');
   ?>
   <br>
 
-<div class="container" id="area__carrinho_pag_produtos">
-    <div class="row">
-        <div class="col">
-            <h1>Carrinho de Compras</h1>
-            <form method="POST" action="?limpar_carrinho=1">
-                <button type="submit" name="limpar_carrinho_btn">Limpar Carrinho</button>
-            </form>
+<main>
+    <div class="container" id="area__carrinho_pag_produtos">
+        <div class="row">
+            <div class="col">
+                <h1 id="main__title">Carrinho de Compras</h1>
+                <form method="POST" action="?limpar_carrinho=1">
+                    <button class="btn__limpar-carrinho" type="submit" name="limpar_carrinho_btn">Limpar Carrinho</button>
+                </form>
+            </div>
         </div>
-    </div>
-    <hr>
-    <?php foreach ($_SESSION['carrinho'] as $idProd => $value) { ?>
-    <div class="row">
-        <div class="col">
-            <div class="carrinho__organizar__produtos">
-                <div class="carrinho__img__produtos">
-                    <img src="<?php echo $value['caminho_imagem']; ?>" alt="">
-                </div>
-                <div class="carrinho__info__produtos">
-                    <h2><?php echo $value['nome']; ?></h2>
-                    <h5>R$: <?php echo $value['preco']; ?></h5>
-                    <div class="d-flex">
-                        <div class="grupo__botoes__carrinho_pag_ubfo_produtos" style="margin-right: 10px">
-                            <form method="POST" action="?subtrair=<?php echo $idProd; ?>">
-                                <button class="botao__subtrair__carrinho__pag__info__produtos" type="submit" name="subtrair" value="<?php echo $idProd; ?>">-</button>
-                            </form>
-                            <span><?php echo $value['quantidade']; ?></span>
-                            <form method="POST" action="?adicionar=<?php echo $idProd; ?>">
-                                <button class="botao__somar__carrinho__pag__info__produtos" type="submit" name="adicionar" value="<?php echo $idProd; ?>">+</button>
-                            </form>
-                        </div>
-                        <div>
-                            <form method="POST" action="?remover=<?php echo $idProd; ?>">
-                                <button style="border: none; color: #003445; background-color: #fff; text-decoration: none" type="submit" name="remover" value="<?php echo $idProd; ?>">Excluir</button>
-                            </form>
+        <hr>
+        <?php foreach ($_SESSION['carrinho'] as $idProd => $value) { ?>
+        <div class="row">
+            <div class="col">
+                <div class="carrinho__organizar__produtos">
+                    <div class="carrinho__img__produtos">
+                        <img src="<?php echo $value['caminho_imagem']; ?>" alt="">
+                    </div>
+                    <div class="carrinho__info__produtos">
+                        <h2 id="titulo-produto__carinho"><?php echo $value['nome']; ?></h2>
+                        <h5>R$: <?php echo $value['preco']; ?></h5>
+                        <div class="d-flex">
+                            <div class="grupo__botoes__carrinho_pag_ubfo_produtos" style="margin-right: 10px">
+                                <form method="POST" action="?subtrair=<?php echo $idProd; ?>">
+                                    <button class="botao__subtrair__carrinho__pag__info__produtos" type="submit" name="subtrair" value="<?php echo $idProd; ?>">-</button>
+                                </form>
+                                <span><?php echo $value['quantidade']; ?></span>
+                                <form method="POST" action="?adicionar=<?php echo $idProd; ?>">
+                                    <button class="botao__somar__carrinho__pag__info__produtos" type="submit" name="adicionar" value="<?php echo $idProd; ?>">+</button>
+                                </form>
+                            </div>
+                            <div>
+                                <form method="POST" action="?remover=<?php echo $idProd; ?>">
+                                    <button class="btn__excluir-carrinho" type="submit" name="remover" value="<?php echo $idProd; ?>">Excluir</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     
-</div>
-
-    <hr>
-    <?php } ?> 
-    <div class="row">
-        <div class="col">
+    </div>
     
-           <h6 class="text-end">SubTotal (<?php echo $totalItens; ?> itens): <strong>R$: <?php echo $totalCarrinho; ?></strong></h6>
+        <hr>
+        <?php } ?>
+        <div class="row">
+            <div class="col">
+    
+               <h6 class="texto__total-preco text-end">SubTotal (<?php echo $totalItens; ?> itens): <strong>R$: <?php echo $totalCarrinho; ?></strong></h6>
+            </div>
         </div>
     </div>
-</div>
-<br>
+    <br>
+</main>
 
 <?php 
         require_once('../assets/components/footer.php');
