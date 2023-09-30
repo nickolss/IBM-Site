@@ -1,3 +1,16 @@
+<?php
+require_once('../assets/scripts/conexao.php');
+$nomeProduto = $_GET['nomeProduto'];
+$produtoSql = $pdo->query(("SELECT * FROM `produto` WHERE nome='$nomeProduto'"));
+$produto = $produtoSql->fetchAll();
+$precoSemFormatacao = $produto[0]['preco'];
+
+$precoProduto = number_format($precoSemFormatacao , 2 , ',' , '.');
+
+$descricao = $produto[0]['descricao'];
+$caminhoImagem = $produto[0]['caminho_imagem'];
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -30,19 +43,18 @@
 			<div class="row" id="correcao">
 				<div class="col-7">
 					<div id="box" style="text-align: end; margin: 70px 0px; margin-left: 95px;">
-						<img class="vg-img" id="img-adesivo" width="650px" src="../assets/img/filtro-oleo.svg">
+						<img class="vg-img" id="img-adesivo" width="650px" src="<?= $caminhoImagem ?>">
 						<label for="img-adesivo"></label>
 					</div>
 
 				</div>
 				<div class="col">
 					<div style="margin-top: 75px; margin-right: 170px;">
-						<h1 class="vg-tite">Filtro de Óleo</h1>
+						<h1 class="vg-tite"><?= $nomeProduto ?></h1>
 						<img width="30px" src="../assets/img/estrela.svg"><img style="margin: 0px 10px" width="30px" src="../assets/img/estrela.svg"><img width="30px" src="../assets/img/estrela.svg"><img style="margin: 0px 10px" width="30px" src="../assets/img/estrela.svg"><img width="30px" src="../assets/img/estrela.svg">
-						<h2 style="margin-top: 10px; font-weight: bold;">R$30,00</h2>
+						<h2 style="margin-top: 10px; font-weight: bold;">R$<?= $precoProduto ?></h2>
 						<h3 style="font-weight: bold;">Sobre este item:</h3>
-						<p style="font-size: 1.1em;">O filtro de óleo do motor tem a finalidade de reter as partículas e resíduos gerados durante o funcionamento do motor a combustão interna.
-							Os Filtros de Óleo Turn Motors, produzidos com materiais filtrantes especiais de alta durabilidade, válvula antirretorno, juntas de vedação nitrílicas e válvula de segurança, garantem alto poder de filtragem em todas as condições de funcionamento do motor de seu veículo.</p>
+						<p style="font-size: 1.1em;"><?= $descricao ?></p>
 						<a class="vg-b" href="conf-compra.html"><button class="vg-btn">Comprar</button></a>
 					</div>
 				</div>
@@ -52,7 +64,7 @@
 			<div class="row">
 				<div class="col alinhar">
 					<div class="" id="box1" style="margin-top: 50px;">
-						<img class="vg-img1 img-fluid " src="../assets/img/filtro-oleo.svg">
+						<img class="vg-img1 img-fluid " src="../assets/img/adesivo.svg">
 					</div>
 					<br>
 					<br>
@@ -204,6 +216,7 @@
 	<?php
 	require_once('../assets/components/footer.php');
 	?>
+
 
 
 
