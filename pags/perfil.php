@@ -52,13 +52,15 @@ $placa = $carros[0]['placa'] ?? "";
 
 			<div class="opcoes__icones">
 				<div class="meio-circulo__branco-top">⠀</div>
-				<div class="icones__esquerda">
-					<div class="icone__esquerda">
-						<div class="legenda__icone__pc">
-							Perfil
+					<a href="./perfil-editar.php">
+						<div class="icones__esquerda">
+							<div class="icone__esquerda">
+								<div class="legenda__icone__pc">
+									Perfil
+								</div>
+								<img class="img__icon__esquerda" src="../assets/img/icone-perfil.svg" alt="Perfil">
 						</div>
-						<img class="img__icon__esquerda" src="../assets/img/icone-perfil.svg" alt="Perfil">
-					</div>
+					</a>
 					<a href="./veiculos.php">
 						<div class="icone__esquerda">
 							<div class="legenda__icone__pc">
@@ -73,30 +75,36 @@ $placa = $carros[0]['placa'] ?? "";
 						</div>
 						<img class="img__icon__esquerda" src="../assets/img/icone-carrinho.svg" alt="Compras">
 					</div>
-					<div class="icone__esquerda">
-						<div class="legenda__icone__pc">
-							Orçamentos
+					<a href="./orcamentosCliente.php">
+						<div class="icone__esquerda">
+							<div class="legenda__icone__pc">
+								Orçamentos
+							</div>
+							<img class="img__icon__esquerda" src="../assets/img/icone-porco-dinheiro.svg" alt="Orçamentos">
 						</div>
-						<img class="img__icon__esquerda" src="../assets/img/icone-porco-dinheiro.svg" alt="Orçamentos">
-					</div>
-					<div class="icone__esquerda">
-						<div class="legenda__icone__pc">
-							Agendamentos
+					</a>
+					<a href="#">
+						<div class="icone__esquerda">
+							<div class="legenda__icone__pc">
+								Agendamentos
+							</div>
+							<img class="img__icon__esquerda" src="../assets/img/icone-agendamento.svg" alt="Agendamentos">
 						</div>
-						<img class="img__icon__esquerda" src="../assets/img/icone-agendamento.svg" alt="Agendamentos">
-					</div>
+					</a>
 					<div class="icone__esquerda">
 						<div class="legenda__icone__pc">
 							Plano
 						</div>
 						<img class="img__icon__esquerda" src="../assets/img/icone-dinheiro.svg" alt="Plano">
 					</div>
-					<div class="icone__esquerda">
-						<div class="legenda__icone__pc">
-							Favoritos
+					<a href="./favoritos.php">
+						<div class="icone__esquerda">
+							<div class="legenda__icone__pc">
+								Favoritos
+							</div>
+							<img class="img__icon__esquerda" src="../assets/img/icone-favorito-amarelo.svg" alt="Favorito">
 						</div>
-						<img class="img__icon__esquerda" src="../assets/img/icone-favorito-amarelo.svg" alt="Favorito">
-					</div>
+					</a>
 				</div>
 				<div class="meio-circulo__branco-bottom">⠀</div>
 			</div>
@@ -152,7 +160,7 @@ $placa = $carros[0]['placa'] ?? "";
 					</div>
 
 					<div class="botao">
-						<a class="btn__perfil" href="#">Ver Mais</a>
+						<a class="btn__perfil" href="./perfil-editar.php">Ver Mais</a>
 					</div>
 					<div class="botao">
 						<a class="btn__perfil" href="../assets/scripts/logout.php">Sair</a>
@@ -182,7 +190,7 @@ $placa = $carros[0]['placa'] ?? "";
 
 						<div class="perfil__veiculo__botoes">
 							<div class="div-perfil__veiculo__btn">
-								<a href="" class="perfil__veiculo__botao">Ver Mais</a>
+								<a href="./veiculos.php" class="perfil__veiculo__botao">Ver Mais</a>
 							</div>
 							<div class="div-perfil__veiculo__btn">
 								<a href="" class="perfil__veiculo__botao">Personalizar</a>
@@ -207,30 +215,36 @@ $placa = $carros[0]['placa'] ?? "";
 
 			<div class="opcoes__icones__mobile">
 				<div class="icones__esquerda">
-					<div class="icone__esquerda">
-						<figure class="figure-container">
-							<img class="img__icon__esquerda" src="../assets/img/icone-perfil.svg" alt="Perfil">
-							<figcaption class="legenda__icones__atividade">Perfil</figcaption>
-						</figure>
-					</div>
-					<div class="icone__esquerda">
-						<figure class="figure-container">
-							<img class="img__icon__esquerda" src="../assets/img/icone-carro.svg" alt="Veículos">
-							<figcaption class="legenda__icones__atividade">Veículos</figcaption>
-						</figure>
-					</div>
+					<a href="./perfil-editar.php">
+						<div class="icone__esquerda">
+							<figure class="figure-container">
+								<img class="img__icon__esquerda" src="../assets/img/icone-perfil.svg" alt="Perfil">
+								<figcaption class="legenda__icones__atividade">Perfil</figcaption>
+							</figure>
+						</div>
+					</a>
+					<a href="./veiculos.php">
+						<div class="icone__esquerda">
+							<figure class="figure-container">
+								<img class="img__icon__esquerda" src="../assets/img/icone-carro.svg" alt="Veículos">
+								<figcaption class="legenda__icones__atividade">Veículos</figcaption>
+							</figure>
+						</div>
+					</a>
 					<div class="icone__esquerda">
 						<figure class="figure-container">
 							<img class="img__icon__esquerda" src="../assets/img/icone-carrinho.svg" alt="Compras">
 							<figcaption class="legenda__icones__atividade">Compras</figcaption>
 						</figure>
 					</div>
-					<div class="icone__esquerda">
-						<figure class="figure-container">
-							<img class="img__icon__esquerda" src="../assets/img/icone-porco-dinheiro.svg" alt="Orçamentos">
-							<figcaption class="legenda__icones__atividade">Orçamentos</figcaption>
-						</figure>
-					</div>
+					<a href="./orcamentosCliente.php">
+						<div class="icone__esquerda">
+							<figure class="figure-container">
+								<img class="img__icon__esquerda" src="../assets/img/icone-porco-dinheiro.svg" alt="Orçamentos">
+								<figcaption class="legenda__icones__atividade">Orçamentos</figcaption>
+							</figure>
+						</div>
+					</a>
 					<div class="icone__esquerda">
 						<figure class="figure-container">
 							<img class="img__icon__esquerda" src="../assets/img/icone-agendamento.svg" alt="Agendamentos">
@@ -243,12 +257,14 @@ $placa = $carros[0]['placa'] ?? "";
 							<figcaption class="legenda__icones__atividade">Plano</figcaption>
 						</figure>
 					</div>
-					<div class="icone__esquerda">
-						<figure class="figure-container">
-							<img class="img__icon__esquerda" src="../assets/img/icone-favorito-amarelo.svg" alt="Plano">
-							<figcaption class="legenda__icones__atividade">Favoritos</figcaption>
-						</figure>
-					</div>
+					<a href="./favoritos.php">
+						<div class="icone__esquerda">
+							<figure class="figure-container">
+								<img class="img__icon__esquerda" src="../assets/img/icone-favorito-amarelo.svg" alt="Plano">
+								<figcaption class="legenda__icones__atividade">Favoritos</figcaption>
+							</figure>
+						</div>
+					</a>
 				</div>
 			</div>
 

@@ -426,7 +426,10 @@ main{
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        
+    }
+
+    .opcoes__icones__mobile .icones__esquerda a{
+        text-decoration: none;
     }
 
     .meio-circulo__branco-top{
