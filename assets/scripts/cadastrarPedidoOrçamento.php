@@ -10,9 +10,10 @@ $categoriaForm = $_GET['categoria'];
 $numeroCartao = $_POST['numeroCartao'];
 $cvvCartao = $_POST['cvvCartao'];
 $validadeCartao = $_POST['dataValidade'];
+$idCarro = $_POST['idCarro'];
 $idDono = $_SESSION['id']; //atribuindo o 'id' da sessão atual para a variável $id
 
-$sqlCarros = $pdo->query("SELECT * FROM `carro` WHERE `id_dono` = $idDono");
+$sqlCarros = $pdo->query("SELECT * FROM `carro` WHERE `idVeiculo` = $idCarro");
 $registroCarro = $sqlCarros->fetchAll();
 
 $corCarro = $registroCarro['cor'];
