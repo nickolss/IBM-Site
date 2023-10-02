@@ -15,13 +15,17 @@ require_once('../assets/scripts/iniciarSessao.php');
     <link rel='stylesheet' href='../assets/css/estilos-importantes.css'>
 
     <link rel='shortcut icon' href='../assets/img/favicon.ico' type='image/x-icon'>
+
+    <!--LINK ICONES-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     <script type='text/javascript' src='../assets/js/java.js' defer></script>
     <script src='../assets/js/js-bootstrap/bootstrap.bundle.min.js'></script>
     <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
     <title>Turn Motors | Meus Veículos</title>
 </head>
 
-<body>
+<body id="container__body">
     <?php
     require_once('../assets/components/header.php');
     ?>
@@ -54,9 +58,16 @@ require_once('../assets/scripts/iniciarSessao.php');
                         </div>
 
                         <div class='acoes-card'>
-                            <a href='../assets/scripts/excluirVeiculo.php?idVeiculo=$idVeiculoPrinc' class='acoes-card__link'>Excluir Veículo</a>
-                            <a href='./personalizacoes.php' class='acoes-card__link'>Personalizar Veículo</a>
+                            <div class='acao__card'>
+                                <a href='../assets/scripts/excluirVeiculo.php?idVeiculo=$idVeiculoPrinc' class='acoes-card__link'>Excluir Veículo</a>
+                                <i class='bx bx-trash'></i>
+                            </div>
+                            <div class='acao__card'>
+                                <a href='./personalizacoes.php' class='acoes-card__link'>Personalizar Veículo</a>
+                                <i class='bx bx-edit-alt' ></i>
+                            </div>
                         </div>
+
                     </div>
                 </div>
 
@@ -83,8 +94,14 @@ require_once('../assets/scripts/iniciarSessao.php');
                                 </div>
 
                                 <div class='acoes-card'>
-                                    <a href='../assets/scripts/excluirVeiculo.php?idVeiculo=$idVeiculo' class='acoes-card__link'>Excluir Veículo</a>
-                                    <a href='./personalizacoes.php' class='acoes-card__link'>Personalizar Veículo</a>
+                                    <div class='acao__card'>
+                                        <a href='../assets/scripts/excluirVeiculo.php?idVeiculo=$idVeiculoPrinc' class='acoes-card__link'>Excluir Veículo</a>
+                                        <i class='bx bx-trash'></i>
+                                    </div>
+                                    <div class='acao__card'>
+                                        <a href='./personalizacoes.php' class='acoes-card__link'>Personalizar Veículo</a>
+                                        <i class='bx bx-edit-alt' ></i>
+                                    </div>
                                 </div>
                             </div>
                             ";
