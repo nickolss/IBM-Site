@@ -271,7 +271,7 @@ if (isset($_GET['busca'])) {
                             echo '<hr class="card-produto-dinamico-linha">';
                             echo '<div class="card-produto-dinamico-preco-button">';
                             echo '<div class="card-produto-dinamico-preco-button-texto">R$:' . $precoProduto . ',00</div>';
-                            echo '<button ><img class="fav__heart__icon" src="../assets/img/heart-filled.png" alt=""></button>';
+                            echo '<button ><img class="fav__heart__icon" src="../assets/img/icone-favorito-preenchido.svg" alt=""></button>';
                             echo '</div>';
                             echo '</div>';
                             echo '</div>';
