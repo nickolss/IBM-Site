@@ -295,7 +295,7 @@
             </div>
             <div class="cards cards2">
                 <div class="card">
-                    <a href="agendamento-reformulado.php" class="a__card">
+                    <a href="agendamentos.php?categoria=tunagem-reformulada" class="a__card">
                         <div class="div__card__img__pneu">
                             <img class="imagem__card imagem__card__tunagem" src="../assets/img/personalizacao-motor1.png" alt="Estilização Sólida">
                         </div>
@@ -308,7 +308,7 @@
                     </a>
                 </div>
                 <div class="card">
-                    <a href="agendamento-remanufaturado.php" class="a__card" id="a__card__tunagem2">
+                    <a href="agendamentos.php?categoria=tunagem-remanufaturada" class="a__card">
                         <div class="div__card__img__pneu">
                             <img class="imagem__card" id="imagem__card__tunagem2" src="../assets/img/personalizacao-motor2.png" alt="Estilização Personalizada">
                         </div>
@@ -318,6 +318,7 @@
                         <div class="card__descricao">
                             <p>Motores têm uma completa mudança se comparado ao original. Respeita as limitações do modelo.</p>
                         </div>
+                        
                     </a>
                 </div>
             </div>

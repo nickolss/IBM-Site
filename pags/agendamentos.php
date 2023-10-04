@@ -37,7 +37,7 @@ $dataAtual = date('Y-m-d');
 
         <div class="cadastro">
             <?php $categoria = $_GET['categoria'] ?> <!--atribuindo o valor a variável $categoria para passá-la pela url no action do form-->
-            <form action="../assets/scripts/cadastrarPedidoOrçamento.php?categoria=<?php echo $categoria; ?>" method="POST">
+            <form action="../assets/scripts/cadastrarPedidoOrçamento.php?categoria=<?= $categoria; ?>" method="POST">
 
                 <!--PARTE DAS INFORMAÇÕES DO VEÍCULO DO AGENDAMENTO-->
                 <div class="caixa__input">

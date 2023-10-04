@@ -195,25 +195,35 @@ if (!empty($idsProdutos)) {
 
     <?php
     if (!empty($pesquisa)) {
-
-        echo '<div class="container">';
-        echo '<br>';
-        echo "<div><h5>Busca por: '$pesq'</h5></div>";
-        echo '</div>';
-
+    ?>
+        <div class="container">
+            <br>
+            <div>
+                <h5>Busca por: <?= $pesq ?></h5>
+            </div>
+        </div>
+        <?php
         if (empty($idsProdutos)) {
-            echo '<div class="container">';
-            echo '<br>';
-            echo '<div><h5 style="font-weight: bold">Nenhum produto encontrado!</h5></div>';
-            echo '</div>';
+
+        ?>
+            <div class="container">
+                <br>
+                <div>
+                    <h5 style="font-weight: bold">Nenhum produto encontrado!</h5>
+                </div>
+            </div>
+
+        <?php
         } else {
         }
     } else {
+        ?>
+        <div class="container">
+            <div class='main__title'>Navegue pelos produtos <?= $msgNav ?></div>
+            <br>
+        </div>
 
-        echo '<div class="container">';
-        echo "<div class='main__title'>Navegue pelos produtos $msgNav</div>";
-        echo '<br>';
-        echo '</div>';
+    <?php
     } ?>
 
     <?php if (!empty($chunksProdutos)) {
@@ -249,7 +259,7 @@ if (!empty($idsProdutos)) {
 
                                     <div class="text-center">
 
-                                        <a href="mercadoria.php?nomeProduto=<?= $nomeProduto ?>"><img class="card-img-top imagens-prod" src="<?php echo $imagemProduto ?>" alt="..."></a>
+                                        <a href="mercadoria.php?nomeProduto=<?= $nomeProduto ?>"><img class="card-img-top imagens-prod" src="<?= $imagemProduto ?>" alt="..."></a>
 
                                     </div>
 
@@ -257,17 +267,17 @@ if (!empty($idsProdutos)) {
 
                                         <div class="card-produto-dinamico-titulo">
 
-                                            <h5 class="card-title"><?php echo $nomeProduto ?></h5>
+                                            <h5 class="card-title"><?= $nomeProduto ?></h5>
 
                                         </div>
 
                                         <div>
 
-                                            <div class="card-text"><?php echo $marcaProduto ?></div>
+                                            <div class="card-text"><?= $marcaProduto ?></div>
 
-                                            <div class="card-text"><?php echo $descricaoProduto ?></div>
+                                            <div class="card-text"><?= $descricaoProduto ?></div>
 
-                                            <div class="card-text"><?php echo $customizacaoProduto ?></div>
+                                            <div class="card-text"><?= $customizacaoProduto ?></div>
 
                                         </div>
 
@@ -275,9 +285,9 @@ if (!empty($idsProdutos)) {
 
                                         <div class="card-produto-dinamico-preco-button">
 
-                                            <div class="card-produto-dinamico-preco-button-texto">R$:<?php echo $precoProduto ?>,00</div>
+                                            <div class="card-produto-dinamico-preco-button-texto">R$:<?= $precoProduto ?>,00</div>
                                             <form action="../assets/scripts/cadastrarFavorito.php" method="POST">
-                                                <input type="hidden" name="idProduto" id="idProduto" value="<?php echo $idsProdutos; ?>">
+                                                <input type="hidden" name="idProduto" id="idProduto" value="<?= $idsProdutos; ?>">
                                                 <?php
                                                 $sqlFav = "SELECT * FROM `favoritos` WHERE `id_produto`='$idsProdutos'";
                                                 $stmt = $pdo->query($sqlFav);
@@ -293,8 +303,8 @@ if (!empty($idsProdutos)) {
 
                                                 ?>
                                             </form>
-                                            <form method="POST" action="?adicionar=<?php echo $idsProdutos ?>">
-                                                <button type="submit" name="adicionar" value="<?php echo $idsProdutos ?>">
+                                            <form method="POST" action="?adicionar=<?= $idsProdutos ?>">
+                                                <button type="submit" name="adicionar" value="<?= $idsProdutos ?>">
                                                     <img class="carrinho__icone" src="../assets/img/icone-carrinho-vermelho.svg" alt="">
                                                 </button>
                                             </form>
@@ -326,18 +336,18 @@ if (!empty($idsProdutos)) {
                 if (!empty($idsProdutos) && $paginas > 1) {
             ?>
                     <div class="container text-center">
-                        <?php echo "<a href='?pagina=1&busca=" . urlencode($pesquisa) . "'>Primeira</a>"; ?>
+                        <?= "<a href='?pagina=1&busca=" . urlencode($pesquisa) . "'>Primeira</a>"; ?>
 
                         <?php if ($pagina > 1) : ?>
-                            <?php echo "<a href='?pagina=" . ($pagina - 1) . "&busca=" . urlencode($pesquisa) . "'><<</a>"; ?>
+                            <?= "<a href='?pagina=" . ($pagina - 1) . "&busca=" . urlencode($pesquisa) . "'><<</a>"; ?>
                         <?php endif; ?>
 
                         <?= $pagina ?>
 
                         <?php if ($pagina < $paginas) : ?>
-                            <?php echo "<a href='?pagina=" . ($pagina + 1) . "&busca=" . urlencode($pesquisa) . "'>>></a>"; ?>
+                            <?= "<a href='?pagina=" . ($pagina + 1) . "&busca=" . urlencode($pesquisa) . "'>>></a>"; ?>
                         <?php endif; ?>
-                        <?php echo "<a href='?pagina=$paginas&busca=" . urlencode($pesquisa) . "'>Última</a>"; ?>
+                        <?= "<a href='?pagina=$paginas&busca=" . urlencode($pesquisa) . "'>Última</a>"; ?>
                     </div>
             <?php }
             } ?>
@@ -354,10 +364,14 @@ if (!empty($idsProdutos)) {
                     </div>
                 </div>
                 <?php if (empty($naoEncontrados)) {
-                    echo '<div class="container">';
-                    echo '<br>';
-                    echo '<div><h5 style="font-weight: bold">Sem Sugestões!</h5></div>';
-                    echo '</div>';
+                ?>
+                    <div class="container">
+                        <br>
+                        <div>
+                            <h5 style="font-weight: bold">Sem Sugestões!</h5>
+                        </div>
+                    </div>
+                <?php
                 } else { ?>
 
                     <?php if (!empty($chunksProdutos2)) {
@@ -394,7 +408,7 @@ if (!empty($idsProdutos)) {
                                                     <div class="text-center">
 
                                                         <a href="mercadoria.php?nomeProduto=<?= $nomeProduto ?>">
-                                                            <img class="card-img-top imagens-prod" src="<?php echo $imagemProduto2 ?>" alt="...">
+                                                            <img class="card-img-top imagens-prod" src="<?= $imagemProduto2 ?>" alt="...">
                                                         </a>
 
                                                     </div>
@@ -403,17 +417,17 @@ if (!empty($idsProdutos)) {
 
                                                         <div class="card-produto-dinamico-titulo">
 
-                                                            <h5 class="card-title"><?php echo $nomeProduto2 ?></h5>
+                                                            <h5 class="card-title"><?= $nomeProduto2 ?></h5>
 
                                                         </div>
 
                                                         <div>
 
-                                                            <div class="card-text"><?php echo $marcaProduto2 ?></div>
+                                                            <div class="card-text"><?= $marcaProduto2 ?></div>
 
-                                                            <div class="card-text"><?php echo $descricaoProduto2 ?></div>
+                                                            <div class="card-text"><?= $descricaoProduto2 ?></div>
 
-                                                            <div class="card-text"><?php echo $customizacaoProduto2 ?></div>
+                                                            <div class="card-text"><?= $customizacaoProduto2 ?></div>
 
                                                         </div>
 
@@ -421,9 +435,9 @@ if (!empty($idsProdutos)) {
 
                                                         <div class="card-produto-dinamico-preco-button">
 
-                                                            <div class="card-produto-dinamico-preco-button-texto">R$:<?php echo $precoProduto2 ?>,00</div>
+                                                            <div class="card-produto-dinamico-preco-button-texto">R$:<?= $precoProduto2 ?>,00</div>
 
-                                                            <button> <a href="?adicionar=<?php echo $naoEncontrados ?>"> <img class="carrinho__icone" src="../assets/img/icone-carrinho-vermelho.svg" alt=""> </a></button>
+                                                            <button> <a href="?adicionar=<?= $naoEncontrados ?>"> <img class="carrinho__icone" src="../assets/img/icone-carrinho-vermelho.svg" alt=""> </a></button>
 
                                                         </div>
 

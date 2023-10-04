@@ -1,6 +1,6 @@
 <?php
-  require_once('../assets/scripts/conexao.php'); 
-  //require_once('../assets/scripts/consultaFuncionario.php');
+require_once('../assets/scripts/conexao.php');
+//require_once('../assets/scripts/consultaFuncionario.php');
 ?>
 
 <!DOCTYPE html>
@@ -30,80 +30,97 @@
 
 <body id="container__body">
   <?php
-    require_once('../assets/components/header-adm.php');
+  require_once('../assets/components/header-adm.php');
   ?>
 
-  <main class="principal">    
+  <main class="principal">
     <div class="titulo">
       <h1 class="mainTitle">Cadastrar Orçamento</h1>
     </div>
 
     <div class="card-container">
-    <?php
+      <?php
 
-        $sql = "SELECT * FROM pedido_orcamento";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute();
-        $quantidadeTupla = $stmt->rowCount();
-        $pedidos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $sql = "SELECT * FROM pedido_orcamento";
+      $stmt = $pdo->prepare($sql);
+      $stmt->execute();
+      $quantidadeTupla = $stmt->rowCount();
+      $pedidos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        if ($quantidadeTupla > 0) {
-            foreach ($pedidos as $pedido) {
-              if($pedido['status'] == 'em avaliação'){
+      if ($quantidadeTupla > 0) {
+        foreach ($pedidos as $pedido) {
+          if ($pedido['status'] == 'em avaliação') {
 
-                $dataAtual = date("Y-m-d"); //atribui a data atual do sistema para a variável $dataAtual
-                $dataAgendamento = $pedido['data']; //atribui a data do agendamento para a variável $dataAgendamento
-                
-                $dataHoraSp = new DateTime('now', new DateTimeZone('America/Sao_Paulo')); // Cria um objeto DateTime com o fuso horário de São Paulo
-                $horaAtual = (int)$dataHoraSp->format('H'); //atribui a variavel $horaAtual apenas a hora formatada do DateTime 
-                $horaAgendamento = (int)$pedido['horario']; //atribui a hora do agendamento para a variável $horaAgendamento
+            $dataAtual = date("Y-m-d"); //atribui a data atual do sistema para a variável $dataAtual
+            $dataAgendamento = $pedido['data']; //atribui a data do agendamento para a variável $dataAgendamento
 
-                $placa = $pedido['placaCarro'];
+            $dataHoraSp = new DateTime('now', new DateTimeZone('America/Sao_Paulo')); // Cria um objeto DateTime com o fuso horário de São Paulo
+            $horaAtual = (int)$dataHoraSp->format('H'); //atribui a variavel $horaAtual apenas a hora formatada do DateTime 
+            $horaAgendamento = (int)$pedido['horario']; //atribui a hora do agendamento para a variável $horaAgendamento
 
-                //EXIBE O CARD DOS PEDIDOS DE ORÇAMENTOS NA TELA
-                echo '<form action="../assets/scripts/cadastrarOrcamento.php?placa='.$placa.'" method="post">';
-                echo '<div class="card">';
-                echo        '<div class="card-info">';
-                echo            '<p class="text-title">' . strtoupper($pedido['personalizacao']) . '</p>';
-                echo            '<p class="text-body">Placa: ' . strtoupper($pedido['placaCarro']) . '</p>';
-                echo            '<p class="text-body">Data: ' . strtoupper($pedido['data']) . '</p>';
-                echo            '<p class="text-body">Horário: ' . strtoupper($pedido['horario']) . 'h</p>';
-                echo        '</div>';
-                echo        '<div class="card-footer">';
-                echo            '<div class="caixa__input">';
-                
-                //se a data e hora atuais forem menor que a data e hora do agendamento, o input estará desabilitado, caso contrário estará habilitado
-                if ($dataAtual <= $dataAgendamento && $horaAtual < $horaAgendamento ||  $dataAtual < $dataAgendamento && $horaAtual <= $horaAgendamento || 
-                $dataAtual < $dataAgendamento && $horaAtual >= $horaAgendamento) {
-                    echo        '<input type="number" required name="preco" id="preco" autocomplete="off" disabled>';
-                }else if($dataAtual >= $dataAgendamento){
-                    echo       '<input type="number" required name="preco" id="preco" autocomplete="off" >';
-                }
-                echo                '<label for="preco">Preço</label>';
-                echo '<select class="input__data-horario" name="dataOrcamento" id="dataOrcamento">';
-                echo    '<option value="'.$pedido['data'].'" selected>'.$pedido['data'].'</option>';
-                echo '</select>';
-                echo '<select class="input__data-horario" name="horarioOrcamento" id="horarioOrcamento">';
-                echo    '<option value="'.$pedido['horario'].'" selected>'.$pedido['horario'].'</option>';
-                echo '</select>';
-                echo            '</div>';
-                echo        '<div class="card__linha__botoes">';
-                echo        '<div class="card-button card-button-first">';
-                echo            '<button class="botao_orcamento" name="btn-pedido-orcamento" id="btn-pedido-orcamento" value="cancelado" type="submit"><i class="bx bx-x"></i></button>';
-                echo        '</div>';
-                echo        '<div class="card-button card-button-second">';
-                echo            '<button class="botao_orcamento" name="btn-pedido-orcamento" id="btn-pedido-orcamento" value="confirmado"  type="submit"><i class="bx bx-check" ></i></button>';
-                echo        '</div>';
-                echo    '</div>';
-                echo    '</div>';
-                echo '</div>';
-                echo '</form>';
-              }
-            }
-            } else {
-                echo 'Nenhum produto encontrado.';
-            }
-    ?>
+            $placa = $pedido['placaCarro'];
+
+            //EXIBE O CARD DOS PEDIDOS DE ORÇAMENTOS NA TELA
+
+      ?>
+
+            <form action="../assets/scripts/cadastrarOrcamento.php?placa='.$placa.'" method="post">
+              <div class="card">
+                <div class="card-info">
+                  <p class="text-title"> <?= strtoupper($pedido['personalizacao']) ?></p>
+                  <p class="text-body">Placa: <?= strtoupper($pedido['placaCarro']) ?></p>
+                  <p class="text-body">Data: <?= strtoupper($pedido['data']) ?></p>
+                  <p class="text-body">Horário: <?= strtoupper($pedido['horario']) ?>/p>
+                    /div>
+                  <div class="card-footer">
+                    <div class="caixa__input">
+
+                      <?php
+
+                      //se a data e hora atuais forem menor que a data e hora do agendamento, o input estará desabilitado, caso contrário estará habilitado
+                      if (
+                        $dataAtual <= $dataAgendamento && $horaAtual < $horaAgendamento ||  $dataAtual < $dataAgendamento && $horaAtual <= $horaAgendamento ||
+                        $dataAtual < $dataAgendamento && $horaAtual >= $horaAgendamento
+                      ) {
+
+                      ?>
+                        <input type="number" required name="preco" id="preco" autocomplete="off" disabled>
+                      <?php
+
+                      } else if ($dataAtual >= $dataAgendamento) {
+                      ?>
+                        <input type="number" required name="preco" id="preco" autocomplete="off">
+                      <?php
+                      }
+
+                      ?>
+                      <label for="preco">Preço</label>
+                      <select class="input__data-horario" name="dataOrcamento" id="dataOrcamento">
+                        <option value="<?= $pedido['data'] ?>" selected> <?= $pedido['data'] ?> </option>
+                      </select>
+                      <select class="input__data-horario" name="horarioOrcamento" id="horarioOrcamento">
+                        <option value="<?= $pedido['horario'] ?>" selected><?= $pedido['horario'] ?></option>
+                      </select>
+                    </div>
+                    <div class="card__linha__botoes">
+                      <div class="card-button card-button-first">
+                        <button class="botao_orcamento" name="btn-pedido-orcamento" id="btn-pedido-orcamento" value="cancelado" type="submit"><i class="bx bx-x"></i></button>
+                      </div>
+                      <div class="card-button card-button-second">
+                        <button class="botao_orcamento" name="btn-pedido-orcamento" id="btn-pedido-orcamento" value="confirmado" type="submit"><i class="bx bx-check"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </form>
+
+      <?php
+          }
+        }
+      } else {
+        echo 'Nenhum produto encontrado.';
+      }
+      ?>
     </div>
 
   </main>

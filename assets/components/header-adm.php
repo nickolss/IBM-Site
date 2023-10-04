@@ -54,29 +54,29 @@ require_once('../assets/scripts/iniciarSessao.php');
                                                     ?>
 
                                                         <tr>
-                                                            <td class="img__table__header_carrinho" style="width: 40%;"> <img src="<?php echo $value['caminho_imagem'] ?>" alt="..."> </td>
+                                                            <td class="img__table__header_carrinho" style="width: 40%;"> <img src="<?= $value['caminho_imagem'] ?>" alt="..."> </td>
 
                                                             <td class="info__table__header_carrinho">
                                                                 <div>
-                                                                    <h2> <?php echo $value['nome'] ?></h2>
+                                                                    <h2> <?= $value['nome'] ?></h2>
                                                                 </div>
                                                                 <div>
-                                                                    <h3>R$: <?php echo $value['preco'] ?></h3>
+                                                                    <h3>R$: <?= $value['preco'] ?></h3>
                                                                 </div>
                                                                 <div class="table_itens__header__carrinho__config">
                                                                     <div class="table__itens_header_carrinho_botoes">
-                                                                        <form method="POST" action="?subtrair=<?php echo $idProd ?>">
-                                                                            <button id="botaoSubtrair_carrinho_header" type="submit" name="subtrair" value="<?php echo $idProd ?>">-</button>
+                                                                        <form method="POST" action="?subtrair=<?= $idProd ?>">
+                                                                            <button id="botaoSubtrair_carrinho_header" type="submit" name="subtrair" value="<?= $idProd ?>">-</button>
                                                                         </form>
 
-                                                                        <span id="contador_carrinho_header"> <?php echo $value['quantidade'] ?></span>
-                                                                        <form method="POST" action="?adicionar=<?php echo $idProd ?>">
-                                                                            <button id="botaoAcrescentar_carrinho_header" type="submit" name="adicionar" value="<?php echo $idProd ?>">+</button>
+                                                                        <span id="contador_carrinho_header"> <?= $value['quantidade'] ?></span>
+                                                                        <form method="POST" action="?adicionar=<?= $idProd ?>">
+                                                                            <button id="botaoAcrescentar_carrinho_header" type="submit" name="adicionar" value="<?= $idProd ?>">+</button>
                                                                         </form>
                                                                     </div>
 
-                                                                    <form method="POST" action="?remover=<?php echo $idProd ?>">
-                                                                        <button style="border: none; color: #003445; background-color: #fff; text-decoration: none" type="submit" name="remover" value="<?php echo $idProd ?>">Excluir</button>
+                                                                    <form method="POST" action="?remover=<?= $idProd ?>">
+                                                                        <button style="border: none; color: #003445; background-color: #fff; text-decoration: none" type="submit" name="remover" value="<?= $idProd ?>">Excluir</button>
                                                                     </form>
 
 
@@ -94,7 +94,7 @@ require_once('../assets/scripts/iniciarSessao.php');
                                         <br>
                                         <br>
                                         <div class="carrinho__header__finalizacao">
-                                            <p class="fs-2">Total: <?php echo $totalCarrinho ?>R$</p>
+                                            <p class="fs-2">Total: <?= $totalCarrinho ?>R$</p>
                                             <div class="text-center">
                                                 <button><a href="../pags/carrinho.php"> Ver Carrinho</a> </button>
                                                 <a style="text-decoration: none; color: #003445" href="">Frete grátis com o Plano Turbinado</a>
