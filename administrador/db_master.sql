@@ -790,6 +790,19 @@ CREATE TABLE IF NOT EXISTS `favoritos` (
   FOREIGN KEY (`id_produto`) REFERENCES `produto`(`codigoProduto`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
+--
+-- Estrutura da tabela `produtosTroca`
+--
+DROP TABLE IF EXISTS `produtosTroca`;
+CREATE TABLE IF NOT EXISTS `produtosTroca`(
+  `idProduto` int not null AUTO_INCREMENT,
+  `nome` varchar(120) not null,
+  `preco_pontos` int not null,
+  `descricao` varchar(180) not null,
+
+  PRIMARY KEY (`idProduto`)
+) ENGINE = InnoDB DEFAULT CHARACTER = utf8mb4 COLLATE = utf8mb4_general_ci;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
 ;
 
