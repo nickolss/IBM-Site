@@ -105,6 +105,14 @@ $placa = $carros[0]['placa'] ?? "";
 							<img class="img__icon__esquerda" src="../assets/img/icone-favorito-amarelo.svg" alt="Favorito">
 						</div>
 					</a>
+					<a href="./troquepontos.php">
+						<div class="icone__esquerda">
+							<div class="legenda__icone__pc">
+								Pontos
+							</div>
+							<img class="img__icon__esquerda" src="../assets/img/icone-pontos.svg" alt="Trocar Pontos">
+						</div>
+					</a>
 				</div>
 				<div class="meio-circulo__branco-bottom">⠀</div>
 			</div>
@@ -181,7 +189,7 @@ $placa = $carros[0]['placa'] ?? "";
 								<img src="../assets/img/icone-carro-novo.svg" alt="Veículo">
 							</div>
 							<div class="perfil__veiculo__texto">
-								<h4><?= $carros[0]['apelido'] ?? "Nenhum Veículo Encontrado" ?> </h4>
+								<h4 id="titulo__nenhum-veiculo"><?= $carros[0]['apelido'] ?? "Nenhum Veículo Encontrado" ?> </h4>
 								<h5><?php if($placa != ""){
 									echo "Placa: $placa";
 								} ?> </h5>
@@ -262,6 +270,14 @@ $placa = $carros[0]['placa'] ?? "";
 							<figure class="figure-container">
 								<img class="img__icon__esquerda" src="../assets/img/icone-favorito-amarelo.svg" alt="Plano">
 								<figcaption class="legenda__icones__atividade">Favoritos</figcaption>
+							</figure>
+						</div>
+					</a>
+					<a href="./troquepontos.php">
+						<div class="icone__esquerda">
+							<figure class="figure-container">
+								<img class="img__icon__esquerda" src="../assets/img/icone-pontos.svg" alt="Trocar Pontos">
+								<figcaption class="legenda__icones__atividade">Pontos</figcaption>
 							</figure>
 						</div>
 					</a>
