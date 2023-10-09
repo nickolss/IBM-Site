@@ -801,7 +801,7 @@ CREATE TABLE IF NOT EXISTS `produtosTroca`(
   `descricao` varchar(180) not null,
 
   PRIMARY KEY (`idProduto`)
-) ENGINE = InnoDB DEFAULT CHARACTER = utf8mb4 COLLATE = utf8mb4_general_ci;
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
 ;
