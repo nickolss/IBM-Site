@@ -48,78 +48,77 @@
       <div class="container__produtos">
 
         <div class="linha__produtos">
-            <a href="" class="link__produto">
+            <a href="./trocasDisponiveis.php?produtoTroca=capa-volante" class="link__produto">
               <div class="produto">
                   <div class="img__produto">
                       <img src="../assets/img/trocaCapaVolante.png" alt="Capa de Volante ">
                   </div>
                   <div class="texto__produto">
                       <h3>Capa de Volante</h3>
-                      <p>Pontos: x</p>
+                      
                   </div>
               </div>
             </a>
 
-            <a href="" class="link__produto">
+            <a href="./trocasDisponiveis.php?produtoTroca=cheirinho-carro" class="link__produto">
               <div class="produto">
                   <div class="img__produto">
                       <img src="../assets/img/trocaCheirinho.png" alt="Cheirinho de carro">
                   </div>
                   <div class="texto__produto">
-                      <h3>Chaveiro</h3>
-                      <p>Pontos: x</p>
+                      <h3>Cheirinho de Carro</h3>
+                      
                   </div>
               </div>
             </a>
         </div>
 
         <div class="linha__produtos">
-            <a href="" class="link__produto">
+            <a href="./trocasDisponiveis.php?produtoTroca=chaveiro" class="link__produto">
               <div class="produto">
                   <div class="img__produto">
                       <img src="../assets/img/trocaChaveiro.png" alt="Chaveiro">
                   </div>
                   <div class="texto__produto">
                       <h3>Chaveiro</h3>
-                      <p>Pontos: x</p>
                   </div>
               </div>
             </a>
 
-            <a href="" class="link__produto">
+            <a href="./trocasDisponiveis.php?produtoTroca=limpador" class="link__produto">
               <div class="produto">
                   <div class="img__produto">
                       <img src="../assets/img/trocaLimpador.png" alt="Limpador de Parabrisa">
                   </div>
                   <div class="texto__produto">
                       <h3>Limpador de Parabrisa</h3>
-                      <p>Pontos: x</p>
+                      
                   </div>
               </div>
             </a>
         </div>
 
         <div class="linha__produtos">
-            <a href="" class="link__produto">
+            <a href="./trocasDisponiveis.php?produtoTroca=tapa-sol" class="link__produto">
               <div class="produto">
                   <div class="img__produto">
                       <img src="../assets/img/trocaTapaSol.png" alt="Tapa Sol">
                   </div>
                   <div class="texto__produto">
                       <h3>Tapa Sol</h3>
-                      <p>Pontos: x</p>
+                      
                   </div>
               </div>
             </a>
 
-            <a href="" class="link__produto">
+            <a href="./trocasDisponiveis.php?produtoTroca=tapete-carro" class="link__produto">
               <div class="produto">
                   <div class="img__produto">
                       <img src="../assets/img/trocaTapete.png" alt="Tapete de Carro">
                   </div>
                   <div class="texto__produto">
                       <h3>Tapete de Carro</h3>
-                      <p>Pontos: x</p>
+                      
                   </div>
               </div>
             </a>
@@ -137,26 +136,26 @@
       </div>
 
       <div class="linha__produtos">
-            <a href="" class="link__produto">
+            <a href="./troca.php?nomeProd=Lavagem Simples" class="link__produto">
               <div class="produto">
                   <div class="img__produto">
                       <img src="../assets/img/produtoLavagemSimples.png" alt="Lavagem Simples">
                   </div>
                   <div class="texto__produto">
                       <h3>Lavagem Simples</h3>
-                      <p>Pontos: x</p>
+                      
                   </div>
               </div>
             </a>
 
-            <a href="" class="link__produto">
+            <a href="./troca.php?nomeProd=Lavagem Completa" class="link__produto">
               <div class="produto">
                   <div class="img__produto">
                       <img src="../assets/img/produtoLavagemCompleta.png" alt="Lavagem Completa">
                   </div>
                   <div class="texto__produto">
                       <h3>Lavagem Completa</h3>
-                      <p>Pontos: x</p>
+                      
                   </div>
               </div>
             </a>

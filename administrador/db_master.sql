@@ -671,7 +671,6 @@ CREATE TABLE IF NOT EXISTS `carro`(
   `apelido` varchar(60) NOT NULL,
   `modelo` varchar(150) NOT NULL,
   `cor` varchar(100) NOT NULL,
-  
   PRIMARY KEY(`idVeiculo`),
   FOREIGN KEY (`id_dono`) REFERENCES `cliente`(`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
@@ -794,14 +793,105 @@ CREATE TABLE IF NOT EXISTS `favoritos` (
 -- Estrutura da tabela `produtosTroca`
 --
 DROP TABLE IF EXISTS `produtosTroca`;
+
 CREATE TABLE IF NOT EXISTS `produtosTroca`(
   `idProduto` int not null AUTO_INCREMENT,
   `nome` varchar(120) not null,
   `preco_pontos` int not null,
   `descricao` varchar(180) not null,
-
+  `categoria` ENUM(
+    'capa-volante',
+    'cheirinho-carro',
+    'chaveiro',
+    'limpador',
+    'tapa-sol',
+    'tapete-carro',
+    'lavagem-simples',
+    'lavagem-completa'
+  ) NOT NULL,
+  `caminho_img` varchar(120) not null,
   PRIMARY KEY (`idProduto`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+
+INSERT INTO
+  `produtostroca` (
+    `nome`,
+    `preco_pontos`,
+    `descricao`,
+    `categoria`,
+    `caminho_img`
+  )
+VALUES
+  (
+    'Lavagem Simples',
+    '1000',
+    'Lavagem simples do seu veículo',
+    'lavagem-simples',
+    '../assets/img/motor369.svg'
+  ),
+  (
+    'Lavagem Completa',
+    '1800',
+    'Lavagem completa do seu veículo',
+    'lavagem-completa',
+    '../assets/img/motor369.svg'
+  ),
+  (
+    'Cheiro de Lavanda',
+    '200',
+    'Cheirinho de lavanda',
+    'cheirinho-carro',
+    '../assets/img/motor369.svg'
+  ),
+  (
+    'Capa de Volante',
+    '600',
+    'Capa de Volante',
+    'capa-volante',
+    '../assets/img/motor369.svg'
+  ),
+  (
+    'Tapete de carro',
+    '750',
+    'Tapete de carro',
+    'tapete-carro',
+    '../assets/img/motor369.svg'
+  ),
+  (
+    'Cheiro de Morango',
+    '200',
+    'Cheirinho de Morango',
+    'cheirinho-carro',
+    '../assets/img/motor369.svg'
+  ),
+  (
+    'Limpador de vidro',
+    '120',
+    'Limpador de vidro',
+    'limpador',
+    '../assets/img/motor369.svg'
+  ),
+  (
+    'Chaveiro do Naruto',
+    '300',
+    'Chaveiro do Naruto',
+    'chaveiro',
+    '../assets/img/motor369.svg'
+  ),
+  (
+    'Cheiro de Baunilha',
+    '220',
+    'Cheiro de Baunilha',
+    'cheirinho-carro',
+    '../assets/img/motor369.svg'
+  ),
+  (
+    'Capa de volante de leão',
+    '550',
+    'Capa de volante de leão',
+    'capa-volante',
+    '../assets/img/motor369.svg'
+  );
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
 ;

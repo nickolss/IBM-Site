@@ -13,10 +13,14 @@ function gerarNumeropedido() {
 }
 
 function dataPedido () {
-  let data = new Date();
-  let dataAt = [data.getDate()+ "/" + data.getMonth() + "/" + data.getFullYear()]
+  let data = new Date().toLocaleDateString("pt-br");
 
   let hoje = document.getElementById('data-atual')
   
-  hoje.innerHTML += `${dataAt}`
+  hoje.innerHTML += `${data}`
 }
+
+window.addEventListener("load" , ()=>{
+  gerarNumeropedido()
+  dataPedido()
+})

@@ -1,6 +1,3 @@
-
-
-
 var button = document.getElementById("action");
 button.addEventListener("click", function() {
     var container = document.getElementById("sumiu");

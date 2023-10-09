@@ -1,3 +1,24 @@
+<?php 
+require_once("../assets/scripts/conexao.php");
+require_once("../assets/scripts/iniciarSessao.php");
+
+$preco = $_GET['pontos'];
+$pontosAtual = $_SESSION['quantidadePontos'];
+$pontosFinais = $pontosAtual - $preco;
+$id = $_SESSION['id'];
+
+if($pontosFinais < 0){
+  //Se o cliente não tiver pontos suficientes, faz isso
+}else{
+  $sqlUpdate = $pdo->query("UPDATE `cliente` SET `quantidadePontos` = '' WHERE id = $id");
+  
+  if($execute = $sqlUpdate->execute()){
+    header("Location: ./perfil.php");
+  }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -5,21 +26,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Turn Motors | Troca</title>
-
-
-
+  
   <link rel="stylesheet" href="../assets/css/pedido-confirmado.min.css">
   <link rel="stylesheet" href="../assets/css/trocaFeita.min.css">
   <link rel="stylesheet" href="../assets/css/estilos-importantes.css">
-  <script type="text/javascript" src="../assets/js/java2.js" defer></script>
-
   <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="../assets/js/java.js" defer></script>
   <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/pedido-info.js"></script>
 </head>
 
-<body id="container__body" onload="gerarNumeropedido() , dataPedido()">
+<body id="container__body">
   <?php
   require_once('../assets/components/header.php');
   ?>
@@ -43,7 +61,6 @@
               Número da Encomenda: #
             </p>
             <p class="informacoes__texto" id="data-atual">Data da Encomenda:</p>
-            <p class="informacoes__texto">Total de Encomenda:</p>
           </div>
         </div>
       </div>
