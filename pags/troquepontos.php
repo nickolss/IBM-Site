@@ -37,210 +37,130 @@
           <h2 class="banner__titulo">Olá, <?= $_SESSION['nomeCliente'] ?>!</h2>
           <p class="pontos__Perfil">Seus pontos: <?= $_SESSION['quantidadePontos'] ?></p>
         </div>
-        <img src="../assets/img/perfilPic.svg" class="banner__imagem">
       </section>
 
+      <!--PRODUTOS-->
       <div class="title__produtos">
-        <img src="../assets/img/iconeProdutoTrocarPontos.svg" alt="Imagem Produto">
+        <img src="../assets/img/icone-carrinho-vermelho.svg" alt="Imagem Produto">
         <h1 class="mainTitle">Produtos</h1>
       </div>
 
-      <!--TELA GRANDE PRODUTOS-->
-      <div class="Bigmain__produtos">
-        <div class="Bigsub__produtos">
-          <a href="troca-cheirinho.php" class="link__produtos">
-            <div class="produto">
-              <img src="../assets/img/produtoCheirinho.png" alt="Cheirinho de Carro">
-              <p class="texto__produto"><span class="titulo__produto">Cheirinho de Carro</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
-          <a href="troca-volante.php" class="link__produtos">
-            <div class="produto produtoDireita">
-              <img src="../assets/img/produtoCapaVolante.png" alt="Capa de Volante">
-              <p class="texto__produto"><span class="titulo__produto">Capa de Volante</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
-          <a href="troca-limpador.php" class="link__produtos">
-            <div class="produto produtoDireita">
-              <img src="../assets/img/produtoLimpadorVidro.svg" alt="Limpador de Vidro">
-              <p class="texto__produto"><span class="titulo__produto">Limpador de Vidro</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
+      <div class="container__produtos">
+
+        <div class="linha__produtos">
+            <a href="" class="link__produto">
+              <div class="produto">
+                  <div class="img__produto">
+                      <img src="../assets/img/trocaCapaVolante.png" alt="Capa de Volante ">
+                  </div>
+                  <div class="texto__produto">
+                      <h3>Capa de Volante</h3>
+                      <p>Pontos: x</p>
+                  </div>
+              </div>
+            </a>
+
+            <a href="" class="link__produto">
+              <div class="produto">
+                  <div class="img__produto">
+                      <img src="../assets/img/trocaCheirinho.png" alt="Cheirinho de carro">
+                  </div>
+                  <div class="texto__produto">
+                      <h3>Chaveiro</h3>
+                      <p>Pontos: x</p>
+                  </div>
+              </div>
+            </a>
         </div>
 
-        <div class="Bigsub__produtos">
-          <a href="troca-chaveiro.php" class="link__produtos">
-            <div class="produto" id="produto__chaveiro">
-              <img src="../assets/img/produtoChaveiroRetrovisor.png" alt="Chaveiro de Retrovisor">
-              <p class="texto__produto"><span class="titulo__produto">Chaveiro ⠀ Retrovisor</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
-          <a href="troca-tapete.php" class="link__produtos">
-            <div class="produto produtoDireita produto__tapete">
-              <img src="../assets/img/produtoTapete.png" alt="Tapete de Carro">
-              <p class="texto__produto"><span class="titulo__produto">Tapete de Carro</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
-          <a href="troca-tapasol.php" class="link__produtos">
-            <div class="produto produtoDireita">
-              <img src="../assets/img/produtoTapaSol.svg" alt="Tapa-Sol de Carro">
-              <p class="texto__produto"><span class="titulo__produto">Tapa-Sol de Carro</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
-        </div>
-      </div>
+        <div class="linha__produtos">
+            <a href="" class="link__produto">
+              <div class="produto">
+                  <div class="img__produto">
+                      <img src="../assets/img/trocaChaveiro.png" alt="Chaveiro">
+                  </div>
+                  <div class="texto__produto">
+                      <h3>Chaveiro</h3>
+                      <p>Pontos: x</p>
+                  </div>
+              </div>
+            </a>
 
-      <!--TELA MEDIA PRODUTOS-->
-      <div class="main__produtos">
-        <div class="sub__produtos">
-          <a href="troca-cheirinho.php" class="link__produtos">
-            <div class="produto">
-              <img src="../assets/img/produtoCheirinho.png" alt="Cheirinho de Carro">
-              <p class="texto__produto"><span class="titulo__produto">Cheirinho de Carro</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
-          <a href="troca-volante.php" class="link__produtos">
-            <div class="produto produtoDireita">
-              <img src="../assets/img/produtoCapaVolante.png" alt="Capa de Volante">
-              <p class="texto__produto"><span class="titulo__produto">Capa de Volante</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
+            <a href="" class="link__produto">
+              <div class="produto">
+                  <div class="img__produto">
+                      <img src="../assets/img/trocaLimpador.png" alt="Limpador de Parabrisa">
+                  </div>
+                  <div class="texto__produto">
+                      <h3>Limpador de Parabrisa</h3>
+                      <p>Pontos: x</p>
+                  </div>
+              </div>
+            </a>
         </div>
 
-        <div class="sub__produtos">
-          <a href="troca-limpador.php" class="link__produtos">
-            <div class="produto">
-              <img src="../assets/img/produtoLimpadorVidro.svg" alt="Limpador de Vidro">
-              <p class="texto__produto"><span class="titulo__produto">Limpador de Vidro</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
-          <a href="troca-chaveiro.php" class="link__produtos">
-            <div class="produto produtoDireita" id="Mediaproduto__chaveiro">
-              <img src="../assets/img/produtoChaveiroRetrovisor.png" alt="Chaveiro de Retrovisor">
-              <p class="texto__produto"><span class="titulo__produto">Chaveiro Retrovisor</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
-        </div>
+        <div class="linha__produtos">
+            <a href="" class="link__produto">
+              <div class="produto">
+                  <div class="img__produto">
+                      <img src="../assets/img/trocaTapaSol.png" alt="Tapa Sol">
+                  </div>
+                  <div class="texto__produto">
+                      <h3>Tapa Sol</h3>
+                      <p>Pontos: x</p>
+                  </div>
+              </div>
+            </a>
 
-        <div class="sub__produtos">
-          <a href="troca-tapete.php" class="link__produtos">
-            <div class="produto produto__tapete">
-              <img src="../assets/img/produtoTapete.png" alt="Tapete de Carro">
-              <p class="texto__produto"><span class="titulo__produto">Tapete de⠀⠀ Carro</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
-          <a href="troca-tapasol.php" class="link__produtos">
-            <div class="produto produtoDireita" id="Mediaproduto__tapaSol">
-              <img src="../assets/img/produtoTapaSol.svg" alt="Tapa-Sol automotivo">
-              <p class="texto__produto"><span class="titulo__produto">Tapa-Sol de Carro</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
+            <a href="" class="link__produto">
+              <div class="produto">
+                  <div class="img__produto">
+                      <img src="../assets/img/trocaTapete.png" alt="Tapete de Carro">
+                  </div>
+                  <div class="texto__produto">
+                      <h3>Tapete de Carro</h3>
+                      <p>Pontos: x</p>
+                  </div>
+              </div>
+            </a>
         </div>
       </div>
 
-      <!--MOBILE PRODUTOS-->
-      <div class="mainMobile__produtos">
-        <div class="Mobilesub__produtos">
-          <a href="troca-cheirinho.php" class="link__produtos">
-            <div class="produto">
-              <img src="../assets/img/produtoCheirinho.png" alt="Cheirinho de Carro">
-              <p class="texto__produto"><span class="titulo__produto">Cheirinho de Carro</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
-        </div>
-
-        <div class="Mobilesub__produtos">
-          <a href="troca-volante.php" class="link__produtos">
-            <div class="produto">
-              <img src="../assets/img/produtoMobileCapaVolante.svg" alt="Capa de Volante">
-              <p class="texto__produto"><span class="titulo__produto">Capa⠀de⠀ Volante</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
-        </div>
-
-        <div class="Mobilesub__produtos">
-          <a href="troca-limpador.php" class="link__produtos">
-            <div class="produto">
-              <img src="../assets/img/produtoLimpadorVidro.svg" alt="Limpador de Vidro">
-              <p class="texto__produto"><span class="titulo__produto">Limpador de⠀Vidro</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
-        </div>
-
-        <div class="Mobilesub__produtos">
-          <a href="troca-chaveiro.php" class="link__produtos">
-            <div class="produto">
-              <img src="../assets/img/produtoMobileChaveiro.svg" alt="Chaveiro de Retrovisor">
-              <p class="texto__produto"><span class="titulo__produto">Chaveiro Retrovisor</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
-        </div>
-
-        <div class="Mobilesub__produtos">
-          <a href="troca-tapete.php" class="link__produtos">
-            <div class="produto">
-              <img src="../assets/img/produtoTapete.png" alt="Tapete de Carro">
-              <p class="texto__produto"><span class="titulo__produto">Tapete de Carro⠀⠀</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
-        </div>
-
-        <div class="Mobilesub__produtos">
-          <a href="troca-tapasol.php" class="link__produtos">
-            <div class="produto">
-              <img src="../assets/img/produtoTapaSol.svg" alt="Tapa-Sol de carro">
-              <p class="texto__produto"><span class="titulo__produto">Tapa-Sol de carro⠀</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
-        </div>
-      </div>
-
+      <!--LAVAGEM-->
       <div class="title__lavagens">
         <div class="img__lavagem">
-          <img src="../assets/img/iconeLavagemTrocarPontos.svg" alt="Imagem Lavagem de Carro">
+          <img id="img__lavagem-carro" src="../assets/img/icone-lavagem-carro.svg" alt="Imagem Lavagem de Carro">
         </div>
         <div class="divTitle__lavagem">
           <h1 class="title__lavagem">Lavagens</h1>
         </div>
       </div>
 
-      <!--TELA GRANDE/MEDIA LAVAGENS-->
-      <div class="main__lavagens">
-        <div class="sub__produtos">
-          <a class="link__produtos" href="troca-lavagemsimples.php">
-            <div class="produto">
-              <img src="../assets/img/produtoLavagemSimples.svg" alt="">
-              <p class="texto__produto"><span class="titulo__produto">Lavagem Simples</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
-          <a class="link__produtos" href="troca-lavagemcompleta.php">
-            <div class="produto produtoDireita">
-              <img src="../assets/img/produtoLavagemCompleta.png" alt="">
-              <p class="texto__produto"><span class="titulo__produto">Lavagem Completa</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
-        </div>
-      </div>
+      <div class="linha__produtos">
+            <a href="" class="link__produto">
+              <div class="produto">
+                  <div class="img__produto">
+                      <img src="../assets/img/produtoLavagemSimples.png" alt="Lavagem Simples">
+                  </div>
+                  <div class="texto__produto">
+                      <h3>Lavagem Simples</h3>
+                      <p>Pontos: x</p>
+                  </div>
+              </div>
+            </a>
 
-      <!--MOBILE LAVAGENS-->
-      <div class="mainMobile__lavagens">
-        <div class="subMobile__produtos subMobile__lavagens">
-          <a class="link__produtos" href="troca-lavagemsimples.php">
-            <div class="produto">
-              <img src="../assets/img/produtoLavagemSimples.svg" alt="">
-              <p class="texto__produto"><span class="titulo__produto">Lavagem <br> Simples</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
+            <a href="" class="link__produto">
+              <div class="produto">
+                  <div class="img__produto">
+                      <img src="../assets/img/produtoLavagemCompleta.png" alt="Lavagem Completa">
+                  </div>
+                  <div class="texto__produto">
+                      <h3>Lavagem Completa</h3>
+                      <p>Pontos: x</p>
+                  </div>
+              </div>
+            </a>
         </div>
-        <div class="subMobile__produtos subMobile__lavagens">
-          <a class="link__produtos" href="troca-lavagemcompleta.php">
-            <div class="produto">
-              <img src="../assets/img/produtoLavagemCompleta.png" alt="">
-              <p class="texto__produto"><span class="titulo__produto">Lavagem <br> Completa</span> <br> <span class="ponto__produto">Pontos: x</span></p>
-            </div>
-          </a>
-        </div>
-      </div>
 
     </div>
     <br>

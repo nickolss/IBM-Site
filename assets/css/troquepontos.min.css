@@ -1,3 +1,5 @@
+@import url(variaveis-cores-fonte.min.css);
+
 #container__body{
     display: flex;
     flex-direction: column;
@@ -10,17 +12,18 @@ main{
 
 .banner{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    background-color: #01496199;
+    background-color: var(--preto);
     font-weight: 700;
     border-radius: 20px;
     margin-top: 2%;    
 }
 
 .banner__titulo{
-    color: #fff;
+    color: var(--amarelo);
     font-size: 1.6rem;
+    margin-top: 1rem;
 }
 
 .banner__imagem{
@@ -28,243 +31,121 @@ main{
 }
 
 .pontos__Perfil{
-    color: #004762;
+    color: var(--branco);
     font-size: 1.3em;
 }
 
 .title__produtos{
     display: flex;
     flex-direction: row;
-    margin-top: 2%;
+    margin: 1.5rem 0rem 0.5rem 0rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .mainTitle{
-    color: #FF7769;
+    color: var(--vermelho);
     font-weight: 600;
-    margin-left: 1%;
-    margin-top: 1.4%;
+    margin-top: 0.5rem;
 }
 
-.Bigmain__produtos{
+.container__produtos{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-}
-
-.main__produtos{
-    display: none;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
-.mainMobile__produtos{
-    display: none;
-}
-
-.Bigsub__produtos{
+.linha__produtos{
     display: flex;
     flex-direction: row;
-    margin-bottom: 2%;
+    justify-content: center;
+    justify-content: center;
+    margin-bottom: 0.8rem;
 }
 
-.sub__produtos{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 2%;
+a.link__produto{
+    text-decoration: none;
+    color: var(--preto);
+}
+
+a.link__produto:hover{
+    text-decoration: none;
+    color: var(--preto);
 }
 
 .produto{
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.300);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: row;
     padding: 30px;
     cursor: pointer;
+    border-radius: 20px;
+    background-color: var(--branco);
+    height: 13rem;
+    width: 25rem;
+    margin: 0rem 0.4rem 0rem 0.4rem;
 }
 
-.produtoDireita{
-    margin-left: 5%;
+.produto:hover{
+    transform: scale(1.02);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.15);
+    transition-duration: 0.5s;
 }
 
 .texto__produto{
-    margin-left: 3%;
-    margin-top: 10%;
-}
-
-.titulo__produto{
-    font-size: 2em;
-}
-
-.ponto__produto{
-    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0.5rem;
 }
 
 .title__lavagens{
     display: flex;
     flex-direction: row;
-    margin-top: 2%;
-}
-
-.divTitle__lavagem{
-    margin-left: 0.3%;
-    margin-top: 1.4%;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 0rem 0.5rem 0rem;
 }
 
 .title__lavagem{
-    color: #FF7769;
+    color: var(--vermelho);
     font-weight: 600;
+    margin: 0.8rem 0rem 0.5rem 0rem;
 }
 
-.main__lavagens{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+img#img__lavagem-carro{
+    width: 64px;
 }
 
-.mainMobile__lavagens{
-    display: none;
-}
 
-.sub__lavagens{
-    display: flex;
-    flex-direction: row;
-}
-
-.produto__tapete{
-    padding-bottom: 33px;
-}
-
-#produto__chaveiro{
-    padding: 17px;
-    padding-bottom: 40px;
-}
-
-#Mediaproduto__chaveiro{
-    padding: 13px;
-    padding-bottom: 50px;
-}
-
-#Mediaproduto__tapaSol{
-    padding: 20px;
-}
-
-.link__produtos{
-    text-decoration: none;
-    color: black;
-}
-
-.link__produtos:hover{
-    text-decoration: none;
-    color: black;
-}
-
-@media only screen and (max-width: 1399px){
-    .mainTitle{
-        margin-top: 2%;
-    }
-
-    .Bigmain__produtos{
-        display: none;
-    }
-
-    .main__produtos{
-        display: flex;
+@media only screen and (max-width: 900px){
+    .linha__produtos{
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-bottom: 0.1rem;
     }
 
-    .divTitle__lavagem{
-        margin-left: 0.3%;
-        margin-top: 2%;
-    }
-
-    .produto__tapete{
-        padding-bottom: 10px;
-    }
-
-}
-
-@media only screen and (max-width: 991px){
-    .mainTitle{
-        margin-top: 3%;
-    }
-
-    .divTitle__lavagem{
-        margin-left: 0.7%;
-        margin-top: 3%;
-    }
-
-    #Mediaproduto__chaveiro{
-        padding: 6px;
-    }
-
-    .main__produtos{
-        display: none;
-    }
-
-    .mainMobile__produtos{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 3%;
-    }
-
-    .Mobilesub__produtos{
-        margin-bottom: 4%;
-    }
-
-    .subMobile__produtos{
-        margin-bottom: 4%;
-    }
-
-    .main__lavagens{
-        display: none;
-    }
-
-    .mainMobile__lavagens{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .produto{
+        margin: 0.3rem 0rem;
     }
 }
 
-@media only screen and (max-width: 767px){
-    .mainTitle{
-        margin-top: 4%;
-    }
-
-    .divTitle__lavagem{
-        margin-left: 1%;
-        margin-top: 4.5%;
-    }
-
-    .texto__produto{
-        margin-left: 1%;
-        margin-top: 10%;
-    }
-}
-
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 505px){
     .banner{
-        margin-top: 20%;    
-    }
-}
-
-@media only screen and (max-width: 545px){
-    .banner__textos{
-        padding: 10px;
-    }
-} 
-
-@media only screen and (max-width: 455px){
-    .banner{
-        margin-top: 25%;    
+        margin-top: 3rem;
     }
 
-    .banner__textos{
-        padding: 20px;
+    .produto{
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        height: 10rem;
+        width: 22rem;
+        margin: 0rem 0.4rem 0.4rem 0.4rem;
+    }
+
+    .img__produto img{
+        height: 100px;
+        width: 85px;
     }
 }
