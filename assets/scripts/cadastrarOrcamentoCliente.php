@@ -18,12 +18,9 @@
         $stmt = $pdo->prepare($query_update_orcamento);
 
         if($stmt->execute()){
-            echo "<script>
-                    alert('Orçamento cancelado com sucesso.');
-                    setInterval( function() {
-                        window.location.href = '../../pags/perfil.php'
-                    }, 0)
-                </script>";
+            $tituloModal = "Orçamento Cancelado!";
+            $textoModal = "Esperamos que volte a comprar conosco.";
+            require_once("../components/modal.php");
         }
 
     //se o valor do botao for "confirmado", irá fazer uma query SQL atualizando o campo "status" para "confirmado" e o campo "preco" com seu preco correspondente, logo após redireciona para a página de Cadastrar Orçamento
@@ -35,12 +32,9 @@
         $stmtConfirmado = $pdo->query($query_update_orcamentoConfirmado);
 
         if($stmtConfirmado->execute()){
-            echo "<script>
-                    alert('Orçamento confirmado com sucesso.');
-                    setInterval( function() {
-                        window.location.href = '../../pags/agendamentosConfirmados.php'
-                    }, 0)
-                </script>";
+            $tituloModal = "Orçamento Confirmado com Sucesso!";
+            $textoModal = "Agradecemos por comprar com a Turn Motors.";
+            require_once("../components/modal.php");
         }
     }
 ?>

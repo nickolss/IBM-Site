@@ -1,7 +1,7 @@
     <?php
     require_once('./conexao.php');
-    $root = $_SERVER['HTTP_HOST'];
-      
+    
+    
 
     $emailForm = $_POST['email'];
     $senhaForm = $_POST['senha'];
@@ -37,15 +37,11 @@
 
         header('Location: ../../pags/perfil.php');
     } else {
-        $caminho = "http://$root/IBM-site/pags/login.php";
-        echo "<script>
-            alert('Email ou Senha incorretos.');
-            setInterval( function() {
-                window.location.href = '$caminho'
-            }, 500)
-        </script>";
+        $tituloModal = "Erro ao Logar!";
+        $textoModal = "Email ou senha inválidos, tente novamente";
+        require_once("../components/modal.php");
     }
-
+    
     if ($quantidadeRegistrosFuncionario == 1) {
         if (isset($_SESSION)) {
             require_once('./logout.php');
@@ -56,12 +52,4 @@
         $_SESSION['nomeFuncionario'] = $registroFuncionario[0]['nome'];
 
         header("Location: ../../administrador/dashboard.php");
-    } else {
-        $caminho = "http://$root/IBM-site/pags/login.php";
-        echo "<script>
-            alert('Email ou Senha incorretos.');
-            setInterval( function() {
-                window.location.href = '$caminho'
-            }, 500)
-        </script>";
     }
