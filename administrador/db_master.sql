@@ -218,6 +218,24 @@ CREATE TABLE IF NOT EXISTS `produto` (
   ) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `caminho_imagem` varchar(100) NOT NULL,
   `TG_categoria` enum(
+    'RD',
+    'RS',
+    'RH',
+    'PS',
+    'PM',
+    'PP',
+    'PNS',
+    'PNP',
+    'PND',
+    'AP',
+    'AM',
+    'AG',
+    'AE',
+    'INS',
+    'CS',
+    'BC',
+    'TRF',
+    'TRM',
     'PC',
     'SME',
     'AA',
@@ -225,11 +243,12 @@ CREATE TABLE IF NOT EXISTS `produto` (
     'OF',
     'BA',
     'RT',
-    'PA',
-    'EP',
-    'PM',
+    'PEA',
+    'EPI',
+    'PNM',
     'APM',
-    'FE'
+    'FE',
+    'MT'
   ) DEFAULT NULL,
   PRIMARY KEY (`codigoProduto`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
@@ -257,7 +276,7 @@ VALUES
     'Pneu Vermelho',
     'pneu-solido',
     '../assets/img/personalizacao-roda-solida-vermelho.png',
-    'PC'
+    'PNS'
   ),
   (
     2,
@@ -267,7 +286,7 @@ VALUES
     'Adesivo de garras na cor preta.',
     'adesivo-medio',
     '../assets/img/personalizacao-adesivo-medio.png',
-    'AA'
+    'AM'
   ),
   (
     3,
@@ -277,7 +296,7 @@ VALUES
     'Motor de Carro',
     'pecas-automoveis',
     '../assets/img/personalizacao-motor2.png',
-    'PA'
+    'MT'
   ),
   (
     4,
@@ -287,7 +306,7 @@ VALUES
     'Roda cinza sólida.',
     'pneu-solido',
     '../assets/img/personalizacao-roda-solida-cinza.png',
-    'PC'
+    'PNS'
   ),
   (
     5,
@@ -297,7 +316,7 @@ VALUES
     'Roda de duas cores preta e vermelha.',
     'pneu-duasCores',
     '../assets/img/personalizacao-roda-duas-pretored.png',
-    'PM'
+    'PND'
   ),
   (
     6,
@@ -317,7 +336,7 @@ VALUES
     'Descrição do Produto ',
     'pneu-solido',
     '../assets/img/personalizacao-roda-solida-preto.png',
-    'PC'
+    'PNS'
   ),
   (
     8,
@@ -327,7 +346,7 @@ VALUES
     'Descrição do Produto 2',
     'rebaixamento-slammed',
     '../assets/img/personalizacao-motor2.png',
-    'SME'
+    'RS'
   ),
   (
     9,
@@ -337,7 +356,7 @@ VALUES
     'Descrição do Produto 3',
     'pintura-solida',
     '../assets/img/personalizacao-motor2.png',
-    'AA'
+    'PS'
   ),
   (
     10,
@@ -347,7 +366,7 @@ VALUES
     'Descrição do Produto 4',
     'pintura-metalica',
     '../assets/img/personalizacao-motor2.png',
-    'CA'
+    'PM'
   ),
   (
     11,
@@ -357,7 +376,7 @@ VALUES
     'Descrição do Produto 5',
     'pneu-solido',
     '../assets/img/personalizacao-motor2.png',
-    'OF'
+    'PNS'
   ),
   (
     12,
@@ -367,7 +386,7 @@ VALUES
     'Descrição do Produto 6',
     'pneu-personalizado',
     '../assets/img/personalizacao-motor2.png',
-    'BA'
+    'PNP'
   ),
   (
     13,
@@ -377,7 +396,7 @@ VALUES
     'Descrição do Produto 7',
     'adesivo-pequeno',
     '../assets/img/personalizacao-motor2.png',
-    'RT'
+    'AP'
   ),
   (
     14,
@@ -387,7 +406,7 @@ VALUES
     'Descrição do Produto 8',
     'adesivo-medio',
     '../assets/img/personalizacao-motor2.png',
-    'PA'
+    'AM'
   ),
   (
     15,
@@ -397,7 +416,7 @@ VALUES
     'Descrição do Produto 9',
     'adesivo-grande',
     '../assets/img/personalizacao-motor2.png',
-    'EP'
+    'AG'
   ),
   (
     16,
@@ -407,7 +426,7 @@ VALUES
     'Descrição do Produto 10',
     'aerofolio',
     '../assets/img/personalizacao-motor2.png',
-    'PM'
+    'AE'
   ),
   (
     17,
@@ -417,7 +436,7 @@ VALUES
     'Descrição do Produto',
     'pneu-solido',
     '../assets/img/personalizacao-roda-perso-amareloroxo.png',
-    'PC'
+    'PNS'
   ),
   (
     18,
@@ -427,7 +446,7 @@ VALUES
     'Descrição do Produto 12',
     'rebaixamento-slammed',
     '../assets/img/personalizacao-motor2.png',
-    'SME'
+    'RS'
   ),
   (
     19,
@@ -437,7 +456,7 @@ VALUES
     'Descrição do Produto 13',
     'pintura-perolizada',
     '../assets/img/personalizacao-motor2.png',
-    'AA'
+    'PP'
   ),
   (
     20,
@@ -447,7 +466,7 @@ VALUES
     'Descrição do Produto 14',
     'pintura-solida',
     '../assets/img/personalizacao-motor2.png',
-    'CA'
+    'PS'
   ),
   (
     21,
@@ -457,7 +476,7 @@ VALUES
     'Descrição do Produto 15',
     'pneu-duasCores',
     '../assets/img/personalizacao-motor2.png',
-    'OF'
+    'PND'
   ),
   (
     22,
@@ -467,7 +486,7 @@ VALUES
     'Descrição do Produto 16',
     'adesivo-medio',
     '../assets/img/personalizacao-motor2.png',
-    'BA'
+    'AM'
   ),
   (
     23,
@@ -477,7 +496,7 @@ VALUES
     'Descrição do Produto 17',
     'pneu-solido',
     '../assets/img/personalizacao-motor2.png',
-    'RT'
+    'PNS'
   ),
   (
     24,
@@ -487,7 +506,7 @@ VALUES
     'Descrição do Produto 18',
     'pneu-personalizado',
     '../assets/img/personalizacao-motor2.png',
-    'PA'
+    'PNP'
   ),
   (
     25,
@@ -497,7 +516,7 @@ VALUES
     'Descrição do Produto 19',
     'adesivo-pequeno',
     '../assets/img/personalizacao-motor2.png',
-    'EP'
+    'AP'
   ),
   (
     26,
@@ -507,7 +526,7 @@ VALUES
     'Descrição do Produto 20',
     'adesivo-grande',
     '../assets/img/personalizacao-motor2.png',
-    'PM'
+    'AG'
   ),
   (
     27,
@@ -517,7 +536,7 @@ VALUES
     'Descrição do Produto 21',
     'aerofolio',
     '../assets/img/personalizacao-motor2.png',
-    'APM'
+    'AE'
   ),
   (
     28,
@@ -527,7 +546,7 @@ VALUES
     'Descrição do Produto 22',
     'insulfilm',
     '../assets/img/personalizacao-motor2.png',
-    'FE'
+    'INS'
   ),
   (
     29,
@@ -537,7 +556,7 @@ VALUES
     'Descrição do Produto',
     'pneu-solido',
     '../assets/img/personalizacao-roda-duas-pretobranco.png',
-    'PC'
+    'PNS'
   ),
   (
     30,
@@ -547,7 +566,7 @@ VALUES
     'Descrição do Produto 24',
     'banco',
     '../assets/img/personalizacao-motor2.png',
-    'SME'
+    'BC'
   ),
   (
     31,
@@ -557,7 +576,7 @@ VALUES
     'Descrição do Produto 25',
     'tunagem-reformulada',
     '../assets/img/personalizacao-motor2.png',
-    'AA'
+    'TRF'
   ),
   (
     32,
@@ -567,7 +586,7 @@ VALUES
     'Descrição do Produto 26',
     'tunagem-remanufaturada',
     '../assets/img/personalizacao-motor2.png',
-    'CA'
+    'TRM'
   ),
   (
     33,
@@ -577,7 +596,7 @@ VALUES
     'Descrição do Produto 27',
     'pneu-carro',
     '../assets/img/personalizacao-motor2.png',
-    'OF'
+    'PC'
   ),
   (
     34,
@@ -587,7 +606,7 @@ VALUES
     'Descrição do Produto 28',
     'som-multimidia-eletronicos',
     '../assets/img/personalizacao-motor2.png',
-    'BA'
+    'SME'
   ),
   (
     35,
@@ -597,7 +616,7 @@ VALUES
     'Descrição do Produto 29',
     'acessorios-automoveis',
     '../assets/img/personalizacao-motor2.png',
-    'RT'
+    'AA'
   ),
   (
     36,
@@ -607,7 +626,7 @@ VALUES
     'Descrição do Produto 30',
     'cuidados-automotivos',
     '../assets/img/personalizacao-motor2.png',
-    'PA'
+    'CA'
   );
 
 --
