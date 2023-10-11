@@ -269,7 +269,7 @@ if (!empty($idsProdutos)) {
                             <div class="d-flex justify-content-center">
                                 <div class="card card-produto-dinamico" style="width: 18rem;">
                                     <div class="text-center">
-                                        <img class="card-img-top imagens-prod" src="' . $imagemProduto . '" alt="...">
+                                        <img class="card-img-top imagens-prod" src="<?= $imagemProduto ?>" alt="...">
                                     </div>
                                     <div class="card-body" style="display: flex; flex-direction: column;">
                                         <div class="card-produto-dinamico-titulo">
@@ -282,7 +282,7 @@ if (!empty($idsProdutos)) {
                                         </div>
                                         <hr class="card-produto-dinamico-linha">
                                         <div class="card-produto-dinamico-preco-button">
-                                            <div class="card-produto-dinamico-preco-button-texto">R$: <? +$precoProduto ?> ,00</div>
+                                            <div class="card-produto-dinamico-preco-button-texto"><?= "R$ $precoProduto,00" ?></div>
                                             <button><img class="fav__heart__icon" src="../assets/img/icone-favorito-preenchido.svg" alt=""></button>
                                         </div>
                                     </div>
@@ -329,48 +329,31 @@ if (!empty($idsProdutos)) {
                 <div class="container">
                     <div class="row ">
                         <?php if (!empty($resultadoFavoritos)) { ?>
-                            <?php foreach ($resultadoFavoritos as $produtoFavoritado) {
-
-                                $sql2 = "SELECT nome, preco, marca, descricao, customizações, caminho_imagem FROM produto WHERE codigoProduto = :idsProdutos";
-
-                                $stmt2 = $pdo->prepare($sql2);
-                                $idsProdutosImploded2 = implode(",", $idsProdutos);
-                                $stmt2->bindParam(':idsProdutos', $idsProdutosImploded, PDO::PARAM_INT);
-                                $stmt2->execute();
-
-                                $nomeProduto2 = $produtoFavoritado['nome_produto'];
-                                $precoProduto2 = $produtoFavoritado['preco'];
-                                $marcaProduto2 = $produtoFavoritado['marca'];
-                                $descricaoProduto2 = $produtoFavoritado['descricao'];
-                                $customizacaoProduto2 = $produtoFavoritado['customizações'];
-                                $imagemProduto2 = $produtoFavoritado['caminho_imagem'];
-
-                            ?>
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-12" style="padding: 10px;">
-                                    <div class="d-flex justify-content-center">
-                                        <div class="card card-produto-dinamico" style="width: 18rem;">
-                                            <div class="text-center">
-                                                <img class="card-img-top imagens-prod" src="' . $imagemProduto . '" alt="...">
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-12" style="padding: 10px;">
+                                <div class="d-flex justify-content-center">
+                                    <div class="card card-produto-dinamico" style="width: 18rem;">
+                                        <div class="text-center">
+                                            <img class="card-img-top imagens-prod" src=" <?= $imagemProduto2 ?>" alt="...">
+                                        </div>
+                                        <div class="card-body" style="display: flex; flex-direction: column;">
+                                            <div class="card-produto-dinamico-titulo">
+                                                <h5 style="color: #014961; font-weight: bold" class="card-title"> <?= $nomeProduto ?> </h5>
                                             </div>
-                                            <div class="card-body" style="display: flex; flex-direction: column;">
-                                                <div class="card-produto-dinamico-titulo">
-                                                    <h5 style="color: #014961; font-weight: bold" class="card-title"> <?= $nomeProduto ?> </h5>
-                                                </div>
-                                                <div>
-                                                    <div class="card-text"> <?= $marcaProduto ?> </div>
-                                                    <div class="card-text"> <?= $descricaoProduto ?> </div>
-                                                    <div class="card-text"> <?= $customizacaoProduto ?> </div>
-                                                </div>
-                                                <hr class="card-produto-dinamico-linha">
-                                                <div class="card-produto-dinamico-preco-button">
-                                                    <div class="card-produto-dinamico-preco-button-texto">R$: <?= $precoProduto ?> ,00</div>
-                                                    <button><img class="fav__heart__icon" src="../assets/img/heart-filled.png" alt=""></button>
-                                                </div>
+                                            <div>
+                                                <div class="card-text"> <?= $marcaProduto ?> </div>
+                                                <div class="card-text"> <?= $descricaoProduto ?> </div>
+                                                <div class="card-text"> <?= $customizacaoProduto ?> </div>
+                                            </div>
+                                            <hr class="card-produto-dinamico-linha">
+                                            <div class="card-produto-dinamico-preco-button">
+                                                <div class="card-produto-dinamico-preco-button-texto"><?= "R$ $precoProduto,00" ?></div>
+                                                <button><img class="fav__heart__icon" src="../assets/img/heart-filled.png" alt=""></button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                <?php  }
+                            </div>
+                <?php
                         }
                     }
                 } ?>
