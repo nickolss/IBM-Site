@@ -1,7 +1,6 @@
 <?php
 require_once('../assets/scripts/conexao.php');
 require_once('../assets/scripts/iniciarSessao.php');
-require_once('../assets/scripts/consultaFuncionario.php');
 ?>
 
 <!DOCTYPE html>
@@ -24,134 +23,6 @@ require_once('../assets/scripts/consultaFuncionario.php');
   <!-- <script type="text/javascript" src="../assets/js/java.js" defer></script> -->
   <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
 
-  <!-- Gráficos -->
-  <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
-    google.charts.load('current', {
-      'packages': ['corechart']
-    });
-
-    google.charts.setOnLoadCallback(graficoEstoque);
-    google.charts.setOnLoadCallback(graficoClientes);
-    google.charts.setOnLoadCallback(graficoVendas);
-
-    function graficoEstoque() {
-
-      var data = google.visualization.arrayToDataTable([
-        ['Produtos', 'Estoque'],
-        ['Work', 11],
-        ['Eat', 2],
-        ['Commute', 2],
-        ['Watch TV', 2],
-        ['Sleep', 7]
-      ]);
-
-      let options = {
-        backgroundColor: 'transparent',
-
-        legend: 'none',
-
-        pieSliceText: 'value',
-
-        titleTextStyle: {
-          color: 'black'
-        },
-
-        pieSliceTextStyle: {
-          color: 'white',
-          fontSize: 16
-        },
-
-        chartArea: {
-          width: '100%',
-          height: '100%',
-          left: 10,
-          top: 20
-        }
-      };
-
-      var chart = new google.visualization.PieChart(document.getElementById('graficoEstoque'));
-
-      chart.draw(data, options);
-    }
-
-    function graficoClientes() {
-      var data = google.visualization.arrayToDataTable([
-        ['Clientes', 'Turninados e Comuns'],
-        ['Comum', 11],
-        ['Turbinado', 2]
-      ]);
-
-      let options = {
-        backgroundColor: 'transparent',
-
-        pieSliceText: 'value',
-
-        legend: 'none',
-
-        titleTextStyle: {
-          color: 'black'
-        },
-
-        pieSliceTextStyle: {
-          color: 'white',
-          fontSize: 16
-        },
-
-        chartArea: {
-          width: '100%',
-          height: '100%',
-          left: 10,
-          top: 20
-        }
-      };
-
-      var chart = new google.visualization.PieChart(document.getElementById('graficoClientes'));
-
-      chart.draw(data, options);
-    }
-
-    function graficoVendas() {
-      var data = google.visualization.arrayToDataTable([
-        ['Produtos', 'Mais Vendidos'],
-        ['Comum', 11],
-        ['Turbinado', 2]
-      ]);
-
-      let options = {
-        backgroundColor: 'transparent',
-
-        titleTextStyle: {
-          "text-align": "center"
-        },
-
-        pieSliceText: 'value',
-
-        legend: 'none',
-
-        titleTextStyle: {
-          color: 'black'
-        },
-
-        pieSliceTextStyle: {
-          color: 'white',
-          fontSize: 16
-        },
-
-        chartArea: {
-          width: '100%',
-          height: '100%',
-          left: 10,
-          top: 20
-        }
-      };
-
-      var chart = new google.visualization.PieChart(document.getElementById('graficoVendas'));
-
-      chart.draw(data, options);
-    }
-  </script> -->
-
 </head>
 
 <body id="container__body">
@@ -168,50 +39,75 @@ require_once('../assets/scripts/consultaFuncionario.php');
           </div>
         </div>
       </div>
-      <!-- <div class="div__grande__graficos row">
-        <div class="div__grafico col">
-          <div id="graficoEstoque"></div>
-        </div>
-        <div class="div__grafico col">
-          <div id="graficoClientes"></div>
-        </div>
-        <div class="div__grafico col">
-          <div id="graficoVendas"></div>
-        </div>
-      </div> -->
 
-      <div class="row">
-        <div class="col">
-          <img class="img__administrador" src="../assets/img/img-administrador.svg" alt="Imagem Administrador">
-        </div>
-      </div>
+      <?php
+      if (isset($_SESSION['rf'])) {
 
-      <div class="row">
-        <div class="col">
-          <div class="div__botoes">
-            <form action="cadastrar-produto.php">
-              <button class="botao__laranja" type="submit">Adicionar Produto</button>
-            </form>
-            <form action="catalogo.php">
-              <button class="botao__laranja" type="submit">Modificar Produto</button>
-            </form>
-          </div>
-          <div class="div__botoes">
-            <form action="cadastrar-user-adm.php">
-              <button class="botao__laranja" type="submit">Adicionar Administrador</button>
-            </form>
-            <form action="cadastrar-mecanico.php">
-              <button class="botao__laranja" type="submit">Adicionar Mecânico</button>
-            </form>
+      ?>
+        <div class="row">
+          <div class="col">
+            <img class="img__administrador" src="../assets/img/img-administrador.svg" alt="Imagem Administrador">
           </div>
         </div>
-      </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="div__botoes">
+              <form action="cadastrar-produto.php">
+                <button class="botao__laranja" type="submit">Adicionar Produto</button>
+              </form>
+              <form action="catalogo.php">
+                <button class="botao__laranja" type="submit">Modificar Produto</button>
+              </form>
+            </div>
+            <div class="div__botoes">
+              <form action="cadastrar-user-adm.php">
+                <button class="botao__laranja" type="submit">Adicionar Administrador</button>
+              </form>
+              <form action="cadastrar-mecanico.php">
+                <button class="botao__laranja" type="submit">Adicionar Mecânico</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      <?php
+      }
+      ?>
+
+      <?php
+      if (isset($_SESSION['rfMec'])) {
+
+      ?>
+
+        <div class="row">
+          <div class="col">
+            <img class="img__administrador" src="../assets/img/Car finance.svg" alt="Imagem Administrador">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="div__botoes">
+              <form action="cadastrar-orcamento.php">
+                <button class="botao__laranja" type="submit">Verificar Orçamentos</button>
+              </form>
+              <form action="#">
+                <button class="botao__laranja" type="submit">EM DESENVOLVIMENTO</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      <?php
+      }
+      ?>
 
       <div class="row">
         <div class="col">
-            <form action="../assets/scripts/logout.php">
-              <button class="botao__sair__dashboard" type="submit">Sair da Conta</button>
-            </form>
+          <form action="../assets/scripts/logout.php">
+            <button class="botao__sair__dashboard" type="submit">Sair da Conta</button>
+          </form>
         </div>
       </div>
 

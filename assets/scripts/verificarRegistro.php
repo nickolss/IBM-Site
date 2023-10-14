@@ -11,10 +11,13 @@
     $quantidadeRegistrosCliente = $sqlCliente->rowCount();
     $registroCliente = $sqlCliente->fetchAll();
 
-    $sqlFuncionario = $pdo->query("SELECT * FROM `funcionario` WHERE email='$emailForm' && senha='$senhaFormatada'");
-    $quantidadeRegistrosFuncionario = $sqlFuncionario->rowCount();
-    $registroFuncionario = $sqlFuncionario->fetchAll();
+    $sqlFuncionarioAdministrativo = $pdo->query("SELECT * FROM `funcionario` WHERE email='$emailForm' && senha='$senhaFormatada'");
+    $quantidadeRegistrosFuncionarioAdm = $sqlFuncionarioAdministrativo->rowCount();
+    $registroFuncionarioAdm = $sqlFuncionarioAdministrativo->fetchAll();
 
+    $sqlMecanico = $pdo->query("SELECT * FROM `mecanico` WHERE email='$emailForm' && senha='$senhaFormatada'");
+    $quantidadeRegistrosMecanico = $sqlMecanico->rowCount();
+    $registroMecanico = $sqlMecanico->fetchAll();
 
     if ($quantidadeRegistrosCliente == 1) {
         if (isset($_SESSION)) {
@@ -42,14 +45,26 @@
         require_once("../components/modal.php");
     }
     
-    if ($quantidadeRegistrosFuncionario == 1) {
+    if ($quantidadeRegistrosFuncionarioAdm == 1) {
         if (isset($_SESSION)) {
             require_once('./logout.php');
         }
         require_once('./iniciarSessao.php');
 
-        $_SESSION['rf'] = $registroFuncionario[0]['rf'];
-        $_SESSION['nomeFuncionario'] = $registroFuncionario[0]['nome'];
+        $_SESSION['rf'] = $registroFuncionarioAdm[0]['rf'];
+        $_SESSION['nomeFuncionario'] = $registroFuncionarioAdm[0]['nome'];
+
+        header("Location: ../../administrador/dashboard.php");
+    }
+
+    if ($quantidadeRegistrosMecanico == 1) {
+        if (isset($_SESSION)) {
+            require_once('./logout.php');
+        }
+        require_once('./iniciarSessao.php');
+
+        $_SESSION['rfMec'] = $registroMecanico[0]['rf'];
+        $_SESSION['nomeFuncionario'] = $registroMecanico[0]['nome'];
 
         header("Location: ../../administrador/dashboard.php");
     }

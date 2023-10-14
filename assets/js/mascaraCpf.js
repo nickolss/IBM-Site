@@ -1,5 +1,5 @@
 let cpf = document.querySelector("#cpf");
-cpf.addEventListener("keypress", () => {
+cpf.addEventListener("keyup", () => {
 	let cpfLength = cpf.value.length;
 	if (cpfLength == 3 || cpfLength == 7) {
 		cpf.value += ".";

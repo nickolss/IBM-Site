@@ -1,5 +1,5 @@
 let numeroTelefone = document.querySelector("#tel");
-numeroTelefone.addEventListener("keypress", () => {
+numeroTelefone.addEventListener("keyup", () => {
 	let numeroLength = numeroTelefone.value.length;
     if(numeroLength == 0){
         numeroTelefone.value += "("
