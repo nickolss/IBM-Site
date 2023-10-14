@@ -129,7 +129,7 @@
             </div>
             <div class="cards">
                 <div class="card">
-                    <a href="pneu-solido.php" class="a__card">
+                    <a href="personalizacoesProdutos.php?categoria=PNS" class="a__card">
                         <div class="div__card__img__pneu">
                             <img class="card__img__pneu" src="../assets/img/personalizacao-roda-solida-dourado.png" alt="Estilização Sólida">
                         </div>
@@ -142,7 +142,7 @@
                     </a>
                 </div>
                 <div class="card">
-                    <a href="pneu-personalizado.php" class="a__card">
+                    <a href="personalizacoesProdutos.php?categoria=PNP" class="a__card">
                         <div class="div__card__img__pneu">
                             <img class="card__img__pneu" src="../assets/img/personalizacao-roda-perso-azulrosa.png" alt="Estilização Personalizada">
                         </div>
@@ -155,7 +155,7 @@
                     </a>
                 </div>
                 <div class="card">
-                    <a href="pneu-duasCores.php" class="a__card">
+                    <a href="personalizacoesProdutos.php?categoria=PND" class="a__card">
                         <div class="div__card__img__pneu">
                             <img class="card__img__pneu" src="../assets/img/personalizacao-roda-duas-pretored.png" alt="Estilização Duas Cores">
                         </div>
@@ -177,7 +177,7 @@
             </div>
             <div class="cards">
                 <div class="card">
-                    <a href="adesivo-pequeno.php" class="a__card">
+                    <a href="personalizacoesProdutos.php?categoria=AP" class="a__card">
                         <div class="card__img">
                             <img class="imagem__card__adesivo" src="../assets/img/personalizacao-adesivo-pequeno.png" alt="Estilização Sólida">
                         </div>
@@ -190,7 +190,7 @@
                     </a>
                 </div>
                 <div class="card">
-                    <a href="adesivo-medio.php" class="a__card">
+                    <a href="personalizacoesProdutos.php?categoria=AM" class="a__card">
                         <div class="card__img">
                             <img class="imagem__card__adesivo" src="../assets/img/personalizacao-adesivo-medio.png" alt="Estilização Sólida">
                         </div>
@@ -203,7 +203,7 @@
                     </a>
                 </div>
                 <div class="card">
-                    <a href="adesivo-grande.php" class="a__card">
+                    <a href="personalizacoesProdutos.php?categoria=AG" class="a__card">
                         <div class="card__img">
                             <img class="imagem__card__adesivo" src="../assets/img/personalizacao-adesivo-grande.png" alt="Estilização Sólida">
                         </div>
@@ -225,7 +225,7 @@
             </div>
             <div class="cards cards2">
                 <div class="card">
-                    <a href="aerofolio.php" class="a__card">
+                    <a href="personalizacoesProdutos.php?categoria=AG" class="a__card">
                         <div class="card__img">
                             <img class="imagem__card imagem__card__modificacoes-ex" src="../assets/img/personalizacao-modificacao-aerofolio.png" alt="Estilização Sólida">
                         </div>
@@ -238,7 +238,7 @@
                     </a>
                 </div>
                 <div class="card">
-                    <a href="agendamento-vidro.php" class="a__card">
+                    <a href="personalizacoesProdutos.php?categoria=VD" class="a__card">
                         <div class="card__img">
                             <img class="imagem__card imagem__card__modificacoes-ex" src="../assets/img/personalizacao-modificacao-vidro.png" alt="Estilização Sólida">
                         </div>
@@ -260,7 +260,7 @@
             </div>
             <div class="cards cards2">
                 <div class="card">
-                    <a href="caixaDeSom.php" class="a__card">
+                    <a href="personalizacoesProdutos.php?categoria=CS" class="a__card">
                         <div class="card__img">
                             <img class="imagem__card imagem__card__modificacoes-in" id="imagem__card__caixa-som" src="../assets/img/personalizacao-modificacao-caixasom.png" alt="Estilização Sólida">
                         </div>
@@ -273,7 +273,7 @@
                     </a>
                 </div>
                 <div class="card">
-                    <a href="banco.php" class="a__card">
+                    <a href="personalizacoesProdutos.php?categoria=BC" class="a__card">
                         <div class="card__img">
                             <img class="imagem__card" id="imagem__card__banco" src="../assets/img/personalizacao-modificacao-bancos.png" alt="Estilização Sólida">
                         </div>

@@ -214,7 +214,8 @@ CREATE TABLE IF NOT EXISTS `produto` (
     'equipamentos-protecao',
     'pneu-moto',
     'acessorios-pecas-moto',
-    'ferramentas-equipamentos'
+    'ferramentas-equipamentos',
+    'vidro'
   ) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `caminho_imagem` varchar(100) NOT NULL,
   `TG_categoria` enum(
@@ -248,7 +249,8 @@ CREATE TABLE IF NOT EXISTS `produto` (
     'PNM',
     'APM',
     'FE',
-    'MT'
+    'MT',
+    'VD'
   ) DEFAULT NULL,
   PRIMARY KEY (`codigoProduto`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
