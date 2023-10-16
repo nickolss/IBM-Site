@@ -190,7 +190,7 @@ $placa = $carros[0]['placa'] ?? "";
 							</div>
 							<div class="perfil__veiculo__texto">
 								<h4 id="titulo__nenhum-veiculo"><?= $carros[0]['apelido'] ?? "Nenhum Veículo Encontrado" ?> </h4>
-								<h5><?php if($placa != ""){
+								<h5 id="perfil__veiculo__texto-placa"><?php if($placa != ""){
 									echo "Placa: $placa";
 								} ?> </h5>
 							</div>
@@ -354,10 +354,10 @@ $placa = $carros[0]['placa'] ?? "";
 								<img src="../assets/img/icone-carro-novo.svg" alt="Veículo">
 							</div>
 							<div class="perfil__veiculo__texto">
-								<h4><?php //VEÍCULO PRINCIPAL 
-									?></h4>
-								<h5><?php //PLACA DO VEÍCULO PRINCIPAL 
-									?></h5>
+								<h4 id="titulo__nenhum-veiculo"><?= $carros[0]['apelido'] ?? "Nenhum Veículo Encontrado" ?> </h4>
+								<h5 id="perfil__veiculo__texto-placa"><?php if($placa != ""){
+									echo "Placa: $placa";
+								} ?> </h5>
 							</div>
 						</div>
 						<div class="perfil__veiculo__botoes">
