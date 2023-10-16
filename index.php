@@ -105,8 +105,7 @@
 								<div class="carrinho__header__finalizacao">
 									<p class="fs-2">Total: <?php echo $totalCarrinho ?>R$</p>
 									<div class="text-center">
-										<button><a href="pags/carrinho.php"> Ver Carrinho</a> </button>
-										<a style="text-decoration: none; color: #003445" href="">Frete grátis com o Plano Turbinado</a>
+										<button id="btn__ver-carrinho"><a href="pags/carrinho.php"> Ver Carrinho</a> </button>
 									</div>
 
 

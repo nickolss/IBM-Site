@@ -188,9 +188,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                             <div class="text-center">
                                             <form method="POST" action="../pags/carrinho.php">
                                                 <input type="hidden" name="carrinho" value="<?= http_build_query($_SESSION['carrinho']); ?>">
-                                                <button type="submit"> Ver Carrinho</button>
+                                                <button id="btn__ver-carrinho" type="submit"> Ver Carrinho</button>
                                             </form>
-                                                <a style="text-decoration: none; color: #003445" href="">Frete grátis com o Plano Turbinado</a>
                                             </div>
 
 
