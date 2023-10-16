@@ -33,7 +33,8 @@ if ($cadastrarCliente->execute()) {
     $registroCliente = $sqlCliente->fetchAll();
 
     if ($quantidadeRegistrosCliente == 1) {
-        $_SESSION['id'] = $registroCliente[0]['id'];
+        $idNovoCliente = $registroCliente[0]['id'];
+        $_SESSION['id'] = $idNovoCliente;
         $_SESSION['nomeCliente'] = $nomeForm;
         $_SESSION['email'] = $emailForm;
         $_SESSION['telefone'] = $telefoneForm;
@@ -43,6 +44,8 @@ if ($cadastrarCliente->execute()) {
         $_SESSION['plano'] = $planoForm;
         $_SESSION['quantidadePontos'] = 0;
         $_SESSION['fotoPerfil'] = null;
+
+        $sqlRua = $pdo->query("INSERT INTO `endereco`(`rua`, `numero`, `complemento`, `bairro`, `cidade`, `estado`, `cep`, `id_morador`) VALUES ('$rua','$numero','$complemento','$bairro','$cidade','$estado','$cep','$idNovoCliente')");
 
         header("Location: ../../pags/perfil.php");
     }

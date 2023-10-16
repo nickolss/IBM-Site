@@ -643,7 +643,7 @@ CREATE TABLE IF NOT EXISTS `endereco`(
   `bairro` varchar(255) NOT NULL,
   `cidade` varchar(255) NOT NULL,
   `estado` varchar(255) NOT NULL,
-  `cep` int(8) NOT NULL,
+  `cep` varchar(8) NOT NULL,
   `id_morador` int NOT NULL,
   FOREIGN KEY (`id_morador`) REFERENCES `cliente`(`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
