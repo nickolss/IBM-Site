@@ -51,7 +51,7 @@ require_once('../assets/scripts/iniciarSessao.php');
                 foreach ($_SESSION['carrinho'] as $idProd => $value) { ?>
                     <div class="row">
                         <div class="col">
-                            <p id="titulo-produto__carinho"><?php echo $value['nome'] ?></p>
+                            <p id="titulo-produto__carinho"><?php echo $value['nome'] . " " . $value['quantidade'] . " unidades"; ?></p>
                         </div>
                     </div>
                 <?php
