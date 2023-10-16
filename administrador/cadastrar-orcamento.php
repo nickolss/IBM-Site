@@ -1,5 +1,6 @@
 <?php
 require_once('../assets/scripts/conexao.php');
+require_once('../assets/scripts/iniciarSessao.php');
 //require_once('../assets/scripts/consultaFuncionario.php');
 ?>
 
@@ -78,7 +79,7 @@ require_once('../assets/scripts/conexao.php');
                     //se a data e hora atuais forem menor que a data e hora do agendamento, o input estará desabilitado, caso contrário estará habilitado
                     if (
                       $dataAtual <= $dataAgendamento && $horaAtual < $horaAgendamento ||  $dataAtual < $dataAgendamento && $horaAtual <= $horaAgendamento ||
-                      $dataAtual < $dataAgendamento && $horaAtual >= $horaAgendamento
+                      $dataAtual < $dataAgendamento
                     ) {
                     ?>
                       <input type="number" required name="preco" id="preco" autocomplete="off" disabled>
