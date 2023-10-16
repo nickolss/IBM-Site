@@ -118,7 +118,7 @@ if ($stmt->execute()) {
         </div>
         <div class="row">
             <div class="col text-end">
-               <form action="" method="POST">
+               <form action="finalizarCompra.php" method="POST">
                     <button id="btn__finalizar" type="submit">Finalizar Compra</button>
                </form>
             </div>
