@@ -1,0 +1,72 @@
+#container__body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    flex: 1;
+}
+
+/*CONTAINER GERAL*/
+.container__endereco-cartao-resumo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*ENDERECO E CARTAO*/
+
+.container__endereco h1, .container__cartao h1{
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--vermelho);
+    text-align: center;
+    font-weight: bolder;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    font-size: 2rem;
+}
+
+/*RESUMO DO PEDIDO*/
+.resumo-pedido{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.resumo-pedido h2{
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--preto);
+    text-align: center;
+    font-weight: bolder;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    font-size: 1.5rem;
+}
+
+.div__btn-finalizar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn__finalizar-compra{
+    background-color: var(--vermelho);
+    color: var(--branco);
+    border: none;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+    height: 3rem;
+    width: 15rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+    font-size: 1.25rem;
+}
+
+.btn__finalizar-compra:hover{
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+}
