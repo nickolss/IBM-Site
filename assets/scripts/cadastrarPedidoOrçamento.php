@@ -16,8 +16,8 @@ $idDono = $_SESSION['id']; //atribuindo o 'id' da sessão atual para a variável
 $sqlCarros = $pdo->query("SELECT * FROM `carro` WHERE `idVeiculo` = $idCarro");
 $registroCarro = $sqlCarros->fetchAll();
 
-$corCarro = $registroCarro['cor'];
-$placa = $registroCarro['placa'];
+$corCarro = $registroCarro[0]['cor'];
+$placa = $registroCarro[0]['placa'];
 
 //comando sql para inserção de dados do agendamento no banco
 $sqlInsertAgendamento = "INSERT INTO `pedido_orcamento` (`data`,`horario`,`corCarro`,`placaCarro`, `personalizacao`, `id_cliente`, `status`) VALUES ('$dataForm','$horarioForm','$corCarro','$placa', '$categoriaForm', '$idDono', 'em avaliação')";

@@ -30,7 +30,7 @@ require_once('../assets/scripts/conexao.php');
 
 <body id="container__body">
   <?php
-  require_once('../assets/components/header-adm.php');
+  require_once('../assets/components/header.php');
   ?>
 
   <main class="principal">
@@ -60,60 +60,53 @@ require_once('../assets/scripts/conexao.php');
 
             $placa = $pedido['placaCarro'];
 
-            //EXIBE O CARD DOS PEDIDOS DE ORÇAMENTOS NA TELA
-
       ?>
 
+            
             <form action="../assets/scripts/cadastrarOrcamento.php?placa='.$placa.'" method="post">
               <div class="card">
                 <div class="card-info">
-                  <p class="text-title"> <?= strtoupper($pedido['personalizacao']) ?></p>
+                  <p class="text-title"><?= strtoupper($pedido['personalizacao']) ?></p>
                   <p class="text-body">Placa: <?= strtoupper($pedido['placaCarro']) ?></p>
                   <p class="text-body">Data: <?= strtoupper($pedido['data']) ?></p>
-                  <p class="text-body">Horário: <?= strtoupper($pedido['horario']) ?>/p>
-                    /div>
-                  <div class="card-footer">
-                    <div class="caixa__input">
-
-                      <?php
-
-                      //se a data e hora atuais forem menor que a data e hora do agendamento, o input estará desabilitado, caso contrário estará habilitado
-                      if (
-                        $dataAtual <= $dataAgendamento && $horaAtual < $horaAgendamento ||  $dataAtual < $dataAgendamento && $horaAtual <= $horaAgendamento ||
-                        $dataAtual < $dataAgendamento && $horaAtual >= $horaAgendamento
-                      ) {
-
-                      ?>
-                        <input type="number" required name="preco" id="preco" autocomplete="off" disabled>
-                      <?php
-
-                      } else if ($dataAtual >= $dataAgendamento) {
-                      ?>
-                        <input type="number" required name="preco" id="preco" autocomplete="off">
-                      <?php
-                      }
-
-                      ?>
-                      <label for="preco">Preço</label>
-                      <select class="input__data-horario" name="dataOrcamento" id="dataOrcamento">
-                        <option value="<?= $pedido['data'] ?>" selected> <?= $pedido['data'] ?> </option>
-                      </select>
-                      <select class="input__data-horario" name="horarioOrcamento" id="horarioOrcamento">
-                        <option value="<?= $pedido['horario'] ?>" selected><?= $pedido['horario'] ?></option>
-                      </select>
+                  <p class="text-body">Horário: <?= strtoupper($pedido['horario']) ?></p>
+                </div>
+                <div class="card-footer">
+                  <div class="caixa__input">
+                    <?php
+                    //se a data e hora atuais forem menor que a data e hora do agendamento, o input estará desabilitado, caso contrário estará habilitado
+                    if (
+                      $dataAtual <= $dataAgendamento && $horaAtual < $horaAgendamento ||  $dataAtual < $dataAgendamento && $horaAtual <= $horaAgendamento ||
+                      $dataAtual < $dataAgendamento && $horaAtual >= $horaAgendamento
+                    ) {
+                    ?>
+                      <input type="number" required name="preco" id="preco" autocomplete="off" disabled>
+                    <?php
+                    } else if ($dataAtual >= $dataAgendamento) {
+                    ?>
+                      <input type="number" required name="preco" id="preco" autocomplete="off">
+                    <?php
+                    }
+                    ?>
+                    <label for="preco">Preço</label>
+                    <select class="input__data-horario" name="dataOrcamento" id="dataOrcamento">
+                      <option value="<?= $pedido['data'] ?>" selected> <?= $pedido['data'] ?> </option>
+                    </select>
+                    <select class="input__data-horario" name="horarioOrcamento" id="horarioOrcamento">
+                      <option value="<?= $pedido['horario'] ?>" selected><?= $pedido['horario'] ?></option>
+                    </select>
+                  </div>
+                  <div class="card__linha__botoes">
+                    <div class="card-button card-button-first">
+                      <button class="botao_orcamento" name="btn-pedido-orcamento" id="btn-pedido-orcamento" value="cancelado" type="submit"><i class="bx bx-x"></i></button>
                     </div>
-                    <div class="card__linha__botoes">
-                      <div class="card-button card-button-first">
-                        <button class="botao_orcamento" name="btn-pedido-orcamento" id="btn-pedido-orcamento" value="cancelado" type="submit"><i class="bx bx-x"></i></button>
-                      </div>
-                      <div class="card-button card-button-second">
-                        <button class="botao_orcamento" name="btn-pedido-orcamento" id="btn-pedido-orcamento" value="confirmado" type="submit"><i class="bx bx-check"></i></button>
-                      </div>
+                    <div class="card-button card-button-second">
+                      <button class="botao_orcamento" name="btn-pedido-orcamento" id="btn-pedido-orcamento" value="confirmado" type="submit"><i class="bx bx-check"></i></button>
                     </div>
                   </div>
                 </div>
+              </div>
             </form>
-
       <?php
           }
         }
