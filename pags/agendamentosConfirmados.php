@@ -51,7 +51,7 @@ require_once('../assets/scripts/consultaCliente.php');
 
         <main>
           <div class="titulo">
-            <?= "<h1 class='mainTitle'>Agendar $personalizacao</h1>"; ?>
+            <h1 class='mainTitle'>Agendar <?= $personalizacao ?></h1>
           </div>
 
           <div class="cadastro">
@@ -88,13 +88,13 @@ require_once('../assets/scripts/consultaCliente.php');
 
               ?>
               <div class="caixa__input-info">
-                  <select class="input__placa-personalizacao" name="placaCarro" id="placaCarro">
-                      <option value=" <?= $pedido['placaCarro'] ?> " selected> <?= $pedido['placaCarro'] ?> </option>
-                  </select>
+                <select class="input__placa-personalizacao" name="placaCarro" id="placaCarro">
+                  <option value=" <?= $pedido['placaCarro'] ?> " selected> <?= $pedido['placaCarro'] ?> </option>
+                </select>
 
-                  <select class="input__placa-personalizacao" name="personalizacao" id="personalizacao">
-                      <option value=" <?= $pedido['personalizacao'] ?> " selected><?= $pedido['personalizacao'] ?> </option>
-                  </select>
+                <select class="input__placa-personalizacao" name="personalizacao" id="personalizacao">
+                  <option value=" <?= $pedido['personalizacao'] ?> " selected><?= $pedido['personalizacao'] ?> </option>
+                </select>
               </div>
 
               <!--PARTE DE PAGAMENTO DO AGENDAMENTO-->

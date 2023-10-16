@@ -1,5 +1,6 @@
 <?php
 require_once('../assets/scripts/conexao.php');
+require_once('../assets/scripts/iniciarSessao.php');
 //require_once('../assets/scripts/consultaFuncionario.php');
 ?>
 
@@ -59,16 +60,17 @@ require_once('../assets/scripts/conexao.php');
             $horaAgendamento = (int)$pedido['horario']; //atribui a hora do agendamento para a variável $horaAgendamento
 
             $placa = $pedido['placaCarro'];
+            $dataFormatada = date_format(date_create($dataAtual), 'd/m/Y');
 
       ?>
 
-            
+
             <form action="../assets/scripts/cadastrarOrcamento.php?placa='.$placa.'" method="post">
               <div class="card">
                 <div class="card-info">
                   <p class="text-title"><?= strtoupper($pedido['personalizacao']) ?></p>
                   <p class="text-body">Placa: <?= strtoupper($pedido['placaCarro']) ?></p>
-                  <p class="text-body">Data: <?= strtoupper($pedido['data']) ?></p>
+                  <p class="text-body">Data: <?= $dataFormatada ?></p>
                   <p class="text-body">Horário: <?= strtoupper($pedido['horario']) ?></p>
                 </div>
                 <div class="card-footer">
@@ -77,7 +79,7 @@ require_once('../assets/scripts/conexao.php');
                     //se a data e hora atuais forem menor que a data e hora do agendamento, o input estará desabilitado, caso contrário estará habilitado
                     if (
                       $dataAtual <= $dataAgendamento && $horaAtual < $horaAgendamento ||  $dataAtual < $dataAgendamento && $horaAtual <= $horaAgendamento ||
-                      $dataAtual < $dataAgendamento && $horaAtual >= $horaAgendamento
+                      $dataAtual < $dataAgendamento
                     ) {
                     ?>
                       <input type="number" required name="preco" id="preco" autocomplete="off" disabled>
@@ -90,7 +92,7 @@ require_once('../assets/scripts/conexao.php');
                     ?>
                     <label for="preco">Preço</label>
                     <select class="input__data-horario" name="dataOrcamento" id="dataOrcamento">
-                      <option value="<?= $pedido['data'] ?>" selected> <?= $pedido['data'] ?> </option>
+                      <option value="<?= $pedido['data'] ?>" selected> <?= $dataFormatada ?> </option>
                     </select>
                     <select class="input__data-horario" name="horarioOrcamento" id="horarioOrcamento">
                       <option value="<?= $pedido['horario'] ?>" selected><?= $pedido['horario'] ?></option>
