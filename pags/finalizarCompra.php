@@ -1,49 +1,90 @@
 <?php
-    require_once('../assets/scripts/conexao.php');
-    require_once('../assets/scripts/iniciarSessao.php');
+require_once('../assets/scripts/conexao.php');
+require_once('../assets/scripts/iniciarSessao.php');
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Turn Motors | Finalizar Compra</title>
-        <link rel="stylesheet" href="../assets/css/finalizar-compra.min.css">
-        <link rel="stylesheet" href="../assets/css/cadastro.min.css">
-        <link rel="stylesheet" href="../assets/css/pagamento-cartao.min.css">
-        <link rel="stylesheet" href="../assets/css/estilos-importantes.css">
-        <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
-        <script src="../assets/js/cadastro-endereco.js" defer></script>
-        <script type="text/javascript" src="../assets/js/java.js" defer></script>
-        <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    </head>
-    <body id="container__body">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turn Motors | Finalizar Compra</title>
+    <link rel="stylesheet" href="../assets/css/finalizar-compra.min.css">
+    <link rel="stylesheet" href="../assets/css/cadastro.min.css">
+    <link rel="stylesheet" href="../assets/css/pagamento-cartao.min.css">
+    <link rel="stylesheet" href="../assets/css/estilos-importantes.css">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <script src="../assets/js/cadastro-endereco.js" defer></script>
+    <script type="text/javascript" src="../assets/js/java.js" defer></script>
+    <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body id="container__body">
+    <?php
+    require_once('../assets/components/header.php');
+    ?>
+
+    <main>
         <?php
-            require_once('../assets/components/header.php');
+        $id = $_SESSION['id'];
+        $sql = "SELECT * FROM `endereco` WHERE `id_morador` = '$id'";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $quantidadeTupla = $stmt->rowCount();
+        $endereco = $stmt->fetchAll(PDO::FETCH_ASSOC);
         ?>
-    
-        <main>
-            <div class="container__endereco-cartao-resumo">
-                <!--RESUMO DO PEDIDO-->
-                <div class="resumo-pedido">
-                    <h2>Resumo do Pedido</h2>
-                </div>
 
-                <!--ENDERECO E CARTAO-->
-                <form action="pedido-feito.php" method="POST">
-                    <div class="container__endereco-cartao">
-                        <div class="container__endereco">
-                            <h1>Endereço</h1>
-                            <div class="cadastro">
-                                <div class="caixa__input">
-                                    <input type="text" required name="cep" id="cep" autocomplete="off" minlength="8" maxlength="8">
-                                    <label for="cep">CEP</label>
-                                </div>
-                                <div class="input__endereco">
+        <div class="container__endereco-cartao-resumo">
+            <!--RESUMO DO PEDIDO-->
+            <div class="resumo-pedido">
+                <?php
+                
+                ?>
+
+                <h2>Resumo do Pedido</h2>
+                <h3 class="subtitles__resumo-pedido">Itens:</h3>
+                <?php
+                foreach ($_SESSION['carrinho'] as $idProd => $value) { ?>
+                    <div class="row">
+                        <div class="col">
+                            <p id="titulo-produto__carinho"><?php echo $value['nome'] ?></p>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
+                <?php
+                    $totalCarrinho = 0; // Variável para calcular o preço total
+                    $totalItens = 0; // Variável para calcular a quantidade total de itens
+    
+                    foreach ($_SESSION['carrinho'] as $idProd => $value) {
+                        $subtotal = $value['preco'] * $value['quantidade'];
+                        $totalCarrinho += $subtotal;
+                        $totalItens += $value['quantidade'];
+                    }?>
+                    <h3 class="subtitles__resumo-pedido">Preço Final: </h3>
+                <?php
+                    echo "R$$totalCarrinho";
+                ?>
+
+                
+            </div>
+
+            <!--ENDERECO E CARTAO-->
+            <form action="pedido-feito.php" method="POST">
+                <div class="container__endereco-cartao">
+                    <div class="container__endereco">
+                        <h1>Endereço</h1>
+                        <div class="cadastro">
+                            <div class="caixa__input">
+                                <input type="text" required name="cep" id="cep" autocomplete="off" minlength="8" maxlength="8" value="<?= $endereco[0]['cep'] ?>">
+                                <label for="cep">CEP</label>
+                            </div>
+                            <div class="input__endereco">
                                 <div class="caixa__input">
                                     <input type="text" required name="address" id="address" autocomplete="off" disabled data-input>
                                     <label for="address">Rua</label>
@@ -52,8 +93,8 @@
                                     <input type="number" required name="numero" id="numero" autocomplete="off" minlength="1" maxlength="5" disabled data-input>
                                     <label for="numero">Número</label>
                                 </div>
-                                </div>
-                                <div class="input__endereco">
+                            </div>
+                            <div class="input__endereco">
                                 <div class="caixa__input">
                                     <input type="text" name="complemento" id="complemento" autocomplete="off" disabled data-input>
                                     <label for="complemento">Complemento</label>
@@ -62,8 +103,8 @@
                                     <input type="text" required name="neighborhood" id="neighborhood" autocomplete="off" disabled data-input>
                                     <label for="neighborhood">Bairro</label>
                                 </div>
-                                </div>
-                                <div class="input__endereco input__endereco__last">
+                            </div>
+                            <div class="input__endereco input__endereco__last">
                                 <div class="caixa__input">
                                     <input type="text" required name="city" id="city" autocomplete="off" disabled data-input>
                                     <label for="city">Cidade</label>
@@ -103,12 +144,12 @@
                                     </div>
                                     <br>
                                 </div>
-                                </div>
                             </div>
                         </div>
-                        <div class="container__cartao">
-                            <h1>Pagamento</h1>
-                            <div class="cadastro">
+                    </div>
+                    <div class="container__cartao">
+                        <h1>Pagamento</h1>
+                        <div class="cadastro">
                             <div class="input__endereco">
                                 <div class="caixa__input">
                                     <input type="number" required name="numeroCartao" id="numeroCartao" autocomplete="off">
@@ -151,16 +192,17 @@
                             </div>
                         </div>
                     </div>
-                        <div class="div__btn-finalizar">
-                            <button class="btn__finalizar-compra" type="submit">Finalizar Compra</button>
-                        </div>
+                    <div class="div__btn-finalizar">
+                        <button class="btn__finalizar-compra" type="submit">Finalizar Compra</button>
                     </div>
-                </form>
                 </div>
-        </main>
+            </form>
+        </div>
+    </main>
 
-        <?php 
-            require_once('../assets/components/footer.php');
-        ?>
-    </body>
+    <?php
+    require_once('../assets/components/footer.php');
+    ?>
+</body>
+
 </html>
