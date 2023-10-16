@@ -59,8 +59,7 @@ require_once('../assets/scripts/conexao.php');
             $horaAgendamento = (int)$pedido['horario']; //atribui a hora do agendamento para a variável $horaAgendamento
 
             $placa = $pedido['placaCarro'];
-            $data = date_create($dataAtual);
-            $dataFormatada = date_format($data, 'd/m/Y');
+            $dataFormatada = date_format(date_create($dataAtual), 'd/m/Y');
 
       ?>
 
