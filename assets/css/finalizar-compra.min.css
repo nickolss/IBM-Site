@@ -34,10 +34,14 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--branco);
+    border-radius: 2rem;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    margin-top: 2rem;
+    padding: 2rem;
 }
 
 .resumo-pedido h2{
-    margin-top: 2rem;
     text-align: center;
     color: var(--preto);
     text-align: center;
