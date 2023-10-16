@@ -29,6 +29,7 @@ main{
     color: var(--preto);
     border: none;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
     height: 2.5rem;
     width: 10rem;
     border-radius: 20px;
@@ -102,11 +103,36 @@ h6.texto__total-preco{
     font-size: 1.1rem;
 }
 
+#btn__finalizar{
+    background-color: var(--vermelho);
+    color: var(--branco);
+    border: none;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+    height: 2.5rem;
+    width: 12.5rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+#btn__finalizar:hover{
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+}
+
 @media only screen and (max-width: 900px){
+    main{
+        margin-top: 4rem;
+    }
+
     .carrinho__img__produtos{
         max-width: 50%;
     }
-    #area__carrinho_pag_produtos{
-        margin-top: 170px;
+}
+
+@media only screen and (max-width: 505px){
+    main{
+        margin-top: 11rem !important;
     }
-  }
+}

@@ -113,8 +113,14 @@ if ($stmt->execute()) {
         <?php } ?>
         <div class="row">
             <div class="col">
-    
                <h6 class="texto__total-preco text-end">SubTotal (<?php echo $totalItens; ?> itens): <strong>R$: <?php echo $totalCarrinho; ?></strong></h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-end">
+               <form action="" method="POST">
+                    <button id="btn__finalizar" type="submit">Finalizar Compra</button>
+               </form>
             </div>
         </div>
     </div>
