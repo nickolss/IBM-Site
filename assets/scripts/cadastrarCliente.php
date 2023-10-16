@@ -10,10 +10,18 @@ $telefoneForm = $_POST['tel'];
 $dataNascForm = $_POST['data'];
 $cpfForm = $_POST['cpf'];
 $planoForm = $_POST['plano'];
+$cep = $_POST['cep'];
+$rua = $_POST['address'];
+$numero = $_POST['numero'];
+$complemento = $_POST['complemento'];
+$bairro = $_POST['neighborhood'];
+$cidade = $_POST['city'];
+$estado = $_POST['region'];
 
 $senhaSegura = md5($senhaForm);
 $cpfSeguro = md5($cpfForm);
 $telefoneFormatado = str_replace(['(', ')', '-'], '', $telefoneForm);
+
 
 $sqlInsert = "INSERT INTO `cliente`(`cpf`, `nomeCompleto`, `dataNasc`, `telefone`, `email`, `senha`, `plano`, `quantidadePontos`, `fotoPerfil`) VALUES ('$cpfSeguro','$nomeForm','$dataNascForm','$telefoneFormatado','$emailForm','$senhaSegura','$planoForm','0', 'default-img-profile.svg')";
 
@@ -39,6 +47,9 @@ if ($cadastrarCliente->execute()) {
         header("Location: ../../pags/perfil.php");
     }
 
-
-    
 }
+
+
+
+
+
