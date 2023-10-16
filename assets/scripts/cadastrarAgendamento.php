@@ -26,5 +26,5 @@
      $inserirDadosAgendamento = $pdo->prepare($sqlInsertAgendamento);
  
      if($inserirDadosCarro->execute() && $inserirDadosAgendamento->execute()){
-        header("Location: ./enviarEmail.php");
+        header("Location: ../../index.php");
      }
