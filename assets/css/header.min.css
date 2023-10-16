@@ -254,6 +254,7 @@ max-height: 300px;
 .info__table__header_carrinho{
 padding-left: 15px;
 }
+
 .table__itens_header_carrinho_botoes{
 border: 2px solid black;
 border-radius: 10px;
@@ -261,6 +262,7 @@ width: 60%;
 display: flex;
 justify-content: space-between;
 }
+
 .table__itens_header_carrinho_botoes button,.table__itens_header_carrinho_botoes button a{
 border: none;
 background-color: white;
@@ -273,14 +275,12 @@ color: black;
 max-width: 100%;
 height: auto;
 }
-.img__table__header_carrinho{
-box-shadow: 1px 2px 0px 0px #888;
-}
+
 .table_itens__header__carrinho__config{
 display: flex;
 justify-content: space-between;
-
 }
+
 td.info__table__header_carrinho h2{
 font-size: 1.5em;
 font-weight: bold;
@@ -305,28 +305,27 @@ padding: 30px 30px 10px 30px;
 .carrinho__header__finalizacao button{
 width: 100%;
 height: 50px;
-background-color: #DF7369;
-
+background-color: var(--vermelho);
 border: none;
 border-radius: 15px;
-box-shadow: 1px 2px 0px 0px #888;
+box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
 margin-bottom: 10px;
 font-size: 1.5em;
-color: white;
+color: var(--branco);
 text-decoration: none;
 }
 
-.carrinho__header__finalizacao a.plano_header{
-color: #003445;
-text-decoration: none;
+.carrinho__header__finalizacao button:hover{
+  transform: scale(1.01);
+  transition-duration: 0.5s;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
 }
-
-
 
 .cart-icon {
   position: relative;
   cursor: pointer;
 }
+
 .seta-modal{
   display: none;
   position: absolute;
