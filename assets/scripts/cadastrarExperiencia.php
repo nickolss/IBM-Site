@@ -1,6 +1,7 @@
 <?php
-    require_once('../assets/scripts/iniciarSessao.php');
-    require_once('../assets/scripts/consultaCliente.php');
+    require_once('./conexao.php');
+    require_once('./iniciarSessao.php');
+    require_once('./consultaCliente.php');
 
     $txtExperiencia = $_POST['experiencia'];
 
@@ -9,7 +10,9 @@
     $stmt = $pdo->prepare($sqlInsert);
 
     if($stmt->execute()){
-        require_once("../components/modal.php");
+        $tituloModal = "Experiência cadastrada com sucesso!";
+        $textoModal = "Obrigado pela preferência!";
+        require_once('../components/modal.php');
     }
 
 ?>
