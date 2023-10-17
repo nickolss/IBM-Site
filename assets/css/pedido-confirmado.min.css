@@ -1,1 +1,147 @@
-@import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap);:root{--laranja:#DF7369;--azul-claro:rgba(1, 73, 97, 0.6);--azul-escuro:#014961;--cinza:#D9D9D9;--fonte-padrao:'Inter',sans-serif;--fundo-pagina:#F8F2F2}body{background-color:var(--fundo-pagina);font-family:var(--fonte-padrao)}.divisao{width:25%;margin:1rem auto;border:1px solid #000}.principal{display:flex;align-items:center;justify-content:space-around}@media screen and (max-width:480px){.principal{flex-direction:column}}.principal__titulo{color:var(--laranja);font-weight:700;font-size:5rem}.principal__informacoes{background-color:#fff;border-radius:15px;margin:2rem 0;padding:1.5rem;box-shadow:1px 1px 1px #000}.informacoes__titulo{color:var(--azul-escuro);font-weight:500}.agradecimentos{width:95vw;margin:auto}.agradecimentos__texto>a{color:var(--azul-escuro)}.outros-itens__titulo{margin:1rem 0 1rem 0;color:var(--azul-escuro);font-weight:700}.formulario__titulo{margin:1rem 0 1rem 0;color:var(--azul-escuro);font-weight:700}.produtos{display:grid;grid-template-columns:1fr 1fr 1fr;margin:0 auto}@media screen and (max-width:480px){.produtos{display:flex;flex-direction:column}}.produtos__item{background-color:var(--cinza);margin:1rem auto}.conteudo-form{display:flex;justify-content:space-around}@media screen and (max-width:480px){.conteudo-form{flex-direction:column}.conteudo-form__imagem{width:100px;margin:1rem auto}}
+@import url(variaveis-cores-fonte.min.css);
+
+body#container__body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    flex: 1;
+}
+
+.container__img-pedido{
+    margin: 2rem 0rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+div.img{
+    margin-right: 1.5rem;
+}
+
+#img__embalar-produtos{
+    width: 30vh;
+}
+
+div.pedido{
+    margin-left: 1.5rem;
+    background-color: var(--branco);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 2rem;
+    padding: 2rem;
+    height: 15rem;
+}
+
+h3.pedido__titulo{
+    color: var(--vermelho);
+    text-align: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+p.pedido__texto{
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.container__experiencia{
+    background-color: var(--preto);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    width: 50rem;
+    margin: auto;
+    border-radius: 3rem;
+    margin-bottom: 3rem;
+}
+
+.experiencia__titulo h2{
+    color: var(--amarelo);
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.3);
+}
+
+.experiencia-logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+textarea#experiencia{
+    border-radius: 1rem;
+    border: 2px solid var(--amarelo);
+    font-size: 1.1rem;
+}
+
+.div__botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+#btn__enviar{
+    width: 25rem;
+    border: 1px solid var(--amarelo);
+    padding: 0.3rem;
+    background-color: var(--amarelo);
+    color: var(--preto);
+    font-size: 1.1rem;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 3px rgba(255, 255, 255, 0.3);
+}
+
+#btn__enviar:hover{
+    transition-duration: 0.5s;
+    transform: scale(1.05);
+    box-shadow: 3px 3px 4px rgba(255, 255, 255, 0.4);
+}
+
+@media only screen and (max-width: 900px){
+    .container__experiencia{
+        max-width: 40rem;
+        border-radius: 1rem;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    div.img{
+        display: none;
+    }
+
+    div.pedido{
+        margin-left: 0rem;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .container__experiencia{
+        max-width: 30rem;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    div.pedido{
+        max-width: 22rem;
+    }
+
+    p.pedido__texto{
+        margin-bottom: 0.5rem;
+    }
+
+    .container__experiencia{
+        max-width: 22rem;
+    }
+
+    #experiencia{
+        width: 20rem;
+    }
+
+    #btn__enviar{
+        width: 20rem;
+    }
+}
