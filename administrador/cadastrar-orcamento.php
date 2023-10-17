@@ -65,7 +65,7 @@ require_once('../assets/scripts/iniciarSessao.php');
       ?>
 
 
-            <form action="../assets/scripts/cadastrarOrcamento.php?placa='.$placa.'" method="post">
+            <form action="../assets/scripts/cadastrarOrcamento.php?placa=<?= $placa ?>" method="post">
               <div class="card">
                 <div class="card-info">
                   <p class="text-title"><?= strtoupper($pedido['personalizacao']) ?></p>

@@ -20,8 +20,6 @@
 
     <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
     <script type="text/javascript" src="../assets/js/java.js" defer></script>
-    <script src="../assets/js/imagem-prod.js" defer></script>
-    <script src="../assets/js/preco.js" defer></script>
     <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
 </head>
 
@@ -56,7 +54,7 @@
                     <input type="text" required name="corProd" id="corProd" autocomplete="off">
                     <label for="corProd">Cor</label>
                 </div>
-                
+
             </div>
 
             <div class="div__formulario__botao"><button type="submit" class="formulario__botao formulario__botao--turbinado" name="plano">Cadastrar</button></div>

@@ -83,7 +83,7 @@ $placa = $carros[0]['placa'] ?? "";
 							<img class="img__icon__esquerda" src="../assets/img/icone-porco-dinheiro.svg" alt="Orçamentos">
 						</div>
 					</a>
-					<a href="#">
+					<a href="agendamentosPendentes.php">
 						<div class="icone__esquerda">
 							<div class="legenda__icone__pc">
 								Agendamentos Pendentes
