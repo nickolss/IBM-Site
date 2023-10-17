@@ -785,14 +785,7 @@ CREATE TABLE `pedido_orcamento`(
     'ferramentas-equipamentos'
   ) NOT NULL,
   `preco` DECIMAL,
-  `status` varcha()(
-    'em avaliação',
-    'mecânico confirmado',
-    'mecanico cancelado',
-    'cliente confirmado',
-    'cliente cancelado',
-    'agendamento confirmado'
-  ) NOT NULL,
+  `status` varchar(50) NOT NULL,
   FOREIGN KEY (`id_cliente`) REFERENCES `cliente`(`id`)
 );
 

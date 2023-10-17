@@ -91,7 +91,7 @@ $placa = $carros[0]['placa'] ?? "";
 							<img class="img__icon__esquerda" src="../assets/img/icone-agendamento.svg" alt="Agendamentos Pendentes">
 						</div>
 					</a>
-					<a href="#">
+					<a href="agendamentosConfirmados.php">
 						<div class="icone__esquerda">
 							<div class="legenda__icone__pc">
 								Agendamentos Confirmados
@@ -203,7 +203,7 @@ $placa = $carros[0]['placa'] ?? "";
 								<a href="./veiculos.php" class="perfil__veiculo__botao">Ver Mais</a>
 							</div>
 							<div class="div-perfil__veiculo__btn">
-								<a href="" class="perfil__veiculo__botao">Personalizar</a>
+								<a href="personalizacoes.php" class="perfil__veiculo__botao">Personalizar</a>
 							</div>
 						</div>
 					</div>
