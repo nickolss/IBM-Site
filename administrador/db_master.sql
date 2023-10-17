@@ -182,6 +182,7 @@ CREATE TABLE IF NOT EXISTS `produto` (
   `codigoProduto` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(120) COLLATE utf8mb4_general_ci NOT NULL,
   `preco` float NOT NULL,
+  `pontos` int NOT NULL,
   `marca` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `descricao` text COLLATE utf8mb4_general_ci NOT NULL,
   `customizações` enum(
@@ -259,10 +260,11 @@ CREATE TABLE IF NOT EXISTS `produto` (
 -- Extraindo dados da tabela `produto`
 --
 INSERT INTO
-  `produto` (
+  `produto`(
     `codigoProduto`,
     `nome`,
     `preco`,
+    `pontos`,
     `marca`,
     `descricao`,
     `customizações`,
@@ -274,6 +276,7 @@ VALUES
     1,
     'Roda Vermelha Sólida',
     89,
+    150,
     'Marca 1',
     'Pneu Vermelho',
     'pneu-solido',
@@ -284,6 +287,7 @@ VALUES
     2,
     'Adesivo de Garras',
     15,
+    80,
     'Adesivo',
     'Adesivo de garras na cor preta.',
     'adesivo-medio',
@@ -294,6 +298,7 @@ VALUES
     3,
     'Motor',
     899,
+    350,
     'motor',
     'Motor de Carro',
     'pecas-automoveis',
@@ -304,6 +309,7 @@ VALUES
     4,
     'Roda Cinza',
     55,
+    150,
     'Marca 1',
     'Roda cinza sólida.',
     'pneu-solido',
@@ -314,6 +320,7 @@ VALUES
     5,
     'Roda preta e vermelha',
     169,
+    180,
     'Marca 2',
     'Roda de duas cores preta e vermelha.',
     'pneu-duasCores',
@@ -324,6 +331,7 @@ VALUES
     6,
     'Caixa de Som',
     899,
+    350,
     'Marca 2',
     'Caixa de som para carros',
     'caixaDeSom',
@@ -334,6 +342,7 @@ VALUES
     7,
     'Pneu Preto',
     1000,
+    150,
     'Marca A',
     'Descrição do Produto ',
     'pneu-solido',
@@ -344,6 +353,7 @@ VALUES
     8,
     'Produto 2',
     1500,
+    900,
     'Marca B',
     'Descrição do Produto 2',
     'rebaixamento-slammed',
@@ -354,6 +364,7 @@ VALUES
     9,
     'Produto 3',
     800,
+    300,
     'Marca A',
     'Descrição do Produto 3',
     'pintura-solida',
@@ -364,6 +375,7 @@ VALUES
     10,
     'Produto 4',
     1200,
+    500,
     'Marca C',
     'Descrição do Produto 4',
     'pintura-metalica',
@@ -374,6 +386,7 @@ VALUES
     11,
     'Produto 5',
     900,
+    150,
     'Marca D',
     'Descrição do Produto 5',
     'pneu-solido',
@@ -384,6 +397,7 @@ VALUES
     12,
     'Produto 6',
     1100,
+    400,
     'Marca B',
     'Descrição do Produto 6',
     'pneu-personalizado',
@@ -394,6 +408,7 @@ VALUES
     13,
     'Produto 7',
     750,
+    300,
     'Marca E',
     'Descrição do Produto 7',
     'adesivo-pequeno',
@@ -404,6 +419,7 @@ VALUES
     14,
     'Produto 8',
     1300,
+    450,
     'Marca F',
     'Descrição do Produto 8',
     'adesivo-medio',
@@ -414,6 +430,7 @@ VALUES
     15,
     'Produto 9',
     950,
+    200,
     'Marca A',
     'Descrição do Produto 9',
     'adesivo-grande',
@@ -424,6 +441,7 @@ VALUES
     16,
     'Produto 10',
     1400,
+    950,
     'Marca G',
     'Descrição do Produto 10',
     'aerofolio',
@@ -434,6 +452,7 @@ VALUES
     17,
     'Roda Amarela',
     950,
+    150,
     'Marca D',
     'Descrição do Produto',
     'pneu-solido',
@@ -444,6 +463,7 @@ VALUES
     18,
     'Produto 12',
     1200,
+    900,
     'Marca E',
     'Descrição do Produto 12',
     'rebaixamento-slammed',
@@ -454,6 +474,7 @@ VALUES
     19,
     'Produto 13',
     850,
+    300,
     'Marca F',
     'Descrição do Produto 13',
     'pintura-perolizada',
@@ -464,6 +485,7 @@ VALUES
     20,
     'Produto 14',
     1100,
+    450,
     'Marca B',
     'Descrição do Produto 14',
     'pintura-solida',
@@ -474,6 +496,7 @@ VALUES
     21,
     'Produto 15',
     1050,
+    300,
     'Marca G',
     'Descrição do Produto 15',
     'pneu-duasCores',
@@ -484,6 +507,7 @@ VALUES
     22,
     'Produto 16',
     1250,
+    500,
     'Marca H',
     'Descrição do Produto 16',
     'adesivo-medio',
@@ -494,6 +518,7 @@ VALUES
     23,
     'Produto 17',
     900,
+    150,
     'Marca D',
     'Descrição do Produto 17',
     'pneu-solido',
@@ -504,6 +529,7 @@ VALUES
     24,
     'Produto 18',
     1350,
+    350,
     'Marca I',
     'Descrição do Produto 18',
     'pneu-personalizado',
@@ -514,6 +540,7 @@ VALUES
     25,
     'Produto 19',
     950,
+    120,
     'Marca E',
     'Descrição do Produto 19',
     'adesivo-pequeno',
@@ -524,6 +551,7 @@ VALUES
     26,
     'Produto 20',
     1400,
+    600,
     'Marca J',
     'Descrição do Produto 20',
     'adesivo-grande',
@@ -534,6 +562,7 @@ VALUES
     27,
     'Produto 21',
     950,
+    900,
     'Marca C',
     'Descrição do Produto 21',
     'aerofolio',
@@ -544,6 +573,7 @@ VALUES
     28,
     'Produto 22',
     1200,
+    750,
     'Marca D',
     'Descrição do Produto 22',
     'insulfilm',
@@ -554,6 +584,7 @@ VALUES
     29,
     'Roda Branca',
     850,
+    150,
     'Marca E',
     'Descrição do Produto',
     'pneu-solido',
@@ -564,6 +595,7 @@ VALUES
     30,
     'Produto 24',
     1100,
+    950,
     'Marca F',
     'Descrição do Produto 24',
     'banco',
@@ -574,6 +606,7 @@ VALUES
     31,
     'Produto 25',
     1050,
+    900,
     'Marca G',
     'Descrição do Produto 25',
     'tunagem-reformulada',
@@ -584,6 +617,7 @@ VALUES
     32,
     'Produto 26',
     1250,
+    950,
     'Marca H',
     'Descrição do Produto 26',
     'tunagem-remanufaturada',
@@ -594,6 +628,7 @@ VALUES
     33,
     'Produto 27',
     900,
+    250,
     'Marca I',
     'Descrição do Produto 27',
     'pneu-carro',
@@ -604,6 +639,7 @@ VALUES
     34,
     'Produto 28',
     1350,
+    750,
     'Marca J',
     'Descrição do Produto 28',
     'som-multimidia-eletronicos',
@@ -614,6 +650,7 @@ VALUES
     35,
     'Produto 29',
     950,
+    350,
     'Marca A',
     'Descrição do Produto 29',
     'acessorios-automoveis',
@@ -624,6 +661,7 @@ VALUES
     36,
     'Produto 30',
     1400,
+    600,
     'Marca B',
     'Descrição do Produto 30',
     'cuidados-automotivos',
@@ -907,11 +945,9 @@ VALUES
     '../assets/img/motor369.svg'
   );
 
-
 --
 -- Estrutura da tabela `produtosComprados`
 --
-
 DROP TABLE IF EXISTS `produtosComprados`;
 
 CREATE TABLE IF NOT EXISTS `produtosComprados`(
@@ -920,28 +956,22 @@ CREATE TABLE IF NOT EXISTS `produtosComprados`(
   `nomeProdutos` varchar(200) not null,
   `preco_final` decimal not null,
   `id_comprador` int not null,
-
   PRIMARY KEY (`idCompra`),
   FOREIGN KEY (`id_comprador`) REFERENCES cliente (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
-
 --
 -- Estrutura da tabela `experienciaUser`
 --
-
 DROP TABLE IF EXISTS `experienciaUser`;
 
 CREATE TABLE IF NOT EXISTS `experienciaUser`(
   `idExperiencia` int not null AUTO_INCREMENT,
   `texto` text not null,
   `id_cliente` int not null,
-
   PRIMARY KEY (`idExperiencia`),
   FOREIGN KEY (`id_cliente`) REFERENCES cliente (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
-
-
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
 ;
