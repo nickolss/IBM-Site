@@ -1,6 +1,9 @@
 <?php
-date_default_timezone_set("America/Sao_Paulo");
-$dataAtual = date("Y-m-d");
+	require_once('../assets/scripts/conexao.php');
+	require_once('../assets/scripts/iniciarSessao.php');
+	require_once('../assets/scripts/consultaCliente.php');
+	date_default_timezone_set("America/Sao_Paulo");
+	$dataAtual = date("Y-m-d");
 ?>
 
 <!DOCTYPE html>
@@ -11,11 +14,8 @@ $dataAtual = date("Y-m-d");
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Turn Motors | Pagamento</title>
 
-	<!--ARQUIVOS BOOTSTRAP-->
-
-
-
-	<link rel="stylesheet" href="../assets/css/pagamentoTurbinadoCartao.min.css">
+	<link rel="stylesheet" href="../assets/css/pagamento-cartao.min.css">
+	<link rel="stylesheet" href="../assets/css/finalizar-compra.min.css">
 	<link rel="stylesheet" href="../assets/css/estilos-importantes.css">
 
 	<link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
@@ -31,37 +31,56 @@ $dataAtual = date("Y-m-d");
 	?>
 
 	<main>
-		<div class="container">
-			<div class="main__div">
-				<h1 id="mainTitle">Informe os dados do seu cartão de crédito ou débito</h1>
+		<form action="" method="POST">
+			<div class="container__cartao">
+				<h1>Pagamento</h1>
+				<div class="cadastro">
+					<div class="input__endereco">
+						<div class="caixa__input">
+							<input type="number" required name="numeroCartao" id="numeroCartao" autocomplete="off">
+							<label for="numeroCartao">Número do Cartão</label>
+						</div>
+					</div>
+					<div class="input__endereco">
+						<div class="caixa__input">
+							<input class="inputCartao" type="number" name="mesCartao" id="mesCartao" required maxlength="2" minlength="2" title="O mês deve ter 2 digitos numéricos.">
+							<label for="address">Mês Validade</label>
+						</div>
+						<div class="caixa__input caixa__input__margin">
+							<input type="number" required name="anoCartao" id="anoCartao" autocomplete="off" maxlength="4" minlength="4" title="O ano deve ter 4 digitos numéricos.">
+							<label for="numero">Ano Validade</label>
+						</div>
+					</div>
+					<div class="input__endereco">
+						<div class="caixa__input">
+							<input class="inputCartao" type="number" name="cvvCartao" id="cvvCartao" required pattern="^\d{3,4}$" title="O CVV deve ter 3 digitos numéricos.">
+							<label for="address">CVV</label>
+						</div>
+						<div class="caixa__input caixa__input__margin">
+							<input type="text" required name="nomeCartao" id="nomeCartao" autocomplete="off" minlength="1" value="<?= $_SESSION['nomeCliente'] ?>">
+							<label for="numero">Nome Completo</label>
+						</div>
+					</div>
+					<div id="div__forma__pagamento__title">
+						<h2 id="forma__pagamento__title">Escolha sua forma de pagamento preferida:</h2>
+					</div>
+					<div class="opcao__cartao">
+						<div class="opcao__radio__cartao">
+							<input class="inputRadio" type="radio" id="credito" name="opcao_cartao" value="credito">
+							<label class="labelRadio" id="labelCredito" for="credito">Crédito</label>
+						</div>
+						<div class="opcao__radio__cartao opcao__radio__cartao__margin">
+							<input class="inputRadio" type="radio" id="debito" name="opcao_cartao" value="debito">
+							<label class="labelRadio" for="debito">Débito</label>
+						</div>
+						<br>
+					</div>
+				</div>
 			</div>
-			<form action="" method="">
-				<div id="div__inputCartao">
-					<input class="inputCartao" type="number" name="numeroCartao" id="numeroCartao" placeholder="Número do Cartão" required>
-					<input class="inputCartao" type="date" name="validadeCartao" id="validadeCartao" placeholder="Data de Validade" min="<?= $dataAtual ?>" required>
-					<input class="inputCartao" type="text" name="cvvCartao" id="cvvCartao" placeholder="CVV" required maxlength="3" pattern="^\d{3,4}$" title="O CVV deve ter 3 digitos numéricos.">
-					<input class="inputCartao" type="text" name="nomeCartao" id="nomeCartao" placeholder="Nome Completo" required>
-				</div>
-
-				<h2>Escolha sua forma de pagamento preferida:</h2>
-				<div class="opcao__cartao">
-					<input class="inputRadio" type="radio" id="credito" name="opcao_cartao" value="credito" checked>
-					<label class="labelRadio" id="labelCredito" for="credito">Crédito</label>
-					<input class="inputRadio" type="radio" id="debito" name="opcao_cartao" value="debito">
-					<label class="labelRadio" for="debito">Débito</label>
-					<br>
-
-				</div>
-				<div class="div__preco">
-					<p id="preco">R$29,90</p>
-					<p id="plano">Plano Turbinado</p>
-				</div>
-				<div class="botao__inscrever">
-					<button type="submit" id="botaoInscrever" class="botao__link">Inscrever-se</button>
-				</div>
-			</form>
-		</div>
-		<br>
+			<div class="div__btn-finalizar">
+				<button class="btn__finalizar-compra" type="submit">Finalizar Compra</button>
+			</div>
+		</form>
 	</main>
 
 	<?php
