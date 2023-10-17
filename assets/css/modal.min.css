@@ -1,0 +1,44 @@
+@import url(variaveis-cores-fonte.min.css);
+
+#modal{
+    font-family: Arial, Helvetica, sans-serif;
+    border: 3px solid var(--amarelo);
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+    background-color: var(--preto);
+    border-radius: 1rem;
+}
+
+#modal__titulo{
+    color: var(--amarelo);
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.25);
+}
+
+#modal__texto{
+    color: var(--branco);
+    font-size: 1.2rem;
+}
+
+.div__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#closeModal{
+    border: none;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    color: var(--preto);
+    border-radius: 2rem;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    background-color: var(--amarelo);
+    width: 10rem;
+    cursor: pointer;
+}
+
+#closeModal:hover{
+    transition-duration: 0.5s;
+    transform: scale(1.05);
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+}

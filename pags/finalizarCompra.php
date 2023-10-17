@@ -41,17 +41,13 @@ require_once('../assets/scripts/iniciarSessao.php');
         <div class="container__endereco-cartao-resumo">
             <!--RESUMO DO PEDIDO-->
             <div class="resumo-pedido">
-                <?php
-                
-                ?>
-
                 <h2>Resumo do Pedido</h2>
                 <h3 class="subtitles__resumo-pedido">Itens:</h3>
                 <?php
                 foreach ($_SESSION['carrinho'] as $idProd => $value) { ?>
                     <div class="row">
                         <div class="col">
-                            <p id="titulo-produto__carinho"><?php echo $value['nome'] . " " . $value['quantidade'] . " unidades"; ?></p>
+                            <p id="titulo-produto__carinho"><?php echo $value['nome'] . " " . $value['quantidade'] . "x"; ?></p>
                         </div>
                     </div>
                 <?php
@@ -75,7 +71,7 @@ require_once('../assets/scripts/iniciarSessao.php');
             </div>
 
             <!--ENDERECO E CARTAO-->
-            <form action="pedido-feito.php" method="POST">
+            <form action="../assets/scripts/cadastrarCompra.php" method="POST">
                 <div class="container__endereco-cartao">
                     <div class="container__endereco">
                         <h1>Endereço</h1>
