@@ -338,13 +338,7 @@ require_once('../assets/scripts/iniciarSessao.php');
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Perfil</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Veículos</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Compras</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Orçamentos</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Agendamentos</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Plano</span></a></li>
                                 <li><a class="dropdown-item" href="../pags/favoritos.php"><span class="opcao__navbar__mobile">Favoritos</span></a></li>
-								<li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Pontos</span></a></li>
 
                             </ul>
                         </li>

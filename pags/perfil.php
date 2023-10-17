@@ -86,17 +86,19 @@ $placa = $carros[0]['placa'] ?? "";
 					<a href="#">
 						<div class="icone__esquerda">
 							<div class="legenda__icone__pc">
-								Agendamentos
+								Agendamentos Pendentes
 							</div>
-							<img class="img__icon__esquerda" src="../assets/img/icone-agendamento.svg" alt="Agendamentos">
+							<img class="img__icon__esquerda" src="../assets/img/icone-agendamento.svg" alt="Agendamentos Pendentes">
 						</div>
 					</a>
-					<div class="icone__esquerda">
-						<div class="legenda__icone__pc">
-							Plano
+					<a href="#">
+						<div class="icone__esquerda">
+							<div class="legenda__icone__pc">
+								Agendamentos Confirmados
+							</div>
+							<img class="img__icon__esquerda" src="../assets/img/icone-agendamento-confirmado.svg" alt="Agendamentos Confirmados">
 						</div>
-						<img class="img__icon__esquerda" src="../assets/img/icone-dinheiro.svg" alt="Plano">
-					</div>
+					</a>
 					<a href="./favoritos.php">
 						<div class="icone__esquerda">
 							<div class="legenda__icone__pc">
@@ -253,18 +255,22 @@ $placa = $carros[0]['placa'] ?? "";
 							</figure>
 						</div>
 					</a>
-					<div class="icone__esquerda">
-						<figure class="figure-container">
-							<img class="img__icon__esquerda" src="../assets/img/icone-agendamento.svg" alt="Agendamentos">
-							<figcaption class="legenda__icones__atividade">Agendamentos</figcaption>
-						</figure>
+					<a href="#">
+						<div class="icone__esquerda">
+							<figure class="figure-container">
+								<img class="img__icon__esquerda" src="../assets/img/icone-agendamento.svg" alt="Agendamentos">
+								<figcaption class="legenda__icones__atividade">Agendamentos Pendentes</figcaption>
+							</figure>
+					</a>
 					</div>
-					<div class="icone__esquerda">
-						<figure class="figure-container">
-							<img class="img__icon__esquerda" src="../assets/img/icone-dinheiro.svg" alt="Plano">
-							<figcaption class="legenda__icones__atividade">Plano</figcaption>
-						</figure>
-					</div>
+					<a href="#">
+						<div class="icone__esquerda">
+							<figure class="figure-container">
+								<img class="img__icon__esquerda" src="../assets/img/icone-agendamento-confirmado.svg" alt="Agendamentos">
+								<figcaption class="legenda__icones__atividade">Agendamentos Confirmados</figcaption>
+							</figure>
+						</div>
+					</a>
 					<a href="./favoritos.php">
 						<div class="icone__esquerda">
 							<figure class="figure-container">
