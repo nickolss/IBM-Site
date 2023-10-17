@@ -785,7 +785,7 @@ CREATE TABLE `pedido_orcamento`(
     'ferramentas-equipamentos'
   ) NOT NULL,
   `preco` DECIMAL,
-  `status` ENUM(
+  `status` varcha()(
     'em avaliação',
     'mecânico confirmado',
     'mecanico cancelado',

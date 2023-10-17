@@ -5,11 +5,8 @@ require_once('./iniciarSessao.php'); //verifica se o arquivo 'iniciarSessao.php'
 
 //passa as informações do forms para variaveis
 $dataForm = $_POST['data'];
-$horarioForm = $_POST['horario'];
+$horarioForm = (int) $_POST['horario'];
 $categoriaForm = $_GET['categoria'];
-$numeroCartao = $_POST['numeroCartao'];
-$cvvCartao = $_POST['cvvCartao'];
-$validadeCartao = $_POST['dataValidade'];
 $idCarro = $_POST['idCarro'];
 $idDono = $_SESSION['id']; //atribuindo o 'id' da sessão atual para a variável $id
 
@@ -19,20 +16,14 @@ $registroCarro = $sqlCarros->fetchAll();
 $corCarro = $registroCarro[0]['cor'];
 $placa = $registroCarro[0]['placa'];
 
+
 //comando sql para inserção de dados do agendamento no banco
-$sqlInsertAgendamento = "INSERT INTO `pedido_orcamento` (`data`,`horario`,`corCarro`,`placaCarro`, `personalizacao`, `id_cliente`, `status`) VALUES ('$dataForm','$horarioForm','$corCarro','$placa', '$categoriaForm', '$idDono', 'em avaliação')";
+$sqlInsertAgendamento = "INSERT INTO `pedido_orcamento` (`data`,`horario`,`corCarro`,`placaCarro`, `personalizacao`, `id_cliente` , `status`) VALUES ('$dataForm','$horarioForm','$corCarro','$placa', '$categoriaForm', '$idDono', 'em avaliação')";
 
 //preparando o bd para a inserção dos dados 
 $inserirDadosAgendamento = $pdo->prepare($sqlInsertAgendamento);
 
-
-//comando sql para inserção de dados do agendamento no banco
-$sqlInsertCartao = "INSERT INTO `cartao` (`numero_cartao`,`cvv`,`validade`,`id_titular`) VALUES ($numeroCartao,$cvvCartao,$validadeCartao,$idDono)";
-
-//preparando o bd para a inserção dos dados 
-$inserirDadosCartao = $pdo->prepare($sqlInsertCartao);
-
-if ($inserirDadosAgendamento->execute() && $inserirDadosCartao->execute()) {
-    //se as duas query sql executarem irá redirecionar para o arquivo 'enviarEmail.php'
-    header("Location: ./enviarEmail.php");
+if ($inserirDadosAgendamento->execute() ) {
+    //se as duas query sql executarem irá redirecionar para o arquivo 'INDEX.php'
+    header("Location: ../../index.php");
 }
