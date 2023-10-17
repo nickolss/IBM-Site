@@ -914,6 +914,42 @@ VALUES
     '../assets/img/motor369.svg'
   );
 
+
+--
+-- Estrutura da tabela `produtosComprados`
+--
+
+DROP TABLE IF EXISTS `produtosComprados`;
+
+CREATE TABLE IF NOT EXISTS `produtosComprados`(
+  `idCompra` int not null AUTO_INCREMENT,
+  `idProdutos` varchar(150) not null,
+  `nomeProdutos` varchar(200) not null,
+  `preco_final` decimal not null,
+  `id_comprador` int not null,
+
+  PRIMARY KEY (`idCompra`),
+  FOREIGN KEY (`id_comprador`) REFERENCES cliente (`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+
+
+--
+-- Estrutura da tabela `experienciaUser`
+--
+
+DROP TABLE IF EXISTS `experienciaUser`;
+
+CREATE TABLE IF NOT EXISTS `experienciaUser`(
+  `idExperiencia` int not null AUTO_INCREMENT,
+  `texto` text not null,
+  `id_cliente` int not null,
+
+  PRIMARY KEY (`idExperiencia`),
+  FOREIGN KEY (`id_cliente`) REFERENCES cliente (`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
 ;
 
