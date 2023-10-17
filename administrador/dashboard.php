@@ -1,6 +1,7 @@
 <?php
 require_once('../assets/scripts/conexao.php');
 require_once('../assets/scripts/iniciarSessao.php');
+require_once('../assets/scripts/consultaFuncionario.php');
 ?>
 
 <!DOCTYPE html>

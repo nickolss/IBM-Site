@@ -6,5 +6,5 @@ if (!isset($_SESSION['nomeCliente'])) {
 
   $tituloModal = "Erro nas Credenciais!";
   $textoModal = "Você precisa estar logado.";
-  require_once('../components/modal.php');
+  require_once('../assets/components/modal.php');
 }

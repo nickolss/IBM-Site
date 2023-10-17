@@ -11,5 +11,5 @@ if (!isset($_SESSION['rf'])) {
 
     $tituloModal = "Erro nas Credenciais!";
     $textoModal = "Você precisa ser um funcionário Turn Motors para entrar.";
-    require_once("../components/modal.php");
+    require_once("../assets/components/modal.php");
 }
