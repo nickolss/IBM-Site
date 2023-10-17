@@ -42,7 +42,7 @@
       </div>
     </div>
 
-    <form action="cadastrarExperiencia.php" method="POST">
+    <form action="../assets/scripts/cadastrarExperiencia.php" method="POST">
       <div class="container__experiencia">
           <div class="experiencia__titulo">
               <h2>Diga sua experiência</h2>

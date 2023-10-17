@@ -71,7 +71,7 @@ require_once('../assets/scripts/iniciarSessao.php');
             </div>
 
             <!--ENDERECO E CARTAO-->
-            <form action="cadastrarCompra.php" method="POST">
+            <form action="../assets/scripts/cadastrarCompra.php" method="POST">
                 <div class="container__endereco-cartao">
                     <div class="container__endereco">
                         <h1>Endereço</h1>
