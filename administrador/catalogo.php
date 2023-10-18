@@ -34,7 +34,7 @@ require_once('../assets/scripts/conexao.php');
 
     <main class="principal">
         <div class="titulo">
-            <h1 class="mainTitle">Modificar Orçamento</h1>
+            <h1 class="mainTitle">Modificar Produtos</h1>
         </div>
 
         <div class="card-container">
