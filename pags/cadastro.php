@@ -189,7 +189,7 @@
                 <li class="lista__itens-turbinado">Fornecedores confiáveis</li>
               </ul>
               <p class="plano-turbinado__preco">apenas <span class="preco">R$29,90</span></p>
-              <a href="pagamentoTurbinadoCartao.php"><button type="submit" value="turbinado" class="formulario__botao formulario__botao--turbinado" name="plano">Cadastrar-se</button></a>
+              <button type="submit" value="turbinado" class="formulario__botao formulario__botao--turbinado" name="plano">Cadastrar-se</button>
             </div>
           </div>
         </section>
