@@ -1,7 +1,5 @@
 <?php
 	require_once('../assets/scripts/conexao.php');
-	require_once('../assets/scripts/iniciarSessao.php');
-	require_once('../assets/scripts/consultaCliente.php');
 	date_default_timezone_set("America/Sao_Paulo");
 	$dataAtual = date("Y-m-d");
 ?>
@@ -27,11 +25,11 @@
 <body id="container__body">
 
 	<?php
-	require_once('../assets/components/header.php');
+		require_once('../assets/components/header.php');
 	?>
 
 	<main>
-		<form action="" method="POST">
+		<form action="../assets/scripts/cadastrarClienteTurbinado.php" method="POST">
 			<div class="container__cartao">
 				<h1>Pagamento</h1>
 				<div class="cadastro">
@@ -57,7 +55,7 @@
 							<label for="address">CVV</label>
 						</div>
 						<div class="caixa__input caixa__input__margin">
-							<input type="text" required name="nomeCartao" id="nomeCartao" autocomplete="off" minlength="1" value="<?= $_SESSION['nomeCliente'] ?>">
+							<input type="text" required name="nomeCartao" id="nomeCartao" autocomplete="off" minlength="1">
 							<label for="numero">Nome Completo</label>
 						</div>
 					</div>
