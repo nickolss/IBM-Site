@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `email` varchar(150) NOT NULL,
   `senha` varchar(255) NOT NULL,
   `recuperar_senha` VARCHAR(220) DEFAULT NULL,
-  `plano` enum('comum', 'turbinado') NOT NULL,
+  `plano` enum('comum', 'turbinado', 'pendente') NOT NULL,
   `quantidadePontos` int DEFAULT NULL,
   `fotoPerfil` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`id`)
