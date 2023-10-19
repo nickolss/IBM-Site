@@ -9,7 +9,6 @@ $confirmaSenha = $_POST['confirmarSenha'];
 $telefoneForm = $_POST['tel'];
 $dataNascForm = $_POST['data'];
 $cpfForm = $_POST['cpf'];
-$planoForm = $_POST['plano'];
 $cep = $_POST['cep'];
 $rua = $_POST['address'];
 $numero = $_POST['numero'];
@@ -17,13 +16,13 @@ $complemento = $_POST['complemento'];
 $bairro = $_POST['neighborhood'];
 $cidade = $_POST['city'];
 $estado = $_POST['region'];
+$btnValue = $_POST['plano'];
 
 $senhaSegura = md5($senhaForm);
 $cpfSeguro = md5($cpfForm);
 $telefoneFormatado = str_replace(['(', ')', '-'], '', $telefoneForm);
 
-
-$sqlInsert = "INSERT INTO `cliente`(`cpf`, `nomeCompleto`, `dataNasc`, `telefone`, `email`, `senha`, `plano`, `quantidadePontos`, `fotoPerfil`) VALUES ('$cpfSeguro','$nomeForm','$dataNascForm','$telefoneFormatado','$emailForm','$senhaSegura','$planoForm','0', 'default-img-profile.svg')";
+$sqlInsert = "INSERT INTO `cliente`(`cpf`, `nomeCompleto`, `dataNasc`, `telefone`, `email`, `senha`, `plano`, `quantidadePontos`, `fotoPerfil`) VALUES ('$cpfSeguro','$nomeForm','$dataNascForm','$telefoneFormatado','$emailForm','$senhaSegura','comum','0', 'default-img-profile.svg')";
 
 $cadastrarCliente = $pdo->prepare($sqlInsert);
 
@@ -49,8 +48,24 @@ if ($cadastrarCliente->execute()) {
 
         header("Location: ../../pags/perfil.php");
     }
-
 }
+
+if($btnValue == "comum"){
+    header("Location: ../../pags/perfil.php");
+}else if($btnValue == "turbinado"){
+    $query_update_conta = "UPDATE `cliente` 
+                                SET `plano`='pendente'
+                                WHERE `id`='$idNovoCliente'
+                                LIMIT 1";
+    $stmt = $pdo->prepare($query_update_orcamento);
+
+    if($stmt->execute()){
+        header("Location: ../../pags/cadastrarTurbinadoCartao.php");
+    }
+}
+
+
+
 
 
 
