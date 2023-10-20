@@ -22,9 +22,9 @@ $pesq = "";
 if (isset($_GET['busca'])) {
 
     $pesquisa = ($_GET['busca']);
-    $sql = "SELECT codigoProduto FROM produto WHERE nome LIKE :pesquisa OR preco LIKE :pesquisa OR marca LIKE :pesquisa OR descricao LIKE :pesquisa OR customizações LIKE :pesquisa LIMIT $inicio, $limite";
+    $sql = "SELECT codigoProduto FROM produto WHERE nome LIKE :pesquisa OR preco LIKE :pesquisa OR marca LIKE :pesquisa OR descricao LIKE :pesquisa OR customizacoes LIKE :pesquisa LIMIT $inicio, $limite";
 
-    $calcPag = $pdo->query("SELECT COUNT(codigoProduto) count FROM produto WHERE nome LIKE '%$pesquisa%' OR preco LIKE '%$pesquisa%' OR marca LIKE '%$pesquisa%' OR descricao LIKE '%$pesquisa%' OR customizações LIKE '%$pesquisa%'")->fetch()["count"];
+    $calcPag = $pdo->query("SELECT COUNT(codigoProduto) count FROM produto WHERE nome LIKE '%$pesquisa%' OR preco LIKE '%$pesquisa%' OR marca LIKE '%$pesquisa%' OR descricao LIKE '%$pesquisa%' OR customizacoes LIKE '%$pesquisa%'")->fetch()["count"];
 
     $paginas = ceil($calcPag / $limite);
 
@@ -51,7 +51,7 @@ if (isset($_GET['busca'])) {
 
 
     //controle para exibição dos outros produtos
-    $sqlCont = "SELECT codigoProduto FROM produto WHERE nome LIKE :pesquisa OR preco LIKE :pesquisa OR marca LIKE :pesquisa OR descricao LIKE :pesquisa OR customizações LIKE :pesquisa";
+    $sqlCont = "SELECT codigoProduto FROM produto WHERE nome LIKE :pesquisa OR preco LIKE :pesquisa OR marca LIKE :pesquisa OR descricao LIKE :pesquisa OR customizacoes LIKE :pesquisa";
 
     $stmtCont = $pdo->prepare($sqlCont);
 
@@ -234,7 +234,7 @@ if (!empty($idsProdutos)) {
 
                     <?php foreach ($chunk as $idsProdutos) {
 
-                        $sql = "SELECT nome, preco, marca, descricao, customizações, caminho_imagem FROM produto WHERE codigoProduto = :idsProdutos";
+                        $sql = "SELECT nome, preco, marca, descricao, customizacoes, caminho_imagem FROM produto WHERE codigoProduto = :idsProdutos";
 
                         $stmt = $pdo->prepare($sql);
                         $stmt->bindParam(':idsProdutos', $idsProdutos, PDO::PARAM_INT);
@@ -245,7 +245,7 @@ if (!empty($idsProdutos)) {
                             $precoProduto = $row['preco'];
                             $marcaProduto = $row['marca'];
                             $descricaoProduto = $row['descricao'];
-                            $customizacaoProduto = $row['customizações'];
+                            $customizacaoProduto = $row['customizacoes'];
                             $imagemProduto = $row['caminho_imagem'];
                         }
 
@@ -382,7 +382,7 @@ if (!empty($idsProdutos)) {
 
                                     <?php foreach ($chunk2 as $naoEncontrados) {
 
-                                        $sql2 = "SELECT nome, preco, marca, descricao, customizações, caminho_imagem FROM produto WHERE codigoProduto = :naoEncontrados";
+                                        $sql2 = "SELECT nome, preco, marca, descricao, customizacoes, caminho_imagem FROM produto WHERE codigoProduto = :naoEncontrados";
 
                                         $stmt2 = $pdo->prepare($sql2);
                                         $stmt2->bindParam(':naoEncontrados', $naoEncontrados, PDO::PARAM_INT);
@@ -393,7 +393,7 @@ if (!empty($idsProdutos)) {
                                             $precoProduto2 = $row2['preco'];
                                             $marcaProduto2 = $row2['marca'];
                                             $descricaoProduto2 = $row2['descricao'];
-                                            $customizacaoProduto2 = $row2['customizações'];
+                                            $customizacaoProduto2 = $row2['customizacoes'];
                                             $imagemProduto2 = $row2['caminho_imagem'];
                                         }
 

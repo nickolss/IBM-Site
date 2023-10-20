@@ -29,6 +29,11 @@ SET
 --
 -- Banco de dados: `db_master`
 --
+
+CREATE DATABASE `db_master`;
+USE `db_master`;
+ALTER DATABASE `db_master` COLLATE = utf8_general_ci;
+
 -- --------------------------------------------------------
 --
 -- Estrutura da tabela `cliente`
@@ -48,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `quantidadePontos` int DEFAULT NULL,
   `fotoPerfil` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+) ENGINE = InnoDB DEFAULT COLLATE = utf8_general_ci;
 
 --
 -- Estrutura da tabela `cartao`
@@ -62,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `cartao`(
   `id_titular` int NOT NULL,
   PRIMARY KEY (`numero_cartao`),
   FOREIGN KEY (`id_titular`) REFERENCES `cliente`(`id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+) ENGINE = InnoDB DEFAULT COLLATE = utf8_general_ci;
 
 --
 -- Estrutura da tabela `funcionario`
@@ -74,11 +79,11 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
   `cpf` varchar(255) NOT NULL,
   `dataNasc` date NOT NULL,
   `telefone` varchar(12) NOT NULL,
-  `nome` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `email` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `senha` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `nome` varchar(200) COLLATE utf8_general_ci NOT NULL,
+  `email` varchar(200) COLLATE utf8_general_ci NOT NULL,
+  `senha` varchar(50) COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`rf`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+) ENGINE = InnoDB DEFAULT COLLATE = utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `funcionario`
@@ -142,11 +147,11 @@ CREATE TABLE IF NOT EXISTS `mecanico` (
   `cpf` varchar(255) NOT NULL,
   `dataNasc` date NOT NULL,
   `telefone` varchar(12) NOT NULL,
-  `nome` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `email` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `senha` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `nome` varchar(200) COLLATE utf8_general_ci NOT NULL,
+  `email` varchar(200) COLLATE utf8_general_ci NOT NULL,
+  `senha` varchar(50) COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`rf`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+) ENGINE = InnoDB DEFAULT COLLATE = utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `mecanico`
@@ -180,12 +185,12 @@ DROP TABLE IF EXISTS `produto`;
 
 CREATE TABLE IF NOT EXISTS `produto` (
   `codigoProduto` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(120) COLLATE utf8mb4_general_ci NOT NULL,
+  `nome` varchar(120) COLLATE utf8_general_ci NOT NULL,
   `preco` float NOT NULL,
   `pontos` int NOT NULL,
-  `marca` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `descricao` text COLLATE utf8mb4_general_ci NOT NULL,
-  `customizações` enum(
+  `marca` varchar(120) COLLATE utf8_general_ci DEFAULT NULL,
+  `descricao` text COLLATE utf8_general_ci NOT NULL,
+  `customizacoes` enum(
     'rebaixamento-dropped',
     'rebaixamento-slammed',
     'rebaixamento-hellaFlush',
@@ -217,7 +222,7 @@ CREATE TABLE IF NOT EXISTS `produto` (
     'acessorios-pecas-moto',
     'ferramentas-equipamentos',
     'vidro'
-  ) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  ) COLLATE utf8_general_ci DEFAULT NULL,
   `caminho_imagem` varchar(100) NOT NULL,
   `TG_categoria` enum(
     'RD',
@@ -254,7 +259,7 @@ CREATE TABLE IF NOT EXISTS `produto` (
     'VD'
   ) DEFAULT NULL,
   PRIMARY KEY (`codigoProduto`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+) ENGINE = InnoDB DEFAULT COLLATE = utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `produto`
@@ -267,7 +272,7 @@ INSERT INTO
     `pontos`,
     `marca`,
     `descricao`,
-    `customizações`,
+    `customizacoes`,
     `caminho_imagem`,
     `TG_categoria`
   )
@@ -684,7 +689,7 @@ CREATE TABLE IF NOT EXISTS `endereco`(
   `cep` varchar(8) NOT NULL,
   `id_morador` int NOT NULL,
   FOREIGN KEY (`id_morador`) REFERENCES `cliente`(`id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+) ENGINE = InnoDB DEFAULT COLLATE = utf8_general_ci;
 
 --
 -- Estrutura da tabela `avaliacao`
@@ -700,7 +705,7 @@ CREATE TABLE IF NOT EXISTS `avaliacao` (
   PRIMARY KEY (`id`),
   FOREIGN KEY (`id_escritor`) REFERENCES `cliente`(`id`),
   FOREIGN KEY (`id_produto`) REFERENCES `produto`(`codigoProduto`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+) ENGINE = InnoDB DEFAULT COLLATE = utf8_general_ci;
 
 --
 -- Estrutura da tabela `pedido`
@@ -716,7 +721,7 @@ CREATE TABLE IF NOT EXISTS `pedido` (
   `statusDaCompra` enum('aprovado', 'esperando-resposta', 'reprovado') NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`id_cliente`) REFERENCES `cliente`(`id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+) ENGINE = InnoDB DEFAULT COLLATE = utf8_general_ci;
 
 --
 -- Estrutura da Tabela `carro`
@@ -732,7 +737,7 @@ CREATE TABLE IF NOT EXISTS `carro`(
   `cor` varchar(100) NOT NULL,
   PRIMARY KEY(`idVeiculo`),
   FOREIGN KEY (`id_dono`) REFERENCES `cliente`(`id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+) ENGINE = InnoDB DEFAULT COLLATE = utf8_general_ci;
 
 --
 -- Estrutura da Tabela `agendamento`
@@ -748,7 +753,7 @@ CREATE TABLE IF NOT EXISTS `agendamento`(
   PRIMARY KEY(`data_agendamento`),
   FOREIGN KEY(`id_cliente`) REFERENCES `cliente`(`id`),
   FOREIGN KEY(`placa_carro`) REFERENCES `carro`(`placa`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+) ENGINE = InnoDB DEFAULT COLLATE = utf8_general_ci;
 
 --
 -- Estrutura da tabela `pedido_orcamento`
@@ -808,7 +813,7 @@ CREATE TABLE IF NOT EXISTS `favoritos` (
   PRIMARY KEY (`id`),
   FOREIGN KEY (`id_cliente`) REFERENCES `cliente`(`id`),
   FOREIGN KEY (`id_produto`) REFERENCES `produto`(`codigoProduto`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+) ENGINE = InnoDB DEFAULT COLLATE = utf8_general_ci;
 
 --
 -- Estrutura da tabela `produtosTroca`
@@ -832,7 +837,7 @@ CREATE TABLE IF NOT EXISTS `produtosTroca`(
   ) NOT NULL,
   `caminho_img` varchar(120) not null,
   PRIMARY KEY (`idProduto`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+) ENGINE = InnoDB DEFAULT COLLATE = utf8_general_ci;
 
 INSERT INTO
   `produtosTroca` (
@@ -927,7 +932,7 @@ CREATE TABLE IF NOT EXISTS `produtosComprados`(
   `id_comprador` int not null,
   PRIMARY KEY (`idCompra`),
   FOREIGN KEY (`id_comprador`) REFERENCES cliente (`id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+) ENGINE = InnoDB DEFAULT COLLATE = utf8_general_ci;
 
 --
 -- Estrutura da tabela `experienciaUser`
@@ -940,7 +945,7 @@ CREATE TABLE IF NOT EXISTS `experienciaUser`(
   `id_cliente` int not null,
   PRIMARY KEY (`idExperiencia`),
   FOREIGN KEY (`id_cliente`) REFERENCES cliente (`id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+) ENGINE = InnoDB DEFAULT COLLATE = utf8_general_ci;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
 ;

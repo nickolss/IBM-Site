@@ -6,7 +6,7 @@ require_once('../assets/scripts/consultaCliente.php');
 $id = (int)$_SESSION['id'];
 
 // Consulta SQL para obter os itens favoritados pelo usuário.
-$sqlFavoritos = "SELECT p.codigoProduto, p.nome AS nome_produto, p.preco, p.marca, p.descricao, p.customizações, p.caminho_imagem
+$sqlFavoritos = "SELECT p.codigoProduto, p.nome AS nome_produto, p.preco, p.marca, p.descricao, p.customizacoes, p.caminho_imagem
                 FROM favoritos AS f
                 INNER JOIN produto AS p ON f.id_produto = p.codigoProduto
                 WHERE f.id_cliente = :idCliente";
@@ -36,9 +36,9 @@ $pesq = "";
 if (isset($_GET['busca'])) {
 
     $pesquisa = ($_GET['busca']);
-    $sql = "SELECT codigoProduto FROM produto WHERE nome LIKE :pesquisa OR preco LIKE :pesquisa OR marca LIKE :pesquisa OR descricao LIKE :pesquisa OR customizações LIKE :pesquisa LIMIT $inicio, $limite";
+    $sql = "SELECT codigoProduto FROM produto WHERE nome LIKE :pesquisa OR preco LIKE :pesquisa OR marca LIKE :pesquisa OR descricao LIKE :pesquisa OR customizacoes LIKE :pesquisa LIMIT $inicio, $limite";
 
-    $calcPag = $pdo->query("SELECT COUNT(codigoProduto) count FROM produto WHERE nome LIKE '%$pesquisa%' OR preco LIKE '%$pesquisa%' OR marca LIKE '%$pesquisa%' OR descricao LIKE '%$pesquisa%' OR customizações LIKE '%$pesquisa%'")->fetch()["count"];
+    $calcPag = $pdo->query("SELECT COUNT(codigoProduto) count FROM produto WHERE nome LIKE '%$pesquisa%' OR preco LIKE '%$pesquisa%' OR marca LIKE '%$pesquisa%' OR descricao LIKE '%$pesquisa%' OR customizacoes LIKE '%$pesquisa%'")->fetch()["count"];
 
     $paginas = ceil($calcPag / $limite);
 
@@ -65,7 +65,7 @@ if (isset($_GET['busca'])) {
 
 
     //controle para exibição dos outros produtos
-    $sqlCont = "SELECT codigoProduto FROM produto WHERE nome LIKE :pesquisa OR preco LIKE :pesquisa OR marca LIKE :pesquisa OR descricao LIKE :pesquisa OR customizações LIKE :pesquisa";
+    $sqlCont = "SELECT codigoProduto FROM produto WHERE nome LIKE :pesquisa OR preco LIKE :pesquisa OR marca LIKE :pesquisa OR descricao LIKE :pesquisa OR customizacoes LIKE :pesquisa";
 
     $stmtCont = $pdo->prepare($sqlCont);
 
@@ -249,7 +249,7 @@ if (!empty($idsProdutos)) {
                 <?php if (!empty($resultadoFavoritos)) { ?>
                     <?php foreach ($resultadoFavoritos as $produtoFavoritado) {
 
-                        $sql = "SELECT nome, preco, marca, descricao, customizações, caminho_imagem FROM produto WHERE codigoProduto = :idsProdutos";
+                        $sql = "SELECT nome, preco, marca, descricao, customizacoes, caminho_imagem FROM produto WHERE codigoProduto = :idsProdutos";
 
                         $stmt = $pdo->prepare($sql);
                         $idsProdutosImploded = implode(",", $idsProdutos);
@@ -260,7 +260,7 @@ if (!empty($idsProdutos)) {
                         $precoProduto = $produtoFavoritado['preco'];
                         $marcaProduto = $produtoFavoritado['marca'];
                         $descricaoProduto = $produtoFavoritado['descricao'];
-                        $customizacaoProduto = $produtoFavoritado['customizações'];
+                        $customizacaoProduto = $produtoFavoritado['customizacoes'];
                         $imagemProduto = $produtoFavoritado['caminho_imagem'];
 
                     ?>

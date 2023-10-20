@@ -17,7 +17,7 @@
     $caminhoSalvar = $pastaSalvar . $nomeImagem;
     $moverImagem = move_uploaded_file($imagemProd['tmp_name'] , $caminhoSalvar);
 
-    $sqlUpdate = $pdo->prepare("UPDATE `produto` SET `nome`='$nome',`preco`='$preco',`marca`='$marca',`descricao`='$descricao',`customizações`='$categoria',`caminho_imagem`='$caminhoBD' WHERE codigoProduto=$id");
+    $sqlUpdate = $pdo->prepare("UPDATE `produto` SET `nome`='$nome',`preco`='$preco',`marca`='$marca',`descricao`='$descricao',`customizacoes`='$categoria',`caminho_imagem`='$caminhoBD' WHERE codigoProduto=$id");
 
 
 
