@@ -40,7 +40,7 @@ if ($cadastrarCliente->execute()) {
         $_SESSION['dataNasc'] = $dataNascForm;
         $_SESSION['cpf'] = $cpfForm;
         $_SESSION['senha'] = $senhaForm;
-        $_SESSION['plano'] = $planoForm;
+        $_SESSION['plano'] = $btnValue;
         $_SESSION['quantidadePontos'] = 0;
         $_SESSION['fotoPerfil'] = null;
 
