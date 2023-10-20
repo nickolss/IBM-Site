@@ -53,14 +53,15 @@ if ($cadastrarCliente->execute()) {
 if($btnValue == "comum"){
     header("Location: ../../pags/perfil.php");
 }else if($btnValue == "turbinado"){
+    $id = $_SESSION['id'];
     $query_update_conta = "UPDATE `cliente` 
                                 SET `plano`='pendente'
-                                WHERE `id`='$idNovoCliente'
+                                WHERE `id`='$id'
                                 LIMIT 1";
-    $stmt = $pdo->prepare($query_update_orcamento);
+    $stmt = $pdo->prepare($query_update_conta);
 
     if($stmt->execute()){
-        header("Location: ../../pags/cadastrarTurbinadoCartao.php");
+        header("Location: ../../pags/pagamentoTurbinadoCartao.php");
     }
 }
 
