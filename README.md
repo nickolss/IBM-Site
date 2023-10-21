@@ -25,4 +25,4 @@ https://turnmotors.000webhostapp.com/
 https://www.figma.com/file/FXDHyWOdhXAOsQnZqPngAq/alta-fidelidade?node-id=0%3A1
 
 ## Agradecimentos
-Obrigado por acessarem nosso repositório e site. Esperamos que tenham gostado.
+Obrigado por visitarem nosso repositório e site. Esperamos que tenham encontrado as informações que procuravam. Se precisarem de ajuda, não hesitem em nos contatar.
