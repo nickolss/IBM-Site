@@ -64,16 +64,16 @@ $caminhoImagem = $produto[0]['caminho_imagem'];
 			<div class="row">
 				<div class="col alinhar">
 					<div class="" id="box1" style="margin-top: 50px;">
-						<img class="vg-img1 img-fluid " src="../assets/img/adesivo.svg">
+						<img class="vg-img1 img-fluid " src="<?= $caminhoImagem ?>">
 					</div>
 					<br>
 					<br>
 					<div>
-						<h1 class="vg-tite">Adesivo</h1>
+						<h1 class="vg-tite"><?= $nomeProduto ?></h1>
 						<img width="30px" src="../assets/img/estrela.svg"><img style="margin: 0px 10px" width="30px" src="../assets/img/estrela.svg"><img width="30px" src="../assets/img/estrela.svg"><img style="margin: 0px 10px" width="30px" src="../assets/img/estrela.svg"><img class="" width="30px" src="../assets/img/estrela.svg">
-						<h2 style="margin-top: 10px; margin-bottom: 50px; font-weight: bold;">R$200,00</h2>
+						<h2 style="margin-top: 10px; margin-bottom: 50px; font-weight: bold;">R$<?= $precoProduto ?></h2>
 						<h3 style="font-weight: bold;">Sobre este item:</h3>
-						<p class="" style="font-size: 1.1em;">Se você busca inovar no estilo do seu veículo, mas sem alterar muito, adquira já adesivo. Você, cliente Turn Motors, pode escolher como será o adesivo, com a garantia que o adesivo não poderá estragar a lataria de seu automóvel</p>
+						<p class="" style="font-size: 1.1em;"><?= $descricao ?></p>
 						<a class="vg-b" href="conf-compra.html"><button class="vg-btn">Comprar</button></a>
 					</div>
 				</div>
