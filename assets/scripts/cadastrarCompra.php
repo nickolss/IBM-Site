@@ -60,7 +60,9 @@
                                 $sqlInsertPontosCliente = $pdo->prepare("UPDATE `cliente` SET `quantidadePontos`='$quantidadePontoFinal' WHERE `id`='$idUser' LIMIT 1");
                                 $sqlInsertPontosCliente->execute();
                             }
-
+                            
+                            // Limpar todos os itens do carrinho
+                            $_SESSION['carrinho'] = array();
 
                             $tituloModal = "Compra realizada com sucesso!";
                             $textoModal = "Obrigado pela preferência!";
