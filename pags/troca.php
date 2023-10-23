@@ -45,7 +45,7 @@
 				<p class="troca__info"> <?= $descricao ?></p>
 
 				<!--ESSE BOTAO TAMBEM TERÁ QUE RETIRAR OS PONTOS DO PERFIL DE ACORDO COM OS PONTOS DO PRODUTO-->
-				<form action="trocaFeita.php?pontos=<?= $pontos ?>" method="POST">
+				<form action="../assets/scripts/realizarTroca.php" method="POST">
 					<button class="botao__troca" type="submit">Trocar com meus Pontos</button>
 				</form>
 			</div>
@@ -53,7 +53,7 @@
 	</main>
 
 	<?php
-	require_once('../assets/components/footer.php');
+		require_once('../assets/components/footer.php');
 	?>
 
 </body>
