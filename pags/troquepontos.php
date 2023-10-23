@@ -1,5 +1,10 @@
 <?php 
   require_once('../assets/scripts/iniciarSessao.php');
+  if($_SESSION['plano'] != 'turbinado'){
+      $tituloModal = "Função apenas para clientes turbinados!";
+      $textoModal = "Aprimore seu plano para acessar essa área.";
+      require_once('../assets/components/modal.php');
+  }
 ?>
 
 <!DOCTYPE html>
