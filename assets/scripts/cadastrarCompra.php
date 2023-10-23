@@ -42,33 +42,31 @@
                         //caso a variavel $sqlInsertCompra tenha sido executada:
                         if($sqlInsertCompra->execute()){
 
-                            //query SQL para selecionar a quantidade de pontos da tabela cliente 
-                            $sqlSelectPontosCliente = $pdo->query("SELECT `quantidadePontos` FROM `cliente` WHERE `id`='$idUser'");
-                            $sqlSelectPontosCliente->execute();
-                            
-                            //os dados serão retornados em um array associativo 
-                            $tuplaQuantidadePontos = $sqlSelectPontosCliente->fetch(PDO::FETCH_ASSOC);
+                            if($_SESSION['plano'] == 'turbinado'){
+                                //query SQL para selecionar a quantidade de pontos da tabela cliente 
+                                $sqlSelectPontosCliente = $pdo->query("SELECT `quantidadePontos` FROM `cliente` WHERE `id`='$idUser'");
+                                $sqlSelectPontosCliente->execute();
+                                
+                                //os dados serão retornados em um array associativo 
+                                $tuplaQuantidadePontos = $sqlSelectPontosCliente->fetch(PDO::FETCH_ASSOC);
 
-                            //atribuindo o valor do registro do campo quantidadePontos, acessado pelo array, a variavel $quantidadePontosAtual
-                            $quantidadePontosAtual = $tuplaQuantidadePontos['quantidadePontos'];
+                                //atribuindo o valor do registro do campo quantidadePontos, acessado pelo array, a variavel $quantidadePontosAtual
+                                $quantidadePontosAtual = $tuplaQuantidadePontos['quantidadePontos'];
 
-                            //atribuindo a variavel $quantidadePontoFinal a soma entre a quantidade de pontos atual do cliente e a quantidade de pontos do produto especifico
-                            $quantidadePontoFinal = $pontoProduto + $quantidadePontosAtual;
+                                //atribuindo a variavel $quantidadePontoFinal a soma entre a quantidade de pontos atual do cliente e a quantidade de pontos do produto especifico
+                                $quantidadePontoFinal = $pontoProduto + $quantidadePontosAtual;
 
-                            //atualizando o campo 'quantidadePontos' e atribuindo o novo valor sendo a quantidade final de pontos
-                            $sqlInsertPontosCliente = $pdo->prepare("UPDATE `cliente` SET `quantidadePontos`='$quantidadePontoFinal' WHERE `id`='$idUser' LIMIT 1");
-
-                            //caso a variavel $sqlInsertPontosCliente tenha sido executada:
-                            if($sqlInsertPontosCliente->execute()){
-                                $tituloModal = "Compra realizada com sucesso!";
-                                $textoModal = "Obrigado pela preferência!";
-                                require_once('../components/modal.php');
+                                //atualizando o campo 'quantidadePontos' e atribuindo o novo valor sendo a quantidade final de pontos
+                                $sqlInsertPontosCliente = $pdo->prepare("UPDATE `cliente` SET `quantidadePontos`='$quantidadePontoFinal' WHERE `id`='$idUser' LIMIT 1");
+                                $sqlInsertPontosCliente->execute();
                             }
+
+
+                            $tituloModal = "Compra realizada com sucesso!";
+                            $textoModal = "Obrigado pela preferência!";
+                            require_once('../components/modal.php');
                         }
                     }
-
-                
-
             }
         ?>
     </body>
