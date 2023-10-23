@@ -275,12 +275,6 @@ if (!empty($idsProdutos)) {
                                         <div class="card-produto-dinamico-preco-button">
 
                                             <div class="card-produto-dinamico-preco-button-texto"><?= $precoProduto ?> Pontos</div>
-                                            <form method="POST" action="?adicionar=<?= $idsProdutos ?>">
-                                                <button type="submit" name="adicionar" value="<?= $idsProdutos ?>">
-                                                    <img class="carrinho__icone" src="../assets/img/icone-carrinho-vermelho.svg" alt="">
-                                                </button>
-                                            </form>
-
                                         </div>
 
 
