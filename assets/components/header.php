@@ -26,8 +26,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }else{
             $naoEncontrados = [];
         }
+
+        if(isset($idsProdutosPermitidos)){
+            $idsProdutosPermitidos;
+        }else{
+            $idsProdutosPermitidos = [];
+        }
     // Verifique se o ID do produto existe no array de IDs de produtos
-    if (in_array($idProd, $naoEncontrados) || in_array($idProd, $idsProdutosPermitidos)) {
+    if (in_array($idProd, $naoEncontrados) || in_array($idProd, $idsProdutosPermitidos) || isset($idsProdutos[$idProd])) {
          
         
       
