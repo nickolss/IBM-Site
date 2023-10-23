@@ -34,15 +34,16 @@ if ($_SESSION['plano'] != 'comum' && $_SESSION['plano'] != 'turbinado') {
 	<!-- Arquivos do Bootstrap -->
 	<link rel="stylesheet" href="../assets/css/css-bootstrap/bootstrap.min.css">
 	<script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+	
 	<link rel="stylesheet" href="../assets/css/estilos-importantes.css" />
 	<link rel="stylesheet" href="../assets/css/perfil.css">
 	<link rel="stylesheet" href="../assets/css/trocarFoto.min.css">
 
 	<link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon" />
 
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
 	<script src="../assets/js/trocarFoto.js" defer></script>
+	<script type="text/javascript" src="../assets/js/java.js" defer></script>
 </head>
 
 <body id="container__body">
