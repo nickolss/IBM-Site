@@ -7,7 +7,7 @@ if (isset($_POST['carrinho'])) {
     $carrinho = [];
     parse_str($carrinhoData, $carrinho);
 
-    // Agora, você pode usar $carrinho para exibir as informações do carrinho
+   
 }
 
 if (isset($_POST['limpar_carrinho_btn'])) {

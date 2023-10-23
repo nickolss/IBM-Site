@@ -20,12 +20,17 @@ require_once('../assets/scripts/iniciarSessao.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['adicionar'])) {
         $idProd = (int)$_POST['adicionar'];
-        
-        $idProd--;
-    
+     
+        if(isset($naoEncontrados)){
+            $naoEncontrados;
+        }else{
+            $naoEncontrados = [];
+        }
     // Verifique se o ID do produto existe no array de IDs de produtos
-    if (isset($idsProdutos[$idProd])) {
-        $idProd++;
+    if (in_array($idProd, $naoEncontrados) || in_array($idProd, $idsProdutosPermitidos)) {
+         
+        
+      
         $codigoProdutoAdd = $idProd;
        
 
@@ -62,6 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             die('Erro ao executar a consulta.');
         }
+       
     } else {
         echo 'ID do produto inválido.';
         
@@ -71,15 +77,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     } elseif (isset($_POST['subtrair'])) {
         $idProdutoRemover = (int)$_POST['subtrair'];
-        
+           
+           
             // Verifique se o produto está no carrinho antes de removê-lo
         if (isset($_SESSION['carrinho'][$idProdutoRemover])) {
             // Verifique se a quantidade é maior do que 1 antes de subtrair
             if ($_SESSION['carrinho'][$idProdutoRemover]['quantidade'] > 1) {
                 $_SESSION['carrinho'][$idProdutoRemover]['quantidade']--;
+                
             } else {
                 // Se a quantidade for 1, remova o produto do carrinho
                 unset($_SESSION['carrinho'][$idProdutoRemover]);
+               
             }
         }
 
@@ -94,6 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Remova o produto do carrinho
     
                 unset($_SESSION['carrinho'][$idProdutoRemover]);
+               
             } else {
     
                 echo '<script>alert("O item não está no carrinho");</script>';
@@ -144,29 +154,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                     ?>
 
                                                         <tr>
-                                                            <td class="img__table__header_carrinho" style="width: 40%;"> <img src="<?= $value['caminho_imagem'] ?>" alt="..."> </td>
+                                                            <td class="img__table__header_carrinho" style="width: 40%;"> <img src="<?php echo $value['caminho_imagem'] ?>" alt="..."> </td>
 
                                                             <td class="info__table__header_carrinho">
                                                                 <div>
-                                                                    <h2> <?= $value['nome'] ?></h2>
+                                                                    <h2> <?php echo $value['nome'] ?></h2>
                                                                 </div>
                                                                 <div>
-                                                                    <h3>R$: <?= $value['preco'] ?></h3>
+                                                                    <h3>R$: <?php echo number_format($value['preco'], 2, ',', '.')  ?></h3>
                                                                 </div>
                                                                 <div class="table_itens__header__carrinho__config">
                                                                     <div class="table__itens_header_carrinho_botoes">
-                                                                        <form method="POST" action="?subtrair=<?= $idProd ?>">
-                                                                            <button id="botaoSubtrair_carrinho_header" type="submit" name="subtrair" value="<?= $idProd ?>">-</button>
+                                                                        <form method="POST" action="<?php echo $_SERVER['REQUEST_URI'] ?>&subtrair=<?php echo $idProd ?>">
+                                                                            <button id="botaoSubtrair_carrinho_header" type="submit" name="subtrair" value="<?php echo $idProd ?>">-</button>
                                                                         </form>
 
-                                                                        <span id="contador_carrinho_header"> <?= $value['quantidade'] ?></span>
-                                                                        <form method="POST" action="?adicionar=<?= $idProd ?>">
-                                                                            <button id="botaoAcrescentar_carrinho_header" type="submit" name="adicionar" value="<?= $idProd ?>">+</button>
+                                                                        <span id="contador_carrinho_header"> <?php echo $value['quantidade'] ?></span>
+                                                                        <form method="POST" action="<?php echo $_SERVER['REQUEST_URI'] ?>&adicionar=<?php echo $idProd ?>">
+                                                                            <button id="botaoAcrescentar_carrinho_header" type="submit" name="adicionar" value="<?php echo $idProd ?>">+</button>
                                                                         </form>
                                                                     </div>
 
-                                                                    <form method="POST" action="?remover=<?= $idProd ?>">
-                                                                        <button style="border: none; color: #003445; background-color: #fff; text-decoration: none" type="submit" name="remover" value="<?= $idProd ?>">Excluir</button>
+                                                                    <form method="POST" action="<?php echo $_SERVER['REQUEST_URI'] ?>&remover=<?php echo $idProd ?>">
+                                                                        <button style="border: none; color: #003445; background-color: #fff; text-decoration: none" type="submit" name="remover" value="<?php echo $idProd ?>">Excluir</button>
                                                                     </form>
 
 
@@ -184,12 +194,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                         <br>
                                         <br>
                                         <div class="carrinho__header__finalizacao">
-                                            <p class="fs-2">Total: <?= $totalCarrinho ?>R$</p>
+                                            <p class="fs-2">Total: R$<?php echo number_format($totalCarrinho, 2, ',', '.') ?></p>
                                             <div class="text-center">
                                             <form method="POST" action="../pags/carrinho.php">
-                                                <input type="hidden" name="carrinho" value="<?= http_build_query($_SESSION['carrinho']); ?>">
-                                                <button id="btn__ver-carrinho" type="submit"> Ver Carrinho</button>
+                                                <input type="hidden" name="carrinho" value="<?php echo http_build_query($_SESSION['carrinho']); ?>">
+                                                <button type="submit"> Ver Carrinho</button>
                                             </form>
+                                                <a style="text-decoration: none; color: #003445" href="">Frete grátis com o Plano Turbinado</a>
                                             </div>
 
 
@@ -350,11 +361,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Veículos</span></a></li>
                                 <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Compras</span></a></li>
                                 <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Orçamentos</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Agendamentos Pendentes</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Agendamentos Confirmados</span></a></li>
+                                <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Agendamentos</span></a></li>
                                 <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Plano</span></a></li>
-                                <li><a class="dropdown-item" href="./favoritos.php"><span class="opcao__navbar__mobile">Favoritos</span></a></li>
-								<li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Pontos</span></a></li>
 
                             </ul>
                         </li>
@@ -376,7 +384,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <nav class="header_search_aparecer ">
 
 
-            <div class="container  text-center">
+            <div style="margin-top: 0px" class="container  text-center">
                 <div class="row align-items-center" style="height: 150px;">
                     <div class="col " style="padding: 0px 20px;">
                         <div class="header_search">
