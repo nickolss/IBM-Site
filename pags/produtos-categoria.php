@@ -247,33 +247,33 @@ if (isset($_GET['busca'])) {
 
 
 <?php 
-    if(!empty($pesquisa)){
+    if(!empty($pesquisa)){ ?>
        
-        echo '<div  class="container">';
-        echo '<br>';
-        echo "<div><h5>Busca por: '$pesq'</h5></div>";
-        echo '</div>';
-
-        if(empty($idsProdutos)){
-           echo '<div style="margin-top: 0px" class="container">';
-           echo '<br>';
-           echo '<div><h5 style="font-weight: bold">Nenhum produto encontrado!</h5></div>';
-           echo '</div>';
-        }else{}
+        <div  class="container">
+        <br>
+        <div><h5>Busca por: '<?=$pesq?>'</h5></div>
+        </div>
+<?php
+        if(empty($idsProdutos)){ ?>
+           <div style="margin-top: 0px" class="container">
+           <br>
+           <div><h5 style="font-weight: bold">Nenhum produto encontrado!</h5></div>
+           </div>
+    <?php    }else{} 
          
-    }else{
+    }else{ ?>
       
-        echo '<div class="container">';
-        echo "<div class='main__title'>Navegue pelos produtos $msgNav</div>";
-        echo '<br>';
-        echo '<br class="espaco_invisivel2">';
-        echo '<br class="espaco_invisivel2">';
-        echo '<br class="espaco_invisivel2">';
-        echo '<br class="espaco_invisivel2">';
-        echo '<br class="espaco_invisivel2">';
-        echo '<br class="espaco_invisivel2">';
-        echo '</div>';
-    } ?>
+        <div class="container">
+        <div class='main__title'>Navegue pelos produtos $msgNav</div>
+        <br>
+        <br class="espaco_invisivel2">
+        <br class="espaco_invisivel2">
+        <br class="espaco_invisivel2">
+        <br class="espaco_invisivel2">
+        <br class="espaco_invisivel2">
+        <br class="espaco_invisivel2">
+        </div>
+ <?php   } ?>
 
 <?php if(!empty($chunksProdutos)){
     foreach ($chunksProdutos as $chunk) { ?>
@@ -467,12 +467,12 @@ if (isset($_GET['busca'])) {
 <br>
 <div><h5>Outras Opções:</h5></div>
 </div>
-<?php if(empty($naoEncontrados)){
-    echo '<div style="margin-top: 0px" class="container">';
-    echo '<br>';
-    echo '<div><h5 style="font-weight: bold">Sem Sugestões!</h5></div>';
-    echo '</div>';
-}else{ ?>
+<?php if(empty($naoEncontrados)){ ?>
+    <div style="margin-top: 0px" class="container">
+    <br>
+    <div><h5 style="font-weight: bold">Sem Sugestões!</h5></div>
+    </div>
+<?php }else{ ?>
 
 <?php if(!empty($chunksProdutos2)){
     foreach ($chunksProdutos2 as $chunk2) { ?>
