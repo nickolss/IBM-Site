@@ -1,11 +1,12 @@
 <?php
-require_once('../assets/scripts/conexao.php');
-require_once('../assets/scripts/iniciarSessao.php');
+    require_once('../assets/scripts/conexao.php');
+    require_once('../assets/scripts/iniciarSessao.php');
+    require_once('../assets/scripts/consultaCliente.php');
 ?>
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -25,17 +26,17 @@ require_once('../assets/scripts/iniciarSessao.php');
 
 <body id="container__body">
     <?php
-    require_once('../assets/components/header.php');
+        require_once('../assets/components/header.php');
     ?>
 
     <main>
         <?php
-        $id = $_SESSION['id'];
-        $sql = "SELECT * FROM `endereco` WHERE `id_morador` = '$id'";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute();
-        $quantidadeTupla = $stmt->rowCount();
-        $endereco = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $id = $_SESSION['id'] || null;
+            $sql = "SELECT * FROM `endereco` WHERE `id_morador` = '$id'";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            $quantidadeTupla = $stmt->rowCount();
+            $endereco = $stmt->fetchAll(PDO::FETCH_ASSOC);
         ?>
 
         <div class="container__endereco-cartao-resumo">
@@ -77,7 +78,17 @@ require_once('../assets/scripts/iniciarSessao.php');
                         <h1>Endereço</h1>
                         <div class="cadastro">
                             <div class="caixa__input">
-                                <input type="text" required name="cep" id="cep" autocomplete="off" minlength="8" maxlength="8" value="<?= $endereco[0]['cep'] ?>">
+                                <?php
+                                    if($_SESSION['id'] == null){
+                                    ?>
+                                        <input type="text" required name="cep" id="cep" autocomplete="off" minlength="8" maxlength="8">
+                                    <?php
+                                    }else{
+                                    ?>
+                                        <input type="text" required name="cep" id="cep" autocomplete="off" minlength="8" maxlength="8" value="<?= $endereco[0]['cep'] ?>">
+                                    <?php
+                                    }
+                                ?>
                                 <label for="cep">CEP</label>
                             </div>
                             <div class="input__endereco">
