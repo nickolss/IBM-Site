@@ -133,6 +133,12 @@ hr.card-produto-dinamico-linha{
     transition-duration: 0.7s;
 }
 
+.link__produto, .link__produto:hover{
+    text-decoration: none;
+    color: var(--preto);
+}
+
+
 @media (max-width:1199px) {
     .legal {
         margin-bottom: 50px
