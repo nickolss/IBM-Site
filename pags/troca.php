@@ -43,9 +43,12 @@
 				<h2>Pontos: <?= $pontos ?></h2>
 				<h3>Sobre esse item:</h3>
 				<p class="troca__info"> <?= $descricao ?></p>
-
-				<!--ESSE BOTAO TAMBEM TERÁ QUE RETIRAR OS PONTOS DO PERFIL DE ACORDO COM OS PONTOS DO PRODUTO-->
-				<form action="../assets/scripts/realizarTroca.php" method="POST">
+				
+				<?php
+					$pontosProdutoTroca = $pontos;
+				?>
+				
+				<form action="../assets/scripts/realizarTroca.php?pontos=<?=$pontosProdutoTroca?>" method="POST">
 					<button class="botao__troca" type="submit">Trocar com meus Pontos</button>
 				</form>
 			</div>
