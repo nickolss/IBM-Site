@@ -14,25 +14,24 @@ const conferirSenhas = () => {
 const regexTel = /^\(\d{2}\)\d{5}-\d{4}$/;
 const telefone = document.querySelector("input[name=tel]");
 
-telefone.addEventListener("keypress", () => {
-	if(regexTel.test(telefone.value)){
-		console.log("FUNCIONA")
+$('#tel').on("keyup", (event) => {
+	if (regexTel.test(telefone.value)) {
 		telefone.setCustomValidity('')
-	}else{
-		console.log("N FUNCIONA")
+	} else {
 		telefone.setCustomValidity("Formato de telefone não esperado.")
 	}
-});
+})
+
 
 
 //Verifica se o cpf atende o formato esperado
 const regexCpf = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/;
 const cpfForm = document.querySelector('input[name=cpf]')
 
-cpfForm.addEventListener("keypress", () => {
-	if(regexCpf.test(cpfForm.value)){
+$('#cpf').on("keyup", (event) => {
+	if (regexCpf.test(cpfForm.value)) {
 		cpfForm.setCustomValidity('')
-	}else{
+	} else {
 		cpfForm.setCustomValidity("O CPF digitado não atende o padrão esperado.")
 	}
-});
+})
