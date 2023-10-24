@@ -2,6 +2,7 @@
 require_once('../assets/scripts/conexao.php');
 $nomeProduto = $_GET['nomeProduto'];
 $produtoSql = $pdo->query(("SELECT * FROM `produto` WHERE nome='$nomeProduto'"));
+
 $produto = $produtoSql->fetchAll();
 $precoSemFormatacao = $produto[0]['preco'];
 
@@ -9,6 +10,7 @@ $precoProduto = number_format($precoSemFormatacao , 2 , ',' , '.');
 
 $descricao = $produto[0]['descricao'];
 $caminhoImagem = $produto[0]['caminho_imagem'];
+$id = $produto[0]['codigoProduto'];
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +57,9 @@ $caminhoImagem = $produto[0]['caminho_imagem'];
 						<h2 style="margin-top: 10px; font-weight: bold;">R$<?= $precoProduto ?></h2>
 						<h3 style="font-weight: bold;">Sobre este item:</h3>
 						<p style="font-size: 1.1em;"><?= $descricao ?></p>
-						<a class="vg-b" href="conf-compra.html"><button class="vg-btn">Comprar</button></a>
+						<form method="POST" action="carrinho.php?adicionar=<?php echo $id; ?>">
+						<button class="vg-btn" type="submit" name="adicionar" value="<?php echo $id; ?>">Comprar</button>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -74,7 +78,9 @@ $caminhoImagem = $produto[0]['caminho_imagem'];
 						<h2 style="margin-top: 10px; margin-bottom: 50px; font-weight: bold;">R$<?= $precoProduto ?></h2>
 						<h3 style="font-weight: bold;">Sobre este item:</h3>
 						<p class="" style="font-size: 1.1em;"><?= $descricao ?></p>
-						<a class="vg-b" href="conf-compra.html"><button class="vg-btn">Comprar</button></a>
+						<form method="POST" action="carrinho.php?adicionar=<?php echo $id; ?>">
+						<button class="vg-btn" type="submit" name="adicionar" value="<?php echo $id; ?>">Comprar</button>
+						</form>
 					</div>
 				</div>
 			</div>

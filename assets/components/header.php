@@ -20,20 +20,23 @@ require_once('../assets/scripts/iniciarSessao.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['adicionar'])) {
         $idProd = (int)$_POST['adicionar'];
-     
-        if(isset($naoEncontrados)){
-            $naoEncontrados;
-        }else{
-            $naoEncontrados = [];
+
+        $sql = "SELECT codigoProduto FROM produto";
+        $stmt = $pdo->prepare($sql);
+        if ($stmt->execute()) {
+
+            $idsProdutosPermitidos = [];
+            while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $idsProdutosPermitidos[] = $linha['codigoProduto'];
+            }
+        } else {
+            echo "Erro na consulta: " . $stmt->errorInfo()[2];
         }
 
-        if(isset($idsProdutosPermitidos)){
-            $idsProdutosPermitidos;
-        }else{
-            $idsProdutosPermitidos = [];
-        }
+
+       
     // Verifique se o ID do produto existe no array de IDs de produtos
-    if (in_array($idProd, $naoEncontrados) || in_array($idProd, $idsProdutosPermitidos) || isset($idsProdutos[$idProd])) {
+    if (in_array($idProd, $idsProdutosPermitidos)) {
          
         
       

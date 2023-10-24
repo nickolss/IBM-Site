@@ -21,7 +21,7 @@ $totalItens = 0; // Variável para calcular a quantidade total de itens
 foreach ($_SESSION['carrinho'] as $idProd => $value) {
     $subtotal = $value['preco'] * $value['quantidade'];
     $totalCarrinho += $subtotal;
-    $totalItens += $value['quantidade'];
+    
   
 }
 
@@ -110,7 +110,8 @@ if ($stmt->execute()) {
     </div>
     
         <hr>
-        <?php } ?>
+        <?php $totalItens += $value['quantidade'];
+    } ?>
         <div class="row">
             <div class="col">
                <h6 class="texto__total-preco text-end">SubTotal (<?php echo $totalItens; ?> itens): <strong>R$: <?php echo $totalCarrinho; ?></strong></h6>
