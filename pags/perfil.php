@@ -3,7 +3,8 @@
 require_once('../assets/scripts/conexao.php');
 require_once('../assets/scripts/iniciarSessao.php');
 require_once('../assets/scripts/consultaCliente.php');
-$idDono = $_SESSION['id'];
+
+$idDono = $_SESSION['id'] || null;
 $sqlCarro = $pdo->query("SELECT * FROM `carro` WHERE id_dono = $idDono");
 $carros = $sqlCarro->fetchAll();
 $placa = $carros[0]['placa'] ?? "";
