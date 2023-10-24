@@ -63,13 +63,6 @@ require_once('../assets/scripts/iniciarSessao.php');
                                     <p class="text-title"> <?= $produtoFinal['nome'] ?> </p>
                                     <p class="text-body"> <?= $produtoFinal['descricao'] ?> </p>
                                 </div>
-                                <div class="card-footer">
-                                    <label for="preco">R$ <?= $produtoFinal["preco"] ?> </label>
-                                    <div class="footer__botoes">
-                                        <button class="botao__funcao" value=<?= $produtoFinal['codigoProduto'] ?> formaction="../assets/scripts/excluirProduto.php" name="btn-pedido-orcamento" id="btn-pedido-orcamento" type="submit"><i class="icones__modificar-produto bx bx-trash"></i></button>
-                                        <button class="botao__funcao" value=<?= $produtoFinal['codigoProduto'] ?> formaction="./modificar-produto.php" name="btn-pedido-orcamento" id="btn-pedido-orcamento" type="submit"><i class="icones__modificar-produto bx bx-edit-alt"></i></button>
-                                    </div>
-                                </div>
                             </div>
                         </form>
             <?php
