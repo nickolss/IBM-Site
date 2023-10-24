@@ -119,52 +119,6 @@ require_once('../assets/scripts/iniciarSessao.php');
             </div>
         </div>
 
-        <!--<div id="header">
-            <div class="conj_header_menu">
-                <ul id="form_header_menu">
-                    <li> <a class="cabeca" href="personalizacoes.php">Personalizações</a> </li>
-                    <li> <a class="cabeca" href="produtos.php">Produtos</a> </li>
-                    <li> <a class="cabeca" href="aboutus.php">Sobre Nós</a> </li>
-                    <li> 
-                        <a class="cabeca" href="index.php"> 
-                            <figure class="figure-container">
-                                <img width="90px" src="../assets/img/logo-turnmotors.png" alt="Logo Turn Motors" />
-                                <figcaption class="legenda__icones__atividade" id="title__header">TURN MOTORS</figcaption>
-                            </figure> 
-                        </a>
-                    </li>
-                    <li> <img class="lupa" width="50px" height="auto" src="../assets/img/icone-search.svg" alt="Pesquisar"> </li>
-                    <li> <img id="carrinho" width="50px" src="../assets/img/icone-carrinho.svg" alt="Carrinho"> </li>
-                    <li> <a class="cabeca" href="../pags/login.php"> <img width="50px" src="../assets/img/icone-perfil.svg" alt="Login"> </a> </li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="header">
-            <div class="conj_header_menu">
-                <ul id="form_header_menu">
-                    <li> 
-                        <a class="cabeca" href="index.php"> 
-                            <figure class="figure-container">
-                                <img width="90px" src="../assets/img/logo-turnmotors.png" alt="Logo Turn Motors" />
-                                <figcaption class="legenda__icones__atividade" id="title__header">TURN MOTORS</figcaption>
-                            </figure> 
-                        </a>
-                    </li>
-                    <li> <a class="cabeca" href="personalizacoes.php">Personalizações</a> </li>
-                    <li> <a class="cabeca" href="produtos.php">Produtos</a> </li>
-                    <li> <a class="cabeca" href="aboutus.php">Sobre Nós</a> </li>
-                </ul>
-            </div>
-            <div class="conj_header_ferramentas">
-                <ul id="form_header_ferramentas">
-                    <li> <img class="lupa" width="40px" height="auto" src="../assets/img/icone-search.svg" alt="Pesquisar"> </li>
-                    <li> <img id="carrinho" width="40px" src="../assets/img/icone-carrinho.svg" alt="Carrinho"> </li>
-                    <li> <a class="cabeca" href="../pags/login.php"> <img width="40px" src="../assets/img/icone-perfil.svg" alt="Login"> </a> </li>
-                </ul>
-            </div>
-        </div>-->
-
         <?php
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -337,7 +291,7 @@ require_once('../assets/scripts/iniciarSessao.php');
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Perfil</span></a></li>
+                                <li><a class="dropdown-item" href="../pags/perfil.php"><span class="opcao__navbar__mobile">Perfil</span></a></li>
                                 <li><a class="dropdown-item" href="../pags/favoritos.php"><span class="opcao__navbar__mobile">Favoritos</span></a></li>
 
                             </ul>

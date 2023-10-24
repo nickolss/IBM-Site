@@ -126,7 +126,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
     <header>
-
         <div class="pai__header">
             <div class="filho__header">
                 <div class="logotipo">
@@ -232,52 +231,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
 
-        <!--<div id="header">
-            <div class="conj_header_menu">
-                <ul id="form_header_menu">
-                    <li> <a class="cabeca" href="personalizacoes.php">Personalizações</a> </li>
-                    <li> <a class="cabeca" href="produtos.php">Produtos</a> </li>
-                    <li> <a class="cabeca" href="aboutus.php">Sobre Nós</a> </li>
-                    <li> 
-                        <a class="cabeca" href="index.php"> 
-                            <figure class="figure-container">
-                                <img width="90px" src="../assets/img/logo-turnmotors.png" alt="Logo Turn Motors" />
-                                <figcaption class="legenda__icones__atividade" id="title__header">TURN MOTORS</figcaption>
-                            </figure> 
-                        </a>
-                    </li>
-                    <li> <img class="lupa" width="50px" height="auto" src="../assets/img/icone-search.svg" alt="Pesquisar"> </li>
-                    <li> <img id="carrinho" width="50px" src="../assets/img/icone-carrinho.svg" alt="Carrinho"> </li>
-                    <li> <a class="cabeca" href="../pags/login.php"> <img width="50px" src="../assets/img/icone-perfil.svg" alt="Login"> </a> </li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="header">
-            <div class="conj_header_menu">
-                <ul id="form_header_menu">
-                    <li> 
-                        <a class="cabeca" href="index.php"> 
-                            <figure class="figure-container">
-                                <img width="90px" src="../assets/img/logo-turnmotors.png" alt="Logo Turn Motors" />
-                                <figcaption class="legenda__icones__atividade" id="title__header">TURN MOTORS</figcaption>
-                            </figure> 
-                        </a>
-                    </li>
-                    <li> <a class="cabeca" href="personalizacoes.php">Personalizações</a> </li>
-                    <li> <a class="cabeca" href="produtos.php">Produtos</a> </li>
-                    <li> <a class="cabeca" href="aboutus.php">Sobre Nós</a> </li>
-                </ul>
-            </div>
-            <div class="conj_header_ferramentas">
-                <ul id="form_header_ferramentas">
-                    <li> <img class="lupa" width="40px" height="auto" src="../assets/img/icone-search.svg" alt="Pesquisar"> </li>
-                    <li> <img id="carrinho" width="40px" src="../assets/img/icone-carrinho.svg" alt="Carrinho"> </li>
-                    <li> <a class="cabeca" href="../pags/login.php"> <img width="40px" src="../assets/img/icone-perfil.svg" alt="Login"> </a> </li>
-                </ul>
-            </div>
-        </div>-->
-
         <div id="fade"></div>
     </header>
 
@@ -333,61 +286,65 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             </div>
 
-
-
-
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div id="header__menu__hamburguer" class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img style="margin-right: 10px;" width="50px" height="auto" src="../assets/img/logo-turnmotors.png" alt="logo">TURN MOTORS</h5>
                     <button type="button" class="btn-close__fechar__navbar" data-bs-dismiss="offcanvas" aria-label="Close"><i class='bx bx-x' style='color:#ffc857'></i></button>
                 </div>
 
-                <div class="offcanvas-body" id="corpo__navbar__mobile">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
-                        </li>
-                        <hr class="divisao__linha__branca">
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.php">Login</a>
-                        </li>
-                        <hr class="divisao__linha__branca">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Opções
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="personalizacoes.php"><span class="opcao__navbar__mobile">Personalizações</span></a></li>
-                                <li><a class="dropdown-item" href="produtos.php"><span class="opcao__navbar__mobile">Produtos</span></a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="aboutus.php"><span class="opcao__navbar__mobile">Sobre Nós</span></a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Perfil</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Veículos</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Compras</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Orçamentos</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Agendamentos</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Plano</span></a></li>
-
-                            </ul>
-                        </li>
-                        <br>
-                        <br>
-                        <div class="row alinhar">
-                            <div class="col">
-                                <a class="link" target="_blank" href="https://twitter.com/MotorsTurn" aria-label="Acesse nosso Twitter"><img width="35px" height="auto" src="../assets/img/icone-twitter.svg" aria-label="Acesse nosso Twitter" alt="twitter"></a>
-                            </div>
-                            <div class="col">
-                                <a class="link" target="_blank" href="https://www.instagram.com/turn_motors/" aria-label="Acesso nosso Instagram"><img width="35px" height="auto" src="../assets/img/icone-instagram.svg" alt="instagram"></a>
-                            </div>
+            <div class="offcanvas-body" id="corpo__navbar__mobile">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
+                    </li>
+                    <hr class="divisao__linha__branca">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php">Login</a>
+                    </li>
+                    <hr class="divisao__linha__branca">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Opções
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="personalizacoes.php"><span class="opcao__navbar__mobile">Personalizações</span></a></li>
+                            <li><a class="dropdown-item" href="produtos.php"><span class="opcao__navbar__mobile">Produtos</span></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="aboutus.php"><span class="opcao__navbar__mobile">Sobre Nós</span></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="perfil.php"><span class="opcao__navbar__mobile">Perfil</span></a></li>
+                            <?php
+                                if(isset($_SESSION['id'])){
+                                var_dump($_SESSION);
+                                
+                            ?>
+                            <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Veículos</span></a></li>
+                            <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Compras</span></a></li>
+                            <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Orçamentos</span></a></li>
+                            <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Agendamentos</span></a></li>
+                            <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Plano</span></a></li>
+                            <?php
+                                }
+                                ?>
+                        </ul>
+                    </li>
+                    <br>
+                    <br>
+                    <div class="row alinhar">
+                        <div class="col">
+                            <a class="link" target="_blank" href="https://twitter.com/MotorsTurn" aria-label="Acesse nosso Twitter"><img width="35px" height="auto" src="../assets/img/icone-twitter.svg" aria-label="Acesse nosso Twitter" alt="twitter"></a>
                         </div>
-                    </ul>
+                        <div class="col">
+                            <a class="link" target="_blank" href="https://www.instagram.com/turn_motors/" aria-label="Acesso nosso Instagram"><img width="35px" height="auto" src="../assets/img/icone-instagram.svg" alt="instagram"></a>
+                        </div>
+                    </div>
+                </ul>
 
-                </div>
+            </div>
             </div>
         </div>
         <nav class="header_search_aparecer ">
