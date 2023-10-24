@@ -73,7 +73,7 @@ $id = $produto[0]['codigoProduto'];
 						<h3 style="font-weight: bold;">Sobre este item:</h3>
 						<p style="font-size: 1.1em;"><?= $descricao ?></p>
 						<form method="POST" action="carrinho.php?adicionar=<?php echo $id; ?>">
-						
+
 							<button class="vg-btn" type="submit" name="adicionar" value="<?php echo $id; ?>">Comprar</button>
 						</form>
 
@@ -93,6 +93,29 @@ $id = $produto[0]['codigoProduto'];
 						<?php
 							}
 						}
+						?>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<h2 class="avaliacoes__title">Avaliações</h2>
+						<?php
+						$sqlAvaliacoes = $pdo->query("SELECT id_escritor, texto FROM `avaliacao` WHERE id_produto=$id");
+						$avaliacoes = $sqlAvaliacoes->fetchAll();
+
+						foreach ($avaliacoes as $avaliacao) {
+							$id_escritor = $avaliacao['id_escritor'];
+							$sqlEscritor = $pdo->query("SELECT nomeCompleto FROM `cliente` WHERE id= $id_escritor");
+							$nomeEscritor = $sqlEscritor->fetch();
+
+						?>
+
+							<p class="avaliacao__autor"><?= $nomeEscritor['nomeCompleto'] ?></p>
+							<p class="avaliacao"><?= $avaliacao['texto'] ?></p>
+
+						<?php
+						}
+
 						?>
 					</div>
 				</div>
