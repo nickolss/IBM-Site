@@ -2,6 +2,7 @@
 require_once('../assets/scripts/conexao.php');
 require_once('../assets/scripts/iniciarSessao.php');
 
+$nomeProduto = $_GET['nomeProduto'];
 if (isset($_SESSION['id'])) {
 	require_once('../assets/scripts/verificarHistoricoCompra.php');
 
@@ -14,7 +15,6 @@ if (isset($_SESSION['id'])) {
 		$jaComprou = $sqlProdutoMercadoria->fetch();
 	}
 }
-$nomeProduto = $_GET['nomeProduto'];
 
 $produtoSql = $pdo->query(("SELECT * FROM `produto` WHERE nome='$nomeProduto'"));
 $produto = $produtoSql->fetchAll();
