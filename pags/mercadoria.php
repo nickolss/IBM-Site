@@ -1,28 +1,31 @@
 <?php
 require_once('../assets/scripts/conexao.php');
 require_once('../assets/scripts/iniciarSessao.php');
-require_once('../assets/scripts/verificarHistoricoCompra.php');
 
+if (isset($_SESSION['id'])) {
+	require_once('../assets/scripts/verificarHistoricoCompra.php');
+
+	$idProdComprador = $_SESSION['id'];
+
+
+	foreach ($comprasRealizadas as $compra) {
+		$idProdProdutosComprados = $compra['idProdutos'];
+		$sqlProdutoMercadoria = $pdo->query("SELECT * FROM `produtosComprados` WHERE `nomeProdutos`='$nomeProduto'");
+		$jaComprou = $sqlProdutoMercadoria->fetch();
+	}
+}
 $nomeProduto = $_GET['nomeProduto'];
+
 $produtoSql = $pdo->query(("SELECT * FROM `produto` WHERE nome='$nomeProduto'"));
-
 $produto = $produtoSql->fetchAll();
-$precoSemFormatacao = $produto[0]['preco'];
-$idProd = $produto[0]['codigoProduto'];
 
+$precoSemFormatacao = $produto[0]['preco'];
 $precoProduto = number_format($precoSemFormatacao, 2, ',', '.');
 
 $descricao = $produto[0]['descricao'];
 $caminhoImagem = $produto[0]['caminho_imagem'];
 $id = $produto[0]['codigoProduto'];
-$idComprador = $_SESSION['id'];
 
-
-foreach ($comprasRealizadas as $compra) {
-	$idProdutosComprados = $compra['idProdutos'];
-	$sqlProdutoMercadoria = $pdo->query("SELECT * FROM `produtosComprados` WHERE `nomeProdutos`='$nomeProduto'");
-	$jaComprou = $sqlProdutoMercadoria->fetch();
-}
 
 ?>
 
@@ -70,6 +73,7 @@ foreach ($comprasRealizadas as $compra) {
 						<h3 style="font-weight: bold;">Sobre este item:</h3>
 						<p style="font-size: 1.1em;"><?= $descricao ?></p>
 						<form method="POST" action="carrinho.php?adicionar=<?php echo $id; ?>">
+						
 							<button class="vg-btn" type="submit" name="adicionar" value="<?php echo $id; ?>">Comprar</button>
 						</form>
 
@@ -80,7 +84,7 @@ foreach ($comprasRealizadas as $compra) {
 
 						?>
 								<div>
-									<form action="../assets/scripts/cadastrarAvaliacao.php?id_produto=<?= $idProd ?>" method="post">
+									<form action="../assets/scripts/cadastrarAvaliacao.php?id_produto=<?= $id ?>" method="post">
 										<label for="comentario">Diga o que achou do produto</label>
 										<textarea name="comentario" id="comentario" cols="30" rows="10" required></textarea>
 										<button type="submit">Comentar</button>

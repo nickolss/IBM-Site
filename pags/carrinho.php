@@ -18,12 +18,15 @@ if (isset($_POST['limpar_carrinho_btn'])) {
 $totalCarrinho = 0; // Variável para calcular o preço total
 $totalItens = 0; // Variável para calcular a quantidade total de itens
 
+if(isset($_SESSION['carrinho'])){
+
+}else{
 foreach ($_SESSION['carrinho'] as $idProd => $value) {
     $subtotal = $value['preco'] * $value['quantidade'];
     $totalCarrinho += $subtotal;
     
   
-}
+}}
 
 
 $idsProdutos = []; 
