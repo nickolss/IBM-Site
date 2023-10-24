@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +36,7 @@
                         
                         //estrutura de repeticao para fazer INSERT INTO dos produtos comprados no bd. Caso tenha mais de uma unidade de um mesmo produto o INSERT INTO sera executado de acordo com a variavel $quantidadeProduto
                         for($i=1; $i<=$quantidadeProduto; $i++){
-                            $sqlInsertCompra = $pdo->prepare("INSERT INTO `produtoscomprados` (`idProdutos`, `nomeProdutos`, `preco_final`, `id_comprador`) VALUES('$idProduto','$nomeProduto', '$precoProduto', '$idUser')");
+                            $sqlInsertCompra = $pdo->prepare("INSERT INTO `produtosC    omprados` (`idProdutos`, `nomeProdutos`, `preco_final`, `id_comprador`) VALUES('$idProduto','$nomeProduto', '$precoProduto', '$idUser')");
                         }
                         
                         //caso a variavel $sqlInsertCompra tenha sido executada:
