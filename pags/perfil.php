@@ -80,12 +80,14 @@ if ($_SESSION['plano'] != 'comum' && $_SESSION['plano'] != 'turbinado') {
 						<img class="img__icon__esquerda" src="../assets/img/icone-carro.svg" alt="Veículos">
 					</div>
 				</a>
-				<div class="icone__esquerda">
-					<div class="legenda__icone__pc">
-						Compras
+				<a href="./comprasRealizadas.php">
+					<div class="icone__esquerda">
+						<div class="legenda__icone__pc">
+							Compras
+						</div>
+						<img class="img__icon__esquerda" src="../assets/img/icone-carrinho.svg" alt="Compras">
 					</div>
-					<img class="img__icon__esquerda" src="../assets/img/icone-carrinho.svg" alt="Compras">
-				</div>
+				</a>
 				<a href="./orcamentosCliente.php">
 					<div class="icone__esquerda">
 						<div class="legenda__icone__pc">
