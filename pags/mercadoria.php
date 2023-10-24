@@ -1,16 +1,29 @@
 <?php
 require_once('../assets/scripts/conexao.php');
+require_once('../assets/scripts/iniciarSessao.php');
+require_once('../assets/scripts/verificarHistoricoCompra.php');
+
 $nomeProduto = $_GET['nomeProduto'];
 $produtoSql = $pdo->query(("SELECT * FROM `produto` WHERE nome='$nomeProduto'"));
 
 $produto = $produtoSql->fetchAll();
 $precoSemFormatacao = $produto[0]['preco'];
+$idProd = $produto[0]['codigoProduto'];
 
-$precoProduto = number_format($precoSemFormatacao , 2 , ',' , '.');
+$precoProduto = number_format($precoSemFormatacao, 2, ',', '.');
 
 $descricao = $produto[0]['descricao'];
 $caminhoImagem = $produto[0]['caminho_imagem'];
 $id = $produto[0]['codigoProduto'];
+$idComprador = $_SESSION['id'];
+
+
+foreach ($comprasRealizadas as $compra) {
+	$idProdutosComprados = $compra['idProdutos'];
+	$sqlProdutoMercadoria = $pdo->query("SELECT * FROM `produtosComprados` WHERE `nomeProdutos`='$nomeProduto'");
+	$jaComprou = $sqlProdutoMercadoria->fetch();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -45,21 +58,38 @@ $id = $produto[0]['codigoProduto'];
 			<div class="row" id="correcao">
 				<div class="col-7">
 					<div id="box" style="text-align: end; margin: 70px 0px; margin-left: 95px;">
-						<img class="vg-img" id="img-adesivo" width="650px" src="<?= $caminhoImagem ?>">
-						<label for="img-adesivo"></label>
+						<img class="vg-img" id="img" width="650px" src="<?= $caminhoImagem ?>">
+						<label for="img"></label>
 					</div>
 
 				</div>
 				<div class="col">
 					<div style="margin-top: 75px; margin-right: 170px;">
 						<h1 class="vg-tite"><?= $nomeProduto ?></h1>
-						<img width="30px" src="../assets/img/estrela.svg"><img style="margin: 0px 10px" width="30px" src="../assets/img/estrela.svg"><img width="30px" src="../assets/img/estrela.svg"><img style="margin: 0px 10px" width="30px" src="../assets/img/estrela.svg"><img width="30px" src="../assets/img/estrela.svg">
 						<h2 style="margin-top: 10px; font-weight: bold;">R$<?= $precoProduto ?></h2>
 						<h3 style="font-weight: bold;">Sobre este item:</h3>
 						<p style="font-size: 1.1em;"><?= $descricao ?></p>
 						<form method="POST" action="carrinho.php?adicionar=<?php echo $id; ?>">
-						<button class="vg-btn" type="submit" name="adicionar" value="<?php echo $id; ?>">Comprar</button>
+							<button class="vg-btn" type="submit" name="adicionar" value="<?php echo $id; ?>">Comprar</button>
 						</form>
+
+						<?php
+						if (isset($jaComprou)) {
+							if ($jaComprou != 0) {
+
+
+						?>
+								<div>
+									<form action="../assets/scripts/cadastrarAvaliacao.php?id_produto=<?= $idProd ?>" method="post">
+										<label for="comentario">Diga o que achou do produto</label>
+										<textarea name="comentario" id="comentario" cols="30" rows="10" required></textarea>
+										<button type="submit">Comentar</button>
+									</form>
+								</div>
+						<?php
+							}
+						}
+						?>
 					</div>
 				</div>
 			</div>
@@ -79,7 +109,7 @@ $id = $produto[0]['codigoProduto'];
 						<h3 style="font-weight: bold;">Sobre este item:</h3>
 						<p class="" style="font-size: 1.1em;"><?= $descricao ?></p>
 						<form method="POST" action="carrinho.php?adicionar=<?php echo $id; ?>">
-						<button class="vg-btn" type="submit" name="adicionar" value="<?php echo $id; ?>">Comprar</button>
+							<button class="vg-btn" type="submit" name="adicionar" value="<?php echo $id; ?>">Comprar</button>
 						</form>
 					</div>
 				</div>

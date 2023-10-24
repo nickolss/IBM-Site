@@ -700,7 +700,6 @@ CREATE TABLE IF NOT EXISTS `avaliacao` (
   `id` int NOT NULL AUTO_INCREMENT,
   `id_escritor` int NOT NULL,
   `id_produto` int NOT NULL,
-  `estrelas` int NOT NULL,
   `texto` varchar(300) NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`id_escritor`) REFERENCES `cliente`(`id`),
