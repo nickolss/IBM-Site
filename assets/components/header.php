@@ -156,6 +156,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                 <tbody>
                                                     <?php
                                                     $totalCarrinho = 0; // Variável para calcular o total do carrinho
+                                                    $totalPR = 0;
                                                     foreach ($_SESSION['carrinho'] as $idProd => $value) {
                                                         $subtotal = $value['preco'] * $value['quantidade'];
                                                         $totalCarrinho += $subtotal;
@@ -193,7 +194,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                                 </div>
                                                             </td>
                                                         </tr>
-                                                    <?php } ?>
+                                                    <?php $totalPR += $value['quantidade']; } ?>
                                                 </tbody>
                                             </table>
 
@@ -223,7 +224,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <?php } ?>
 
                             </nav>
-                            <img class="icone__header" id="carrinho" src="../assets/img/icone-carrinho.svg" alt="Carrinho">
+                            <div class="cont-valor__sobreposto">
+                            <img class="icone__header" id="carrinho" src="../assets/img/icone-carrinho.svg" alt="Carrinho"> 
+                            
+                            <div class="valor-sobreposto">
+                              
+                            <?= isset($totalPR) ? $totalPR : '0'; ?>
+                             
+                            </div>
+                            </div>
                         </li>
                         <li> <a class="cabeca" href="login.php"> <img class="icone__header" src="../assets/img/icone-perfil.svg" alt="Login"> </a> </li>
                     </ul>
