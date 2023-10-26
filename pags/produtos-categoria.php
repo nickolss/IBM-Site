@@ -11,7 +11,7 @@ if (isset($_GET['pagina']))
 if (!$pagina)
     $pagina = 1;
 
-$limite = 2;
+$limite = 20;
 $inicio = ($pagina * $limite) - $limite;
 
 $categoria = null;
