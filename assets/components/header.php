@@ -12,6 +12,7 @@ require_once('../assets/scripts/iniciarSessao.php');
 
     <!--LINK ICONES-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script type="text/javascript" src="../assets/js/java.js" defer></script>
 </head>
 
 <body>
@@ -157,6 +158,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                     <?php
                                                     $totalCarrinho = 0; // Variável para calcular o total do carrinho
                                                     $totalPR = 0;
+
+                                                   
+                                                    $url = $_SERVER['REQUEST_URI'];
+
+                                                    
+                                                    $textoAlvo = "carrinho.php";
+
+                                                    
+                                                    if (strpos($url, $textoAlvo) !== false) {
+                                                   
+                                                        $SomaDeParametroURL = "?";
+                                                    } else {
+                                                     
+                                                        $SomaDeParametroURL = "&";
+                                                    }
+
+
                                                     foreach ($_SESSION['carrinho'] as $idProd => $value) {
                                                         $subtotal = $value['preco'] * $value['quantidade'];
                                                         $totalCarrinho += $subtotal;
@@ -174,17 +192,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                                 </div>
                                                                 <div class="table_itens__header__carrinho__config">
                                                                     <div class="table__itens_header_carrinho_botoes">
-                                                                        <form method="POST" action="<?php echo $_SERVER['REQUEST_URI'] ?>&subtrair=<?php echo $idProd ?>">
+                                                                        <form method="POST" action="<?php echo $_SERVER['REQUEST_URI'] ?><?php echo $SomaDeParametroURL ?>subtrair=<?php echo $idProd ?>">
                                                                             <button id="botaoSubtrair_carrinho_header" type="submit" name="subtrair" value="<?php echo $idProd ?>">-</button>
                                                                         </form>
 
                                                                         <span id="contador_carrinho_header"> <?php echo $value['quantidade'] ?></span>
-                                                                        <form method="POST" action="<?php echo $_SERVER['REQUEST_URI'] ?>&adicionar=<?php echo $idProd ?>">
+                                                                        <form method="POST" action="<?php echo $_SERVER['REQUEST_URI'] ?><?php echo $SomaDeParametroURL ?>adicionar=<?php echo $idProd ?>">
                                                                             <button id="botaoAcrescentar_carrinho_header" type="submit" name="adicionar" value="<?php echo $idProd ?>">+</button>
                                                                         </form>
                                                                     </div>
 
-                                                                    <form method="POST" action="<?php echo $_SERVER['REQUEST_URI'] ?>&remover=<?php echo $idProd ?>">
+                                                                    <form method="POST" action="<?php echo $_SERVER['REQUEST_URI'] ?><?php echo $SomaDeParametroURL ?>remover=<?php echo $idProd ?>">
                                                                         <button style="border: none; color: #003445; background-color: #fff; text-decoration: none" type="submit" name="remover" value="<?php echo $idProd ?>">Excluir</button>
                                                                     </form>
 
@@ -289,7 +307,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <img class="lupa img-fluid" width="30px" height="auto" src="../assets/img/icone-search.svg" alt="Ícone de busca">
                 </div>
                 <div style="margin-right: 10px;">
-                    <img class="img-fluid" width="30px" height="auto" src="../assets/img/icone-carrinho.svg" alt="Carrinho">
+                        <div class="cont-valor__sobreposto">
+                             <form method="POST" action="../pags/carrinho.php" id="icone-carrinho-funcional__Mobile">
+                                                <input type="hidden" name="carrinho" value="<?php echo http_build_query($_SESSION['carrinho']); ?>">
+                                                <img  class="img-fluid" width="30px" height="auto" alt="Carrinho" src="../assets/img/icone-carrinho.svg" id="botaoCarrinho__mobile"> </img>
+                                            </form>
+                           
+                            
+                            <div class="valor-sobreposto">
+                              
+                            <?= isset($totalPR) ? $totalPR : '0'; ?>
+                             
+                            </div>
+                            </div>
+                    
                 </div>
 
 

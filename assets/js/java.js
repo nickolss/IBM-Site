@@ -82,5 +82,15 @@ modal.addEventListener('mouseleave', () => {
   hideModal();
 });
 
+//carrinho mobile
+
+var botaoCarrinho = document.getElementById('botaoCarrinho__mobile');
+
+  // Adiciona um ouvinte de evento de clique à imagem
+  botaoCarrinho.addEventListener('click', function() {
+    // Envia o formulário quando a imagem é clicada
+    document.getElementById('icone-carrinho-funcional__Mobile').submit();
+  });
+
 
 

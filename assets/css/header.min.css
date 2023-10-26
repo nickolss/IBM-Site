@@ -453,13 +453,15 @@ cursor: pointer
   position: absolute;
   top: -10px;
   right: -7px;
-  background-color: var(--amarelo); /* Cor de fundo da sobreposição */
-  color: var(--preto); /* Cor do texto da sobreposição */
-  padding: 1px 8px; /* Espaçamento interno da sobreposição */
-  border-radius: 50%; /* Borda arredondada para a sobreposição */
+  background-color: var(--amarelo); 
+  color: var(--preto); 
+  padding: 1px 8px; 
+  border-radius: 50%;
   font-weight: bold;
- 
   
+}
+#icon-carrinho-mobile{
+  width: 30px;
 }
 
 
