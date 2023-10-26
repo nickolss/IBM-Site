@@ -42,7 +42,7 @@
 					</div>
 					<div class="input__endereco">
 						<div class="caixa__input">
-							<input class="inputCartao" type="number" name="mesCartao" id="mesCartao" required maxlength="2" minlength="2" title="O mês deve ter 2 digitos numéricos." max="12">
+							<input class="inputCartao" type="number" name="mesCartao" id="mesCartao" required maxlength="2" minlength="2" title="O mês deve ter 2 digitos numéricos." max="12" min="1">
 							<label for="address">Mês Validade</label>
 						</div>
 						<div class="caixa__input caixa__input__margin">
@@ -65,11 +65,11 @@
 					</div>
 					<div class="opcao__cartao">
 						<div class="opcao__radio__cartao">
-							<input class="inputRadio" type="radio" id="credito" name="opcao_cartao" value="credito">
+							<input class="inputRadio" type="radio" id="credito" name="opcao_cartao" value="credito" required>
 							<label class="labelRadio" id="labelCredito" for="credito">Crédito</label>
 						</div>
 						<div class="opcao__radio__cartao opcao__radio__cartao__margin">
-							<input class="inputRadio" type="radio" id="debito" name="opcao_cartao" value="debito">
+							<input class="inputRadio" type="radio" id="debito" name="opcao_cartao" value="debito" required>
 							<label class="labelRadio" for="debito">Débito</label>
 						</div>
 						<br>
