@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+s<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -19,6 +19,7 @@
   <script src="../assets/js/mascaraCpf.js" defer></script>
   <script src="../assets/js/mascaraTelefone.js" defer></script>
   <script src="../assets/js/validacaoForm.js" defer></script>
+  <script src="../assets/js/validarCpf.js" defer></script>
   <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
   <script src="../assets/js/cadastro-endereco.js" defer></script>
   <!-- O atributo DEFER espera a página carregar para executar o Script -->
@@ -63,7 +64,7 @@
             <input type="date" required name="data" id="data" autocomplete="off">
             <label for="data">Data de Nascimento</label>
           </div>
-          <div class="caixa__input">
+          <div class="caixa__input" id="inputCpf">
             <input type="text" required name="cpf" id="cpf" autocomplete="off" maxlength="14">
             <label for="cpf">CPF</label>
           </div>

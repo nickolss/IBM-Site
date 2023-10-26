@@ -3,5 +3,6 @@
 @import url(header.min.css);
 @import url(footer.min.css);
 
-
-
+.hidden{
+    display: none;
+}
