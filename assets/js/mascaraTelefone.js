@@ -1,4 +1,4 @@
-$('#tel').on("keypress", (event) => {
+$('#tel').on("keydown", (event) => {
     let numeroTelefone = document.querySelector("#tel");
     let numeroLength = numeroTelefone.value.length;
 

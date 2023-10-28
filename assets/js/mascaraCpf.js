@@ -1,4 +1,4 @@
-$('#cpf').on("keypress", (event) => {
+$('#cpf').on("keydown", (event) => {
 	let valorCampo = $("#cpf").val()
 	let tamanhoCampo = valorCampo.length
 
