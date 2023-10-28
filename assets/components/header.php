@@ -21,6 +21,11 @@ if (!isset($_SESSION['carrinho'])) {
     $_SESSION['carrinho'] = array(); // Inicialize o carrinho como um array vazio
 }
 
+if (isset($_POST['limpar_carrinho_btn'])) {
+    // Limpar todos os itens do carrinho
+    $_SESSION['carrinho'] = array();
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['adicionar'])) {
         $idProd = (int)$_POST['adicionar'];

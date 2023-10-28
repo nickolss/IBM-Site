@@ -31,10 +31,7 @@ require_once('../assets/scripts/iniciarSessao.php');
         parse_str($carrinhoData, $carrinho);
     }
     
-    if (isset($_POST['limpar_carrinho_btn'])) {
-        // Limpar todos os itens do carrinho
-        $_SESSION['carrinho'] = array();
-    }
+   
     
     $totalCarrinho = 0; // Variável para calcular o preço total
     $totalItens = 0; // Variável para calcular a quantidade total de itens
