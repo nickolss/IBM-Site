@@ -56,6 +56,51 @@
               <!--<a href="recuperar-senha.php">Esqueceu a Senha?</a>-->
             </div>
             <button type="submit" class="botao__login">Entrar</button>
+            
+            <!--ARQUIVOS GOOGLE-->
+            <script src="https://accounts.google.com/gsi/client" async defer></script>
+            <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
+            <script>
+                function handleCredentialResponse(response) {
+                  const data = jwt_decode(response.credential)
+                  console.log(data)
+
+                  fullName.textContent = data.name
+                  sub.textContent = data.sub
+                  given_name.textContent = data.given_name
+                  family_name.textContent = data.family_name
+                  email = data.email
+                  verifiedEmail = data.verifiedEmail
+                  picture.setAtribute("src", data.picture)
+                }
+                window.onload = function () {
+                  google.accounts.id.initialize({
+                    client_id: "758394871681-q3d1absjfou2japab2fgsvlgsqvjqt0s.apps.googleusercontent.com",
+                    callback: handleCredentialResponse
+                  });
+                  google.accounts.id.renderButton(
+                    document.getElementById("buttonDiv"),
+                    { theme: "filled_black", 
+                      size: "large",
+                      type: "standard",
+                      shape: "pill",
+                      text: "continue_with",
+                      locale: "pt-BR",
+                      logo_alignment: "left",
+                      width: "340" }  // customization attributes
+                  );
+                  google.accounts.id.prompt(); // also display the One Tap dialog
+                }
+            </script>
+            <hr><p class="or">ou</p><hr>
+            <div id="buttonDiv"></div>
+            <p id="fullName"></p>
+            <p id="sub"></p>
+            <p id="given_name"></p>
+            <p id="family_name"></p>
+            <p id="email"></p>
+            <p id="verifiedEmail"></p>
+            <img id="picture">
             <div class="link__registrar">
               <p>Não tem uma conta?<a href="cadastro.php"> Cadastre-se</a></p>
             </div>

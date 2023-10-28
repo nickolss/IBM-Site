@@ -119,6 +119,11 @@ main{
         transition-duration: 0.5s;
     }
 
+    .or{
+        text-align: center;
+        font-size: 20px;
+    }
+
     .texto .link__registrar{
         font-size: 14.5px;
         text-align: center;

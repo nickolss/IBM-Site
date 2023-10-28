@@ -26,6 +26,10 @@
             $quantidadeRegistrosMecanico = $sqlMecanico->rowCount();
             $registroMecanico = $sqlMecanico->fetchAll();
 
+            $sqlClienteGoogle = $pdo->query("SELECT * FROM `clienteGoogle` WHERE email='$emailGoogleForm'");
+            $quantidadeRegistrosClienteGoogle = $sqlClienteGoogle->rowCount();
+            $registroClienteGoogle = $sqlClienteGoogle->fetchAll();
+
             if ($quantidadeRegistrosCliente == 1) {
                 if (isset($_SESSION)) {
                     require_once('./logout.php');
@@ -74,6 +78,27 @@
                 $_SESSION['nomeFuncionario'] = $registroMecanico[0]['nome'];
 
                 header("Location: ../../administrador/dashboard.php");
+            }
+
+            if ($quantidadeRegistrosClienteGoogle == 1) {
+                if (isset($_SESSION)) {
+                    require_once('./logout.php');
+                }
+                require_once('./iniciarSessao.php');
+
+
+                $_SESSION['id'] = $registroClienteGoogle[0]['id'];
+                $_SESSION['nomeCliente'] = $registroClienteGoogle[0]['nomeCompleto'];
+                $_SESSION['email'] = $registroClienteGoogle[0]['email'];
+
+                $_SESSION['quantidadePontos'] = $registroCliente[0]['quantidadePontos'];
+                $_SESSION['fotoPerfil'] = $registroCliente[0]['fotoPerfil'];
+
+                header('Location: ../../pags/perfil.php');
+            } else {
+                $tituloModal = "Erro ao Logar!";
+                $textoModal = "Email ou senha inválidos, tente novamente";
+                require_once("../components/modal.php");
             }
         ?>
     </body>
