@@ -2,47 +2,6 @@
 require_once('../assets/scripts/conexao.php');
 require_once('../assets/scripts/iniciarSessao.php');
 
-if (isset($_POST['carrinho'])) {
-    $carrinhoData = $_POST['carrinho'];
-    $carrinho = [];
-    parse_str($carrinhoData, $carrinho);
-}
-
-if (isset($_POST['limpar_carrinho_btn'])) {
-    // Limpar todos os itens do carrinho
-    $_SESSION['carrinho'] = array();
-}
-
-$totalCarrinho = 0; // Variável para calcular o preço total
-$totalItens = 0; // Variável para calcular a quantidade total de itens
-
-if (isset($_SESSION['carrinho'])) {
-} else {
-    foreach ($_SESSION['carrinho'] as $idProd => $value) {
-        $subtotal = $value['preco'] * $value['quantidade'];
-        $totalCarrinho += $subtotal;
-    }
-}
-
-
-$idsProdutos = [];
-
-$sql = "SELECT codigoProduto FROM produto";
-
-$stmt = $pdo->prepare($sql);
-if ($stmt->execute()) {
-
-    $idsProdutos = [];
-
-
-    while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $idsProdutos[] = $linha['codigoProduto'];
-    }
-} else {
-
-    echo "Erro na consulta: " . $stmt->errorInfo()[2];
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -64,6 +23,48 @@ if ($stmt->execute()) {
 <body id="container__body">
     <?php
     require_once('../assets/components/header.php');
+
+
+    if (isset($_POST['carrinho'])) {
+        $carrinhoData = $_POST['carrinho'];
+        $carrinho = [];
+        parse_str($carrinhoData, $carrinho);
+    }
+    
+    if (isset($_POST['limpar_carrinho_btn'])) {
+        // Limpar todos os itens do carrinho
+        $_SESSION['carrinho'] = array();
+    }
+    
+    $totalCarrinho = 0; // Variável para calcular o preço total
+    $totalItens = 0; // Variável para calcular a quantidade total de itens
+    
+    if (isset($_SESSION['carrinho'])) {
+    } else {
+        foreach ($_SESSION['carrinho'] as $idProd => $value) {
+            $subtotal = $value['preco'] * $value['quantidade'];
+            $totalCarrinho += $subtotal;
+        }
+    }
+    
+    
+    $idsProdutos = [];
+    
+    $sql = "SELECT codigoProduto FROM produto";
+    
+    $stmt = $pdo->prepare($sql);
+    if ($stmt->execute()) {
+    
+        $idsProdutos = [];
+    
+    
+        while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $idsProdutos[] = $linha['codigoProduto'];
+        }
+    } else {
+    
+        echo "Erro na consulta: " . $stmt->errorInfo()[2];
+    }
     ?>
     <br>
 

@@ -17,6 +17,9 @@ require_once('../assets/scripts/iniciarSessao.php');
 
 <body>
 <?php 
+if (!isset($_SESSION['carrinho'])) {
+    $_SESSION['carrinho'] = array(); // Inicialize o carrinho como um array vazio
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['adicionar'])) {
