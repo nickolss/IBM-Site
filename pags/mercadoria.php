@@ -131,7 +131,6 @@ $id = $produto[0]['codigoProduto'];
 					<br>
 					<div>
 						<h1 class="vg-tite"><?= $nomeProduto ?></h1>
-						<img width="30px" src="../assets/img/estrela.svg"><img style="margin: 0px 10px" width="30px" src="../assets/img/estrela.svg"><img width="30px" src="../assets/img/estrela.svg"><img style="margin: 0px 10px" width="30px" src="../assets/img/estrela.svg"><img class="" width="30px" src="../assets/img/estrela.svg">
 						<h2 style="margin-top: 10px; margin-bottom: 50px; font-weight: bold;">R$<?= $precoProduto ?></h2>
 						<h3 style="font-weight: bold;">Sobre este item:</h3>
 						<p class="" style="font-size: 1.1em;"><?= $descricao ?></p>
