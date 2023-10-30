@@ -197,10 +197,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                     foreach ($_SESSION['carrinho'] as $idProd => $value) {
                                                         $subtotal = $value['preco'] * $value['quantidade'];
                                                         $totalCarrinho += $subtotal;
+														$caminhoCompleto = $value['caminho_imagem'];
+														$caminhoSemOsTresPrimeiros = substr($caminhoCompleto, 3);
                                                     ?>
 
                                                         <tr>
-                                                            <td class="img__table__header_carrinho" style="width: 40%;"> <img src="<?php echo $value['caminho_imagem'] ?>" alt="..."> </td>
+                                                            <td class="img__table__header_carrinho" style="width: 40%;"> <img src="<?php echo $caminhoSemOsTresPrimeiros ?>" alt="..."> </td>
 
                                                             <td class="info__table__header_carrinho">
                                                                 <div>
