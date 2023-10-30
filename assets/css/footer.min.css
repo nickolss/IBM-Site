@@ -62,7 +62,9 @@ ul li a:hover {
 
 img.rede-social {
     width: 35px;
-    height: 35px
+    height: 35px;
+    margin-bottom: 20px;
+    
 }
 
 #correcao {
@@ -74,7 +76,7 @@ img.rede-social {
     display: none
 }
 
-@media screen and (max-width:320px) {
+@media screen and (max-width:563px) {
     .block {
         display: block
     }
@@ -100,45 +102,6 @@ img.rede-social {
         margin-left: 55px
     }
 
-    .botaoalinhar {
-        Display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        Justify-content: end;
-        margin-top: -30px;
-        margin-right: 20px
-    }
+  
 }
 
-@media (max-width:768px) and (min-width:456px) {
-    .botaoalinhar {
-        Display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        Justify-content: end;
-        margin-top: -30px;
-        margin-right: 10px
-    }
-}
-
-@media (max-width:1500px) and (min-width:769px) {
-    .botaoalinhar {
-        Display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        Justify-content: end;
-        margin-top: -30px;
-        margin-right: 15px
-    }
-}
-
-@media (max-width:360px) and (min-width:321px) {
-    .botaoalinhar {
-        Display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        Justify-content: end;
-        margin-top: -30px;
-        margin-right: 5px
-    }
-}
