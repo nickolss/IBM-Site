@@ -183,9 +183,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                                                     
                                                     $textoAlvo = "carrinho.php";
+													$textoAlvo2 = "index.php";
 
                                                     
-                                                    if (strpos($url, $textoAlvo) !== false) {
+                                                    if ((strpos($url, $textoAlvo) !== false) || (strpos($url, $textoAlvo2) !== false)) {
                                                    
                                                         $SomaDeParametroURL = "?";
                                                     } else {
