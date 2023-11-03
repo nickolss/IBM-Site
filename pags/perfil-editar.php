@@ -40,6 +40,12 @@
 		$queryCliente = "SELECT * FROM cliente WHERE id=$id";
 		$stmt = $pdo->query($queryCliente);
 		$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        //formatação do campo $user['telefone'] para que a mascara o aceite
+        $telefoneOriginal = $user['telefone'];
+        $telefoneParenteses1 = substr_replace($telefoneOriginal, '(', 0, 0);
+        $telefoneParenteses2 = substr_replace($telefoneParenteses1, ')', 3, 0);
+        $telefoneFinal = substr_replace($telefoneParenteses2, '-', 9, 0);
     ?>
 
     <main class="principal">
@@ -51,29 +57,34 @@
                 </div>
                 <div class="cadastro">
                     <div class="caixa__input">
-                        <input type="email" required name="email" id="email" autocomplete="off">
+                        <input type="email" required name="email" id="email" autocomplete="off" value=<?php echo $user['email']?>>
                         <label for="email">Email</label>
                     </div>
+                    
+                    <div class="caixa__input">
+                        <input type="text" required name="tel" id="tel" autocomplete="off" maxlength="14" pattern="^\(\d{2}\)\d{5}-\d{4}$" value=<?php echo $telefoneFinal?>>
+                        <label for="tel">Telefone</label>
+                    </div>
+                    
                     <div class="caixa__input">
                         <input type="password" required name="senha" id="senha" autocomplete="off" onchange="conferirSenhas()" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#*$%^&+=!])(?!.*\s).{8,}$" title="A senha precisa conter pelo menos 8 caractéres, uma letra maiúscula e uma minúscula e um símbolo.">
                         <label for="senha">Senha</label>
                     </div>
+
                     <div class="caixa__input">
                         <input type="password" required name="confirmarSenha" id="confirmarSenha" autocomplete="off" onchange="conferirSenhas()">
                         <label for="senha">Confirmar Senha</label>
                     </div>
 
-                    <div class="caixa__input">
-                        <input type="text" required name="tel" id="tel" autocomplete="off" maxlength="14" pattern="^\(\d{2}\)\d{5}-\d{4}$">
-                        <label for="tel">Telefone</label>
-                    </div>
-
-                    <div class="div__termos">
-                        <div class="filho__termos"><label for="termos"><input type="checkbox" name="termos" id="termos" required>Aceitar Termos de condições</label></div>
-                    </div>
-                    <br>
                     <button type="submit" class="formulario__botao formulario__botao--comum">
                         Salvar Alterações
+                    </button>
+                </div>
+            </form>
+            <form action="">
+                <div class="cadastro">
+                    <button type="submit" class="formulario__botao formulario__botao--comum">
+                        Alterar Plano
                     </button>
                 </div>
             </form>
