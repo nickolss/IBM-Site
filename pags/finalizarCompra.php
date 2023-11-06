@@ -2,6 +2,7 @@
     require_once('../assets/scripts/conexao.php');
     require_once('../assets/scripts/iniciarSessao.php');
     require_once('../assets/scripts/consultaCliente.php');
+    $anoAt = date("Y");
 ?>
 
 
@@ -166,11 +167,11 @@
                             <div class="input__endereco">
                                 <div class="caixa__input">
                                     <input class="inputCartao" type="number" name="mesCartao" id="mesCartao" required maxlength="2" minlength="2" title="O mês deve ter 2 digitos numéricos.">
-                                    <label for="address">Mês Validade</label>
+                                    <label for="address">Mês de Validade</label>
                                 </div>
                                 <div class="caixa__input caixa__input__margin">
-                                    <input type="number" required name="anoCartao" id="anoCartao" autocomplete="off" maxlength="4" minlength="4" title="O ano deve ter 4 digitos numéricos.">
-                                    <label for="numero">Ano Validade</label>
+                                    <input type="number" required name="anoCartao" id="anoCartao" autocomplete="off" maxlength="4" minlength="4" title="O ano deve ter 4 digitos numéricos." min=<?= $anoAt ?>>
+                                    <label for="numero">Ano de Validade</label>
                                 </div>
                             </div>
                             <div class="input__endereco">
