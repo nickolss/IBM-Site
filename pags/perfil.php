@@ -90,14 +90,6 @@ if ($_SESSION['plano'] != 'comum' && $_SESSION['plano'] != 'turbinado') {
 						<img class="img__icon__esquerda" src="../assets/img/icone-carrinho.svg" alt="Compras">
 					</div>
 				</a>
-				<a href="./orcamentosCliente.php">
-					<div class="icone__esquerda">
-						<div class="legenda__icone__pc">
-							Orçamentos
-						</div>
-						<img class="img__icon__esquerda" src="../assets/img/icone-porco-dinheiro.svg" alt="Orçamentos">
-					</div>
-				</a>
 				<a href="agendamentosPendentes.php">
 					<div class="icone__esquerda">
 						<div class="legenda__icone__pc">
@@ -267,14 +259,6 @@ if ($_SESSION['plano'] != 'comum' && $_SESSION['plano'] != 'turbinado') {
 							<figcaption class="legenda__icones__atividade">Compras</figcaption>
 						</figure>
 					</div>
-					<a href="./orcamentosCliente.php">
-						<div class="icone__esquerda">
-							<figure class="figure-container">
-								<img class="img__icon__esquerda" src="../assets/img/icone-porco-dinheiro.svg" alt="Orçamentos">
-								<figcaption class="legenda__icones__atividade">Orçamentos</figcaption>
-							</figure>
-						</div>
-					</a>
 					<a href="#">
 						<div class="icone__esquerda">
 							<figure class="figure-container">

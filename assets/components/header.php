@@ -367,13 +367,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <li><a class="dropdown-item" href="perfil.php"><span class="opcao__navbar__mobile">Perfil</span></a></li>
                             <?php
                                 if(isset($_SESSION['id'])){
-                                var_dump($_SESSION);
-                                
                             ?>
                             <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Veículos</span></a></li>
                             <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Compras</span></a></li>
-                            <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Orçamentos</span></a></li>
-                            <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Agendamentos</span></a></li>
+                            <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Agendamentos Pendentes</span></a></li>
+							<li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Agendamentos Confirmados</span></a></li>
                             <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Plano</span></a></li>
                             <?php
                                 }
