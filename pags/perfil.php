@@ -3,6 +3,7 @@
 require_once('../assets/scripts/conexao.php');
 require_once('../assets/scripts/iniciarSessao.php');
 require_once('../assets/scripts/consultaCliente.php');
+require_once('../assets/scripts/exibirUltimaCompra.php');
 
 $idDono = $_SESSION['id'] || null;
 $sqlCarro = $pdo->query("SELECT * FROM `carro` WHERE id_dono = $idDono");
@@ -35,7 +36,7 @@ if ($_SESSION['plano'] != 'comum' && $_SESSION['plano'] != 'turbinado') {
 	<!-- Arquivos do Bootstrap -->
 	<link rel="stylesheet" href="../assets/css/css-bootstrap/bootstrap.min.css">
 	<script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
-	
+
 	<link rel="stylesheet" href="../assets/css/estilos-importantes.css" />
 	<link rel="stylesheet" href="../assets/css/perfil.css">
 	<link rel="stylesheet" href="../assets/css/trocarFoto.min.css">
@@ -218,6 +219,11 @@ if ($_SESSION['plano'] != 'comum' && $_SESSION['plano'] != 'turbinado') {
 					<div class="perfil__veiculos-compra__branco">
 						<h3>Compras</h3>
 						<i class='bx bx-cart'></i>
+					</div>
+					<div>
+						<img src="<?= $produtosImagem['caminho_imagem'] ?>" alt="Imagem do ultimo pedido">
+						<h2><?= $ultimaCompra['nomeProdutos'] ?></h2>
+						<p>R$<?= $ultimaCompra['preco_final'] ?>,00</p>
 					</div>
 				</div>
 
