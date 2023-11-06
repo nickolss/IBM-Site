@@ -84,3 +84,15 @@ main{
    transform: scale(1.1);
    transition-duration: 0.7s;
   }
+
+@media only screen and (max-width: 900px){
+   .mainTitle{
+       margin-top: 5rem;
+   }
+}
+
+@media only screen and (max-width: 504px){
+   .mainTitle{
+       margin-top: 7rem;
+   }
+}
