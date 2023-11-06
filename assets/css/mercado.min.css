@@ -153,12 +153,20 @@ main{
     font-weight: bold;
 }
 
+.txt__avaliacao{
+    margin-bottom: 2.5rem;
+}
+
 .p__avaliacao{
     font-size: 1.1rem;
     text-align: justify;
-    margin-bottom: 2.5rem;
+}
+
+#btn-excluir__avaliacao, #btn-excluir__avaliacao:hover{
+    color: var(--vermelho);
 }
 /*FIM AVALIACOES*/
+
 @media only screen and (max-width: 1300px){
     main{
         margin-bottom: 2rem;

@@ -119,7 +119,7 @@ $idProduto = $produto[0]['codigoProduto'];
 					?>
 							<div class="txt__avaliacao">
 								<p class="p__avaliacao"><?= $avaliacao['texto'] ?></p>
-								<a href="../assets/scripts/excluirComentario.php?mercadoria=<?= $produto[0]['codigoProduto'] ?>&&comprador=<?= (int)$avaliacao['id_escritor'] ?>">Excluir</a>
+								<a id="btn-excluir__avaliacao" href="../assets/scripts/excluirComentario.php?mercadoria=<?= $produto[0]['codigoProduto'] ?>&&comprador=<?= (int)$avaliacao['id_escritor'] ?>">Excluir</a>
 							</div>
 
 						<?php
