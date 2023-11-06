@@ -20,6 +20,7 @@
 
 	<link rel="stylesheet" href="../assets/css/pagamentoTroca.min.css">
 	<link rel="stylesheet" href="../assets/css/estilos-importantes.css">
+	<link rel="stylesheet" href="../assets/css/mercado.min.css">
 	<script type="text/javascript" src="../assets/js/java2.js" defer></script>
 
 	<link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
@@ -34,23 +35,23 @@
 	?>
 
 	<main>
-		<div class="container">
-			<div class="esquerda__img">
-				<img class="produto__troca" src="<?= $img ?>" alt="">
+		<div class="container__produto">
+			<div class="imagem__produto">
+				<img src="<?= $img ?>">
 			</div>
-			<div class="direita__info">
-				<h1><?= $nomeProduto ?></h1>
-				<h2>Pontos: <?= $pontos ?></h2>
-				<h3>Sobre esse item:</h3>
-				<p class="troca__info"> <?= $descricao ?></p>
-				
-				<?php
-					$pontosProdutoTroca = $pontos;
-				?>
-				
-				<form action="../assets/scripts/realizarTroca.php?pontos=<?=$pontosProdutoTroca?>" method="POST">
-					<button class="botao__troca" type="submit">Trocar com meus Pontos</button>
-				</form>
+			<div class="descricao__produto">
+				<h1 id="titulo__produto"><?= $nomeProduto ?></h2>
+					<h2 id="preco__produto">Pontos: <?= $pontos ?></h3>
+						<h3 id="titulo-descricao__produto">Sobre este item:</h3>
+						<p id="descricao__produto"><?= $descricao ?></p>
+
+						<?php
+							$pontosProdutoTroca = $pontos;
+						?>
+
+						<form action="../assets/scripts/realizarTroca.php?pontos=<?=$pontosProdutoTroca?>" method="POST">
+							<button class="btn__produto" type="submit">Trocar com meus Pontos</button>
+						</form>
 			</div>
 		</div>
 	</main>
