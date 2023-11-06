@@ -61,8 +61,8 @@ $idProduto = $produto[0]['codigoProduto'];
 					<h2 id="preco__produto">R$<?= $precoProduto ?></h3>
 						<h3 id="titulo-descricao__produto">Sobre este item:</h3>
 						<p id="descricao__produto"><?= $descricao ?></p>
-						<form method="POST" action="carrinho.php?adicionar=<?php echo $id; ?>">
-							<button class="btn__produto" type="submit" name="adicionar" value="<?php echo $id; ?>">Comprar</button>
+						<form method="POST" action="carrinho.php?adicionar=<?php echo $idProduto; ?>">
+							<button class="btn__produto" type="submit" name="adicionar" value="<?php echo $idProduto; ?>">Comprar</button>
 						</form>
 			</div>
 		</div>
