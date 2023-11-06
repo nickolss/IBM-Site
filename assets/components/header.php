@@ -364,15 +364,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="perfil.php"><span class="opcao__navbar__mobile">Perfil</span></a></li>
+                            <li><a class="dropdown-item" href="../pags/perfil.php"><span class="opcao__navbar__mobile">Perfil</span></a></li>
                             <?php
                                 if(isset($_SESSION['id'])){
                             ?>
-                            <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Veículos</span></a></li>
-                            <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Compras</span></a></li>
-                            <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Agendamentos Pendentes</span></a></li>
-							<li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Agendamentos Confirmados</span></a></li>
-                            <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Plano</span></a></li>
+                            <li><a class="dropdown-item" href="../pags/veiculos.php"><span class="opcao__navbar__mobile">Veículos</span></a></li>
+                            <li><a class="dropdown-item" href="../pags/comprasRealizadas.php"><span class="opcao__navbar__mobile">Compras</span></a></li>
+                            <li><a class="dropdown-item" href="../pags/agendamentosPendentes.php"><span class="opcao__navbar__mobile">Agendamentos Pendentes</span></a></li>
+							<li><a class="dropdown-item" href="../pags/agendamentosConfirmados.php"><span class="opcao__navbar__mobile">Agendamentos Confirmados</span></a></li>
                             <?php
                                 }
                                 ?>
