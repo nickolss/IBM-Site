@@ -380,9 +380,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </li>
                             <li><a class="dropdown-item" href="perfil.php"><span class="opcao__navbar__mobile">Perfil</span></a></li>
                             <?php
-                                if(isset($_SESSION['id'])){
-                                var_dump($_SESSION);
-                                
+                                if(isset($_SESSION['id'])){                                
                             ?>
                             <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Veículos</span></a></li>
                             <li><a class="dropdown-item" href="#"><span class="opcao__navbar__mobile">Compras</span></a></li>
