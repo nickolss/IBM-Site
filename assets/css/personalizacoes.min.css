@@ -10,6 +10,8 @@ main{
     flex: 1;
 }
 
+
+
 .main__title h1{
     display: flex;
     align-items: center;
@@ -20,6 +22,7 @@ main{
     text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
     font-size: 3rem;
     margin-top: 3rem;
+  
 }
 
 .linha__cards{
@@ -222,3 +225,8 @@ main{
         font-size: 1.8rem;
     }
 }
+
+@media only screen and (max-width: 400px){
+.main__title h1{
+  font-size: 4.8vh;
+}}

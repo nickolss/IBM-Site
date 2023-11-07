@@ -65,7 +65,7 @@ require_once('../assets/scripts/iniciarSessao.php');
     ?>
     <br>
 
-    <main>
+    <main class="p-2">
         <div class="container" id="area__carrinho_pag_produtos">
             <div class="row">
                 <div class="col">

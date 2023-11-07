@@ -431,12 +431,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		<div class="landing">
 			<div class="pai__descricao__img">
 				<div class="div__descricao">
-					<h1 id="home__main__title">Turn Motors</h1>
+					<h1 id="home__main__title" >Turn Motors</h1>
 					<p id="descricao__turnmotors">Turn Motors é uma marca de customização e venda de peças para atuomóveis focados na personalização e na criação de uma identidade visual única para seu veículo.</p>
 					<a class="btn__explorar" href="pags/produtos.php">Explorar</a>
 				</div>
 
-				<div class="div__img">
+				<div class="div__img" >
 					<img id="carro__home" src="assets/img/img-carro-home.png" alt="Carro Preto">
 				</div>
 			</div>
@@ -700,6 +700,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			<h2>Restrições e Limites</h2>
 			<p class="desc__subtitle">Nessa área são mostradas as restrições e os limites impostos por lei na hora de personalizar o seu veículo</p>
 		</div>
+		
 		<div class="pai__restricao">
 			<div class="linha__restricao">
 				<div class="restricao">

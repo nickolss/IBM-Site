@@ -192,6 +192,7 @@ main{
 .desc__restricao{
     font-size: 1.3em;
     max-width: 450px;
+    padding: 5px;
 }
 
 footer{
@@ -254,6 +255,9 @@ footer{
     .pai__descricao__img{
         flex-direction: column;
     }
+    .div__descricao{
+        margin-right: 0px;
+    }
     
     .btn__explorar{
         width: 250px;
@@ -285,6 +289,7 @@ footer{
 
     .desc__subtitle{
         max-width: 450px;
+        padding: 5px;
     }
 }
 
@@ -358,4 +363,26 @@ footer{
     .trabalhamos__mobile{
         max-width: 250px;
     }
+     .div__descricao{
+        margin-right: 0px;
+       width: 100%;
+    }
+    .div__img{
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+    #home__main__title{
+        font-size: 2.3rem;
+    }
+    #descricao__turnmotors{
+        padding: 0px 10px;
+        max-width: 100%;
+        flex-wrap: wrap;
+        font-size: 1rem;
+    }
+   #carro__home{
+    max-width: 100%;
+    height: auto;
+   }
 }
