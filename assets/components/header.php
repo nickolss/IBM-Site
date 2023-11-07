@@ -362,13 +362,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <hr class="dropdown-divider">
                             </li>
                             <li><a class="dropdown-item" href="aboutus.php"><span class="opcao__navbar__mobile">Sobre Nós</span></a></li>
+                            <?php
+                                if(isset($_SESSION['id'])){
+                                    ?>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li><a class="dropdown-item" href="../pags/perfil.php"><span class="opcao__navbar__mobile">Perfil</span></a></li>
-                            <?php
-                                if(isset($_SESSION['id'])){
-                            ?>
                             <li><a class="dropdown-item" href="../pags/veiculos.php"><span class="opcao__navbar__mobile">Veículos</span></a></li>
                             <li><a class="dropdown-item" href="../pags/comprasRealizadas.php"><span class="opcao__navbar__mobile">Compras</span></a></li>
                             <li><a class="dropdown-item" href="../pags/agendamentosPendentes.php"><span class="opcao__navbar__mobile">Agendamentos Pendentes</span></a></li>

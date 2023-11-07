@@ -27,416 +27,408 @@
 	session_start();
 	?>
 
-<?php 
-if (!isset($_SESSION['carrinho'])) {
-    $_SESSION['carrinho'] = array(); // Inicialize o carrinho como um array vazio
-}
+	<?php
+	if (!isset($_SESSION['carrinho'])) {
+		$_SESSION['carrinho'] = array(); // Inicialize o carrinho como um array vazio
+	}
 
-if (isset($_POST['limpar_carrinho_btn'])) {
-    // Limpar todos os itens do carrinho
-    $_SESSION['carrinho'] = array();
-}
+	if (isset($_POST['limpar_carrinho_btn'])) {
+		// Limpar todos os itens do carrinho
+		$_SESSION['carrinho'] = array();
+	}
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['adicionar'])) {
-        $idProd = (int)$_POST['adicionar'];
+	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+		if (isset($_POST['adicionar'])) {
+			$idProd = (int)$_POST['adicionar'];
 
-        $sql = "SELECT codigoProduto FROM produto";
-        $stmt = $pdo->prepare($sql);
-        if ($stmt->execute()) {
+			$sql = "SELECT codigoProduto FROM produto";
+			$stmt = $pdo->prepare($sql);
+			if ($stmt->execute()) {
 
-            $idsProdutosPermitidos = [];
-            while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $idsProdutosPermitidos[] = $linha['codigoProduto'];
-            }
-        } else {
-            echo "Erro na consulta: " . $stmt->errorInfo()[2];
-        }
-
-
-       
-    // Verifique se o ID do produto existe no array de IDs de produtos
-    if (in_array($idProd, $idsProdutosPermitidos)) {
-         
-        
-      
-        $codigoProdutoAdd = $idProd;
-       
-
-        // Consulta ao banco de dados para obter as informações do produto
-        $sqlProduto = "SELECT nome, preco, caminho_imagem FROM produto WHERE codigoProduto = :codigoProdutoAdd";
-        $stmtProduto = $pdo->prepare($sqlProduto);
-        $stmtProduto->bindParam(':codigoProdutoAdd', $codigoProdutoAdd, PDO::PARAM_INT);
-
-        if ($stmtProduto->execute()) {
-            $rowProduto = $stmtProduto->fetch(PDO::FETCH_ASSOC);
-
-            if ($rowProduto) {
-                $nomeProduto = $rowProduto['nome'];
-                $precoProduto = $rowProduto['preco'];
-                $imagemProdutoCart = $rowProduto['caminho_imagem'];
-              
-
-                // Verifique se o produto já está no carrinho
-                if (isset($_SESSION['carrinho'][$idProd])) {
-                    $_SESSION['carrinho'][$idProd]['quantidade']++;
-                  
-                } else {
-                    $_SESSION['carrinho'][$idProd] = array(
-                        'quantidade' => 1,
-                        'nome' => $nomeProduto,
-                        'preco' => $precoProduto,
-                        'caminho_imagem' => $imagemProdutoCart,
-                       
-                    );
-                }
-            } else {
-                die('Produto não encontrado no banco de dados.');
-            }
-        } else {
-            die('Erro ao executar a consulta.');
-        }
-       
-    } else {
-        echo 'ID do produto inválido.';
-        
-        $totalCarrinho -= $subtotal;
-    }
+				$idsProdutosPermitidos = [];
+				while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {
+					$idsProdutosPermitidos[] = $linha['codigoProduto'];
+				}
+			} else {
+				echo "Erro na consulta: " . $stmt->errorInfo()[2];
+			}
 
 
-    } elseif (isset($_POST['subtrair'])) {
-        $idProdutoRemover = (int)$_POST['subtrair'];
-           
-           
-            // Verifique se o produto está no carrinho antes de removê-lo
-        if (isset($_SESSION['carrinho'][$idProdutoRemover])) {
-            // Verifique se a quantidade é maior do que 1 antes de subtrair
-            if ($_SESSION['carrinho'][$idProdutoRemover]['quantidade'] > 1) {
-                $_SESSION['carrinho'][$idProdutoRemover]['quantidade']--;
-                
-            } else {
-                // Se a quantidade for 1, remova o produto do carrinho
-                unset($_SESSION['carrinho'][$idProdutoRemover]);
-               
-            }
-        }
+
+			// Verifique se o ID do produto existe no array de IDs de produtos
+			if (in_array($idProd, $idsProdutosPermitidos)) {
 
 
-    } elseif (isset($_POST['remover'])) {
-        $idProdutoRemover = (int)$_POST['remover'];
-       
-        // Verifique se o produto está no carrinho antes de removê-lo
 
-            if (isset($_SESSION['carrinho'][$idProdutoRemover])) {
-    
-                // Remova o produto do carrinho
-    
-                unset($_SESSION['carrinho'][$idProdutoRemover]);
-               
-            } else {
-    
-                echo '<script>alert("O item não está no carrinho");</script>';
-            }
-            }
-}
+				$codigoProdutoAdd = $idProd;
+
+
+				// Consulta ao banco de dados para obter as informações do produto
+				$sqlProduto = "SELECT nome, preco, caminho_imagem FROM produto WHERE codigoProduto = :codigoProdutoAdd";
+				$stmtProduto = $pdo->prepare($sqlProduto);
+				$stmtProduto->bindParam(':codigoProdutoAdd', $codigoProdutoAdd, PDO::PARAM_INT);
+
+				if ($stmtProduto->execute()) {
+					$rowProduto = $stmtProduto->fetch(PDO::FETCH_ASSOC);
+
+					if ($rowProduto) {
+						$nomeProduto = $rowProduto['nome'];
+						$precoProduto = $rowProduto['preco'];
+						$imagemProdutoCart = $rowProduto['caminho_imagem'];
+
+
+						// Verifique se o produto já está no carrinho
+						if (isset($_SESSION['carrinho'][$idProd])) {
+							$_SESSION['carrinho'][$idProd]['quantidade']++;
+						} else {
+							$_SESSION['carrinho'][$idProd] = array(
+								'quantidade' => 1,
+								'nome' => $nomeProduto,
+								'preco' => $precoProduto,
+								'caminho_imagem' => $imagemProdutoCart,
+
+							);
+						}
+					} else {
+						die('Produto não encontrado no banco de dados.');
+					}
+				} else {
+					die('Erro ao executar a consulta.');
+				}
+			} else {
+				echo 'ID do produto inválido.';
+
+				$totalCarrinho -= $subtotal;
+			}
+		} elseif (isset($_POST['subtrair'])) {
+			$idProdutoRemover = (int)$_POST['subtrair'];
+
+
+			// Verifique se o produto está no carrinho antes de removê-lo
+			if (isset($_SESSION['carrinho'][$idProdutoRemover])) {
+				// Verifique se a quantidade é maior do que 1 antes de subtrair
+				if ($_SESSION['carrinho'][$idProdutoRemover]['quantidade'] > 1) {
+					$_SESSION['carrinho'][$idProdutoRemover]['quantidade']--;
+				} else {
+					// Se a quantidade for 1, remova o produto do carrinho
+					unset($_SESSION['carrinho'][$idProdutoRemover]);
+				}
+			}
+		} elseif (isset($_POST['remover'])) {
+			$idProdutoRemover = (int)$_POST['remover'];
+
+			// Verifique se o produto está no carrinho antes de removê-lo
+
+			if (isset($_SESSION['carrinho'][$idProdutoRemover])) {
+
+				// Remova o produto do carrinho
+
+				unset($_SESSION['carrinho'][$idProdutoRemover]);
+			} else {
+
+				echo '<script>alert("O item não está no carrinho");</script>';
+			}
+		}
+	}
 
 
 
 
-?>
+	?>
 
-    <header>
-        <div class="pai__header">
-            <div class="filho__header">
-                <div class="logotipo">
-                    <a class="logo" href="index.php">
-                        <figure class="figure-container">
-                            <img class="img__logo" src="assets/img/logo-turnmotors.png" alt="Logo Turn Motors" />
-                            <figcaption class="legenda__icones__atividade" id="title__header">TURN MOTORS</figcaption>
-                        </figure>
-                    </a>
-                </div>
-                <div>
-                    <ul class="paginas">
-                        <li class="opcoes__paginas"><a class="hyperlink__paginas" href="pags/personalizacoes.php">Personalizações</a></li>
-                        <li class="opcoes__paginas"><a class="hyperlink__paginas" href="pags/produtos.php">Produtos</a></li>
-                        <li class="opcoes__paginas"><a class="hyperlink__paginas" href="pags/aboutus.php">Sobre Nós</a></li>
-                    </ul>
-                </div>
-                <div class="icones__direita">
-                    <ul class="icones">
-                        <li> <img class="lupa icone__header" src="assets/img/icone-search.svg" alt="Pesquisar"> </li>
-                        <li class="pai-carrinho">
-                            <nav id="carrinho__header">
-                                <img class="seta__header__carrinho" src="assets/img/seta-modal.png" alt="">
-                                <?php if (!empty($_SESSION['carrinho'])) { ?>
-                                    <div id="itens__header__modal_carrinho">
-                                        <div class="table__itens_header_carrinho">
-                                            <table style="border-collapse: separate;border-spacing: 0 10px ; ">
-                                                <tbody>
-                                                    <?php
-                                                    $totalCarrinho = 0; // Variável para calcular o total do carrinho
-                                                    $totalPR = 0;
+	<header>
+		<div class="pai__header">
+			<div class="filho__header">
+				<div class="logotipo">
+					<a class="logo" href="index.php">
+						<figure class="figure-container">
+							<img class="img__logo" src="assets/img/logo-turnmotors.png" alt="Logo Turn Motors" />
+							<figcaption class="legenda__icones__atividade" id="title__header">TURN MOTORS</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div>
+					<ul class="paginas">
+						<li class="opcoes__paginas"><a class="hyperlink__paginas" href="pags/personalizacoes.php">Personalizações</a></li>
+						<li class="opcoes__paginas"><a class="hyperlink__paginas" href="pags/produtos.php">Produtos</a></li>
+						<li class="opcoes__paginas"><a class="hyperlink__paginas" href="pags/aboutus.php">Sobre Nós</a></li>
+					</ul>
+				</div>
+				<div class="icones__direita">
+					<ul class="icones">
+						<li> <img class="lupa icone__header" src="assets/img/icone-search.svg" alt="Pesquisar"> </li>
+						<li class="pai-carrinho">
+							<nav id="carrinho__header">
+								<img class="seta__header__carrinho" src="assets/img/seta-modal.png" alt="">
+								<?php if (!empty($_SESSION['carrinho'])) { ?>
+									<div id="itens__header__modal_carrinho">
+										<div class="table__itens_header_carrinho">
+											<table style="border-collapse: separate;border-spacing: 0 10px ; ">
+												<tbody>
+													<?php
+													$totalCarrinho = 0; // Variável para calcular o total do carrinho
+													$totalPR = 0;
 
-                                                   
-                                                    $url = $_SERVER['REQUEST_URI'];
 
-                                                    
-                                                    $textoAlvo = "carrinho.php";
+													$url = $_SERVER['REQUEST_URI'];
+
+
+													$textoAlvo = "carrinho.php";
 													$textoAlvo2 = "index.php";
 
-                                                    
-                                                    if ((strpos($url, $textoAlvo) !== false) || (strpos($url, $textoAlvo2) !== false)) {
-                                                   
-                                                        $SomaDeParametroURL = "?";
-                                                    } else {
-                                                     
-                                                        $SomaDeParametroURL = "&";
-                                                    }
+
+													if ((strpos($url, $textoAlvo) !== false) || (strpos($url, $textoAlvo2) !== false)) {
+
+														$SomaDeParametroURL = "?";
+													} else {
+
+														$SomaDeParametroURL = "&";
+													}
 
 
-                                                    foreach ($_SESSION['carrinho'] as $idProd => $value) {
-                                                        $subtotal = $value['preco'] * $value['quantidade'];
-                                                        $totalCarrinho += $subtotal;
+													foreach ($_SESSION['carrinho'] as $idProd => $value) {
+														$subtotal = $value['preco'] * $value['quantidade'];
+														$totalCarrinho += $subtotal;
 														$caminhoCompleto = $value['caminho_imagem'];
 														$caminhoSemOsTresPrimeiros = substr($caminhoCompleto, 3);
-                                                    ?>
+													?>
 
-                                                        <tr>
-                                                            <td class="img__table__header_carrinho" style="width: 40%;"> <img src="<?php echo $caminhoSemOsTresPrimeiros ?>" alt="..."> </td>
+														<tr>
+															<td class="img__table__header_carrinho" style="width: 40%;"> <img src="<?php echo $caminhoSemOsTresPrimeiros ?>" alt="..."> </td>
 
-                                                            <td class="info__table__header_carrinho">
-                                                                <div>
-                                                                    <h2> <?php echo $value['nome'] ?></h2>
-                                                                </div>
-                                                                <div>
-                                                                    <h3>R$: <?php echo number_format($value['preco'], 2, ',', '.')  ?></h3>
-                                                                </div>
-                                                                <div class="table_itens__header__carrinho__config">
-                                                                    <div class="table__itens_header_carrinho_botoes">
-                                                                        <form method="POST" action="<?php echo $_SERVER['REQUEST_URI'] ?><?php echo $SomaDeParametroURL ?>subtrair=<?php echo $idProd ?>">
-                                                                            <button id="botaoSubtrair_carrinho_header" type="submit" name="subtrair" value="<?php echo $idProd ?>">-</button>
-                                                                        </form>
+															<td class="info__table__header_carrinho">
+																<div>
+																	<h2> <?php echo $value['nome'] ?></h2>
+																</div>
+																<div>
+																	<h3>R$: <?php echo number_format($value['preco'], 2, ',', '.')  ?></h3>
+																</div>
+																<div class="table_itens__header__carrinho__config">
+																	<div class="table__itens_header_carrinho_botoes">
+																		<form method="POST" action="<?php echo $_SERVER['REQUEST_URI'] ?><?php echo $SomaDeParametroURL ?>subtrair=<?php echo $idProd ?>">
+																			<button id="botaoSubtrair_carrinho_header" type="submit" name="subtrair" value="<?php echo $idProd ?>">-</button>
+																		</form>
 
-                                                                        <span id="contador_carrinho_header"> <?php echo $value['quantidade'] ?></span>
-                                                                        <form method="POST" action="<?php echo $_SERVER['REQUEST_URI'] ?><?php echo $SomaDeParametroURL ?>adicionar=<?php echo $idProd ?>">
-                                                                            <button id="botaoAcrescentar_carrinho_header" type="submit" name="adicionar" value="<?php echo $idProd ?>">+</button>
-                                                                        </form>
-                                                                    </div>
+																		<span id="contador_carrinho_header"> <?php echo $value['quantidade'] ?></span>
+																		<form method="POST" action="<?php echo $_SERVER['REQUEST_URI'] ?><?php echo $SomaDeParametroURL ?>adicionar=<?php echo $idProd ?>">
+																			<button id="botaoAcrescentar_carrinho_header" type="submit" name="adicionar" value="<?php echo $idProd ?>">+</button>
+																		</form>
+																	</div>
 
-                                                                    <form method="POST" action="<?php echo $_SERVER['REQUEST_URI'] ?><?php echo $SomaDeParametroURL ?>remover=<?php echo $idProd ?>">
-                                                                        <button style="border: none; color: #003445; background-color: #fff; text-decoration: none" type="submit" name="remover" value="<?php echo $idProd ?>">Excluir</button>
-                                                                    </form>
-
-
-                                                                    <span href="pags/produtos.php"></span>
-
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    <?php $totalPR += $value['quantidade']; } ?>
-                                                </tbody>
-                                            </table>
+																	<form method="POST" action="<?php echo $_SERVER['REQUEST_URI'] ?><?php echo $SomaDeParametroURL ?>remover=<?php echo $idProd ?>">
+																		<button style="border: none; color: #003445; background-color: #fff; text-decoration: none" type="submit" name="remover" value="<?php echo $idProd ?>">Excluir</button>
+																	</form>
 
 
-                                        </div>
-                                        <br>
-                                        <br>
-                                        <div class="carrinho__header__finalizacao">
-                                            <p class="fs-2">Total: R$<?php echo number_format($totalCarrinho, 2, ',', '.') ?></p>
-                                            <div class="text-center">
-                                            <form method="POST" action="pags/carrinho.php">
-                                                <input type="hidden" name="carrinho" value="<?php echo http_build_query($_SESSION['carrinho']); ?>">
-                                                <button type="submit"> Ver Carrinho</button>
-                                            </form>
-                                                <a style="text-decoration: none; color: #003445" href="">Frete grátis com o Plano Turbinado</a>
-                                            </div>
+																	<span href="pags/produtos.php"></span>
+
+																</div>
+															</td>
+														</tr>
+													<?php $totalPR += $value['quantidade'];
+													} ?>
+												</tbody>
+											</table>
 
 
-                                        </div>
-                                    </div>
-                                <?php } else { ?>
-
-                                    <div id="carrinho__header_vazio">
-                                        <img width="100px" src="assets/img/iconeSacolaCompras.png" alt="">
-                                        <p>Não há produtos ainda</p>
-                                    </div>
-                                <?php } ?>
-
-                            </nav>
-                            <div class="cont-valor__sobreposto">
-                            <img class="icone__header" id="carrinho" src="assets/img/icone-carrinho.svg" alt="Carrinho"> 
-                            
-                            <div class="valor-sobreposto">
-                              
-                            <?= isset($totalPR) ? $totalPR : '0'; ?>
-                             
-                            </div>
-                            </div>
-                        </li>
-                        <li> <a class="cabeca" href="pags/login.php"> <img class="icone__header" src="assets/img/icone-perfil.svg" alt="Login"> </a> </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div id="fade"></div>
-    </header>
-
-    <nav id="header_search_aparecer2">
-        <nav class="header_search_aparecer ">
+										</div>
+										<br>
+										<br>
+										<div class="carrinho__header__finalizacao">
+											<p class="fs-2">Total: R$<?php echo number_format($totalCarrinho, 2, ',', '.') ?></p>
+											<div class="text-center">
+												<form method="POST" action="pags/carrinho.php">
+													<input type="hidden" name="carrinho" value="<?php echo http_build_query($_SESSION['carrinho']); ?>">
+													<button type="submit"> Ver Carrinho</button>
+												</form>
+												<a style="text-decoration: none; color: #003445" href="">Frete grátis com o Plano Turbinado</a>
+											</div>
 
 
-            <div class="container  text-center">
-                <div class="row align-items-center" style="height: 150px;">
-                    <div class="col " style="padding: 0px 20px;">
+										</div>
+									</div>
+								<?php } else { ?>
 
-                        <div class="header_search">
-                            <form style="width: 100%; " action="pags/produtos-categoria.php" method="GET" class="d-flex" role="search">
-                                <button type="submit"><img width="30px" height="auto" src="assets/img/icone-search-vermelho.png" alt="Pesquisar"></button>
+									<div id="carrinho__header_vazio">
+										<img width="100px" src="assets/img/iconeSacolaCompras.png" alt="">
+										<p>Não há produtos ainda</p>
+									</div>
+								<?php } ?>
 
-                                <input name="busca" class="form-control input_header_search" type="text" placeholder="Pesquisar...">
-                            </form>
-                            <div style="display: flex; justify-content: center; align-items: center; "> <button type="button" class="btn-close__fechar__navbar lupa" aria-label="Close"><i class='bx bx-x' style='color:#db162f'></i></button></div>
+							</nav>
+							<div class="cont-valor__sobreposto">
+								<img class="icone__header" id="carrinho" src="assets/img/icone-carrinho.svg" alt="Carrinho">
 
-                        </div>
-                    </div>
-                </div>
+								<div class="valor-sobreposto">
 
-            </div>
+									<?= isset($totalPR) ? $totalPR : '0'; ?>
 
-        </nav>
-    </nav>
+								</div>
+							</div>
+						</li>
+						<li> <a class="cabeca" href="pags/login.php"> <img class="icone__header" src="assets/img/icone-perfil.svg" alt="Login"> </a> </li>
+					</ul>
+				</div>
+			</div>
+		</div>
 
-    <nav style="box-shadow: 0px 5px 5px 0px #888;" class="navbar  fixed-top" id="menu">
-        <div class="d-flex justify-content-between " style="height: 100%;">
-            <div style=" width: 33%;" class="d-flex ">
-                <button style="border: none; margin-left: 10px;" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" data-bs-theme="light" aria-controls="offcanvasNavbar" aria-label="Menu">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-            <div style=" width: 33%;" class="d-flex justify-content-center">
-                <a class="logotipo__header__mobile" href="index.php">
-                    <figure class="figure-container">
-                        <img width="50px" src="assets/img/logo-turnmotors.png" alt="Logo Turn Motors" />
-                        <figcaption class="legenda__icones__atividade" id="title__header">TURN MOTORS</figcaption>
-                    </figure>
-                </a>
-            </div>
+		<div id="fade"></div>
+	</header>
 
-            <div style=" width: 33%;" class="d-flex justify-content-end align-items-center">
-                <div style="margin-right: 30px;">
-                    <img class="lupa img-fluid" width="30px" height="auto" src="assets/img/icone-search.svg" alt="Ícone de busca">
-                </div>
-                <div style="margin-right: 10px;">
-                        <div class="cont-valor__sobreposto">
-                             <form method="POST" action="pags/carrinho.php" id="icone-carrinho-funcional__Mobile">
-                                                <input type="hidden" name="carrinho" value="<?php echo http_build_query($_SESSION['carrinho']); ?>">
-                                                <img  class="img-fluid" width="30px" height="auto" alt="Carrinho" src="assets/img/icone-carrinho.svg" id="botaoCarrinho__mobile"> </img>
-                                            </form>
-                           
-                            
-                            <div class="valor-sobreposto">
-                              
-                            <?= isset($totalPR) ? $totalPR : '0'; ?>
-                             
-                            </div>
-                            </div>
-                    
-                </div>
+	<nav id="header_search_aparecer2">
+		<nav class="header_search_aparecer ">
 
 
-            </div>
+			<div class="container  text-center">
+				<div class="row align-items-center" style="height: 150px;">
+					<div class="col " style="padding: 0px 20px;">
 
-            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div id="header__menu__hamburguer" class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img style="margin-right: 10px;" width="50px" height="auto" src="assets/img/logo-turnmotors.png" alt="logo">TURN MOTORS</h5>
-                    <button type="button" class="btn-close__fechar__navbar" data-bs-dismiss="offcanvas" aria-label="Close"><i class='bx bx-x' style='color:#ffc857'></i></button>
-                </div>
+						<div class="header_search">
+							<form style="width: 100%; " action="pags/produtos-categoria.php" method="GET" class="d-flex" role="search">
+								<button type="submit"><img width="30px" height="auto" src="assets/img/icone-search-vermelho.png" alt="Pesquisar"></button>
 
-            <div class="offcanvas-body" id="corpo__navbar__mobile">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-                    </li>
-                    <hr class="divisao__linha__branca">
-                    <li class="nav-item">
-                        <a class="nav-link" href="pags/login.php">Login</a>
-                    </li>
-                    <hr class="divisao__linha__branca">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Opções
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="pags/personalizacoes.php"><span class="opcao__navbar__mobile">Personalizações</span></a></li>
-                            <li><a class="dropdown-item" href="pags/produtos.php"><span class="opcao__navbar__mobile">Produtos</span></a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="pags/aboutus.php"><span class="opcao__navbar__mobile">Sobre Nós</span></a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="pags/perfil.php"><span class="opcao__navbar__mobile">Perfil</span></a></li>
-                            <?php
-                                if(isset($_SESSION['id'])){                                
-                            ?>
-                            <li><a class="dropdown-item" href="pags/veiculos.php"><span class="opcao__navbar__mobile">Veículos</span></a></li>
-                            <li><a class="dropdown-item" href="pags/comprasRealizadas.php"><span class="opcao__navbar__mobile">Compras</span></a></li>
-                            <li><a class="dropdown-item" href="pags/agendamentosPendentes.php"><span class="opcao__navbar__mobile">Agendamentos Pendentes</span></a></li>
-							<li><a class="dropdown-item" href="pags/agendamentosConfirmados.php"><span class="opcao__navbar__mobile">Agendamentos Confirmados</span></a></li>
-                            <?php
-                                }
-                                ?>
-                        </ul>
-                    </li>
-                    <br>
-                    <br>
-                    <div class="row alinhar">
-                        <div class="col">
-                            <a class="link" target="_blank" href="https://twitter.com/MotorsTurn" aria-label="Acesse nosso Twitter"><img width="35px" height="auto" src="assets/img/icone-twitter.svg" aria-label="Acesse nosso Twitter" alt="twitter"></a>
-                        </div>
-                        <div class="col">
-                            <a class="link" target="_blank" href="https://www.instagram.com/turn_motors/" aria-label="Acesso nosso Instagram"><img width="35px" height="auto" src="assets/img/icone-instagram.svg" alt="instagram"></a>
-                        </div>
-                    </div>
-                </ul>
+								<input name="busca" class="form-control input_header_search" type="text" placeholder="Pesquisar...">
+							</form>
+							<div style="display: flex; justify-content: center; align-items: center; "> <button type="button" class="btn-close__fechar__navbar lupa" aria-label="Close"><i class='bx bx-x' style='color:#db162f'></i></button></div>
 
-            </div>
-            </div>
-        </div>
-        <nav class="header_search_aparecer ">
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</nav>
+	</nav>
+
+	<nav style="box-shadow: 0px 5px 5px 0px #888;" class="navbar  fixed-top" id="menu">
+		<div class="d-flex justify-content-between " style="height: 100%;">
+			<div style=" width: 33%;" class="d-flex ">
+				<button style="border: none; margin-left: 10px;" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" data-bs-theme="light" aria-controls="offcanvasNavbar" aria-label="Menu">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			</div>
+			<div style=" width: 33%;" class="d-flex justify-content-center">
+				<a class="logotipo__header__mobile" href="index.php">
+					<figure class="figure-container">
+						<img width="50px" src="assets/img/logo-turnmotors.png" alt="Logo Turn Motors" />
+						<figcaption class="legenda__icones__atividade" id="title__header">TURN MOTORS</figcaption>
+					</figure>
+				</a>
+			</div>
+
+			<div style=" width: 33%;" class="d-flex justify-content-end align-items-center">
+				<div style="margin-right: 30px;">
+					<img class="lupa img-fluid" width="30px" height="auto" src="assets/img/icone-search.svg" alt="Ícone de busca">
+				</div>
+				<div style="margin-right: 10px;">
+					<div class="cont-valor__sobreposto">
+						<form method="POST" action="pags/carrinho.php" id="icone-carrinho-funcional__Mobile">
+							<input type="hidden" name="carrinho" value="<?php echo http_build_query($_SESSION['carrinho']); ?>">
+							<img class="img-fluid" width="30px" height="auto" alt="Carrinho" src="assets/img/icone-carrinho.svg" id="botaoCarrinho__mobile"> </img>
+						</form>
 
 
-            <div style="margin-top: 0px" class="container  text-center">
-                <div class="row align-items-center" style="height: 150px;">
-                    <div class="col " style="padding: 0px 20px;">
-                        <div class="header_search">
-                            <form style="width: 100%; " action="pags/produtos-categoria.php" method="GET" class="d-flex" role="search">
-                                <button type="submit"><img width="30px" height="auto" src="assets/img/icone-search-vermelho.png" alt="Pesquisar"></button>
-                                <input name="busca" class="form-control input_header_search" type="text" placeholder="Pesquisar...">
-                            </form>
-                            <div style="display: flex; justify-content: center; align-items: center;"> <button type="button" class="btn-close__fechar__navbar lupa" aria-label="Close"><i class='bx bx-x' style='color:#db162f'></i></button></div>
-                        </div>
-                    </div>
-                </div>
+						<div class="valor-sobreposto">
 
-            </div>
+							<?= isset($totalPR) ? $totalPR : '0'; ?>
 
-        </nav>
-    </nav>
+						</div>
+					</div>
+
+				</div>
+
+
+			</div>
+
+			<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+				<div id="header__menu__hamburguer" class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img style="margin-right: 10px;" width="50px" height="auto" src="assets/img/logo-turnmotors.png" alt="logo">TURN MOTORS</h5>
+					<button type="button" class="btn-close__fechar__navbar" data-bs-dismiss="offcanvas" aria-label="Close"><i class='bx bx-x' style='color:#ffc857'></i></button>
+				</div>
+
+				<div class="offcanvas-body" id="corpo__navbar__mobile">
+					<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="index.php">Home</a>
+						</li>
+						<hr class="divisao__linha__branca">
+						<li class="nav-item">
+							<a class="nav-link" href="pags/login.php">Login</a>
+						</li>
+						<hr class="divisao__linha__branca">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Opções
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="pags/personalizacoes.php"><span class="opcao__navbar__mobile">Personalizações</span></a></li>
+								<li><a class="dropdown-item" href="pags/produtos.php"><span class="opcao__navbar__mobile">Produtos</span></a></li>
+								<li>
+									<hr class="dropdown-divider">
+								</li>
+								<li><a class="dropdown-item" href="pags/aboutus.php"><span class="opcao__navbar__mobile">Sobre Nós</span></a></li>
+								<?php
+								if (isset($_SESSION['id'])) {
+								?>
+									<li>
+										<hr class="dropdown-divider">
+									</li>
+									<li><a class="dropdown-item" href="pags/perfil.php"><span class="opcao__navbar__mobile">Perfil</span></a></li>
+									<li><a class="dropdown-item" href="pags/veiculos.php"><span class="opcao__navbar__mobile">Veículos</span></a></li>
+									<li><a class="dropdown-item" href="pags/comprasRealizadas.php"><span class="opcao__navbar__mobile">Compras</span></a></li>
+									<li><a class="dropdown-item" href="pags/agendamentosPendentes.php"><span class="opcao__navbar__mobile">Agendamentos Pendentes</span></a></li>
+									<li><a class="dropdown-item" href="pags/agendamentosConfirmados.php"><span class="opcao__navbar__mobile">Agendamentos Confirmados</span></a></li>
+								<?php
+								}
+								?>
+							</ul>
+						</li>
+						<br>
+						<br>
+						<div class="row alinhar">
+							<div class="col">
+								<a class="link" target="_blank" href="https://twitter.com/MotorsTurn" aria-label="Acesse nosso Twitter"><img width="35px" height="auto" src="assets/img/icone-twitter.svg" aria-label="Acesse nosso Twitter" alt="twitter"></a>
+							</div>
+							<div class="col">
+								<a class="link" target="_blank" href="https://www.instagram.com/turn_motors/" aria-label="Acesso nosso Instagram"><img width="35px" height="auto" src="assets/img/icone-instagram.svg" alt="instagram"></a>
+							</div>
+						</div>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+		<nav class="header_search_aparecer ">
+
+
+			<div style="margin-top: 0px" class="container  text-center">
+				<div class="row align-items-center" style="height: 150px;">
+					<div class="col " style="padding: 0px 20px;">
+						<div class="header_search">
+							<form style="width: 100%; " action="pags/produtos-categoria.php" method="GET" class="d-flex" role="search">
+								<button type="submit"><img width="30px" height="auto" src="assets/img/icone-search-vermelho.png" alt="Pesquisar"></button>
+								<input name="busca" class="form-control input_header_search" type="text" placeholder="Pesquisar...">
+							</form>
+							<div style="display: flex; justify-content: center; align-items: center;"> <button type="button" class="btn-close__fechar__navbar lupa" aria-label="Close"><i class='bx bx-x' style='color:#db162f'></i></button></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</nav>
+	</nav>
 
 	<main>
 		<div class="landing">
 			<div class="pai__descricao__img">
 				<div class="div__descricao">
-					<h1 id="home__main__title" >Turn Motors</h1>
+					<h1 id="home__main__title">Turn Motors</h1>
 					<p id="descricao__turnmotors">Turn Motors é uma marca de customização e venda de peças para atuomóveis focados na personalização e na criação de uma identidade visual única para seu veículo.</p>
 					<a class="btn__explorar" href="pags/produtos.php">Explorar</a>
 				</div>
 
-				<div class="div__img" >
+				<div class="div__img">
 					<img id="carro__home" src="assets/img/img-carro-home.png" alt="Carro Preto">
 				</div>
 			</div>
@@ -700,7 +692,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			<h2>Restrições e Limites</h2>
 			<p class="desc__subtitle">Nessa área são mostradas as restrições e os limites impostos por lei na hora de personalizar o seu veículo</p>
 		</div>
-		
+
 		<div class="pai__restricao">
 			<div class="linha__restricao">
 				<div class="restricao">
