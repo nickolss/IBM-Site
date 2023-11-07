@@ -220,11 +220,17 @@ if ($_SESSION['plano'] != 'comum' && $_SESSION['plano'] != 'turbinado') {
 						<h3>Compras</h3>
 						<i class='bx bx-cart'></i>
 					</div>
-					<div>
-						<img src="<?= $produtosImagem['caminho_imagem'] ?>" alt="Imagem do ultimo pedido">
-						<h2><?= $ultimaCompra['nomeProdutos'] ?></h2>
-						<p>R$<?= $ultimaCompra['preco_final'] ?>,00</p>
-					</div>
+					<?php
+					if (!empty($compras)) {
+					?>
+						<div>
+							<img src="<?= $produtosImagem['caminho_imagem'] ?>" alt="Imagem do ultimo pedido">
+							<h2><?= $ultimaCompra['nomeProdutos'] ?></h2>
+							<p>R$<?= $ultimaCompra['preco_final'] ?>,00</p>
+						</div>
+					<?php
+					}
+					?>
 				</div>
 
 			</div>
