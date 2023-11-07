@@ -114,14 +114,24 @@ if ($_SESSION['plano'] != 'comum' && $_SESSION['plano'] != 'turbinado') {
 						<img class="img__icon__esquerda" src="../assets/img/icone-favorito-amarelo.svg" alt="Favorito">
 					</div>
 				</a>
-				<a href="./troquepontos.php">
-					<div class="icone__esquerda">
-						<div class="legenda__icone__pc">
-							Pontos
+				<?php
+				if ($_SESSION['plano'] != "comum") {
+
+
+				?>
+
+					<a href="./troquepontos.php">
+						<div class="icone__esquerda">
+							<div class="legenda__icone__pc">
+								Pontos
+							</div>
+							<img class="img__icon__esquerda" src="../assets/img/icone-pontos.svg" alt="Trocar Pontos">
 						</div>
-						<img class="img__icon__esquerda" src="../assets/img/icone-pontos.svg" alt="Trocar Pontos">
-					</div>
-				</a>
+					</a>
+
+				<?php
+				}
+				?>
 			</div>
 			<div class="meio-circulo__branco-bottom">⠀</div>
 		</div>
