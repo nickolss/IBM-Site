@@ -5,6 +5,7 @@
     $nomeImagem = $imagemProd['name'];
     $nome = $_POST['nomeProd'];
     $preco = $_POST['precoProd'];
+    $pontos = $_POST['precoProd'];
     $marca = $_POST['marcaProd'];
     $descricao = $_POST['descricaoProd'];
     $categoria = $_POST['categoria'];
@@ -17,7 +18,7 @@
     $caminhoSalvar = $pastaSalvar . $nomeImagem;
     $moverImagem = move_uploaded_file($imagemProd['tmp_name'] , $caminhoSalvar);
 
-    $sqlUpdate = $pdo->prepare("UPDATE `produto` SET `nome`='$nome',`preco`='$preco',`marca`='$marca',`descricao`='$descricao',`customizacoes`='$categoria',`caminho_imagem`='$caminhoBD' WHERE codigoProduto=$id");
+    $sqlUpdate = $pdo->prepare("UPDATE `produto` SET `nome`='$nome',`preco`='$preco', `pontos`='$pontos', `marca`='$marca',`descricao`='$descricao',`caminho_imagem`='$caminhoBD', `TG_categoria`='$categoria' WHERE codigoProduto=$id");
 
 
 
