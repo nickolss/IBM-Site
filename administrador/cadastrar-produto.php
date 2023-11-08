@@ -48,6 +48,11 @@
         </div>
 
         <div class="caixa__input">
+          <input type="number" required name="pontosProd" id="pontosProd" autocomplete="off">
+          <label for="pontosProd">Pontos</label>
+        </div>
+
+        <div class="caixa__input">
           <input type="text" required name="marcaProd" id="marcaProd" autocomplete="off">
           <label for="marcaProd">Marca</label>
         </div>
