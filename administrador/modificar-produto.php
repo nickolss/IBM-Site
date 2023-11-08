@@ -56,6 +56,11 @@ require_once('../assets/scripts/conexao.php');
                 </div>
 
                 <div class="caixa__input">
+                    <input type="number" required name="precoProd" id="precoProd" autocomplete="off">
+                    <label for="precoProd">Pontos</label>
+                </div>
+
+                <div class="caixa__input">
                     <input type="text" required name="marcaProd" id="marcaProd" autocomplete="off" value="<?= $produto[0]['marca'] ?>">
                     <label for="marcaProd">Marca</label>
                 </div>
