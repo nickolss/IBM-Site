@@ -245,7 +245,7 @@ if (!empty($idsProdutos)) {
 
                     <?php foreach ($chunk as $idsProdutos) {
 
-                        $sql = "SELECT nome, preco, marca, descricao, customizacoes, caminho_imagem FROM produto WHERE codigoProduto = :idsProdutos";
+                        $sql = "SELECT * FROM produto WHERE codigoProduto = :idsProdutos";
 
                         $stmt = $pdo->prepare($sql);
                         $stmt->bindParam(':idsProdutos', $idsProdutos, PDO::PARAM_INT);
@@ -256,7 +256,6 @@ if (!empty($idsProdutos)) {
                             $precoProduto = $row['preco'];
                             $marcaProduto = $row['marca'];
                             $descricaoProduto = $row['descricao'];
-                            $customizacaoProduto = $row['customizacoes'];
                             $imagemProduto = $row['caminho_imagem'];
                         }
 
@@ -278,7 +277,6 @@ if (!empty($idsProdutos)) {
                                             <div>
                                                 <div class="card-text"><?= $marcaProduto ?></div>
                                                 <div class="card-text"><?= $descricaoProduto ?></div>
-                                                <div class="card-text"><?= $customizacaoProduto ?></div>
                                             </div>
                                             <hr class="card-produto-dinamico-linha">
                                             <div class="card-produto-dinamico-preco-button">
