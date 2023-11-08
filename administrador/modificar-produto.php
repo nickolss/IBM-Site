@@ -67,30 +67,21 @@ require_once('../assets/scripts/conexao.php');
 
                 <div class="caixa__input">
                     <div class="dropdown-categorias">
-                        <label id="label__dropdown__categoria" for="categoria">Categoria:</label>
-                        <select required id="categoria" name="categoria" value="<?= $produto[0]['customizações'] ?>">
-                            <option class="opcao__categoria" value="pneu-solido">Pneu Sólido</option>
-                            <option class="opcao__categoria" value="pneu-personalizado">Pneu Personalizado</option>
-                            <option class="opcao__categoria" value="pneu-duasCores">Pneu Duas Cores</option>
-                            <option class="opcao__categoria" value="adesivo-pequeno">Adesivos Pequenos</option>
-                            <option class="opcao__categoria" value="adesivo-medio">Adesivos Médios</option>
-                            <option class="opcao__categoria" value="adesivo-grande">Adesivos Grandes</option>
-                            <option class="opcao__categoria" value="aerofolio">Aerofólio</option>
-                            <option class="opcao__categoria" value="caixaDeSom">Caixa de Som</option>
-                            <option class="opcao__categoria" value="Banco">Banco</option>
-                            <option class="opcao__categoria" value="pneu-carro">Pneu de Carro</option>
-                            <option class="opcao__categoria" value="som-multimidia-eletronicos">Som, multimídia e eletrônicos</option>
-                            <option class="opcao__categoria" value="acessorios-automoveis">Acessórios para Automóveis</option>
-                            <option class="opcao__categoria" value="cuidados-automotivos">Cuidados Automotivos</option>
-                            <option class="opcao__categoria" value="oleo-fluidos">Óleos e fluidos</option>
-                            <option class="opcao__categoria" value="baterias-acessorios">Baterias e acessórios</option>
-                            <option class="opcao__categoria" value="reboque-transporte">Reboque e Transporte</option>
-                            <option class="opcao__categoria" value="pecas-automoveis">Peças para automóveis</option>
-                            <option class="opcao__categoria" value="equipamentos-protecao">Equipamentos de Proteção</option>
-                            <option class="opcao__categoria" value="pneu-moto">Pneus de Moto</option>
-                            <option class="opcao__categoria" value="acessorios-pecas-moto">Acessórios e peças para motos</option>
-                            <option class="opcao__categoria" value="ferramentas-equipamentos">Ferramentas e Equipamentos</option>
-                        </select>
+                    <label id="label__dropdown__categoria" for="categoria">Categoria:</label>
+                    <select required id="categoria" name="categoria">
+                        <option class="opcao__categoria" value="PC">Pneu de Carro</option>
+                        <option class="opcao__categoria" value="SME">Som, multimídia e eletrônicos</option>
+                        <option class="opcao__categoria" value="AA">Acessórios para Automóveis</option>
+                        <option class="opcao__categoria" value="CA">Cuidados Automotivos</option>
+                        <option class="opcao__categoria" value="OF">Óleos e fluidos</option>
+                        <option class="opcao__categoria" value="BA">Baterias e acessórios</option>
+                        <option class="opcao__categoria" value="RT">Reboque e Transporte</option>
+                        <option class="opcao__categoria" value="PEA">Peças para automóveis</option>
+                        <option class="opcao__categoria" value="EPI">Equipamentos de Proteção</option>
+                        <option class="opcao__categoria" value="PNM">Pneus de Moto</option>
+                        <option class="opcao__categoria" value="APM">Acessórios e peças para motos</option>
+                        <option class="opcao__categoria" value="FE">Ferramentas e Equipamentos</option>
+                    </select>
                     </div>
                     <br>
                 </div>
