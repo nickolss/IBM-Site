@@ -5,6 +5,7 @@
     $nomeImagem = $imagemProd['name'];
     $nome = $_POST['nomeProd'];
     $preco = $_POST['precoProd'];
+    $pontos = $_POST['precoProd'];
     $marca = $_POST['marcaProd'];
     $descricao = $_POST['descricaoProd'];
     $categoria = $_POST['categoria'];
@@ -16,7 +17,7 @@
     $caminhoSalvar = $pastaSalvar . $nomeImagem;
     $moverImagem = move_uploaded_file($imagemProd['tmp_name'] , $caminhoSalvar);
 
-    $sqlInsert = "INSERT INTO produto (nome, preco, marca, descricao, customizacoes , caminho_imagem) VALUES ('$nome', $preco, '$marca', '$descricao', '$categoria' , '$caminhoBD')";
+    $sqlInsert = "INSERT INTO produto (nome, preco, pontos, marca, descricao, caminho_imagem, TG_categoria) VALUES ('$nome', $preco, '$pontos', '$marca', '$descricao', '$caminhoBD', '$categoria')";
 
     $inserirProduto = $pdo->prepare($sqlInsert);
 
