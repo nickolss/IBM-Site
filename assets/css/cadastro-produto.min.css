@@ -61,6 +61,7 @@
     width: 100%;
     margin-bottom: 3%;
     outline: none;
+    color: var(--preto);
 }
 
 .caixa__input #categoria:hover{
@@ -74,6 +75,10 @@
     padding: 0.4em;
     background-color: #e8e8e8;
     height: 30px;
+    color: var(--preto);
+}
+
+.opcao__categoria, .dropdown-categorias, #categoria{
     color: var(--preto);
 }
 
