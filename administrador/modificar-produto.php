@@ -56,7 +56,7 @@ require_once('../assets/scripts/conexao.php');
                 </div>
 
                 <div class="caixa__input">
-                    <input type="number" required name="precoProd" id="precoProd" autocomplete="off">
+                    <input type="number" required name="precoProd" id="precoProd" autocomplete="off" value="<?= $produto[0]['pontos'] ?>">
                     <label for="precoProd">Pontos</label>
                 </div>
 
