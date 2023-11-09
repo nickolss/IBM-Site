@@ -81,7 +81,7 @@
                     </button>
                 </div>
             </form>
-            <form action="">
+            <form action="alterarPlano.php">
                 <div class="cadastro">
                     <button type="submit" class="formulario__botao formulario__botao--comum">
                         Alterar Plano
