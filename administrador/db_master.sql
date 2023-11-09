@@ -548,6 +548,7 @@ INSERT INTO `produtostroca` (`idProduto`, `nome`, `preco_pontos`, `descricao`, `
 (37, 'Tapete de Carro Personalizado CAVEIRA', 370, 'Tecido Superior Poliéster Impermeável. Base Pvc Emborrachado.', 'tapete-carro', '../assets/img/motor369.svg'),
 (38, 'Tapetes personalizados BLUE', 310, '95% modelo de carro para todos os climas, à prova de água, antiderrapante, proteção total.', 'tapete-carro', '../assets/img/motor369.svg');
 
+
 --
 -- Estrutura da tabela `produtosComprados`
 --
