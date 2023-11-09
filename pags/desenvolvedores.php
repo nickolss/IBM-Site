@@ -36,7 +36,7 @@
                     <div class="informacoes">
                         <h3 class="informacoes__cargo">Desenvolvedor Front-end</h3>
                         <h2 class="informacoes__nome">Pedro Fernandes</h2>
-                        <p class="informacoes__carreira">Especializado no Front-End, Administrador das Mídias Sociais e Designer</p>
+                        <p class="informacoes__carreira">Especialista em Front-End, Administrador das Mídias Sociais e Designer</p>
                     </div>
                 </div>
                 <div class="col equipe">
@@ -61,17 +61,17 @@
                 <div class="col equipe">
                     <img src="../assets/img/tiago.jpg" class="img__desenvolvedores" alt="Especialista em Front-end Turn Motors">
                     <div class="informacoes">
-                        <h3 class="informacoes__cargo">Desenvolvedor Front-end</h3>
+                        <h3 class="informacoes__cargo">Desenvolvedor Back-end</h3>
                         <h2 class="informacoes__nome">Thiago Bryan</h2>
-                        <p class="informacoes__carreira">Especializado em HTML</p>
+                        <p class="informacoes__carreira">Especialista em PHP (Hypertext Preprocessor)</p>
                     </div>
                 </div>
                 <div class="col equipe">
                     <img src="../assets/img/miguel.jpg" class="img__desenvolvedores" alt="Tester Turn Motors">
                     <div class="informacoes">
-                        <h3 class="informacoes__cargo">Beta Tester</h3>
+                        <h3 class="informacoes__cargo">Desenvolvedor Front-end</h3>
                         <h2 class="informacoes__nome">Miguel Gustavo</h2>
-                        <p class="informacoes__carreira">Pesquisador</p>
+                        <p class="informacoes__carreira">Especialista em CSS (Cascading Style Sheets)</p>
                     </div>
                 </div>
             </div>
