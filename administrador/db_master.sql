@@ -283,7 +283,7 @@ INSERT INTO `produto` (`codigoProduto`, `nome`, `preco`, `pontos`, `marca`, `des
 (33, 'Limpador Bactericida', 40, 40, 'VONIXX', 'pH balanceado e ultra concentrado, indicado para limpeza interna', '../assets/img/produtos/limpador-bactericida.png', NULL, 'CA'),
 (34, 'Hidratante de Couro', 35, 35, 'VONIXX', 'Produto que hidrata e protege bancos de couro e evita o ressecamento', '../assets/img/produtos/hidratante-couro.png', NULL, 'CA'),
 (35, 'Spray Desengripante', 10, 10, 'LUB-40', 'Protege as superfícies metálicas\r\nElimina unidade protegendo contra ferrugem', '../assets/img/produtos/desegripante-lubrificante.png', NULL, 'OF'),
-(36, 'Oleo de Moto', 35, 35, 'Mobil', 'Oleo de Moto Mobil Super Moto\r\n 20w50 Mineral 4t 1lt\r\nDimensões do produto	‎12 x 6 x 25 cm; 940 g', '../assets/img/produtos/oleo-de-moto-mobil.png', NULL, 'OF'),
+(36, 'Oleo de Moto', 35, 35, 'Mobil', 'Oleo de Moto Mobil Super Moto\r\n 20w50 Mineral 4t 1lt\r\nDimensões do produto: 12 x 6 x 25 cm; 940 g', '../assets/img/produtos/oleo-de-moto-mobil.png', NULL, 'OF'),
 (37, 'Cera Tec', 360, 360, 'Liqui Moly', 'Misturável com todos os óleos de motor\r\nEstável sob altas cargas térmicas e dinâmicas', '../assets/img/produtos/liqui-moly-cera.png', NULL, 'OF'),
 (38, 'Kit 6 Oleos', 350, 350, 'Castrol', 'Kit 6 Oleo Castrol Magnatec 5w40 A3/B4 Sintético 502 00\r\nOleo para automóveis', '../assets/img/produtos/kit6-oleo-castrol.png', NULL, 'OF'),
 (39, 'Aditivo p/ Radiador', 100, 100, 'Fuchs', 'Fuchs Maintain Fricofin DP 1L - aditivo p/radiador concentrado c/monoetilenoglicol', '../assets/img/produtos/fuchs-maintain-fricofin.png', NULL, 'OF'),
