@@ -7,7 +7,7 @@ require_once('consultaCliente.php');
 $id = (int)$_SESSION['id'];
 
 $idProduto = $_POST['idProduto'];
-
+$Url_Permanecer = $_POST['url'];
 $sqlInsert = "INSERT INTO favoritos (id_produto, id_cliente) VALUES ($idProduto, $id)";
 
 $sth = $pdo->prepare("SELECT count(*) as total FROM `favoritos` WHERE favoritos.id_produto='$idProduto' && favoritos.id_cliente='$id'");
@@ -17,9 +17,8 @@ $result = ($sth->fetchColumn());
 $stmtFavorito = $pdo->prepare($sqlInsert);
 
 if ($result == 0 && $stmtFavorito->execute()) {
-  $root = $_SERVER['HTTP_HOST'];
-  $caminho = "http://$root/IBM-site/pags/produtos.php";
-  echo "<script> window.location.href = '$caminho' </script>";
+    header("Location: $Url_Permanecer");
+  
 } 
 
 if ($result > 0) {
@@ -30,9 +29,9 @@ if ($result > 0) {
     $stmtFavorito->bindParam(':idCliente', $id, PDO::PARAM_INT);
     if ($stmtFavorito->execute()) {
         // Redirecione de volta para a página de produtos após a remoção
-        $root = $_SERVER['HTTP_HOST'];
-        $caminho = "http://$root/IBM-site/pags/produtos.php";
-        header("Location: $caminho");
+       
+       
+        header("Location: $Url_Permanecer");
         exit;
     } else {
         echo "Erro ao remover o produto dos favoritos.";

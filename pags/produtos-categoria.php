@@ -11,7 +11,7 @@ if (isset($_GET['pagina']))
 if (!$pagina)
     $pagina = 1;
 
-$limite = 20;
+$limite = 5;
 $inicio = ($pagina * $limite) - $limite;
 
 $categoria = null;
@@ -283,6 +283,7 @@ if (!empty($idsProdutos)) {
                                                 <div class="card-produto-dinamico-preco-button-texto">R$:<?= number_format($precoProduto, 2, ',', '.') ?></div>
                                                 <form action="../assets/scripts/cadastrarFavorito.php" method="POST">
                                                     <input type="hidden" name="idProduto" id="idProduto" value="<?= $idsProdutos; ?>">
+                                                    <input type="hidden" name="url" id="url" value="<?= $currentURI2 ?>">
                                                     <?php
                                                     $sqlFav = "SELECT * FROM `favoritos` WHERE `id_produto`='$idsProdutos'";
                                                     $stmt = $pdo->query($sqlFav);
@@ -349,62 +350,91 @@ if (!empty($idsProdutos)) {
                                             $desabilitar = null;
                                         } else {
                                             $desabilitar = "disable";
-                                        } ?>
+                                        } 
+                                        
+                                        
+                                        
+                                        ?>
                                         <a class="control next text-respon <?= $desabilitar ?> " href="?pagina=<?= ($pagina - 1) ?>&busca=<?= urlencode($pesquisa); ?>"><- Anterior</a>
                                             <?php 
+                                            $pagBP = null;
+                                            $pagBS = null;
+                                            $pagBT = null;
+                                            if($paginas == 3){
+                                                $pagBP = 2;
+                                                $pagBS = null;
+                                                $pagBT = null;
                                                 
-                                                if(($pagina - 1) == 1){
-                                                    $pagBP = $pagina;
-                                                    $pagBS = $pagina + 1;
-                                                    $pagBT = $pagina + 2;
-                                                }elseif(($pagina - 1) == 0){
-                                                    $pagBP = $pagina + 1;
-                                                    $pagBS = $pagina + 2;
-                                                    $pagBT = $pagina + 3;
-                                                }elseif(($pagina + 2 >= $paginas)){
-                                                    $pagBP = $paginas - 3;
-                                                    $pagBS = $paginas - 2;
-                                                    $pagBT = $paginas - 1;
-                                                }else{
-                                                    $pagBP = $pagina - 1;
-                                                    $pagBS = $pagina;
-                                                    $pagBT = $pagina + 1;
-                                                }
+                                            }elseif($paginas == 4){
+                                                $pagBP = 2;
+                                                $pagBS = 3;
+                                                $pagBT = null;
+                                           
+                                            }elseif($paginas == 5){
+                                                $pagBP = 2;
+                                                $pagBS = 3;
+                                                $pagBT = 4;
+                                           
+    
+                                            }elseif(($paginas > 5) && (($pagina+2) >= $paginas) ){
+                                                $pagBP = $paginas - 3;
+                                                $pagBS = $paginas -2;
+                                                $pagBT = $paginas - 1;
+    
+                                            
+    
+                                            }elseif(($paginas > 5) && (($pagina-2) <= 2) ){
+                                                $pagBP = 2;
+                                                $pagBS = 3;
+                                                $pagBT = 4;
+    
+                                            
+    
+                                            }elseif(($paginas > 5)){
+                                                $pagBP = $pagina - 1;
+                                                $pagBS = $pagina;
+                                                $pagBT = $pagina + 1;
+                                                
+                                            }
 
-                                               if($pagBP == $pagina){
-                                                    $active1 = "active";
-                                               }elseif($pagBS == $pagina){
+                                            if($pagina == 1){
+                                                $active1 = "active";
+                                            }elseif(($pagina == 2) && ($pagina != $paginas)){
                                                 $active2 = "active";
-                                           }elseif($pagBT == $pagina){
-                                            $active3 = "active";
-                                       }elseif($pagina == 1){
-                                        $active4 = "active";
-                                       }elseif($paginas == $pagina){
-                                        $active5 = "active";
-                                       }else{
-                                        $active1 == null;
-                                        $active2 == null;
-                                        $active3 == null;
-                                        $active4 == null;
-                                        $active5 == null;
-                                       }
+                                            }elseif(($pagina == 3) && ($pagina != $paginas)){
+                                                $active3 = "active";
+                                            }elseif(($pagina == 4) && ($pagina != $paginas)){
+                                                $active4 = "active";
+                                            }elseif($pagina == $pagBP){
+                                                $active2 = "active";
+                                            }elseif($pagina == $pagBS){
+                                                $active3 = "active";
+                                            }elseif($pagina == $pagBT){
+                                                $active4 = "active";
+                                            }elseif($pagina == $paginas){
+                                                $active5 = "active";
+                                            }
+                                            
                                             ?>
-                                                <a class="page  <?= $active4 ?>" href="?pagina=1&busca=<?= urlencode($pesquisa); ?>">1</a>
-                                                <?php
-                                                if ($paginas > 4) {
-                                                    if ($paginas > 3) {
-                                                        if ($paginas > 2) {
-                                                                     
-                                                ?>
-                                                            <a id="responsividade" class="page <?= $active1 ?>" href="?pagina=<?= $pagBP ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBP ?></a>
-                                                        <?php } ?>
-                                                        <a id="responsividade" class="page <?= $active2 ?>" href="?pagina=<?= $pagBS ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBS ?></a>
+
+                                            
+                                        <a class="page  <?= $active1 ?>" href="?pagina=1&busca=<?= urlencode($pesquisa); ?>">1</a>
+                                                
+                                                <?php if($paginas == 3){ ?>
+                                                     <a id="responsividade" class="page <?= $active2 ?>" href="?pagina=<?= $pagBP ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBP ?></a>
+                                                <?php }elseif($paginas == 4){?>
+                                                    <a id="responsividade" class="page <?= $active2 ?>" href="?pagina=<?= $pagBP ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBP ?></a>
+                                                    <a id="responsividade" class="page <?= $active3 ?>" href="?pagina=<?= $pagBS ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBS ?></a>
+                                                <?php }elseif(($paginas >= 5) ){?>
+                                                    <a id="responsividade" class="page <?= $active2 ?>" href="?pagina=<?= $pagBP ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBP ?></a>
+                                                    <a id="responsividade" class="page <?= $active3 ?>" href="?pagina=<?= $pagBS ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBS ?></a>
+                                                    <a id="responsividade" class="page <?= $active4 ?>" href="?pagina=<?= $pagBT ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBT ?></a>
                                                     <?php } ?>
-                                                    <a id="responsividade" class="page <?= $active3 ?>" href="?pagina=<?= $pagBT ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBT ?></a>
-                                                <?php } ?>
+
 
                                                 <a class="page <?= $active5 ?>" href="?pagina=<?= $paginas; ?>&busca=<?= urlencode($pesquisa); ?>"><?= $paginas ?></a>
                                                 <?php if ($pagina < $paginas) {
+                                                   
                                                     $desabilitar = null;
                                                 } else {
                                                     $desabilitar = "disable";
@@ -506,10 +536,13 @@ if (!empty($idsProdutos)) {
 
                                                             <div class="card-produto-dinamico-preco-button-texto">R$:<?= number_format($precoProduto2, 2, ',', '.') ?></div>
 
-
+                                                        <?php 
+                                                        $currentURI2 = $_SERVER['REQUEST_URI'];
+                                                        ?>
 
                                                             <form action="../assets/scripts/cadastrarFavorito.php" method="POST">
                                                                 <input type="hidden" name="idProduto" id="idProduto" value="<?= $naoEncontrados; ?>">
+                                                                <input type="hidden" name="url" id="url" value="<?= $currentURI2 ?>">
                                                                 <?php
                                                                 $sqlFav = "SELECT * FROM `favoritos` WHERE `id_produto`='$naoEncontrados'";
                                                                 $stmt = $pdo->query($sqlFav);
@@ -568,56 +601,79 @@ if (!empty($idsProdutos)) {
                                                     <a class="control next text-respon <?= $desabilitar ?> " href="?pagina=<?= $pagina - 1 ?>"><- Anterior</a>
                                                     <?php 
                                                 
-                                                if(($pagina - 1) == 1){
-                                                    $pagBP = $pagina;
-                                                    $pagBS = $pagina + 1;
-                                                    $pagBT = $pagina + 2;
-                                                }elseif(($pagina - 1) == 0){
-                                                    $pagBP = $pagina + 1;
-                                                    $pagBS = $pagina + 2;
-                                                    $pagBT = $pagina + 3;
-                                                }elseif(($pagina + 2 >= $paginas)){
+                                               
+                                                $pagBP = null;
+                                                $pagBS = null;
+                                                $pagBT = null;
+                                                if($paginas == 3){
+                                                    $pagBP = 2;
+                                                    $pagBS = null;
+                                                    $pagBT = null;
+                                                    
+                                                }elseif($paginas == 4){
+                                                    $pagBP = 2;
+                                                    $pagBS = 3;
+                                                    $pagBT = null;
+                                               
+                                                }elseif($paginas == 5){
+                                                    $pagBP = 2;
+                                                    $pagBS = 3;
+                                                    $pagBT = 4;
+                                               
+        
+                                                }elseif(($paginas > 5) && (($pagina+2) >= $paginas) ){
                                                     $pagBP = $paginas - 3;
-                                                    $pagBS = $paginas - 2;
+                                                    $pagBS = $paginas -2;
                                                     $pagBT = $paginas - 1;
-                                                }else{
+        
+                                                
+        
+                                                }elseif(($paginas > 5) && (($pagina-2) <= 2) ){
+                                                    $pagBP = 2;
+                                                    $pagBS = 3;
+                                                    $pagBT = 4;
+        
+                                                
+        
+                                                }elseif(($paginas > 5)){
                                                     $pagBP = $pagina - 1;
                                                     $pagBS = $pagina;
                                                     $pagBT = $pagina + 1;
+                                                    
                                                 }
-
-                                               if($pagBP == $pagina){
+    
+                                                if($pagina == 1){
                                                     $active1 = "active";
-                                               }elseif($pagBS == $pagina){
-                                                $active2 = "active";
-                                           }elseif($pagBT == $pagina){
-                                            $active3 = "active";
-                                       }elseif($pagina == 1){
-                                        $active4 = "active";
-                                       }elseif($paginas == $pagina){
-                                        $active5 = "active";
-                                       }else{
-                                        $active1 == null;
-                                        $active2 == null;
-                                        $active3 == null;
-                                        $active4 == null;
-                                        $active5 == null;
-                                       }
-                                            ?>
-                                                            <a class="page <?= $active4 ?>" href="?pagina=1">1</a>
+                                                }elseif(($pagina == 2) && ($pagina != $paginas)){
+                                                    $active2 = "active";
+                                                }elseif(($pagina == 3) && ($pagina != $paginas)){
+                                                    $active3 = "active";
+                                                }elseif(($pagina == 4) && ($pagina != $paginas)){
+                                                    $active4 = "active";
+                                                }elseif($pagina == $pagBP){
+                                                    $active2 = "active";
+                                                }elseif($pagina == $pagBS){
+                                                    $active3 = "active";
+                                                }elseif($pagina == $pagBT){
+                                                    $active4 = "active";
+                                                }elseif($pagina == $paginas){
+                                                    $active5 = "active";
+                                                }
+                                                
+                                                ?>
+                                            
+                                                            <a class="page <?= $active1 ?>" href="?pagina=1">1</a>
 
-                                                            <?php
-                                                            if ($paginas > 4) {
-                                                                if ($paginas > 3) {
-                                                                    if ($paginas > 2) {
-                                                                        
-                                                            ?>
-                                                                        <a id="responsividade" class="page <?= $active1 ?>" href="?pagina=<?= $pagBP ?>"><?= $pagBP ?></a>
+                                                            <?php if($paginas == 3){ ?>
+                                                                    <a id="responsividade" class="page <?= $active2 ?>" href="?pagina=<?= $pagBP ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBP ?></a>
+                                                                <?php }elseif($paginas == 4){?>
+                                                                    <a id="responsividade" class="page <?= $active2 ?>" href="?pagina=<?= $pagBP ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBP ?></a>
+                                                                    <a id="responsividade" class="page <?= $active3 ?>" href="?pagina=<?= $pagBS ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBS ?></a>
+                                                                <?php }elseif(($paginas >= 5) ){?>
+                                                                    <a id="responsividade" class="page <?= $active2 ?>" href="?pagina=<?= $pagBP ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBP ?></a>
+                                                                    <a id="responsividade" class="page <?= $active3 ?>" href="?pagina=<?= $pagBS ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBS ?></a>
+                                                                    <a id="responsividade" class="page <?= $active4 ?>" href="?pagina=<?= $pagBT ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBT ?></a>
                                                                     <?php } ?>
-                                                                    <a id="responsividade" class="page <?= $active2 ?>" href="?pagina=<?= $pagBS ?>"><?= $pagBS ?></a>
-                                                                <?php } ?>
-                                                                <a id="responsividade" class="page <?= $active3 ?>" href="?pagina=<?= $pagBT ?>"><?= $pagBT ?></a>
-                                                            <?php } ?>
 
                                                             <a class="page <?= $active5 ?>" href="?pagina=<?= $paginas ?>"><?= $paginas ?></a>
                                                             <?php if ($pagina < $paginas) {
@@ -668,57 +724,82 @@ if (!empty($idsProdutos)) {
                                                                         <a class="control next text-respon <?= $desabilitar ?> " href="<?= $currentURI ?>&pagina=<?= $pagina - 1 ?>"><- Anterior</a>
 
                                                                         <?php 
+                                                                                
+                                                                            
                                                 
-                                                                                    if(($pagina - 1) == 1){
-                                                                                        $pagBP = $pagina;
-                                                                                        $pagBS = $pagina + 1;
-                                                                                        $pagBT = $pagina + 2;
-                                                                                    }elseif(($pagina - 1) == 0){
-                                                                                        $pagBP = $pagina + 1;
-                                                                                        $pagBS = $pagina + 2;
-                                                                                        $pagBT = $pagina + 3;
-                                                                                    }elseif(($pagina + 2 >= $paginas)){
-                                                                                        $pagBP = $paginas - 3;
-                                                                                        $pagBS = $paginas - 2;
-                                                                                        $pagBT = $paginas - 1;
-                                                                                    }else{
-                                                                                        $pagBP = $pagina - 1;
-                                                                                        $pagBS = $pagina;
-                                                                                        $pagBT = $pagina + 1;
-                                                                                    }
-
-                                                                                if($pagBP == $pagina){
-                                                                                        $active1 = "active";
-                                                                                }elseif($pagBS == $pagina){
+                                               
+                                                                                $pagBP = null;
+                                                                                $pagBS = null;
+                                                                                $pagBT = null;
+                                                                                if($paginas == 3){
+                                                                                    $pagBP = 2;
+                                                                                    $pagBS = null;
+                                                                                    $pagBT = null;
+                                                                                    
+                                                                                }elseif($paginas == 4){
+                                                                                    $pagBP = 2;
+                                                                                    $pagBS = 3;
+                                                                                    $pagBT = null;
+                                                                               
+                                                                                }elseif($paginas == 5){
+                                                                                    $pagBP = 2;
+                                                                                    $pagBS = 3;
+                                                                                    $pagBT = 4;
+                                                                               
+                                        
+                                                                                }elseif(($paginas > 5) && (($pagina+2) >= $paginas) ){
+                                                                                    $pagBP = $paginas - 3;
+                                                                                    $pagBS = $paginas -2;
+                                                                                    $pagBT = $paginas - 1;
+                                        
+                                                                                
+                                        
+                                                                                }elseif(($paginas > 5) && (($pagina-2) <= 2) ){
+                                                                                    $pagBP = 2;
+                                                                                    $pagBS = 3;
+                                                                                    $pagBT = 4;
+                                        
+                                                                                
+                                        
+                                                                                }elseif(($paginas > 5)){
+                                                                                    $pagBP = $pagina - 1;
+                                                                                    $pagBS = $pagina;
+                                                                                    $pagBT = $pagina + 1;
+                                                                                    
+                                                                                }
+                                    
+                                                                                if($pagina == 1){
+                                                                                    $active1 = "active";
+                                                                                }elseif(($pagina == 2) && ($pagina != $paginas)){
                                                                                     $active2 = "active";
-                                                                            }elseif($pagBT == $pagina){
-                                                                                $active3 = "active";
-                                                                        }elseif($pagina == 1){
-                                                                            $active4 = "active";
-                                                                        }elseif($paginas == $pagina){
-                                                                            $active5 = "active";
-                                                                        }else{
-                                                                            $active1 == null;
-                                                                            $active2 == null;
-                                                                            $active3 == null;
-                                                                            $active4 == null;
-                                                                            $active5 == null;
-                                                                        }
+                                                                                }elseif(($pagina == 3) && ($pagina != $paginas)){
+                                                                                    $active3 = "active";
+                                                                                }elseif(($pagina == 4) && ($pagina != $paginas)){
+                                                                                    $active4 = "active";
+                                                                                }elseif($pagina == $pagBP){
+                                                                                    $active2 = "active";
+                                                                                }elseif($pagina == $pagBS){
+                                                                                    $active3 = "active";
+                                                                                }elseif($pagina == $pagBT){
+                                                                                    $active4 = "active";
+                                                                                }elseif($pagina == $paginas){
+                                                                                    $active5 = "active";
+                                                                                }
+                                                                                
+                                                                                
                                                                                 ?>
 
-                                                                                <a class="page <?= $active4 ?>" href="<?= $currentURI ?>&pagina=1">1</a>
-                                                                                <?php
-                                                                                if ($paginas > 4) {
-                                                                                    if ($paginas > 3) {
-                                                                                        if ($paginas > 2) {
-                                                                                           
-                                                                                ?>
-                                                                                            <a id="responsividade" class="page <?= $active1 ?>" href="<?= $currentURI ?>&pagina=<?= $pagBP ?>"><?= $pagBP ?></a>
-                                                                                        <?php } ?>
-                                                                                        <a id="responsividade" class="page <?= $active2 ?>" href="<?= $currentURI ?>&pagina=<?= $pagBS ?>"><?= $pagBS ?></a>
+                                                                                <a class="page <?= $active1 ?>" href="<?= $currentURI ?>&pagina=1">1</a>
+                                                                                <?php if($paginas == 3){ ?>
+                                                                                    <a id="responsividade" class="page <?= $active2 ?>" href="<?= $currentURI ?>&pagina=<?= $pagBP ?>"><?= $pagBP ?></a>
+                                                                                <?php }elseif($paginas == 4){?>
+                                                                                    <a id="responsividade" class="page <?= $active2 ?>" href="<?= $currentURI ?>&pagina=<?= $pagBP ?>"><?= $pagBP ?></a>
+                                                                                    <a id="responsividade" class="page <?= $active3 ?>" href="<?= $currentURI ?>&pagina=<?= $pagBS ?>"><?= $pagBS ?></a>
+                                                                                <?php }elseif(($paginas >= 5) ){?>
+                                                                                    <a id="responsividade" class="page <?= $active2 ?>" href="<?= $currentURI ?>&pagina=<?= $pagBP ?>"><?= $pagBP ?></a>
+                                                                                    <a id="responsividade" class="page <?= $active3 ?>" href="<?= $currentURI ?>&pagina=<?= $pagBS ?>"><?= $pagBS ?></a>
+                                                                                    <a id="responsividade" class="page <?= $active4 ?>" href="<?= $currentURI ?>&pagina=<?= $pagBT ?>"><?= $pagBT ?></a>
                                                                                     <?php } ?>
-                                                                                    <a id="responsividade" class="page <?= $active3 ?>" href="<?= $currentURI ?>&pagina=<?= $pagBT ?>"><?= $pagBT ?></a>
-                                                                                <?php } ?>
 
                                                                                 <a class="page <?= $active5 ?>" href="<?= $currentURI ?>&pagina=<?= $paginas ?>"><?= $paginas ?></a>
                                                                                 <?php if ($pagina < $paginas) {
@@ -729,7 +810,8 @@ if (!empty($idsProdutos)) {
                                                                                 ?>
 
                                                                                 <a class="control prev text-respon <?= $desabilitar ?> " href="<?= $currentURI ?>&pagina=<?= $pagina + 1 ?>">Próximo -></a>
-
+                                                                              
+                                                                               
                                                                     </div>
                                                             <?php } else {
                                                                 }
