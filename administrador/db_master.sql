@@ -313,7 +313,15 @@ INSERT INTO `produto` (`codigoProduto`, `nome`, `preco`, `pontos`, `marca`, `des
 (63, 'Interruptor guiador moto', 55, 55, 'UGPLM', 'Interruptor do guiador da motocicleta', '../assets/img/produtos/interruptor-guiador.png', NULL, 'PEA'),
 (64, 'Kit Cabos Velas Ignição', 180, 180, 'Magneti Marelli', 'Kit Cabos E Velas De Ignição G4 G5 1.6 8v', '../assets/img/produtos/kit-cabos-velas-ignicao.png', NULL, 'PEA'),
 (65, 'Kit 3 Palheta Parabrisa', 85, 85, 'Shop-Vision', 'Kit 3 Palheta Limpador Parabrisa Silicone Durável', '../assets/img/produtos/kit3-palheta-limpador-parabrisa.png', NULL, 'PEA'),
-(66, 'Bola Cambio', 45, 45, 'Nat', 'Bola Cambio 5 Marchas Ré para Trás', '../assets/img/produtos/bola-cambio.png', NULL, 'PEA');
+(66, 'Bola Cambio', 45, 45, 'Nat', 'Bola Cambio 5 Marchas Ré para Trás', '../assets/img/produtos/bola-cambio.png', NULL, 'PEA'),
+(67, 'Luva X11', 85, 85, 'Genérico', 'Luva X11 Blackout Motoqueiro Moto Motociclista Proteção', '../assets/img/produtos/luxa-x11.png', NULL, 'EPI'),
+(68, 'Luvas antiderrapantes', 55, 55, 'KKcare', 'Articulações respiráveis e proteção anticolisão\r\n', '../assets/img/produtos/luvas-antiderrapante.png', NULL, 'EPI'),
+(69, 'Capacete Moto R8', 120, 120, 'Pro Tork', 'Capacete Pro Tork Fechado 58 Preto/Vermelho Viseira Fumê', '../assets/img/produtos/capacete-moto-r8.png', NULL, 'EPI'),
+(70, 'Capacete Moto Mixs', 295, 295, 'Mixs', 'Capacete Gladiator Delta Fosco Articulado Escamoteável', '../assets/img/produtos/capacete-moto-mixs.png', NULL, 'EPI'),
+(71, 'Capacete Moto Pro', 65, 65, 'Pro Tork', 'Capacete Pro Tork Semiautomático Preto e Branco', '../assets/img/produtos/capacete-moto-pro-tork.png', NULL, 'EPI'),
+(72, 'Anulador Odor Capacete', 7, 7, 'Baston', 'Neutralizador De Odores para Capacete Super Prime', '../assets/img/produtos/neutralizador-odores-capacete.png', NULL, 'EPI'),
+(73, 'Para Barro Moto', 10, 10, 'Genérico', 'Lameira LANDER 250 XTZ A Para Barro Moto', '../assets/img/produtos/para-barro-moto.png', NULL, 'EPI'),
+(74, 'Manga de Proteção Solar', 25, 25, 'Weemsbox', 'Proteção contra Raios UVA, leve, resistente e flexível.\r\n', '../assets/img/produtos/manga-protecao-solar.png', NULL, 'EPI');
 
 -- --------------------------------------------------------
 
