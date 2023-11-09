@@ -303,18 +303,7 @@ if (!empty($idsProdutos)) {
                                                 </form>
                                                 <?php
                                                 $currentURI2 = $_SERVER['REQUEST_URI'];
-                                                // Use a função parse_url para dividir a URL em partes
-                                                $urlParts = parse_url($currentURI2);
-                                                if (isset($urlParts['path'])) {
-                                                    $path = $urlParts['path'];
-                                                    $query = isset($urlParts['query']) ? '?' . $urlParts['query'] : '';
-                                                    // Encontre a posição de ?categoria=
-                                                    $position = strpos($query, '?categoria=' . $categoria);
-                                                    if ($position !== false) {
-                                                        // Mantenha o caminho da URI e a parte da consulta até ?categoria=
-                                                        $currentURI2 = $path . substr($query, 0, $position + strlen('?categoria=' . $categoria));
-                                                    }
-                                                }
+                                              
                                                 ?>
                                                 <form method="POST" action="<?= $currentURI2 ?>&adicionar=<?= $idsProdutos ?>">
                                                     <input type="hidden" name="idsProdutosPermitidos" value="<?= $idsProdutosPermitidos ?>">
@@ -671,14 +660,14 @@ if (!empty($idsProdutos)) {
                                                             <a class="page <?= $active1 ?>" href="?pagina=1">1</a>
 
                                                             <?php if($paginas == 3){ ?>
-                                                                    <a id="responsividade" class="page <?= $active2 ?>" href="?pagina=<?= $pagBP ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBP ?></a>
+                                                                    <a id="responsividade" class="page <?= $active2 ?>" href="?pagina=<?= $pagBP ?>"><?= $pagBP ?></a>
                                                                 <?php }elseif($paginas == 4){?>
-                                                                    <a id="responsividade" class="page <?= $active2 ?>" href="?pagina=<?= $pagBP ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBP ?></a>
-                                                                    <a id="responsividade" class="page <?= $active3 ?>" href="?pagina=<?= $pagBS ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBS ?></a>
+                                                                    <a id="responsividade" class="page <?= $active2 ?>" href="?pagina=<?= $pagBP ?>"><?= $pagBP ?></a>
+                                                                    <a id="responsividade" class="page <?= $active3 ?>" href="?pagina=<?= $pagBS ?>"><?= $pagBS ?></a>
                                                                 <?php }elseif(($paginas >= 5) ){?>
-                                                                    <a id="responsividade" class="page <?= $active2 ?>" href="?pagina=<?= $pagBP ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBP ?></a>
-                                                                    <a id="responsividade" class="page <?= $active3 ?>" href="?pagina=<?= $pagBS ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBS ?></a>
-                                                                    <a id="responsividade" class="page <?= $active4 ?>" href="?pagina=<?= $pagBT ?>&busca=<?= urlencode($pesquisa); ?>"><?= $pagBT ?></a>
+                                                                    <a id="responsividade" class="page <?= $active2 ?>" href="?pagina=<?= $pagBP ?>"><?= $pagBP ?></a>
+                                                                    <a id="responsividade" class="page <?= $active3 ?>" href="?pagina=<?= $pagBS ?>"><?= $pagBS ?></a>
+                                                                    <a id="responsividade" class="page <?= $active4 ?>" href="?pagina=<?= $pagBT ?>"><?= $pagBT ?></a>
                                                                     <?php } ?>
 
                                                             <a class="page <?= $active5 ?>" href="?pagina=<?= $paginas ?>"><?= $paginas ?></a>

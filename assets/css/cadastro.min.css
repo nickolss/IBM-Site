@@ -540,7 +540,12 @@ main{
         margin-right: 5rem;
     }
 }
+@media only screen and (max-width:400px) {
+.titulo{
+    margin-top: 50px;
+}
 
+}
 @media only screen and (max-width:395px) {
     .plano__background-azul{
         margin-left: 5%;

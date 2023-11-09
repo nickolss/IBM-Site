@@ -21,7 +21,7 @@ $dataAtual = date('Y-m-d');
     <script type="text/javascript" src="../assets/js/java.js" defer></script>
     <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
+</head> 
 
 <body id="container__body">
 

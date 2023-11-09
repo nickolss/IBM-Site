@@ -9,9 +9,9 @@
   <!--LINK ICONES-->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-  <link rel="stylesheet" href="../assets/css/reset.min.css">
-  <link rel="stylesheet" href="../assets/css/cadastro.min.css">
   <link rel="stylesheet" href="../assets/css/estilos-importantes.css">
+  <link rel="stylesheet" href="../assets/css/cadastro.min.css">
+
 
   <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
   
@@ -26,7 +26,7 @@
 
 </head>
 
-<body id="container__body">
+<body >
   <?php
   require_once('../assets/components/header.php');
   ?>
@@ -206,4 +206,4 @@
 
 </body>
 
-</html
+</html>

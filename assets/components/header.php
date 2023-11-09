@@ -171,16 +171,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                     $url = $_SERVER['REQUEST_URI'];
 
                                                     
-                                                    $textoAlvo = "carrinho.php";
+                                                    $textoAlvo = "?";
 
-                                                    $textoAlvo2 = "index.php";
                                                     
-                                                    if ((strpos($url, $textoAlvo) !== false) || (strpos($url, $textoAlvo2) !== false)) {
+                                                    
+                                                    if ((strpos($url, $textoAlvo) !== false)) {
                                                    
-                                                        $SomaDeParametroURL = "?";
+                                                        $SomaDeParametroURL = "&";
                                                     } else {
                                                      
-                                                        $SomaDeParametroURL = "&";
+                                                        $SomaDeParametroURL = "?";
                                                     }
 
 
