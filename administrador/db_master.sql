@@ -297,7 +297,15 @@ INSERT INTO `produto` (`codigoProduto`, `nome`, `preco`, `pontos`, `marca`, `des
 (47, 'Testador de baterias', 230, 230, 'VONDER', 'Testador de baterias TBV 1000 Vonder\r\nTipo de bateria: 6 V - 12 V', '../assets/img/produtos/testador-baterias.png', NULL, 'BA'),
 (48, 'Cabo Para Bateria', 30, 30, 'Black Jack', 'Black Jack Cabo Para Bateria 200A 2 5M\r\nTransferência de carga em baterias de veículos', '../assets/img/produtos/cabo-bateria.png', NULL, 'BA'),
 (49, 'Conectores de terminal', 50, 50, 'Fydun', 'Conectores de terminal de bateria positiva e negativa\r\nTerminais de bateria braçadeiras', '../assets/img/produtos/conectores-terminal-bateria.png', NULL, 'BA'),
-(50, 'Bateria Powertek 12V', 820, 820, 'Multilaser', '12 Volts\r\nCapacidade: 100 AH\r\nCorrente Inicial: 13.5A\r\nUso em Standby: 13.5~13.8 V', '../assets/img/produtos/bateria-automotiva-powertel.png', NULL, 'BA');
+(50, 'Bateria Powertek 12V', 820, 820, 'Multilaser', '12 Volts\r\nCapacidade: 100 AH\r\nCorrente Inicial: 13.5A\r\nUso em Standby: 13.5~13.8 V', '../assets/img/produtos/bateria-automotiva-powertel.png', NULL, 'BA'),
+(51, 'Cabo para Reboque', 50, 50, 'Western', 'Cor: laranja\r\nProduto para ser usado em automóveis\r\nAjuste universal', '../assets/img/produtos/cabo-reboque.png', NULL, 'RT'),
+(52, 'Engate Munheca', 165, 165, 'Genérico', 'Engate Munheca 3.500kg Carretinha Reboque Trava Segurança ', '../assets/img/produtos/engate-munheca.png', NULL, 'RT'),
+(53, 'Bagageiro 360L', 1160, 1160, 'Rackbox', 'Material Acrilonitrila butadieno estireno\r\nDimensões do item C x L x A	135 x 87 x 38 cm\r\n', '../assets/img/produtos/bagaceiro-rackbox.png', NULL, 'RT'),
+(54, 'Rack New Wave GM', 550, 550, 'EQMAX', 'Rack Eqmax New Wave GM Cruze Sedan 2017 2018 2019 2020 2021 2022 2023 Cinza', '../assets/img/produtos/rack-eqmax-new-wave-gm.png', NULL, 'RT'),
+(55, 'Rack New Wave Fit', 560, 560, 'Eqmax ', 'Rack Eqmax New Wave Fit 2015 2016 2017 2018 2019 Cinza', '../assets/img/produtos/rack-eqmax-new-wave-fit.png', NULL, 'RT'),
+(56, 'Bola de engate de reboque', 55, 55, 'BIG RED', '5 cm de diâmetro, capacidade de 1,75 toneladas (1,6 kg)', '../assets/img/produtos/bola-engate-reboque.png', NULL, 'RT'),
+(57, 'Adaptador receptor de engate', 310, 310, 'Mopar', '2 polegadas adaptador receptor de engate Oem Mopar', '../assets/img/produtos/adaptador-receptor-engate.png', NULL, 'RT'),
+(58, 'Tiras de amarração de catraca', 160, 160, 'Stalwart', '680 kg\r\nTiras de carga resistentes à ruptura\r\n', '../assets/img/produtos/tiras-amarracao-catraca.png', NULL, 'RT');
 
 -- --------------------------------------------------------
 
