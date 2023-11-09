@@ -329,7 +329,15 @@ INSERT INTO `produto` (`codigoProduto`, `nome`, `preco`, `pontos`, `marca`, `des
 (79, 'Pneu Black', 170, 170, 'Maggion', 'PNEU DE MOTO 2.75-18 MAGGION BLACK 48P TT ', '../assets/img/produtos/pneu-maggion-winner2.png', NULL, 'PNM'),
 (80, 'Pneu Traseiro Rinaldi', 220, 220, 'Rinaldi', 'Pneu Moto Traseiro Rinaldi R34 90/90 Aro 18 Honda Cg 125 Fan', '../assets/img/produtos/pneu-traseiro-rinaldi.png', NULL, 'PNM'),
 (81, 'Pneu Dianteiro Rinaldi', 260, 260, 'Rinaldi', 'Pneu Moto Dianteiro Rinaldi R34 2.75 Aro 18 Honda Cg Today', '../assets/img/produtos/pneu-dianteiro-rinaldi.png', NULL, 'PNM'),
-(82, 'Pneu Pirelli V2', 535, 535, 'Pirelli ', 'Pneu Pirelli 140/70-17 Sport Demon (Tl) 66H (T) Orig. Cb 300', '../assets/img/produtos/pneu-pirelli.png', NULL, 'PNM');
+(82, 'Pneu Pirelli V2', 535, 535, 'Pirelli ', 'Pneu Pirelli 140/70-17 Sport Demon (Tl) 66H (T) Orig. Cb 300', '../assets/img/produtos/pneu-pirelli.png', NULL, 'PNM'),
+(83, 'Filtro de ar esportivo', 75, 75, 'Plasmoto', 'Lavável CG125 Fan CG150 Fan Titan CG160 Fan Titan Start filtro com tampa e parafusos ', '../assets/img/produtos/filtro-ar-esportivo.png', NULL, 'APM'),
+(84, 'Sistema Comunicação Capacete', 310, 310, 'EJEAS', 'Fone de ouvido intercomunicador Bluetooth\r\n', '../assets/img/produtos/sistema-comunicacao-capacete.png', NULL, 'APM'),
+(85, 'Antena Corta Pipa', 45, 45, 'JOJAFER', 'Antena Corta Pipa Pra Moto Suporte De Guidão 6 Estágios\r\nDimensões do item 21x3x2cm', '../assets/img/produtos/antena-corta-pipa.png', NULL, 'APM'),
+(86, 'Protetor Motor e Carenagem', 325, 325, 'COYOTE RS', 'Protetor de Motor e Carenagem Modelo Style Coyote', '../assets/img/produtos/protetor-motor-carenagem.png', NULL, 'APM'),
+(87, 'Capa Proteção Moto', 60, 60, 'Etacart', 'Capa Forrada Impermeável Térmica Protege Contra Sol Chuva Riscos', '../assets/img/produtos/capa-moto.png', NULL, 'APM'),
+(88, 'Bauleto 45L', 160, 160, 'Pro Tork', 'Parafusos e base para fixação;\r\nFechadura com chave;\r\nAdquirir o bagageiro de aço específico.', '../assets/img/produtos/bauleto-45l.png', NULL, 'APM'),
+(89, 'Bolsa Sela p/ Moto', 120, 120, 'ZEYUAN', 'Bolsa de sela a prova dágua.\r\nAlforjes Caixa de ferramentas laterais bolsa para motos.', '../assets/img/produtos/bolsa-sela-moto.png', NULL, 'APM'),
+(90, 'Kit Completo Transmissão', 215, 215, 'Genérico', 'Kit de transmissão para motos.\r\nInclui corrente, coroa e pinhão.', '../assets/img/produtos/kit-completo-transmissao.png', NULL, 'APM');
 
 -- --------------------------------------------------------
 
