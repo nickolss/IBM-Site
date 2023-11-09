@@ -41,7 +41,11 @@
       <section class="banner">
         <div class="banner__textos">
           <h2 class="banner__titulo">Olá, <?= $_SESSION['nomeCliente'] ?>!</h2>
-          <p class="pontos__Perfil">Seus pontos: <?= $pontos[0] ?></p>
+          <p class="pontos__Perfil">Seus pontos: <?php if(!empty($pontos[0])){
+            echo $pontos[0];
+          }else{
+            echo 0;
+          }  ?></p>
         </div>
       </section>
 
