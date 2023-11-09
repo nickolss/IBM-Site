@@ -108,7 +108,7 @@
 						</a>
 					</div>
 					<div class="coluna">
-						<a href="produtos-categoria.php?categoria=PM">
+						<a href="produtos-categoria.php?categoria=PNM">
 						<div class="card">
 							<img class="categoria__img" src="../assets/img/categoria-pneu-moto.jpg" alt="Pneus de Moto">
 						</div>
@@ -212,7 +212,7 @@
 				<!--QUARTA LINHA-->
 				<div class="linha">
 					<div class="coluna">
-						<a href="produtos-categoria.php?categoria=PM">
+						<a href="produtos-categoria.php?categoria=PNM">
 						<div class="card">
 							<img class="categoria__img" src="../assets/img/categoria-pneu-moto.jpg" alt="Pneus de Moto">
 						</div>
@@ -319,7 +319,7 @@
 						</a>
 					</div>
 					<div class="coluna">
-						<a href="produtos-categoria.php?categoria=PM">
+						<a href="produtos-categoria.php?categoria=PNM">
 						<div class="card">
 							<img class="categoria__img" src="../assets/img/categoria-pneu-moto.jpg" alt="Pneus de Moto">
 						</div>
@@ -450,7 +450,7 @@
 				<!--DECIMA LINHA-->
 				<div class="linha">
 					<div class="coluna">
-						<a href="produtos-categoria.php?categoria=PM">
+						<a href="produtos-categoria.php?categoria=PNM">
 						<div class="card">
 							<img class="categoria__img" src="../assets/img/categoria-pneu-moto.jpg" alt="Pneus de Moto">
 						</div>
