@@ -50,7 +50,7 @@
                         <img class="card__img" src="../assets/img/icone-ferramentas.svg" alt="Icone O que Somos">
                         <div class="card__content">
                             <p class="card__title">O que fazemos?</p>
-                            <p class="card__description">Somos uma oficina responsável pela <a class="card__link" href="produtos.php">personalização</a> de carros e <a class="card__link" href="produtos.php">venda</a> de peças.</p>
+                            <p class="card__description">Somos uma oficina responsável pela <a class="card__link" href="personalizacoes.php">personalização</a> de carros e <a class="card__link" href="produtos.php">venda</a> de peças.</p>
                         </div>
                     </div>
                     <div class="card" id="card__associar">
