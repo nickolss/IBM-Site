@@ -101,7 +101,7 @@
 				<!--TERCEIRA LINHA-->
 				<div class="linha">
 					<div class="coluna">
-						<a href="produtos-categoria.php?categoria=EP">
+						<a href="produtos-categoria.php?categoria=EPI">
 						<div class="card">
 							<img class="categoria__img" src="../assets/img/categoria-equipamentos-protecao.jpg" alt="Equipamentos de Proteção">
 						</div>
@@ -201,7 +201,7 @@
 						</a>
 					</div>
 					<div class="coluna">
-						<a href="produtos-categoria.php?categoria=EP">
+						<a href="produtos-categoria.php?categoria=EPI">
 						<div class="card">
 							<img class="categoria__img" src="../assets/img/categoria-equipamentos-protecao.jpg" alt="Equipamentos de Proteção">
 						</div>
@@ -312,7 +312,7 @@
 				<!--QUINTA LINHA-->
 				<div class="linha">
 					<div class="coluna">
-						<a href="produtos-categoria.php?categoria=EP">
+						<a href="produtos-categoria.php?categoria=EPI">
 						<div class="card">
 							<img class="categoria__img" src="../assets/img/categoria-equipamentos-protecao.jpg" alt="Equipamentos de Proteção">
 						</div>
@@ -439,7 +439,7 @@
 				<!--NONA LINHA-->
 				<div class="linha">
 					<div class="coluna">
-						<a href="produtos-categoria.php?categoria=EP">
+						<a href="produtos-categoria.php?categoria=EPI">
 						<div class="card">
 							<img class="categoria__img" src="../assets/img/categoria-equipamentos-protecao.jpg" alt="Equipamentos de Proteção">
 						</div>
