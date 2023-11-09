@@ -389,6 +389,32 @@ main{
     display: none;
 }
 
+/*ITENS NO CARD COMPRAS*/
+.itens__compras{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+.imagem-item__compras img{
+    width: 100px;
+    background-color: var(--branco);
+    padding: 0.3em;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.titulo-item__compras{
+    color: var(--branco);
+    font-size: 1.5rem;
+}
+
+.preco-item__compras{
+    color: var(--branco);
+    font-size: 1.2rem;
+}
+
 @media only screen and (max-width: 1200px){
     .opcoes__icones{
         height: 630px;
@@ -570,6 +596,10 @@ main{
         display: none;
     }
 
+    .perfil__veiculo__conteudo{
+        margin-top: -1rem;
+    }
+
     .perfil__veiculos, .perfil__compras{
         width: 300px;
     }
@@ -580,7 +610,30 @@ main{
     }
 
     .perfil__veiculo__img img{
-        margin-left: 1rem;
+        margin: 1.5rem 0rem 0rem 1rem;
     }
 
+    .perfil__veiculo__texto h4#titulo__nenhum-veiculo{
+        font-size: 1.1rem;
+        width: 3rem;
+        margin-right: 5rem;
+    }
+
+    /*ITENS NO CARD COMPRAS*/
+    .itens__compras{
+        height: 70%;
+    }
+
+    .imagem-item__compras img{
+        width: 75px;
+        margin: 0rem 0.5rem 0rem 1rem;
+    }
+
+    .titulo-item__compras{
+        font-size: 1.3rem;
+    }
+
+    .preco-item__compras{
+        font-size: 1rem;
+    }
 }

@@ -233,10 +233,14 @@ if ($_SESSION['plano'] != 'comum' && $_SESSION['plano'] != 'turbinado') {
 					<?php
 					if (!empty($compras)) {
 					?>
-						<div>
-							<img src="<?= $produtosImagem['caminho_imagem'] ?>" alt="Imagem do ultimo pedido">
-							<h2><?= $ultimaCompra['nomeProdutos'] ?></h2>
-							<p>R$<?= $ultimaCompra['preco_final'] ?>,00</p>
+						<div class="itens__compras">
+							<div class="imagem-item__compras">
+								<img src="<?= $produtosImagem['caminho_imagem'] ?>" alt="Imagem do ultimo pedido">
+							</div>
+							<div class="descricao-item__compras">
+								<h2 class="titulo-item__compras"><?= $ultimaCompra['nomeProdutos'] ?></h2>
+								<p class="preco-item__compras">R$<?= $ultimaCompra['preco_final'] ?>,00</p>
+							</div>
 						</div>
 					<?php
 					}
@@ -396,6 +400,21 @@ if ($_SESSION['plano'] != 'comum' && $_SESSION['plano'] != 'turbinado') {
 						<h3>Compras</h3>
 						<i class='bx bx-cart'></i>
 					</div>
+					<?php
+					if (!empty($compras)) {
+					?>
+						<div class="itens__compras">
+							<div class="imagem-item__compras">
+								<img src="<?= $produtosImagem['caminho_imagem'] ?>" alt="Imagem do ultimo pedido">
+							</div>
+							<div class="descricao-item__compras">
+								<h2 class="titulo-item__compras"><?= $ultimaCompra['nomeProdutos'] ?></h2>
+								<p class="preco-item__compras">R$<?= $ultimaCompra['preco_final'] ?>,00</p>
+							</div>
+						</div>
+					<?php
+					}
+					?>
 				</div>
 
 			</div>
