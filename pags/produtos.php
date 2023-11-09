@@ -90,7 +90,7 @@
 						</a>
 					</div>
 					<div class="coluna">
-						<a href="produtos-categoria.php?categoria=PA">
+						<a href="produtos-categoria.php?categoria=PEA">
 						<div class="card">
 							<img class="categoria__img" src="../assets/img/categoria-pecas-automoveis.jpg" alt="Peças para Automóveis">
 						</div>
@@ -194,7 +194,7 @@
 						</a>
 					</div>
 					<div class="coluna">
-						<a href="produtos-categoria.php?categoria=PA">
+						<a href="produtos-categoria.php?categoria=PEA">
 						<div class="card">
 							<img class="categoria__img" src="../assets/img/categoria-pecas-automoveis.jpg" alt="Peças para Automóveis">
 						</div>
@@ -301,7 +301,7 @@
 						</a>
 					</div>
 					<div class="coluna">
-						<a href="produtos-categoria.php?categoria=PA">
+						<a href="produtos-categoria.php?categoria=PEA">
 						<div class="card">
 							<img class="categoria__img" src="../assets/img/categoria-pecas-automoveis.jpg" alt="Peças para Automóveis">
 						</div>
