@@ -1,3 +1,9 @@
+<?php
+  require_once('../assets/scripts/conexao.php');
+  require_once('../assets/scripts/iniciarSessao.php');
+  require_once('../assets/scripts/consultaCliente.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -23,7 +29,7 @@
 
 <body id="container__body">
   <?php
-  require_once('../assets/components/header.php');
+    require_once('../assets/components/header.php');
   ?>
 
   <main class="principal">
@@ -45,9 +51,17 @@
                 <li class="lista__itens-comum">Melhores preços entre as lojas</li>
                 <li class="lista__itens-comum">Fornecedores confiáveis</li>
               </ul>
-
-              <button type="submit" value="comum" class="formulario__botao formulario__botao--comum" name="plano">Alterar Plano</button>
-
+               <?php
+                  if($_SESSION['plano'] == 'comum'){
+               ?> 
+                    <button type="submit" value="comum" class="formulario__botao formulario__botao--comum" name="plano" disabled>Alterar Plano</button>
+              <?php
+                }else if($_SESSION['plano'] == 'turbinado'){
+              ?>
+                    <button type="submit" value="comum" class="formulario__botao formulario__botao--comum" name="plano">Alterar Plano</button>
+              <?php
+                }
+              ?>
             </div>
           </div>
 
@@ -68,7 +82,17 @@
                 <li class="lista__itens-turbinado">Fornecedores confiáveis</li>
               </ul>
               <p class="plano-turbinado__preco">apenas <span class="preco">R$29,90</span></p>
-              <button type="submit" value="turbinado" class="formulario__botao formulario__botao--turbinado" name="plano">Alterar Plano</button>
+              <?php
+                  if($_SESSION['plano'] == 'comum'){
+               ?> 
+                  <button type="submit" value="turbinado" class="formulario__botao formulario__botao--turbinado" name="plano">Alterar Plano</button>
+              <?php
+                }else if($_SESSION['plano'] == 'turbinado'){
+              ?>
+                   <button type="submit" value="turbinado" class="formulario__botao formulario__botao--turbinado" name="plano" disabled>Alterar Plano</button>
+              <?php
+                }
+              ?>
             </div>
           </div>
         </section>
