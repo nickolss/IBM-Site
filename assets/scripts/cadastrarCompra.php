@@ -64,9 +64,7 @@
                             // Limpar todos os itens do carrinho
                             $_SESSION['carrinho'] = array();
 
-                            $tituloModal = "Compra realizada com sucesso!";
-                            $textoModal = "Obrigado pela preferência!";
-                            require_once('../components/modal.php');
+                            header("Location: ../../pags/pedido-feito.php");
                         }
                     }
             }
