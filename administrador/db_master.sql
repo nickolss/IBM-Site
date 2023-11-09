@@ -283,13 +283,21 @@ INSERT INTO `produto` (`codigoProduto`, `nome`, `preco`, `pontos`, `marca`, `des
 (33, 'Limpador Bactericida', 40, 40, 'VONIXX', 'pH balanceado e ultra concentrado, indicado para limpeza interna', '../assets/img/produtos/limpador-bactericida.png', NULL, 'CA'),
 (34, 'Hidratante de Couro', 35, 35, 'VONIXX', 'Produto que hidrata e protege bancos de couro e evita o ressecamento', '../assets/img/produtos/hidratante-couro.png', NULL, 'CA'),
 (35, 'Spray Desengripante', 10, 10, 'LUB-40', 'Protege as superfícies metálicas\r\nElimina unidade protegendo contra ferrugem', '../assets/img/produtos/desegripante-lubrificante.png', NULL, 'OF'),
-(36, 'Oleo de Moto', 35, 35, 'Mobil', 'Oleo de Moto Mobil Super Moto\r\n 20w50 Mineral 4t 1lt\r\nDimensões do produto: 12 x 6 x 25 cm; 940 g', '../assets/img/produtos/oleo-de-moto-mobil.png', NULL, 'OF'),
+(36, 'Oleo de Moto', 35, 35, 'Mobil', 'Oleo de Moto\r\n20w50 Mineral 4t 1lt\r\nDimensões do produto: 12 x 6 x 25 cm; 940 g', '../assets/img/produtos/oleo-de-moto-mobil.png', NULL, 'OF'),
 (37, 'Cera Tec', 360, 360, 'Liqui Moly', 'Misturável com todos os óleos de motor\r\nEstável sob altas cargas térmicas e dinâmicas', '../assets/img/produtos/liqui-moly-cera.png', NULL, 'OF'),
 (38, 'Kit 6 Oleos', 350, 350, 'Castrol', 'Kit 6 Oleo Castrol Magnatec 5w40 A3/B4 Sintético 502 00\r\nOleo para automóveis', '../assets/img/produtos/kit6-oleo-castrol.png', NULL, 'OF'),
 (39, 'Aditivo p/ Radiador', 100, 100, 'Fuchs', 'Fuchs Maintain Fricofin DP 1L - aditivo p/radiador concentrado c/monoetilenoglicol', '../assets/img/produtos/fuchs-maintain-fricofin.png', NULL, 'OF'),
 (40, 'Óleo Lubrificante', 215, 215, 'Lubrax', 'Excelente Proteção contra o Desgaste, proteção resistente, reduz o atrito entre as peças.', '../assets/img/produtos/oleo-lubrificante-lubrax.png', NULL, 'OF'),
 (41, 'Lubrificante Corrente Moto', 115, 115, 'Motul', '400 ML \r\nDesenvolvido para lubrificar as correntes das motos', '../assets/img/produtos/motul-c4-factory.png', NULL, 'OF'),
-(42, 'Descarbonizador', 80, 80, 'STP', 'Limpeza Completa Para O Sistema De Injeção (Concessionária) Stp 0.45L', '../assets/img/produtos/limpeza-completa.png', NULL, 'OF');
+(42, 'Descarbonizador', 80, 80, 'STP', 'Limpeza Completa Para O Sistema De Injeção (Concessionária) Stp 0.45L', '../assets/img/produtos/limpeza-completa.png', NULL, 'OF'),
+(43, 'Bateria 20V MAX', 215, 215, 'Dewalt', 'DEWALT Bateria 20V MAX* Litio-Ion Premium 3.0Ah DCB200', '../assets/img/produtos/bateria-automotiva-dewalt.png', NULL, 'BA'),
+(44, 'Bateria M60GD', 610, 610, 'Moura ', 'Bateria Moura M60GD MFA 12V / 60Ah / 90 min / 440 A\r\nMaterial em Prolipropileno', '../assets/img/produtos/bateria-automotiva-moura.png', NULL, 'BA'),
+(45, 'Bateria 60Ah', 600, 600, 'Heliar', 'Bateria Automotiva 60Ah Ac.El.Uc. Heliar Org Hgr60Dd 18M', '../assets/img/produtos/bateria-automotiva-heliar.png', NULL, 'BA'),
+(46, 'Carregador de Bateria', 215, 215, 'VONDER', 'Carregador Inteligente De Bateria, 220 V~ - 240 V~, Cib 110 Vonder.', '../assets/img/produtos/carregador-inteligente-bateria.png', NULL, 'BA'),
+(47, 'Testador de baterias', 230, 230, 'VONDER', 'Testador de baterias TBV 1000 Vonder\r\nTipo de bateria: 6 V - 12 V', '../assets/img/produtos/testador-baterias.png', NULL, 'BA'),
+(48, 'Cabo Para Bateria', 30, 30, 'Black Jack', 'Black Jack Cabo Para Bateria 200A 2 5M\r\nTransferência de carga em baterias de veículos', '../assets/img/produtos/cabo-bateria.png', NULL, 'BA'),
+(49, 'Conectores de terminal', 50, 50, 'Fydun', 'Conectores de terminal de bateria positiva e negativa\r\nTerminais de bateria braçadeiras', '../assets/img/produtos/conectores-terminal-bateria.png', NULL, 'BA'),
+(50, 'Bateria Powertek 12V', 820, 820, 'Multilaser', '12 Volts\r\nCapacidade: 100 AH\r\nCorrente Inicial: 13.5A\r\nUso em Standby: 13.5~13.8 V', '../assets/img/produtos/bateria-automotiva-powertel.png', NULL, 'BA');
 
 -- --------------------------------------------------------
 
