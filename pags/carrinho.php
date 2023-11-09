@@ -37,11 +37,10 @@ require_once('../assets/scripts/iniciarSessao.php');
     $totalItens = 0; // Variável para calcular a quantidade total de itens
     
     if (isset($_SESSION['carrinho'])) {
-    } else {
+    }
         foreach ($_SESSION['carrinho'] as $idProd => $value) {
             $subtotal = $value['preco'] * $value['quantidade'];
             $totalCarrinho += $subtotal;
-        }
     }
     
     
