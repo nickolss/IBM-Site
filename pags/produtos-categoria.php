@@ -265,8 +265,8 @@ if (!empty($idsProdutos)) {
 
                             <div class="d-flex justify-content-center">
 
-                                <a class="link__produto" href="mercadoria.php?nomeProduto=<?= $nomeProduto ?>">
-                                    <div class="card card-produto-dinamico" style="width: 18rem;">
+                                <a class="link__produto card card-produto-dinamico" style="width: 18rem;" href="mercadoria.php?nomeProduto=<?= $nomeProduto ?>">
+                                    <div >
                                         <div class="text-center">
                                             <img class="card-img-top imagens-prod" src="<?= $imagemProduto ?>" alt="...">
                                         </div>
