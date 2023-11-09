@@ -513,35 +513,32 @@ CREATE TABLE IF NOT EXISTS `produtosTroca`(
   PRIMARY KEY (`idProduto`)
 ) ENGINE = InnoDB DEFAULT COLLATE = utf8_general_ci;
 
-INSERT INTO `produtostroca` (`idProduto`, `nome`, `preco_pontos`, `descricao`, `categoria`, `caminho_img`) VALUES
-(1, 'Lavagem Simples', 1000, 'Lavagem simples do seu veículo', 'lavagem-simples', '../assets/img/motor369.svg'),
-(2, 'Lavagem Completa', 1800, 'Lavagem completa do seu veículo', 'lavagem-completa', '../assets/img/motor369.svg'),
-(3, 'Cheiro de Lavanda', 200, 'Um aroma calmante e relaxante, que ajuda a reduzir o estresse e a ansiedade.', 'cheirinho-carro', '../assets/img/cheirinho1.png'),
-(4, 'Capa de volante dente-de-leão elástico.', 600, 'Diâmetro de 37-38 cm/14,5-15 polegadas.\r\nUniversal para volantes redondos.', 'capa-volante', '../assets/img/capa-volante1.png'),
-(5, 'Tapete de Papel Automotivo', 750, 'Simulação de compra no formato 42x30cm, impressão 1x1(p/b), papel Offset 90g.', 'tapete-carro', '../assets/img/motor369.svg'),
-(6, 'Cheiro de Morango', 200, 'Um aroma doce e frutado, que remete à infância, verão e relaxamento.', 'cheirinho-carro', '../assets/img/cheirinho2.png'),
-(7, 'Palheta Limpador Jeep', 120, 'Kit palhetas bosch jeep renegade 01.', 'limpador', '../assets/img/limpador-parabrisa1.png'),
-(8, 'Chaveiro De Metal.', 50, 'Chaveiro metálico com formato de um carro 2D.', 'chaveiro', '../assets/img/chaveiro1.png'),
-(9, 'Cheiro de Baunilha', 220, 'O aroma da baunilha é calmante e relaxante, ajudando a reduzir o estresse e a ansiedade.', 'cheirinho-carro', '../assets/img/cheirinho3.png'),
-(10, 'Olho de leão preto genuíno para costura manual.', 550, 'Capa para volante de carro para hyundai solaris.', 'capa-volante', '../assets/img/capa-volante2.png'),
-(11, 'Capa De Volante Costurada Astra', 369, 'Material : camurça.\r\nCor: preto.\r\nTipo de veículo:\r\nCarro/Caminhonete.', 'capa-volante', '../assets/img/capa-volante3.png'),
-(12, 'Capa Para Volante Esportiva Type-r', 963, '• Ultra confortaveis.\r\n• Compatível : Volantes de 37.5 a 38.5cm de circuferencia.', 'capa-volante', '../assets/img/capa-volante4.png'),
-(13, 'Capa De Volante Ducato/ Boxer', 400, 'Capa de volante costurada em material sintético de alta qualidade.\r\nGarantia: 3 meses.', 'capa-volante', '../assets/img/capa-volante5.png'),
-(15, 'Cheiro de Flores', 220, 'Um aroma feminino e romântico, que deixa o carro com um toque de sofisticação.', 'cheirinho-carro', '../assets/img/cheirinho4.png'),
-(18, 'Chaveiro BMW', 30, 'Chaveiro estampa BMW, metálico. Cor: preto', 'chaveiro', '../assets/img/chaveiro2.png'),
-(19, 'Chaveiro Fusca ', 35, 'Chaveiro estampa de fusca, metálico. Cor: preto', 'chaveiro', '../assets/img/chaveiro3.png'),
-(20, 'Chaveiro Formato Carro', 75, 'Material: liga de zinco + couro.\r\n100% novo.', 'chaveiro', '../assets/img/chaveiro4.png'),
-(23, 'Palheta Limpador Audi', 100, '02 (Duas) Palhetas dianteiras;\n01 (Uma) Palheta traseira;', 'limpador', '../assets/img/limpador-parabrisa2.png'),
-(24, 'Palheta de Wolksvagem', 90, 'Limpadores do para-brisa dianteiro ', 'limpador', '../assets/img/limpador-parabrisa3.png'),
-(25, 'Palheta Fiat', 85, '02 (Duas) Palhetas dianteiras;\n01 (Uma) Palheta traseira;', 'limpador', '../assets/img/limpador-parabrisa4.png'),
-(28, 'Tapa Sol Iveco Stralis', 230, 'Alta resistência e durabilidade.\r\nProduto de qualidade com garantia.', 'tapa-sol', '../assets/img/tapa-sol2.png'),
-(29, 'Para-brisa Solar Uv Automotivo', 200, 'Protetor para-brisa solar carro retrátil com UV.', 'tapa-sol', '../assets/img/tapa-sol1.png'),
-(34, 'Tapetes De Couro Piso', 310, '[Chuan] 5Pcs/contravés de cor café universal carro auto piso tapete em couro forro assoalho carpete de couro.', 'tapete-carro', '../assets/img/motor369.svg'),
-(35, 'Tapete Automotivo Universal', 270, 'Composição do Tapete Eco Line: 100% PVC (Borracha Injetada)', 'tapete-carro', '../assets/img/motor369.svg'),
-(36, 'Tapetes de carro personalizados BLACK', 320, 'PVC Borracha PP Couro sintético Couro EVA.', 'tapete-carro', '../assets/img/motor369.svg'),
-(37, 'Tapete de Carro Personalizado CAVEIRA', 370, 'Tecido Superior Poliéster Impermeável. Base Pvc Emborrachado.', 'tapete-carro', '../assets/img/motor369.svg'),
-(38, 'Tapetes personalizados BLUE', 310, '95% modelo de carro para todos os climas, à prova de água, antiderrapante, proteção total.', 'tapete-carro', '../assets/img/motor369.svg');
-
+INSERT INTO `produtostroca` (`nome`, `preco_pontos`, `descricao`, `categoria`, `caminho_img`) VALUES
+('Lavagem Simples', 1000, 'Lavagem simples do seu veículo', 'lavagem-simples', '../assets/img/motor369.svg'),
+('Lavagem Completa', 1800, 'Lavagem completa do seu veículo', 'lavagem-completa', '../assets/img/motor369.svg'),
+('Cheiro de Lavanda', 200, 'Um aroma calmante e relaxante, que ajuda a reduzir o estresse e a ansiedade.', 'cheirinho-carro', '../assets/img/cheirinho1.png'),
+('Capa de volante dente-de-leão elástico.', 600, 'Diâmetro de 37-38 cm/14,5-15 polegadas.\r\nUniversal para volantes redondos.', 'capa-volante', '../assets/img/capa-volante1.png'),
+('Cheiro de Morango', 200, 'Um aroma doce e frutado, que remete à infância, verão e relaxamento.', 'cheirinho-carro', '../assets/img/cheirinho2.png'),
+('Palheta Limpador Jeep', 120, 'Kit palhetas bosch jeep renegade 01.', 'limpador', '../assets/img/limpador-parabrisa1.png'),
+('Chaveiro De Metal.', 50, 'Chaveiro metálico com formato de um carro 2D.', 'chaveiro', '../assets/img/chaveiro1.png'),
+('Cheiro de Baunilha', 220, 'O aroma da baunilha é calmante e relaxante, ajudando a reduzir o estresse e a ansiedade.', 'cheirinho-carro', '../assets/img/cheirinho3.png'),
+('Olho de leão preto genuíno para costura manual.', 550, 'Capa para volante de carro para hyundai solaris.', 'capa-volante', '../assets/img/capa-volante2.png'),
+('Capa De Volante Costurada Astra', 369, 'Material : camurça.\r\nCor: preto.\r\nTipo de veículo:\r\nCarro/Caminhonete.', 'capa-volante', '../assets/img/capa-volante3.png'),
+('Capa Para Volante Esportiva Type-r', 963, '• Ultra confortaveis.\r\n• Compatível : Volantes de 37.5 a 38.5cm de circuferencia.', 'capa-volante', '../assets/img/capa-volante4.png'),
+('Capa De Volante Ducato/ Boxer', 400, 'Capa de volante costurada em material sintético de alta qualidade.\r\nGarantia: 3 meses.', 'capa-volante', '../assets/img/capa-volante5.png'),
+('Cheiro de Flores', 220, 'Um aroma feminino e romântico, que deixa o carro com um toque de sofisticação.', 'cheirinho-carro', '../assets/img/cheirinho4.png'),
+('Chaveiro BMW', 30, 'Chaveiro estampa BMW, metálico. Cor: preto', 'chaveiro', '../assets/img/chaveiro2.png'),
+('Chaveiro Fusca ', 35, 'Chaveiro estampa de fusca, metálico. Cor: preto', 'chaveiro', '../assets/img/chaveiro3.png'),
+('Chaveiro Formato Carro', 75, 'Material: liga de zinco + couro.\r\n100% novo.', 'chaveiro', '../assets/img/chaveiro4.png'),
+('Palheta Limpador Audi', 100, '02 (Duas) Palhetas dianteiras;\n01 (Uma) Palheta traseira;', 'limpador', '../assets/img/limpador-parabrisa2.png'),
+('Palheta de Wolksvagem', 90, 'Limpadores do para-brisa dianteiro ', 'limpador', '../assets/img/limpador-parabrisa3.png'),
+('Palheta Fiat', 85, '02 (Duas) Palhetas dianteiras;\n01 (Uma) Palheta traseira;', 'limpador', '../assets/img/limpador-parabrisa4.png'),
+('Tapa Sol Iveco Stralis', 230, 'Alta resistência e durabilidade.\r\nProduto de qualidade com garantia.', 'tapa-sol', '../assets/img/tapa-sol2.png'),
+('Para-brisa Solar Uv Automotivo', 200, 'Protetor para-brisa solar carro retrátil com UV.', 'tapa-sol', '../assets/img/tapa-sol1.png'),
+('Tapetes De estrada', 310, '[Chuan] 5Pcs/contravés de cor café universal carro auto piso tapete em couro forro assoalho carpete de couro.', 'tapete-carro', '../assets/img/tapete-de-carro-estrada.png'),
+('Tapete De Montanha', 270, 'Composição do Tapete Eco Line: 100% PVC (Borracha Injetada)', 'tapete-carro', '../assets/img/tapete-de-carro-montanha.png'),
+('Tapetes Hightech', 320, 'PVC Borracha PP Couro sintético Couro EVA.', 'tapete-carro', '../assets/img/tapete-de-carro-hightech.png'),
+('Tapete De Oficina', 370, 'Tecido Superior Poliéster Impermeável. Base Pvc Emborrachado.', 'tapete-carro', '../assets/img/tapete-de-carro-oficina.png');
 
 --
 -- Estrutura da tabela `produtosComprados`
