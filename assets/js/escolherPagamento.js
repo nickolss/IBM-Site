@@ -1,10 +1,12 @@
 function gerarQRCode() {
 	let qrcodeContainer = document.getElementById("qrcode");
 	qrcodeContainer.innerHTML = "";
-	new QRCode(qrcodeContainer, "http://localhost/IBM-Site/pags/pedido-feito.php");
+	new QRCode(
+		qrcodeContainer,
+		"https://turnmotors.000webhostapp.com/pags/pedido-feito.php"
+	);
 	document.getElementById("qrcode-container").style.display = "block";
 }
-
 
 const inputPix = document.querySelector("#pix");
 const inputCartao = document.querySelector("#cartao");
@@ -38,5 +40,5 @@ inputPix.addEventListener("change", () => {
 		filho.style.display = "flex";
 	});
 
-	gerarQRCode()
+	gerarQRCode();
 });
