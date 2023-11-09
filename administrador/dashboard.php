@@ -93,9 +93,6 @@ require_once('../assets/scripts/consultaFuncionario.php');
               <form action="cadastrar-orcamento.php">
                 <button class="botao__laranja" type="submit">Verificar Orçamentos</button>
               </form>
-              <form action="#">
-                <button class="botao__laranja" type="submit">EM DESENVOLVIMENTO</button>
-              </form>
             </div>
           </div>
         </div>
