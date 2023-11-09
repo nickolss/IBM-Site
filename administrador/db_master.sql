@@ -244,6 +244,40 @@ CREATE TABLE IF NOT EXISTS `produto` (
 ) ENGINE = InnoDB DEFAULT COLLATE = utf8_general_ci;
 
 --
+-- Extraindo dados da tabela `produto`
+--
+
+INSERT INTO `produto` (`codigoProduto`, `nome`, `preco`, `pontos`, `marca`, `descricao`, `caminho_imagem`, `TG_categoria`) VALUES
+(1, 'Pneu 245/70R16', 700, 700, 'ROADCRUZA', 'Tamanho do aro	16 Polegadas\r\nÍndice de carga	111.00', '../assets/img/produtos/pn-245-70R16.png', 'PC'),
+(2, 'Pneu 175/75R13', 220, 220, 'WESTLAKE', 'Tamanho	175/75R13\r\nTamanho do aro	13 Polegadas\r\nÍndice de carga	85.00', '../assets/img/produtos/pneu-175-70R13.png', 'PC'),
+(3, 'Pneu 185R14C', 330, 330, 'XBRI', 'Tamanho	tamanho único\r\nDimensões do item C x L x A	18 x 65 x 65 centímetros', '../assets/img/produtos/pneu-185R14C.png', 'PC'),
+(4, 'Pneu 205/40R17', 280, 280, 'Forceland', 'Economia de Combustível: D\r\nAderência em pista molhada: B\r\nRuído: 72', '../assets/img/produtos/pneu-205-40R17.png', 'PC'),
+(5, 'Pneu 205/55 R16 91H', 470, 470, 'HANKOOK', 'Tamanho do aro	16 Polegadas\r\nLargura da seção	205 Milímetros\r\n', '../assets/img/produtos/pneu-205-55-R16.png', 'PC'),
+(6, 'Pneu 215/55R17', 700, 700, 'Goodyear', 'Tamanho	tamanho único\r\nPeso do produto	11,89 Quilogramas', '../assets/img/produtos/pneu-215-55R17.png', 'PC'),
+(7, 'Pneu Aro 13', 220, 220, 'COMPASAL', 'Tamanho do aro	13 Polegadas\r\nLargura da seção	175 Milímetros', '../assets/img/produtos/pneu-aro-13-compasal.png', 'PC'),
+(8, 'Pneu Aro 14 175/75r14', 230, 230, 'Royal Black', 'Tamanho do aro	14 Polegadas\r\nLargura da seção	175 Milímetros', '../assets/img/produtos/pneu-aro-14.png', 'PC'),
+(9, 'Pneu Aro 17', 780, 780, 'Pirelli', 'Largura da seção	215 Milímetros\r\nProporções do pneu 55 Milímetros\r\n', '../assets/img/produtos/pneu-aro-17-pirelli.png', 'PC'),
+(10, 'Pneu Aro 14', 330, 330, 'Hankook ', 'Economia de Combustível: E\r\nAderência em pista molhada: E\r\nRuído: 75', '../assets/img/produtos/pneu-hankook-aro-14.png', 'PC'),
+(11, 'Câmera para Carro', 730, 730, 'Xiaomi', 'Visão Noturna, Ângulo de Visão 140°, Gravação em loop, Detecção de Movimento', '../assets/img/produtos/camera-carro.png', 'SME'),
+(12, 'Aparelho de som portátil', 520, 520, 'Sanpyl', ' Touch-screen de 7 polegadas, receptor de rádio automotivo com navegação GPS ', '../assets/img/produtos/aparelho-som-portatil-carro.png', 'SME'),
+(13, 'Rádio estéreo', 430, 430, 'Luqeeg', '10\" IPS touch-screen, Bluetooth viva-voz, controle de volante de navegação GPS', '../assets/img/produtos/radio-estereo-carro.png', 'SME'),
+(14, 'Carregador Veicular', 40, 40, 'Genérico', 'Carregador Veicular Universal 38w Turbo Com 2 Entradas 1 Usb e 1 Tipo C', '../assets/img/produtos/carregador-veicular-universal.png', 'SME'),
+(15, 'Adaptador sem fio ', 150, 150, 'YEOODOP', 'Converte com fio para sem fio, suporta atualização on-line, plug&play', '../assets/img/produtos/adaptador-sem-fio-carplay.png', 'SME'),
+(16, 'Adaptador Receptor Bluetooth p/ Radio', 50, 50, 'Kanup', 'Adaptador Receptor\r\nP2 Bluetooth\r\n', '../assets/img/produtos/adaptador-receptor-p2-bluetooth.png', 'SME'),
+(17, 'Rádio Automotivo', 210, 210, 'JBL', 'JBL, Rádio Automotivo, MP3 Player, Celebrity 100, Bluetooth / USB / SD Card / Aux / FM ', '../assets/img/produtos/radio-automotivo.png', 'SME'),
+(18, 'Central Multimidia', 2500, 2500, 'Pioneer', 'Central Multimídia, 8 pol Bt Dvd Touch Weblink Android Iphone Tv Digital', '../assets/img/produtos/central-multimidia.png', 'SME'),
+(19, 'Suporte Magnético', 45, 45, 'Geonav', 'Suporte Veicular Magnético para Smartphones 4 imãs', '../assets/img/produtos/suporte-veicular-magnetico-universal.png', 'AA'),
+(20, 'Suporte p/ Smartphones', 70, 70, 'ELG', 'Suporte Veicular Para Smartphones Tipo Garra, ELG', '../assets/img/produtos/suporte-veicular-para-smarthphones.png', 'AA'),
+(21, 'Cadeira Reclinável ', 340, 340, 'Burigotto Import', 'Cadeira Reclinável  para Auto, Mesclado Preto, 15-36 kg ', '../assets/img/produtos/cadeira-reclinavel.png', 'AA'),
+(22, 'Booster Teen', 70, 70, 'Dorel', 'Cinto de segurança\r\nMaterial: Plástico, Poliéster, Metal', '../assets/img/produtos/booster-teen.png', 'AA'),
+(23, 'Almofada apoio cabeça', 50, 50, 'PUCHEN', 'Almofada de cor rosa para o apoio da cabeça no automóvel', '../assets/img/produtos/almofada-apoio-cabeca.png', 'AA'),
+(24, 'Protetor Solar Parabrisa', 30, 30, 'UTILEIRA', 'Proteção Térmica Uv Painél Dobrável Completo 130x60cm', '../assets/img/produtos/protetor-solar-parabrisa.png', 'AA'),
+(25, 'Capa proteção', 90, 90, 'Bezzter', 'Capa para proteção do automóvel, 100% impermeável', '../assets/img/produtos/capa-cobrir-carro.png', 'AA'),
+(26, 'Carpete ', 170, 170, 'Genérico', 'Dimensões do produto	70L x 55W x 0,5Th centímetros', '../assets/img/produtos/carpete.png', 'AA');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `endereco`
 --
 DROP TABLE IF EXISTS `endereco`;
