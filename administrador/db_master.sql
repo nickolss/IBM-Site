@@ -513,85 +513,45 @@ CREATE TABLE IF NOT EXISTS `produtosTroca`(
   PRIMARY KEY (`idProduto`)
 ) ENGINE = InnoDB DEFAULT COLLATE = utf8_general_ci;
 
-INSERT INTO
-  `produtosTroca` (
-    `nome`,
-    `preco_pontos`,
-    `descricao`,
-    `categoria`,
-    `caminho_img`
-  )
-VALUES
-  (
-    'Lavagem Simples',
-    '1000',
-    'Lavagem simples do seu veículo',
-    'lavagem-simples',
-    '../assets/img/motor369.svg'
-  ),
-  (
-    'Lavagem Completa',
-    '1800',
-    'Lavagem completa do seu veículo',
-    'lavagem-completa',
-    '../assets/img/motor369.svg'
-  ),
-  (
-    'Cheiro de Lavanda',
-    '200',
-    'Cheirinho de lavanda',
-    'cheirinho-carro',
-    '../assets/img/motor369.svg'
-  ),
-  (
-    'Capa de Volante',
-    '600',
-    'Capa de Volante',
-    'capa-volante',
-    '../assets/img/motor369.svg'
-  ),
-  (
-    'Tapete de carro',
-    '750',
-    'Tapete de carro',
-    'tapete-carro',
-    '../assets/img/motor369.svg'
-  ),
-  (
-    'Cheiro de Morango',
-    '200',
-    'Cheirinho de Morango',
-    'cheirinho-carro',
-    '../assets/img/motor369.svg'
-  ),
-  (
-    'Limpador de vidro',
-    '120',
-    'Limpador de vidro',
-    'limpador',
-    '../assets/img/motor369.svg'
-  ),
-  (
-    'Chaveiro do Naruto',
-    '300',
-    'Chaveiro do Naruto',
-    'chaveiro',
-    '../assets/img/motor369.svg'
-  ),
-  (
-    'Cheiro de Baunilha',
-    '220',
-    'Cheiro de Baunilha',
-    'cheirinho-carro',
-    '../assets/img/motor369.svg'
-  ),
-  (
-    'Capa de volante de leão',
-    '550',
-    'Capa de volante de leão',
-    'capa-volante',
-    '../assets/img/motor369.svg'
-  );
+INSERT INTO `produtostroca` (`nome`, `preco_pontos`, `descricao`, `categoria`, `caminho_img`) VALUES
+('Lavagem Simples', 1000, 'Lavagem simples do seu veículo', 'lavagem-simples', '../assets/img/motor369.svg'),
+('Lavagem Completa', 1800, 'Lavagem completa do seu veículo', 'lavagem-completa', '../assets/img/motor369.svg'),
+('Cheiro de Lavanda', 200, 'Um aroma calmante e relaxante, que ajuda a reduzir o estresse e a ansiedade.', 'cheirinho-carro', '../assets/img/motor369.svg'),
+('Capa de volante dente-de-leão elástico.', 600, 'Diâmetro de 37-38 cm/14,5-15 polegadas.\r\nUniversal para volantes redondos.', 'capa-volante', '../assets/img/motor369.svg'),
+('Tapete de Papel Automotivo', 750, 'Simulação de compra no formato 42x30cm, impressão 1x1(p/b), papel Offset 90g.', 'tapete-carro', '../assets/img/motor369.svg'),
+('Cheiro de Morango', 200, 'Um aroma doce e frutado, que remete à infância e ao verão.', 'cheirinho-carro', '../assets/img/motor369.svg'),
+('Palheta Limpador Jeep Renegade Dianteiro e Traseiro.', 120, 'Kit palhetas bosch jeep renegade 01.', 'limpador', '../assets/img/motor369.svg'),
+('Chaveiro De Metal.', 300, 'Metals Tipo liga de zinco.\r\nModelo Número K1302.\r\nGênero Unissex.', 'chaveiro', '../assets/img/motor369.svg'),
+('Cheiro de Baunilha', 220, 'O aroma da baunilha é calmante e relaxante, o que pode ajudar a reduzir o estresse e a ansiedade durante o trânsito.', 'cheirinho-carro', '../assets/img/motor369.svg'),
+('Olho de leão preto genuíno para costura manual.', 550, 'Capa para volante de carro para hyundai solaris.', 'capa-volante', '../assets/img/motor369.svg'),
+('Capa De Volante Costurada Astra', 369, 'Material : camurça.\r\nCor: preto.\r\nTipo de veículo:\r\nCarro/Caminhonete.', 'capa-volante', '../assets/img/motor369.svg'),
+('Capa Para Volante Esportiva Type-r', 963, '• Ultra confortaveis.\r\n• Compatível : Volantes de 37.5 a 38.5cm de circuferencia.', 'capa-volante', '../assets/img/motor369.svg'),
+('Capa De Volante Ducato/ Boxer', 400, 'Capa de volante costurada em material sintético de alta qualidade.\r\nGarantia: 3 meses.', 'capa-volante', '../assets/img/motor369.svg'),
+('Capa De Volante Bordado Chevrolet', 567, '1ª linha com padrão original de aplicação e durabilidade;\r\nProduto 100% novo;', 'capa-volante', '../assets/img/motor369.svg'),
+('Cheiro de Flores', 220, 'Um aroma feminino e romântico, que deixa o carro com um toque de sofisticação.', 'cheirinho-carro', '../assets/img/motor369.svg'),
+('Cheiro de Frutos cítricos', 240, 'Um aroma fresco e energizante, que é perfeito para os dias quentes.', 'cheirinho-carro', '../assets/img/motor369.svg'),
+('Cheiro de Campo', 230, 'Um aroma natural e refrescante, que remete à natureza.', 'cheirinho-carro', '../assets/img/motor369.svg'),
+('Capa Couro Chave Presença', 30, 'Capa em couro para chave de presença Chery Tiggo 3X 5X.\r\nCor: Preta com linha vermelha', 'chaveiro', '../assets/img/motor369.svg'),
+('Capa Silicone', 35, 'Capinha Elite Volkswagen.\r\nCarros: Gol / Fox / SpaceFox / Polo / Jetta / Golf / Saveiro / Up / Tiguan / Voyage.', 'chaveiro', '../assets/img/motor369.svg'),
+('Capa Para Carro Com Chaveiro De Liga De Zinco', 50, 'Material: liga de zinco + couro.\r\n100% novo.', 'chaveiro', '../assets/img/motor369.svg'),
+('Chaveiro De Metal Com Logotipo Do Carro.', 45, 'Combinando perfeitamente com seu carro.\r\nRotação de 360 graus.', 'chaveiro', '../assets/img/motor369.svg'),
+('Chaveiro De Couro Carbono', 35, 'O produto é perfeito para chaves de carro, chaves domésticas. Adequado para ao ar livre.', 'chaveiro', '../assets/img/motor369.svg'),
+('3 Palheta Limpador Parabrisa D+t Audi', 100, '02 (Duas) Palhetas dianteiras;\r\n01 (Uma) Palheta traseira;', 'limpador', '../assets/img/motor369.svg'),
+('Par Palhetas Limpador De Parabrisa Silicone', 90, 'Jogo de palhetas para os limpadores do para-brisa dianteiro para o Volkswagen.', 'limpador', '../assets/img/motor369.svg'),
+('Palheta Limpador Para-Brisa Dianteira', 85, 'Desenvolvida para MELHORAR A VISIBILIDADE e ter ótima performace.', 'limpador', '../assets/img/motor369.svg'),
+('Par Palheta Limpador Parabrisa Dianteiro', 150, 'Limpadores de para-brisas com design aerodinâmico.', 'limpador', '../assets/img/motor369.svg'),
+('Par Palheta Limpador de Parabrisa Honda Fit', 120, 'Material flexível de silicone sem ferragem.\r\nProduto de qualidade com garantia de fábrica', 'limpador', '../assets/img/motor369.svg'),
+('Tapa Sol Iveco Stralis', 230, 'Alta resistência e durabilidade.\r\nProduto de qualidade com garantia.', 'tapa-sol', '../assets/img/motor369.svg'),
+('Para-brisa Solar Uv Automotivo', 200, 'Protetor para-brisa solar carro retrátil com UV.', 'tapa-sol', '../assets/img/motor369.svg'),
+('Protetor Solar Retrátil E Ventosa', 180, 'Melhor conforto e proteção para seu filho e família. Protetor solar Retrátil com Ventosa.', 'tapa-sol', '../assets/img/motor369.svg'),
+('Capa Cobrir Carro Forrada', 215, '100% Impermeável Protege Sol Chuva Poeira P M G Hatch e Sedan.', 'tapa-sol', '../assets/img/motor369.svg'),
+('Protetor Solar Para brisa quebra sol', 170, 'Feito em espuma e membrana de alumínio refletiva, isolante térmica e leve.', 'tapa-sol', '../assets/img/motor369.svg'),
+('Tapa e bloqueia sol, vidro lateral.', 230, 'Dobráveis com ventosas.\r\nBloqueia até 90% dos raios solares.\r\n44cm x 36cm', 'tapa-sol', '../assets/img/motor369.svg'),
+('Tapetes De Couro Piso', 310, '[Chuan] 5Pcs/contravés de cor café universal carro auto piso tapete em couro forro assoalho carpete de couro.', 'tapete-carro', '../assets/img/motor369.svg'),
+('Tapete Automotivo Universal', 270, 'Composição do Tapete Eco Line: 100% PVC (Borracha Injetada)', 'tapete-carro', '../assets/img/motor369.svg'),
+('Tapetes de carro personalizados BLACK', 320, 'PVC Borracha PP Couro sintético Couro EVA.', 'tapete-carro', '../assets/img/motor369.svg'),
+('Tapete de Carro Personalizado CAVEIRA', 370, 'Tecido Superior Poliéster Impermeável. Base Pvc Emborrachado.', 'tapete-carro', '../assets/img/motor369.svg'),
+('Tapetes personalizados BLUE', 310, '95% modelo de carro para todos os climas, à prova de água, antiderrapante, proteção total.', 'tapete-carro', '../assets/img/motor369.svg');
 
 --
 -- Estrutura da tabela `produtosComprados`
