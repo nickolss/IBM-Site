@@ -11,7 +11,7 @@ if (isset($_SESSION['id'])) {
 
 	foreach ($comprasRealizadas as $compra) {
 		$idProdProdutosComprados = $compra['idProdutos'];
-		$sqlProdutoMercadoria = $pdo->query("SELECT * FROM `produtosComprados` WHERE `nomeProdutos`='$nomeProduto'");
+		$sqlProdutoMercadoria = $pdo->query("SELECT * FROM `produtosComprados` WHERE `nomeProdutos`='$nomeProduto' && id_comprador=$idProdComprador");
 		$jaComprou = $sqlProdutoMercadoria->fetch();
 	}
 }
