@@ -337,7 +337,15 @@ INSERT INTO `produto` (`codigoProduto`, `nome`, `preco`, `pontos`, `marca`, `des
 (87, 'Capa Proteção Moto', 60, 60, 'Etacart', 'Capa Forrada Impermeável Térmica Protege Contra Sol Chuva Riscos', '../assets/img/produtos/capa-moto.png', NULL, 'APM'),
 (88, 'Bauleto 45L', 160, 160, 'Pro Tork', 'Parafusos e base para fixação;\r\nFechadura com chave;\r\nAdquirir o bagageiro de aço específico.', '../assets/img/produtos/bauleto-45l.png', NULL, 'APM'),
 (89, 'Bolsa Sela p/ Moto', 120, 120, 'ZEYUAN', 'Bolsa de sela a prova dágua.\r\nAlforjes Caixa de ferramentas laterais bolsa para motos.', '../assets/img/produtos/bolsa-sela-moto.png', NULL, 'APM'),
-(90, 'Kit Completo Transmissão', 215, 215, 'Genérico', 'Kit de transmissão para motos.\r\nInclui corrente, coroa e pinhão.', '../assets/img/produtos/kit-completo-transmissao.png', NULL, 'APM');
+(90, 'Kit Completo Transmissão', 215, 215, 'Genérico', 'Kit de transmissão para motos.\r\nInclui corrente, coroa e pinhão.', '../assets/img/produtos/kit-completo-transmissao.png', NULL, 'APM'),
+(91, 'Termômetro sem contato', 50, 50, 'Gonel', 'IR infravermelho Sensor portátil\r\nMedição de temperatura LED Display digital', '../assets/img/produtos/termometro-sem-contatoi.png', NULL, 'FE'),
+(92, 'Motocompressor De Ar', 630, 630, 'Chiaperini', 'Tensão 110\r\nFonte de alimentação Elétrico com fio\r\nPulverizar, Pintar', '../assets/img/produtos/motocompressor-ar.png', NULL, 'FE'),
+(93, 'Acionador de Partida', 280, 280, 'Generic', 'Carregador Externo Portátil de 24000mAh 100-240V para o Automóvel', '../assets/img/produtos/acionador-partida.png', NULL, 'FE'),
+(94, 'Carregador de bateria', 150, 150, 'Lúmu', 'Dimensões do item15D x 8,5W x 6,2Hcm\r\nClassificação de corrente 6A', '../assets/img/produtos/carregador-bateria.png', NULL, 'FE'),
+(95, 'Compressor de ar', 1140, 1140, 'TUXING', 'Tensão 110 Volts CA\r\nFonte de alimentação AC\r\nNível de ruído	80 dB', '../assets/img/produtos/compressor-ar.png', NULL, 'FE'),
+(96, 'Cabo Bateria Chupeta', 69, 69, 'EMLI', 'Alta Capacidade, Versatilidade, Conexões Seguras, Uso Emergencial', '../assets/img/produtos/cabo-bateria-chupeta.png', NULL, 'FE'),
+(97, 'Scanner Automotivo', 490, 490, 'FOXWELL', 'Fonte de alimentação plug&play\r\nDimensões do item 22x8x17cm\r\n2,8 Polegadas', '../assets/img/produtos/scanner-automotivo.png', NULL, 'FE'),
+(98, 'Rebitador Manual', 25, 25, 'Vonder', 'Aço estampado\r\n4 bicos\r\nDiâmetro max de rebite: 4 mm\r\nTipo Alicate', '../assets/img/produtos/rebotador-manual.png', NULL, 'FE');
 
 -- --------------------------------------------------------
 
