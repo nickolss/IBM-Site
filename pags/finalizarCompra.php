@@ -21,9 +21,10 @@ $anoAt = date("Y");
     <script src="../assets/js/cadastro-endereco.js" defer></script>
     <script type="text/javascript" src="../assets/js/java.js" defer></script>
     <script type="text/javascript" src="../assets/js/mascaraCartao.js" defer></script>
+    <script type="text/javascript" src="../assets/js/escolherPagamento.js" defer></script>
     <script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script> <!-- CDN para gerar QR Code -->
 </head>
 
 <body id="container__body">
@@ -158,7 +159,28 @@ $anoAt = date("Y");
                     </div>
                     <div class="container__cartao">
                         <h1>Pagamento</h1>
-                        <div class="cadastro">
+
+                        <div class="opcao__cartao d-flex justify-content-center">
+                            <div class="opcao__radio__cartao">
+                                <input class="inputRadio" type="radio" id="pix" name="opcao_cartao" value="pix" required>
+                                <label class="labelRadio" id="labelPix" for="pix">Pix</label>
+                            </div>
+                            <div class="opcao__radio__cartao opcao__radio__cartao__margin">
+                                <input class="inputRadio" type="radio" id="cartao" name="opcao_cartao" value="cartao" required>
+                                <label class="labelRadio" for="cartao">Cartão</label>
+                            </div>
+                            <br>
+                        </div>
+
+                        <div class="cadastro" id="divPix">
+                            <div>
+                                <div id="qrcode-container">
+                                    <div id="qrcode" class="qrcode"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cadastro d-flex justify-content-start" id="divCartao">
                             <div class="input__endereco">
                                 <div class="caixa__input">
                                     <input type="text" required name="numeroCartao" id="numeroCartao" autocomplete="off" maxlength="19">
@@ -200,6 +222,7 @@ $anoAt = date("Y");
                                 <br>
                             </div>
                         </div>
+
                     </div>
                     <div class="div__btn-finalizar">
                         <button class="btn__finalizar-compra" type="submit">Finalizar Compra</button>
