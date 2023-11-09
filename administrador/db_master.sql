@@ -321,7 +321,15 @@ INSERT INTO `produto` (`codigoProduto`, `nome`, `preco`, `pontos`, `marca`, `des
 (71, 'Capacete Moto Pro', 65, 65, 'Pro Tork', 'Capacete Pro Tork Semiautomático Preto e Branco', '../assets/img/produtos/capacete-moto-pro-tork.png', NULL, 'EPI'),
 (72, 'Anulador Odor Capacete', 7, 7, 'Baston', 'Neutralizador De Odores para Capacete Super Prime', '../assets/img/produtos/neutralizador-odores-capacete.png', NULL, 'EPI'),
 (73, 'Para Barro Moto', 10, 10, 'Genérico', 'Lameira LANDER 250 XTZ A Para Barro Moto', '../assets/img/produtos/para-barro-moto.png', NULL, 'EPI'),
-(74, 'Manga de Proteção Solar', 25, 25, 'Weemsbox', 'Proteção contra Raios UVA, leve, resistente e flexível.\r\n', '../assets/img/produtos/manga-protecao-solar.png', NULL, 'EPI');
+(74, 'Manga de Proteção Solar', 25, 25, 'Weemsbox', 'Proteção contra Raios UVA, leve, resistente e flexível.\r\n', '../assets/img/produtos/manga-protecao-solar.png', NULL, 'EPI'),
+(75, 'Pneu Traseiro Maggion', 285, 285, 'Maggion', 'Pneu Traseiro Maggion 110/90-17 Viper Nxr Bros Xtz', '../assets/img/produtos/pneu-traseiro-maggion.png', NULL, 'PNM'),
+(76, 'Pneu Dianteiro Maggion', 230, 230, 'Maggion', 'Pneu 90/90-19 Maggion Viper MT35 52T Moto (Dianteiro)', '../assets/img/produtos/pneu-dianteiro-maggion.png', NULL, 'PNM'),
+(77, 'Pneu Moto Winner', 140, 140, 'Maggion', 'PNEU DE MOTO 60/100-17 MAGGION WINNER 33L TT', '../assets/img/produtos/pneu-maggion-winner.png', NULL, 'PNM'),
+(78, 'Pneu Pirelli', 475, 475, 'Pirelli', 'Pneu Pirelli 110/90-17 Mt60 (Tt) 60P (T) Orig. Nxr Bros 160', '../assets/img/produtos/pneu-pirelli2.png', NULL, 'PNM'),
+(79, 'Pneu Black', 170, 170, 'Maggion', 'PNEU DE MOTO 2.75-18 MAGGION BLACK 48P TT ', '../assets/img/produtos/pneu-maggion-winner2.png', NULL, 'PNM'),
+(80, 'Pneu Traseiro Rinaldi', 220, 220, 'Rinaldi', 'Pneu Moto Traseiro Rinaldi R34 90/90 Aro 18 Honda Cg 125 Fan', '../assets/img/produtos/pneu-traseiro-rinaldi.png', NULL, 'PNM'),
+(81, 'Pneu Dianteiro Rinaldi', 260, 260, 'Rinaldi', 'Pneu Moto Dianteiro Rinaldi R34 2.75 Aro 18 Honda Cg Today', '../assets/img/produtos/pneu-dianteiro-rinaldi.png', NULL, 'PNM'),
+(82, 'Pneu Pirelli V2', 535, 535, 'Pirelli ', 'Pneu Pirelli 140/70-17 Sport Demon (Tl) 66H (T) Orig. Cb 300', '../assets/img/produtos/pneu-pirelli.png', NULL, 'PNM');
 
 -- --------------------------------------------------------
 
