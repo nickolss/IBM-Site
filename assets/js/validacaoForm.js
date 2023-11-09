@@ -1,3 +1,10 @@
+const divSenha = document.querySelector("#inputSenha");
+
+const erroSenha = document.createElement("p");
+erroSenha.textContent = "Senhas não são iguais.";
+erroSenha.classList.add("hidden");
+divSenha.appendChild(erroSenha);
+
 //Conferere se as senhas estão iguais
 const conferirSenhas = () => {
 	const senha = document.querySelector("input[name=senha]");
@@ -5,7 +12,9 @@ const conferirSenhas = () => {
 
 	if (confirma.value == senha.value) {
 		confirma.setCustomValidity("");
+		erroSenha.classList.add("hidden");
 	} else {
+		erroSenha.classList.remove("hidden");
 		confirma.setCustomValidity("As senhas não são iguais");
 	}
 };

@@ -285,15 +285,19 @@ if (!empty($idsProdutos)) {
                                                     <input type="hidden" name="idProduto" id="idProduto" value="<?= $idsProdutos; ?>">
                                                     <input type="hidden" name="url" id="url" value="<?= $currentURI2 ?>">
                                                     <?php
-                                                    $sqlFav = "SELECT * FROM `favoritos` WHERE `id_produto`='$idsProdutos'";
-                                                    $stmt = $pdo->query($sqlFav);
-                                                    $stmt->execute();
-                                                    $favoritos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                                                    $quantidadeTupla = $stmt->rowCount();
-                                                    if ($quantidadeTupla > 0) {
-                                                        echo '<button ><img class="fav__heart__icon" src="../assets/img/icone-favorito-preenchido.svg" alt=""></button>';
-                                                    } else {
-                                                        echo '<button ><img class="fav__heart__icon" src="../assets/img/icone-favorito.svg" alt=""></button>';
+                                                    if (!empty($_SESSION['id'])) {
+                                                        require_once("../assets/scripts/iniciarSessao.php");
+                                                        $idCliente = $_SESSION['id'];
+                                                        $sqlFav = "SELECT * FROM `favoritos` WHERE `id_produto`='$idsProdutos' AND `id_cliente` = '$idCliente'";
+                                                        $stmt = $pdo->query($sqlFav);
+                                                        $stmt->execute();
+                                                        $favoritos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                                        $quantidadeTupla = $stmt->rowCount();
+                                                        if ($quantidadeTupla > 0) {
+                                                            echo '<button ><img class="fav__heart__icon" src="../assets/img/icone-favorito-preenchido.svg" alt=""></button>';
+                                                        } else {
+                                                            echo '<button ><img class="fav__heart__icon" src="../assets/img/icone-favorito.svg" alt=""></button>';
+                                                        }
                                                     }
                                                     ?>
                                                 </form>
@@ -544,18 +548,20 @@ if (!empty($idsProdutos)) {
                                                                 <input type="hidden" name="idProduto" id="idProduto" value="<?= $naoEncontrados; ?>">
                                                                 <input type="hidden" name="url" id="url" value="<?= $currentURI2 ?>">
                                                                 <?php
-                                                                $sqlFav = "SELECT * FROM `favoritos` WHERE `id_produto`='$naoEncontrados'";
-                                                                $stmt = $pdo->query($sqlFav);
-                                                                $stmt->execute();
-                                                                $favoritos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                                                                $quantidadeTupla = $stmt->rowCount();
-
-                                                                if ($quantidadeTupla > 0) {
-                                                                    echo '<button ><img class="fav__heart__icon" src="../assets/img/icone-favorito-preenchido.svg" alt=""></button>';
-                                                                } else {
-                                                                    echo '<button ><img class="fav__heart__icon" src="../assets/img/icone-favorito.svg" alt=""></button>';
+                                                                if (!empty($_SESSION['id'])) {
+                                                                    require_once("../assets/scripts/iniciarSessao.php");
+                                                                    $idCliente = $_SESSION['id'];
+                                                                    $sqlFav = "SELECT * FROM `favoritos` WHERE `id_produto`='$idsProdutos' AND `id_cliente` = '$idCliente'";
+                                                                    $stmt = $pdo->query($sqlFav);
+                                                                    $stmt->execute();
+                                                                    $favoritos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                                                    $quantidadeTupla = $stmt->rowCount();
+                                                                    if ($quantidadeTupla > 0) {
+                                                                        echo '<button ><img class="fav__heart__icon" src="../assets/img/icone-favorito-preenchido.svg" alt=""></button>';
+                                                                    } else {
+                                                                        echo '<button ><img class="fav__heart__icon" src="../assets/img/icone-favorito.svg" alt=""></button>';
+                                                                    }
                                                                 }
-
                                                                 ?>
                                                             </form>
 
