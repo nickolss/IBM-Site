@@ -1,8 +1,8 @@
 <?php
-	require_once('../assets/scripts/conexao.php');
-	date_default_timezone_set("America/Sao_Paulo");
-	$dataAtual = date("Y-m-d");
-	$anoAtual = date("Y");
+require_once('../assets/scripts/conexao.php');
+date_default_timezone_set("America/Sao_Paulo");
+$dataAtual = date("Y-m-d");
+$anoAtual = date("Y");
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +26,7 @@
 <body id="container__body">
 
 	<?php
-		require_once('../assets/components/header.php');
+	require_once('../assets/components/header.php');
 	?>
 
 	<main>
@@ -42,17 +42,17 @@
 					</div>
 					<div class="input__endereco">
 						<div class="caixa__input">
-							<input class="inputCartao" type="number" name="mesCartao" id="mesCartao" required maxlength="2" minlength="2" title="O mês deve ter 2 digitos numéricos." max="12" min="1">
-							<label for="address">Mês Validade</label>
+							<input class="inputCartao" type="number" name="mesCartao" id="mesCartao" required maxlength="2" minlength="2" min="1" max="12" title="O mês deve ter 2 digitos numéricos.">
+							<label for="address">Mês de Validade</label>
 						</div>
 						<div class="caixa__input caixa__input__margin">
-							<input type="number" required name="anoCartao" id="anoCartao" autocomplete="off" maxlength="4" minlength="4" title="O ano deve ter 4 digitos numéricos." min="<?= $anoAtual ?>"> 
-							<label for="numero">Ano Validade</label>
+							<input type="number" required name="anoCartao" id="anoCartao" autocomplete="off" maxlength="4" minlength="4" title="O ano deve ter 4 digitos numéricos." min=<?= $anoAtual ?>>
+							<label for="numero">Ano de Validade</label>
 						</div>
 					</div>
 					<div class="input__endereco">
 						<div class="caixa__input">
-							<input class="inputCartao" type="number" name="cvvCartao" id="cvvCartao" required pattern="^\d{3,4}$" title="O CVV deve ter entre 3 e 4 digitos numéricos.">
+							<input class="inputCartao" type="text" id="cvv" name="cvvCartao" id="cvvCartao" size="4" maxlength="4" pattern="\d{3,3}" title="O CVV deve ter 3 digitos numéricos." required>
 							<label for="address">CVV</label>
 						</div>
 						<div class="caixa__input caixa__input__margin">

@@ -1,8 +1,8 @@
 <?php
-    require_once('../assets/scripts/conexao.php');
-    require_once('../assets/scripts/iniciarSessao.php');
-    require_once('../assets/scripts/consultaCliente.php');
-    $anoAt = date("Y");
+require_once('../assets/scripts/conexao.php');
+require_once('../assets/scripts/iniciarSessao.php');
+require_once('../assets/scripts/consultaCliente.php');
+$anoAt = date("Y");
 ?>
 
 
@@ -27,17 +27,17 @@
 
 <body id="container__body">
     <?php
-        require_once('../assets/components/header.php');
+    require_once('../assets/components/header.php');
     ?>
 
     <main>
         <?php
-            $id = $_SESSION['id'] || null;
-            $sql = "SELECT * FROM `endereco` WHERE `id_morador` = '$id'";
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute();
-            $quantidadeTupla = $stmt->rowCount();
-            $endereco = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $id = $_SESSION['id'] || null;
+        $sql = "SELECT * FROM `endereco` WHERE `id_morador` = '$id'";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $quantidadeTupla = $stmt->rowCount();
+        $endereco = $stmt->fetchAll(PDO::FETCH_ASSOC);
         ?>
 
         <div class="container__endereco-cartao-resumo">
@@ -56,20 +56,20 @@
                 }
                 ?>
                 <?php
-                    $totalCarrinho = 0; // Variável para calcular o preço total
-                    $totalItens = 0; // Variável para calcular a quantidade total de itens
-    
-                    foreach ($_SESSION['carrinho'] as $idProd => $value) {
-                        $subtotal = $value['preco'] * $value['quantidade'];
-                        $totalCarrinho += $subtotal;
-                        $totalItens += $value['quantidade'];
-                    }?>
-                    <h3 class="subtitles__resumo-pedido">Preço Final: </h3>
+                $totalCarrinho = 0; // Variável para calcular o preço total
+                $totalItens = 0; // Variável para calcular a quantidade total de itens
+
+                foreach ($_SESSION['carrinho'] as $idProd => $value) {
+                    $subtotal = $value['preco'] * $value['quantidade'];
+                    $totalCarrinho += $subtotal;
+                    $totalItens += $value['quantidade'];
+                } ?>
+                <h3 class="subtitles__resumo-pedido">Preço Final: </h3>
                 <?php
-                    echo "R$$totalCarrinho";
+                echo "R$$totalCarrinho";
                 ?>
 
-                
+
             </div>
 
             <!--ENDERECO E CARTAO-->
@@ -80,15 +80,15 @@
                         <div class="cadastro">
                             <div class="caixa__input">
                                 <?php
-                                    if($_SESSION['id'] == null){
-                                    ?>
-                                        <input type="text" required name="cep" id="cep" autocomplete="off" minlength="8" maxlength="8">
-                                    <?php
-                                    }else{
-                                    ?>
-                                        <input type="text" required name="cep" id="cep" autocomplete="off" minlength="8" maxlength="8" value="<?= $endereco[0]['cep'] ?>">
-                                    <?php
-                                    }
+                                if ($_SESSION['id'] == null) {
+                                ?>
+                                    <input type="text" required name="cep" id="cep" autocomplete="off" minlength="8" maxlength="8">
+                                <?php
+                                } else {
+                                ?>
+                                    <input type="text" required name="cep" id="cep" autocomplete="off" minlength="8" maxlength="8" value="<?= $endereco[0]['cep'] ?>">
+                                <?php
+                                }
                                 ?>
                                 <label for="cep">CEP</label>
                             </div>
@@ -166,7 +166,7 @@
                             </div>
                             <div class="input__endereco">
                                 <div class="caixa__input">
-                                    <input class="inputCartao" type="number" name="mesCartao" id="mesCartao" required maxlength="2" minlength="2" title="O mês deve ter 2 digitos numéricos.">
+                                    <input class="inputCartao" type="number" name="mesCartao" id="mesCartao" required maxlength="2" minlength="2" min="1" max="12" title="O mês deve ter 2 digitos numéricos.">
                                     <label for="address">Mês de Validade</label>
                                 </div>
                                 <div class="caixa__input caixa__input__margin">
@@ -176,7 +176,7 @@
                             </div>
                             <div class="input__endereco">
                                 <div class="caixa__input">
-                                    <input class="inputCartao" type="number" name="cvvCartao" id="cvvCartao" required pattern="^\d{3,4}$" title="O CVV deve ter 3 digitos numéricos.">
+                                    <input class="inputCartao" type="text" id="cvv" name="cvvCartao" id="cvvCartao" size="4" maxlength="4" pattern="\d{3,3}" title="O CVV deve ter 3 digitos numéricos." required>
                                     <label for="address">CVV</label>
                                 </div>
                                 <div class="caixa__input caixa__input__margin">
@@ -189,11 +189,11 @@
                             </div>
                             <div class="opcao__cartao">
                                 <div class="opcao__radio__cartao">
-                                    <input class="inputRadio" type="radio" id="credito" name="opcao_cartao" value="credito">
+                                    <input class="inputRadio" type="radio" id="credito" name="opcao_cartao" value="credito" required>
                                     <label class="labelRadio" id="labelCredito" for="credito">Crédito</label>
                                 </div>
                                 <div class="opcao__radio__cartao opcao__radio__cartao__margin">
-                                    <input class="inputRadio" type="radio" id="debito" name="opcao_cartao" value="debito">
+                                    <input class="inputRadio" type="radio" id="debito" name="opcao_cartao" value="debito" required>
                                     <label class="labelRadio" for="debito">Débito</label>
                                 </div>
                                 <br>
