@@ -305,7 +305,15 @@ INSERT INTO `produto` (`codigoProduto`, `nome`, `preco`, `pontos`, `marca`, `des
 (55, 'Rack New Wave Fit', 560, 560, 'Eqmax ', 'Rack Eqmax New Wave Fit 2015 2016 2017 2018 2019 Cinza', '../assets/img/produtos/rack-eqmax-new-wave-fit.png', NULL, 'RT'),
 (56, 'Bola de engate de reboque', 55, 55, 'BIG RED', '5 cm de diâmetro, capacidade de 1,75 toneladas (1,6 kg)', '../assets/img/produtos/bola-engate-reboque.png', NULL, 'RT'),
 (57, 'Adaptador receptor de engate', 310, 310, 'Mopar', '2 polegadas adaptador receptor de engate Oem Mopar', '../assets/img/produtos/adaptador-receptor-engate.png', NULL, 'RT'),
-(58, 'Tiras de amarração de catraca', 160, 160, 'Stalwart', '680 kg\r\nTiras de carga resistentes à ruptura\r\n', '../assets/img/produtos/tiras-amarracao-catraca.png', NULL, 'RT');
+(58, 'Tiras de amarração de catraca', 160, 160, 'Stalwart', '680 kg\r\nTiras de carga resistentes à ruptura\r\n', '../assets/img/produtos/tiras-amarracao-catraca.png', NULL, 'RT'),
+(59, 'Lâmpada Farol', 10, 10, ' PHILIPS', 'Compatibilidade Universal\r\nFarol\r\nH4 12V 60/55W', '../assets/img/produtos/lampada-farol.png', NULL, 'PEA'),
+(60, 'Par Amortecedor', 70, 70, 'bësser AMORTECEDORES', 'Par Amortecedor a Gás Tampa Traseira  Hatch 2012 À 2022', '../assets/img/produtos/par-amortecedor.png', NULL, 'PEA'),
+(61, 'Prendedor Cinto', 15, 15, 'Genérico', 'Prendedor Cinto De Segurança Universal', '../assets/img/produtos/prendedor-cinto-seguranca.png', NULL, 'PEA'),
+(62, 'Farol Completo', 35, 35, 'Genérico', 'Farol Completo 25 2000 A 2004 Fan 125', '../assets/img/produtos/farol.png', NULL, 'PEA'),
+(63, 'Interruptor guiador moto', 55, 55, 'UGPLM', 'Interruptor do guiador da motocicleta', '../assets/img/produtos/interruptor-guiador.png', NULL, 'PEA'),
+(64, 'Kit Cabos Velas Ignição', 180, 180, 'Magneti Marelli', 'Kit Cabos E Velas De Ignição G4 G5 1.6 8v', '../assets/img/produtos/kit-cabos-velas-ignicao.png', NULL, 'PEA'),
+(65, 'Kit 3 Palheta Parabrisa', 85, 85, 'Shop-Vision', 'Kit 3 Palheta Limpador Parabrisa Silicone Durável', '../assets/img/produtos/kit3-palheta-limpador-parabrisa.png', NULL, 'PEA'),
+(66, 'Bola Cambio', 45, 45, 'Nat', 'Bola Cambio 5 Marchas Ré para Trás', '../assets/img/produtos/bola-cambio.png', NULL, 'PEA');
 
 -- --------------------------------------------------------
 
