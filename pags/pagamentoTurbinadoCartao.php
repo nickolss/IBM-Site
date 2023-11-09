@@ -19,6 +19,7 @@ $anoAtual = date("Y");
 
 	<link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
 	<script src="../assets/js/java.js" defer></script>
+	<script src="../assets/js/mascaraCartao.js" defer></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="../assets/js/js-bootstrap/bootstrap.bundle.min.js"></script>
 </head>
@@ -36,7 +37,7 @@ $anoAtual = date("Y");
 				<div class="cadastro">
 					<div class="input__endereco">
 						<div class="caixa__input">
-							<input type="number" required name="numeroCartao" id="numeroCartao" autocomplete="off">
+							<input type="text" required name="numeroCartao" id="numeroCartao" autocomplete="off" maxlength="19">
 							<label for="numeroCartao">Número do Cartão</label>
 						</div>
 					</div>
