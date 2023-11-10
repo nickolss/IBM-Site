@@ -45,10 +45,10 @@ require_once('../assets/scripts/iniciarSessao.php');
             $corVeiculoPrinc = $registros[0]['cor'];
 
         ?>
-            <section class='veiculos'>
-                <h2 class='veiculo__titulo'>Veiculo Principal</h2>
-                <div class='veiculo-principal'>
-                    <div class='card-veiculo principal'>
+            <section class='veiculos' >
+                <h2 class='veiculo__titulo' >Veiculo Principal</h2>
+                <div class='veiculo-principal' >
+                    <div class='card-veiculo principal'style=" max-width: 100%">
                         <img src='../assets/img/icone-carro-novo.svg' alt='Ícone de Carro'>
                         <p class='card-veiculo__apelido'><?= $apelidoVeiculoPrinc ?></p>
                         <div class='informacoes-veiculo'>
