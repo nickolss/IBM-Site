@@ -513,7 +513,7 @@ CREATE TABLE IF NOT EXISTS `produtosTroca`(
   PRIMARY KEY (`idProduto`)
 ) ENGINE = InnoDB DEFAULT COLLATE = utf8_general_ci;
 
-INSERT INTO `produtostroca` (`nome`, `preco_pontos`, `descricao`, `categoria`, `caminho_img`) VALUES
+INSERT INTO `produtosTroca` (`nome`, `preco_pontos`, `descricao`, `categoria`, `caminho_img`) VALUES
 ('Lavagem Simples', 1000, 'Lavagem simples do seu veículo', 'lavagem-simples', '../assets/img/motor369.svg'),
 ('Lavagem Completa', 1800, 'Lavagem completa do seu veículo', 'lavagem-completa', '../assets/img/motor369.svg'),
 ('Cheiro de Lavanda', 200, 'Um aroma calmante e relaxante, que ajuda a reduzir o estresse e a ansiedade.', 'cheirinho-carro', '../assets/img/cheirinho1.png'),
