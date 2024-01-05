@@ -19,7 +19,7 @@ Turn Motors é um projeto para a feira tecnológica e IBM, executado pelos aluno
 </ul>
 
 ## Site Oficial
-https://turnmotors.000webhostapp.com/
+https://turnmotors-etec.000webhostapp.com/
 
 ## Wireframes
 https://www.figma.com/file/FXDHyWOdhXAOsQnZqPngAq/alta-fidelidade?node-id=0%3A1
